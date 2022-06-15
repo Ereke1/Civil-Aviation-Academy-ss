@@ -1,0 +1,108 @@
+@extends('admin.layouts.app')
+@php $parrentCat  = 'Управление сайтом' @endphp
+@php $active_menu  = 'Страницы' @endphp
+@section('content')
+    @if (session('alert'))
+        <div class="alert alert-success">
+            <h3>{{ session('alert') }}</h3>
+        </div>
+    @endif
+    <h1>Управление страницами сайта</h1>
+    <section id="pages">
+        <div class="pages">
+            <div class="pages__head">
+                <div class="pages__title">
+                    <h2>Страницы</h2>
+                </div>
+                <div class="pages__add-page">
+                    <a href="{{ route('admin.website.pages.create') }}" class="btn btn-primary">
+                        Создать страницу
+                    </a>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="col-md-1 pl-0">
+                    <p><b>#</b></p>
+                </div>
+                <div class="col-md-4 pl-0">
+                    <p><b>Название</b></p>
+                </div>
+                <div class="col-md-3">
+                    <p><b>URL</b></p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <p><b>Удалить</b></p>
+                </div>
+                <div class="col-md-2 pr-0 text-right">
+                    <p><b>Редактировать</b></p>
+                </div>
+            </div>
+            <div>
+                @foreach ($data as $item)
+                    <div class="d-flex flex-wrap">
+                        <div class="col-md-1 pl-0">
+                            <p>{{ $item->id }}</p>
+                        </div>
+                        <div class="col-md-4 pl-0">
+                            <p>{{ $item->title_ru }}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>{!! $item->slug !!}</p>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <form action="{{ route('admin.website.pages.destroy', $item->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger"
+                                    onclick="return confirm('Вы уверены что хотите удалить страницу?')">
+                                    Удалить страницу
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-md-2 pr-0 text-right">
+                            <a class="btn btn-primary" href="{{ route('admin.website.pages.edit', $item->id) }}">
+                                Редактировать страницу
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="createPage" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 style="text-align: center">Создание страницы</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('admin.website.pages.store') }}" {{-- id="submitform" --}} method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="id">
+                            <div>
+                                <label>Название</label>
+                                <input type="text" name="title_ru">
+                            </div>
+                            <div>
+                                <label>Описание</label>
+                                <textarea name="desc_ru" id="editor"></textarea>
+                            </div>
+                            <div class="block">
+                                <button type="submit" class="btn btn-primary">Сохранить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+
+@section('scripts')
+    @include('admin.ckeditor')
+@endsection
