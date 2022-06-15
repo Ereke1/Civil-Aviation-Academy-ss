@@ -81,7 +81,7 @@ $countAll = $countDoctoral + $totalMaster + $total;
                 <td rowspan="6">327</td>
                 <td>20</td>
                 <td class="bg-chair">{!! $count1 !!}</td>
-                <td rowspan="6"></td>
+                <td rowspan="6">10</td>
                 <td rowspan="6">60</td>
                 <td class="bg-chair">{!! $count2 !!}</td>
                 <td rowspan="6">25</td>
@@ -140,7 +140,7 @@ $countAll = $countDoctoral + $totalMaster + $total;
                 <td><b>327</b></td>
                 <td><b>100</b></td>
                 <td><b>{!! $summVTT_11kl !!}</b></td>
-                <td><b></b></td>
+                <td><b>10</b></td>
                 <td><b>60</b></td>
                 <td><b>{!! $summVTT_TiPO !!}</td>
                 <td><b>25</b></td>
@@ -155,8 +155,8 @@ $countAll = $countDoctoral + $totalMaster + $total;
                 <td rowspan="3">136</td>
                 <td>10</td>
                 <td class="bg-chair">{!! $count16 !!}</td>
-                <td rowspan="3"></td>
-                <td rowspan="3"></td>
+                <td rowspan="3">10</td>
+                <td rowspan="3">0</td>
                 <td class="bg-chair">{!! $count17 !!}</td>
                 <td rowspan="3">5</td>
                 <td class="bg-chair">{!! $count18 !!}</td>
@@ -187,8 +187,8 @@ $countAll = $countDoctoral + $totalMaster + $total;
                 <td><b>136</b></td>
                 <td><b>50</b></td>
                 <td><b>{!! $summLELAD_11kl !!}</b></td>
-                <td><b></b></td>
-                <td></td>
+                <td><b>10</b></td>
+                <td><b>0</b></td>
                 <td><b>{!! $summLELAD_TiPO !!}</td>
                 <td><b>5</b></td>
                 <td><b>{!! $summLELAD_VV !!}</td>
