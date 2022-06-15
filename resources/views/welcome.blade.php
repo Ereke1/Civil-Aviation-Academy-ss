@@ -90,7 +90,7 @@
                             If you never try, you'll never know
                         </h1>
                         <p class="sub-title">
-                            Не упусти свой шанс стань - АВИАТОРОМ!
+                            Не упусти свой шанс - стань АВИАТОРОМ!
                         </p>
                     </div>
                     
