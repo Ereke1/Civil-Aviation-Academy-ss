@@ -16,298 +16,510 @@ class GReportController extends Controller
 	 */
 	public function index(Request $request)
 	{
+		$created_at_from = $request->created_at_from;
+		$created_at_to = $request->created_at_to;
 		$years = $request->years;
-		if ($years === NULL) {
-			$years = 2022;
+		if (!isset($created_at_from) || !isset($created_at_to)) {
+			// БАКАЛАВРИАТ
+			// Техническая эксплуатация летательных аппаратов и двигателей
+			$count1 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Техническая эксплуатация летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			$count2 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Техническая эксплуатация летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			$count3 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Техническая эксплуатация летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			// Техническая эксплуатация систем авионики летательных аппаратов и двигателей
+			$count4 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			$count5 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			$count6 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			// Обслуживание наземного радиоэлектронного оборудования аэропортов
+			$count7 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Обслуживание наземного радиоэлектронного оборудования аэропортов')
+				->where('status', 0)
+				->count();
+			$count8 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Обслуживание наземного радиоэлектронного оборудования аэропортов')
+				->where('status', 0)
+				->count();
+			$count9 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Обслуживание наземного радиоэлектронного оборудования аэропортов')
+				->where('status', 0)
+				->count();
+			// Обеспечение авиационной безопасности
+			$count10 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Обеспечение авиационной безопасности')
+				->where('status', 0)
+				->count();
+			$count11 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Обеспечение авиационной безопасности')
+				->where('status', 0)
+				->count();
+			$count12 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Обеспечение авиационной безопасности')
+				->where('status', 0)
+				->count();
+			// Организация аэропортовой деятельности
+			$count13 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Организация аэропортовой деятельности')
+				->where('status', 0)
+				->count();
+			$count14 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Организация аэропортовой деятельности')
+				->where('status', 0)
+				->count();
+			$count15 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Организация аэропортовой деятельности')
+				->where('status', 0)
+				->count();
+			// Обслуживание воздушного движения
+			$count16 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Обслуживание воздушного движения')
+				->where('status', 0)
+				->count();
+			$count17 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Обслуживание воздушного движения')
+				->where('status', 0)
+				->count();
+			$count18 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Обслуживание воздушного движения')
+				->where('status', 0)
+				->count();
+			// Обслуживание воздушного движения
+			$count19 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('status', 0)
+				->count();
+			$count20 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('status', 0)
+				->count();
+			$count21 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('status', 0)
+				->count();
+			// Лётная эксплуатация вертолётов (пилот)
+			$count22 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('status', 0)
+				->count();
+			$count23 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('status', 0)
+				->count();
+			$count24 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('status', 0)
+				->count();
+			// Организация авиационных перевозок
+			$count25 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Организация авиационных перевозок')
+				->where('status', 0)
+				->count();
+			$count26 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Организация авиационных перевозок')
+				->where('status', 0)
+				->count();
+			$count27 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Организация авиационных перевозок')
+				->where('status', 0)
+				->count();
+			// Логистика на транспорте
+			$count28 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Логистика на транспорте')
+				->where('status', 0)
+				->count();
+			$count29 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Логистика на транспорте')
+				->where('status', 0)
+				->count();
+			$count30 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Логистика на транспорте')
+				->where('status', 0)
+				->count();
+			// Технология транспортных процессов в авиации
+			$count31 = Applications::select('*')
+				->where('base', '11-го класса')
+				->where('programms', 'Технология транспортных процессов в авиации')
+				->where('status', 0)
+				->count();
+			$count32 = Applications::select('*')
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Технология транспортных процессов в авиации')
+				->where('status', 0)
+				->count();
+			$count33 = Applications::select('*')
+				->where('base', 'Высшего образования')
+				->where('programms', 'Технология транспортных процессов в авиации')
+				->where('status', 0)
+				->count();
+
+			$sum1_5 = $count1 + $count2 + $count3 + $count4 + $count5 + $count6 + $count7 + $count8 + $count9 + $count10 + $count11 + $count12 + $count13 + $count14 + $count15;
+			$sum6_8 = $count16 + $count17 + $count18 + $count19 + $count20 + $count21 + $count22 + $count23 + $count24;
+			$sum9_10 = $count25 + $count26 + $count27 + $count28 + $count29 + $count30;
+
+			// МАГИСТРАТУРА
+			$countMaster1 = Applications::select('*')
+				->where('programms', 'Авиационная техника и технологии (профильная магистратура)')
+				->where('status', 0)
+				->count();
+			$countMaster2 = Applications::select('*')
+				->where('programms', 'Авиационная техника и технологии (научно-педагогическая магистратура)')
+				->where('status', 0)
+				->count();
+			$countMaster4 = Applications::select('*')
+				->where('programms', 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)')
+				->where('status', 0)
+				->count();
+			$countMaster5 = Applications::select('*')
+				->where('programms', 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)')
+				->where('status', 0)
+				->count();
+			$countMaster6 = Applications::select('*')
+				->where('programms', 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)')
+				->where('status', 0)
+				->count();
+			$totalMaster = $countMaster1 + $countMaster2 + $countMaster4 + $countMaster5 + $countMaster6;
+
+			// ДОКТОРАНТУРА
+			$countDoctoral = Applications::select('*')
+				->where('programms', 'Авиационная техника и технологии')
+				->where('status', 0)
+				->count();
+		} else {
+					// БАКАЛАВРИАТ
+				// Техническая эксплуатация летательных аппаратов и двигателей
+				$count1 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Техническая эксплуатация летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			$count2 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Техническая эксплуатация летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			$count3 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Техническая эксплуатация летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			// Техническая эксплуатация систем авионики летательных аппаратов и двигателей
+			$count4 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			$count5 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			$count6 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей')
+				->where('status', 0)
+				->count();
+			// Обслуживание наземного радиоэлектронного оборудования аэропортов
+			$count7 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Обслуживание наземного радиоэлектронного оборудования аэропортов')
+				->where('status', 0)
+				->count();
+			$count8 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Обслуживание наземного радиоэлектронного оборудования аэропортов')
+				->where('status', 0)
+				->count();
+			$count9 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Обслуживание наземного радиоэлектронного оборудования аэропортов')
+				->where('status', 0)
+				->count();
+			// Обеспечение авиационной безопасности
+			$count10 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Обеспечение авиационной безопасности')
+				->where('status', 0)
+				->count();
+			$count11 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Обеспечение авиационной безопасности')
+				->where('status', 0)
+				->count();
+			$count12 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Обеспечение авиационной безопасности')
+				->where('status', 0)
+				->count();
+			// Организация аэропортовой деятельности
+			$count13 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Организация аэропортовой деятельности')
+				->where('status', 0)
+				->count();
+			$count14 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Организация аэропортовой деятельности')
+				->where('status', 0)
+				->count();
+			$count15 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Организация аэропортовой деятельности')
+				->where('status', 0)
+				->count();
+			// Обслуживание воздушного движения
+			$count16 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Обслуживание воздушного движения')
+				->where('status', 0)
+				->count();
+			$count17 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Обслуживание воздушного движения')
+				->where('status', 0)
+				->count();
+			$count18 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Обслуживание воздушного движения')
+				->where('status', 0)
+				->count();
+			// Обслуживание воздушного движения
+			$count19 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('status', 0)
+				->count();
+			$count20 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('status', 0)
+				->count();
+			$count21 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('status', 0)
+				->count();
+			// Лётная эксплуатация вертолётов (пилот)
+			$count22 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('status', 0)
+				->count();
+			$count23 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('status', 0)
+				->count();
+			$count24 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('status', 0)
+				->count();
+			// Организация авиационных перевозок
+			$count25 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Организация авиационных перевозок')
+				->where('status', 0)
+				->count();
+			$count26 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Организация авиационных перевозок')
+				->where('status', 0)
+				->count();
+			$count27 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Организация авиационных перевозок')
+				->where('status', 0)
+				->count();
+			// Логистика на транспорте
+			$count28 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Логистика на транспорте')
+				->where('status', 0)
+				->count();
+			$count29 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Логистика на транспорте')
+				->where('status', 0)
+				->count();
+			$count30 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Логистика на транспорте')
+				->where('status', 0)
+				->count();
+			// Технология транспортных процессов в авиации
+			$count31 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', '11-го класса')
+				->where('programms', 'Технология транспортных процессов в авиации')
+				->where('status', 0)
+				->count();
+			$count32 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Технического и профессионального образования (колледжа)')
+				->where('programms', 'Технология транспортных процессов в авиации')
+				->where('status', 0)
+				->count();
+			$count33 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('base', 'Высшего образования')
+				->where('programms', 'Технология транспортных процессов в авиации')
+				->where('status', 0)
+				->count();
+
+			$sum1_5 = $count1 + $count2 + $count3 + $count4 + $count5 + $count6 + $count7 + $count8 + $count9 + $count10 + $count11 + $count12 + $count13 + $count14 + $count15;
+			$sum6_8 = $count16 + $count17 + $count18 + $count19 + $count20 + $count21 + $count22 + $count23 + $count24;
+			$sum9_10 = $count25 + $count26 + $count27 + $count28 + $count29 + $count30;
+
+			// МАГИСТРАТУРА
+			$countMaster1 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('programms', 'Авиационная техника и технологии (профильная магистратура)')
+				->where('status', 0)
+				->count();
+			$countMaster2 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('programms', 'Авиационная техника и технологии (научно-педагогическая магистратура)')
+				->where('status', 0)
+				->count();
+			$countMaster4 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('programms', 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)')
+				->where('status', 0)
+				->count();
+			$countMaster5 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('programms', 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)')
+				->where('status', 0)
+				->count();
+			$countMaster6 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('programms', 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)')
+				->where('status', 0)
+				->count();
+			$totalMaster = $countMaster1 + $countMaster2 + $countMaster4 + $countMaster5 + $countMaster6;
+
+			// ДОКТОРАНТУРА
+			$countDoctoral = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('programms', 'Авиационная техника и технологии')
+				->where('status', 0)
+				->count();
 		}
-		// БАКАЛАВРИАТ
-		// Техническая эксплуатация летательных аппаратов и двигателей
-		$count1 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Техническая эксплуатация летательных аппаратов и двигателей')
-			->where('status', 0)
-			->count();
-		$count2 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Техническая эксплуатация летательных аппаратов и двигателей')
-			->where('status', 0)
-			->count();
-		$count3 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Техническая эксплуатация летательных аппаратов и двигателей')
-			->where('status', 0)
-			->count();
-		// Техническая эксплуатация систем авионики летательных аппаратов и двигателей
-		$count4 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей')
-			->where('status', 0)
-			->count();
-		$count5 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей')
-			->where('status', 0)
-			->count();
-		$count6 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей')
-			->where('status', 0)
-			->count();
-		// Обслуживание наземного радиоэлектронного оборудования аэропортов
-		$count7 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Обслуживание наземного радиоэлектронного оборудования аэропортов')
-			->where('status', 0)
-			->count();
-		$count8 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Обслуживание наземного радиоэлектронного оборудования аэропортов')
-			->where('status', 0)
-			->count();
-		$count9 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Обслуживание наземного радиоэлектронного оборудования аэропортов')
-			->where('status', 0)
-			->count();
-		// Обеспечение авиационной безопасности
-		$count10 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Обеспечение авиационной безопасности')
-			->where('status', 0)
-			->count();
-		$count11 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Обеспечение авиационной безопасности')
-			->where('status', 0)
-			->count();
-		$count12 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Обеспечение авиационной безопасности')
-			->where('status', 0)
-			->count();
-		// Организация аэропортовой деятельности
-		$count13 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Организация аэропортовой деятельности')
-			->where('status', 0)
-			->count();
-		$count14 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Организация аэропортовой деятельности')
-			->where('status', 0)
-			->count();
-		$count15 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Организация аэропортовой деятельности')
-			->where('status', 0)
-			->count();
-		// Обслуживание воздушного движения
-		$count16 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Обслуживание воздушного движения')
-			->where('status', 0)
-			->count();
-		$count17 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Обслуживание воздушного движения')
-			->where('status', 0)
-			->count();
-		$count18 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Обслуживание воздушного движения')
-			->where('status', 0)
-			->count();
-		// Обслуживание воздушного движения
-		$count19 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Лётная эксплуатация самолётов (пилот)')
-			->where('status', 0)
-			->count();
-		$count20 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Лётная эксплуатация самолётов (пилот)')
-			->where('status', 0)
-			->count();
-		$count21 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Лётная эксплуатация самолётов (пилот)')
-			->where('status', 0)
-			->count();
-		// Лётная эксплуатация вертолётов (пилот)
-		$count22 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
-			->where('status', 0)
-			->count();
-		$count23 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
-			->where('status', 0)
-			->count();
-		$count24 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
-			->where('status', 0)
-			->count();
-		// Организация авиационных перевозок
-		$count25 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Организация авиационных перевозок')
-			->where('status', 0)
-			->count();
-		$count26 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Организация авиационных перевозок')
-			->where('status', 0)
-			->count();
-		$count27 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Организация авиационных перевозок')
-			->where('status', 0)
-			->count();
-		// Логистика на транспорте
-		$count28 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Логистика на транспорте')
-			->where('status', 0)
-			->count();
-		$count29 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Логистика на транспорте')
-			->where('status', 0)
-			->count();
-		$count30 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Логистика на транспорте')
-			->where('status', 0)
-			->count();
-		// Технология транспортных процессов в авиации
-		$count31 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', '11-го класса')
-			->where('programms', 'Технология транспортных процессов в авиации')
-			->where('status', 0)
-			->count();
-		$count32 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Технология транспортных процессов в авиации')
-			->where('status', 0)
-			->count();
-		$count33 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('base', 'Высшего образования')
-			->where('programms', 'Технология транспортных процессов в авиации')
-			->where('status', 0)
-			->count();
-
-		$sum1_5 = $count1 + $count2 + $count3 + $count4 + $count5 + $count6 + $count7 + $count8 + $count9 + $count10 + $count11 + $count12 + $count13 + $count14 + $count15;
-		$sum6_8 = $count16 + $count17 + $count18 + $count19 + $count20 + $count21 + $count22 + $count23 + $count24;
-		$sum9_10 = $count25 + $count26 + $count27 + $count28 + $count29 + $count30;
-
-		// МАГИСТРАТУРА
-		$countMaster1 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('programms', 'Авиационная техника и технологии (профильная магистратура)')
-			->where('status', 0)
-			->count();
-		$countMaster2 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('programms', 'Авиационная техника и технологии (научно-педагогическая магистратура)')
-			->where('status', 0)
-			->count();
-		$countMaster4 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('programms', 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)')
-			->where('status', 0)
-			->count();
-		$countMaster5 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('programms', 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)')
-			->where('status', 0)
-			->count();
-		$countMaster6 = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('programms', 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)')
-			->where('status', 0)
-			->count();
-		$totalMaster = $countMaster1 + $countMaster2 + $countMaster4 + $countMaster5 + $countMaster6;
-
-		// ДОКТОРАНТУРА
-		$countDoctoral = Applications::select('*')
-			->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			->whereDate('created_at', '<=', $years . '-' . '08-31')
-			->where('programms', 'Авиационная техника и технологии')
-			->where('status', 0)
-			->count();
 
 		$array = [
 			'count1' => $count1,
@@ -353,7 +565,9 @@ class GReportController extends Controller
 			'countMaster6' => $countMaster6,
 			'totalMaster' => $totalMaster,
 			'countDoctoral' => $countDoctoral,
-			'years' => $years
+			'years' => $years,
+			'created_at_from' => $created_at_from,
+			'created_at_to' => $created_at_to
 		];
 
 		return view('admin.enrollee.report.general.index', $array);

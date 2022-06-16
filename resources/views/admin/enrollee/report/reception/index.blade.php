@@ -40,12 +40,14 @@ $countAll = $countDoctoral + $totalMaster + $total;
             <form>
                 @csrf
                 <div>
-                    <label for="years">Год поступления</label>
-                    <select name="years" required>
-                        <option value=""></option>
-                        <option value="2021" @if ($years === 2021) selected @endif>2021</option>
-                        <option value="2022" @if ($years === 2022) selected @endif>2022</option>
-                    </select>
+                    <label for="created_at_from">Дата подачи с</label>
+                    <input type="date" name="created_at_from" required
+                    @if ($created_at_from != '') value="{!! $created_at_from !!}" @endif>
+                </div>
+                <div>
+                    <label for="created_at_to">Дата подачи до</label>
+                    <input type="date" name="created_at_to" required
+                    @if ($created_at_to != '') value="{!! $created_at_to !!}" @endif>
                 </div>
                 <div>
                     <button>Применить</button>
