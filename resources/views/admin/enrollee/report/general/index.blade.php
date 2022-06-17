@@ -59,7 +59,7 @@ $countAll = $countDoctoral + $totalMaster + $totalBachelor;
                 </div>
             </form>
         </div>
-        <h3>Скачать в <a href="{{ route('admin.enrollee.greport.pdf') }}">PDF</a></h3>
+        <h3>Скачать в <a href="{{route('admin.enrollee.greport.pdf',['created_at_from' => $created_at_from ? $created_at_from : 0 ,'created_at_to' => $created_at_to ? $created_at_to : 0 ])}}">PDF</a></h3>
         <table class="report">
             <tr>
                 <th colspan="2" rowspan="2">Образовательная программа</th>

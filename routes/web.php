@@ -54,9 +54,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 		// General Report 
 		Route::get('greport', 'GReportController@index')->name('greport.index');
 		Route::get('greport/pdf', 'GReportController@pdf')->name('greport.pdf');
+		Route::get('greport/pdf/{created_at_from}/{created_at_to}', 'GReportController@pdf')->name('greport.pdf');
 		// Reception Report 
 		Route::get('rreport', 'RReportController@index')->name('rreport.index');
 		Route::get('rreport/pdf', 'RReportController@pdf')->name('rreport.pdf');
+		Route::get('rreport/pdf/{created_at_from}/{created_at_to}', 'RReportController@pdf')->name('rreport.pdf');
 	});
 
 	// GRADUATE

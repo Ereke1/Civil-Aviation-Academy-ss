@@ -54,7 +54,7 @@ $countAll = $countDoctoral + $totalMaster + $total;
                 </div>
             </form>
         </div>
-        <h3>Скачать в <a href="{{ route('admin.enrollee.rreport.pdf') }}">PDF</a></h3>
+        <h3>Скачать в <a href="{{ route('admin.enrollee.rreport.pdf',['created_at_from' => $created_at_from ? $created_at_from : 0 ,'created_at_to' => $created_at_to ? $created_at_to : 0 ]) }}">PDF</a></h3>
         <table class="report">
             <tr>
                 <th colspan="2" rowspan="2">Образовательная программа</th>
@@ -286,7 +286,7 @@ $countAll = $countDoctoral + $totalMaster + $total;
                 <td class="bg-chair">{!! $countMaster5 !!}</td>
             </tr>
             <tr>
-                <td>6</td>
+                <td>5</td>
                 <td>Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)</td>
                 <td>8</td>
                 <td class="bg-chair">{!! $countMaster6 !!}</td>
