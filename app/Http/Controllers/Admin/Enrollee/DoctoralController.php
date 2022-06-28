@@ -146,7 +146,7 @@ class DoctoralController extends Controller
 				return redirect()->back()->with('alert', 'Процесс изменен и удалён № дела');
 			} elseif ($request->process === 'Сдал документы' && $data->case_number === NULL) {
 				$data->process = $request->process;
-				$findLastCaseNumber = Applications::orderBy('case_number', 'desc')->pluck('case_number')->first();
+				$findLastCaseNumber = Applications::where('created_at', '>=', "2022-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
 				$data->case_number = $findLastCaseNumber + 1;
 				$data->save();
 				return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
