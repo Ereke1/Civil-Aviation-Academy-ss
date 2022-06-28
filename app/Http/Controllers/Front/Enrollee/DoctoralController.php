@@ -43,7 +43,7 @@ class DoctoralController extends Controller
 		$countKT = $request->tgo_magister + $request->prof_sub_magister_1 + $request->prof_sub_magister_2 + $request->eng_magister;
 		DB::table('applications')
 			->updateOrInsert(
-				['surname' => $request->surname, 'name' => $request->name],
+				['surname' => $request->surname, 'name' => $request->name, 'process' => ('Не дозвонились' || 'В обработке' || 'Обработанный' || 'Отказ')],
 				[
 					'type' => $request->type,
 					'tgo_magister' => $request->tgo_magister,

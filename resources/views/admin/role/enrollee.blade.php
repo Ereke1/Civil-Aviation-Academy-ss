@@ -23,5 +23,8 @@
         <a href="{{ route('admin.enrollee.deleted.index') }}" @if ($active_menu === 'Удалённые') class="active" @endif>
             Удалённые
         </a>
+        <a href="{{ route('admin.enrollee.documents.index') }}" @if ($active_menu === 'Документы') class="active" @endif>
+            Документы
+        </a>
     </div>
 </div>

@@ -50,12 +50,22 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'master' => 'MasterController',
 			'doctoral' => 'DoctoralController',
 			'deleted' => 'DeletedController',
+			'documents' => 'DocumentsController',
 		]);
-		// General Report 
+
+        //Documents
+		Route::get('documents', 'DocumentsController@index')->name('documents.index');
+		Route::get('documents/resetFilter', 'DocumentsController@resetFilter')->name('documents.resetFilter');
+		Route::get('documents/word-statements/{id}', 'DocumentsController@wordExportStatements')->name('documents.wordExportStatements');
+		Route::get('documents/word-bilateralAgreement/{id}', 'DocumentsController@wordExportBilateralAgreement')->name('documents.wordExportBilateralAgreement');
+		Route::get('documents/word-stateGrantAgreement/{id}', 'DocumentsController@wordExportStateGrantAgreement')->name('documents.wordExportStateGrantAgreement');
+		Route::get('documents/word-applicationForCredits/{id}', 'DocumentsController@wordExportApplicationForCredits')->name('documents.wordExportApplicationForCredits');
+
+		// General Report
 		Route::get('greport', 'GReportController@index')->name('greport.index');
 		Route::get('greport/pdf', 'GReportController@pdf')->name('greport.pdf');
 		Route::get('greport/pdf/{created_at_from}/{created_at_to}', 'GReportController@pdf')->name('greport.pdf');
-		// Reception Report 
+		// Reception Report
 		Route::get('rreport', 'RReportController@index')->name('rreport.index');
 		Route::get('rreport/pdf', 'RReportController@pdf')->name('rreport.pdf');
 		Route::get('rreport/pdf/{created_at_from}/{created_at_to}', 'RReportController@pdf')->name('rreport.pdf');

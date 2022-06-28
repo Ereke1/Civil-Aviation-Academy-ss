@@ -64,7 +64,7 @@ class BachelorController extends Controller
 
 			DB::table('applications')
 				->updateOrInsert(
-					['surname' => $request->surname, 'name' => $request->name],
+					['surname' => $request->surname, 'name' => $request->name, 'process' => ('Не дозвонились' || 'В обработке' || 'Обработанный' || 'Отказ')],
 					[
 						'base' => $request->base,
 						'type' => $request->type,
@@ -118,7 +118,7 @@ class BachelorController extends Controller
 
 			DB::table('applications')
 				->updateOrInsert(
-					['surname' => $request->surname, 'name' => $request->name],
+					['surname' => $request->surname, 'name' => $request->name, 'process' => ('Не дозвонились' || 'В обработке' || 'Обработанный' || 'Отказ')],
 					[
 						'base' => $request->base,
 						'type' => $request->type,
@@ -165,7 +165,7 @@ class BachelorController extends Controller
 			$image_ielts->move($destinationPathIelts, $image_name_ielts);
 			DB::table('applications')
 				->updateOrInsert(
-					['surname' => $request->surname, 'name' => $request->name],
+					['surname' => $request->surname, 'name' => $request->name, 'process' => ('Не дозвонились' || 'В обработке' || 'Обработанный' || 'Отказ')],
 					[
 						'base' => $request->base,
 						'type' => $request->type,
@@ -205,7 +205,7 @@ class BachelorController extends Controller
 		} else {
 			DB::table('applications')
 				->updateOrInsert(
-					['surname' => $request->surname, 'name' => $request->name],
+					['surname' => $request->surname, 'name' => $request->name, 'process' => ('Не дозвонились' || 'В обработке' || 'Обработанный' || 'Отказ')],
 					[
 						'base' => $request->base,
 						'type' => $request->type,

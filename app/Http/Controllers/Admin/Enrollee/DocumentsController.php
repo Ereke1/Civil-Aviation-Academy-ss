@@ -1,0 +1,407 @@
+<?php
+
+namespace App\Http\Controllers\Admin\Enrollee;
+
+use App\Http\Controllers\Controller;
+use App\Models\Applications;
+use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use PhpOffice\PhpWord\TemplateProcessor;
+
+class DocumentsController extends Controller
+{
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index(Request $request)
+	{
+		$years = $request->years;
+		// Filter
+		$whereArray = [
+			'status' => '0',
+			'base' => $request->base,
+			'haveENT' => $request->haveENT,
+			'haveVLEK' => $request->haveVLEK,
+			'haveIELTS' => $request->haveIELTS,
+			'citizen' => $request->citizen,
+			'programms' => $request->programms,
+			'region' => $request->region,
+			'process' => $request->process,
+			'created_at' => $request->created_at,
+			'surname' => $request->surname,
+			'iin' => $request->iin
+		];
+		$whereArray = array_filter($whereArray, 'strlen');
+		$countENT = $request->countENT;
+		$created_at_from = $request->created_at_from;
+        $created_at_to = $request->created_at_to;
+		$sort = $request->sort;
+
+        $data = Applications::select('*')
+        ->where($whereArray)
+            ->orderBy('created_at', 'desc')
+            ->paginate(100)
+            ->appends($whereArray)
+            ->appends(compact('countENT'));
+
+
+        // Count
+        $countData = Applications::select('*')
+        ->where($whereArray)
+            ->count();
+
+		// Data
+		$dataArr = [
+			'data' => $data,
+			'base' => $request->base,
+			'haveENT' => $request->haveENT,
+			'haveVLEK' => $request->haveVLEK,
+			'haveIELTS' => $request->haveIELTS,
+			'citizen' => $request->citizen,
+			'programms' => $request->programms,
+			'region' => $request->region,
+			'years' => $request->years,
+			'created_at_from' => $request->created_at_from,
+            'created_at_to' => $request->created_at_to,
+			'process' => $request->process,
+			'countENT' => $request->countENT,
+			'sort' => $request->sort,
+			'countData' => $countData
+		];
+		return view('admin.enrollee.documents.index', $dataArr);
+	}
+
+    public function resetFilter(Request $request){
+        $_GET['iin']='';
+        $_GET['surname']='';
+
+        $this->index($request);
+    }
+
+    public function wordExportStatements($id) {
+        $data = Applications::find($id);
+        $templateProcessor = new TemplateProcessor('word-templates/statements.docx');
+        $templateProcessor->setValue('surname', $data->surname);
+        $templateProcessor->setValue('name', $data->name);
+        $templateProcessor->setValue('patronymic', $data->patronymic);
+        $templateProcessor->setValue('programms', $data->programms);
+        $templateProcessor->setValue('lang_edu', $data->lang_edu);
+        $templateProcessor->setValue('region', $data->region);
+        $templateProcessor->setValue('case_number', $data->case_number);
+
+        //дата рождения
+        if( Str::startsWith($data->iin, ['0', '1']) ){
+            $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2).'.'.Str::substr($data->iin, 2, 2).'.20'.Str::substr($data->iin, 0, 2));
+        }
+        else {
+            $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2).'.'.Str::substr($data->iin, 2, 2).'.19'.Str::substr($data->iin, 0, 2));
+        }
+
+        $fileName = $data->surname;
+        $templateProcessor->saveAs($fileName . ' (заявления).docx');
+        return response()->download($fileName . ' (заявления).docx')->deleteFileAfterSend(true);
+    }
+
+    public function wordExportBilateralAgreement($id) {
+        $data = Applications::find($id);
+        $templateProcessor = new TemplateProcessor('word-templates/BilateralAgreement.docx');
+        $templateProcessor->setValue('surname', $data->surname);
+        $templateProcessor->setValue('name', $data->name);
+        $templateProcessor->setValue('patronymic', $data->patronymic);
+        $templateProcessor->setValue('lang_edu', $data->lang_edu);
+        $templateProcessor->setValue('type', $data->type);
+        $templateProcessor->setValue('iin', $data->iin);
+        $templateProcessor->setValue('phone_1', $data->phone_1);
+        $templateProcessor->setValue('phone_2', $data->phone_2);
+        $templateProcessor->setValue('email', $data->email);
+
+        //степень в родительном падеже
+        if ($data->type === 'Бакалавриат'){
+            $templateProcessor->setValue('degree_rp_kz', 'бакалавр');
+            $templateProcessor->setValue('degree_rp_ru', 'бакалавра');
+        }
+        else if ($data->type === 'Магистратура') {
+            $templateProcessor->setValue('degree_rp_kz', 'магистр');
+            $templateProcessor->setValue('degree_rp_ru', 'магистра');
+        }
+        else if ($data->type === 'Докторантура') {
+            $templateProcessor->setValue('degree_rp_kz', 'PhD докторы');
+            $templateProcessor->setValue('degree_rp_ru', 'доктора PhD');
+        }
+
+        //образовательная программа(рус)
+        $templateProcessor->setValue('programs_ru', $data->programms);
+
+        //образовательная программа(каз)
+        if($data->programms === 'Лётная эксплуатация самолётов (пилот)'){
+            $templateProcessor->setValue('programs_kz', 'Азаматтық ұшақтарды ұшуда пайдалану (ұшқыш)');
+        }
+        else if ($data->programms === 'Лётная эксплуатация вертолётов (пилот)') {
+            $templateProcessor->setValue('programs_kz', 'Азаматтық тікұшақтарды ұшуда пайдалану (ұшқыш)');
+        }
+        else if ($data->programms === 'Обслуживание воздушного движения') {
+            $templateProcessor->setValue('programs_kz', 'Әуе қозғалысына қызмет көрсету және ұшуда аэронавигациялық қамтамасыз ету  (авиадиспетчер)');
+        }
+        else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
+        }
+        else if ($data->programms === 'Техническая эксплуатация летательных аппаратов и двигателей') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды техникалық пайдалану');
+        }
+        else if ($data->programms === 'Обеспечение авиационной безопасности') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық қауіпсіздікті қамтамасыз ету');
+        }
+        else if ($data->programms === 'Обслуживание наземного радиоэлектронного оборудования аэропортов') {
+            $templateProcessor->setValue('programs_kz', 'Әуежайлардың жердегі радиоэлектрондық жабдықтарына қызмет көрсету');
+        }
+        else if ($data->programms === 'Организация аэропортовой деятельности') {
+            $templateProcessor->setValue('programs_kz', 'Әуежай қызметін ұйымдастыру');
+        }
+        else if ($data->programms === 'Организация авиационных перевозок') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық тасымалдауды ұйымдастыру');
+        }
+        else if ($data->programms === 'Логистика на транспорте') {
+            $templateProcessor->setValue('programs_kz', 'Көліктегі логистика');
+        }
+        else if ($data->programms === 'Технология транспортных процессов в авиации') {
+            $templateProcessor->setValue('programs_kz', 'Авиациядағы көлік процестерінің технологиясы');
+        }
+
+        //дата рождения
+        if( Str::startsWith($data->iin, ['0', '1']) ){
+            $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2).'.'.Str::substr($data->iin, 2, 2).'.20'.Str::substr($data->iin, 0, 2));
+        }
+        else {
+            $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2).'.'.Str::substr($data->iin, 2, 2).'.19'.Str::substr($data->iin, 0, 2));
+        }
+
+        $fileName = $data->surname;
+        $templateProcessor->saveAs($fileName . ' (двусторонний договор).docx');
+        return response()->download($fileName . ' (двусторонний договор).docx')->deleteFileAfterSend(true);
+    }
+
+    public function wordExportStateGrantAgreement($id) {
+        $data = Applications::find($id);
+        $templateProcessor = new TemplateProcessor('word-templates/Agreement(state grant).docx');
+        $templateProcessor->setValue('surname', $data->surname);
+        $templateProcessor->setValue('name', $data->name);
+        $templateProcessor->setValue('patronymic', $data->patronymic);
+        $templateProcessor->setValue('lang_edu', $data->lang_edu);
+        $templateProcessor->setValue('type', $data->type);
+        $templateProcessor->setValue('iin', $data->iin);
+        $templateProcessor->setValue('phone_1', $data->phone_1);
+        $templateProcessor->setValue('phone_2', $data->phone_2);
+        $templateProcessor->setValue('email', $data->email);
+
+        //степень в родительном падеже
+        if ($data->type === 'Бакалавриат'){
+            $templateProcessor->setValue('degree_rp_kz', 'бакалавр');
+            $templateProcessor->setValue('degree_rp_ru', 'бакалавра');
+        }
+        else if ($data->type === 'Магистратура') {
+            $templateProcessor->setValue('degree_rp_kz', 'магистр');
+            $templateProcessor->setValue('degree_rp_ru', 'магистра');
+        }
+        else if ($data->type === 'Докторантура') {
+            $templateProcessor->setValue('degree_rp_kz', 'PhD докторы');
+            $templateProcessor->setValue('degree_rp_ru', 'доктора PhD');
+        }
+
+        //образовательная программа(рус)
+        $templateProcessor->setValue('programs_ru', $data->programms);
+
+        //образовательная программа(каз)
+        if($data->programms === 'Лётная эксплуатация самолётов (пилот)'){
+            $templateProcessor->setValue('programs_kz', 'Азаматтық ұшақтарды ұшуда пайдалану (ұшқыш)');
+        }
+        else if ($data->programms === 'Лётная эксплуатация вертолётов (пилот)') {
+            $templateProcessor->setValue('programs_kz', 'Азаматтық тікұшақтарды ұшуда пайдалану (ұшқыш)');
+        }
+        else if ($data->programms === 'Обслуживание воздушного движения') {
+            $templateProcessor->setValue('programs_kz', 'Әуе қозғалысына қызмет көрсету және ұшуда аэронавигациялық қамтамасыз ету  (авиадиспетчер)');
+        }
+        else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
+        }
+        else if ($data->programms === 'Техническая эксплуатация летательных аппаратов и двигателей') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды техникалық пайдалану');
+        }
+        else if ($data->programms === 'Обеспечение авиационной безопасности') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық қауіпсіздікті қамтамасыз ету');
+        }
+        else if ($data->programms === 'Обслуживание наземного радиоэлектронного оборудования аэропортов') {
+            $templateProcessor->setValue('programs_kz', 'Әуежайлардың жердегі радиоэлектрондық жабдықтарына қызмет көрсету');
+        }
+        else if ($data->programms === 'Организация аэропортовой деятельности') {
+            $templateProcessor->setValue('programs_kz', 'Әуежай қызметін ұйымдастыру');
+        }
+        else if ($data->programms === 'Организация авиационных перевозок') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық тасымалдауды ұйымдастыру');
+        }
+        else if ($data->programms === 'Логистика на транспорте') {
+            $templateProcessor->setValue('programs_kz', 'Көліктегі логистика');
+        }
+        else if ($data->programms === 'Технология транспортных процессов в авиации') {
+            $templateProcessor->setValue('programs_kz', 'Авиациядағы көлік процестерінің технологиясы');
+        }
+
+        //дата рождения
+        if( Str::startsWith($data->iin, ['0', '1']) ){
+            $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2).'.'.Str::substr($data->iin, 2, 2).'.20'.Str::substr($data->iin, 0, 2));
+        }
+        else {
+            $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2).'.'.Str::substr($data->iin, 2, 2).'.19'.Str::substr($data->iin, 0, 2));
+        }
+
+        $fileName = $data->surname;
+        $templateProcessor->saveAs($fileName . ' (договор на оказание образовательных услуг на основе госгранта).docx');
+        return response()->download($fileName . ' (договор на оказание образовательных услуг на основе госгранта).docx')->deleteFileAfterSend(true);
+    }
+
+    public function wordExportApplicationForCredits($id) {
+        $data = Applications::find($id);
+        $templateProcessor = new TemplateProcessor('word-templates/applicationForCredits.docx');
+        $templateProcessor->setValue('surname', $data->surname);
+        $templateProcessor->setValue('name', $data->name);
+        $templateProcessor->setValue('patronymic', $data->patronymic);
+        $templateProcessor->setValue('lang_edu', $data->lang_edu);
+        $templateProcessor->setValue('type', $data->type);
+        $templateProcessor->setValue('phone_1', $data->phone_1);
+
+        //дата рождения
+        if( Str::startsWith($data->iin, ['0', '1']) ){
+            $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2).'.'.Str::substr($data->iin, 2, 2).'.20'.Str::substr($data->iin, 0, 2));
+        }
+        else {
+            $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2).'.'.Str::substr($data->iin, 2, 2).'.19'.Str::substr($data->iin, 0, 2));
+        }
+
+        //пол
+        if( Str::substr($data->iin, 6, 1) == '1' || Str::substr($data->iin, 6, 1) == '3' || Str::substr($data->iin, 6, 1) == '5' ){
+            $templateProcessor->setValue('gender_kz', 'ер');
+            $templateProcessor->setValue('gender_ru', 'мужской');
+        }
+        else {
+            $templateProcessor->setValue('gender_kz', 'әйел');
+            $templateProcessor->setValue('gender_ru', 'женский');
+        }
+
+        //на базе
+        if ($data->base === '11-го класса') {
+            $templateProcessor->setValue('base_ru', '11-го класса');
+            $templateProcessor->setValue('base_kz', '11 сынып');
+        }
+        else if ($data->base === 'Высшего образования') {
+            $templateProcessor->setValue('base_ru', 'ВО');
+            $templateProcessor->setValue('base_kz', 'ЖБ');
+        }
+        else if ($data->base == 'Технического и профессионального образования (колледжа)') {
+            $templateProcessor->setValue('base_ru', 'ТиПО');
+            $templateProcessor->setValue('base_kz', 'ТжКБ');
+        }
+
+        $fileName = $data->surname;
+        $templateProcessor->saveAs($fileName . ' (заявление для поступающих по кредитам).docx');
+        return response()->download($fileName . ' (заявление для поступающих по кредитам).docx')->deleteFileAfterSend(true);
+    }
+
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create()
+	{
+		//
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store(Request $request)
+	{
+	}
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show($id)
+	{
+		//
+	}
+
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id)
+	{
+		$data = Applications::find($id);
+		$data->status = 1;
+		$data->updated_at = \Carbon\Carbon::now('Asia/Almaty');
+		$data->save();
+		return redirect()->back()->with('alert', 'Анкета перемещена в архив');
+	}
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(Request $request, $id)
+	{
+		if (Auth::user()->role === '999') {
+			return redirect()->back()->with('alert', 'У вас не прав на это действие');
+		} else {
+			$data = Applications::find($request->id);
+			if ($data->process === 'Сдал документы' && $request->process === 'Отказ') {
+				$data->process = 'Отказ';
+				$data->case_number = NULL;
+				$data->save();
+				return redirect()->back()->with('alert', 'Процесс изменен и удалён № дела');
+			} elseif ($request->process === 'Сдал документы' && $data->case_number === NULL) {
+				$data->process = $request->process;
+				$findLastCaseNumber = Applications::orderBy('case_number', 'desc')->pluck('case_number')->first();
+				$data->case_number = $findLastCaseNumber + 1;
+				$data->save();
+				return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
+			} else {
+				$data->iin = $request->iin;
+				$data->base = $request->base;
+				$data->phone_1 = $request->phone_1;
+				$data->phone_2 = $request->phone_2;
+				$data->programms = $request->programms;
+				$data->process = $request->process;
+				$data->surname = $request->surname;
+				$data->name = $request->name;
+				$data->patronymic = $request->patronymic;
+				$data->save();
+				return redirect()->back()->with('alert', 'Корректировка выполнена!');
+			}
+		}
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy(Request $request)
+	{
+	}
+}
