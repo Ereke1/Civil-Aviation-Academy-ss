@@ -61,8 +61,8 @@ return [
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
-        ],
-
+        ], 
+  
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
@@ -100,7 +100,7 @@ return [
     |
     | This table keeps track of all the migrations that have already run for
     | your application. Using this information, we can determine which of
-    | the migrations on disk haven't actually been run in the database.
+    | the migrations on disk haven't actually been run in the database.hhhhhhhhhhh
     |
     */
 
