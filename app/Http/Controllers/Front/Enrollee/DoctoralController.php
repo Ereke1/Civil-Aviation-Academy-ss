@@ -19,7 +19,9 @@ class DoctoralController extends Controller
 	public function index()
 	{
 		$tree = Navigation::tree();
-		return view('front.enrollee.doctoral', compact('tree'));
+        $nationality_list = DB::table('nationalities')
+        ->get();
+		return view('front.enrollee.doctoral', compact('tree'))->with(compact('nationality_list', 'nationality_list'));
 	}
 
 	/**
@@ -43,9 +45,10 @@ class DoctoralController extends Controller
 		$countKT = $request->tgo_magister + $request->prof_sub_magister_1 + $request->prof_sub_magister_2 + $request->eng_magister;
 		DB::table('applications')
 			->updateOrInsert(
-				['surname' => $request->surname, 'name' => $request->name, 'process' => ('Не дозвонились' || 'В обработке' || 'Обработанный' || 'Отказ')],
+				['surname' => $request->surname, 'name' => $request->name, 'case_number' => NULL ],
 				[
 					'type' => $request->type,
+                    'lang_edu' => $request->language,
 					'tgo_magister' => $request->tgo_magister,
 					'prof_sub_magister_1' => $request->prof_sub_magister_1,
 					'prof_sub_magister_2' => $request->prof_sub_magister_2,
@@ -57,6 +60,9 @@ class DoctoralController extends Controller
 					'countries' => $request->countries,
 					'programms' => $request->programms,
 					'patronymic' => $request->patronymic,
+					'birthdate' => $request->birthdate,
+					'gender' => $request->gender,
+                    'nationality_id' => $request->nationality,
 					'phone_1' => $request->phone_1,
 					'phone_2' => $request->phone_2,
 					'email' => $request->email,

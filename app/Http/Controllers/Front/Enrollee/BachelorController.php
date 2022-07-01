@@ -19,7 +19,9 @@ class BachelorController extends Controller
 	public function index()
 	{
 		$tree = Navigation::tree();
-		return view('front.enrollee.bachelor', compact('tree'));
+        $nationality_list = DB::table('nationalities')
+        ->get();
+		return view('front.enrollee.bachelor', compact('tree'))->with(compact('nationality_list', 'nationality_list'));
 	}
 
 	/**
@@ -62,9 +64,10 @@ class BachelorController extends Controller
 			$destinationPathIelts = public_path('/storage/applications/ielts/' . $request->surname . ' ' . $request->name);
 			$image_ielts->move($destinationPathIelts, $image_name_ielts);
 
+
 			DB::table('applications')
 				->updateOrInsert(
-					['surname' => $request->surname, 'name' => $request->name, 'process' => ('Не дозвонились' || 'В обработке' || 'Обработанный' || 'Отказ')],
+					['surname' => $request->surname, 'name' => $request->name, 'case_number' => NULL ],
 					[
 						'base' => $request->base,
 						'type' => $request->type,
@@ -77,6 +80,9 @@ class BachelorController extends Controller
 						'readLit' => $request->readLit,
 						'historyKZ' => $request->historyKZ,
 						'iin' => $request->iin,
+						'birthdate' => $request->birthdate,
+						'gender' => $request->gender,
+						'nationality_id' => $request->nationality,
 						'math' => $request->math,
 						'profSub' => $request->profSub,
 						'aviaSec' => $request->aviaSec,
@@ -118,7 +124,7 @@ class BachelorController extends Controller
 
 			DB::table('applications')
 				->updateOrInsert(
-					['surname' => $request->surname, 'name' => $request->name, 'process' => ('Не дозвонились' || 'В обработке' || 'Обработанный' || 'Отказ')],
+					['surname' => $request->surname, 'name' => $request->name, 'case_number' => NULL ],
 					[
 						'base' => $request->base,
 						'type' => $request->type,
@@ -131,6 +137,9 @@ class BachelorController extends Controller
 						'readLit' => $request->readLit,
 						'historyKZ' => $request->historyKZ,
 						'iin' => $request->iin,
+						'birthdate' => $request->birthdate,
+						'gender' => $request->gender,
+						'nationality_id' => $request->nationality,
 						'math' => $request->math,
 						'profSub' => $request->profSub,
 						'aviaSec' => $request->aviaSec,
@@ -165,7 +174,7 @@ class BachelorController extends Controller
 			$image_ielts->move($destinationPathIelts, $image_name_ielts);
 			DB::table('applications')
 				->updateOrInsert(
-					['surname' => $request->surname, 'name' => $request->name, 'process' => ('Не дозвонились' || 'В обработке' || 'Обработанный' || 'Отказ')],
+					['surname' => $request->surname, 'name' => $request->name, 'case_number' => NULL ],
 					[
 						'base' => $request->base,
 						'type' => $request->type,
@@ -178,6 +187,9 @@ class BachelorController extends Controller
 						'readLit' => $request->readLit,
 						'historyKZ' => $request->historyKZ,
 						'iin' => $request->iin,
+						'birthdate' => $request->birthdate,
+						'gender' => $request->gender,
+						'nationality_id' => $request->nationality,
 						'math' => $request->math,
 						'profSub' => $request->profSub,
 						'aviaSec' => $request->aviaSec,
@@ -205,7 +217,7 @@ class BachelorController extends Controller
 		} else {
 			DB::table('applications')
 				->updateOrInsert(
-					['surname' => $request->surname, 'name' => $request->name, 'process' => ('Не дозвонились' || 'В обработке' || 'Обработанный' || 'Отказ')],
+					['surname' => $request->surname, 'name' => $request->name, 'case_number' => NULL ],
 					[
 						'base' => $request->base,
 						'type' => $request->type,
@@ -218,6 +230,9 @@ class BachelorController extends Controller
 						'readLit' => $request->readLit,
 						'historyKZ' => $request->historyKZ,
 						'iin' => $request->iin,
+						'birthdate' => $request->birthdate,
+						'gender' => $request->gender,
+						'nationality_id' => $request->nationality,
 						'math' => $request->math,
 						'profSub' => $request->profSub,
 						'aviaSec' => $request->aviaSec,

@@ -218,13 +218,13 @@
                     <td>{!! $item->case_number !!}</td>
                     <td>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#userModal{!! $item->id !!}">
+                            data-target="#userModal{!! $item->applid !!}">
                             Посмотреть
                         </button>
                     </td>
                 </tr>
                 <!-- Modal -->
-                <div class="modal fade" id="userModal{!! $item->id !!}" tabindex="-1">
+                <div class="modal fade" id="userModal{!! $item->applid !!}" tabindex="-1">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -233,10 +233,10 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('admin.enrollee.bachelor.update', $item->id) }}" method="POST">
+                                <form action="{{ route('admin.enrollee.bachelor.update', $item->applid) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <input type="hidden" name="id" value="{!! $item->id !!}">
+                                    <input type="hidden" name="id" value="{!! $item->applid !!}">
                                     <div class="blocks">
                                         <div class="block">
                                             <h5 class="block__title">Фамилия</h5>
@@ -252,13 +252,44 @@
                                                 <p class="block__info">{!! $item->patronymic !!}</p>
                                             </div>
                                         @endif
+                                        @if ($item->birthdate !== NULL)
+                                        <div class="block">
+                                            <h5 class="block__title">Дата рождения</h5>
+                                            <p class="block__info">
+                                                {!! date('d.m.Y', strtotime($item->birthdate)) !!}
+                                            </p>
+                                        </div>
+                                        @endif
+                                        @if ($item->gender !== NULL)
+                                        <div class="block">
+                                            <h5 class="block__title">Пол</h5>
+                                            <p class="block__info">
+                                                {!! $item->gender !!}
+                                            </p>
+                                        </div>
+                                        @endif
+                                        @if ($item->nationality_id !== NULL)
+                                        <div class="block">
+                                            <h5 class="block__title">Национальность</h5>
+                                            <p class="block__info">
+                                                {!! mb_strtolower($item->nationality_ru, 'UTF-8') !!}
+                                            </p>
+                                        </div>
+                                        @endif
                                         <div class="block">
                                             <h5 class="block__title">Гражданство</h5>
                                             <p class="block__info">{!! $item->citizen !!}</p>
                                         </div>
                                         <div class="block">
                                             <h5 class="block__title">Язык обучения</h5>
-                                            <p class="block__info">{!! $item->lang_edu !!}</p>
+                                            <select name="lang_edu" class="block__info">
+                                                <option value="Казахский"
+                                                    @if ($item->lang_edu === 'Казахский') selected @endif>Казахский
+                                                </option>
+                                                <option value="Русский"
+                                                    @if ($item->lang_edu === 'Русский') selected @endif>
+                                                    Русский</option>
+                                            </select>
                                         </div>
                                         @if (isset($item->iin))
                                             <div class="block">
@@ -513,7 +544,7 @@
                                         </div>
                                 </form>
                                 <div class="block">
-                                    <form action="{{ route('admin.enrollee.bachelor.edit', $item->id) }}" method="GET">
+                                    <form action="{{ route('admin.enrollee.bachelor.edit', $item->applid) }}" method="GET">
                                         @csrf
                                         <button type="submit" class="button"
                                             onclick="return confirm('Удалить?')">Удалить</button>

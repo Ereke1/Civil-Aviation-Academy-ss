@@ -1,3 +1,7 @@
+//фильтр для национальностей
+// $(document).ready(function() {
+//     $('.nationality').select2();
+// });
 // Объявление переменных input
 function admissionInputVal() {
 	let base = document.getElementById('base').value
@@ -324,6 +328,9 @@ function regionFunc() {
 	document.getElementById('surnameBlock').classList.remove('disabled')
 	document.getElementById('nameBlock').classList.remove('disabled')
 	document.getElementById('patronymicBlock').classList.remove('disabled')
+	document.getElementById('birthdateBlock').classList.remove('disabled')
+	document.getElementById('genderBlock').classList.remove('disabled')
+	document.getElementById('nationalityBlock').classList.remove('disabled')
 	document.getElementById('phoneBlock-1').classList.remove('disabled')
 	document.getElementById('phoneBlock-2').classList.remove('disabled')
 	document.getElementById('emailBlock').classList.remove('disabled')
@@ -335,6 +342,9 @@ function countryFunc() {
 	document.getElementById('surnameBlock').classList.remove('disabled')
 	document.getElementById('nameBlock').classList.remove('disabled')
 	document.getElementById('patronymicBlock').classList.remove('disabled')
+	document.getElementById('birthdateBlock').classList.remove('disabled')
+	document.getElementById('genderBlock').classList.remove('disabled')
+	document.getElementById('nationalityBlock').classList.remove('disabled')
 	document.getElementById('phoneBlock-1').classList.remove('disabled')
 	document.getElementById('phoneBlock-2').classList.remove('disabled')
 	document.getElementById('emailBlock').classList.remove('disabled')

@@ -19,6 +19,13 @@
                                 <option value="Авиационная техника и технологии">Авиационная техника и технологии</option>
                             </select>
                         </div>
+                        <div class="disabled" id="languageBlock">
+                            <label for="language">Язык обучения:</label>
+                            <select name="language" id="language" onchange="languageFunc()">
+                                <option value="">-----</option>
+                                <option value="Русский">Русский</option>
+                            </select>
+                        </div>
                         <div class="disabled" id="citizenBlock">
                             <label for="citizen">Гражданство:</label>
                             <select name="citizen" id="citizen" onchange="citizenFunc()">
@@ -308,6 +315,35 @@
                             <label for="patronymic">Отчество (при наличии)</label>
                             <input type="text" name="patronymic" placeholder="Согласно документу">
                         </div>
+                        <div id="birthdateBlock" class="disabled">
+                            <label for="birthdate">Дата рождения</label>
+                            <input type="date" name="birthdate" placeholder="Введите дату рождения">
+                        </div>
+                        <div id="genderBlock" class="disabled">
+                            <label for="gender">Выберите пол</label>
+                            <select name="gender" id="gender">
+                                <option value="">-----</option>
+                                <option value="мужской">мужской</option>
+                                <option value="женский">женский</option>
+                            </select>
+                        </div>
+
+                        <div id="nationalityBlock" class="disabled">
+                            <label for="nationality">Национальность</label>
+                            <select name="nationality" id="nationality" class="nationality">
+                                <option value="">-----</option>
+                                @foreach ($nationality_list as $nationality)
+                                    @if (Config::get('app.locale') == 'kk')
+                                        <option value="{{ $nationality->id }}">{{ mb_strtolower($nationality->nationality_kz, 'UTF-8') }}</option>
+                                    @elseif (Config::get('app.locale') == 'ru')
+                                        <option value="{{ $nationality->id }}">{{ mb_strtolower($nationality->nationality_ru, 'UTF-8') }}</option>
+                                    @else
+                                        <option value="{{ $nationality->id }}">{{ mb_strtolower($nationality->nationality_en, 'UTF-8') }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div id="phoneBlock-1" class="disabled">
                             <label for="phone_1">Телефон</label>
                             <input type="tel" name="phone_1" class="phone" placeholder="Введите телефон" required>

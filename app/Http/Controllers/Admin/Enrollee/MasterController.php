@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Applications;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class MasterController extends Controller
 {
@@ -32,37 +33,44 @@ class MasterController extends Controller
 		];
 		$whereArray = array_filter($whereArray, 'strlen');
 		if (!isset($created_at_from) || !isset($created_at_to)) {
-			$data = Applications::select('*')
+			$data = DB::table('applications')
+            ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+            ->join('nationalities','applications.nationality_id','=','nationalities.id')
 		//	->whereDate('created_at', '>=', $created_at_from)
 		//	->whereDate('created_at', '<=', $created_at_to)
 			->where($whereArray)
 			->orderBy('created_at', 'desc')
 			->paginate(100)
 			->appends($whereArray);
-		$countData = Applications::select('*')
+		$countData = DB::table('applications')
+        ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+        ->join('nationalities','applications.nationality_id','=','nationalities.id')
 		//	->whereDate('created_at', '>=', $created_at_from)
 		//	->whereDate('created_at', '<=', $created_at_to)
 			->where($whereArray)
 			->count();
 		}else {
-			$data = Applications::select('*')
+			$data = DB::table('applications')
+            ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+            ->join('nationalities','applications.nationality_id','=','nationalities.id')
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->where($whereArray)
 			->orderBy('created_at', 'desc')
 			->paginate(100)
 			->appends($whereArray);
-		$countData = Applications::select('*')
+		$countData = DB::table('applications')
+        ->join('nationalities','applications.nationality_id','=','nationalities.id')
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->where($whereArray)
 			->count();
 		}
 		//Sort
-		if (isset($request->sort)) {
-			$data = $data->sortBy($request->sort);
-			$data->values()->all();
-		}
+		// if (isset($request->sort)) {
+		// 	$data = $data->sortBy($request->sort);
+		// 	$data->values()->all();
+		// }
 		// Data
 		$dataArr = [
 			'data' => $data,
@@ -146,13 +154,14 @@ class MasterController extends Controller
 				return redirect()->back()->with('alert', 'Процесс изменен и удалён № дела');
 			} elseif ($request->process === 'Сдал документы' && $data->case_number === NULL) {
 				$data->process = $request->process;
-				$findLastCaseNumber = Applications::where('created_at', '>=', "2022-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
+				$findLastCaseNumber = Applications::orderBy('case_number', 'desc')->pluck('case_number')->first();
 				$data->case_number = $findLastCaseNumber + 1;
 				$data->save();
 				return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
 			} else {
 				$data->iin = $request->iin;
 				$data->programms = $request->programms;
+				$data->lang_edu = $request->lang_edu;
 				$data->phone_1 = $request->phone_1;
 				$data->phone_2 = $request->phone_2;
 				$data->process = $request->process;

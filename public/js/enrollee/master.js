@@ -40,8 +40,14 @@ function countryInputVal() {
 function programmsFunc() {
 	if (programmsInputVal() !== null) {
 		// Показываем блок готовности к обучению
-		document.getElementById('haveTestBlock').classList.remove('disabled')
+		document.getElementById('languageBlock').classList.remove('disabled')
 	}
+}
+
+// Поступление на базе
+function languageFunc() {
+	// Показываем поле гражданство
+	document.getElementById('haveTestBlock').classList.remove('disabled')
 }
 
 // Баллы по 1-му проф. предмету
@@ -115,6 +121,9 @@ function regionFunc() {
 		document.getElementById('surnameBlock').classList.remove('disabled')
 		document.getElementById('nameBlock').classList.remove('disabled')
 		document.getElementById('patronymicBlock').classList.remove('disabled')
+		document.getElementById('birthdateBlock').classList.remove('disabled')
+		document.getElementById('genderBlock').classList.remove('disabled')
+		document.getElementById('nationalityBlock').classList.remove('disabled')
 		document.getElementById('phoneBlock-1').classList.remove('disabled')
 		document.getElementById('phoneBlock-2').classList.remove('disabled')
 		document.getElementById('emailBlock').classList.remove('disabled')
@@ -129,6 +138,9 @@ function countryFunc() {
 		document.getElementById('surnameBlock').classList.remove('disabled')
 		document.getElementById('nameBlock').classList.remove('disabled')
 		document.getElementById('patronymicBlock').classList.remove('disabled')
+		document.getElementById('birthdateBlock').classList.remove('disabled')
+		document.getElementById('genderBlock').classList.remove('disabled')
+		document.getElementById('nationalityBlock').classList.remove('disabled')
 		document.getElementById('phoneBlock-1').classList.remove('disabled')
 		document.getElementById('phoneBlock-2').classList.remove('disabled')
 		document.getElementById('emailBlock').classList.remove('disabled')

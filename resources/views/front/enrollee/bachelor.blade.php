@@ -458,7 +458,8 @@
                                 <option value="Колумбия">Колумбия</option>
                                 <option value="Коморы">Коморы</option>
                                 <option value="Конго">Конго</option>
-                                <option value="Конго, демократическая республика">Конго, демократическая республика</option>
+                                <option value="Конго, демократическая республика">Конго, демократическая республика
+                                </option>
                                 <option value="Коста-Рика">Коста-Рика</option>
                                 <option value="Кот д`Ивуар">Кот д`Ивуар</option>
                                 <option value="Куба">Куба</option>
@@ -581,7 +582,8 @@
                                 <option value="Французская Гвиана">Французская Гвиана</option>
                                 <option value="Французская Полинезия">Французская Полинезия</option>
                                 <option value="Хорватия">Хорватия</option>
-                                <option value="Центрально-Африканская Республика">Центрально-Африканская Республика</option>
+                                <option value="Центрально-Африканская Республика">Центрально-Африканская Республика
+                                </option>
                                 <option value="Чад">Чад</option>
                                 <option value="Черногория">Черногория</option>
                                 <option value="Чехия">Чехия</option>
@@ -710,6 +712,37 @@
                             <label for="patronymic">Отчество (при наличии)</label>
                             <input type="text" name="patronymic" placeholder="Согласно удостоверению личности">
                         </div>
+
+                        <div id="birthdateBlock" class="disabled">
+                            <label for="birthdate">Дата рождения</label>
+                            <input type="date" name="birthdate" placeholder="Введите дату рождения">
+                        </div>
+
+                        <div id="genderBlock" class="disabled">
+                            <label for="gender">Выберите пол</label>
+                            <select name="gender" id="gender">
+                                <option value="">-----</option>
+                                <option value="мужской">мужской</option>
+                                <option value="женский">женский</option>
+                            </select>
+                        </div>
+
+                        <div id="nationalityBlock" class="disabled">
+                            <label for="nationality">Национальность</label>
+                            <select name="nationality" id="nationality" class="nationality">
+                                <option value="">-----</option>
+                                @foreach ($nationality_list as $nationality)
+                                    @if (Config::get('app.locale') == 'kk')
+                                        <option value="{{ $nationality->id }}">{{ mb_strtolower($nationality->nationality_kz, 'UTF-8') }}</option>
+                                    @elseif (Config::get('app.locale') == 'ru')
+                                        <option value="{{ $nationality->id }}">{{ mb_strtolower($nationality->nationality_ru, 'UTF-8') }}</option>
+                                    @else
+                                        <option value="{{ $nationality->id }}">{{ mb_strtolower($nationality->nationality_en, 'UTF-8') }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div id="phoneBlock-1" class="disabled">
                             <label for="phone_1">Телефон</label>
                             <input type="tel" name="phone_1" class="phone" placeholder="Введите телефон" required>
@@ -720,11 +753,13 @@
                         </div>
                         <div id="emailBlock" class="disabled">
                             <label for="email">E-mail</label>
-                            <input type="mail" name="email" id="email" placeholder="Введите вашу почту" required>
+                            <input type="mail" name="email" id="email" placeholder="Введите вашу почту"
+                                required>
                         </div>
                     </div>
                     <div id="buttonBlock">
-                        <button type="button" onclick="sendApplication()" id="button" class="disabled first">Отправить
+                        <button type="button" onclick="sendApplication()" id="button"
+                            class="disabled first">Отправить
                             анкету</button>
                     </div>
                 </form>

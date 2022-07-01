@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Applications;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BachelorController extends Controller
 {
@@ -40,7 +41,9 @@ class BachelorController extends Controller
 		if (isset($countENT)) {
             if (!isset($created_at_from) && !isset($created_at_to)) {
                 if ($sort === 'countENT') {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->orderBy($sort, 'desc')
@@ -49,7 +52,9 @@ class BachelorController extends Controller
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } elseif ($sort === 'surname') {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->orderBy($sort, 'asc')
@@ -58,7 +63,9 @@ class BachelorController extends Controller
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } else {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->orderBy('created_at', 'desc')
@@ -68,7 +75,9 @@ class BachelorController extends Controller
                 }
             } elseif (isset($created_at_from) && !isset($created_at_to)) {
                 if ($sort === 'countENT') {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->where('created_at', '>=', "$created_at_from 00:00:00")
@@ -78,7 +87,8 @@ class BachelorController extends Controller
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } elseif ($sort === 'surname') {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->where('created_at', '>=', "$created_at_from 00:00:00")
@@ -88,7 +98,9 @@ class BachelorController extends Controller
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } else {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->where('created_at', '>=', "$created_at_from 00:00:00")
@@ -100,7 +112,9 @@ class BachelorController extends Controller
             }
             elseif(isset($created_at_to) && !isset($created_at_from)){
                 if ($sort === 'countENT') {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->where('created_at', '<=', "$created_at_to 00:00:00")
@@ -110,7 +124,9 @@ class BachelorController extends Controller
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } elseif ($sort === 'surname') {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->where('created_at', '<=', "$created_at_to 00:00:00")
@@ -120,7 +136,9 @@ class BachelorController extends Controller
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } else {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->where('created_at', '<=', "$created_at_to 00:00:00")
@@ -132,7 +150,9 @@ class BachelorController extends Controller
             }
             else {
                 if ($sort === 'countENT') {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->where('created_at', '>=', "$created_at_from 00:00:00")
@@ -143,7 +163,9 @@ class BachelorController extends Controller
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } elseif ($sort === 'surname') {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->where('created_at', '>=', "$created_at_from 00:00:00")
@@ -154,7 +176,9 @@ class BachelorController extends Controller
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } else {
-                    $data = Applications::select('*')
+                    $data = DB::table('applications')
+                    ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
                         ->where($whereArray)
                         ->where('countENT', '>=', $countENT)
                         ->where('created_at', '>=', "$created_at_from 00:00:00")
@@ -167,14 +191,18 @@ class BachelorController extends Controller
             }
         } elseif ($sort === 'countENT') {
             if (!isset($created_at_from) && !isset($created_at_to)) {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                     ->where($whereArray)
                     ->orderBy($sort, 'desc')
                     ->paginate(100)
                     ->appends($whereArray)
                     ->appends(compact('sort'));
             } elseif (isset($created_at_from) && !isset($created_at_to)) {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                     ->where($whereArray)
                     ->where('created_at', '>=', "$created_at_from 00:00:00")
                     ->orderBy($sort, 'desc')
@@ -182,7 +210,9 @@ class BachelorController extends Controller
                     ->appends($whereArray)
                     ->appends(compact('sort'));
             } elseif (isset($created_at_to) && !isset($created_at_from)) {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->where('created_at', '<=', "$created_at_to 00:00:00")
                 ->orderBy($sort, 'desc')
@@ -191,7 +221,9 @@ class BachelorController extends Controller
                 ->appends(compact('sort'));
             }
             else {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->where('created_at', '>=', "$created_at_from 00:00:00")
                 ->where('created_at', '<=', "$created_at_to 00:00:00")
@@ -202,14 +234,18 @@ class BachelorController extends Controller
             }
         } elseif ($sort === 'surname') {
             if (!isset($created_at_from) && !isset($created_at_to)) {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                     ->where($whereArray)
                     ->orderBy($sort, 'asc')
                     ->paginate(100)
                     ->appends($whereArray)
                     ->appends(compact('sort'));
             } elseif (isset($created_at_from) && !isset($created_at_to)) {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                     ->where($whereArray)
                     ->where('created_at', '>=', "$created_at_from 00:00:00")
                     ->orderBy($sort, 'asc')
@@ -217,7 +253,9 @@ class BachelorController extends Controller
                     ->appends($whereArray)
                     ->appends(compact('sort'));
             } elseif (isset($created_at_to) && !isset($created_at_from)) {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                     ->where($whereArray)
                     ->where('created_at', '<=', "$created_at_to 00:00:00")
                     ->orderBy($sort, 'asc')
@@ -225,7 +263,9 @@ class BachelorController extends Controller
                     ->appends($whereArray)
                     ->appends(compact('sort'));
             } else {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->where('created_at', '>=', "$created_at_from 00:00:00")
                 ->where('created_at', '<=', "$created_at_to 00:00:00")
@@ -236,14 +276,18 @@ class BachelorController extends Controller
             }
         } else {
             if (!isset($created_at_from) && !isset($created_at_to)) {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                     ->where($whereArray)
                     ->orderBy('created_at', 'desc')
                     ->paginate(100)
                     ->appends($whereArray);
             }
             elseif (isset($created_at_from) && !isset($created_at_to)) {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                     ->where($whereArray)
                     ->where('created_at', '>=', "$created_at_from 00:00:00")
                     ->orderBy('created_at', 'desc')
@@ -251,7 +295,9 @@ class BachelorController extends Controller
                     ->appends($whereArray);
             }
             elseif (isset($created_at_to) && !isset($created_at_from)) {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                     ->where($whereArray)
                     ->where('created_at', '<=', "$created_at_to 00:00:00")
                     ->orderBy('created_at', 'desc')
@@ -259,7 +305,9 @@ class BachelorController extends Controller
                     ->appends($whereArray);
             }
             elseif (isset($created_at_to) && isset($created_at_from)) {
-                $data = Applications::select('*')
+                $data = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                     ->where($whereArray)
                     ->where('created_at', '>=', "$created_at_from 00:00:00")
                     ->where('created_at', '<=', "$created_at_to 00:00:00")
@@ -272,49 +320,65 @@ class BachelorController extends Controller
         // Count
         if (isset($countENT)) {
             if(isset($created_at_from) && isset($created_at_to)){
-                $countData = Applications::select('*')
+                $countData =DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->where('countENT', '>=', $countENT)
                 ->where('created_at', '>=', "$created_at_from 00:00:00")
                 ->where('created_at', '<=', "$created_at_to 00:00:00")
                 ->count();
             } elseif (isset($created_at_from) && !isset($created_at_to)) {
-                $countData = Applications::select('*')
+                $countData = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->where('countENT', '>=', $countENT)
                 ->where('created_at', '>=', "$created_at_from 00:00:00")
                 ->count();
             } elseif (!isset($created_at_from) && isset($created_at_to)) {
-                $countData = Applications::select('*')
+                $countData = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->where('countENT', '>=', $countENT)
                 ->where('created_at', '<=', "$created_at_to 00:00:00")
                 ->count();
             } else {
-                $countData = Applications::select('*')
+                $countData = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->where('countENT', '>=', $countENT)
                 ->count();
             }
         } else {
             if(isset($created_at_from) && isset($created_at_to)){
-                $countData = Applications::select('*')
+                $countData = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->where('created_at', '>=', "$created_at_from 00:00:00")
                 ->where('created_at', '<=', "$created_at_to 00:00:00")
                 ->count();
             } elseif (isset($created_at_from) && !isset($created_at_to)) {
-                $countData = Applications::select('*')
+                $countData = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->where('created_at', '>=', "$created_at_from 00:00:00")
                 ->count();
             } elseif (!isset($created_at_from) && isset($created_at_to)) {
-                $countData = Applications::select('*')
+                $countData = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->where('created_at', '<=', "$created_at_to 00:00:00")
                 ->count();
             } else {
-                $countData = Applications::select('*')
+                $countData = DB::table('applications')
+                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where($whereArray)
                 ->count();
             }
@@ -379,7 +443,9 @@ class BachelorController extends Controller
 	 */
 	public function edit($id)
 	{
-		$data = Applications::find($id);
+		$data =  DB::table('applications')
+        ->join('nationalities','applications.nationality_id','=','nationalities.id')
+        ->where('applications.id','=',$id);
 		$data->status = 1;
 		$data->updated_at = \Carbon\Carbon::now('Asia/Almaty');
 		$data->save();
@@ -398,7 +464,7 @@ class BachelorController extends Controller
 		if (Auth::user()->role === '999') {
 			return redirect()->back()->with('alert', 'У вас не прав на это действие');
 		} else {
-			$data = Applications::find($request->id);
+            $data = Applications::find($request->id);
 			if ($data->process === 'Сдал документы' && $request->process === 'Отказ') {
 				$data->process = 'Отказ';
 				$data->case_number = NULL;
@@ -406,13 +472,16 @@ class BachelorController extends Controller
 				return redirect()->back()->with('alert', 'Процесс изменен и удалён № дела');
 			} elseif ($request->process === 'Сдал документы' && $data->case_number === NULL) {
 				$data->process = $request->process;
-				$findLastCaseNumber = Applications::where('created_at', '>=', "2022-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
+				$findLastCaseNumber = DB::table('applications')
+                ->join('nationalities','applications.nationality_id','=','nationalities.id')
+                ->where('created_at', '>=', "2022-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
 				$data->case_number = $findLastCaseNumber + 1;
 				$data->save();
 				return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
 			} else {
 				$data->iin = $request->iin;
 				$data->base = $request->base;
+				$data->lang_edu = $request->lang_edu;
 				$data->phone_1 = $request->phone_1;
 				$data->phone_2 = $request->phone_2;
 				$data->programms = $request->programms;

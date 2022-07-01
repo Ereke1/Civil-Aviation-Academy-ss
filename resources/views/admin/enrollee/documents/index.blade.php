@@ -14,18 +14,18 @@
             @csrf
             <div>
                 <label for="iin">ИИН</label>
-                <input type="text" name="iin" >
+                <input type="text" name="iin">
             </div>
             <div>
                 <label for="surname">Фамилия</label>
-                <input type="text" name="surname" >
+                <input type="text" name="surname">
             </div>
             <br>
             <div>
                 <button>Найти</button>
             </div>
             <div>
-                <a href="{{ route('admin.enrollee.documents.resetFilter')}}"><button>Сбросить фильтры</button></a>
+                <a href="{{ route('admin.enrollee.documents.index') }}"><button>Сбросить фильтры</button></a>
             </div>
         </form>
     </div>
@@ -56,24 +56,26 @@
                     <td>{!! $item->case_number !!}</td>
                     <td>
                         <button type="button" class="btn btn-info" data-toggle="modal"
-                            data-target="#docsModal{!! $item->id !!}">
+                            data-target="#docsModal{!! $item->applid !!}">
                             Сформировать
                         </button>
                         {{-- <a href="{{ url('admin/enrollee/documents/word-applicationForCredits/' . $item->id) }}" class="btn btn-info">Сформировать(word)</a> --}}
                     </td>
                     <td>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#userModal{!! $item->id !!}">
+                            data-target="#userModal{!! $item->applid !!}">
                             Посмотреть
                         </button>
                     </td>
                 </tr>
+
                 <!-- Modal for export docs -->
-                <div  class="modal fade" id="docsModal{!! $item->id !!}" tabindex="-1">
+                <div class="modal fade" id="docsModal{!! $item->applid !!}" tabindex="-1">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="block__info">{!! $item->surname !!} {!! $item->name !!} {!! $item->patronymic !!}</h4>
+                                <h4 class="block__info">{!! $item->surname !!} {!! $item->name !!}
+                                    {!! $item->patronymic !!}</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -82,26 +84,31 @@
                                 <div>
                                     <div>
                                         <h5 class="block__info">Двусторонний договор
-                                            <a href="{{ url('admin/enrollee/documents/word-bilateralAgreement/' . $item->id) }}" class="btn btn-info float-right">Скачать(.docx)</a>
+                                            <a href="{{ url('admin/enrollee/documents/word-bilateralAgreement/' . $item->applid) }}"
+                                                class="btn btn-info float-right">Скачать(.docx)</a>
                                         </h5>
                                     </div>
                                     <hr>
-                                    <div >
+                                    <div>
                                         {{-- <h5>Договор на оказание образовательных услуг на основе госгранта</h5> --}}
-                                        <h5 class="block__info"> Договор на оказание образовательных услуг на основе госгранта
-                                            <a href="{{ url('admin/enrollee/documents/word-stateGrantAgreement/' . $item->id) }}" class="btn btn-info float-right">Скачать(.docx)</a>
+                                        <h5 class="block__info"> Договор на оказание образовательных услуг на основе
+                                            госгранта
+                                            <a href="{{ url('admin/enrollee/documents/word-stateGrantAgreement/' . $item->applid) }}"
+                                                class="btn btn-info float-right">Скачать(.docx)</a>
                                         </h5>
                                     </div>
                                     <hr>
                                     <div class="block">
-                                        <h5 class="block__info">Заявления
-                                            <a href="{{ url('admin/enrollee/documents/word-statements/' . $item->id) }}" class="btn btn-info float-right">Скачать(.docx)</a>
+                                        <h5 class="block__info">Личное дело
+                                            <a href="{{ url('admin/enrollee/documents/word-statements/' . $item->applid) }}"
+                                                class="btn btn-info float-right">Скачать(.docx)</a>
                                         </h5>
                                     </div>
                                     <hr>
-                                    <div >
-                                        <h5 class="block__info">Заявление для поступающих по кредитам
-                                            <a href="{{ url('admin/enrollee/documents/word-applicationForCredits/' . $item->id) }}" class="btn btn-info float-right">Скачать(.docx)</a>
+                                    <div>
+                                        <h5 class="block__info">Заявление
+                                            <a href="{{ url('admin/enrollee/documents/word-applicationForCredits/' . $item->applid) }}"
+                                                class="btn btn-info float-right">Скачать(.docx)</a>
                                         </h5>
                                     </div>
                                 </div>
@@ -111,7 +118,7 @@
                 </div>
 
                 <!-- User Info Modal -->
-                <div class="modal fade" id="userModal{!! $item->id !!}" tabindex="-1">
+                <div class="modal fade" id="userModal{!! $item->applid !!}" tabindex="-1">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -120,26 +127,50 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('admin.enrollee.documents.update', $item->id) }}" method="POST">
+                                <form action="{{ route('admin.enrollee.documents.update', $item->applid) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <input type="hidden" name="id" value="{!! $item->id !!}">
+                                    <input type="hidden" name="id" value="{!! $item->applid !!}">
                                     <div class="blocks">
                                         <div class="block">
                                             <h5 class="block__title">Фамилия</h5>
                                             <input type="text" value="{!! $item->surname !!}" name="surname"
-                                                    class="block__info">
+                                                class="block__info">
                                         </div>
                                         <div class="block">
                                             <h5 class="block__title">Имя</h5>
                                             <input type="text" value="{!! $item->name !!}" name="name"
-                                                    class="block__info">
+                                                class="block__info">
                                         </div>
-                                            <div class="block">
-                                                <h5 class="block__title">Отчество</h5>
-                                                <input type="text" value="{!! $item->patronymic !!}" name="patronymic"
-                                                    class="block__info">
-                                            </div>
+                                        <div class="block">
+                                            <h5 class="block__title">Отчество</h5>
+                                            <input type="text" value="{!! $item->patronymic !!}" name="patronymic"
+                                                class="block__info">
+                                        </div>
+                                        @if ($item->birthdate !== NULL)
+                                        <div class="block">
+                                            <h5 class="block__title">Дата рождения</h5>
+                                            <p class="block__info">
+                                                {!! date('d.m.Y', strtotime($item->birthdate)) !!}
+                                            </p>
+                                        </div>
+                                        @endif
+                                        @if ($item->gender !== NULL)
+                                        <div class="block">
+                                            <h5 class="block__title">Пол</h5>
+                                            <p class="block__info">
+                                                {!! $item->gender !!}
+                                            </p>
+                                        </div>
+                                        @endif
+                                        @if ($item->nationality_id !== NULL)
+                                        <div class="block">
+                                            <h5 class="block__title">Национальность</h5>
+                                            <p class="block__info">
+                                                {!! mb_strtolower($item->nationality_ru, 'UTF-8') !!}
+                                            </p>
+                                        </div>
+                                        @endif
                                         <div class="block">
                                             <h5 class="block__title">Гражданство</h5>
                                             <p class="block__info">{!! $item->citizen !!}</p>
@@ -230,7 +261,8 @@
                                                     транспорте
                                                 </option>
                                                 <option value="Технология транспортных процессов в авиации"
-                                                    @if ($item->programms === 'Технология транспортных процессов в авиации') selected @endif>Технология транспортных процессов в авиации
+                                                    @if ($item->programms === 'Технология транспортных процессов в авиации') selected @endif>Технология
+                                                    транспортных процессов в авиации
                                                 </option>
                                             </select>
                                         </div>
@@ -397,16 +429,78 @@
                                             </select>
                                         </div>
                                         <div class="block">
+                                            <h5 class="block__title">Параметры расписки</h5>
+                                            <div class="block__info">
+                                                <label for="statement">
+                                                    <input type='hidden' value='0' name='statement'>
+                                                    <input type="checkbox" name="statement" value="1"
+                                                        @if ($item->statement === 1) checked @else unchecked @endif />
+                                                    Заявление</label>
+                                            </div>
+                                            <div class="block__info">
+                                                <label for="attestat">
+                                                    <input type='hidden' value='0' name='attestat'>
+                                                    <input type="checkbox" name="attestat" value="1"
+                                                        @if ($item->attestat_or_diplom === 1) checked @else unchecked @endif />
+                                                    Аттестат (диплом) и приложение к
+                                                    аттестату (диплому)
+                                                </label>
+                                            </div>
+                                            <div class="block__info">
+                                                <label for="photo">
+                                                    <input type='hidden' value='0' name='photo'>
+                                                    <input type="checkbox" name="photo" value="1"
+                                                        @if ($item->photo3x4 === 1) checked @else unchecked @endif />
+                                                    Фотокарточки размером
+                                                    3x4</label>
+                                            </div>
+                                            <div class="block__info">
+                                                <label for="med">
+                                                    <input type='hidden' value='0' name='med'>
+                                                    <input type="checkbox" name="med" value="1"
+                                                        @if ($item->medical_certificate === 1) checked @else unchecked @endif />
+                                                    Медицинская справка Ф-075/У,
+                                                    заключение ВЛЭК</label>
+                                            </div>
+                                            <div class="block__info">
+                                                <label for="ent">
+                                                    <input type='hidden' value='0' name='ent'>
+                                                    <input type="checkbox" name="ent" value="1"
+                                                        @if ($item->ent_certificate === 1) checked @else unchecked @endif />
+                                                    Сертификат ЕНТ </label>
+                                            </div>
+                                            <div class="block__info">
+                                                <label for="grant">
+                                                    <input type='hidden' value='0' name='grant'>
+                                                    <input type="checkbox" name="grant" value="1"
+                                                        @if ($item->grant_certificate === 1) checked @else unchecked @endif />
+                                                    Свидетельство гранта </label>
+                                            </div>
+                                            <div class="block__info">
+                                                <label for="udostov">
+                                                    <input type='hidden' value='0' name='udostov'>
+                                                    <input type="checkbox" name="udostov" value="1"
+                                                        @if ($item->udostov_copy === 1) checked @else unchecked @endif />
+                                                    Копия удостоверения
+                                                    личности</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="blocks">
+                                        <div class="block" style="border: none;">
                                             <button type="submit" class="button">Сохранить изменения</button>
                                         </div>
                                 </form>
-                                <div class="block">
-                                    <form action="{{ route('admin.enrollee.bachelor.edit', $item->id) }}" method="GET">
+                                <div class="blocks">
+                                <div class="block" style="border: none;width: 100%;">
+                                    <form action="{{ route('admin.enrollee.bachelor.edit', $item->applid) }}"
+                                        method="GET">
                                         @csrf
                                         <button type="submit" class="button"
                                             onclick="return confirm('Удалить?')">Удалить</button>
                                     </form>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>

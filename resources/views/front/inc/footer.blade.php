@@ -12,7 +12,11 @@
                             <a href="tel:87273399699">+7 (727) 3399699 (вн. 278,273)</a><br/>
                             {{ __('Авиационный колледж:') }}<br />
                             <a href="tel:87273399899">+7 (727) 339-98-99,<br/> +7 (727) 346-92-06</a><br/>
+<<<<<<< Updated upstream
                             {{ __('ул. Закарпатская, 44') }} 
+=======
+                            {{ __('ул. Закарпатская, 44') }}
+>>>>>>> Stashed changes
                             {{ __('050039, Алматы') }} <br />
                             {{ __('Республика Казахстан') }} </p>
                     </div>
@@ -52,6 +56,8 @@
     <script type="text/javascript" src="/js/swiper-bundle.min.js"></script>
     <script src="/js/jquery.maskedinput.min.js"></script>
     <script src="/js/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.full.min.js"></script>
     <script>
         // Swiper Initialization
         let swiper = new Swiper(".mySwiper", {

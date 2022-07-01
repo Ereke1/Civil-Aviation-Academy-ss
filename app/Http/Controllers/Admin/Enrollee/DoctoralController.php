@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Applications;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class DoctoralController extends Controller
 {
@@ -31,7 +32,9 @@ class DoctoralController extends Controller
 		];
 		$whereArray = array_filter($whereArray, 'strlen');
 		if (!isset($created_at_from) || !isset($created_at_to)) {
-			$data = Applications::select('*')
+			$data = DB::table('applications')
+            ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+            ->join('nationalities','applications.nationality_id','=','nationalities.id')
 			//	->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
 			//	->whereDate('created_at', '<=', $years . '-' . '08-31')
 				->where($whereArray)
@@ -39,13 +42,17 @@ class DoctoralController extends Controller
 				->paginate(100)
 				->appends($whereArray);
 
-			$countData = Applications::select('*')
+			$countData = DB::table('applications')
+            ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+            ->join('nationalities','applications.nationality_id','=','nationalities.id')
 			//	->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
 			//	->whereDate('created_at', '<=', $years . '-' . '08-31')
 				->where($whereArray)
 				->count();
 		}else {
-			$data = Applications::select('*')
+			$data = DB::table('applications')
+            ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
+            ->join('nationalities','applications.nationality_id','=','nationalities.id')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
 				->where($whereArray)
@@ -60,10 +67,10 @@ class DoctoralController extends Controller
 				->count();
 		}
 		//Sort
-		if (isset($request->sort)) {
-			$data = $data->sortBy($request->sort);
-			$data->values()->all();
-		}
+		// if (isset($request->sort)) {
+		// 	$data = $data->sortBy($request->sort);
+		// 	$data->values()->all();
+		// }
 		// Data
 		$dataArr = [
 			'data' => $data,
@@ -152,6 +159,7 @@ class DoctoralController extends Controller
 				return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
 			} else {
 				$data->iin = $request->iin;
+				$data->lang_edu = $request->lang_edu;
 				$data->phone_1 = $request->phone_1;
 				$data->phone_2 = $request->phone_2;
 				$data->process = $request->process;
