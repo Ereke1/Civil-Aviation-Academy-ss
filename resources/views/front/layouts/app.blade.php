@@ -14,6 +14,11 @@
     <title>@yield('title')</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.transitions.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNHJTJFX4K"></script>
     <script>
@@ -38,7 +43,7 @@
     <!-- /Yandex.Metrika counter -->
 </head>
 
-<body>
+<body class="homepage">
     
     @include('front.inc.top_bar')
     @include('front.inc.header')

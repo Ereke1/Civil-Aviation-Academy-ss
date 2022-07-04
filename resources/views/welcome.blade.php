@@ -173,7 +173,6 @@
                                 <a class="dribbble" href="https://caa.edu.kz/"><i class="fa fa-dribbble"></i></a>
                             </li>
                         </ul>
-                        Designed by <a href="https://www.instagram.com/p/CQtWQlbB5ZU/?igshid=YmMyMTA2M2Y=" target="_blank">Yereke</a>
                     </div>
                 </li>
             </ul>

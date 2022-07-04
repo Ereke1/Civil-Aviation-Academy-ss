@@ -2,7 +2,7 @@
         <div class="container">
             <div class="footer">
                 <div class="footer__info">
-                    <div class="info-block">
+                    <div class="info-block wow fadeInDown">
                         <h4>{{ __('Контакты') }}</h4>
                         <p> {{ __('Приемная комиссия Академии:') }}<br />
                             <a href="tel:87273469208">+7 (727) 346-92-08</a><br/>
@@ -16,21 +16,21 @@
                             {{ __('050039, Алматы') }} <br />
                             {{ __('Республика Казахстан') }} </p>
                     </div>
-                    <div class="info-block">
+                    <div class="info-block wow fadeInUp">
                         <h4>{{ __('Об Академии') }}</h4>
                         <a href="">{{ __('Руководство') }}</a>
                         <a href="">{{ __('Корпоративное управление') }}</a>
                         <a href="">{{ __('Учёный совет') }}</a>
                         <a href="">{{ __('Наука и цифровизация') }}</a>
                     </div>
-                    <div class="info-block">
+                    <div class="info-block wow fadeInDown">
                         <h4>{{ __('Поступление') }}</h4>
                         <a href="">{{ __('Бакалавриат') }}</a>
                         <a href="">{{ __('Магистратура') }}</a>
                         <a href="">{{ __('Докторантура') }}</a>
                         <a href="">{{ __('Колледж') }}</a>
                     </div>
-                    <div class="info-block last">
+                    <div class="info-block last  wow fadeInUp">
                         <h4>{{ __('Присоединяйтесь') }}</h4>
                         <!-- Go to www.addthis.com/dashboard to customize your tools -->
                         <div class="addthis_inline_follow_toolbox last"></div>
@@ -66,6 +66,13 @@
             },
         });
     </script>
+    <script type="text/javascript" src="/js/copajs.js"></script>
+    <script type="text/javascript" src="/js/countTo.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.parallax-1.1.3.js"></script>
+    <script type="text/javascript" src="/js/wow.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.appear.js"></script>
+    <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
     @if (Request::url() == URL::to('/') . '/enrollee/bachelor')
         <script src="/js/enrollee/bachelor.js"></script>
     @endif

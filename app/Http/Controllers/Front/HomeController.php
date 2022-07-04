@@ -13,8 +13,8 @@ class HomeController extends Controller
 	public function index()
 	{
 		$tree = Navigation::tree();
-		$news = News::orderBy('publish_at', 'desc')->take(8)->get();
-		$events = Event::orderBy('publish_at', 'desc')->take(8)->get();
+		$news = News::orderBy('publish_at', 'desc')->take(6)->get();
+		$events = Event::orderBy('publish_at', 'desc')->take(4)->get();
 		//return view('front.index', compact('tree', 'news', 'events'));
 		$myvar = "<script> localStorage.getItem('welcomInfo')</script>";
 		if(isset($_COOKIE['welcomeAGA'])){

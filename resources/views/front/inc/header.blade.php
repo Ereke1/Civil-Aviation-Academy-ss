@@ -1,14 +1,14 @@
 <header>
     <div class="container">
         <div class="row">
-            <nav class="navbar">
-                <div class="logo">
+            <nav id="navMenu" class="navbar navbar-expand-lg">
+                <div id="my_image" class="logo">
                     <a href="/">
                         <img src="/assets/images/logo_agakaz_b.png" />
                     </a>
                 </div>
                 <div class="sitenavigation">
-                    <span class="menu-icon">
+                <span class="menu-icon">
                         <a href="#" class="menu example5"><span></span></a>
                         <div id="hamburger">
                             <span></span>
@@ -29,7 +29,7 @@
                                             {!! $item->title_en !!}
                                         @endif
                                     </a>
-                                    <ul>
+                                    <ul class>
                                         @foreach ($item->children as $child)
                                             @if ($child->children->count() > 0)
                                                 <li class="nav-dropdown">
