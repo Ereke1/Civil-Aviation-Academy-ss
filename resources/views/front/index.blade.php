@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <section id="main-slider">
-        <div class="owl-carousel ">
+        <div class="owl-carousel">
             <div class="item" style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/1n.jpg); widht:100%; background-size: cover;">
                 <div class="slider-inner">
                     <div class="container">

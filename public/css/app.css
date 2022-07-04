@@ -18651,7 +18651,7 @@ h4 {
 }
 
 #news {
-  background: #f7f7f9;
+  background: #00249c;
 }
 
 #news h2 {
@@ -19507,7 +19507,7 @@ h4 {
 /* Modal Content/Box */
 
 .modal-content {
-  background: #00249c;
+  background: #00249c !important;
   color: white;
   margin: 15% auto;
   /* 15% from the top and centered */
@@ -19550,32 +19550,32 @@ h4 {
 
 #counter {
   background-image: url(/assets/images/contact.jpg);
-  padding: 70px 0;
+  padding: 4.375em 0;
 }
 
 .counters-item {
-  border: 5px solid white;
-  padding-bottom: 30px;
-  border-radius: 25px;
+  border: 0.313em solid white;
+  padding-bottom: 1.875em;
+  border-radius: 1.563em;
   
 }
 
 .counters-item > div {
-  margin: 10px 0;
+  margin: 0.625em 0;
 }
 
 .counters-item span {
   display: inline;
-  font-size: 35px;
-  line-height: 50px;
+  font-size: 2.188em;
+  line-height: 3.125em;
 }
 
 .counters-item i {
-  margin-bottom: 15px;
+  margin-bottom: 0.938em;
 }
 
 .counters-item h3 {
-font-size: 20px;
+font-size: 1.25em;
 margin: 0;
 }
 .parallax-section {
@@ -19653,7 +19653,37 @@ margin: 0;
   text-transform: capitalize; 
   color: #fff; text-align:center;
 }
+@media (max-width: 979px) {
+  #main-slider .item {
+  width: 200%;
+  height: auto;}
+  #main-slider .slider-inner h2 {
+    margin-top: 80px;
+    font-size: 40px;
+    line-height: 1;
+    text-transform: capitalize; 
+    color: #fff; text-align:center;
+  }
+  }
 
+
+  @media (max-width: 470px) {
+  #main-slider .item {
+  max-width:300%;
+  width:150%;
+  min-height: 300px;
+  }
+  }
+
+  @media (max-width:470){
+    #main-slider .slider-inner h2 {
+      margin-top: 100px;
+      font-size: 40px;
+      line-height: 1;
+      text-transform: capitalize; 
+      color: #fff; text-align:center;
+    }
+  }
 #main-slider .slider-inner p {
   margin-top: 20px;
   font-size: 16px;
@@ -19703,6 +19733,33 @@ margin: 0;
   border:3px solid darkblue; 
   color: black;
 }
+
+@media (max-width: 470px) {
+  #main-slider .slider-inner .btn.btn-primary:hover{ 
+    background:darkgoldenrod; 
+    border:1px solid darkblue; 
+    color: white;
+  }
+  #main-slider .slider-inner .btn.btn-primary{
+    padding:2px 18px; 
+    font-size:12px;
+    font-weight: bold;
+    }
+}
+@media (max-width: 979px) {
+  #main-slider .slider-inner .btn.btn-primary:hover{ 
+    background:darkgoldenrod; 
+    border:1px solid darkblue; 
+    color: white;
+  }
+  #main-slider .slider-inner .btn.btn-primary{
+    padding:4px 18px; 
+    font-size:12px;
+    font-weight: bold;
+    }
+  }
+
+
 #main-slider .owl-prev,
 #main-slider .owl-next {
   position: absolute;
@@ -19755,6 +19812,22 @@ margin: 0;
   background-size: cover;
   background-repeat: no-repeat
 }
+@media (max-width: 979px) {
+  #bar {
+    position: absolute;
+     bottom: 0;
+     left: -30px;
+     height: 5px;
+     width: 0;
+   }
+   #bar::before {
+     bottom: 0;
+     right: -45px;
+     width: 100px;
+     height: 40px;
+   }
+}
+
 #progressBar {
   margin-top: -4px;
   position: relative;
@@ -19874,7 +19947,7 @@ margin: 0;
 	height: 500px;
 	padding-bottom: 50px;
     padding-top: 50px; 
-    min-height: 500px;
+   
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -19896,21 +19969,41 @@ margin: 0;
 }
 .ParallaxVideo h3 {
     color: #fff;
-    font-size: 50px;
+    font-size: 3.125em;
     font-weight: 500;
     vertical-align: middle;
-    line-height: 400px;  
+    line-height: 7em;  
     text-align: center;
     text-transform: uppercase;
-    font-family: Helvetica;
-    
+    font-family: Helvetica; 
 }
+@media (max-width: 979px) {
+  .ParallaxVideo{
+    width: 100%;
+    height: auto;
+    min-height:100px;
+  }
+  .ParallaxVideo video {
+  width: 100%;
 
+
+  }
+  .ParallaxVideo h3 {
+    color: #fff;
+    font-size: 1.125em;
+    line-height: 1em;  
+}
+  }
 /* Blog */
 #blog {
   padding:100px 0;
   background: #f1f1f1;
 }
+@media (max-width: 979px) {
+  #blog {
+    padding:1em 0;
+  }
+  }
 #blog-post .block {
   background: #fff;
   margin:0 5px;
