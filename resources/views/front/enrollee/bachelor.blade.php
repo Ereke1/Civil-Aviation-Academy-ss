@@ -16,7 +16,7 @@
                         <div>
                             <label for="base">Что окончил:</label>
                             <select name="base" id="base" onchange="admissionFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="11-го класса">Среднюю школу</option>
                                 <option value="Технического и профессионального образования (колледжа)">Колледж</option>
                                 <option value="Высшего образования">Выпускник ВУЗа</option>
@@ -26,7 +26,7 @@
                         <div class="disabled" id="languageBlock">
                             <label for="language">Язык обучения:</label>
                             <select name="language" id="language" onchange="languageFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="Казахский">Казахский</option>
                                 <option value="Русский">Русский</option>
                             </select>
@@ -35,7 +35,7 @@
                         <div class="disabled" id="citizenBlock">
                             <label for="citizen">Гражданство:</label>
                             <select name="citizen" id="citizen" onchange="citizenFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="Резидент РК">Гражданин Республики Казахстан</option>
                                 <option value="Нерезидент РК">Гражданин другого государства</option>
                             </select>
@@ -44,7 +44,7 @@
                         <div class="disabled" id="haveENTBlock">
                             <label for="haveENT">Наличие результатов ЕНТ:</label>
                             <select name="haveENT" id="haveENT" onchange="haveENTFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="Да">Да</option>
                                 <option value="Нет">Нет</option>
                             </select>
@@ -62,7 +62,7 @@
                         <div id="mathLitBlock" class="disabled">
                             <label for="mathLit">Математическая грамотность</label>
                             <select name="mathLit" id="mathLit">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>
@@ -79,7 +79,7 @@
                         <div id="readLitBlock" class="disabled">
                             <label for="readLit">Грамотность чтения</label>
                             <select name="readLit" id="readLit">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>
@@ -101,7 +101,7 @@
                         <div id="historyKZBlock" class="disabled">
                             <label for="historyKZ">История Казахстана</label>
                             <select name="historyKZ" id="historyKZ">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>
@@ -118,7 +118,7 @@
                         <div id="mathBlock" class="disabled">
                             <label for="math">Математика (1-й проф. предмет)</label>
                             <select name="math" id="math">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>
@@ -165,7 +165,7 @@
                         <div id="profSubBlock" class="disabled">
                             <label for="profSub">2-й проф. предмет</label>
                             <select name="profSub" id="profSub" onchange="profSubFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="Физика" class="disabled">Физика</option>
                                 <option value="География" class="disabled">География</option>
                                 <option value="Авиационная безопасность" class="disabled">Авиационная безопасность
@@ -176,7 +176,7 @@
                         <div id="aviaSecBlock" class="disabled">
                             <label for="aviaSec">Авиационная безопасность</label>
                             <select name="aviaSec" id="aviaSec">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>
@@ -223,7 +223,7 @@
                         <div id="natureSecBlock" class="disabled">
                             <label for="natureSec">Охрана труда</label>
                             <select name="natureSec" id="natureSec">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>
@@ -270,7 +270,7 @@
                         <div id="geographyBlock" class="disabled">
                             <label for="geography">География</label>
                             <select name="geography" id="geography" onchange="geographyFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>
@@ -318,7 +318,7 @@
                         <div id="physicsBlock" class="disabled">
                             <label for="physics">Физика</label>
                             <select name="physics" id="physics" onchange="physicsFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>
@@ -365,7 +365,7 @@
                         <div id="countryBlock" class="disabled">
                             <label for="countries">Страна</label>
                             <select name="countries" id="countries" onchange="countryFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="Австралия">Австралия</option>
                                 <option value="Австрия">Австрия</option>
                                 <option value="Азербайджан">Азербайджан</option>
@@ -607,7 +607,7 @@
                         <div id="programmsBlock" class="disabled">
                             <label for="programms">Образовательная программа</label>
                             <select name="programms" id="programms" onchange="programmsFunc()" required>
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
 
                                 <!-- B167 Лётная эксплуатация летательных аппаратов и двигателей -->
                                 <option class="physic-opt disabled" value="Лётная эксплуатация самолётов (пилот)">Летная
@@ -646,7 +646,7 @@
                         <div id="vlekBlock" class="disabled">
                             <label for="haveVLEK">Пройден ВЛЭК?</label>
                             <select name="haveVLEK" id="vlek" onchange="vlekFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="Да">Да</option>
                                 <option value="Нет">Нет</option>
                             </select>
@@ -662,7 +662,7 @@
                         <div id="ieltsBlock" class="disabled">
                             <label for="haveIELTS">Имеется IELTS/TOEFL</label>
                             <select name="haveIELTS" id="ielts" onchange="ieltsFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="Да">Да</option>
                                 <option value="Нет">Нет</option>
                             </select>
@@ -674,7 +674,7 @@
                         <div id="regionBlock" class="disabled">
                             <label for="region">Регион</label>
                             <select name="region" id="region" onchange="regionFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="г. Алматы">г. Алматы</option>
                                 <option value="г. Нур-Султан">г. Нур-Султан (Астана)</option>
                                 <option value="г. Шымкент">г. Шымкент</option>
@@ -730,7 +730,7 @@
                         <div id="nationalityBlock" class="disabled">
                             <label for="nationality">Национальность</label>
                             <select name="nationality" id="nationality" class="nationality">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 @foreach ($nationality_list as $nationality)
                                     @if (Config::get('app.locale') == 'kk')
                                         <option value="{{ $nationality->id }}">{{ mb_strtolower($nationality->nationality_kz, 'UTF-8') }}</option>

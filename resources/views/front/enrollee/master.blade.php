@@ -39,7 +39,7 @@
                         <div class="disabled" id="languageBlock">
                             <label for="language">Язык обучения:</label>
                             <select name="language" id="language" onchange="languageFunc()">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 <option value="Русский">Русский</option>
                             </select>
                         </div>
@@ -519,7 +519,7 @@
                         <div id="nationalityBlock" class="disabled">
                             <label for="nationality">Национальность</label>
                             <select name="nationality" id="nationality" class="nationality">
-                                <option value="">-----</option>
+                                <option value="" disabled selected>-----</option>
                                 @foreach ($nationality_list as $nationality)
                                     @if (Config::get('app.locale') == 'kk')
                                         <option value="{{ $nationality->id }}">{{ mb_strtolower($nationality->nationality_kz, 'UTF-8') }}</option>

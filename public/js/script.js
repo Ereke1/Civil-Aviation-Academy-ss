@@ -70,21 +70,22 @@ $(document).ready(function () {
 // Запускаем действия при полной загрузке страницы
 window.addEventListener('load', function () {
 	// Закрываем доступ к смене Select
-	let allSel = document.querySelectorAll('select')
-	for (let i = 0; i < allSel.length; i++) {
-		allSel[i].onclick = function () {
-			// Значение option выбранного select
-			let optionSelect = allSel[i].options[allSel[i].selectedIndex].text
-			// Создаём input со значением select
-			let hiddenSelect = '<input class="opacity-60" type="hidden" value="' + this.value + '" id="' + this.id + '" name="' + this.getAttribute('name') + '">'
-			let inputSelect = '<input class="opacity-60" type="text" value="' + optionSelect + '" readonly>'
-			if (optionSelect !== '-----') {
-				this.insertAdjacentHTML('afterend', hiddenSelect)
-				this.insertAdjacentHTML('afterend', inputSelect)
-				this.remove()
-			}
-		}
-	}
+	// let allSel = document.querySelectorAll('select')
+	// for (let i = 0; i < allSel.length; i++) {
+	// 	allSel[i].onclick = function () {
+	// 		// Значение option выбранного select
+	// 		let optionSelect = allSel[i].options[allSel[i].selectedIndex].text
+	// 		// Создаём input со значением select
+	// 		let hiddenSelect = '<input class="opacity-60" type="hidden" value="' + this.value + '" id="' + this.id + '" name="' + this.getAttribute('name') + '">'
+	// 		let inputSelect = '<input class="opacity-60" type="text" value="' + optionSelect + '" readonly>'
+	// 		if (optionSelect !== '-----') {
+	// 			this.insertAdjacentHTML('afterend', hiddenSelect)
+	// 			this.insertAdjacentHTML('afterend', inputSelect)
+	// 			this.remove()
+	// 		}
+	// 	}
+	// }
+
 	// Добавляем прозрачность заполненным input
 	let allInput = document.querySelectorAll('input')
 	for (let i = 0; i < allInput.length; i++) {

@@ -45,7 +45,7 @@ class DocumentsController extends Controller
 
         $data = DB::table('applications')
         ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
+            ->join('nationalities','applications.nationality_id','=','nationalities.id')
             ->where($whereArray)
             ->orderBy('created_at', 'desc')
             ->paginate(100)
