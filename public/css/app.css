@@ -7188,7 +7188,7 @@ button.bg-dark:focus {
 
 .border {
   border: 1px solid #dee2e6 !important;
-  margin-bottom: 50px;
+
 }
 
 .border-top {
@@ -19557,7 +19557,7 @@ h4 {
   border: 0.313em solid white;
   padding-bottom: 1.875em;
   border-radius: 1.563em;
-  
+
 }
 
 .counters-item > div {
@@ -19594,7 +19594,7 @@ margin: 0;
 }
 .counters-item {
   margin-bottom: 30px;
-  
+
 }
 
 .devider {
@@ -19650,7 +19650,7 @@ margin: 0;
   margin-top: 247px;
   font-size: 40px;
   line-height: 1;
-  text-transform: capitalize; 
+  text-transform: capitalize;
   color: #fff; text-align:center;
 }
 @media (max-width: 979px) {
@@ -19661,7 +19661,7 @@ margin: 0;
     margin-top: 80px;
     font-size: 40px;
     line-height: 1;
-    text-transform: capitalize; 
+    text-transform: capitalize;
     color: #fff; text-align:center;
   }
   }
@@ -19680,7 +19680,7 @@ margin: 0;
       margin-top: 100px;
       font-size: 40px;
       line-height: 1;
-      text-transform: capitalize; 
+      text-transform: capitalize;
       color: #fff; text-align:center;
     }
   }
@@ -19688,7 +19688,7 @@ margin: 0;
   margin-top: 20px;
   font-size: 16px;
   line-height:25px;
-  text-transform: capitalize; 
+  text-transform: capitalize;
   color: #000; text-align: center;
 }
 
@@ -19696,16 +19696,16 @@ margin: 0;
   color: #45aed6;
 }
 #main-slider .slider-inner .btn {
-  margin-top: 20px; 
-  background:transparent; 
-  border:3px solid darkgoldenrod; 
-  border-radius:30px; 
+  margin-top: 20px;
+  background:transparent;
+  border:3px solid darkgoldenrod;
+  border-radius:30px;
   color: black;
 }
 #main-slider .slider-inner .btn.btn-primary{
   animation: shake 5s cubic-bezier(.36, .07, .19, .97) both infinite;
 	transform: translate3d(0, 0, 0);
-  padding:10px 46px; 
+  padding:10px 46px;
   font-size:22px;
   font-weight: bold;
   }
@@ -19728,32 +19728,32 @@ margin: 0;
       transform: translate3d(4px, 0, 0);
     }
   }
-#main-slider .slider-inner .btn.btn-primary:hover{ 
-  background:darkgoldenrod; 
-  border:3px solid darkblue; 
+#main-slider .slider-inner .btn.btn-primary:hover{
+  background:darkgoldenrod;
+  border:3px solid darkblue;
   color: black;
 }
 
 @media (max-width: 470px) {
-  #main-slider .slider-inner .btn.btn-primary:hover{ 
-    background:darkgoldenrod; 
-    border:1px solid darkblue; 
+  #main-slider .slider-inner .btn.btn-primary:hover{
+    background:darkgoldenrod;
+    border:1px solid darkblue;
     color: white;
   }
   #main-slider .slider-inner .btn.btn-primary{
-    padding:2px 18px; 
+    padding:2px 18px;
     font-size:12px;
     font-weight: bold;
     }
 }
 @media (max-width: 979px) {
-  #main-slider .slider-inner .btn.btn-primary:hover{ 
-    background:darkgoldenrod; 
-    border:1px solid darkblue; 
+  #main-slider .slider-inner .btn.btn-primary:hover{
+    background:darkgoldenrod;
+    border:1px solid darkblue;
     color: white;
   }
   #main-slider .slider-inner .btn.btn-primary{
-    padding:4px 18px; 
+    padding:4px 18px;
     font-size:12px;
     font-weight: bold;
     }
@@ -19916,7 +19916,7 @@ margin: 0;
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
-  animation: 
+  animation:
     typing 3.5s steps(30, end),
     blink-caret .5s step-end infinite;
     animation-iteration-count: infinite;
@@ -19943,11 +19943,11 @@ margin: 0;
   border: none;
   overflow-x: hidden;
 }
-.ParallaxVideo{ 
+.ParallaxVideo{
 	height: 500px;
 	padding-bottom: 50px;
-    padding-top: 50px; 
-   
+    padding-top: 50px;
+
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -19960,7 +19960,7 @@ margin: 0;
     background-attachment: scroll;
   }
 }
-.ParallaxVideo video{ 
+.ParallaxVideo video{
     min-width: 100%;
     position: fixed;
     top:0;
@@ -19972,10 +19972,10 @@ margin: 0;
     font-size: 3.125em;
     font-weight: 500;
     vertical-align: middle;
-    line-height: 7em;  
+    line-height: 7em;
     text-align: center;
     text-transform: uppercase;
-    font-family: Helvetica; 
+    font-family: Helvetica;
 }
 @media (max-width: 979px) {
   .ParallaxVideo{
@@ -19991,7 +19991,7 @@ margin: 0;
   .ParallaxVideo h3 {
     color: #fff;
     font-size: 1.125em;
-    line-height: 1em;  
+    line-height: 1em;
 }
   }
 /* Blog */
@@ -20028,7 +20028,7 @@ margin: 0;
   height: 206px;
 }
 #blog-post  .content {
-  padding:30px 25px; 
+  padding:30px 25px;
   text-align: center;
 }
 #blog-post .content h4 {
@@ -20041,7 +20041,7 @@ margin: 0;
   color: #333;
 }
 #blog-post .content h4 a:hover {
- color: darkblue; 
+ color: darkblue;
  text-decoration: none;
 }
 #blog-post .content h4::before {
@@ -20143,7 +20143,7 @@ color: #817C7C;
 }
 #testimonials .owl-wrapper-outer {
   top: -25px;
-} 
+}
 .client-info {
   margin: 0 auto;
   width: 45%;
@@ -20233,7 +20233,7 @@ color: #817C7C;
 	width: 100%;
 }
 
-#our-clietns .owl-next, 
+#our-clietns .owl-next,
 #our-clietns .owl-prev {
   border: 1px solid #ddd;
   border-radius: 50px;
@@ -20244,7 +20244,7 @@ color: #817C7C;
   text-align: center;
 }
 
-#our-clietns .owl-next i, 
+#our-clietns .owl-next i,
 #our-clietns .owl-prev i {
   line-height: 34px;
 }

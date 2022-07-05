@@ -443,9 +443,7 @@ class BachelorController extends Controller
 	 */
 	public function edit($id)
 	{
-		$data =  DB::table('applications')
-        ->join('nationalities','applications.nationality_id','=','nationalities.id')
-        ->where('applications.id','=',$id);
+		$data = Applications::find($id);
 		$data->status = 1;
 		$data->updated_at = \Carbon\Carbon::now('Asia/Almaty');
 		$data->save();

@@ -5,6 +5,23 @@
 @section('content')
     <div class="report">
         <h2>Отчёт по Выпускникам</h2>
+        <div class="filter">
+            <form>
+                @csrf
+                <div>
+                    <label for="graduation_year">Год выпуска</label>
+                    <select name="graduation_year" id="graduation_year" class="graduation_year">
+                        <option value=""></option>
+                        <option value="2021" @if ($graduation_year === '2021') selected @endif>2021</option>
+                        <option value="2022" @if ($graduation_year === '2022') selected @endif>2022</option>
+                    </select>
+                    {{-- @if ($created_at_from != '') value="{!! $created_at_from !!}" @endif> --}}
+                </div>
+                <div>
+                    <button>Применить</button>
+                </div>
+            </form>
+        </div>
         <h3>Скачать в <a href="{{ route('admin.graduate.report.pdf') }}">PDF</a></h3>
         <table class="report">
            {{-- Грант --}}
