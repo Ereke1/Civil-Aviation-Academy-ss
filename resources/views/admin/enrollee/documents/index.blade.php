@@ -127,7 +127,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('admin.enrollee.documents.update', $item->applid) }}" method="POST">
+                                <form action="{{ route('admin.enrollee.documents.update', $item->applid) }}"
+                                    method="POST">
                                     @csrf
                                     @method('PUT')
                                     <input type="hidden" name="id" value="{!! $item->applid !!}">
@@ -147,29 +148,44 @@
                                             <input type="text" value="{!! $item->patronymic !!}" name="patronymic"
                                                 class="block__info">
                                         </div>
-                                        @if ($item->birthdate !== NULL)
-                                        <div class="block">
-                                            <h5 class="block__title">Дата рождения</h5>
-                                            <p class="block__info">
-                                                {!! date('d.m.Y', strtotime($item->birthdate)) !!}
-                                            </p>
-                                        </div>
+                                        @if ($item->birthdate !== null)
+                                            <div class="block">
+                                                <h5 class="block__title">Дата рождения</h5>
+                                                <p class="block__info">
+                                                    {!! date('d.m.Y', strtotime($item->birthdate)) !!}
+                                                </p>
+                                            </div>
                                         @endif
-                                        @if ($item->gender !== NULL)
-                                        <div class="block">
-                                            <h5 class="block__title">Пол</h5>
-                                            <p class="block__info">
-                                                {!! $item->gender !!}
-                                            </p>
-                                        </div>
+                                        @if ($item->gender !== null)
+                                            <div class="block">
+                                                <h5 class="block__title">Пол</h5>
+                                                <p class="block__info">
+                                                    {!! $item->gender !!}
+                                                </p>
+                                            </div>
                                         @endif
-                                        @if ($item->nationality_id !== NULL)
-                                        <div class="block">
-                                            <h5 class="block__title">Национальность</h5>
-                                            <p class="block__info">
-                                                {!! mb_strtolower($item->nationality_ru, 'UTF-8') !!}
-                                            </p>
-                                        </div>
+                                        @if ($item->nationality_id !== null)
+                                            <div class="block">
+                                                <h5 class="block__title">Национальность</h5>
+
+                                                <select name="nationality_id" class="block__info">
+                                                    @foreach ($nationality_list as $nationality)
+                                                        {{-- @if (Config::get('app.locale') == 'kk')
+                                                            <option value="{{ $nationality->id }}" @if ($item->nationality_id === $nationality->id) selected @endif>
+                                                                {{ mb_strtolower($nationality->nationality_kz, 'UTF-8') }}
+                                                            </option>
+                                                        @elseif (Config::get('app.locale') == 'ru') --}}
+                                                            <option value="{{ $nationality->id }}" @if ($item->nationality_id === $nationality->id) selected @endif>
+                                                                {{ mb_strtolower($nationality->nationality_ru, 'UTF-8') }}
+                                                            </option>
+                                                        {{-- @else
+                                                            <option value="{{ $nationality->id }}" @if ($item->nationality_id === $nationality->id) selected @endif>
+                                                                {{ mb_strtolower($nationality->nationality_en, 'UTF-8') }}
+                                                            </option>
+                                                        @endif --}}
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         @endif
                                         <div class="block">
                                             <h5 class="block__title">Гражданство</h5>
@@ -492,15 +508,15 @@
                                         </div>
                                 </form>
                                 <div class="blocks">
-                                <div class="block" style="border: none;width: 100%;">
-                                    <form action="{{ route('admin.enrollee.bachelor.edit', $item->applid) }}"
-                                        method="GET">
-                                        @csrf
-                                        <button type="submit" class="button"
-                                            onclick="return confirm('Удалить?')">Удалить</button>
-                                    </form>
+                                    <div class="block" style="border: none;width: 100%;">
+                                        <form action="{{ route('admin.enrollee.bachelor.edit', $item->applid) }}"
+                                            method="GET">
+                                            @csrf
+                                            <button type="submit" class="button"
+                                                onclick="return confirm('Удалить?')">Удалить</button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>

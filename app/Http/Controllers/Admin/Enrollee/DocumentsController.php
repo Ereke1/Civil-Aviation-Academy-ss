@@ -43,8 +43,12 @@ class DocumentsController extends Controller
         $created_at_to = $request->created_at_to;
         $sort = $request->sort;
 
+
+        $nationality_list = DB::table('nationalities')
+        ->get();
+
         $data = DB::table('applications')
-            ->select('applications.id as applid', 'applications.*', 'nationalities.id', 'nationalities.*')
+            ->select('applications.id as applid', 'applications.*', 'nationalities.id as nat_id', 'nationalities.*')
             ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
             ->where($whereArray)
             ->orderBy('created_at', 'desc')
@@ -55,7 +59,7 @@ class DocumentsController extends Controller
 
         // Count
         $countData = DB::table('applications')
-            ->select('applications.id as applid', 'applications.*', 'nationalities.id', 'nationalities.*')
+            ->select('applications.id as applid', 'applications.*', 'nationalities.id as nat_id', 'nationalities.*')
             ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
             ->where($whereArray)
             ->count();
@@ -78,7 +82,7 @@ class DocumentsController extends Controller
             'sort' => $request->sort,
             'countData' => $countData
         ];
-        return view('admin.enrollee.documents.index', $dataArr);
+        return view('admin.enrollee.documents.index', $dataArr)->with(compact('nationality_list', 'nationality_list'));
     }
 
     // public function resetFilter(Request $request){
@@ -530,6 +534,7 @@ class DocumentsController extends Controller
                 $data->surname = $request->surname;
                 $data->name = $request->name;
                 $data->patronymic = $request->patronymic;
+                $data->nationality_id = $request->nationality_id;
 
                 $data->statement = $request->statement;
                 $data->attestat_or_diplom = $request->attestat;
