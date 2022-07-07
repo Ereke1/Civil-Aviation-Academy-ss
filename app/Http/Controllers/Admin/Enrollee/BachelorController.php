@@ -7,6 +7,7 @@ use App\Models\Applications;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class BachelorController extends Controller
 {
@@ -459,6 +460,8 @@ class BachelorController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
+        $today = Carbon::today();
+
 		if (Auth::user()->role === '999') {
 			return redirect()->back()->with('alert', 'У вас не прав на это действие');
 		} else {
@@ -474,6 +477,7 @@ class BachelorController extends Controller
                 ->join('nationalities','applications.nationality_id','=','nationalities.id')
                 ->where('created_at', '>=', "2022-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
 				$data->case_number = $findLastCaseNumber + 1;
+				$data->case_number_date = $today;
 				$data->save();
 				return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
 			} else {

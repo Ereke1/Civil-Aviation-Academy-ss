@@ -2654,6 +2654,8 @@ return array(
     'Intervention\\Image\\Point' => $vendorDir . '/intervention/image/src/Intervention/Image/Point.php',
     'Intervention\\Image\\Response' => $vendorDir . '/intervention/image/src/Intervention/Image/Response.php',
     'Intervention\\Image\\Size' => $vendorDir . '/intervention/image/src/Intervention/Image/Size.php',
+    'Jenssegers\\Date\\Date' => $vendorDir . '/jenssegers/date/src/Date.php',
+    'Jenssegers\\Date\\DateServiceProvider' => $vendorDir . '/jenssegers/date/src/DateServiceProvider.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
     'Laminas\\Escaper\\Escaper' => $vendorDir . '/laminas/laminas-escaper/src/Escaper.php',
     'Laminas\\Escaper\\Exception\\ExceptionInterface' => $vendorDir . '/laminas/laminas-escaper/src/Exception/ExceptionInterface.php',

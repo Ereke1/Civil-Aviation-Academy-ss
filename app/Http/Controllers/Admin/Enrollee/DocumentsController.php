@@ -44,8 +44,8 @@ class DocumentsController extends Controller
         $sort = $request->sort;
 
         $data = DB::table('applications')
-        ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-            ->join('nationalities','applications.nationality_id','=','nationalities.id')
+            ->select('applications.id as applid', 'applications.*', 'nationalities.id', 'nationalities.*')
+            ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
             ->where($whereArray)
             ->orderBy('created_at', 'desc')
             ->paginate(100)
@@ -55,8 +55,8 @@ class DocumentsController extends Controller
 
         // Count
         $countData = DB::table('applications')
-        ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-        ->join('nationalities','applications.nationality_id','=','nationalities.id')
+            ->select('applications.id as applid', 'applications.*', 'nationalities.id', 'nationalities.*')
+            ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
             ->where($whereArray)
             ->count();
 
@@ -92,13 +92,30 @@ class DocumentsController extends Controller
     public function wordExportStatements($id)
     {
         $data = DB::table('applications')
-        ->select('applications.name','applications.surname','applications.patronymic','applications.programms','applications.lang_edu','applications.region',
-        'applications.case_number', 'applications.statement', 'applications.attestat_or_diplom', 'applications.photo3x4', 'applications.medical_certificate',
-         'applications.ent_certificate', 'applications.grant_certificate', 'applications.udostov_copy', 'applications.birthdate', 'applications.iin',
-         'nationalities.nationality_ru', 'nationalities.id as nat_id')
-        ->join('nationalities','applications.nationality_id','=','nationalities.id')
-        ->where('applications.id','=',$id)
-        ->first();
+            ->select(
+                'applications.name',
+                'applications.surname',
+                'applications.patronymic',
+                'applications.programms',
+                'applications.lang_edu',
+                'applications.region',
+                'applications.case_number',
+                'applications.statement',
+                'applications.attestat_or_diplom',
+                'applications.photo3x4',
+                'applications.medical_certificate',
+                'applications.ent_certificate',
+                'applications.grant_certificate',
+                'applications.udostov_copy',
+                'applications.birthdate',
+                'applications.iin',
+                'nationalities.nationality_ru',
+                'nationalities.id as nat_id',
+                'applications.case_number_date'
+            )
+            ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
+            ->where('applications.id', '=', $id)
+            ->first();
         $templateProcessor = new TemplateProcessor('word-templates/statements.docx');
         $templateProcessor->setValue('surname', $data->surname);
         $templateProcessor->setValue('name', $data->name);
@@ -166,16 +183,23 @@ class DocumentsController extends Controller
 
 
         //дата рождения
-        if($data->birthdate !== NULL){
-            $templateProcessor->setValue('birth_date', date('d.m.Y', strtotime($data->birthdate)) );
-        }
-        elseif ($data->iin === NULL) {
+        if ($data->birthdate !== NULL) {
+            $templateProcessor->setValue('birth_date', date('d.m.Y', strtotime($data->birthdate)));
+        } elseif ($data->iin === NULL) {
             $templateProcessor->setValue('birth_date', '');
         } elseif (Str::startsWith($data->iin, ['0', '1'])) {
             $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2) . '.' . Str::substr($data->iin, 2, 2) . '.20' . Str::substr($data->iin, 0, 2));
         } else {
             $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2) . '.' . Str::substr($data->iin, 2, 2) . '.19' . Str::substr($data->iin, 0, 2));
         }
+
+        //дата номера дела
+        if ($data->case_number_date !== NULL) {
+            $templateProcessor->setValue('case_number_date', \Carbon\Carbon::parse($data->case_number_date)->translatedFormat('j F Y'));
+        } else {
+            $templateProcessor->setValue('case_number_date', '            20___');
+        }
+
 
         $fileName = $data->surname;
         $templateProcessor->saveAs($fileName . ' (заявления).docx');
@@ -237,10 +261,9 @@ class DocumentsController extends Controller
         }
 
         //дата рождения
-        if($data->birthdate !== NULL){
-            $templateProcessor->setValue('birth_date', date('d.m.Y', strtotime($data->birthdate)) );
-        }
-        elseif ($data->iin === NULL) {
+        if ($data->birthdate !== NULL) {
+            $templateProcessor->setValue('birth_date', date('d.m.Y', strtotime($data->birthdate)));
+        } elseif ($data->iin === NULL) {
             $templateProcessor->setValue('birth_date', '');
         } elseif (Str::startsWith($data->iin, ['0', '1'])) {
             $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2) . '.' . Str::substr($data->iin, 2, 2) . '.20' . Str::substr($data->iin, 0, 2));
@@ -308,10 +331,9 @@ class DocumentsController extends Controller
         }
 
         //дата рождения
-        if($data->birthdate !== NULL){
-            $templateProcessor->setValue('birth_date', date('d.m.Y', strtotime($data->birthdate)) );
-        }
-        elseif ($data->iin === NULL) {
+        if ($data->birthdate !== NULL) {
+            $templateProcessor->setValue('birth_date', date('d.m.Y', strtotime($data->birthdate)));
+        } elseif ($data->iin === NULL) {
             $templateProcessor->setValue('birth_date', '');
         } elseif (Str::startsWith($data->iin, ['0', '1'])) {
             $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2) . '.' . Str::substr($data->iin, 2, 2) . '.20' . Str::substr($data->iin, 0, 2));
@@ -327,12 +349,26 @@ class DocumentsController extends Controller
     public function wordExportApplicationForCredits($id)
     {
         $data = DB::table('applications')
-        ->select('applications.name','applications.surname','applications.patronymic','applications.programms','applications.lang_edu','applications.type',
-        'applications.phone_1', 'applications.birthdate', 'applications.iin', 'applications.gender', 'applications.base',
-        'nationalities.nationality_kz', 'nationalities.nationality_ru', 'nationalities.id as nat_id')
-        ->join('nationalities','applications.nationality_id','=','nationalities.id')
-        ->where('applications.id','=',$id)
-        ->first();
+            ->select(
+                'applications.name',
+                'applications.surname',
+                'applications.patronymic',
+                'applications.programms',
+                'applications.lang_edu',
+                'applications.type',
+                'applications.phone_1',
+                'applications.birthdate',
+                'applications.iin',
+                'applications.gender',
+                'applications.base',
+                'nationalities.nationality_kz',
+                'nationalities.nationality_ru',
+                'nationalities.id as nat_id',
+                'applications.case_number_date'
+            )
+            ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
+            ->where('applications.id', '=', $id)
+            ->first();
         $templateProcessor = new TemplateProcessor('word-templates/applicationForCredits.docx');
         $templateProcessor->setValue('surname', $data->surname);
         $templateProcessor->setValue('name', $data->name);
@@ -342,10 +378,9 @@ class DocumentsController extends Controller
         $templateProcessor->setValue('phone_1', $data->phone_1);
 
         //дата рождения
-        if($data->birthdate !== NULL){
-            $templateProcessor->setValue('birth_date', date('d.m.Y', strtotime($data->birthdate)) );
-        }
-        elseif ($data->iin === NULL) {
+        if ($data->birthdate !== NULL) {
+            $templateProcessor->setValue('birth_date', date('d.m.Y', strtotime($data->birthdate)));
+        } elseif ($data->iin === NULL) {
             $templateProcessor->setValue('birth_date', '');
         } elseif (Str::startsWith($data->iin, ['0', '1'])) {
             $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2) . '.' . Str::substr($data->iin, 2, 2) . '.20' . Str::substr($data->iin, 0, 2));
@@ -354,17 +389,15 @@ class DocumentsController extends Controller
         }
 
         //пол
-        if($data->gender !== NULL){
-            if($data->gender === "мужской"){
+        if ($data->gender !== NULL) {
+            if ($data->gender === "мужской") {
                 $templateProcessor->setValue('gender_kz', 'ер');
                 $templateProcessor->setValue('gender_ru', 'мужской');
-            }
-            elseif($data->gender === "женский"){
+            } elseif ($data->gender === "женский") {
                 $templateProcessor->setValue('gender_kz', 'әйел');
                 $templateProcessor->setValue('gender_ru', 'женский');
             }
-        }
-        elseif ($data->iin === NULL) {
+        } elseif ($data->iin === NULL) {
             $templateProcessor->setValue('gender_kz', '');
             $templateProcessor->setValue('gender_ru', '');
         } elseif (Str::substr($data->iin, 6, 1) == '1' || Str::substr($data->iin, 6, 1) == '3' || Str::substr($data->iin, 6, 1) == '5') {
@@ -389,10 +422,25 @@ class DocumentsController extends Controller
 
         //национальность
         if ($data->nat_id == 0) {
-            $templateProcessor->setValue('nationality', '');
+            $templateProcessor->setValue('nationality_kz', '');
+            $templateProcessor->setValue('nationality_ru', '');
         } else {
             $templateProcessor->setValue('nationality_kz', mb_strtolower($data->nationality_kz, 'UTF-8'));
             $templateProcessor->setValue('nationality_ru', mb_strtolower($data->nationality_ru, 'UTF-8'));
+        }
+
+        //дата номера дела
+        if ($data->case_number_date !== NULL) {
+            $templateProcessor->setValue('cday', '« '.\Carbon\Carbon::parse($data->case_number_date)->translatedFormat('j').' »');
+            $templateProcessor->setValue('cd_month_kz', \Carbon\Carbon::parse($data->case_number_date)->translatedFormat('F'));
+            $templateProcessor->setValue('cd_month_ru', \Carbon\Carbon::parse($data->case_number_date)->locale('ru_RU')->translatedFormat('F'));
+            $templateProcessor->setValue('c_y', \Carbon\Carbon::parse($data->case_number_date)->translatedFormat('y'));
+
+        } else {
+            $templateProcessor->setValue('cday', '«       »');
+            $templateProcessor->setValue('cd_month_kz', '');
+            $templateProcessor->setValue('cd_month_ru', '');
+            $templateProcessor->setValue('c_y', '___');
         }
 
         $fileName = $data->surname;
@@ -467,8 +515,8 @@ class DocumentsController extends Controller
             } elseif ($request->process === 'Сдал документы' && $data->case_number === NULL) {
                 $data->process = $request->process;
                 $findLastCaseNumber = DB::table('applications')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where('created_at', '>=', "2022-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
+                    ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
+                    ->where('created_at', '>=', "2022-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
                 $data->case_number = $findLastCaseNumber + 1;
                 $data->save();
                 return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
