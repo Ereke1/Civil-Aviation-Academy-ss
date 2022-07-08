@@ -12,7 +12,7 @@
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
                                     <h2>Приемная комиссия</h2> <br>
-                                    
+
                                     <a class="btn btn-primary btn-lg" href="/enrollee">Оставить заявку</a>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                
+
                                 </div>
                             </div>
                         </div>
@@ -39,14 +39,14 @@
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                            
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div><!--/.item-->
-            
+
         </div><!--/.owl-carousel-->
     </section><!--/#main-slider-->
      <!-- <section id="slider" class="mb-4 mt-5">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="col-md-9 col-12  pl-0 pr-0">
-                  
+
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="/assets/images/slider/1.jfif" alt=""></div>
@@ -164,19 +164,19 @@
 
     </section>
     <section id="paraVideo" class="parallax">
-        
+
             <div class="ParallaxVideo">
                 <video autoplay muted loop>
                     <source src="/assets/images/Rolik_AVIA без титров.mp4" type="video/mp4">
                 </video>
-                <h3 class="animated pulse infinite ">{{ __('Полет к мечте начинается здесь!') }}</h3>
+                <h3 class="animated pulse infinite"  id="paraVideoText">{{ __('Полет к мечте начинается здесь!') }}</h3>
             </div>
-    
+
     </section>
     <section id="blocks1" >
         <div class="container">
             <div class="page-header title text-center">
-                <h1>{{ __('Академия Гражданской Авиации') }}<br></h1>
+                <h1>{{ __('Академия гражданской авиации') }}<br></h1>
             </div>
             <div class="row active-with-click">
                 <div class="col-md-4 col-sm-6 col-xs-12">
@@ -194,7 +194,7 @@
                             </div>
                             <div class="mc-description">
                                 Большое количество государственных образовательных грантов<br>
-                                Гранты Президента-ректора<br>
+                                Гранты Ректора<br>
                                 Диплом, признаваемый во всем мире<br>
                                 Доступная цена за обучение и гибкие условия оплаты
                             </div>
@@ -206,7 +206,7 @@
                             <h4>
                                 <a href="#">{{ __('Подробнее') }}</a>
                             </h4>
-                           
+
                         </div>
                     </article>
                 </div>
@@ -360,7 +360,7 @@
             </div>
         </div>
     </section>
-    
+
     <section id="counter" class="parallax-section">
 			<div class="container">
             <div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
@@ -379,11 +379,11 @@
 						</div>
 					</div>
 					<!-- end first count item -->
-				
+
 					<!-- second count item -->
-					
+
 					<!-- end second count item -->
-				
+
 					<!-- third count item -->
 					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="400ms">
 						<div class="counters-item">
@@ -393,11 +393,11 @@
 							</div>
 							<i class="fa fa-thumbs-up fa-3x"></i>
 				            <h3>Трудоустроенных Выпускников</h3>
-							
+
 						</div>
 					</div>
 					<!-- end third count item -->
-					
+
 					<!-- fourth count item -->
 					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
 						<div class="counters-item kill-margin-bottom">
@@ -420,9 +420,9 @@
 					</div>
 				</div> 		<!-- end row -->
 			</div>   	<!-- end container -->
-            
+
 		</section>
-       
+
 
 <!--    <section id="news">
         <div class="container">
@@ -511,12 +511,12 @@
                                         @endif
 										</p>
 										<a href="{{ route('front.news.show', $item->slug) }}" class="btn btn-read">{{ __('Подробнее') }}</a>
-										
+
 									</div>
 								</div>
 							</div>
                         @endforeach
-						</div>		
+						</div>
 					</div>
                     <div class="portfolio_btn text-center fix m-top-100">
                                 <a href="/news/" class="btn btn-read">{{ __('Посмотреть все') }}</a>
@@ -568,9 +568,9 @@
     </section> -->
     <section id="testimonial" class="parallax-section" >
 			<div class="container">
-				<div class="row">				
+				<div class="row">
 					<div class="col-lg-12">
-					
+
 						<!-- section title -->
 						<div class="sub-title text-center wow fadeInDown" data-wow-duration="500ms">
 							<h3>Объявления Академии</h3>
@@ -582,13 +582,13 @@
                         @foreach ($events as $event)
 							<!-- testimonial single -->
 							<div class="item text-center">
-								
+
 								<!-- client photo -->
 								<div class="client-thumb">
 									<img src="/assets/images/logo_agakaz_b.jpg" class="img-responsive" alt="Meghna">
 								</div>
 								<!-- /client photo -->
-								
+
 								<!-- client info -->
 								<div class="client-info">
 									<div class="client-meta">
@@ -626,13 +626,13 @@
 					</div> 		<!-- end col lg 12 -->
 				</div>	    <!-- End row -->
 			</div>       <!-- End container -->
-		</section>    <!-- End Section --> 
+		</section>    <!-- End Section -->
     <section id="map">
         <div class="map" style="padding-top:100px;">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5802.496879380682!2d77.00797511018712!3d43.35091361409262!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388312ab423e0e53%3A0x28f121f26f2a84!2z0JDQutCw0LTQtdC80LjRjyDQk9GA0LDQttC00LDQvdGB0LrQvtC5INCQ0LLQuNCw0YbQuNC4!5e0!3m2!1sru!2skz!4v1656590585883!5m2!1sru!2skz" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
     </section>
-        
+
 
 
 @endsection

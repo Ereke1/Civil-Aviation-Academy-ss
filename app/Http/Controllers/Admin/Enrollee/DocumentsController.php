@@ -45,7 +45,7 @@ class DocumentsController extends Controller
 
 
         $nationality_list = DB::table('nationalities')
-        ->get();
+            ->get();
 
         $data = DB::table('applications')
             ->select('applications.id as applid', 'applications.*', 'nationalities.id as nat_id', 'nationalities.*')
@@ -435,11 +435,10 @@ class DocumentsController extends Controller
 
         //дата номера дела
         if ($data->case_number_date !== NULL) {
-            $templateProcessor->setValue('cday', '« '.\Carbon\Carbon::parse($data->case_number_date)->translatedFormat('j').' »');
+            $templateProcessor->setValue('cday', '« ' . \Carbon\Carbon::parse($data->case_number_date)->translatedFormat('j') . ' »');
             $templateProcessor->setValue('cd_month_kz', \Carbon\Carbon::parse($data->case_number_date)->translatedFormat('F'));
             $templateProcessor->setValue('cd_month_ru', \Carbon\Carbon::parse($data->case_number_date)->locale('ru_RU')->translatedFormat('F'));
             $templateProcessor->setValue('c_y', \Carbon\Carbon::parse($data->case_number_date)->translatedFormat('y'));
-
         } else {
             $templateProcessor->setValue('cday', '«       »');
             $templateProcessor->setValue('cd_month_kz', '');
@@ -543,6 +542,34 @@ class DocumentsController extends Controller
                 $data->ent_certificate = $request->ent;
                 $data->grant_certificate = $request->grant;
                 $data->udostov_copy = $request->udostov;
+
+                if ($request->hasFile('vlekImage')) {
+                    $request->validate([
+                        'images' => 'vlekImage|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+                    ]);
+
+                    $image_vlek = $request->file('vlekImage');
+                    $image_name_vlek = $image_vlek->getClientOriginalName();
+                    $destinationPathVlek = public_path('/storage/applications/vlek/' . $request->surname . ' ' . $request->name);
+                    $image_vlek->move($destinationPathVlek, $image_name_vlek);
+
+                    $data->haveVLEK = "Да";
+                    $data->imgVLEK = '/storage/applications/vlek/' . $request->surname . ' ' . $request->name . '/' . $image_name_vlek;
+                }
+                if ($request->hasFile('psychoImage')) {
+                    $request->validate([
+                        'images' => 'psychoImage|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+                    ]);
+
+                    $image_psycho = $request->file('psychoImage');
+                    $image_name_psycho = $image_psycho->getClientOriginalName();
+                    $destinationPathPsycho = public_path('/storage/applications/vlek/psycho/' . $request->surname . ' ' . $request->name);
+                    $image_psycho->move($destinationPathPsycho, $image_name_psycho);
+
+                    $data->imgPSYCHO = '/storage/applications/vlek/psycho/' . $request->surname . ' ' . $request->name . '/' . $image_name_psycho;
+                }
+
+
 
                 $data->save();
                 return redirect()->back()->with('alert', 'Корректировка выполнена!');

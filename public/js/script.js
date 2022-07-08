@@ -115,3 +115,10 @@ window.addEventListener('load', function () {
 		}
 	}
 })
+
+
+var fade_out = function() {
+    $("#paraVideoText").fadeOut().empty();
+  }
+
+  setTimeout(fade_out, 10000);

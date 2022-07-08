@@ -128,7 +128,7 @@
                             </div>
                             <div class="modal-body">
                                 <form action="{{ route('admin.enrollee.documents.update', $item->applid) }}"
-                                    method="POST">
+                                    method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <input type="hidden" name="id" value="{!! $item->applid !!}">
@@ -361,6 +361,11 @@
                                                     <a href="{!! $item->imgVLEK !!}" target="_blank">ВЛЭК</a>
                                                 </p>
                                             </div>
+                                        @elseif ($item->haveVLEK === "Нет" && !isset($item->imgVLEK))
+                                            <div class="block" id="vlekBlockImage">
+                                                <h5 class="block__title">Прикрепить пройденный ВЛЭК</h5>
+                                                <input type="file" id="vlekImage" class="block__info" name="vlekImage">
+                                            </div>
                                         @endif
                                         @if (isset($item->imgPSYCHO))
                                             <div class="block">
@@ -368,6 +373,11 @@
                                                 <p class="block__info">
                                                     <a href="{!! $item->imgPSYCHO !!}" target="_blank">Психотест</a>
                                                 </p>
+                                            </div>
+                                            @elseif ($item->haveVLEK !== NULL && !isset($item->imgPSYCHO))
+                                            <div class="block" id="psychoBlockImage">
+                                                <h5 class="block__title">Прикрепить пройденный психотест</h5>
+                                                <input type="file" name="psychoImage" id="psychoImage" class="block__info" onchange="vlekImageFunc()">
                                             </div>
                                         @endif
                                         @if (isset($item->haveIELTS))
