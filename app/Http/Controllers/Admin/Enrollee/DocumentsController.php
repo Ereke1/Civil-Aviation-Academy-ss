@@ -526,6 +526,7 @@ class DocumentsController extends Controller
             } else {
                 $data->iin = $request->iin;
                 $data->base = $request->base;
+				$data->lang_edu = $request->lang_edu;
                 $data->phone_1 = $request->phone_1;
                 $data->phone_2 = $request->phone_2;
                 $data->programms = $request->programms;
