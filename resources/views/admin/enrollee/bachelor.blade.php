@@ -283,6 +283,7 @@
                                         <div class="block">
                                             <h5 class="block__title">Язык обучения</h5>
                                             <select name="lang_edu" class="block__info">
+                                                <option @if ($item->lang_edu === NULL or $item->lang_edu === "-") selected value="{{$item->lang_edu}}" @endif>-</option>
                                                 <option value="Казахский"
                                                     @if ($item->lang_edu === 'Казахский') selected @endif>Казахский
                                                 </option>
