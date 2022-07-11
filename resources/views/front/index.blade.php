@@ -204,7 +204,7 @@
                         </a>
                         <div class="mc-footer">
                             <h4>
-                                <a href="#">{{ __('Подробнее') }}</a>
+                                <a href="/obrazovatelnye-programmy-na-bakalavriat">{{ __('Подробнее') }}</a>
                             </h4>
 
                         </div>
@@ -236,7 +236,7 @@
                         </a>
                         <div class="mc-footer">
                             <h4>
-                                <a href="#">{{ __('Подробнее') }}</a>
+                                <a href="/obrazovatelnye-programmy-na-magistraturu-187">{{ __('Подробнее') }}</a>
                             </h4>
                         </div>
                     </article>
@@ -267,7 +267,7 @@
                         </a>
                         <div class="mc-footer">
                             <h4>
-                                <a href="#">{{ __('Подробнее') }}</a>
+                                <a href="/obrazovatelnye-programmy-na-doktoranturu-189">{{ __('Подробнее') }}</a>
                             </h4>
                         </div>
                     </article>
@@ -294,7 +294,7 @@
                         </a>
                         <div class="mc-footer">
                             <h4>
-                                <a href="#">{{ __('Подробнее') }}</a>
+                                <a href="/abiturientam-193">{{ __('Подробнее') }}</a>
                             </h4>
                         </div>
                     </article>
@@ -325,7 +325,7 @@
                         </a>
                         <div class="mc-footer">
                             <h4>
-                                <a href="#">{{ __('Подробнее') }}</a>
+                                <a href="https://moodle.agakaz.kz/">{{ __('Подробнее') }}</a>
                             </h4>
                         </div>
                     </article>
