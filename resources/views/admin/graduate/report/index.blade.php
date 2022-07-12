@@ -22,7 +22,7 @@
                 </div>
             </form>
         </div>
-        <h3>Скачать в <a href="{{ route('admin.graduate.report.pdf') }}">PDF</a></h3>
+        <h3>Скачать в <a href="{{route('admin.graduate.report.pdf',['graduation_year' => $graduation_year ? $graduation_year : 0 ])}}">PDF</a></h3>
         <table class="report">
            {{-- Грант --}}
             <tr>

@@ -1525,14 +1525,14 @@ class ReportController extends Controller
 		];
 		return view('admin.graduate.report.index', $dataArray);
 	}
-	public function pdf(Request $request)
+	public function pdf($graduation_year)
 	{
 
-        $graduation_year = $request->graduation_year;
-        if(isset($graduation_year)){
-            $grad_year = Graduate::where('graduation_year', $graduation_year)->first();
-        } else {
-            $grad_year = "App\Models\Graduate";
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
         }
 
 
@@ -1564,7 +1564,18 @@ class ReportController extends Controller
 		])
 			->count();
 		$grant_at_mx_no_work = $grant_at_mx - $grant_at_mx_magister - $grant_at_mx_work;
-		$grant_at_mx_procent = (($grant_at_mx_work + $grant_at_mx_magister) * 100) / $grant_at_mx;
+        if($grant_at_mx == 0){
+            $grant_at_mx_procent = 0;
+        } else {
+            $grant_at_mx_procent = (($grant_at_mx_work + $grant_at_mx_magister) * 100) / $grant_at_mx;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
 
 		// AT-АВ
 		$grant_at_mv = $grad_year->where([
@@ -1593,7 +1604,19 @@ class ReportController extends Controller
 		])
 			->count();
 		$grant_at_mv_no_work = $grant_at_mv - $grant_at_mv_magister - $grant_at_mv_work;
-		$grant_at_mv_procent = (($grant_at_mv_work + $grant_at_mv_magister) * 100) / $grant_at_mv;
+        if($grant_at_mv == 0){
+            $grant_at_mv_procent = 0;
+        } else {
+            $grant_at_mv_procent = (($grant_at_mv_work + $grant_at_mv_magister) * 100) / $grant_at_mv;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 		// AT-ОНО
 		$grant_at_ono = $grad_year->where([
 			['form_study', 'грант'],
@@ -1621,7 +1644,19 @@ class ReportController extends Controller
 		])
 			->count();
 		$grant_at_ono_no_work = $grant_at_ono - $grant_at_ono_magister - $grant_at_ono_work;
-		$grant_at_ono_procent = (($grant_at_ono_work + $grant_at_ono_magister) * 100) / $grant_at_ono;
+        if($grant_at_ono == 0){
+            $grant_at_ono_procent = 0;
+        } else {
+            $grant_at_ono_procent = (($grant_at_ono_work + $grant_at_ono_magister) * 100) / $grant_at_ono;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// AT-ОВД
 		$grant_at_ovd = $grad_year->where([
@@ -1650,7 +1685,19 @@ class ReportController extends Controller
 		])
 			->count();
 		$grant_at_ovd_no_work = $grant_at_ovd - $grant_at_ovd_magister - $grant_at_ovd_work;
-		$grant_at_ovd_procent = (($grant_at_ovd_work + $grant_at_ovd_magister) * 100) / $grant_at_ovd;
+        if($grant_at_ovd == 0){
+            $grant_at_ovd_procent = 0;
+        } else {
+            $grant_at_ovd_procent = (($grant_at_ovd_work + $grant_at_ovd_magister) * 100) / $grant_at_ovd;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// AT-АБ
 		$grant_at_ab = $grad_year->where([
@@ -1679,7 +1726,19 @@ class ReportController extends Controller
 		])
 			->count();
 		$grant_at_ab_no_work = $grant_at_ab - $grant_at_ab_magister - $grant_at_ab_work;
-		$grant_at_ab_procent = (($grant_at_ab_work + $grant_at_ab_magister) * 100) / $grant_at_ab;
+        if($grant_at_ab == 0){
+            $grant_at_ab_procent = 0;
+        } else {
+            $grant_at_ab_procent = (($grant_at_ab_work + $grant_at_ab_magister) * 100) / $grant_at_ab;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// ГРАНТ AT //
 		$grant_at = $grant_at_mx + $grant_at_mv + $grant_at_ono + $grant_at_ovd + $grant_at_ab;
@@ -1687,7 +1746,11 @@ class ReportController extends Controller
 		$grant_at_work = $grant_at_mx_work + $grant_at_mv_work + $grant_at_ono_work + $grant_at_ovd_work + $grant_at_ab_work;
 		$grant_at_no_work = $grant_at_mx_no_work + $grant_at_mv_no_work + $grant_at_ono_no_work + $grant_at_ovd_no_work + $grant_at_ab_no_work;
 		$grant_at_direction = $grant_at_mx_direction + $grant_at_mv_direction + $grant_at_ono_direction + $grant_at_ovd_direction + $grant_at_ab_direction;
-		$grant_at_procent = (($grant_at_work + $grant_at_magister) * 100) / $grant_at;
+        if($grant_at == 0){
+            $grant_at_procent = 0;
+        } else {
+            $grant_at_procent = (($grant_at_work + $grant_at_magister) * 100) / $grant_at;
+        }
 
 		// ОП-ЛГ
 		$grant_op_lg = $grad_year->where([
@@ -1716,7 +1779,19 @@ class ReportController extends Controller
 		])
 			->count();
 		$grant_op_lg_no_work = $grant_op_lg - $grant_op_lg_magister - $grant_op_lg_work;
-		$grant_op_lg_procent = (($grant_op_lg_work + $grant_op_lg_magister) * 100) / $grant_op_lg;
+        if($grant_op_lg == 0){
+            $grant_op_lg_procent = 0;
+        } else {
+            $grant_op_lg_procent = (($grant_op_lg_work + $grant_op_lg_magister) * 100) / $grant_op_lg;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// ОП
 		$grant_op17 = $grad_year->where([
@@ -1774,14 +1849,30 @@ class ReportController extends Controller
 		$grant_op_magister = $grant_op17_magister + $grant_op18_magister;
 		$grant_op_work = $grant_op17_work + $grant_op18_work;
 		$grant_op_no_work = $grant_op - $grant_op_magister - $grant_op_work;
-		$grant_op_procent = (($grant_op_work + $grant_op_magister) * 100) / $grant_op;
+        if($grant_op == 0){
+            $grant_op_procent = 0;
+        } else {
+            $grant_op_procent = (($grant_op_work + $grant_op_magister) * 100) / $grant_op;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// ОП ВСЕ //
 		$grant_op_all = $grant_op + $grant_op_lg;
 		$grant_op_all_magister = $grant_op_magister + $grant_op_lg_magister;
 		$grant_op_all_work = $grant_op_work + $grant_op_lg_work;
 		$grant_op_all_no_work = $grant_op_no_work + $grant_op_lg_no_work;
-		$grant_op_all_procent = (($grant_op_all_work + $grant_op_all_magister) * 100) / $grant_op_all;
+        if($grant_op_all == 0){
+            $grant_op_all_procent = 0;
+        } else {
+            $grant_op_all_procent = (($grant_op_all_work + $grant_op_all_magister) * 100) / $grant_op_all;
+        }
 
 		// МНП-АТ
 		$grant_mnp_at = $grad_year->where([
@@ -1810,7 +1901,19 @@ class ReportController extends Controller
 		])
 			->count();
 		$grant_mnp_at_no_work = $grant_mnp_at - $grant_mnp_at_magister - $grant_mnp_at_work;
-		$grant_mnp_at_procent = (($grant_mnp_at_work + $grant_mnp_at_magister) * 100) / $grant_mnp_at;
+        if($grant_mnp_at == 0){
+            $grant_mnp_at_procent = 0;
+        } else {
+            $grant_mnp_at_procent = (($grant_mnp_at_work + $grant_mnp_at_magister) * 100) / $grant_mnp_at;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// МНП-ТУ
 		$grant_mnp_tu = $grad_year->where([
@@ -1839,7 +1942,19 @@ class ReportController extends Controller
 		])
 			->count();
 		$grant_mnp_tu_no_work = $grant_mnp_tu - $grant_mnp_tu_magister - $grant_mnp_tu_work;
-		$grant_mnp_tu_procent = (($grant_mnp_tu_work + $grant_mnp_tu_magister) * 100) / $grant_mnp_tu;
+        if($grant_mnp_tu == 0){
+            $grant_mnp_tu_procent = 0;
+        } else {
+            $grant_mnp_tu_procent = (($grant_mnp_tu_work + $grant_mnp_tu_magister) * 100) / $grant_mnp_tu;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// ДАТ
 		$grant_dat = $grad_year->where([
@@ -1868,14 +1983,30 @@ class ReportController extends Controller
 		])
 			->count();
 		$grant_dat_no_work = $grant_dat - $grant_dat_magister - $grant_dat_work;
-		$grant_dat_procent = (($grant_dat_work + $grant_dat_magister) * 100) / $grant_dat;
+        if($grant_dat == 0){
+            $grant_dat_procent = 0;
+        } else {
+            $grant_dat_procent = (($grant_dat_work + $grant_dat_magister) * 100) / $grant_dat;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// Грант ВСЕ
 		$grant_all = $grant_at + $grant_op_all + $grant_mnp_at + $grant_mnp_tu + $grant_dat;
 		$grant_all_magister = $grant_at_magister + $grant_op_all_magister + $grant_mnp_at_magister + $grant_mnp_tu_magister + $grant_dat_magister;
 		$grant_all_work = $grant_at_work + $grant_op_all_work + $grant_mnp_at_work + $grant_mnp_tu_work + $grant_dat_work;
 		$grant_all_no_work = $grant_at_no_work + $grant_op_all_no_work + $grant_mnp_at_no_work + $grant_mnp_tu_no_work + $grant_dat_no_work;
-		$grant_all_procent = (($grant_all_work + $grant_all_magister) * 100) / $grant_all;
+        if($grant_all == 0){
+            $grant_all_procent = 0;
+        } else {
+            $grant_all_procent = (($grant_all_work + $grant_all_magister) * 100) / $grant_all;
+        }
 
 		// ПЛАТНОЕ //
 		// АТ-МХ
@@ -1906,7 +2037,19 @@ class ReportController extends Controller
 			->count();
 		$paid_at_mx_work = $paid_at_mx_work + $paid_at_mx_direction;
 		$paid_at_mx_no_work = $paid_at_mx - $paid_at_mx_magister - $paid_at_mx_work;
-		$paid_at_mx_procent = (($paid_at_mx_work + $paid_at_mx_magister) * 100) / $paid_at_mx;
+        if($paid_at_mx == 0){
+            $paid_at_mx_procent = 0;
+        } else {
+            $paid_at_mx_procent = (($paid_at_mx_work + $paid_at_mx_magister) * 100) / $paid_at_mx;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// АТ-АВ
 		$paid_at_av = $grad_year->where([
@@ -1936,7 +2079,19 @@ class ReportController extends Controller
 			->count();
 		$paid_at_av_work = $paid_at_av_work + $paid_at_av_direction;
 		$paid_at_av_no_work = $paid_at_av - $paid_at_av_magister - $paid_at_av_work;
-		$paid_at_av_procent = (($paid_at_av_work + $paid_at_av_magister) * 100) / $paid_at_av;
+        if($paid_at_av == 0){
+            $paid_at_av_procent = 0;
+        } else {
+            $paid_at_av_procent = (($paid_at_av_work + $paid_at_av_magister) * 100) / $paid_at_av;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// АТ-ОНО
 		$paid_at_ono = $grad_year->where([
@@ -1966,7 +2121,19 @@ class ReportController extends Controller
 			->count();
 		$paid_at_ono_work = $paid_at_ono_work + $paid_at_ono_direction;
 		$paid_at_ono_no_work = $paid_at_ono - $paid_at_ono_magister - $paid_at_ono_work;
-		$paid_at_ono_procent = (($paid_at_ono_work + $paid_at_ono_magister) * 100) / $paid_at_ono;
+        if($paid_at_ono == 0){
+            $paid_at_ono_procent = 0;
+        } else {
+            $paid_at_ono_procent = (($paid_at_ono_work + $paid_at_ono_magister) * 100) / $paid_at_ono;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// АТ-АБ
 		$paid_at_ab = $grad_year->where([
@@ -1996,7 +2163,19 @@ class ReportController extends Controller
 			->count();
 		$paid_at_ab_work = $paid_at_ab_work + $paid_at_ab_direction;
 		$paid_at_ab_no_work = $paid_at_ab - $paid_at_ab_magister - $paid_at_ab_work;
-		$paid_at_ab_procent = (($paid_at_ab_work + $paid_at_ab_magister) * 100) / $paid_at_ab;
+        if($paid_at_ab == 0){
+            $paid_at_ab_procent = 0;
+        } else {
+            $paid_at_ab_procent = (($paid_at_ab_work + $paid_at_ab_magister) * 100) / $paid_at_ab;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// АТ-ОВД
 		$paid_at_ovd = $grad_year->where([
@@ -2026,14 +2205,30 @@ class ReportController extends Controller
 			->count();
 		$paid_at_ovd_work = $paid_at_ovd_work + $paid_at_ovd_direction;
 		$paid_at_ovd_no_work = $paid_at_ovd - $paid_at_ovd_magister - $paid_at_ovd_work;
-		$paid_at_ovd_procent = (($paid_at_ovd_work + $paid_at_ovd_magister) * 100) / $paid_at_ovd;
+        if($paid_at_ovd == 0){
+            $paid_at_ovd_procent = 0;
+        } else {
+            $paid_at_ovd_procent = (($paid_at_ovd_work + $paid_at_ovd_magister) * 100) / $paid_at_ovd;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// АТ ВСЕ //
 		$paid_at = $paid_at_mx + $paid_at_av + $paid_at_ono + $paid_at_ab + $paid_at_ovd;
 		$paid_at_magister = $paid_at_mx_magister + $paid_at_av_magister + $paid_at_ono_magister + $paid_at_ab_magister + $paid_at_ovd_magister;
 		$paid_at_work = $paid_at_mx_work + $paid_at_av_work + $paid_at_ono_work + $paid_at_ab_work + $paid_at_ovd_work;
 		$paid_at_no_work = $paid_at_mx_no_work + $paid_at_av_no_work + $paid_at_ono_no_work + $paid_at_ab_no_work + $paid_at_ovd_no_work;
-		$paid_at_procent = (($paid_at_work + $paid_at_magister) * 100) / $paid_at;
+        if($paid_at == 0){
+            $paid_at_procent = 0;
+        } else {
+            $paid_at_procent = (($paid_at_work + $paid_at_magister) * 100) / $paid_at;
+        }
 
 		// ОП-ЛГ
 		$paid_op_lg = $grad_year->where([
@@ -2063,7 +2258,19 @@ class ReportController extends Controller
 			->count();
 		$paid_op_lg_work = $paid_op_lg_work + $paid_op_lg_direction;
 		$paid_op_lg_no_work = $paid_op_lg - $paid_op_lg_magister - $paid_op_lg_work;
-		$paid_op_lg_procent = (($paid_op_lg_work + $paid_op_lg_magister) * 100) / $paid_op_lg;
+        if($paid_op_lg == 0){
+            $paid_op_lg_procent = 0;
+        } else {
+            $paid_op_lg_procent = (($paid_op_lg_work + $paid_op_lg_magister) * 100) / $paid_op_lg;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// ОП
 		$paid_op = $grad_year->where([
@@ -2093,14 +2300,30 @@ class ReportController extends Controller
 			->count();
 		$paid_op_work = $paid_op_work + $paid_op_direction;
 		$paid_op_no_work = $paid_op - $paid_op_magister - $paid_op_work;
-		$paid_op_procent = (($paid_op_work + $paid_op_magister) * 100) / $paid_op;
+        if($paid_op == 0){
+            $paid_op_procent = 0;
+        } else {
+            $paid_op_procent = (($paid_op_work + $paid_op_magister) * 100) / $paid_op;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// ОП ВСЕ //
 		$paid_op_all = $paid_op_lg + $paid_op;
 		$paid_op_all_magister = $paid_op_lg_magister + $paid_op_magister;
 		$paid_op_all_work = $paid_op_lg_work + $paid_op_work;
 		$paid_op_all_no_work = $paid_op_lg_no_work + $paid_op_no_work;
-		$paid_op_all_procent = (($paid_op_all_work + $paid_op_all_magister) * 100) / $paid_op_all;
+        if($paid_op_all == 0){
+            $paid_op_all_procent = 0;
+        } else {
+            $paid_op_all_procent = (($paid_op_all_work + $paid_op_all_magister) * 100) / $paid_op_all;
+        }
 
 		// Д-ЛЭ
 		$paid_d_le = $grad_year->where([
@@ -2130,7 +2353,19 @@ class ReportController extends Controller
 			->count();
 		$paid_d_le_work = $paid_d_le_work + $paid_d_le_direction;
 		$paid_d_le_no_work = $paid_d_le - $paid_d_le_magister - $paid_d_le_work;
-		$paid_d_le_procent = (($paid_d_le_work + $paid_d_le_magister) * 100) / $paid_d_le;
+        if($paid_d_le == 0){
+            $paid_d_le_procent = 0;
+        } else {
+            $paid_d_le_procent = (($paid_d_le_work + $paid_d_le_magister) * 100) / $paid_d_le;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// Д-МХ
 		$paid_d_mx = $grad_year->where([
@@ -2160,7 +2395,19 @@ class ReportController extends Controller
 			->count();
 		$paid_d_mx_work = $paid_d_mx_work + $paid_d_mx_direction;
 		$paid_d_mx_no_work = $paid_d_mx - $paid_d_mx_magister - $paid_d_mx_work;
-		$paid_d_mx_procent = (($paid_d_mx_work + $paid_d_mx_magister) * 100) / $paid_d_mx;
+        if($paid_d_mx == 0){
+            $paid_d_mx_procent = 0;
+        } else {
+            $paid_d_mx_procent = (($paid_d_mx_work + $paid_d_mx_magister) * 100) / $paid_d_mx;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// Д-АВ
 		$paid_d_av = $grad_year->where([
@@ -2190,7 +2437,19 @@ class ReportController extends Controller
 			->count();
 		$paid_d_av_work = $paid_d_av_work + $paid_d_av_direction;
 		$paid_d_av_no_work = $paid_d_av - $paid_d_av_magister - $paid_d_av_work;
-		$paid_d_av_procent = (($paid_d_av_work + $paid_d_av_magister) * 100) / $paid_d_av;
+        if($paid_d_av == 0){
+            $paid_d_av_procent = 0;
+        } else {
+            $paid_d_av_procent = (($paid_d_av_work + $paid_d_av_magister) * 100) / $paid_d_av;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// Д-ОВД
 		$paid_d_ovd = $grad_year->where([
@@ -2220,7 +2479,19 @@ class ReportController extends Controller
 			->count();
 		$paid_d_ovd_work = $paid_d_ovd_work + $paid_d_ovd_direction;
 		$paid_d_ovd_no_work = $paid_d_ovd - $paid_d_ovd_magister - $paid_d_ovd_work;
-		$paid_d_ovd_procent = (($paid_d_ovd_work + $paid_d_ovd_magister) * 100) / $paid_d_ovd;
+        if($paid_d_ovd == 0){
+            $paid_d_ovd_procent = 0;
+        } else {
+            $paid_d_ovd_procent = (($paid_d_ovd_work + $paid_d_ovd_magister) * 100) / $paid_d_ovd;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// Д-АБ
 		$paid_d_ab = $grad_year->where([
@@ -2250,7 +2521,19 @@ class ReportController extends Controller
 			->count();
 		$paid_d_ab_work = $paid_d_ab_work + $paid_d_ab_direction;
 		$paid_d_ab_no_work = $paid_d_ab - $paid_d_ab_magister - $paid_d_ab_work;
-		$paid_d_ab_procent = (($paid_d_ab_work + $paid_d_ab_magister) * 100) / $paid_d_ab;
+        if($paid_d_ab == 0){
+            $paid_d_ab_procent = 0;
+        } else {
+            $paid_d_ab_procent = (($paid_d_ab_work + $paid_d_ab_magister) * 100) / $paid_d_ab;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// Д-ОНО
 		$paid_d_ono = $grad_year->where([
@@ -2280,14 +2563,30 @@ class ReportController extends Controller
 			->count();
 		$paid_d_ono_work = $paid_d_ono_work + $paid_d_ono_direction;
 		$paid_d_ono_no_work = $paid_d_ono - $paid_d_ono_magister - $paid_d_ono_work;
-		$paid_d_ono_procent = (($paid_d_ono_work + $paid_d_ono_magister) * 100) / $paid_d_ono;
+        if($paid_d_ono == 0){
+            $paid_d_ono_procent = 0;
+        } else {
+            $paid_d_ono_procent = (($paid_d_ono_work + $paid_d_ono_magister) * 100) / $paid_d_ono;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// Д-АТ ВСЕ //
 		$paid_dat = $paid_d_le + $paid_d_mx + $paid_d_av + $paid_d_ovd + $paid_d_ab + $paid_d_ono;
 		$paid_dat_magister = $paid_d_le_magister + $paid_d_mx_magister + $paid_d_av_magister + $paid_d_ovd_magister + $paid_d_ab_magister + $paid_d_ono_magister;
 		$paid_dat_work = $paid_d_le_work + $paid_d_mx_work + $paid_d_av_work + $paid_d_ovd_work + $paid_d_ab_work + $paid_d_ono_work;
 		$paid_dat_no_work = $paid_d_le_no_work + $paid_d_mx_no_work + $paid_d_av_no_work + $paid_d_ovd_no_work + $paid_d_ab_no_work + $paid_d_ono_no_work;
-		$paid_dat_procent = (($paid_dat_work + $paid_dat_magister) * 100) / $paid_dat;
+        if($paid_dat == 0){
+            $paid_dat_procent = 0;
+        } else {
+            $paid_dat_procent = (($paid_dat_work + $paid_dat_magister) * 100) / $paid_dat;
+        }
 
 		// Д-ОП
 		$paid_d_op = $grad_year->where([
@@ -2317,7 +2616,19 @@ class ReportController extends Controller
 			->count();
 		$paid_d_op_work = $paid_d_op_work + $paid_d_op_direction;
 		$paid_d_op_no_work = $paid_d_op - $paid_d_op_magister - $paid_d_op_work;
-		$paid_d_op_procent = (($paid_d_op_work + $paid_d_op_magister) * 100) / $paid_d_op;
+        if($paid_d_op == 0){
+            $paid_d_op_procent = 0;
+        } else {
+            $paid_d_op_procent = (($paid_d_op_work + $paid_d_op_magister) * 100) / $paid_d_op;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// Д-ОП-ЛГ
 		$paid_d_op_lg = $grad_year->where([
@@ -2347,14 +2658,30 @@ class ReportController extends Controller
 			->count();
 		$paid_d_op_lg_work = $paid_d_op_lg_work + $paid_d_op_lg_direction;
 		$paid_d_op_lg_no_work = $paid_d_op_lg - $paid_d_op_lg_magister - $paid_d_op_lg_work;
-		$paid_d_op_lg_procent = (($paid_d_op_lg_work + $paid_d_op_lg_magister) * 100) / $paid_d_op_lg;
+        if($paid_d_op_lg == 0){
+            $paid_d_op_lg_procent = 0;
+        } else {
+            $paid_d_op_lg_procent = (($paid_d_op_lg_work + $paid_d_op_lg_magister) * 100) / $paid_d_op_lg;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// Д-ОП ВСЕ //
 		$paid_d_op_all = $paid_d_op + $paid_d_op_lg;
 		$paid_d_op_all_magister = $paid_d_op_magister + $paid_d_op_lg_magister;
 		$paid_d_op_all_work = $paid_d_op_work + $paid_d_op_lg_work;
 		$paid_d_op_all_no_work = $paid_d_op_no_work + $paid_d_op_lg_no_work;
-		$paid_d_op_all_procent = (($paid_d_op_all_work + $paid_d_op_all_magister) * 100) / $paid_d_op_all;
+        if($paid_d_op_all == 0){
+            $paid_d_op_all_procent = 0;
+        } else {
+            $paid_d_op_all_procent = (($paid_d_op_all_work + $paid_d_op_all_magister) * 100) / $paid_d_op_all;
+        }
 
 		// МП-АТ
 		$paid_mp_at = $grad_year->where([
@@ -2384,7 +2711,19 @@ class ReportController extends Controller
 			->count();
 		$paid_mp_at_work = $paid_mp_at_work + $paid_mp_at_direction;
 		$paid_mp_at_no_work = $paid_mp_at - $paid_mp_at_magister - $paid_mp_at_work;
-		$paid_mp_at_procent = (($paid_mp_at_work + $paid_mp_at_magister) * 100) / $paid_mp_at;
+        if($paid_mp_at == 0){
+            $paid_mp_at_procent = 0;
+        } else {
+            $paid_mp_at_procent = (($paid_mp_at_work + $paid_mp_at_magister) * 100) / $paid_mp_at;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// МП-ТУ
 		$paid_mp_tu = $grad_year->where([
@@ -2414,7 +2753,19 @@ class ReportController extends Controller
 			->count();
 		$paid_mp_tu_work = $paid_mp_tu_work + $paid_mp_tu_direction;
 		$paid_mp_tu_no_work = $paid_mp_tu - $paid_mp_tu_magister - $paid_mp_tu_work;
-		$paid_mp_tu_procent = (($paid_mp_tu_work + $paid_mp_tu_magister) * 100) / $paid_mp_tu;
+        if($paid_mp_tu == 0){
+            $paid_mp_tu_procent = 0;
+        } else {
+            $paid_mp_tu_procent = (($paid_mp_tu_work + $paid_mp_tu_magister) * 100) / $paid_mp_tu;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// МНП-ТУ
 		$paid_mnp_tu = $grad_year->where([
@@ -2444,21 +2795,42 @@ class ReportController extends Controller
 			->count();
 		$paid_mnp_tu_work = $paid_mnp_tu_work + $paid_mnp_tu_direction;
 		$paid_mnp_tu_no_work = $paid_mnp_tu - $paid_mnp_tu_magister - $paid_mnp_tu_work;
-		$paid_mnp_tu_procent = (($paid_mnp_tu_work + $paid_mnp_tu_magister) * 100) / $paid_mnp_tu;
+        if($paid_mnp_tu == 0){
+            $paid_mnp_tu_procent = 0;
+        } else {
+            $paid_mnp_tu_procent = (($paid_mnp_tu_work + $paid_mnp_tu_magister) * 100) / $paid_mnp_tu;
+        }
+
+        if($graduation_year != 0){
+            $grad_year = DB::table('graduates')
+            ->where('graduation_year', $graduation_year);
+        } elseif($graduation_year == 0) {
+            $grad_year = DB::table('graduates');
+        }
+
 
 		// ПЛАТНОЕ ВСЕ
 		$paid_all = $paid_at + $paid_op_all + $paid_dat + $paid_d_op_all + $paid_mp_at + $paid_mp_tu + $paid_mnp_tu;
 		$paid_all_magister = $paid_at_magister + $paid_op_all_magister + $paid_dat_magister + $paid_d_op_all_magister + $paid_mp_at_magister + $paid_mp_tu_magister + $paid_mnp_tu_magister;
 		$paid_all_work = $paid_at_work + $paid_op_all_work + $paid_dat_work + $paid_d_op_all_work + $paid_mp_at_work + $paid_mp_tu_work + $paid_mnp_tu_work;
 		$paid_all_no_work = $paid_at_no_work + $paid_op_all_no_work + $paid_dat_no_work + $paid_d_op_all_no_work + $paid_mp_at_no_work + $paid_mp_tu_no_work + $paid_mnp_tu_no_work;
-		$paid_all_procent = (($paid_all_work + $paid_all_magister) * 100) / $paid_all;
+
+        if($paid_all == 0){
+            $paid_all_procent = 0;
+        } else {
+            $paid_all_procent = (($paid_all_work + $paid_all_magister) * 100) / $paid_all;
+        }
 
 		// ВСЕ
 		$all = $grant_all + $paid_all;
 		$all_magister = $grant_all_magister + $paid_all_magister;
 		$all_work = $grant_all_work + $paid_all_work;
 		$all_no_work = $grant_all_no_work + $paid_all_no_work;
-		$all_procent = (($all_work + $all_magister) * 100) / $all;
+        if($all == 0){
+            $all_procent = 0;
+        } else {
+            $all_procent = (($all_work + $all_magister) * 100) / $all;
+        }
 
 		$today = now('Asia/Almaty');
 		// Data Array

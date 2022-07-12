@@ -74,7 +74,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 	Route::group(['prefix' => 'graduate', 'namespace' => 'Graduate', 'as' => 'graduate.'], function () {
 		Route::resource('graduates', 'GraduateController');
 		Route::get('report', 'ReportController@index')->name('report.index');
-		Route::get('pdf', 'ReportController@pdf')->name('report.pdf');
+		Route::get('pdf/{graduation_year}', 'ReportController@pdf')->name('report.pdf');
 	});
 
 	// VACCINATION
