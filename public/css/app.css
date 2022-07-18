@@ -17484,7 +17484,7 @@ header .logo2 img {
     left: 0;
     right: 0;
     max-width: 100%;
-    z-index: 33;
+    z-index: 1001;
   }
 
   .navbar .logo {
@@ -19791,7 +19791,7 @@ margin: 0;
   line-height: 70px;
   text-align: center;
   border-radius: 100px;
-  z-index: 10;
+  z-index: 1000;
   -webkit-transition: background-color 400ms;
   transition: background-color 400ms;
 }
