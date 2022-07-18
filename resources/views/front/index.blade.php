@@ -5,7 +5,7 @@
 @section('content')
 <section id="main-slider">
         <div class="owl-carousel">
-            <div class="item" style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/1n.jpg); widht:100%; background-size: cover;">
+            <div class="item" style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/1n.jpg); widht:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div><!--/.item-->
-             <div class="item" style="background: url(/assets/images/slider/7.png);width: 100%; background-size: cover">
+             <div class="item" style="background: url(/assets/images/slider/7.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div><!--/.item-->
-            <div class="item" style="background: url(/assets/images/slider/2.jfif);width: 100%; background-size: cover">
+            <div class="item" style="background: url(/assets/images/slider/2.jfif);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
@@ -105,7 +105,7 @@
       <div class="container">
 
       <div class="title text-center wow animated zoomInDown">
-							<h2>{{ __('Наши') }} <span class="color">{{ __('Услуги') }}</span></h2>
+							<h2>{{ __('Наши') }} <span class="color">{{ __('Сервисы') }}</span></h2>
 							<div class="border"></div>
 	  </div>
 
@@ -175,11 +175,14 @@
     </section>
     <section id="blocks1" >
         <div class="container">
-            <div class="page-header title text-center">
+            <div class="page-header title text-center" style="padding-bottom: 25px;">
                 <h1>{{ __('Академия гражданской авиации') }}<br></h1>
             </div>
             <div class="row active-with-click">
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                {{-- <div id="blocks1_empty">
+                </div> --}}
+
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <article class="material-card Light-Blue">
                         <h2>
                             <span>Бакалавриат</span>
@@ -189,7 +192,7 @@
                             </strong>
                         </h2>
                         <div class="mc-content">
-                            <div class="img-container">
+                            <div class="img-container d-none d-sm-block">
                                 <img class="img-responsive" src="/assets/images/block1.jpg">
                             </div>
                             <div class="mc-description">
@@ -210,7 +213,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <article class="material-card Cyan">
                         <h2>
                             <span>МАГИСТРАТУРА</span>
@@ -220,7 +223,7 @@
                             </strong>
                         </h2>
                         <div class="mc-content">
-                            <div class="img-container">
+                            <div class="img-container d-none d-sm-block">
                                 <img class="img-responsive" src="/assets/images/block2.jpg">
                             </div>
                             <div class="mc-description">
@@ -241,7 +244,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <article class="material-card Teal">
                         <h2>
                             <span>ДОКТОРАНТУРА</span>
@@ -251,7 +254,7 @@
                             </strong>
                         </h2>
                         <div class="mc-content">
-                            <div class="img-container">
+                            <div class="img-container d-none d-sm-block">
                                 <img class="img-responsive" src="/assets/images/block3.jpg">
                             </div>
                             <div class="mc-description">
@@ -272,7 +275,11 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                {{-- <div  id="blocks1_empty">
+                </div>
+                <div  id="blocks1_empty">
+                </div> --}}
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <article class="material-card Deep-Purple">
                         <h2>
                             <span>КОЛЛЕДЖ</span>
@@ -282,7 +289,7 @@
                             </strong>
                         </h2>
                         <div class="mc-content">
-                            <div class="img-container">
+                            <div class="img-container d-none d-sm-block">
                                 <img class="img-responsive" src="/assets/images/block4.jpg">
                             </div>
                             <div class="mc-description">
@@ -299,7 +306,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <article class="material-card Indigo">
                         <h2>
                             <span>ДИСТАНЦИОННОЕ ОБУЧЕНИЕ</span>
@@ -309,7 +316,7 @@
                             </strong>
                         </h2>
                         <div class="mc-content">
-                            <div class="img-container">
+                            <div class="img-container d-none d-sm-block">
                                 <img class="img-responsive" src="/assets/images/block5.jpg">
                             </div>
                             <div class="mc-description">
@@ -330,7 +337,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <article class="material-card Blue">
                         <h2>
                             <span>АВИАЦИОННЫЙ УЧЕБНЫЙ КОМПЛЕКС</span>
@@ -340,7 +347,7 @@
                             </strong>
                         </h2>
                         <div class="mc-content">
-                            <div class="img-container">
+                            <div class="img-container d-none d-sm-block">
                                 <img class="img-responsive" src="/assets/images/block6.jpg">
                             </div>
                             <div class="mc-description">
@@ -357,6 +364,8 @@
                         </div>
                     </article>
                 </div>
+                {{-- <div id="blocks1_empty">
+                </div> --}}
             </div>
         </div>
     </section>
@@ -365,17 +374,19 @@
 			<div class="container">
             <div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
 							<h2>{{ __('Академия Гражданской Авиации') }}</h2>
+							<h2>в цифрах</h2>
 							<div class="devider"><i class="fa fa-plane fa-3x"></i></div>
 						</div>
 				<div class="row">
 					<!-- first count item -->
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms">
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms">
 						<div class="counters-item">
 							<div>
 							    <span data-speed="3000" data-to="6984">6984</span>
 							</div>
 							<i class="fa fa-graduation-cap fa-3x"></i>
 							<h3>Выпускников</h3>
+                            <br>
 						</div>
 					</div>
 					<!-- end first count item -->
@@ -385,37 +396,38 @@
 					<!-- end second count item -->
 
 					<!-- third count item -->
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="400ms">
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="400ms">
 						<div class="counters-item">
 							<div>
 							    <span data-speed="3000" data-to="84">84</span>
 								<span>%</span>
 							</div>
 							<i class="fa fa-thumbs-up fa-3x"></i>
-				            <h3>Трудоустроенных Выпускников</h3>
+				            <h3>Трудоустроенных <br> Выпускников</h3>
 
 						</div>
 					</div>
 					<!-- end third count item -->
 
 					<!-- fourth count item -->
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
 						<div class="counters-item kill-margin-bottom">
 							<div>
 							    <span data-speed="3000" data-to="17">17</span>
 							</div>
 							<i class="fa fa-book fa-3x"></i>
-							<h3>Образовательных программ</h3>
+							<h3>Образовательных <br> программ</h3>
 						</div>
 					</div>
 					<!-- end fourth count item -->
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="200ms">
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="200ms">
 						<div class="counters-item">
 							<div>
 							    <span data-speed="3000" data-to="89">89</span>
 							</div>
 							<i class="fa fa-check-square fa-3x"></i>
 							<h3>Преподавателей</h3>
+                            <br>
 						</div>
 					</div>
 				</div> 		<!-- end row -->

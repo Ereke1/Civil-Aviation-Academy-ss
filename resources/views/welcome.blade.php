@@ -28,9 +28,10 @@
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        
+
         <!-- CSS -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,900' rel='stylesheet' type='text/css'><!-- Styles -->
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link href="/welcome/css/loader.css" rel="stylesheet" type="text/css">
         <link href="/welcome/css/normalize.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/welcome/css/font-awesome.min.css">
@@ -93,7 +94,7 @@
                             Не упусти свой шанс - стань АВИАТОРОМ!
                         </p>
                     </div>
-                    
+
                 </li>
                 <!-- Flakes -->
 
@@ -179,8 +180,8 @@
         </div>
 
         <!-- Javascript -->
-        <script src="/welcome/js/plugins.js"></script> 
-        <script src="/welcome/js/jquery.countdown.min.js"></script> 
+        <script src="/welcome/js/plugins.js"></script>
+        <script src="/welcome/js/jquery.countdown.min.js"></script>
         <script src="/welcome/js/main.js"></script>
 
     </body>

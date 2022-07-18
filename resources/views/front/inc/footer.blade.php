@@ -42,7 +42,7 @@
     <section id="bottom-bar">
         <div class="container">
             <div class="bottom-bar">
-                <p>{{ __('© 1995 - 2021 Академия Гражданской Авиации') }}</p>
+                <p style="font-size: 0.85vw; font-weight: lighter;">{{ __('© 1995 - 2022 Академия Гражданской Авиации') }}</p>
             </div>
         </div>
     </section>
