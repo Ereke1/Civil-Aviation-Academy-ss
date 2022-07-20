@@ -17310,6 +17310,7 @@ h1 {
   background: #f6f6f6;
   margin-top: calc(100vw / (1920 / 94));
   width: calc(100vw / (1920 / 317.16));
+  overflow: auto;
 }
 
 .wrapper .left-sidebar__nav .parrent {

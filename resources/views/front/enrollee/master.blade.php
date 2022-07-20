@@ -14,7 +14,7 @@
                     <div class="flex">
                         <div id="programmsBlock">
                             <label for="programms">Образовательная программа</label>
-                            <select name="programms" id="programms" onchange="programmsFunc()">
+                            <select name="programms" id="programms" onchange="programmsFunc()" required>
                                 <option value="null" disabled selected>-----</option>
                                 <option value="Авиационная техника и технологии (профильная магистратура)">Авиационная
                                     техника и
@@ -38,14 +38,14 @@
                         </div>
                         <div class="disabled" id="languageBlock">
                             <label for="language">Язык обучения:</label>
-                            <select name="language" id="language" onchange="languageFunc()">
+                            <select name="language" id="language" onchange="languageFunc()" required>
                                 <option value="" disabled selected>-----</option>
                                 <option value="Русский">Русский</option>
                             </select>
                         </div>
                         <div class="disabled" id="haveTestBlock">
                             <label for="have_test">Имеются ли результаты комплексного тестирования (КТ)?</label>
-                            <select name="have_test" id="have_test" onchange="haveTestFunction()">
+                            <select name="have_test" id="have_test" onchange="haveTestFunction()" required>
                                 <option value="" disabled selected>-----</option>
                                 <option value="0">Нет</option>
                                 <option value="1">Да</option>
@@ -216,7 +216,7 @@
                         </div>
                         <div class="disabled" id="citizenBlock">
                             <label for="citizen">Гражданство:</label>
-                            <select name="citizen" id="citizen" onchange="citizenFunc()">
+                            <select name="citizen" id="citizen" onchange="citizenFunc()" required>
                                 <option value="null" disabled selected>-----</option>
                                 <option value="Резидент РК">Резидент РК</option>
                                 <option value="Нерезидент РК">Нерезидент РК</option>
@@ -505,11 +505,11 @@
                         </div>
                         <div id="birthdateBlock" class="disabled">
                             <label for="birthdate">Дата рождения</label>
-                            <input type="date" name="birthdate" placeholder="Введите дату рождения">
+                            <input type="date" name="birthdate" placeholder="Введите дату рождения" required>
                         </div>
                         <div id="genderBlock" class="disabled">
                             <label for="gender">Выберите пол</label>
-                            <select name="gender" id="gender">
+                            <select name="gender" id="gender" required>
                                 <option value="">-----</option>
                                 <option value="мужской">мужской</option>
                                 <option value="женский">женский</option>

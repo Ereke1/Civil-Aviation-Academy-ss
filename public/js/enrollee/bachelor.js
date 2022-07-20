@@ -60,8 +60,122 @@ function ieltsInputVal() {
 // Поступление на базе
 function admissionFunc() {
 	if (admissionInputVal() !== null) {
+        if(admissionInputVal() === 'Технического и профессионального образования (колледжа)'){
+            document.getElementById('haveENT').value = "";
+            document.getElementById('haveENTBlock').classList.remove('disabled')
+
+            document.getElementById('mathLitBlock').classList.add('disabled')
+            document.getElementById('mathLit').value = "";
+            document.getElementById('mathLit').required = false
+            document.getElementById('readLitBlock').classList.add('disabled')
+            document.getElementById('readLit').value = "";
+            document.getElementById('readLit').required = false
+            document.getElementById('historyKZBlock').classList.add('disabled')
+            document.getElementById('historyKZ').value = "";
+            document.getElementById('historyKZ').required = false
+            document.getElementById('mathBlock').classList.add('disabled')
+            document.getElementById('math').value = "";
+            document.getElementById('math').required = false
+
+            document.getElementById('profSubBlock').classList.add('disabled')
+            document.getElementById('profSub').value = "";
+
+            document.getElementById('physicsBlock').classList.add('disabled')
+            document.getElementById('physics').value = "";
+            document.getElementById('physics').required = false
+            document.getElementById('geographyBlock').classList.add('disabled')
+            document.getElementById('geography').value = "";
+            document.getElementById('geography').required = false
+            document.getElementById('aviaSecBlock').classList.add('disabled')
+            document.getElementById('aviaSec').value = "";
+            document.getElementById('aviaSec').required = false
+            document.getElementById('natureSecBlock').classList.add('disabled')
+            document.getElementById('natureSec').value = "";
+            document.getElementById('natureSec').required = false
+
+            document.getElementById('quantENT').value = "";
+        } else if (admissionInputVal() === '11-го класса') {
+            document.getElementById('haveENT').value = "";
+            document.getElementById('haveENTBlock').classList.remove('disabled')
+
+            document.getElementById('mathLitBlock').classList.add('disabled')
+            document.getElementById('mathLit').value = "";
+            document.getElementById('mathLit').required = false
+            document.getElementById('readLitBlock').classList.add('disabled')
+            document.getElementById('readLit').value = "";
+            document.getElementById('readLit').required = false
+            document.getElementById('historyKZBlock').classList.add('disabled')
+            document.getElementById('historyKZ').value = "";
+            document.getElementById('historyKZ').required = false
+            document.getElementById('mathBlock').classList.add('disabled')
+            document.getElementById('math').value = "";
+            document.getElementById('math').required = false
+
+            document.getElementById('profSubBlock').classList.add('disabled')
+            document.getElementById('profSub').value = "";
+
+            document.getElementById('physicsBlock').classList.add('disabled')
+            document.getElementById('physics').value = "";
+            document.getElementById('physics').required = false
+            document.getElementById('geographyBlock').classList.add('disabled')
+            document.getElementById('geography').value = "";
+            document.getElementById('geography').required = false
+            document.getElementById('aviaSecBlock').classList.add('disabled')
+            document.getElementById('aviaSec').value = "";
+            document.getElementById('aviaSec').required = false
+            document.getElementById('natureSecBlock').classList.add('disabled')
+            document.getElementById('natureSec').value = "";
+            document.getElementById('natureSec').required = false
+
+            document.getElementById('quantENTBlock').classList.add('disabled')
+            document.getElementById('quantENT').value = "";
+        } else {
+            document.getElementById('haveENT').value = "";
+            document.getElementById('haveENTBlock').classList.add('disabled')
+
+            document.getElementById('mathLitBlock').classList.add('disabled')
+            document.getElementById('mathLit').value = "";
+            document.getElementById('mathLit').required = false
+            document.getElementById('readLitBlock').classList.add('disabled')
+            document.getElementById('readLit').value = "";
+            document.getElementById('readLit').required = false
+            document.getElementById('historyKZBlock').classList.add('disabled')
+            document.getElementById('historyKZ').value = "";
+            document.getElementById('historyKZ').required = false
+            document.getElementById('mathBlock').classList.add('disabled')
+            document.getElementById('math').value = "";
+            document.getElementById('math').required = false
+
+            document.getElementById('profSubBlock').classList.add('disabled')
+            document.getElementById('profSub').value = "";
+
+            document.getElementById('physicsBlock').classList.add('disabled')
+            document.getElementById('physics').value = "";
+            document.getElementById('physics').required = false
+            document.getElementById('geographyBlock').classList.add('disabled')
+            document.getElementById('geography').value = "";
+            document.getElementById('geography').required = false
+            document.getElementById('aviaSecBlock').classList.add('disabled')
+            document.getElementById('aviaSec').value = "";
+            document.getElementById('aviaSec').required = false
+            document.getElementById('natureSecBlock').classList.add('disabled')
+            document.getElementById('natureSec').value = "";
+            document.getElementById('natureSec').required = false
+
+            document.getElementById('quantENTBlock').classList.add('disabled')
+            document.getElementById('quantENT').value = "";
+
+
+            document.getElementById('programmsBlock').classList.remove('disabled')
+            let optionProgramms = document.getElementById('programms').options
+            for (let i = 0; i < optionProgramms.length; i++) {
+                optionProgramms[i].classList.remove('disabled')
+            }
+
+        }
 		// Показываем блок готовности к обучению
 		document.getElementById('languageBlock').classList.remove('disabled')
+
 	}
 }
 // Поступление на базе
@@ -79,6 +193,13 @@ function citizenFunc() {
 		$(function () {
 			$(".phone").mask("+7 999 999 99 99", { placeholder: "" })
 		})
+		document.getElementById('countryBlock').classList.add('disabled')
+		document.getElementById('regionBlock').classList.remove('disabled')
+		document.getElementById('countries').value = "";
+		document.getElementById('region').value = "";
+		document.getElementById('region').required = true
+        document.getElementById('iin').classList.remove('disabled')
+        document.getElementById('iin').value = "";
 	} else if (citizenInputVal() === 'Резидент РК' && admissionInputVal() === 'Высшего образования') {
 		// Показываем поле обр. программ
 		document.getElementById('programmsBlock').classList.remove('disabled')
@@ -90,6 +211,13 @@ function citizenFunc() {
 		$(function () {
 			$(".phone").mask("+7 999 999 99 99", { placeholder: "" })
 		})
+		document.getElementById('countryBlock').classList.add('disabled')
+		document.getElementById('regionBlock').classList.remove('disabled')
+		document.getElementById('countries').value = "";
+		document.getElementById('region').value = "";
+		document.getElementById('region').required = true
+        document.getElementById('iin').classList.remove('disabled')
+        document.getElementById('iin').value = "";
 
 	} else if (citizenInputVal() === 'Нерезидент РК') {
 		// Показываем поле обр. программ
@@ -104,6 +232,12 @@ function citizenFunc() {
 		})
 		// Показываем поле выбора страны
 		document.getElementById('countryBlock').classList.remove('disabled')
+		document.getElementById('countries').value = "";
+		document.getElementById('regionBlock').classList.add('disabled')
+		document.getElementById('region').value = "";
+		document.getElementById('region').required = false
+        document.getElementById('iin').classList.add('disabled')
+        document.getElementById('iin').value = "";
 	}
 }
 
@@ -116,22 +250,109 @@ function haveENTFunc() {
 		document.getElementById('profSub').options[4].classList.add('disabled')
 		// Показываем блок ЕНТ с предметами
 		document.getElementById('mathLitBlock').classList.remove('disabled')
+		document.getElementById('mathLit').value = "";
 		document.getElementById('mathLit').required = true
 		document.getElementById('readLitBlock').classList.remove('disabled')
+		document.getElementById('readLit').value = "";
 		document.getElementById('readLit').required = true
 		document.getElementById('historyKZBlock').classList.remove('disabled')
+		document.getElementById('historyKZ').value = "";
 		document.getElementById('historyKZ').required = true
 		document.getElementById('mathBlock').classList.remove('disabled')
+		document.getElementById('math').value = "";
 		document.getElementById('math').required = true
+
 		document.getElementById('profSubBlock').classList.remove('disabled')
+		document.getElementById('profSub').value = "";
+
+		document.getElementById('quantENTBlock').classList.add('disabled')
+		document.getElementById('quantENT').value = "";
+		document.getElementById('quantENT').required = false
+
+        document.getElementById('physicsBlock').classList.add('disabled')
+        document.getElementById('physics').value = "";
+        document.getElementById('physics').required = false
+		document.getElementById('geographyBlock').classList.add('disabled')
+        document.getElementById('geography').value = "";
+        document.getElementById('geography').required = false
+		document.getElementById('aviaSecBlock').classList.add('disabled')
+        document.getElementById('aviaSec').value = "";
+        document.getElementById('aviaSec').required = false
+		document.getElementById('natureSecBlock').classList.add('disabled')
+        document.getElementById('natureSec').value = "";
+        document.getElementById('natureSec').required = false
+
 		// Показываем 2-й проф. предмет, геог. и физика
 		document.getElementById('profSub').options[1].classList.remove('disabled')
 		document.getElementById('profSub').options[2].classList.remove('disabled')
 	} else if (admissionInputVal() === 'Технического и профессионального образования (колледжа)' && haveENTInputVal() === 'Да') {
+
+        document.getElementById('mathLitBlock').classList.add('disabled')
+        document.getElementById('mathLit').value = "";
+		document.getElementById('mathLit').required = false
+        document.getElementById('readLitBlock').classList.add('disabled')
+        document.getElementById('readLit').value = "";
+		document.getElementById('readLit').required = false
+        document.getElementById('historyKZBlock').classList.add('disabled')
+        document.getElementById('historyKZ').value = "";
+		document.getElementById('historyKZ').required = false
+        document.getElementById('mathBlock').classList.add('disabled')
+        document.getElementById('math').value = "";
+		document.getElementById('math').required = false
+        document.getElementById('profSubBlock').classList.add('disabled')
+        document.getElementById('profSub').value = "";
+
+        document.getElementById('physicsBlock').classList.add('disabled')
+        document.getElementById('physics').value = "";
+        document.getElementById('physics').required = false
+		document.getElementById('geographyBlock').classList.add('disabled')
+        document.getElementById('geography').value = "";
+        document.getElementById('geography').required = false
+		document.getElementById('aviaSecBlock').classList.add('disabled')
+        document.getElementById('aviaSec').value = "";
+        document.getElementById('aviaSec').required = false
+		document.getElementById('natureSecBlock').classList.add('disabled')
+        document.getElementById('natureSec').value = "";
+        document.getElementById('natureSec').required = false
+
 		// Показываем блок ЕНТ с предметами
 		document.getElementById('quantENTBlock').classList.remove('disabled')
+		document.getElementById('quantENT').value = "";
+		document.getElementById('quantENT').required = true
 	}
 	else {
+        document.getElementById('mathLitBlock').classList.add('disabled')
+        document.getElementById('mathLit').value = "";
+		document.getElementById('mathLit').required = false
+        document.getElementById('readLitBlock').classList.add('disabled')
+        document.getElementById('readLit').value = "";
+		document.getElementById('readLit').required = false
+        document.getElementById('historyKZBlock').classList.add('disabled')
+        document.getElementById('historyKZ').value = "";
+		document.getElementById('historyKZ').required = false
+        document.getElementById('mathBlock').classList.add('disabled')
+        document.getElementById('math').value = "";
+		document.getElementById('math').required = false
+        document.getElementById('profSubBlock').classList.add('disabled')
+        document.getElementById('profSub').value = "";
+
+        document.getElementById('physicsBlock').classList.add('disabled')
+        document.getElementById('physics').value = "";
+        document.getElementById('physics').required = false
+		document.getElementById('geographyBlock').classList.add('disabled')
+        document.getElementById('geography').value = "";
+        document.getElementById('geography').required = false
+		document.getElementById('aviaSecBlock').classList.add('disabled')
+        document.getElementById('aviaSec').value = "";
+        document.getElementById('aviaSec').required = false
+		document.getElementById('natureSecBlock').classList.add('disabled')
+        document.getElementById('natureSec').value = "";
+        document.getElementById('natureSec').required = false
+
+		document.getElementById('quantENTBlock').classList.add('disabled')
+		document.getElementById('quantENT').value = "";
+		document.getElementById('quantENT').required = false
+
 		// Показываем поле обр. программ
 		document.getElementById('programmsBlock').classList.remove('disabled')
 		let optionProgramms = document.getElementById('programms').options
@@ -148,42 +369,154 @@ function quantENTFunc() {
 	if (quantENTInputVal() === '5') {
 		// Показываем блок ЕНТ с предметами
 		document.getElementById('mathLitBlock').classList.remove('disabled')
+		document.getElementById('mathLit').classList.remove('disabled')
 		document.getElementById('mathLit').required = true
+        document.getElementById('mathLit').value = "";
 		document.getElementById('readLitBlock').classList.remove('disabled')
+		document.getElementById('readLit').classList.remove('disabled')
 		document.getElementById('readLit').required = true
+        document.getElementById('readLit').value = "";
 		document.getElementById('historyKZBlock').classList.remove('disabled')
+		document.getElementById('historyKZ').classList.remove('disabled')
 		document.getElementById('historyKZ').required = true
+        document.getElementById('historyKZ').value = "";
 		document.getElementById('mathBlock').classList.remove('disabled')
+		document.getElementById('math').classList.remove('disabled')
 		document.getElementById('math').required = true
+        document.getElementById('math').value = "";
+
+		document.getElementById('physicsBlock').classList.add('disabled')
+        document.getElementById('physics').value = "";
+        document.getElementById('physics').required = false
+		document.getElementById('geographyBlock').classList.add('disabled')
+        document.getElementById('geography').value = "";
+        document.getElementById('geography').required = false
+		document.getElementById('aviaSecBlock').classList.add('disabled')
+        document.getElementById('aviaSec').value = "";
+        document.getElementById('aviaSec').required = false
+		document.getElementById('natureSecBlock').classList.add('disabled')
+        document.getElementById('natureSec').value = "";
+        document.getElementById('natureSec').required = false
+
+        document.getElementById('profSub').classList.remove('disabled')
+        document.getElementById('profSub').value = "";
+        document.getElementById('profSub').required = true
+
+
 		document.getElementById('profSubBlock').querySelector('label').innerHTML = '2-й проф. предмет'
 		document.getElementById('profSubBlock').classList.remove('disabled')
 		document.getElementById('profSub').options[1].classList.remove('disabled')
 		document.getElementById('profSub').options[2].classList.remove('disabled')
+
+		document.getElementById('profSub').options[3].classList.add('disabled')
+		document.getElementById('profSub').options[4].classList.add('disabled')
+
 	} else {
+        document.getElementById('mathLitBlock').classList.add('disabled')
+        document.getElementById('mathLit').value = "";
+		document.getElementById('mathLit').required = false
+		document.getElementById('readLitBlock').classList.add('disabled')
+        document.getElementById('readLit').value = "";
+		document.getElementById('mathLit').required = false
+		document.getElementById('historyKZBlock').classList.add('disabled')
+        document.getElementById('historyKZ').value = "";
+		document.getElementById('mathLit').required = false
+		document.getElementById('mathBlock').classList.add('disabled')
+        document.getElementById('math').value = "";
+		document.getElementById('mathLit').required = false
+
+        document.getElementById('physicsBlock').classList.add('disabled')
+        document.getElementById('physics').value = "";
+        document.getElementById('physics').required = false
+		document.getElementById('geographyBlock').classList.add('disabled')
+        document.getElementById('geography').value = "";
+        document.getElementById('geography').required = false
+		document.getElementById('aviaSecBlock').classList.add('disabled')
+        document.getElementById('aviaSec').value = "";
+        document.getElementById('aviaSec').required = false
+		document.getElementById('natureSecBlock').classList.add('disabled')
+        document.getElementById('natureSec').value = "";
+        document.getElementById('natureSec').required = false
+
+        document.getElementById('profSub').classList.remove('disabled')
+        document.getElementById('profSub').value = "";
+        document.getElementById('profSub').required = true
+
 		// Показываем блок ЕНТ с 2 предметами
 		document.getElementById('profSubBlock').querySelector('label').innerHTML = '1-й профильный предмет'
 		document.getElementById('profSubBlock').classList.remove('disabled')
 		document.getElementById('profSub').options[3].classList.remove('disabled')
 		document.getElementById('profSub').options[4].classList.remove('disabled')
+
+		document.getElementById('profSub').options[1].classList.add('disabled')
+		document.getElementById('profSub').options[2].classList.add('disabled')
+
 	}
 }
 
 // Выбор профильного предмета
 function profSubFunc() {
+    console.log("fddf");
 	if (profsubInputVal() === 'Физика') {
 		// Показываем поле для ввода баллов по ФИЗИКЕ
 		document.getElementById('physicsBlock').classList.remove('disabled')
+        document.getElementById('physics').value = "";
+        document.getElementById('physics').required = true
+
+		document.getElementById('geographyBlock').classList.add('disabled')
+        document.getElementById('geography').value = "";
+        document.getElementById('physics').required = false
+		document.getElementById('aviaSecBlock').classList.add('disabled')
+        document.getElementById('aviaSec').value = "";
+        document.getElementById('physics').required = false
+		document.getElementById('natureSecBlock').classList.add('disabled')
+        document.getElementById('natureSec').value = "";
+        document.getElementById('physics').required = false
 	} else if (profsubInputVal() === 'География') {
 		// Показываем поле для ввода баллов по ГЕОГРАФИИ
 		document.getElementById('geographyBlock').classList.remove('disabled')
+        document.getElementById('geography').value = "";
+        document.getElementById('geography').required = true
+
+		document.getElementById('physicsBlock').classList.add('disabled')
+        document.getElementById('physics').value = "";
+        document.getElementById('physics').required = false
+		document.getElementById('aviaSecBlock').classList.add('disabled')
+        document.getElementById('aviaSec').value = "";
+        document.getElementById('aviaSec').required = false
+		document.getElementById('natureSecBlock').classList.add('disabled')
+        document.getElementById('natureSec').value = "";
+        document.getElementById('natureSec').required = false
 	} else if (profsubInputVal() === 'Авиационная безопасность') {
 		document.getElementById('aviaSecBlock').classList.remove('disabled')
+        document.getElementById('aviaSec').value = "";
+        document.getElementById('aviaSec').required = true
 		document.getElementById('physicsBlock').querySelector('label').innerHTML = 'Физика (2-ой проф. предм.)'
 		document.getElementById('physicsBlock').classList.remove('disabled')
+        document.getElementById('physics').value = "";
+        document.getElementById('physics').required = true
+
+		document.getElementById('geographyBlock').classList.add('disabled')
+        document.getElementById('geography').value = "";
+        document.getElementById('geography').required = false
+		document.getElementById('natureSecBlock').classList.add('disabled')
+        document.getElementById('natureSec').value = "";
+        document.getElementById('natureSec').required = false
 	} else if (profsubInputVal() === 'Охрана труда') {
 		document.getElementById('natureSecBlock').classList.remove('disabled')
+        document.getElementById('natureSec').value = "";
+        document.getElementById('natureSec').required = true
 		document.getElementById('physicsBlock').querySelector('label').innerHTML = 'Физика (2-ой проф. предм.)'
 		document.getElementById('physicsBlock').classList.remove('disabled')
+        document.getElementById('physics').value = "";
+        document.getElementById('physics').required = true
+
+		document.getElementById('geographyBlock').classList.add('disabled')
+        document.getElementById('geography').value = "";
+        document.getElementById('geography').required = false
+		document.getElementById('aviaSecBlock').classList.add('disabled')
+        document.getElementById('aviaSec').value = "";
+        document.getElementById('aviaSec').required = false
 	}
 }
 
@@ -263,58 +596,162 @@ function geographyFunc() {
 function programmsFunc() {
 	if (programmsInputVal() === 'Лётная эксплуатация самолётов (пилот)' || programmsInputVal() === 'Лётная эксплуатация вертолётов (пилот)' || programmsInputVal() === 'Обслуживание воздушного движения') {
 		document.getElementById('vlekBlock').classList.remove('disabled')
+
+		document.getElementById('ieltsBlock').classList.add('disabled')
+        document.getElementById('vlek').value = "";
+		document.getElementById('vlekImage').value = "";
+		document.getElementById('psychoImage').value = "";
+		document.getElementById('ielts').value = "";
+        document.getElementById('ieltsImage').value = "";
 	} else if (citizenInputVal() === 'Резидент РК' && programmsInputVal() !== 'Лётная эксплуатация самолётов (пилот)' || citizenInputVal() === 'Резидент РК' && programmsInputVal() !== 'Лётная эксплуатация вертолётов (пилот)' || citizenInputVal() === 'Резидент РК' && programmsInputVal() !== 'Обслуживание воздушного движения') {
 		// Показываем список регионов
 		document.getElementById('regionBlock').classList.remove('disabled')
+        document.getElementById('region').value = "";
+		document.getElementById('countryBlock').classList.add('disabled')
+        document.getElementById('countries').value = "";
+
+        document.getElementById('vlekBlock').classList.add('disabled')
+		document.getElementById('vlek').value = "";
+
+		document.getElementById('vlekBlockImage').classList.add('disabled')
+		document.getElementById('vlekImage').value = "";
+
+		document.getElementById('psychoBlockImage').classList.add('disabled')
+		document.getElementById('psychoImage').value = "";
+
+		document.getElementById('ieltsBlock').classList.add('disabled')
+		document.getElementById('ielts').value = "";
+
+        document.getElementById('ieltsBlockImage').classList.add('disabled')
+		document.getElementById('ieltsImage').value = "";
+
 	} else if (citizenInputVal() === 'Нерезидент РК' && programmsInputVal() !== 'Лётная эксплуатация самолётов (пилот)' || citizenInputVal() === 'Нерезидент РК' && programmsInputVal() !== 'Лётная эксплуатация вертолётов (пилот)' || citizenInputVal() === 'Нерезидент РК' && programmsInputVal() !== 'Обслуживание воздушного движения') {
 		// Показываем список стран
 		document.getElementById('countryBlock').classList.remove('disabled')
-	}
+        document.getElementById('countries').value = "";
+		document.getElementById('regionBlock').classList.add('disabled')
+        document.getElementById('region').value = "";
+		document.getElementById('region').required = false
+
+        document.getElementById('vlekBlock').classList.add('disabled')
+		document.getElementById('vlek').value = "";
+
+		document.getElementById('vlekBlockImage').classList.add('disabled')
+		document.getElementById('vlekImage').value = "";
+
+		document.getElementById('psychoBlockImage').classList.add('disabled')
+		document.getElementById('psychoImage').value = "";
+
+		document.getElementById('ieltsBlock').classList.add('disabled')
+		document.getElementById('ielts').value = "";
+
+        document.getElementById('ieltsBlockImage').classList.add('disabled')
+		document.getElementById('ieltsImage').value = "";
+	} else {
+        document.getElementById('vlekBlock').classList.add('disabled')
+        document.getElementById('vlek').value = "";
+
+        document.getElementById('vlekBlockImage').classList.add('disabled')
+        document.getElementById('vlekImage').value = "";
+
+        document.getElementById('psychoBlockImage').classList.add('disabled')
+        document.getElementById('psychoImage').value = "";
+
+        document.getElementById('ieltsBlock').classList.add('disabled')
+        document.getElementById('ielts').value = "";
+
+        document.getElementById('ieltsBlockImage').classList.add('disabled')
+        document.getElementById('ieltsImage').value = "";
+    }
+
 }
 // Пройден ВЛЭК?
 function vlekFunc() {
 	if (vlekInputVal() === 'Да') {
-		// Показываем прикрепление ВЛЭК
-		document.getElementById('vlekBlockImage').classList.remove('disabled')
-		document.getElementById('vlekImage').required = true
-		// Показываем прикрепление ПСИХОТЕСТА
-		document.getElementById('psychoBlockImage').classList.remove('disabled')
+        // Показываем прикрепление ВЛЭК
+        document.getElementById('vlekBlockImage').classList.remove('disabled')
+        document.getElementById('vlekImage').required = true
+        document.getElementById('vlekImage').value = "";
+        // Показываем прикрепление ПСИХОТЕСТА
+        document.getElementById('psychoBlockImage').classList.remove('disabled')
+        document.getElementById('psychoImage').value = "";
+
+        document.getElementById('ieltsBlockImage').classList.add('disabled')
+        document.getElementById('ieltsImage').value = "";
+		document.getElementById('ielts').value = "";
+
 	} else if (vlekInputVal() === 'Нет' && citizenInputVal() === 'Резидент РК') {
 		// Показываем блок IELTS
+        document.getElementById('vlekImage').required = false
+		document.getElementById('vlekBlockImage').classList.add('disabled')
+        document.getElementById('vlekImage').value = "";
+
+		document.getElementById('psychoBlockImage').classList.add('disabled')
+        document.getElementById('psychoImage').value = "";
+
 		document.getElementById('ieltsBlock').classList.remove('disabled')
+        document.getElementById('ielts').value = "";
+        document.getElementById('ieltsImage').value = "";
 		// Показываем список регионов
 		document.getElementById('regionBlock').classList.remove('disabled')
 	} else if (vlekInputVal() === 'Нет' && citizenInputVal() === 'Нерезидент РК') {
 		// Показываем блок IELTS
+        document.getElementById('vlekImage').required = false
+		document.getElementById('vlekBlockImage').classList.add('disabled')
+        document.getElementById('vlekImage').value = "";
+
+		document.getElementById('psychoBlockImage').classList.add('disabled')
+        document.getElementById('psychoImage').value = "";
+
 		document.getElementById('ieltsBlock').classList.remove('disabled')
+        document.getElementById('ielts').value = "";
+        document.getElementById('ieltsImage').value = "";
 		// Показываем список стран
 		document.getElementById('countryBlock').classList.remove('disabled')
+        document.getElementById('countries').value = "";
 	}
 }
 // Имеется ВЛЭК
 function vlekImageFunc() {
 	// Показываем блок IELTS
 	document.getElementById('ieltsBlock').classList.remove('disabled')
+    document.getElementById('ielts').value = "";
 }
 // Имеется IELTS
 function ieltsFunc() {
 	if (ieltsInputVal() === 'Да') {
 		document.getElementById('ieltsBlockImage').classList.remove('disabled')
+        document.getElementById('ieltsImage').value = "";
 	} else if (ieltsInputVal() === 'Нет' && citizenInputVal() === 'Резидент РК') {
 		// Показываем список регионов
 		document.getElementById('regionBlock').classList.remove('disabled')
+        document.getElementById('region').value = "";
+
+        document.getElementById('ieltsBlockImage').classList.add('disabled')
+        document.getElementById('ieltsImage').value = "";
 	} else if (ieltsInputVal() === 'Нет' && citizenInputVal() === 'Нерезидент РК') {
 		// Показываем список стран
 		document.getElementById('countryBlock').classList.remove('disabled')
+        document.getElementById('countries').value = "";
+
+        document.getElementById('ieltsBlockImage').classList.add('disabled')
+        document.getElementById('ieltsImage').value = "";
 	}
 }
 function ieltsImageFunc() {
 	if (citizenInputVal() === 'Резидент РК') {
 		// Показываем список регионов
 		document.getElementById('regionBlock').classList.remove('disabled')
+        document.getElementById('region').value = "";
+        document.getElementById('iin').classList.remove('disabled')
+        document.getElementById('iin').value = "";
+
 	} else if (citizenInputVal() === 'Нерезидент РК') {
 		// Показываем список стран
 		document.getElementById('countryBlock').classList.remove('disabled')
+        document.getElementById('countries').value = "";
+        document.getElementById('iin').classList.add('disabled')
+        document.getElementById('iin').value = "";
 	}
 }
 // Выбор региона

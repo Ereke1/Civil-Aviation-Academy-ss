@@ -41,6 +41,16 @@ function programmsFunc() {
 	if (programmsInputVal() !== null) {
 		// Показываем блок готовности к обучению
 		document.getElementById('languageBlock').classList.remove('disabled')
+
+		document.getElementById('have_test').value = "";
+        document.getElementById('tgoMagisterBlock').classList.add('disabled')
+		document.getElementById('tgo_magister').value = "";
+		document.getElementById('profSubMagister1Block').classList.add('disabled')
+		document.getElementById('prof_sub_magister_1').value = "";
+		document.getElementById('profSubMagister2Block').classList.add('disabled')
+		document.getElementById('prof_sub_magister_2').value = "";
+		document.getElementById('engMagisterBlock').classList.add('disabled')
+		document.getElementById('eng_magister').value = "";
 	}
 }
 
@@ -55,9 +65,19 @@ function haveTestFunction() {
 	if (haveTestInputVal() == true) {
 		// Показываем тест на готовность к обучению
 		document.getElementById('tgoMagisterBlock').classList.remove('disabled')
+
 	} else {
 		// Показываем выбор гражданства
 		document.getElementById('citizenBlock').classList.remove('disabled')
+
+		document.getElementById('tgoMagisterBlock').classList.add('disabled')
+		document.getElementById('tgo_magister').value = "";
+		document.getElementById('profSubMagister1Block').classList.add('disabled')
+		document.getElementById('prof_sub_magister_1').value = "";
+		document.getElementById('profSubMagister2Block').classList.add('disabled')
+		document.getElementById('prof_sub_magister_2').value = "";
+		document.getElementById('engMagisterBlock').classList.add('disabled')
+		document.getElementById('eng_magister').value = "";
 	}
 }
 
@@ -103,9 +123,18 @@ function citizenFunc() {
 		})
 		// Показываем поле выбора региона
 		document.getElementById('regionBlock').classList.remove('disabled')
+		document.getElementById('iin').classList.remove('disabled')
+
+		document.getElementById('countryBlock').classList.add('disabled')
+		document.getElementById('countries').value = "";
 	} else {
 		// Показываем поле выбора страны
 		document.getElementById('countryBlock').classList.remove('disabled')
+
+		document.getElementById('iin').classList.add('disabled')
+		document.getElementById('iin').value = "";
+		document.getElementById('regionBlock').classList.add('disabled')
+		document.getElementById('region').value = "";
 	}
 }
 

@@ -54,9 +54,18 @@ function citizenFunc() {
 		})
 		// Показываем поле выбора региона
 		document.getElementById('regionBlock').classList.remove('disabled')
+		document.getElementById('iin').classList.remove('disabled')
+
+		document.getElementById('countryBlock').classList.add('disabled')
+		document.getElementById('countries').value = "";
 	} else {
 		// Показываем поле выбора страны
 		document.getElementById('countryBlock').classList.remove('disabled')
+
+		document.getElementById('regionBlock').classList.add('disabled')
+		document.getElementById('region').value = "";
+		document.getElementById('iin').classList.add('disabled')
+		document.getElementById('iin').value = "";
 	}
 }
 

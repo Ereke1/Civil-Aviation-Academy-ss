@@ -15,7 +15,7 @@
                     <div class="flex">
                         <div>
                             <label for="base">Что окончил:</label>
-                            <select name="base" id="base" onchange="admissionFunc()">
+                            <select name="base" id="base" onchange="admissionFunc()" required>
                                 <option value="" disabled selected>-----</option>
                                 <option value="11-го класса">Среднюю школу</option>
                                 <option value="Технического и профессионального образования (колледжа)">Колледж</option>
@@ -25,7 +25,7 @@
 
                         <div class="disabled" id="languageBlock">
                             <label for="language">Язык обучения:</label>
-                            <select name="language" id="language" onchange="languageFunc()">
+                            <select name="language" id="language" onchange="languageFunc()" required>
                                 <option value="" disabled selected>-----</option>
                                 <option value="Казахский">Казахский</option>
                                 <option value="Русский">Русский</option>
@@ -34,7 +34,7 @@
 
                         <div class="disabled" id="citizenBlock">
                             <label for="citizen">Гражданство:</label>
-                            <select name="citizen" id="citizen" onchange="citizenFunc()">
+                            <select name="citizen" id="citizen" onchange="citizenFunc()" required>
                                 <option value="" disabled selected>-----</option>
                                 <option value="Резидент РК">Гражданин Республики Казахстан</option>
                                 <option value="Нерезидент РК">Гражданин другого государства</option>
@@ -669,7 +669,7 @@
                         </div>
                         <div id="ieltsBlockImage" class="disabled">
                             <label for="ieltsImage">Прикрепите сертификат IELTS/TOEFL</label>
-                            <input type="file" name="ieltsImage" onchange="ieltsImageFunc()">
+                            <input type="file" name="ieltsImage" id="ieltsImage" onchange="ieltsImageFunc()">
                         </div>
                         <div id="regionBlock" class="disabled">
                             <label for="region">Регион</label>
@@ -715,12 +715,12 @@
 
                         <div id="birthdateBlock" class="disabled">
                             <label for="birthdate">Дата рождения</label>
-                            <input type="date" name="birthdate" placeholder="Введите дату рождения">
+                            <input type="date" name="birthdate" placeholder="Введите дату рождения" required>
                         </div>
 
                         <div id="genderBlock" class="disabled">
                             <label for="gender">Выберите пол</label>
-                            <select name="gender" id="gender">
+                            <select name="gender" id="gender" required>
                                 <option value="">-----</option>
                                 <option value="мужской">мужской</option>
                                 <option value="женский">женский</option>
