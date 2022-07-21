@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @php $parrentCat  = 'Абитуриенты' @endphp
-@php $active_menu  = 'Бакалавриат' @endphp
+@php $active_menu  = 'Документы' @endphp
 @section('content')
     @if (session('alert'))
         <div class="alert alert-success">
@@ -85,15 +85,6 @@
                                     <div>
                                         <h5 class="block__info">Двусторонний договор
                                             <a href="{{ url('admin/enrollee/documents/word-bilateralAgreement/' . $item->applid) }}"
-                                                class="btn btn-info float-right">Скачать(.docx)</a>
-                                        </h5>
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        {{-- <h5>Договор на оказание образовательных услуг на основе госгранта</h5> --}}
-                                        <h5 class="block__info"> Договор на оказание образовательных услуг на основе
-                                            госгранта
-                                            <a href="{{ url('admin/enrollee/documents/word-stateGrantAgreement/' . $item->applid) }}"
                                                 class="btn btn-info float-right">Скачать(.docx)</a>
                                         </h5>
                                     </div>

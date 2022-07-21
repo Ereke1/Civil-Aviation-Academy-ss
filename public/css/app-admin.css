@@ -17315,7 +17315,7 @@ h1 {
 
 .wrapper .left-sidebar__nav .parrent {
   display: block;
-  padding: calc(100vw / (1920 / 20)) 0 calc(100vw / (1920 / 20)) calc(100vw / (1920 / 20));
+  padding: calc(100vw / (1920 / 20)) 0 calc(100vw / (1920 / 20)) calc(100vw / (1920 / 10));
   transition: all linear 0.4s;
   text-align: left;
   font-size: calc(100vw / (1920 / 24));
@@ -17335,7 +17335,7 @@ h1 {
 }
 
 .wrapper .left-sidebar__nav .parrent i:first-child {
-  margin-right: calc(100vw / (1920 / 10));
+  margin-right: calc(100vw / (1920 / 1));
   color: white;
 }
 
@@ -17392,6 +17392,7 @@ h1 {
 
 .dropdown .menu a.active {
   text-decoration: underline;
+  background-color: deepskyblue !important;
 }
 
 .rotate-90 {
