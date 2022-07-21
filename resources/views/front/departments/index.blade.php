@@ -20,7 +20,7 @@
                         <img class="card-img d-none" src="{!! $department->image !!}" alt="ddd">
                         <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
-                            <small class="card-meta mb-2" style="color:darkblue;">---------------------</small>
+                            <small class="card-meta mb-2" >---------------------</small>
                             <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/departments/{!! $department->slug !!}">{{ __($department->name) }}</a></h3>
                         </div>
                         </div>
