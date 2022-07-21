@@ -41,7 +41,7 @@
           <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
               <small class="card-meta mb-2">---------------------</small>
-              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/uchebnyy-centr-po-aviacionnoy-bezopasnosti-ikao">Учебный центр по АБ ICAO</a></h3>
+              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/uchebnyy-centr-po-aviacionnoy-bezopasnosti-ikao">Учебный центр по авиационной безопасности ICAO</a></h3>
              
             </div>
           </div>
