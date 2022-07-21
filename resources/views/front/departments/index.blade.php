@@ -3,7 +3,7 @@
     {{ __('Кафедры') }}
 @endsection
 @section('content')
-    <section id="departments">
+    <section class="wrapper" id="center">
         <div class="container">
             <h1>
                 {{ __('Кафедры') }}
@@ -13,18 +13,19 @@
                 <span> > </span>
                 <span>{{ __('Кафедры') }}</span>
             </div>
-            <div class="d-flex flex-wrap">
+            <div class="row">
                 @foreach ($departments as $department)
-                    <div class="col-md-4 col-sm-12">
-                        <img src="{!! $department->image !!}" alt="">
-                        <div class="title">
-                            <h4>
-                                <a href="/departments/{!! $department->slug !!}">
-                                    {{ __($department->name) }}
-                                </a>
-                            </h4>
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card text-white card-has-bg click-col" style="background-image:url('{!! $department->image !!}');">
+                        <img class="card-img d-none" src="{!! $department->image !!}" alt="ddd">
+                        <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <small class="card-meta mb-2" style="color:darkblue;">---------------------</small>
+                            <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/departments/{!! $department->slug !!}">{{ __($department->name) }}</a></h3>
+                        </div>
                         </div>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>

@@ -20,7 +20,7 @@ class DepartmentController extends Controller
 	public function index()
 	{
 		$tree = Navigation::tree();
-		$departments = Department::get();
+		$departments = Department::orderBy('sort', 'asc')->get();
 		return view('front.departments.index', compact('tree', 'departments'));
 	}
 

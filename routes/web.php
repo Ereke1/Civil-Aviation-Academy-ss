@@ -87,6 +87,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	// HOMEPAGE
 	Route::get('', 'HomeController@index')->name('home');
+	Route::get('centerava','CenterController@index')->name('centerava');
 	Route::get('news', 'NewsController@index')->name('news');
 	Route::get('news/{slug}', 'NewsController@show')->name('news.show');
 	Route::get('events', 'EventController@index')->name('events');
