@@ -239,6 +239,15 @@ class DocumentsController extends Controller
         //образовательная программа(рус)
         $templateProcessor->setValue('programs_ru', $data->programms);
 
+        //группа образовательных программ(рус)
+        if ($data->programms === 'Лётная эксплуатация самолётов (пилот)' || $data->programms === 'Лётная эксплуатация вертолётов (пилот)' || $data->programms === 'Обслуживание воздушного движения') {
+            $templateProcessor->setValue('programs_group_ru', 'В167 – Лётная эксплуатация летательных аппаратов и двигателей');
+        } else if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
+            $templateProcessor->setValue('programs_group_ru', 'В095 – Транспортные услуги');
+        } else {
+            $templateProcessor->setValue('programs_group_ru', 'В067 – Воздушный транспорт и технологии');
+        }
+
         //образовательная программа(каз)
         if ($data->programms === 'Лётная эксплуатация самолётов (пилот)') {
             $templateProcessor->setValue('programs_kz', 'Азаматтық ұшақтарды ұшуда пайдалану (ұшқыш)');
@@ -262,6 +271,36 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_kz', 'Көліктегі логистика');
         } else if ($data->programms === 'Технология транспортных процессов в авиации') {
             $templateProcessor->setValue('programs_kz', 'Авиациядағы көлік процестерінің технологиясы');
+        }
+
+        //группа образовательных программ(каз)
+        if ($data->programms === 'Лётная эксплуатация самолётов (пилот)' || $data->programms === 'Лётная эксплуатация вертолётов (пилот)' || $data->programms === 'Обслуживание воздушного движения') {
+            $templateProcessor->setValue('programs_group_kz', 'В167 – Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану');
+        } else if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
+            $templateProcessor->setValue('programs_group_kz', 'В095 – Көлік қызметтері');
+        } else {
+            $templateProcessor->setValue('programs_group_kz', 'В067 – Әуе көлігі және технологиялары');
+        }
+
+        //стоимость
+        if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
+            $templateProcessor->setValue('price', '714 900');
+        } else {
+            $templateProcessor->setValue('price', '920 500');
+        }
+
+        //стоимость(рус)
+        if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
+            $templateProcessor->setValue('price_ru', 'Семьсот четырнадцать тысяч девятьсот');
+        } else {
+            $templateProcessor->setValue('price_ru', 'Девятьсот двадцать тысяч пятьсот');
+        }
+
+        //стоимость(каз)
+        if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
+            $templateProcessor->setValue('price_kz', 'Жеті жүз он төрт мың тоғыз жүз');
+        } else {
+            $templateProcessor->setValue('price_kz', 'Тоғыз жүз жиырма мың бес жүз');
         }
 
         //дата рождения
@@ -526,7 +565,7 @@ class DocumentsController extends Controller
             } else {
                 $data->iin = $request->iin;
                 $data->base = $request->base;
-				$data->lang_edu = $request->lang_edu;
+                $data->lang_edu = $request->lang_edu;
                 $data->phone_1 = $request->phone_1;
                 $data->phone_2 = $request->phone_2;
                 $data->programms = $request->programms;
