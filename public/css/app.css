@@ -17370,6 +17370,17 @@ header .logo2 img {
   transform: rotate(-135deg);
 }
 
+.lang_choose {
+    display: none;
+}
+
+@media (max-width: 767px){
+    .lang_choose {
+        margin-right: 1vw;
+        display: block;
+    }
+}
+
 .sitenavigation ul {
   margin: 0;
   padding: 0;
@@ -18538,6 +18549,12 @@ h2 {
   }
 }
 
+@media (max-width: 992px) {
+    header .container {
+      max-width: none !important;
+    }
+  }
+
 #pages {
   min-height: 100vh;
 }
@@ -19686,7 +19703,9 @@ margin: 0;
 @media (max-width: 979px) {
   #main-slider .item {
   width: 200%;
-  height: auto;}
+  height: auto;
+  min-height: 450px;
+}
   #main-slider .slider-inner h2 {
     margin-top: 80px;
     font-size: 40px;
