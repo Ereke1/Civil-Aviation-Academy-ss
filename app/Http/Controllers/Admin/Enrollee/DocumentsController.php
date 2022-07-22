@@ -283,24 +283,36 @@ class DocumentsController extends Controller
         }
 
         //стоимость
-        if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
-            $templateProcessor->setValue('price', '714 900');
+        if ($data->have_grant === 0) {
+            $templateProcessor->setValue('price', '');
         } else {
-            $templateProcessor->setValue('price', '920 500');
+            if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
+                $templateProcessor->setValue('price', '714 900');
+            } else {
+                $templateProcessor->setValue('price', '920 500');
+            }
         }
 
-        //стоимость(рус)
-        if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
-            $templateProcessor->setValue('price_ru', 'Семьсот четырнадцать тысяч девятьсот');
+        //стоимость прописью(рус)
+        if ($data->have_grant === 0) {
+            $templateProcessor->setValue('price_ru', '(                                                                                                )');
         } else {
-            $templateProcessor->setValue('price_ru', 'Девятьсот двадцать тысяч пятьсот');
+            if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
+                $templateProcessor->setValue('price_ru', '(Семьсот четырнадцать тысяч девятьсот)');
+            } else {
+                $templateProcessor->setValue('price_ru', '(Девятьсот двадцать тысяч пятьсот)');
+            }
         }
 
-        //стоимость(каз)
-        if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
-            $templateProcessor->setValue('price_kz', 'Жеті жүз он төрт мың тоғыз жүз');
+        //стоимость прописью(каз)
+        if ($data->have_grant === 0) {
+            $templateProcessor->setValue('price_kz', '(                                                                                                )');
         } else {
-            $templateProcessor->setValue('price_kz', 'Тоғыз жүз жиырма мың бес жүз');
+            if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
+                $templateProcessor->setValue('price_kz', '(Жеті жүз он төрт мың тоғыз жүз)');
+            } else {
+                $templateProcessor->setValue('price_kz', '(Тоғыз жүз жиырма мың бес жүз)');
+            }
         }
 
         //дата рождения
@@ -582,6 +594,8 @@ class DocumentsController extends Controller
                 $data->ent_certificate = $request->ent;
                 $data->grant_certificate = $request->grant;
                 $data->udostov_copy = $request->udostov;
+
+                $data->have_grant = $request->grant;
 
                 if ($request->hasFile('vlekImage')) {
                     $request->validate([
