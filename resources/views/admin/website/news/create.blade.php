@@ -32,7 +32,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Описание</label>
-                            <textarea name="desc_ru" class="form-control"></textarea>
+                            <textarea name="desc_ru" id="editor-ru" class="form-control"></textarea>
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Фоновое изображение</label>
@@ -46,7 +46,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Сипаттамасы</label>
-                            <textarea name="desc_kk" class="form-control"></textarea>
+                            <textarea name="desc_kk" id="editor-kz" class="form-control"></textarea>
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Фондық сурет</label>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Description</label>
-                            <textarea name="desc_en" class="form-control"></textarea>
+                            <textarea name="desc_en" id="editor-en" class="form-control"></textarea>
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Background image</label>
@@ -103,5 +103,5 @@
 @endsection
 
 @section('scripts')
-    @include('admin.tinymce')
+@include('admin.ckeditor')
 @endsection
