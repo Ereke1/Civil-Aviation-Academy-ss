@@ -283,7 +283,7 @@ class DocumentsController extends Controller
         }
 
         //стоимость
-        if ($data->have_grant === 0) {
+        if ($data->have_grant === 1) {
             $templateProcessor->setValue('price', '');
         } else {
             if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
@@ -294,7 +294,7 @@ class DocumentsController extends Controller
         }
 
         //стоимость прописью(рус)
-        if ($data->have_grant === 0) {
+        if ($data->have_grant === 1) {
             $templateProcessor->setValue('price_ru', '(                                                                                                )');
         } else {
             if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
@@ -305,7 +305,7 @@ class DocumentsController extends Controller
         }
 
         //стоимость прописью(каз)
-        if ($data->have_grant === 0) {
+        if ($data->have_grant === 1) {
             $templateProcessor->setValue('price_kz', '(                                                                                                )');
         } else {
             if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
