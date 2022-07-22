@@ -77,7 +77,7 @@
           <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
               <small class="card-meta mb-2">---------------------</small>
-              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="#">Авиационно-технический центр</a></h3>
+              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/aviacionno-tehnicheskiy-centr-240">Авиационно-технический центр</a></h3>
             </div>
           </div>
         </div>
