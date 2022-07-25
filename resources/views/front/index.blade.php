@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div><!--/.item-->
-            <div class="item" style=" background:url(/assets/images/slider/fond_qh.jpeg); width:100%; background-size: cover; background-position: center;">
+            <div class="item" style=" background:url(/assets/images/slider/fond_qh.png); width:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
