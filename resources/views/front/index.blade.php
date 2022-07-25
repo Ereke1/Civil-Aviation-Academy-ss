@@ -5,7 +5,7 @@
 @section('content')
 <section id="main-slider">
         <div class="owl-carousel">
-            <div class="item" style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/1n.jpg); widht:100%; background-size: cover; background-position: center;">
+            <div class="item" style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/1n.jpg); width:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div><!--/.item-->
-            <div class="item" style=" background:url(/assets/images/slider/Screenshot_7.png); widht:100%; background-size: cover; background-position: center;">
+            <div class="item" style=" background:url(/assets/images/slider/Screenshot_7.png); width:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
@@ -28,6 +28,20 @@
                                 <div class="carousel-content">
                                 <h2></h2><br> <br><h2></h2>
                                     <a class="btn btn-primary btn-lg stretched-link" href="/vakansii" style="color:darkblue;" >Перейти страницу</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item" style=" background:url(/assets/images/slider/fond_qh.jpeg); width:100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                <h2></h2><br> <br><h2></h2>
+                                    <a class="btn btn-primary btn-lg stretched-link" href="/news/86" style="color:darkblue;" >Перейти страницу</a>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +138,7 @@
 	  </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch  wow fadeInUp">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-university"></i></div>
               <h4><a href="https://do.agakaz.kz">Platonus</a></h4>
@@ -132,7 +146,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0  wow fadeInUp">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-user-plus"></i></div>
               <h4><a href="/enrollee">{{ __('Онлайн регистрация абитуриентов') }}</a></h4>
@@ -140,7 +154,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0  wow fadeInUp">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-id-card"></i></div>
               <h4><a href="/virtualnaya-priemnaya-komissiya-174">{{ __('Виртуальная приемная комиссия') }}</a></h4>
@@ -148,7 +162,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4  wow fadeInUp">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-book"></i></div>
               <h4><a href="http://bi.agakaz.kz">{{ __('Онлайн библиотека') }}</a></h4>
@@ -156,7 +170,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4  wow fadeInUp">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-credit-card"></i></div>
               <h4><a href="/bezkomissionnaya-onlayn-oplata-za-obuchenie">{{ __('Онлайн оплата') }}</a></h4>
@@ -164,7 +178,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4  wow fadeInUp">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-graduation-cap"></i></div>
               <h4><a href="https://moodle.agakaz.kz/">Moodle</a></h4>
@@ -393,7 +407,7 @@
 						</div>
 				<div class="row">
 					<!-- first count item -->
-					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms">
+					<div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms">
 						<div class="counters-item">
 							<div>
 							    <span data-speed="3000" data-to="6984">6984</span>
@@ -410,7 +424,7 @@
 					<!-- end second count item -->
 
 					<!-- third count item -->
-					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="400ms">
+					<div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="400ms">
 						<div class="counters-item">
 							<div>
 							    <span data-speed="3000" data-to="84">84</span>
@@ -424,7 +438,7 @@
 					<!-- end third count item -->
 
 					<!-- fourth count item -->
-					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
+					<div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
 						<div class="counters-item kill-margin-bottom">
 							<div>
 							    <span data-speed="3000" data-to="17">17</span>
@@ -434,7 +448,7 @@
 						</div>
 					</div>
 					<!-- end fourth count item -->
-					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="200ms">
+					<div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="200ms">
 						<div class="counters-item">
 							<div>
 							    <span data-speed="3000" data-to="89">89</span>

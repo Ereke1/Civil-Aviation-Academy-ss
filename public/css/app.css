@@ -17185,7 +17185,7 @@ readers do not read off random characters that represent icons */
   z-index: 3;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   #top-bar {
     display: none;
   }
@@ -17290,7 +17290,7 @@ header {
 }
 
 header .logo img {
-  height: 90px;
+  height: 4rem;
 }
 
 @media (min-width: 1400px) {
@@ -17298,13 +17298,20 @@ header .logo img {
     height: calc(100vw / (1400 / 60));
   }
 }
+
 header .logo2 img {
-  height: 50px;
+    height: 4rem;
 }
+
+@media (max-width: 991px) {
+    header .logo2 img {
+        height: 3rem;
+    }
+  }
 
 @media (min-width: 1400px) {
   header .logo2 img {
-    height: calc(100vw / (1400 / 30));
+    height: calc(100vw / (1400 / 50));
   }
 }
 @media (min-width: 992px) {
@@ -17374,7 +17381,7 @@ header .logo2 img {
     display: none;
 }
 
-@media (max-width: 767px){
+@media (max-width: 991px){
     .lang_choose {
         margin-right: 1vw;
         display: block;
@@ -17504,7 +17511,7 @@ header .logo2 img {
   }
 
   .navbar .logo img {
-    height: 60px;
+    height: 3rem;
   }
 
   .navbar .menu-icon {
@@ -18515,6 +18522,7 @@ section {
 
 #news {
   padding: 2vw 0 5vw 0;
+  background-color: #f5f8fc;
 }
 
 /* a:hover {
@@ -19590,7 +19598,7 @@ h4 {
 
 
 #counter {
-  background-image: url(/assets/images/contact.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/123.png);
   padding: 4.375em 0;
 }
 
@@ -19641,7 +19649,7 @@ margin: 0;
 
 .counters-item {
   margin-bottom: 30px;
-
+  /* background-color: #335063; */
 }
 
 .devider {
@@ -19889,6 +19897,12 @@ margin: 0;
   margin-bottom: 30px;
 }
 
+@media (max-width: 767px) {
+    .devider {
+        font-size: 2vw;
+      }
+  }
+
 .devider i {
   color: #cccccc;
 }
@@ -19921,6 +19935,7 @@ margin: 0;
   box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
   border-radius: 18px;
   border-bottom: 5px solid #fff;
+  width: 100%;
 }
 .services .icon-box .icon {
   width: 64px;
@@ -20196,6 +20211,13 @@ color: #817C7C;
   margin: 0 auto;
   width: 45%;
 }
+
+  @media screen and (max-width: 991px) {
+    .client-info {
+        margin: 0 auto;
+        width: 75%;
+      }
+  }
 
 .client-thumb img {
   border-radius: 50%;

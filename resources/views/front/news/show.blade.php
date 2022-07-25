@@ -28,7 +28,7 @@
                 </span>
             </div>
         </div>
-		  <div class="container bg-white pt-3 pb-3">
+		  <div class="container pt-3 pb-3">
 						<div class="d-flex flex-wrap">
 							<div class="col-md-12 col-12 pl-0 pr-1 pb-1">
 								<div class="main-image">
