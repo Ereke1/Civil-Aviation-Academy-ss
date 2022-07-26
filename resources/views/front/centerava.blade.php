@@ -5,9 +5,14 @@
 @section('content')
 <section class="wrapper" id="center">
   <div class="container">
+      <div class="breadcrumbs">
+          <a href="{!! route('front.home') !!}">{{ __('Главная') }}</a>
+          <span> > </span>
+          <span>Авиационные центры</span>
+      </div>
     <div class="row">
       <div class="col text-center mb-5">
-        <h1 class="display-4"> {{ __('Академия гражданской авиации') }}</h1>
+        <h1 class="display-4"> Авиационные центры</h1>
         <p class="lead">Академия гражданской авиации осуществляет профессиональную подготовку, переподготовку авиационных специалистов в соответствии с требованиями Типовых программ профессиональной подготовки авиационного персонала, а также правилами ИКАО. </p>
       </div>
     </div>
