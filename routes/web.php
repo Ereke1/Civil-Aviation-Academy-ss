@@ -88,6 +88,7 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	// HOMEPAGE
 	Route::get('', 'HomeController@index')->name('home');
 	Route::get('centerava','CenterController@index')->name('centerava');
+	Route::get('virtual_admission','VirtualAdmissionController@index')->name('virtual_admission');
 	Route::get('news', 'NewsController@index')->name('news');
 	Route::get('news/{slug}', 'NewsController@show')->name('news.show');
 	Route::get('events', 'EventController@index')->name('events');

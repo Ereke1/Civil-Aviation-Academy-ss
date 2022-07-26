@@ -157,7 +157,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-id-card"></i></div>
-              <h4><a href="/virtualnaya-priemnaya-komissiya-174">{{ __('Виртуальная приемная комиссия') }}</a></h4>
+              <h4><a href="/virtualnaya-priemnaya-komissiya-174">{{ __('Виртуальная приемная') }}</a></h4>
               <p>{{ __('Наши сотрудники приемной комиссии помогут Вам подать заявку. График консультаций с 9:00 до 17:00 с понедельника по пятницу.') }}</p>
             </div>
           </div>
