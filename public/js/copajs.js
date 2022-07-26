@@ -3,9 +3,9 @@ $(document).ready(function(){
     "use strict";
 $(document).on('click','.nav-link', function(event) {
     event.preventDefault();
-    var target = "#" + this.getAttribute('data-target');   
+    var target = "#" + this.getAttribute('data-target');
     // -130 for navbar-fixed otherwise you can use 0 instead
-    var top = $(target).offset().top - 100; 
+    var top = $(target).offset().top - 100;
     $('html, body').animate({
         scrollTop: top
     }, 3000);
@@ -28,17 +28,27 @@ $("#testimonials").owlCarousel({
 
 var previousScroll = 0;
   $(window).scroll(function(){
-	
+
     var scroll = $(window).scrollTop();
       if (scroll > 80 && scroll < previousScroll) {
-        $(".navbar-bg").css("background" , "#fff");        
+        $(".navbar-bg").css("background" , "#fff");
         $(".navbar-bg").css("box-shadow","0 20px 30px rgba(0,0,0,.15)");
         $('#my_image').attr('class','logo2');
-        $('#my_image').css('margin-left','180px');
         $('#my_image').css('margin-right','20px');
         $('#navMenu').attr('class','navbar navbar-expand-lg navbar-light navbar-bg fixed-top top-nav-collapse');
         $('#main-slider').css("padding-top", "150px");
-        
+
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                $('#my_image').css('margin-left','0vw');
+            } else {
+                $('#my_image').css('margin-left','80px');
+            }
+          }
+
+          var x = window.matchMedia("(max-width: 991px)")
+          myFunction(x)
+
       }
 
       else{
@@ -51,10 +61,10 @@ var previousScroll = 0;
           $('#main-slider').css("padding-top", "10px");
       }
 	  previousScroll = scroll;
-  
+
 });
   /*****************************************************
-  * 
+  *
   * Flex Slider
   *
   *****************************************************/
@@ -90,5 +100,4 @@ var previousScroll = 0;
 });
 
 
-                                
-                        
+

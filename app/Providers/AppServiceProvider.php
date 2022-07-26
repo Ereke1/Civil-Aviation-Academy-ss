@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
-		view()->composer('front.inc.top_bar', function ($view) {
+		view()->composer(['front.inc.top_bar','front.inc.header'],  function ($view) {
 			$view->with('current_locale', app()->getLocale());
 			$view->with('available_locales', config('app.available_locales'));
 		});

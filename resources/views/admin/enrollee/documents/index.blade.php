@@ -118,8 +118,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('admin.enrollee.documents.update', $item->applid) }}"
-                                    method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('admin.enrollee.documents.update', $item->applid) }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <input type="hidden" name="id" value="{!! $item->applid !!}">
@@ -166,9 +166,10 @@
                                                                 {{ mb_strtolower($nationality->nationality_kz, 'UTF-8') }}
                                                             </option>
                                                         @elseif (Config::get('app.locale') == 'ru') --}}
-                                                            <option value="{{ $nationality->id }}" @if ($item->nationality_id === $nationality->id) selected @endif>
-                                                                {{ mb_strtolower($nationality->nationality_ru, 'UTF-8') }}
-                                                            </option>
+                                                        <option value="{{ $nationality->id }}"
+                                                            @if ($item->nationality_id === $nationality->id) selected @endif>
+                                                            {{ mb_strtolower($nationality->nationality_ru, 'UTF-8') }}
+                                                        </option>
                                                         {{-- @else
                                                             <option value="{{ $nationality->id }}" @if ($item->nationality_id === $nationality->id) selected @endif>
                                                                 {{ mb_strtolower($nationality->nationality_en, 'UTF-8') }}
@@ -185,12 +186,13 @@
                                         <div class="block">
                                             <h5 class="block__title">Язык обучения</h5>
                                             <select name="lang_edu" class="block__info">
-                                                <option @if ($item->lang_edu === NULL or $item->lang_edu === "-") selected value="{{$item->lang_edu}}" @endif>-</option>
+                                                <option
+                                                    @if ($item->lang_edu === null or $item->lang_edu === '-') selected value="{{ $item->lang_edu }}" @endif>
+                                                    -</option>
                                                 <option value="Казахский"
                                                     @if ($item->lang_edu === 'Казахский') selected @endif>Казахский
                                                 </option>
-                                                <option value="Русский"
-                                                    @if ($item->lang_edu === 'Русский') selected @endif>
+                                                <option value="Русский" @if ($item->lang_edu === 'Русский') selected @endif>
                                                     Русский</option>
                                             </select>
                                         </div>
@@ -360,10 +362,11 @@
                                                     <a href="{!! $item->imgVLEK !!}" target="_blank">ВЛЭК</a>
                                                 </p>
                                             </div>
-                                        @elseif ($item->haveVLEK === "Нет" && !isset($item->imgVLEK))
+                                        @elseif ($item->haveVLEK === 'Нет' && !isset($item->imgVLEK))
                                             <div class="block" id="vlekBlockImage">
                                                 <h5 class="block__title">Прикрепить пройденный ВЛЭК</h5>
-                                                <input type="file" id="vlekImage" class="block__info" name="vlekImage">
+                                                <input type="file" id="vlekImage" class="block__info"
+                                                    name="vlekImage">
                                             </div>
                                         @endif
                                         @if (isset($item->imgPSYCHO))
@@ -373,10 +376,11 @@
                                                     <a href="{!! $item->imgPSYCHO !!}" target="_blank">Психотест</a>
                                                 </p>
                                             </div>
-                                            @elseif ($item->haveVLEK !== NULL && !isset($item->imgPSYCHO))
+                                        @elseif ($item->haveVLEK !== null && !isset($item->imgPSYCHO))
                                             <div class="block" id="psychoBlockImage">
                                                 <h5 class="block__title">Прикрепить пройденный психотест</h5>
-                                                <input type="file" name="psychoImage" id="psychoImage" class="block__info" onchange="vlekImageFunc()">
+                                                <input type="file" name="psychoImage" id="psychoImage"
+                                                    class="block__info" onchange="vlekImageFunc()">
                                             </div>
                                         @endif
                                         @if (isset($item->haveIELTS))
@@ -509,6 +513,17 @@
                                                     Копия удостоверения
                                                     личности</label>
                                             </div>
+                                        </div>
+                                        <div class="block">
+                                            <h5 class="block__title">Грант</h5>
+
+                                            <label for="grant" class="block__info">
+                                                <input type="radio" id="grant_yes" name="grant" value="1" @if ($item->have_grant === 1) checked @endif>
+                                            Да</label><br>
+
+                                            <label for="grant" class="block__info">
+                                                <input type="radio" id="grant_no" name="grant" value="0" @if ($item->have_grant === 0) checked @endif>
+                                            Нет</label><br>
                                         </div>
                                     </div>
                                     <div class="blocks">

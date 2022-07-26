@@ -7,7 +7,21 @@
                         <img src="/assets/images/logo_agakaz_b.png" />
                     </a>
                 </div>
-                <div class="sitenavigation">
+                <div>
+                <div class="lang_choose float-left">
+                    <select onchange="location = this.value;">
+                        @foreach ($available_locales as $locale_name => $available_locale)
+                        @if ($available_locale === $current_locale)
+                        <option selected>{{ $locale_name }}</option>
+                        @else
+                        <option value="/language/{{ $available_locale }}">
+                                {{ $locale_name }}
+                            </option>
+                        @endif
+                    @endforeach
+                    </select>
+                </div>
+                <div class="sitenavigation float-right">
                 <span class="menu-icon">
                         <a href="#" class="menu example5"><span></span></a>
                         <div id="hamburger">
@@ -139,6 +153,7 @@
                         @endforeach
                     </ul>
                 </div>
+            </div>
             </nav>
         </div>
     </div>
