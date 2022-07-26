@@ -19980,6 +19980,12 @@ margin: 0;
   transform: translateY(-10px);
   border-color: darkgoldenrod;
 }
+.services .virtual_adm:hover {
+    transform: translateY(-10px);
+    border-color: darkgoldenrod;
+    border-bottom: 5px solid darkgoldenrod;
+  }
+
 .services .icon-box:hover h4 a {
   color: darkblue;
 }
