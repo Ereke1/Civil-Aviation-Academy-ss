@@ -284,7 +284,7 @@ class DocumentsController extends Controller
 
         //стоимость
         if ($data->have_grant === 1) {
-            $templateProcessor->setValue('price', '');
+            $templateProcessor->setValue('price', 'грант');
         } else {
             if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
                 $templateProcessor->setValue('price', '714 900');
