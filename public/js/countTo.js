@@ -147,7 +147,25 @@ $(document).ready(function() {
 		}
 	  }
 	}
- 
+	$("#Client_Logo").owlCarousel({
+		autoPlay : 5000,
+	    items : 6,
+	    responsiveClass:true,
+	    responsive: {
+            0:{
+                items : 1
+            },
+            480:{
+                items : 1
+            },
+            768:{
+                items : 3
+            },
+            1200:{
+                items: 3
+            }
+        }
+	});
 	//pause while dragging 
 	function pauseOnDragging(){
 	  isPause = true;

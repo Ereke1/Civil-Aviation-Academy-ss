@@ -667,8 +667,84 @@
 				</div>	    <!-- End row -->
 			</div>       <!-- End container -->
 		</section>    <!-- End Section -->
+        <section id="client-logo">
+			<div class="container">
+            <div class="title text-center wow animated zoomInDown">
+							<h2>Наши <span class="color">Партнеры</span></h2>
+							<div class="border"></div>
+	  </div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="block">
+							<div id="Client_Logo" class="owl-carousel">
+								<div>
+									<a href="https://www.icao.int/Pages/default.aspx" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/icao.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://www.easa.europa.eu/home" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/easa.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://tsi.lv/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/tsi.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://alicanto.org/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/alicanto.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://uvauga.ru/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/uvauga.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://www.baatraining.com/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/baaTraining.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://erau.edu/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/erau.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://www.iata.org/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/iata.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://airastana.com/kaz/ru-RU" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/airAstana.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://naa.edu.az/en/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/naa.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://spbguga.ru/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/spbguga.png" alt=""></a>
+								</div>
+								<div>
+									<a href="http://www.scat.kz/ru/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/scat.png" alt=""></a>
+								</div>
+                                <div>
+									<a href="https://www.f-air.cz/en" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/fair.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://www.ugatu.su/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/ugatu.png" alt=""></a>
+								</div>
+                                <div>
+									<a href="https://www.eskisehir.edu.tr/en" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/eskisehir.png" alt=""></a>
+								</div>
+								<div>
+									<a href="http://kai.kg/ru" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/kai.png" alt=""></a>
+								</div>
+                                <div>
+									<a href="https://www.mstuca.ru/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/mstuca.png" alt=""></a>
+								</div>
+                                <div>
+									<a href="https://aviacenter.org/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/aviacenter.png" alt=""></a>
+								</div>
+								<div>
+									<a href="http://www.arz405.kz/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/arz.png" alt=""></a>
+								</div>
+                                <div>
+									<a href="https://www.patriagroup.com/services/professional-pilot-training/pilot-training-programs" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/patria.png" alt=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
     <section id="map">
-        <div class="map" style="padding-top:100px;">
+        <div class="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5802.496879380682!2d77.00797511018712!3d43.35091361409262!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388312ab423e0e53%3A0x28f121f26f2a84!2z0JDQutCw0LTQtdC80LjRjyDQk9GA0LDQttC00LDQvdGB0LrQvtC5INCQ0LLQuNCw0YbQuNC4!5e0!3m2!1sru!2skz!4v1656590585883!5m2!1sru!2skz" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
     </section>

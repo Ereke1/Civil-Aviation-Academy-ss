@@ -21728,3 +21728,30 @@ color: #817C7C;
   background: #234f6d;
   background: linear-gradient(0deg, rgba(35, 79, 109, 0.3785889356) 0%, #455f71 100%);
 }
+#client-logo {
+  padding: 100px 0 100px;
+  text-align: center;
+  background: #f7f7f9;
+}
+#client-logo a {
+  padding: 14px 24px;
+  display: block;
+}
+#client-logo a img {
+  transition: 0.3s;
+  margin: 0 auto;
+}
+#client-logo a:hover img {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  #client-logo {
+    padding: 50px 0 50px;
+    text-align: center;
+    background: #f7f7f9;
+  }
+  #client-logo a {
+    padding: 7px 12px;
+    display: block;
+  }
+}
