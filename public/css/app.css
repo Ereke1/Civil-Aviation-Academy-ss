@@ -21733,21 +21733,21 @@ color: #817C7C;
   text-align: center;
   background: #f7f7f9;
 }
-#client-logo .outer {
-  display : flex;
-  align-items : center;
-  justify-content: center;
+#Client_Logo {
+  width: 100%; /* or whatever you want */
+  height: 100%;
+  line-height: 200px; /* or whatever you want, should match height */
+  text-align: center;
 }
 #client-logo a {
   padding: 14px 24px;
-  display: block;
+  display: table-cell; 
+  vertical-align: middle ;
 }
 #client-logo a img {
   transition: 0.3s;
-  vertical-align: middle;
   margin: 0 auto;
-  max-height: 100px;
-  max-width: 250px;
+  vertical-align: middle ;
 }
 #client-logo a:hover img {
   transform: scale(1.2);
