@@ -676,65 +676,65 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="block">
-							<div id="Client_Logo" class="owl-carousel">
-								<div>
+							<div id="Client_Logo" class="owl-carousel outer">
+								<div class="inner">
 									<a href="https://www.icao.int/Pages/default.aspx" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/icao.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://www.easa.europa.eu/home" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/easa.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://tsi.lv/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/tsi.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://alicanto.org/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/alicanto.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://uvauga.ru/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/uvauga.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://www.baatraining.com/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/baaTraining.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://erau.edu/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/erau.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://www.iata.org/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/iata.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://airastana.com/kaz/ru-RU" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/airAstana.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://naa.edu.az/en/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/naa.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://spbguga.ru/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/spbguga.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="http://www.scat.kz/ru/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/scat.png" alt=""></a>
 								</div>
-                                <div>
+                                <div class="inner">
 									<a href="https://www.f-air.cz/en" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/fair.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="https://www.ugatu.su/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/ugatu.png" alt=""></a>
 								</div>
-                                <div>
+                                <div class="inner">
 									<a href="https://www.eskisehir.edu.tr/en" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/eskisehir.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="http://kai.kg/ru" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/kai.png" alt=""></a>
 								</div>
-                                <div>
+                                <div class="inner">
 									<a href="https://www.mstuca.ru/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/mstuca.png" alt=""></a>
 								</div>
-                                <div>
+                                <div class="inner">
 									<a href="https://aviacenter.org/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/aviacenter.png" alt=""></a>
 								</div>
-								<div>
+								<div class="inner">
 									<a href="http://www.arz405.kz/" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/arz.png" alt=""></a>
 								</div>
-                                <div>
+                                <div class="inner">
 									<a href="https://www.patriagroup.com/services/professional-pilot-training/pilot-training-programs" target="_blank"><img class="img-responsive" src="/assets/images/clientLogo/patria.png" alt=""></a>
 								</div>
 							</div>

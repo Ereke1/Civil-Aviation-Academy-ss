@@ -21727,11 +21727,16 @@ color: #817C7C;
   transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
   background: #234f6d;
   background: linear-gradient(0deg, rgba(35, 79, 109, 0.3785889356) 0%, #455f71 100%);
-}
+} 
 #client-logo {
   padding: 100px 0 100px;
   text-align: center;
   background: #f7f7f9;
+}
+#client-logo .outer {
+  display : flex;
+  align-items : center;
+  justify-content: center;
 }
 #client-logo a {
   padding: 14px 24px;
@@ -21739,7 +21744,10 @@ color: #817C7C;
 }
 #client-logo a img {
   transition: 0.3s;
+  vertical-align: middle;
   margin: 0 auto;
+  max-height: 100px;
+  max-width: 250px;
 }
 #client-logo a:hover img {
   transform: scale(1.2);
