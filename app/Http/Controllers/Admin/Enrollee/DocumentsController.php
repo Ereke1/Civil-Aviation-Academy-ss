@@ -315,6 +315,19 @@ class DocumentsController extends Controller
             }
         }
 
+        //кредит
+        if ($data->type === 'Бакалавриат') {
+            $templateProcessor->setValue('cr', '240');
+        } else if ($data->type === 'Магистратура') {
+            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)'){
+                $templateProcessor->setValue('cr', '60');
+            } else {
+                $templateProcessor->setValue('cr', '120');
+            }
+        } else if ($data->type === 'Докторантура') {
+            $templateProcessor->setValue('cr', '180');
+        }
+
         //дата рождения
         if ($data->birthdate !== NULL) {
             $templateProcessor->setValue('birth_date', date('d.m.Y', strtotime($data->birthdate)));
