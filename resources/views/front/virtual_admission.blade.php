@@ -5,6 +5,7 @@
 @section('content')
 <section id="services" class="services" style="background: #fff">
     <div class="container" style="margin-bottom: 5vw">
+        <img src="/virtual consultations.jpeg" alt="">
       <div class="row">
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
           <div class="icon-box virtual_adm">

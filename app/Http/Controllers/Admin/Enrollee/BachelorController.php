@@ -318,6 +318,7 @@ class BachelorController extends Controller
             }
         }
 
+
         // Count
         if (isset($countENT)) {
             if(isset($created_at_from) && isset($created_at_to)){

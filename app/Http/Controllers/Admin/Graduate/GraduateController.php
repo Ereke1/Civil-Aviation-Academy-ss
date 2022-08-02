@@ -52,6 +52,51 @@ class GraduateController extends Controller
 		];
 		return view('admin.graduate.index', $dataArray);
 	}
+
+    	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index_new(Request $request)
+	{
+		$whereArray = [
+			'form_study' => $request->form_study,
+			'surname' => $request->surname,
+			'region' => $request->region,
+			'reference' => $request->reference,
+			'resume' => $request->resume,
+			'magister' => $request->magister,
+			'direction' => $request->direction,
+			'work' => $request->work,
+			'unification' => $request->unification,
+			'process' => $request->process
+		];
+		$whereArray = array_filter($whereArray, 'strlen');
+
+		$data = Graduate::where($whereArray)
+			->paginate(100)
+			->appends($whereArray);
+
+		$countData = Graduate::where($whereArray)
+			->count();
+
+		$dataArray = [
+			'data' => $data,
+			'form_study' => $request->form_study,
+			'region' => $request->region,
+			'magister' => $request->magister,
+			'reference' => $request->reference,
+			'resume' => $request->resume,
+			'direction' => $request->direction,
+			'unification' => $request->unification,
+			'work' => $request->work,
+			'process' => $request->process,
+			'countData' => $countData
+		];
+		return view('admin.graduate.index_new', $dataArray);
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -60,6 +105,16 @@ class GraduateController extends Controller
 	public function create()
 	{
 		return view('admin.graduate.add');
+	}
+
+    /**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create_new()
+	{
+		return view('admin.graduate.add_new');
 	}
 
 	/**
@@ -102,7 +157,78 @@ class GraduateController extends Controller
 		$data->quarter = $request->quarter;
 		$data->process = $request->process;
 		$data->save();
-		return redirect()->route('admin.graduate.index')->with('alert', 'Выпускник ' . $request->surname . ' ' . $request->name . ' добавлен');
+		return redirect()->route('admin.graduate.graduates.index')->with('alert', 'Выпускник ' . $request->surname . ' ' . $request->name . ' добавлен');
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store_new(Request $request)
+	{
+		$data = new Graduate;
+		$data->surname = $request->surname;
+		$data->name = $request->name;
+		$data->patronymic = $request->patronymic;
+		$data->iin = $request->iin;
+		$data->groupe = $request->groupe;
+		$data->speciality = $request->speciality;
+		$data->edu_program = $request->edu_program;
+		$data->gpa = $request->gpa;
+		$data->form_study = $request->form_study;
+		$data->international_grant = $request->international_grant;
+		$data->edu_form = $request->edu_form;
+		$data->reg_address = $request->reg_address;
+		$data->region = $request->region;
+		$data->continue_education = $request->continue_education;
+		$data->work = $request->work;
+		$data->employment_type = $request->employment_type;
+		$data->work_place = $request->work_place;
+		$data->position = $request->position;
+		$data->position_status = $request->position_status;
+		$data->reference = $request->reference;
+		$data->have_portfolio = $request->have_portfolio;
+		$data->have_fincenter_doc = $request->have_fincenter_doc;
+		$data->direction = $request->direction;
+		$data->direction_place1 = $request->direction_place1;
+		$data->direction_place2 = $request->direction_place2;
+		$data->direction_place3 = $request->direction_place3;
+		$data->phone = $request->phone;
+		$data->grad_year = $request->grad_year."-01" ;
+		$data->graduate_status = $request->graduate_status;
+
+
+        if ($request->hasFile('reference_doc')) {
+            $request->validate([
+                'images' => 'reference_doc|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+            ]);
+
+            $reference_doc = $request->file('reference_doc');
+            $image_name_reference_doc = $reference_doc->getClientOriginalName();
+            $destinationPathVlek = public_path('/storage/graduates/references/' . $request->surname . ' ' . $request->name);
+            $reference_doc->move($destinationPathVlek, $image_name_reference_doc);
+
+            $data->reference = 1;
+            $data->reference_doc = '/storage/graduates/references/' . $request->surname . ' ' . $request->name . '/' . $image_name_reference_doc;
+        }
+        if ($request->hasFile('portfolio_doc')) {
+            $request->validate([
+                'images' => 'portfolio_doc|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+            ]);
+
+            $portfolio_doc = $request->file('portfolio_doc');
+            $image_name_portfolio_doc = $portfolio_doc->getClientOriginalName();
+            $destinationPathPsycho = public_path('/storage/graduates/portfolios/' . $request->surname . ' ' . $request->name);
+            $portfolio_doc->move($destinationPathPsycho, $image_name_portfolio_doc);
+
+            $data->have_portfolio = "Имеется";
+            $data->portfolio_doc = '/storage/graduates/portfolios/' . $request->surname . ' ' . $request->name . '/' . $image_name_portfolio_doc;
+        }
+
+		$data->save();
+		return redirect()->route('admin.graduate.graduates.index_new')->with('alert', 'Выпускник ' . $request->surname . ' ' . $request->name . ' добавлен');
 	}
 
 	/**
@@ -134,9 +260,9 @@ class GraduateController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, $id)
+	public function update(Request $request)
 	{
-		$data = Graduate::find($id);
+		$data = Graduate::find($request->id);
 		$data->reg_address = $request->reg_address;
 		$data->res_address = $request->res_address;
 		$data->region = $request->region;
@@ -160,6 +286,19 @@ class GraduateController extends Controller
 		$data->phone = $request->phone;
 		$data->magister = $request->magister;
 		$data->process = $request->process;
+
+        $data->speciality = $request->speciality;
+        $data->international_grant = $request->international_grant;
+        $data->edu_form = $request->edu_form;
+        $data->continue_education = $request->continue_education;
+        $data->employment_type = $request->employment_type;
+        $data->position = $request->position;
+        $data->position_status = $request->position_status;
+        $data->reference = $request->reference;
+        $data->have_portfolio = $request->have_portfolio;
+        $data->have_fincenter_doc = $request->have_fincenter_doc;
+        $data->graduate_status = $request->graduate_status;
+
 		$data->save();
 		return redirect()->back();
 	}

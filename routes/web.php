@@ -72,7 +72,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 
 	// GRADUATE
 	Route::group(['prefix' => 'graduate', 'namespace' => 'Graduate', 'as' => 'graduate.'], function () {
-		Route::resource('graduates', 'GraduateController');
+		// Route::resource('graduates', 'GraduateController');
+		Route::get('graduates/index', 'GraduateController@index')->name('graduates.index');
+		Route::get('graduates/index_new', 'GraduateController@index_new')->name('graduates.index_new');
+		Route::get('graduates/create', 'GraduateController@create')->name('graduates.create');
+		Route::get('graduates/create_new', 'GraduateController@create_new')->name('graduates.create_new');
+		Route::post('graduates/store', 'GraduateController@store')->name('graduates.store');
+		Route::post('graduates/store_new', 'GraduateController@store_new')->name('graduates.store_new');
+		Route::put('graduates/update', 'GraduateController@update')->name('graduates.update');
+		Route::get('graduates/destroy', 'GraduateController@destroy')->name('graduates.destroy');
+
 		Route::get('report', 'ReportController@index')->name('report.index');
 		Route::get('pdf/{graduation_year}', 'ReportController@pdf')->name('report.pdf');
 	});

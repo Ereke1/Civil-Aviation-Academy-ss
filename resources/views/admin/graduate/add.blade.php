@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @php $parrentCat  = 'Выпускники' @endphp
-@php $active_menu  = 'Добавление выпускников' @endphp
+@php $active_menu  = 'Добавление выпускников (2021)' @endphp
 @section('content')
     @if (session('alert'))
         <div class="alert alert-success">
