@@ -2,12 +2,12 @@
     <tr>
         <th>Ф.И.О.</th>
         <th>Группа</th>
-        <th>Магистратура</th>
+        <th>Продолжение обучения</th>
         <th>Справка</th>
-        <th>Резюме</th>
+        <th>Портфолио</th>
         <th>Работа</th>
         <th>Направление</th>
-        <th>Процесс</th>
+        <th>Статус выпускника</th>
         <th>Детализация</th>
     </tr>
     @foreach ($data as $item)
@@ -15,7 +15,7 @@
             <td>{!! $item->surname !!} {!! $item->name !!} {!! $item->patronimyc !!}</td>
             <td>{!! $item->groupe !!}</td>
             <td>
-                @if ($item->magister === 0)
+                @if ($item->continue_education === 0)
                     Нет
                 @else
                     Да
@@ -29,7 +29,7 @@
                 @endif
             </td>
             <td>
-                @if ($item->resume === 0)
+                @if ($item->have_portfolio === 0)
                     Нет
                 @else
                     Да
@@ -43,7 +43,7 @@
                     Да
                 @endif
             </td>
-            <td>{!! $item->process !!}</td>
+            <td>{!! $item->graduate_status !!}</td>
             <td>
                 <button type="button" class="btn btn-primary" data-toggle="modal"
                     data-target="#userModal{!! $item->id !!}">

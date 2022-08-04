@@ -128,6 +128,13 @@
                 </select>
             </div>
             <div>
+                <label for="grad_year">Год выпуска</label>
+                <select name="grad_year">
+                    <option value=""></option>
+                    <option value="2022" @if ($grad_year === '2022') selected @endif>2022</option>
+                </select>
+            </div>
+            <div>
                 <button>Применить</button>
             </div>
         </form>

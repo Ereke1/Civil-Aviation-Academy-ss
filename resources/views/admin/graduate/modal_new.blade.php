@@ -171,7 +171,7 @@
                         </div>
                         <div class="block">
                             <h5 class="block__title">Место работы</h5>
-                            <p class="block__info">{!! $item->work_place !!}</p>
+                            <p class="block__info">@if ($item->work_place !== '0') {!! $item->work_place !!}  @endif</p>
                         </div>
                         <div class="block">
                             <h5 class="block__title">Должность</h5>

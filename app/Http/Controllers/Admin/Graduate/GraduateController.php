@@ -74,9 +74,17 @@ class GraduateController extends Controller
 		];
 		$whereArray = array_filter($whereArray, 'strlen');
 
-		$data = Graduate::where($whereArray)
+        if(isset($request->grad_year)) {
+            $data = Graduate::where($whereArray)
+            ->where('grad_year', '>=', "$request->grad_year-01-01")
+            ->where('grad_year', '<=', "$request->grad_year-12-31")
 			->paginate(100)
 			->appends($whereArray);
+        } else {
+            $data = Graduate::where($whereArray)
+                ->paginate(100)
+                ->appends($whereArray);
+        }
 
 		$countData = Graduate::where($whereArray)
 			->count();
@@ -92,6 +100,7 @@ class GraduateController extends Controller
 			'unification' => $request->unification,
 			'work' => $request->work,
 			'process' => $request->process,
+			'grad_year' => $request->grad_year,
 			'countData' => $countData
 		];
 		return view('admin.graduate.index_new', $dataArray);
