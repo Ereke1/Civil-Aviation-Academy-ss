@@ -80,7 +80,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 		Route::post('graduates/store', 'GraduateController@store')->name('graduates.store');
 		Route::post('graduates/store_new', 'GraduateController@store_new')->name('graduates.store_new');
 		Route::put('graduates/update', 'GraduateController@update')->name('graduates.update');
-		Route::get('graduates/destroy', 'GraduateController@destroy')->name('graduates.destroy');
+		Route::delete('graduates/destroy/{id}', 'GraduateController@destroy')->name('graduates.destroy');
 
 		Route::get('report', 'ReportController@index')->name('report.index');
 		Route::get('pdf/{graduation_year}', 'ReportController@pdf')->name('report.pdf');
