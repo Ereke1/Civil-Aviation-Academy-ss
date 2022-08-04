@@ -149,6 +149,10 @@
                 <input type="text" name="surname">
             </div>
             <div>
+                <label for="iin">ИИН</label>
+                <input type="text" name="iin">
+            </div>
+            <div>
                 <button>Найти</button>
             </div>
             <div>

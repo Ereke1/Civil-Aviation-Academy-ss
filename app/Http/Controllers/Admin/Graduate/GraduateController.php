@@ -63,6 +63,7 @@ class GraduateController extends Controller
 		$whereArray = [
 			'form_study' => $request->form_study,
 			'surname' => $request->surname,
+			'iin' => $request->iin,
 			'region' => $request->region,
 			'reference' => $request->reference,
 			'resume' => $request->resume,
