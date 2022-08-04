@@ -9,7 +9,7 @@
             Все(2021)
         </a>
         <a href="{{ route('admin.graduate.report.index') }}" @if ($active_menu === 'Отчёт выпускники') class="active" @endif>
-            Отчёт
+            Отчёт(2021)
         </a>
         <a href="{{ route('admin.graduate.graduates.create') }}" @if ($active_menu === 'Добавление выпускников (2021)') class="active" @endif>
             Добавление(2021)
