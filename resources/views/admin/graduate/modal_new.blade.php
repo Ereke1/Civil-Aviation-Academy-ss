@@ -15,6 +15,15 @@
                     <input type="hidden" name="resume" value="0">
                     <div class="blocks">
                         <div class="block">
+                            <h5 class="block__title">Академическая степень</h5>
+                            <select class="block__info" name="type" required>
+                                <option value="" @if ($item->type === NULL) selected @endif>-----</option>
+                                <option value="1" @if ($item->type === 1) selected @endif>Бакаклавриат</option>
+                                <option value="2" @if ($item->type === 2) selected @endif>Магистратура</option>
+                                <option value="3" @if ($item->type === 3) selected @endif>Докторантура</option>
+                            </select>
+                        </div>
+                        <div class="block">
                             <h5 class="block__title">Фамилия</h5>
                             <p class="block__info">{!! $item->surname !!}</p>
                         </div>
@@ -28,10 +37,13 @@
                                 <p class="block__info">{!! $item->patronymic !!}</p>
                             </div>
                         @endif
+                        @if ($item->type !== 3)
                         <div class="block">
                             <h5 class="block__title">Группа</h5>
                             <p class="block__info">{!! $item->groupe !!}</p>
                         </div>
+                        @endif
+                        @if ($item->type === 1)
                         <div class="block">
                             <h5 class="block__title">Специальность</h5>
                             <select class="block__info" name="speciality">
@@ -51,10 +63,32 @@
                                 <option value="Логистика на транспорте" @if ($item->speciality === 'Логистика на транспорте') selected @endif>Логистика на транспорте</option>
                             </select>
                         </div>
+                        @endif
+                        @if ($item->type === 1 || $item->type === 3)
                         <div class="block">
                             <h5 class="block__title">Образовательная программа</h5>
                             <p class="block__info">{!! $item->edu_program !!}</p>
                         </div>
+                        @endif
+                        @if ($item->type === 2)
+                        <div class="block">
+                            <h5 class="block__title">Направление</h5>
+                            <select class="block__info" name="edu_direction">
+                                <option value="" @if ($item->edu_direction === NULL) selected @endif>-----</option>
+                                <option value="Научно - педагогическое" @if ($item->type === 'Научно - педагогическое') selected @endif>Научно - педагогическое</option>
+                                <option value="Профильное" @if ($item->type === 'Профильное') selected @endif>Профильное</option>
+                            </select>
+                        </div>
+                        <div class="block">
+                            <h5 class="block__title">Группа образовательных программ</h5>
+                            <select class="block__info" name="op_group">
+                                <option value="" @if ($item->edu_direction === NULL) selected @endif>-----</option>
+                                <option value="Авиационная техника и технологии" @if ($item->edu_direction === 'Авиационная техника и технологии') selected @endif>Авиационная техника и технологии</option>
+                                <option value="Летная эксплуатация летательных аппаратов и двигателей" @if ($item->edu_direction === 'Летная эксплуатация летательных аппаратов и двигателей') selected @endif>Летная эксплуатация летательных аппаратов и двигателей</option>
+                                <option value="Транспортные услуги" @if ($item->edu_direction === 'Транспортные услуги') selected @endif>Транспортные услуги</option>
+                            </select>
+                        </div>
+                        @endif
                         <div class="block">
                             <h5 class="block__title">GPA</h5>
                             <input type="text" class="block__info" name="gpa" value="{!! $item->gpa !!}">
@@ -67,6 +101,7 @@
                             <h5 class="block__title">Отделение</h5>
                             <p class="block__info">{!! $item->form_study !!}</p>
                         </div>
+                        @if ($item->type === 1)
                         <div class="block">
                             <h5 class="block__title">Международный грант</h5>
                             <select class="block__info" name="international_grant">
@@ -87,6 +122,7 @@
                                 </option>
                             </select>
                         </div>
+                        @endif
                         <div class="block">
                             <h5 class="block__title">Адрес</h5>
                             <textarea rows="5" class="block__info" name="reg_address">{!! $item->reg_address !!}</textarea>
@@ -143,15 +179,27 @@
                                     @if ($item->region === 'Иностранец') selected @endif>Иностранец</option>
                             </select>
                         </div>
+                        @if ($item->type !== 3)
                         <div class="block">
                             <h5 class="block__title">Продолжение обучения</h5>
                             <select class="block__info" name="continue_education">
                                 <option value="">-----</option>
                                 <option value="0" @if ($item->continue_education === '0') selected @endif>Нет</option>
+                                @if ($item->type === null)
                                 <option value="Магистратура АГА" @if ($item->continue_education === 'Магистратура АГА') selected @endif>Магистратура АГА</option>
                                 <option value="Магистратура другой ВУЗ" @if ($item->continue_education === 'Магистратура другой ВУЗ') selected @endif>Магистратура другой ВУЗ</option>
+                                <option value="Докторантура АГА" @if ($item->continue_education === 'Докторантура АГА') selected @endif>Докторантура АГА</option>
+                                <option value="Докторантура другой ВУЗ" @if ($item->continue_education === 'Докторантура другой ВУЗ') selected @endif>Докторантура другой ВУЗ</option>
+                                @elseif ($item->type === 1)
+                                <option value="Магистратура АГА" @if ($item->continue_education === 'Магистратура АГА') selected @endif>Магистратура АГА</option>
+                                <option value="Магистратура другой ВУЗ" @if ($item->continue_education === 'Магистратура другой ВУЗ') selected @endif>Магистратура другой ВУЗ</option>
+                                @elseif ($item->type === 2)
+                                <option value="Докторантура АГА" @if ($item->continue_education === 'Докторантура АГА') selected @endif>Докторантура АГА</option>
+                                <option value="Докторантура другой ВУЗ" @if ($item->continue_education === 'Докторантура другой ВУЗ') selected @endif>Докторантура другой ВУЗ</option>
+                                @endif
                             </select>
                         </div>
+                        @endif
                         <div class="block">
                             <h5 class="block__title">Тип занятости</h5>
                             <select class="block__info" name="work">
@@ -160,6 +208,7 @@
                                 <option value="1" @if ($item->work === 1) selected @endif>Трудоустроен</option>
                             </select>
                         </div>
+                        @if ($item->type !== 3)
                         <div class="block">
                             <h5 class="block__title">Вид трудоустройства</h5>
                             <select class="block__info" name="employment_type">
@@ -169,6 +218,7 @@
                                 <option value="Трудоустроен, не в авиации" @if ($item->employment_type === 'Трудоустроен, не в авиации') selected @endif>Трудоустроен, не в авиации</option>
                             </select>
                         </div>
+                        @endif
                         <div class="block">
                             <h5 class="block__title">Место работы</h5>
                             <p class="block__info">@if ($item->work_place !== '0') {!! $item->work_place !!}  @endif</p>
@@ -201,6 +251,7 @@
                             </p>
                         </div>
                         @endif
+                        @if ($item->type !== 3)
                         <div class="block">
                             <h5 class="block__title">Наличие портфолио</h5>
                             <select class="block__info" name="have_portfolio">
@@ -208,7 +259,8 @@
                                 <option value="Имеется" @if ($item->resume === 'Имеется') selected @endif>Имеется</option>
                             </select>
                         </div>
-                        @if (isset($item->portfolio_doc))
+                        @endif
+                        @if (isset($item->portfolio_doc) & $item->type !== 3)
                         <div class="block">
                             <h5 class="block__title">Портфолио выпускника</h5>
                             <p class="block__info">
@@ -223,6 +275,7 @@
                                 <option value="Имеется" @if ($item->resume === 'Имеется') selected @endif>Имеется</option>
                             </select>
                         </div>
+                        @if ($item->type !== 3)
                         <div class="block">
                             <h5 class="block__title">Вручено направление</h5>
                             <select class="block__info" name="direction" id="direction">
@@ -230,6 +283,7 @@
                                 <option value="1" @if ($item->direction === 1) selected @endif>Да</option>
                             </select>
                         </div>
+                        @endif
                         @if ($item->direction === 1)
                             <div class="block">
                                 <h5 class="block__title">Место 1</h5>

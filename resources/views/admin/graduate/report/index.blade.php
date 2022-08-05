@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @php $parrentCat  = 'Выпускники' @endphp
-@php $active_menu = 'Отчёт выпускники';
+@php $active_menu = 'Отчёт выпускники (2021)';
 @endphp
 @section('content')
     <div class="report">

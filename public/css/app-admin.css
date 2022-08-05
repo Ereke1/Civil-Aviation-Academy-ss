@@ -17758,4 +17758,6 @@ section#pages .pages .thead p {
   cursor: pointer;
 }
 
-
+.disabled {
+    display: none !important;
+  }

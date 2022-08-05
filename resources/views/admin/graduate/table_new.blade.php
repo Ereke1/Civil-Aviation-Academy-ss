@@ -1,8 +1,8 @@
 <table class="table-filter">
     <tr>
         <th>Ф.И.О.</th>
+        <th>Академическая степень</th>
         <th>Группа</th>
-        <th>Продолжение обучения</th>
         <th>Справка</th>
         <th>Портфолио</th>
         <th>Работа</th>
@@ -13,14 +13,17 @@
     @foreach ($data as $item)
         <tr>
             <td>{!! $item->surname !!} {!! $item->name !!} {!! $item->patronimyc !!}</td>
-            <td>{!! $item->groupe !!}</td>
-            <td>
-                @if ($item->continue_education === 0)
-                    Нет
+            <td>@if ($item->type === 1)
+                    Бакалавриат
+                @elseif ($item->type === 2)
+                    Магистратура
+                @elseif ($item->type === 3)
+                    Докторантура
                 @else
-                    Да
+                    {!! $item->type !!}
                 @endif
             </td>
+            <td>{!! $item->groupe !!}</td>
             <td>
                 @if ($item->reference === 0)
                     Нет
@@ -29,7 +32,7 @@
                 @endif
             </td>
             <td>
-                @if ($item->have_portfolio === 0)
+                @if ($item->have_portfolio === "Отсутствует" || $item->have_portfolio === NULL)
                     Нет
                 @else
                     Да

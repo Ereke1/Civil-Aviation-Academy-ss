@@ -83,6 +83,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 		Route::delete('graduates/destroy/{id}', 'GraduateController@destroy')->name('graduates.destroy');
 
 		Route::get('report', 'ReportController@index')->name('report.index');
+		Route::get('report/index_new', 'ReportController@index_new')->name('report.index_new');
 		Route::get('pdf/{graduation_year}', 'ReportController@pdf')->name('report.pdf');
 	});
 

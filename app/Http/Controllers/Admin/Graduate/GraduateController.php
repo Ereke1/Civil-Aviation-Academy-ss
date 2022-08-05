@@ -67,7 +67,7 @@ class GraduateController extends Controller
 			'region' => $request->region,
 			'reference' => $request->reference,
 			'resume' => $request->resume,
-			'magister' => $request->magister,
+			'type' => $request->type,
 			'direction' => $request->direction,
 			'work' => $request->work,
 			'unification' => $request->unification,
@@ -94,7 +94,7 @@ class GraduateController extends Controller
 			'data' => $data,
 			'form_study' => $request->form_study,
 			'region' => $request->region,
-			'magister' => $request->magister,
+			'type' => $request->type,
 			'reference' => $request->reference,
 			'resume' => $request->resume,
 			'direction' => $request->direction,
@@ -182,10 +182,13 @@ class GraduateController extends Controller
 		$data->surname = $request->surname;
 		$data->name = $request->name;
 		$data->patronymic = $request->patronymic;
+		$data->type = $request->type;
 		$data->iin = $request->iin;
 		$data->groupe = $request->groupe;
 		$data->speciality = $request->speciality;
 		$data->edu_program = $request->edu_program;
+		$data->edu_direction = $request->edu_direction;
+		$data->op_group = $request->op_group;
 		$data->gpa = $request->gpa;
 		$data->form_study = $request->form_study;
 		$data->international_grant = $request->international_grant;
@@ -273,6 +276,7 @@ class GraduateController extends Controller
 	public function update(Request $request)
 	{
 		$data = Graduate::find($request->id);
+		$data->type = $request->type;
 		$data->reg_address = $request->reg_address;
 		$data->res_address = $request->res_address;
 		$data->region = $request->region;

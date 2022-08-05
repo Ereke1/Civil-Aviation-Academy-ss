@@ -3066,4 +3066,35 @@ class ReportController extends Controller
 		$pdf->setPaper('A4', 'landscape');
 		return $pdf->download($pdfName);
 	}
+
+    public function index_new()
+	{
+        $data = DB::table('graduates')
+                    ->select(
+                        DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row'),
+                    'speciality',
+                    DB::raw('sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe'),
+                    DB::raw('sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot'),
+                    DB::raw('count(id) as vse'),
+                    DB::raw('sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant'),
+                    DB::raw('sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn'),
+                    DB::raw('sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot'),
+                    DB::raw('sum(CASE WHEN work=1 then 1 else 0 end) as work_vse'),
+                    DB::raw('count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse'),
+                    DB::raw('concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent'),
+                    'graduate_status',
+                    DB::raw('sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+                    )
+                    ->where('grad_year', '>=', "2022-01-01")
+                    ->where('grad_year', '<=', "2022-12-31")
+                    ->where('type', '=', "1")
+                    ->groupBy('speciality')
+                    ->orderBy('speciality')
+                    ->get();
+
+        $dataArray = [
+			'data' => $data
+		];
+		return view('admin.graduate.report.index_new', $dataArray);
+	}
 }

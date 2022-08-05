@@ -47,13 +47,15 @@
                 </select>
             </div>
             <div>
-                <label for="magister">Магистратура</label>
-                <select name="magister">
+                <label for="type">Академическая степень</label>
+                <select name="type">
                     <option value=""></option>
-                    <option value="1" @if ($magister === '1') selected @endif>
-                        Да</option>
-                    <option value="0" @if ($magister === '0') selected @endif>
-                        Нет</option>
+                    <option value="1" @if ($type === '1') selected @endif>
+                        Бакалавриат</option>
+                    <option value="2" @if ($type === '2') selected @endif>
+                        Магистратура</option>
+                    <option value="2" @if ($type === '3') selected @endif>
+                        Докторантура</option>
                 </select>
             </div>
             <div>

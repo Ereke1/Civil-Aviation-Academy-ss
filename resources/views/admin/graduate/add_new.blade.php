@@ -12,6 +12,15 @@
         @csrf
         <div class="blocks">
             <div class="block">
+                <h5 class="block__title">Академическая степень</h5>
+                <select class="block__info" name="type" id="type" onchange="typeFunc();" required>
+                    <option value="" selected>-----</option>
+                    <option value="1">Бакаклавриат</option>
+                    <option value="2">Магистратура</option>
+                    <option value="3">Докторантура</option>
+                </select>
+            </div>
+            <div class="block">
                 <h5 class="block__title">Фамилия</h5>
                 <input type="text" class="block__info" name="surname" required>
             </div>
@@ -27,13 +36,13 @@
                 <h5 class="block__title">ИИН</h5>
                 <input type="text" class="block__info" name="iin" maxlength="12">
             </div>
-            <div class="block">
+            <div class="block" id="groupeBlock">
                 <h5 class="block__title">Группа</h5>
-                <input type="text" class="block__info" name="groupe">
+                <input type="text" class="block__info" name="groupe" id="groupe">
             </div>
-            <div class="block">
+            <div class="block" id="specialityBlock">
                 <h5 class="block__title">Специальность</h5>
-                <select class="block__info" name="speciality">
+                <select class="block__info" name="speciality" id="speciality">
                     <option value="" disabled selected>-----</option>
                     <option value="Техническая эксплуатация летательных аппаратов и двигателей (механик)">Техническая эксплуатация летательных аппаратов и двигателей (механик)</option>
                     <option value="Техническая эксплуатация систем авионики летательных аппаратов (авионик)">Техническая эксплуатация систем авионики летательных аппаратов (авионик)</option>
@@ -47,9 +56,26 @@
                     <option value="Логистика на транспорте">Логистика на транспорте</option>
                 </select>
             </div>
-            <div class="block">
+            <div class="block" id="edu_programBlock">
                 <h5 class="block__title">Образовательная программа</h5>
-                <input type="text" class="block__info" name="edu_program">
+                <input type="text" class="block__info" name="edu_program" id="edu_program">
+            </div>
+            <div class="block" id="edu_directionBlock">
+                <h5 class="block__title">Направление</h5>
+                <select class="block__info" name="edu_direction" id="edu_direction">
+                    <option value="" disabled selected>-----</option>
+                    <option value="Научно - педагогическое">Научно - педагогическое</option>
+                    <option value="Профильное">Профильное</option>
+                </select>
+            </div>
+            <div class="block" id="op_groupBlock">
+                <h5 class="block__title">Группа образовательных программ</h5>
+                <select class="block__info" name="op_group" id="op_group">
+                    <option value="" disabled selected>-----</option>
+                    <option value="Авиационная техника и технологии">Авиационная техника и технологии</option>
+                    <option value="Летная эксплуатация летательных аппаратов и двигателей">Летная эксплуатация летательных аппаратов и двигателей</option>
+                    <option value="Транспортные услуги">Транспортные услуги</option>
+                </select>
             </div>
             <div class="block">
                 <h5 class="block__title">GPA</h5>
@@ -63,17 +89,17 @@
                     <option value="платное">платное</option>
                 </select>
             </div>
-            <div class="block">
+            <div class="block" id="international_grantBlock">
                 <h5 class="block__title">Международный грант</h5>
-                <select class="block__info" name="international_grant" required>
+                <select class="block__info" name="international_grant" id="international_grant">
                     <option value="" disabled selected>-----</option>
                     <option value="1">да</option>
                     <option value="0">нет</option>
                 </select>
             </div>
-            <div class="block">
+            <div class="block" id="edu_formBlock">
                 <h5 class="block__title">Форма обучения</h5>
-                <select class="block__info" name="edu_form">
+                <select class="block__info" name="edu_form" id="edu_form">
                     <option value="" disabled selected>-----</option>
                     <option value="очное">очное</option>
                     <option value="очное с применением ДОТ">очное с применением ДОТ</option>
@@ -110,13 +136,15 @@
                     <option value="Иностранец">Иностранец</option>
                 </select>
             </div>
-            <div class="block">
+            <div class="block" id="continue_educationBlock">
                 <h5 class="block__title">Продолжение обучения</h5>
-                <select class="block__info" name="continue_education">
+                <select class="block__info" name="continue_education" id="continue_education">
                     <option value="" disabled selected>-----</option>
                     <option value="0">Нет</option>
                     <option value="Магистратура АГА">Магистратура АГА</option>
                     <option value="Магистратура другой ВУЗ">Магистратура другой ВУЗ</option>
+                    <option value="Докторантура АГА">Докторантура АГА</option>
+                    <option value="Докторантура другой ВУЗ">Докторантура другой ВУЗ</option>
                 </select>
             </div>
             <div class="block">
@@ -127,9 +155,9 @@
                     <option value="0">Не трудоустроен</option>
                 </select>
             </div>
-            <div class="block">
+            <div class="block" id="employment_typeBlock">
                 <h5 class="block__title">Вид трудоустройства</h5>
-                <select class="block__info" name="employment_type">
+                <select class="block__info" name="employment_type" id="employment_type">
                     <option value="0">-----</option>
                     <option value="Трудоустроен, по специальности">Трудоустроен, по специальности</option>
                     <option value="Трудоустроен, в авиации">Трудоустроен, в авиации</option>
@@ -239,15 +267,15 @@
                 <input type="file" name="reference_doc" id="reference_doc"
                     class="block__info">
             </div>
-            <div class="block">
+            <div class="block" id="have_portfolioBlock">
                 <h5 class="block__title">Наличие портфолио</h5>
-                <select class="block__info" name="have_portfolio" required>
+                <select class="block__info" name="have_portfolio" id="have_portfolio">
                     <option value="" disabled selected>-----</option>
                     <option value="Отсутствует">Отсутствует</option>
                     <option value="Имеется">Имеется</option>
                 </select>
             </div>
-            <div class="block">
+            <div class="block" id="portfolio_docBlock">
                 <h5 class="block__title">Портфолио выпускника</h5>
                 <input type="file" name="portfolio_doc" id="portfolio_doc"
                     class="block__info">
@@ -260,17 +288,17 @@
                     <option value="Имеется">Имеется</option>
                 </select>
             </div>
-            <div class="block">
+            <div class="block" id="directionBlock">
                 <h5 class="block__title">Вручено направление </h5>
-                <select class="block__info" name="direction" required>
-                    <option value="" disabled selected>-----</option>
+                <select class="block__info" name="direction" id="direction">
+                    <option value="0" selected>-----</option>
                     <option value="0">Нет</option>
                     <option value="1">Да</option>
                 </select>
             </div>
-            <div class="block">
+            <div class="block" id="direction_place1Block">
                 <h5 class="block__title">Направление №1</h5>
-                <select class="block__info" name="direction_place1">
+                <select class="block__info" name="direction_place1" id="direction_place1">
                     <option value="0">-----</option>
                     <option value="АО «Эйр Астана»">АО «Эйр Астана»</option>
                     <option value="АО «Авиакомпания «SCAT»">АО «Авиакомпания «SCAT»</option>
@@ -345,9 +373,9 @@
                     <option value="Другие">Другие</option>
                 </select>
             </div>
-            <div class="block">
+            <div class="block" id="direction_place2Block">
                 <h5 class="block__title">Направление №2</h5>
-                <select class="block__info" name="direction_place2">
+                <select class="block__info" name="direction_place2" id="direction_place2">
                     <option value="0">-----</option>
                     <option value="АО «Эйр Астана»">АО «Эйр Астана»</option>
                     <option value="АО «Авиакомпания «SCAT»">АО «Авиакомпания «SCAT»</option>
@@ -422,9 +450,9 @@
                     <option value="Другие">Другие</option>
                 </select>
             </div>
-            <div class="block">
+            <div class="block" id="direction_place3Block">
                 <h5 class="block__title">Направление №3</h5>
-                <select class="block__info" name="direction_place3">
+                <select class="block__info" name="direction_place3" id="direction_place3Block">
                     <option value="0">-----</option>
                     <option value="АО «Эйр Астана»">АО «Эйр Астана»</option>
                     <option value="АО «Авиакомпания «SCAT»">АО «Авиакомпания «SCAT»</option>
@@ -523,4 +551,6 @@
                 <button type="submit" class="button">Добавить выпускника</button>
             </div>
     </form>
+
+    <script src="/js/admin/graduates/graduates.js"></script>
 @endsection
