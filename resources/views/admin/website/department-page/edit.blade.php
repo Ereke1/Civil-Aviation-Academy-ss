@@ -12,7 +12,7 @@
         <div class="pages">
             <div class="pages__head">
                 <div class="pages__title">
-                    <h2>Создание страницы кафедры</h2>
+                    <h2>Редактирование страницы кафедры</h2>
                 </div>
             </div>
             <div class="pages__content">
@@ -32,10 +32,10 @@
                             <label class="font-weight-bold">Кафедра</label>
                             <select class="form-control" aria-label="Default select example" name="department_id"
                                 required>
-                                <option selected value="" disabled>-----</option>
-                                @foreach ($departments as $department)
+                                <option selected value="{!! $department_id !!}" disabled>-----</option>
+                                @foreach ($departments as $department) 
                                     <option value="{!! $department->id !!}"
-                                        @if ($department_page->id == $department->id) selected @endif>{!! $department->name !!}</option>
+                                        @if ($department_id == $department->id) selected @endif>{!! $department->name !!}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -46,22 +46,27 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Контент</label>
-                            <textarea name="content_ru" class="form-control"> {!! $content['ru'] !!}</textarea>
+                            <textarea name="content_ru" id="editor-ru" class="form-control"> {!! $content['ru'] !!}</textarea>
                         </div>
                         <div class="mb-4">
-                            <label class="font-weight-bold">Картинка</label>
-                            <input type="file" name="image_ru" class="form-control-file" required />
+                            <label class="font-weight-bold d-block">Фоновое изображение</label>
+                            <img src="{!! $image !!}" class="mb-2" alt="" width="200" height="150">
+                        </div>
+                        <div class="mb-4">
+                            <label >Если хотите изменить фононовое изображения, <b>выберите новое</b></label>
+                            <input type="file" name="image_ru" class="form-control-file"  />
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Порядок вывода</label>
-                            <input type="number" name="sort" class="form-control" required />
+                            <input type="number" name="sort" class="form-control" value="{!! $sort !!}" required />
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Выберите слаг</label>
-                            <select class="form-control" aria-label="Default select example" required>
+                            <select class="form-control" aria-label="Default select example" name="slug" required>
                                 <option selected value="" disabled>-----</option>
-                                @foreach ($slugs as $slug)
-                                    <option value="{!! $slug !!}">{!! $slug !!}</option>
+                                @foreach ($slugs as $slug1)
+                                    <option value="{!! $slug1 !!}"
+                                     @if ($slug1 == $slug) selected @endif>{!! $slug1 !!}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -73,7 +78,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Сипаттамасы</label>
-                            <textarea name="content_kk" class="form-control"></textarea>
+                            <textarea name="content_kk" id="editor-kz"  class="form-control"> {!! $content['kk'] !!}</textarea>
                         </div>
                         {{-- <div class="mb-4">
                             <label class="font-weight-bold">Фондық сурет</label>
@@ -87,7 +92,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Description</label>
-                            <textarea name="content_en" class="form-control"></textarea>
+                            <textarea name="content_en" id="editor-en" class="form-control"> {!! $content['en'] !!}</textarea>
                         </div>
                         {{-- <div class="mb-4">
                             <label class="font-weight-bold">Background image</label>

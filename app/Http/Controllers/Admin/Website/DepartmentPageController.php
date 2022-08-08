@@ -108,10 +108,13 @@ class DepartmentPageController extends Controller
 		$department_page = DepartmentPages::find($id);
 		$name = unserialize($department_page->name);
 		$content = unserialize($department_page->content);
-
+		$sort = $department_page->sort;
+		$department_id = $department_page->department_id;
+		$slug = $department_page-> slug;
+		$image = $department_page->image;
 		$departments = Department::all();
 		$slugs = ['history', 'teachers', 'science'];
-		return view('admin.website.department-page.edit', compact('department_page', 'departments', 'slugs', 'name', 'content'));
+		return view('admin.website.department-page.edit', compact('department_page', 'departments', 'slugs', 'name', 'content', 'sort', 'department_id', 'slug', 'image'));
 	}
 
 	/**
@@ -122,8 +125,37 @@ class DepartmentPageController extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, $id)
-	{
-		//
+	{	
+		$name = [
+			'ru' => $request->name_ru,
+			'kk' => $request->name_kk,
+			'en' => $request->name_en
+		];
+		$name = serialize($name);
+
+		$content = [
+			'ru' => $request->content_ru,
+			'kk' => $request->content_kk,
+			'en' => $request->content_en
+		];
+		$content = serialize($content);
+		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$department_page = DepartmentPages::find($id);
+		$image = $request->file('image_ru');
+
+		if(isset($image)){
+			$folder = public_path('/assets/images/department/page/');
+			$image_name = $now . $image->getClientOriginalName();
+			$bg_image = Image::make($image);
+			$bg_image->save($folder . $image_name, 40);
+			$department_page->image = '/assets/images/department/page/' . $image_name;
+		}
+		$department_page->name = $name;
+		$department_page->content = $content;
+		$department_page->slug = $request->slug;
+		$department_page->sort = $request->sort;
+		$department_page->save();
+		return redirect()->back()->with('alert', 'Изменения успешно сохранены');
 	}
 
 	/**

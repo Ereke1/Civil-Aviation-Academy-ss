@@ -23,7 +23,7 @@ class PageController extends Controller
 		if ($user_department === 'Авиационный колледж') {
 			$data = Page::select('*')->where('user_id', 13)->get();
 		} else {
-			$data = Page::select('*')->where('user_id', '!=', 13)->get();
+			$data = Page::select('*')->where('user_id', '>', 0)->get();
 		}
 		return view('admin.website.pages.index', compact('data'));
 	}
