@@ -24,7 +24,7 @@
         <meta content="@themewagon" name="twitter:creator">
         <meta content="ThemeWagon" name="twitter:title">
         <meta content="Imminent - The most spectacular coming soon template!" name="twitter:description">
-
+        <meta name="google-site-verification" content="-SmAC8_ritbytm6qztKH-Nql9SV6xun5O45UHHKFdLY" />
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
