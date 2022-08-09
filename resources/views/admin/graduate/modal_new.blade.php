@@ -7,7 +7,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('admin.graduate.graduates.update', $item->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.graduate.graduates.update', $item->id) }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="id" value="{!! $item->id !!}">
@@ -17,77 +18,111 @@
                         <div class="block">
                             <h5 class="block__title">Академическая степень</h5>
                             <select class="block__info" name="type" required>
-                                <option value="" @if ($item->type === NULL) selected @endif>-----</option>
-                                <option value="1" @if ($item->type === 1) selected @endif>Бакаклавриат</option>
-                                <option value="2" @if ($item->type === 2) selected @endif>Магистратура</option>
-                                <option value="3" @if ($item->type === 3) selected @endif>Докторантура</option>
+                                <option value="" @if ($item->type === null) selected @endif>-----</option>
+                                <option value="1" @if ($item->type === 1) selected @endif>Бакаклавриат
+                                </option>
+                                <option value="2" @if ($item->type === 2) selected @endif>Магистратура
+                                </option>
+                                <option value="3" @if ($item->type === 3) selected @endif>Докторантура
+                                </option>
                             </select>
                         </div>
                         <div class="block">
                             <h5 class="block__title">Фамилия</h5>
-                            <p class="block__info">{!! $item->surname !!}</p>
+                            <input type="text" value="{!! $item->surname !!}" name="surname" class="block__info">
                         </div>
                         <div class="block">
                             <h5 class="block__title">Имя</h5>
-                            <p class="block__info">{!! $item->name !!}</p>
+                            <input type="text" value="{!! $item->name !!}" name="name" class="block__info">
                         </div>
-                        @if (isset($item->patronymic))
+                        <div class="block">
+                            <h5 class="block__title">Отчество</h5>
+                            <input type="text" value="{!! $item->patronymic !!}" name="patronymic" class="block__info">
+                        </div>
+                        @if ($item->type !== 3)
                             <div class="block">
-                                <h5 class="block__title">Отчество</h5>
-                                <p class="block__info">{!! $item->patronymic !!}</p>
+                                <h5 class="block__title">Группа</h5>
+                                <p class="block__info">{!! $item->groupe !!}</p>
                             </div>
                         @endif
-                        @if ($item->type !== 3)
-                        <div class="block">
-                            <h5 class="block__title">Группа</h5>
-                            <p class="block__info">{!! $item->groupe !!}</p>
-                        </div>
-                        @endif
                         @if ($item->type === 1)
-                        <div class="block">
-                            <h5 class="block__title">Специальность</h5>
-                            <select class="block__info" name="speciality">
-                                <option value="">-----</option>
-                                <option value="Техническая эксплуатация летательных аппаратов и двигателей (механик)" @if ($item->speciality === 'Техническая эксплуатация летательных аппаратов и двигателей (механик)') selected @endif>Техническая эксплуатация летательных аппаратов и двигателей (механик)
-                                </option>
-                                <option value="Техническая эксплуатация систем авионики летательных аппаратов (авионик)" @if ($item->speciality === 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)') selected @endif>Техническая эксплуатация систем авионики летательных аппаратов (авионик)
-                                </option>
-                                <option value="Обеспечение авиационной безопасности" @if ($item->speciality === 'Обеспечение авиационной безопасности') selected @endif>Обеспечение авиационной безопасности
-                                </option>
-                                <option value="Обслуживание наземного радиоэлектронного оборудования аэропортов" @if ($item->speciality === 'Обслуживание наземного радиоэлектронного оборудования аэропортов') selected @endif>Обслуживание наземного радиоэлектронного оборудования аэропортов</option>
-                                <option value="Организация аэропортовой деятельности" @if ($item->speciality === 'Организация аэропортовой деятельности') selected @endif>Организация аэропортовой деятельности</option>
-                                <option value="Летная эксплуатация гражданских самолетов (пилот)" @if ($item->speciality === 'Летная эксплуатация гражданских самолетов (пилот)') selected @endif>Летная эксплуатация гражданских самолетов (пилот)</option>
-                                <option value="Летная эксплуатация гражданских вертолетов (пилот)" @if ($item->speciality === 'Летная эксплуатация гражданских вертолетов (пилот)') selected @endif>Летная эксплуатация гражданских вертолетов (пилот)</option>
-                                <option value="Обслуживание воздушного движения (авиадиспетчер)" @if ($item->speciality === 'Обслуживание воздушного движения (авиадиспетчер)') selected @endif>Обслуживание воздушного движения (авиадиспетчер)</option>
-                                <option value="Организация авиационных перевозок" @if ($item->speciality === 'Организация авиационных перевозок') selected @endif>Организация авиационных перевозок</option>
-                                <option value="Логистика на транспорте" @if ($item->speciality === 'Логистика на транспорте') selected @endif>Логистика на транспорте</option>
-                            </select>
-                        </div>
+                            <div class="block">
+                                <h5 class="block__title">Специальность</h5>
+                                <select class="block__info" name="speciality">
+                                    <option value="">-----</option>
+                                    <option
+                                        value="Техническая эксплуатация летательных аппаратов и двигателей (механик)"
+                                        @if ($item->speciality === 'Техническая эксплуатация летательных аппаратов и двигателей (механик)') selected @endif>Техническая эксплуатация
+                                        летательных аппаратов и двигателей (механик)
+                                    </option>
+                                    <option
+                                        value="Техническая эксплуатация систем авионики летательных аппаратов (авионик)"
+                                        @if ($item->speciality === 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)') selected @endif>Техническая эксплуатация
+                                        систем авионики летательных аппаратов (авионик)
+                                    </option>
+                                    <option value="Обеспечение авиационной безопасности"
+                                        @if ($item->speciality === 'Обеспечение авиационной безопасности') selected @endif>Обеспечение авиационной
+                                        безопасности
+                                    </option>
+                                    <option value="Обслуживание наземного радиоэлектронного оборудования аэропортов"
+                                        @if ($item->speciality === 'Обслуживание наземного радиоэлектронного оборудования аэропортов') selected @endif>Обслуживание наземного
+                                        радиоэлектронного оборудования аэропортов</option>
+                                    <option value="Организация аэропортовой деятельности"
+                                        @if ($item->speciality === 'Организация аэропортовой деятельности') selected @endif>Организация аэропортовой
+                                        деятельности</option>
+                                    <option value="Летная эксплуатация гражданских самолетов (пилот)"
+                                        @if ($item->speciality === 'Летная эксплуатация гражданских самолетов (пилот)') selected @endif>Летная эксплуатация
+                                        гражданских самолетов (пилот)</option>
+                                    <option value="Летная эксплуатация гражданских вертолетов (пилот)"
+                                        @if ($item->speciality === 'Летная эксплуатация гражданских вертолетов (пилот)') selected @endif>Летная эксплуатация
+                                        гражданских вертолетов (пилот)</option>
+                                    <option value="Обслуживание воздушного движения (авиадиспетчер)"
+                                        @if ($item->speciality === 'Обслуживание воздушного движения (авиадиспетчер)') selected @endif>Обслуживание воздушного
+                                        движения (авиадиспетчер)</option>
+                                    <option value="Организация авиационных перевозок"
+                                        @if ($item->speciality === 'Организация авиационных перевозок') selected @endif>Организация авиационных
+                                        перевозок</option>
+                                    <option value="Логистика на транспорте"
+                                        @if ($item->speciality === 'Логистика на транспорте') selected @endif>Логистика на транспорте
+                                    </option>
+                                </select>
+                            </div>
                         @endif
                         @if ($item->type === 1 || $item->type === 3)
-                        <div class="block">
-                            <h5 class="block__title">Образовательная программа</h5>
-                            <p class="block__info">{!! $item->edu_program !!}</p>
-                        </div>
+                            <div class="block">
+                                <h5 class="block__title">Образовательная программа</h5>
+                                <input type="text" value="{!! $item->edu_program !!}" name="edu_program"
+                                    class="block__info">
+                            </div>
                         @endif
                         @if ($item->type === 2)
-                        <div class="block">
-                            <h5 class="block__title">Направление</h5>
-                            <select class="block__info" name="edu_direction">
-                                <option value="" @if ($item->edu_direction === NULL) selected @endif>-----</option>
-                                <option value="Научно - педагогическое" @if ($item->type === 'Научно - педагогическое') selected @endif>Научно - педагогическое</option>
-                                <option value="Профильное" @if ($item->type === 'Профильное') selected @endif>Профильное</option>
-                            </select>
-                        </div>
-                        <div class="block">
-                            <h5 class="block__title">Группа образовательных программ</h5>
-                            <select class="block__info" name="op_group">
-                                <option value="" @if ($item->edu_direction === NULL) selected @endif>-----</option>
-                                <option value="Авиационная техника и технологии" @if ($item->edu_direction === 'Авиационная техника и технологии') selected @endif>Авиационная техника и технологии</option>
-                                <option value="Летная эксплуатация летательных аппаратов и двигателей" @if ($item->edu_direction === 'Летная эксплуатация летательных аппаратов и двигателей') selected @endif>Летная эксплуатация летательных аппаратов и двигателей</option>
-                                <option value="Транспортные услуги" @if ($item->edu_direction === 'Транспортные услуги') selected @endif>Транспортные услуги</option>
-                            </select>
-                        </div>
+                            <div class="block">
+                                <h5 class="block__title">Направление</h5>
+                                <select class="block__info" name="edu_direction">
+                                    <option value="" @if ($item->edu_direction === null) selected @endif>-----
+                                    </option>
+                                    <option value="Научно - педагогическое"
+                                        @if ($item->edu_direction === 'Научно - педагогическое') selected @endif>Научно - педагогическое
+                                    </option>
+                                    <option value="Профильное" @if ($item->edu_direction === 'Профильное') selected @endif>
+                                        Профильное</option>
+                                </select>
+                            </div>
+                            <div class="block">
+                                <h5 class="block__title">Группа образовательных программ</h5>
+                                <select class="block__info" name="op_group">
+                                    <option value="" @if ($item->op_group === null) selected @endif>-----
+                                    </option>
+                                    <option value="Авиационная техника и технологии"
+                                        @if ($item->op_group === 'Авиационная техника и технологии') selected @endif>Авиационная техника и
+                                        технологии</option>
+                                    <option value="Летная эксплуатация летательных аппаратов и двигателей"
+                                        @if ($item->edu_direction === 'Летная эксплуатация летательных аппаратов и двигателей') selected @endif>Летная эксплуатация
+                                        летательных аппаратов и двигателей</option>
+                                    <option value="Транспортные услуги"
+                                        @if ($item->op_group === 'Транспортные услуги') selected @endif>Транспортные услуги</option>
+                                </select>
+                            </div>
                         @endif
                         <div class="block">
                             <h5 class="block__title">GPA</h5>
@@ -95,33 +130,43 @@
                         </div>
                         <div class="block">
                             <h5 class="block__title">ИИН</h5>
-                            <p class="block__info">{!! $item->iin !!}</p>
+                            <input type="number" value="{!! $item->iin !!}" name="iin" class="block__info"
+                                maxlength="12">
                         </div>
                         <div class="block">
                             <h5 class="block__title">Отделение</h5>
-                            <p class="block__info">{!! $item->form_study !!}</p>
+                            <select class="block__info" name="form_study">
+                                <option value="" disabled selected>-----</option>
+                                <option value="грант" @if ($item->form_study === 'грант') selected @endif>грант
+                                </option>
+                                <option value="платное" @if ($item->form_study === 'платное') selected @endif>платное
+                                </option>
+                            </select>
                         </div>
                         @if ($item->type === 1)
-                        <div class="block">
-                            <h5 class="block__title">Международный грант</h5>
-                            <select class="block__info" name="international_grant">
-                                <option value="">-----</option>
-                                <option value="0" @if ($item->international_grant === 0) selected @endif>Нет
-                                </option>
-                                <option value="1" @if ($item->international_grant === 1) selected @endif>Да
-                                </option>
-                            </select>
-                        </div>
-                        <div class="block">
-                            <h5 class="block__title">Форма обучения</h5>
-                            <select class="block__info" name="edu_form">
-                                <option value="">-----</option>
-                                <option value="очное" @if ($item->edu_form === 'очное') selected @endif>очное
-                                </option>
-                                <option value="очное с применением ДОТ" @if ($item->edu_form === 'очное с применением ДОТ') selected @endif>очное с применением ДОТ
-                                </option>
-                            </select>
-                        </div>
+                            <div class="block">
+                                <h5 class="block__title">Международный грант</h5>
+                                <select class="block__info" name="international_grant">
+                                    <option value="0">-----</option>
+                                    <option value="0" @if ($item->international_grant === 0) selected @endif>Нет
+                                    </option>
+                                    <option value="1" @if ($item->international_grant === 1) selected @endif>Да
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="block">
+                                <h5 class="block__title">Форма обучения</h5>
+                                <select class="block__info" name="edu_form">
+                                    <option value="">-----</option>
+                                    <option value="очное" @if ($item->edu_form === 'очное') selected @endif>очное
+                                    </option>
+                                    <option value="очное с применением ДОТ"
+                                        @if ($item->edu_form === 'очное с применением ДОТ') selected @endif>очное с применением ДОТ
+                                    </option>
+                                </select>
+                            </div>
+                        @elseif($item->type !== 1)
+                            <input type="hidden" name="international_grant" value="0">
                         @endif
                         <div class="block">
                             <h5 class="block__title">Адрес</h5>
@@ -132,7 +177,7 @@
 
                             <select class="block__info" name="region">
                                 <option value="">-----</option>
-                                <option value="Город Алматы" @if ($item->region === 'Город Алматы') selected @endif>Город
+                                <option value="Город Алматы" @if ($item->region == 'Город Алматы' || $item->region == 'Город Алматы') selected @endif>Город
                                     Алматы</option>
                                 <option value="Город Нур-Султан" @if ($item->region === 'Город Нур-Султан') selected @endif>
                                     Город Нур-Султан (Астана)</option>
@@ -140,18 +185,22 @@
                                     Шымкент</option>
                                 <option value="Абайская область" @if ($item->region === 'Абайская область') selected @endif>
                                     Абайская область</option>
-                                <option value="Акмолинская область" @if ($item->region === 'Акмолинская область') selected @endif>
+                                <option value="Акмолинская область"
+                                    @if ($item->region === 'Акмолинская область') selected @endif>
                                     Акмолинская область</option>
-                                <option value="Актюбинская область" @if ($item->region === 'Актюбинская область') selected @endif>
+                                <option value="Актюбинская область"
+                                    @if ($item->region === 'Актюбинская область') selected @endif>
                                     Актюбинская область</option>
-                                <option value="Алматинская область" @if ($item->region === 'Алматинская область') selected @endif>
+                                <option value="Алматинская область"
+                                    @if ($item->region === 'Алматинская область') selected @endif>
                                     Алматинская область</option>
                                 <option value="Атырауская область" @if ($item->region === 'Атырауская область') selected @endif>
                                     Атырауская область</option>
                                 <option value="Восточно-Казахстанская область"
                                     @if ($item->region === 'Восточно-Казахстанская область') selected @endif>
                                     Восточно-Казахстанская область</option>
-                                <option value="Жамбыльская область" @if ($item->region === 'Жамбыльская обл.') selected @endif>
+                                <option value="Жамбыльская область"
+                                    @if ($item->region === 'Жамбыльская обл.') selected @endif>
                                     Жамбыльская область</option>
                                 <option value="Жетысуская область" @if ($item->region === 'Жетысуская обл.') selected @endif>
                                     Жетысуская область</option>
@@ -173,116 +222,352 @@
                                     Северо-Казахстанская область</option>
                                 <option value="Туркестанская область"
                                     @if ($item->region === 'Туркестанская область') selected @endif>Туркестанская область</option>
-                                <option value="Улытауская область"
-                                    @if ($item->region === 'Улытауская область') selected @endif>Улытауская область</option>
-                                <option value="Иностранец"
-                                    @if ($item->region === 'Иностранец') selected @endif>Иностранец</option>
+                                <option value="Улытауская область" @if ($item->region === 'Улытауская область') selected @endif>
+                                    Улытауская область</option>
+                                <option value="Иностранец" @if ($item->region === 'Иностранец') selected @endif>
+                                    Иностранец</option>
                             </select>
                         </div>
                         @if ($item->type !== 3)
-                        <div class="block">
-                            <h5 class="block__title">Продолжение обучения</h5>
-                            <select class="block__info" name="continue_education">
-                                <option value="">-----</option>
-                                <option value="0" @if ($item->continue_education === '0') selected @endif>Нет</option>
-                                @if ($item->type === null)
-                                <option value="Магистратура АГА" @if ($item->continue_education === 'Магистратура АГА') selected @endif>Магистратура АГА</option>
-                                <option value="Магистратура другой ВУЗ" @if ($item->continue_education === 'Магистратура другой ВУЗ') selected @endif>Магистратура другой ВУЗ</option>
-                                <option value="Докторантура АГА" @if ($item->continue_education === 'Докторантура АГА') selected @endif>Докторантура АГА</option>
-                                <option value="Докторантура другой ВУЗ" @if ($item->continue_education === 'Докторантура другой ВУЗ') selected @endif>Докторантура другой ВУЗ</option>
-                                @elseif ($item->type === 1)
-                                <option value="Магистратура АГА" @if ($item->continue_education === 'Магистратура АГА') selected @endif>Магистратура АГА</option>
-                                <option value="Магистратура другой ВУЗ" @if ($item->continue_education === 'Магистратура другой ВУЗ') selected @endif>Магистратура другой ВУЗ</option>
-                                @elseif ($item->type === 2)
-                                <option value="Докторантура АГА" @if ($item->continue_education === 'Докторантура АГА') selected @endif>Докторантура АГА</option>
-                                <option value="Докторантура другой ВУЗ" @if ($item->continue_education === 'Докторантура другой ВУЗ') selected @endif>Докторантура другой ВУЗ</option>
-                                @endif
-                            </select>
-                        </div>
+                            <div class="block">
+                                <h5 class="block__title">Продолжение обучения</h5>
+                                <select class="block__info" name="continue_education">
+                                    <option value="">-----</option>
+                                    <option value="0" @if ($item->continue_education === '0') selected @endif>Нет
+                                    </option>
+                                    @if ($item->type === null)
+                                        <option value="Магистратура АГА"
+                                            @if ($item->continue_education === 'Магистратура АГА') selected @endif>Магистратура АГА
+                                        </option>
+                                        <option value="Магистратура другой ВУЗ"
+                                            @if ($item->continue_education === 'Магистратура другой ВУЗ') selected @endif>Магистратура другой ВУЗ
+                                        </option>
+                                        <option value="Докторантура АГА"
+                                            @if ($item->continue_education === 'Докторантура АГА') selected @endif>Докторантура АГА
+                                        </option>
+                                        <option value="Докторантура другой ВУЗ"
+                                            @if ($item->continue_education === 'Докторантура другой ВУЗ') selected @endif>Докторантура другой ВУЗ
+                                        </option>
+                                    @elseif ($item->type === 1)
+                                        <option value="Магистратура АГА"
+                                            @if ($item->continue_education === 'Магистратура АГА') selected @endif>Магистратура АГА
+                                        </option>
+                                        <option value="Магистратура другой ВУЗ"
+                                            @if ($item->continue_education === 'Магистратура другой ВУЗ') selected @endif>Магистратура другой ВУЗ
+                                        </option>
+                                    @elseif ($item->type === 2)
+                                        <option value="Докторантура АГА"
+                                            @if ($item->continue_education === 'Докторантура АГА') selected @endif>Докторантура АГА
+                                        </option>
+                                        <option value="Докторантура другой ВУЗ"
+                                            @if ($item->continue_education === 'Докторантура другой ВУЗ') selected @endif>Докторантура другой ВУЗ
+                                        </option>
+                                    @endif
+                                </select>
+                            </div>
                         @endif
                         <div class="block">
                             <h5 class="block__title">Тип занятости</h5>
                             <select class="block__info" name="work">
                                 <option value="">-----</option>
-                                <option value="0" @if ($item->work === 0) selected @endif>Не трудоустроен</option>
-                                <option value="1" @if ($item->work === 1) selected @endif>Трудоустроен</option>
+                                <option value="0" @if ($item->work === 0) selected @endif>Не
+                                    трудоустроен</option>
+                                <option value="1" @if ($item->work === 1) selected @endif>Трудоустроен
+                                </option>
                             </select>
                         </div>
                         @if ($item->type !== 3)
-                        <div class="block">
-                            <h5 class="block__title">Вид трудоустройства</h5>
-                            <select class="block__info" name="employment_type">
-                                <option value="0">-----</option>
-                                <option value="Трудоустроен, по специальности" @if ($item->employment_type === "Трудоустроен, по специальности") selected @endif>Трудоустроен, по специальности</option>
-                                <option value="Трудоустроен, в авиации" @if ($item->employment_type === 'Трудоустроен, в авиации') selected @endif>Трудоустроен, в авиации</option>
-                                <option value="Трудоустроен, не в авиации" @if ($item->employment_type === 'Трудоустроен, не в авиации') selected @endif>Трудоустроен, не в авиации</option>
-                            </select>
-                        </div>
+                            <div class="block">
+                                <h5 class="block__title">Вид трудоустройства</h5>
+                                <select class="block__info" name="employment_type">
+                                    <option value="0">-----</option>
+                                    <option value="Трудоустроен, по специальности"
+                                        @if ($item->employment_type === 'Трудоустроен, по специальности') selected @endif>Трудоустроен, по
+                                        специальности</option>
+                                    <option value="Трудоустроен, в авиации"
+                                        @if ($item->employment_type === 'Трудоустроен, в авиации') selected @endif>Трудоустроен, в авиации
+                                    </option>
+                                    <option value="Трудоустроен, не в авиации"
+                                        @if ($item->employment_type === 'Трудоустроен, не в авиации') selected @endif>Трудоустроен, не в авиации
+                                    </option>
+                                </select>
+                            </div>
                         @endif
                         <div class="block">
                             <h5 class="block__title">Место работы</h5>
-                            <p class="block__info">@if ($item->work_place !== '0') {!! $item->work_place !!}  @endif</p>
+                            <select class="block__info" name="work_place" id="work_place">
+                                <option value="0" @if ($item->work_place === '0') selected @endif>-----
+                                </option>
+                                <option value="АО «Эйр Астана»" @if ($item->work_place === 'АО «Эйр Астана»') selected @endif>АО
+                                    «Эйр Астана»</option>
+                                <option value="АО «Авиакомпания «SCAT»"
+                                    @if ($item->work_place === 'АО «Авиакомпания «SCAT»') selected @endif>АО «Авиакомпания «SCAT»</option>
+                                <option value="АО Авиакомпания «Жезказган Эйр»"
+                                    @if ($item->work_place === 'АО Авиакомпания «Жезказган Эйр»') selected @endif>АО Авиакомпания «Жезказган Эйр»
+                                </option>
+                                <option value="АО «Бурундайавиа»" @if ($item->work_place === 'АО «Бурундайавиа»') selected @endif>
+                                    АО «Бурундайавиа»</option>
+                                <option value="АО «Евро-Азия Эйр»" @if ($item->work_place === 'АО «Евро-Азия Эйр»') selected @endif>
+                                    АО «Евро-Азия Эйр»</option>
+                                <option value="ТОО «Авиакомпания Comlux-Kz»"
+                                    @if ($item->work_place === 'ТОО «Авиакомпания Comlux-Kz»') selected @endif>ТОО «Авиакомпания Comlux-Kz»
+                                </option>
+                                <option value="АО «Qazaq Air»" @if ($item->work_place === 'АО «Qazaq Air»') selected @endif>АО
+                                    «Qazaq Air»</option>
+                                <option value="АО «KAZ AIR JET»" @if ($item->work_place === 'АО «KAZ AIR JET»') selected @endif>АО
+                                    «KAZ AIR JET»</option>
+                                <option value="АО «FlyJet.kz»" @if ($item->work_place === 'АО «FlyJet.kz»') selected @endif>АО
+                                    «FlyJet.kz»</option>
+                                <option value="ТОО «Авиакомпания «Jupiter jet»"
+                                    @if ($item->work_place === 'ТОО «Авиакомпания «Jupiter jet»') selected @endif>ТОО «Авиакомпания «Jupiter jet»
+                                </option>
+                                <option value="РГП на ПХВ «Беркут»"
+                                    @if ($item->work_place === 'РГП на ПХВ «Беркут»') selected @endif>РГП на ПХВ «Беркут»</option>
+                                <option value="АО «East Wing»" @if ($item->work_place === 'АО «East Wing»') selected @endif>АО
+                                    «East Wing»</option>
+                                <option value="АО «Международный аэропорт Алматы»"
+                                    @if ($item->work_place === 'АО «Международный аэропорт Алматы»') selected @endif>АО «Международный аэропорт
+                                    Алматы»</option>
+                                <option value="АО «Международный аэропорт Нурсултан Назарбаев»"
+                                    @if ($item->work_place === 'АО «Международный аэропорт Нурсултан Назарбаев»') selected @endif>
+                                    АО «Международный аэропорт Нурсултан Назарбаев»
+                                </option>
+                                <option value="АО «Международный аэропорт Сары-Арка» (г.Караганды)"
+                                    @if ($item->work_place === 'АО «Международный аэропорт Сары-Арка» (г.Караганды)') selected @endif>АО «Международный аэропорт
+                                    Сары-Арка» (г.Караганды)</option>
+                                <option value="ТОО «Международный аэропорт Семей»"
+                                    @if ($item->work_place === 'ТОО «Международный аэропорт Семей»') selected @endif>ТОО «Международный аэропорт
+                                    Семей»</option>
+                                <option value="АО «Международный аэропорт Аулие-Ата» (г. Тараз)"
+                                    @if ($item->work_place === 'АО «Международный аэропорт Аулие-Ата» (г. Тараз)') selected @endif>АО «Международный аэропорт
+                                    Аулие-Ата» (г. Тараз)</option>
+                                <option value="АО «Авиакомпания Жетысу» (г. Талдыкорган)"
+                                    @if ($item->work_place === 'АО «Авиакомпания Жетысу» (г. Талдыкорган)') selected @endif>АО «Авиакомпания Жетысу» (г.
+                                    Талдыкорган)</option>
+                                <option value="АО «Аэропорт Павлодар»"
+                                    @if ($item->work_place === 'АО «Аэропорт Павлодар»') selected @endif>АО «Аэропорт Павлодар»</option>
+                                <option value="ТОО «Международный аэропорт Орал»"
+                                    @if ($item->work_place === 'ТОО «Международный аэропорт Орал»') selected @endif>ТОО «Международный аэропорт
+                                    Орал»
+                                </option>
+                                <option value="ТОО «Международный аэропорт Кызыл-Жар» (г. Петропавловск)"
+                                    @if ($item->work_place === 'ТОО «Международный аэропорт Кызыл-Жар» (г. Петропавловск)') selected @endif>ТОО
+                                    «Международный аэропорт Кызыл-Жар» (г. Петропавловск)</option>
+                                <option value="ТОО «Международный аэропорт Туркистан»"
+                                    @if ($item->work_place === 'ТОО «Международный аэропорт Туркистан»') selected @endif>ТОО «Международный аэропорт
+                                    Туркистан»</option>
+                                <option value="АО «Международный аэропорт Атырау» имени Хиуаз Доспановой» (г. Атырау)"
+                                    @if ($item->work_place === 'АО «Международный аэропорт Атырау» имени Хиуаз Доспановой» (г. Атырау)') selected @endif>
+                                    АО «Международный аэропорт Атырау» имени Хиуаз Доспановой» (г. Атырау)</option>
+                                <option value="АО «Международный аэропорт Актау»"
+                                    @if ($item->work_place === 'АО «Международный аэропорт Актау»') selected @endif>АО «Международный аэропорт
+                                    Актау»
+                                </option>
+                                <option value="АО «Международный аэропорт Алия Молдагулова» (г.Актобе)"
+                                    @if ($item->work_place === 'АО «Международный аэропорт Алия Молдагулова» (г.Актобе)') selected @endif>АО
+                                    «Международный аэропорт Алия Молдагулова» (г.Актобе)</option>
+                                <option value="АО «Аэропорт Шымкент»"
+                                    @if ($item->work_place === 'АО «Аэропорт Шымкент»') selected @endif>АО «Аэропорт Шымкент»</option>
+                                <option value="АО «Аэропорт Коркыт Ата» (г. Кызылорда)"
+                                    @if ($item->work_place === 'АО «Аэропорт Коркыт Ата» (г. Кызылорда)') selected @endif>АО «Аэропорт Коркыт Ата» (г.
+                                    Кызылорда)</option>
+                                <option value="АО «Международный аэропорт Усть-Каменогорск»"
+                                    @if ($item->work_place === 'АО «Международный аэропорт Усть-Каменогорск»') selected @endif>АО «Международный аэропорт
+                                    Усть-Каменогорск»</option>
+                                <option
+                                    value="Филиал АО «Международный аэропорт Нурсултан Назарбаев - АО «Аэропорт «Кокшетау»"
+                                    @if ($item->work_place === 'Филиал АО «Международный аэропорт Нурсултан Назарбаев - АО «Аэропорт «Кокшетау»') selected @endif>
+                                    Филиал АО «Международный аэропорт Нурсултан Назарбаев - АО «Аэропорт «Кокшетау»
+                                </option>
+                                <option value="АО «Международный аэропорт Костанай»"
+                                    @if ($item->work_place === 'АО «Международный аэропорт Костанай»') selected @endif>АО «Международный аэропорт
+                                    Костанай»</option>
+                                <option value="ТОО «Аэропорт Боралдай»"
+                                    @if ($item->work_place === 'ТОО «Аэропорт Боралдай»') selected @endif>ТОО «Аэропорт Боралдай»
+                                </option>
+                                <option value="ТОО «Транзит Казахстан»"
+                                    @if ($item->work_place === 'ТОО «Транзит Казахстан»') selected @endif>ТОО «Транзит Казахстан»
+                                </option>
+                                <option value="ТОО «Star jet»" @if ($item->work_place === 'ТОО «Star jet»') selected @endif>ТОО
+                                    «Star jet»</option>
+                                <option value="U project" @if ($item->work_place === 'U project') selected @endif>U
+                                    project</option>
+                                <option value="Golden Line Logistics"
+                                    @if ($item->work_place === 'Golden Line Logistics') selected @endif>Golden Line Logistics</option>
+                                <option value="ТОО «Глоббинг»" @if ($item->work_place === 'ТОО «Глоббинг»') selected @endif>ТОО
+                                    «Глоббинг»</option>
+                                <option value="ИП «Транслогистик»"
+                                    @if ($item->work_place === 'ИП «Транслогистик»') selected @endif>ИП «Транслогистик»</option>
+                                <option value="GTL Logistics uty"
+                                    @if ($item->work_place === 'GTL Logistics uty') selected @endif>GTL Logistics uty</option>
+                                <option value="ТОО «Ics Kazakhstan»"
+                                    @if ($item->work_place === 'ТОО «Ics Kazakhstan»') selected @endif>ТОО «Ics Kazakhstan»</option>
+                                <option value="ТОО «Алферт» (грузоперевозки по Казахстану и СНГ)"
+                                    @if ($item->work_place === 'ТОО «Алферт» (грузоперевозки по Казахстану и СНГ)') selected @endif>ТОО «Алферт»
+                                    (грузоперевозки по Казахстану и СНГ)</option>
+                                <option value="ТОО «Шынгар Транс»"
+                                    @if ($item->work_place === 'ТОО «Шынгар Транс»') selected @endif>ТОО «Шынгар Транс»</option>
+                                <option value="ТОО «Felix Logistic»"
+                                    @if ($item->work_place === 'ТОО «Felix Logistic»') selected @endif>ТОО «Felix Logistic»</option>
+                                <option value="Free Line Service"
+                                    @if ($item->work_place === 'Free Line Service') selected @endif>Free Line Service</option>
+                                <option value="H. B. KazTransService"
+                                    @if ($item->work_place === 'H. B. KazTransService') selected @endif>H. B. KazTransService</option>
+                                <option value="DHL" @if ($item->work_place === 'DHL') selected @endif>DHL
+                                </option>
+                                <option value="ТОО «Алем-ТАТ»" @if ($item->work_place === 'ТОО «Алем-ТАТ»') selected @endif>
+                                    ТОО «Алем-ТАТ»</option>
+                                <option value="Транслайн" @if ($item->work_place === 'Транслайн') selected @endif>
+                                    Транслайн</option>
+                                <option value="Your Logistics Partner"
+                                    @if ($item->work_place === 'Your Logistics Partner') selected @endif>Your Logistics Partner
+                                </option>
+                                <option value="EurAsiaTransit" @if ($item->work_place === 'EurAsiaTransit') selected @endif>
+                                    EurAsiaTransit</option>
+                                <option value="Кедентранссервис" @if ($item->work_place === 'Кедентранссервис') selected @endif>
+                                    Кедентранссервис</option>
+                                <option value="MultiModal Logistics"
+                                    @if ($item->work_place === 'MultiModal Logistics') selected @endif>MultiModal Logistics</option>
+                                <option value="Rhenus intermodal systems"
+                                    @if ($item->work_place === 'Rhenus intermodal systems') selected @endif>Rhenus intermodal systems
+                                </option>
+                                <option value="Al Jayed Company Logistics"
+                                    @if ($item->work_place === 'Al Jayed Company Logistics') selected @endif>Al Jayed Company Logistics
+                                </option>
+                                <option value="Easy Express" @if ($item->work_place === 'Easy Express') selected @endif>Easy
+                                    Express</option>
+                                <option value="Jet Logistic" @if ($item->work_place === 'Jet Logistic') selected @endif>Jet
+                                    Logistic</option>
+                                <option value="Fedex" @if ($item->work_place === 'Fedex') selected @endif>Fedex
+                                </option>
+                                <option value="ТОО «Aviata»" @if ($item->work_place === 'ТОО «Aviata»') selected @endif>ТОО
+                                    «Aviata»</option>
+                                <option value="ТОО «ТРАНСАВИА»" @if ($item->work_place === 'ТОО «ТРАНСАВИА»') selected @endif>
+                                    ТОО «ТРАНСАВИА»</option>
+                                <option value="АО «Авиаремонтный завод №405»"
+                                    @if ($item->work_place === 'АО «Авиаремонтный завод №405»') selected @endif>АО «Авиаремонтный завод №405»
+                                </option>
+                                <option value="ОАО «Авиаремонтный завод №406»"
+                                    @if ($item->work_place === 'ОАО «Авиаремонтный завод №406»') selected @endif>ОАО «Авиаремонтный завод №406»
+                                </option>
+                                <option value="ТОО «Казахстанская Авиационная Индустрия»"
+                                    @if ($item->work_place === 'ТОО «Казахстанская Авиационная Индустрия»') selected @endif>ТОО «Казахстанская
+                                    Авиационная Индустрия»</option>
+                                <option value="РГП «КАЗАЭРОНАВИГАЦИЯ»"
+                                    @if ($item->work_place === 'РГП «КАЗАЭРОНАВИГАЦИЯ»') selected @endif>РГП «КАЗАЭРОНАВИГАЦИЯ»
+                                </option>
+                                <option value="АО «Казавиаспас»" @if ($item->work_place === 'АО «Казавиаспас»') selected @endif>
+                                    АО «Казавиаспас»</option>
+                                <option value="ТОО «Еврокоптер Казахстан Инжиниринг»"
+                                    @if ($item->work_place === 'ТОО «Еврокоптер Казахстан Инжиниринг»') selected @endif>ТОО «Еврокоптер Казахстан
+                                    Инжиниринг»</option>
+                                <option value="ТОО «КазАвиация»" @if ($item->work_place === 'ТОО «КазАвиация»') selected @endif>
+                                    ТОО «КазАвиация»</option>
+                                <option value="Caspian Radio Services LLP"
+                                    @if ($item->work_place === 'Caspian Radio Services LLP') selected @endif>Caspian Radio Services LLP
+                                </option>
+                                <option value="ТОО «АУТЦ «Болапан»"
+                                    @if ($item->work_place === 'ТОО «АУТЦ «Болапан»') selected @endif>ТОО «АУТЦ «Болапан»</option>
+                                <option value="ОЮЛ «Эксплуатанты легкой и сверхлегкой авиации»"
+                                    @if ($item->work_place === 'ОЮЛ «Эксплуатанты легкой и сверхлегкой авиации»') selected @endif>ОЮЛ «Эксплуатанты
+                                    легкой и сверхлегкой авиации»</option>
+                                <option value="ОЮЛ «Казахстанская ассоциация малой авиации»"
+                                    @if ($item->work_place === 'ОЮЛ «Казахстанская ассоциация малой авиации»') selected @endif>ОЮЛ «Казахстанская
+                                    ассоциация малой авиации»</option>
+                                <option value="АО «Академия Гражданской Авиации»"
+                                    @if ($item->work_place === 'АО «Академия Гражданской Авиации»') selected @endif>АО «Академия Гражданской
+                                    Авиации»
+                                </option>
+                                <option value="Другие" @if ($item->work_place === 'Другие') selected @endif>Другие
+                                </option>
+                            </select>
                         </div>
                         <div class="block">
                             <h5 class="block__title">Должность</h5>
-                            <input type="text" class="block__info" name="position" value="{!! $item->position !!}">
+                            <input type="text" class="block__info" name="position"
+                                value="{!! $item->position !!}">
                         </div>
                         <div class="block">
                             <h5 class="block__title">Статус должности</h5>
                             <select class="block__info" name="position_status">
                                 <option value="0">-----</option>
-                                <option value="Высший руководящий состав" @if ($item->position_status === 'Высший руководящий состав') selected @endif>Высший руководящий состав</option>
-                                <option value="Средний руководящий состав" @if ($item->position_status === 'Средний руководящий состав') selected @endif>Средний руководящий состав</option>
-                                <option value="Исполнитель" @if ($item->position_status === 'Исполнитель') selected @endif>Исполнитель</option>
+                                <option value="Высший руководящий состав"
+                                    @if ($item->position_status === 'Высший руководящий состав') selected @endif>Высший руководящий состав
+                                </option>
+                                <option value="Средний руководящий состав"
+                                    @if ($item->position_status === 'Средний руководящий состав') selected @endif>Средний руководящий состав
+                                </option>
+                                <option value="Исполнитель" @if ($item->position_status === 'Исполнитель') selected @endif>
+                                    Исполнитель</option>
                             </select>
                         </div>
                         <div class="block">
                             <h5 class="block__title">Наличие справки с места работы</h5>
                             <select class="block__info" name="reference">
-                                <option value="0" @if ($item->reference === 0) selected @endif>Отсутствует</option>
-                                <option value="1" @if ($item->reference === 1) selected @endif>Имеется</option>
+                                <option value="0" @if ($item->reference === 0) selected @endif>
+                                    Отсутствует
+                                </option>
+                                <option value="1" @if ($item->reference === 1) selected @endif>Имеется
+                                </option>
                             </select>
                         </div>
-                        @if (isset($item->reference_doc))
-                        <div class="block">
-                            <h5 class="block__title">Справка с места работы</h5>
-                            <p class="block__info">
-                                <a href="{!! $item->reference_doc !!}" target="_blank">Справка</a>
-                            </p>
-                        </div>
+                        @if (isset($item->reference_doc) && $item->reference_doc !== '')
+                            <div class="block">
+                                <h5 class="block__title">Справка с места работы</h5>
+                                <p class="block__info">
+                                    <a href="{!! $item->reference_doc !!}" target="_blank">Справка</a>
+                                </p>
+                            </div>
+                        @else
+                            <div class="block">
+                                <h5 class="block__title">Прикрепить справку с места работы</h5>
+                                <input type="file" name="reference_doc" id="reference_doc" class="block__info">
+                            </div>
                         @endif
                         @if ($item->type !== 3)
-                        <div class="block">
-                            <h5 class="block__title">Наличие портфолио</h5>
-                            <select class="block__info" name="have_portfolio">
-                                <option value="Отсутствует" @if ($item->resume === 'Отсутствует') selected @endif>Отсутствует</option>
-                                <option value="Имеется" @if ($item->resume === 'Имеется') selected @endif>Имеется</option>
-                            </select>
-                        </div>
+                            <div class="block">
+                                <h5 class="block__title">Наличие портфолио</h5>
+                                <select class="block__info" name="have_portfolio">
+                                    <option value="Отсутствует" @if ($item->resume === 'Отсутствует') selected @endif>
+                                        Отсутствует</option>
+                                    <option value="Имеется" @if ($item->resume === 'Имеется') selected @endif>
+                                        Имеется
+                                    </option>
+                                </select>
+                            </div>
                         @endif
-                        @if (isset($item->portfolio_doc) & $item->type !== 3)
-                        <div class="block">
-                            <h5 class="block__title">Портфолио выпускника</h5>
-                            <p class="block__info">
-                                <a href="{!! $item->portfolio_doc !!}" target="_blank">Портфолио</a>
-                            </p>
-                        </div>
+                        @if ($item->type !== 3 && isset($item->portfolio_doc) && $item->portfolio_doc !== '')
+                            <div class="block">
+                                <h5 class="block__title">Портфолио выпускника</h5>
+                                <p class="block__info">
+                                    <a href="{!! $item->portfolio_doc !!}" target="_blank">Портфолио</a>
+                                </p>
+                            </div>
+                        @elseif($item->type !== 3 && (!isset($item->portfolio_doc) || $item->portfolio_doc == ''))
+                            <div class="block">
+                                <h5 class="block__title">Прикрепить портфолио выпускника</h5>
+                                <input type="file" name="portfolio_doc" id="portfolio_doc" class="block__info">
+                            </div>
                         @endif
                         <div class="block">
                             <h5 class="block__title">Наличие документов для Фин центра</h5>
                             <select class="block__info" name="have_fincenter_doc">
-                                <option value="Отсутствует" @if ($item->resume === 'Отсутствует') selected @endif>Отсутствует</option>
-                                <option value="Имеется" @if ($item->resume === 'Имеется') selected @endif>Имеется</option>
+                                <option value="Отсутствует" @if ($item->resume === 'Отсутствует') selected @endif>
+                                    Отсутствует</option>
+                                <option value="Имеется" @if ($item->resume === 'Имеется') selected @endif>Имеется
+                                </option>
                             </select>
                         </div>
                         @if ($item->type !== 3)
-                        <div class="block">
-                            <h5 class="block__title">Вручено направление</h5>
-                            <select class="block__info" name="direction" id="direction">
-                                <option value="0" @if ($item->direction === 0) selected @endif>Нет</option>
-                                <option value="1" @if ($item->direction === 1) selected @endif>Да</option>
-                            </select>
-                        </div>
+                            <div class="block">
+                                <h5 class="block__title">Вручено направление</h5>
+                                <select class="block__info" name="direction" id="direction">
+                                    <option value="0" @if ($item->direction === 0) selected @endif>Нет
+                                    </option>
+                                    <option value="1" @if ($item->direction === 1) selected @endif>Да
+                                    </option>
+                                </select>
+                            </div>
                         @endif
                         @if ($item->direction === 1)
                             <div class="block">
@@ -311,24 +596,29 @@
                         </div>
                         <div class="block">
                             <h5 class="block__title">Год и месяц окончания обучения</h5>
-                            <input type="month" name="grad_year" class="block__info" value="{!! substr($item->grad_year, 0, 7) !!}">
+                            <input type="month" name="grad_year" class="block__info"
+                                value="{!! substr($item->grad_year, 0, 7) !!}">
                         </div>
                         <div class="block">
                             <h5 class="block__title">Статус выпускника</h5>
                             <select name="graduate_status" class="block__info">
                                 <option value="">-----</option>
-                                <option value="Трудоустроен" @if ($item->graduate_status === 'Трудоустроен') selected @endif>Трудоустроен
+                                <option value="Трудоустроен" @if ($item->graduate_status === 'Трудоустроен') selected @endif>
+                                    Трудоустроен
                                 </option>
-                                <option value="Призван в ряды вооруженных сил" @if ($item->graduate_status === 'Призван в ряды вооруженных сил') selected @endif>Призван в ряды вооруженных сил
+                                <option value="Призван в ряды вооруженных сил"
+                                    @if ($item->graduate_status === 'Призван в ряды вооруженных сил') selected @endif>Призван в ряды вооруженных сил
                                 </option>
-                                <option value="Отпуск по уходу за ребенком" @if ($item->graduate_status === 'Отпуск по уходу за ребенком') selected @endif>
-                                    Отпуск по уходу за ребенком</option>
-                                <option value="Повторный курс обучения"
-                                    @if ($item->graduate_status === 'Повторный курс обучения') selected @endif>Повторный курс обучения</option>
-                                <option value="Выдано направление" @if ($item->graduate_status === 'Выдано направление') selected @endif>
-                                    Выдано направление</option>
-                                <option value="Нет обратной связи" @if ($item->graduate_status === 'Нет обратной связи') selected @endif>
-                                    Нет обратной связи</option>
+                                <option value="Отпуск по уходу за ребенком"
+                                    @if ($item->graduate_status === 'Отпуск по уходу за ребенком') selected @endif>Отпуск по уходу за ребенком
+                                </option>
+                                <option
+                                    value="Повторный курс обучения"@if ($item->graduate_status === 'Повторный курс обучения') selected @endif>
+                                    Повторный курс обучения</option>
+                                <option value="Выдано направление"
+                                    @if ($item->graduate_status === 'Выдано направление') selected @endif>Выдано направление</option>
+                                <option value="Нет обратной связи"
+                                    @if ($item->graduate_status === 'Нет обратной связи') selected @endif>Нет обратной связи</option>
                             </select>
                         </div>
                         <div class="block">

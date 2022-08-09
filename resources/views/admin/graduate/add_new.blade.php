@@ -34,7 +34,7 @@
             </div>
             <div class="block">
                 <h5 class="block__title">ИИН</h5>
-                <input type="text" class="block__info" name="iin" maxlength="12">
+                <input type="number" class="block__info" name="iin" maxlength="12">
             </div>
             <div class="block" id="groupeBlock">
                 <h5 class="block__title">Группа</h5>

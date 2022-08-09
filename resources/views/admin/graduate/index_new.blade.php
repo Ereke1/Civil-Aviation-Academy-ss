@@ -54,7 +54,7 @@
                         Бакалавриат</option>
                     <option value="2" @if ($type === '2') selected @endif>
                         Магистратура</option>
-                    <option value="2" @if ($type === '3') selected @endif>
+                    <option value="3" @if ($type === '3') selected @endif>
                         Докторантура</option>
                 </select>
             </div>
@@ -67,13 +67,13 @@
                 </select>
             </div>
             <div>
-                <label for="resume">Резюме</label>
-                <select name="resume">
+                <label for="have_portfolio">Портфолио</label>
+                <select name="have_portfolio">
                     <option value=""></option>
-                    <option value="1" @if ($resume === '1') selected @endif>Да
+                    <option value="Отсутствует" @if ($have_portfolio === 'Отсутствует') selected @endif>Нет
                     </option>
-                    <option value="0" @if ($resume === '0') selected @endif>
-                        Нет</option>
+                    <option value="Имеется" @if ($have_portfolio === 'Имеется') selected @endif>
+                        Да</option>
                 </select>
             </div>
             <div>
@@ -95,38 +95,15 @@
                 </select>
             </div>
             <div>
-                <label for="unification">Общая группа</label>
-                <select name="unification">
+                <label for="graduate_status">Статус выпускника</label>
+                <select name="graduate_status">
                     <option value=""></option>
-                    <option value="АТ-(МХ)" @if ($unification === 'АТ-(МХ)') selected @endif>АТ-(МХ)</option>
-                    <option value="АТ-(АВ)" @if ($unification === 'АТ-(АВ)') selected @endif>АТ-(АВ)</option>
-                    <option value="АТ-(ОНО)" @if ($unification === 'АТ-(ОНО)') selected @endif>АТ-(ОНО)</option>
-                    <option value="АТ-АБ" @if ($unification === 'АТ-АБ') selected @endif>АТ-АБ</option>
-                    <option value="АТ-ОВД" @if ($unification === 'АТ-ОВД') selected @endif>АТ-ОВД</option>
-                    <option value="ОП-ЛГ" @if ($unification === 'ОП-ЛГ') selected @endif>ОП-ЛГ</option>
-                    <option value="ОП" @if ($unification === 'ОП') selected @endif>ОП</option>
-                    <option value="Д-ЛЭ" @if ($unification === 'Д-ЛЭ') selected @endif>Д-ЛЭ</option>
-                    <option value="Д-МХ" @if ($unification === 'Д-МХ') selected @endif>Д-МХ</option>
-                    <option value="Д-АВ" @if ($unification === 'Д-АВ') selected @endif>Д-АВ</option>
-                    <option value="Д-ОВД" @if ($unification === 'Д-ОВД') selected @endif>Д-ОВД</option>
-                    <option value="Д-АБ" @if ($unification === 'Д-АБ') selected @endif>Д-АБ</option>
-                    <option value="Д-ОНО" @if ($unification === 'Д-ОНО') selected @endif>Д-ОНО</option>
-                    <option value="Д-ОП" @if ($unification === 'Д-ОП') selected @endif>Д-ОП</option>
-                    <option value="Д-ОП-ЛГ" @if ($unification === 'Д-ОП-ЛГ') selected @endif>Д-ОП-ЛГ</option>
-                    <option value="МП-АТ" @if ($unification === 'МП-АТ') selected @endif>МП-АТ</option>
-                    <option value="МП-ТУ" @if ($unification === 'МП-ТУ') selected @endif>МП-ТУ</option>
-                    <option value="МНП-ТУ" @if ($unification === 'МНП-ТУ') selected @endif>МНП-ТУ</option>
-                </select>
-            </div>
-            <div>
-                <label for="process">Процесс</label>
-                <select name="process">
-                    <option value=""></option>
-                    <option value="Армия" @if ($process === 'Армия') selected @endif>Армия</option>
-                    <option value="Декрет" @if ($process === 'Декрет') selected @endif>Декрет</option>
-                    <option value="Повторный курс" @if ($process === 'Повторный курс') selected @endif>Повторный курс</option>
-                    <option value="Выписано направление" @if ($process === 'Выписано направление') selected @endif>Выписано направление</option>
-                    <option value="Обработанный" @if ($process === 'Обработанный') selected @endif>Обработанные</option>
+                    <option value="Трудоустроен" @if ($graduate_status === 'Трудоустроен') selected @endif>Трудоустроен</option>
+                    <option value="Призван в ряды вооруженных сил" @if ($graduate_status === 'Призван в ряды вооруженных сил') selected @endif>Призван в ряды вооруженных сил</option>
+                    <option value="Отпуск по уходу за ребенком курс" @if ($graduate_status === 'Отпуск по уходу за ребенком курс') selected @endif>Отпуск по уходу за ребенком курс</option>
+                    <option value="Повторный курс обучения" @if ($graduate_status === 'Повторный курс обучения') selected @endif>Повторный курс обучения</option>
+                    <option value="Выдано направление" @if ($graduate_status === 'Выдано направление') selected @endif>Выдано направление</option>
+                    <option value="Нет обратной связи" @if ($graduate_status === 'Нет обратной связи') selected @endif>Нет обратной связи</option>
                 </select>
             </div>
             <div>
