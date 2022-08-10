@@ -244,6 +244,14 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_group_ru', 'В167 – Лётная эксплуатация летательных аппаратов и двигателей');
         } else if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
             $templateProcessor->setValue('programs_group_ru', 'В095 – Транспортные услуги');
+        } else if ($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М105 – Авиационная техника и технологии');
+        } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М151 – Транспортные услуги');
+        } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М106 – Летная эксплуатация летательных аппаратов и двигателей');
+        } else if ($data->programms === 'Авиационная техника и технологии' && $data->type === 'Докторантура') {
+            $templateProcessor->setValue('programs_group_ru', 'D105 - Авиационная техника и технологии');
         } else {
             $templateProcessor->setValue('programs_group_ru', 'В067 – Воздушный транспорт и технологии');
         }
@@ -272,12 +280,34 @@ class DocumentsController extends Controller
         } else if ($data->programms === 'Технология транспортных процессов в авиации') {
             $templateProcessor->setValue('programs_kz', 'Авиациядағы көлік процестерінің технологиясы');
         }
+        else if ($data->programms === 'Авиационная техника и технологии (профильная магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (бейіндік магистратура)');
+       } else if ($data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (ғылыми-педагогикалық магистратура)');
+       } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану (ғылыми-педагогикалық магистратура)');
+       } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Тасымалдауды, қозғалысты ұйымдастыру және көлікті пайдалану (бейіндік магистратура)');
+       } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Тасымалдауды, қозғалысты ұйымдастыру және көлікті пайдалану (ғылыми-педагогикалық магистратура)');
+       }
+       else if ($data->programms === 'Авиационная техника и технологии') {
+           $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар');
+       }
 
         //группа образовательных программ(каз)
         if ($data->programms === 'Лётная эксплуатация самолётов (пилот)' || $data->programms === 'Лётная эксплуатация вертолётов (пилот)' || $data->programms === 'Обслуживание воздушного движения') {
             $templateProcessor->setValue('programs_group_kz', 'В167 – Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану');
         } else if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
             $templateProcessor->setValue('programs_group_kz', 'В095 – Көлік қызметтері');
+        } else if ($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М105 – Авиациялық техника және технологиялар');
+        } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М151 – Көлік қызметі');
+        } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М106 – Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану');
+        } else if ($data->programms === 'Авиационная техника и технологии' && $data->type === 'Докторантура') {
+            $templateProcessor->setValue('programs_group_ru', 'D105 - Авиациялық техника және технологиялар');
         } else {
             $templateProcessor->setValue('programs_group_kz', 'В067 – Әуе көлігі және технологиялары');
         }
@@ -397,6 +427,24 @@ class DocumentsController extends Controller
         } else if ($data->programms === 'Технология транспортных процессов в авиации') {
             $templateProcessor->setValue('programs_kz', 'Авиациядағы көлік процестерінің технологиясы');
         }
+         else if ($data->programms === 'Авиационная техника и технологии (профильная магистратура)') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (бейіндік магистратура)');
+        } else if ($data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (ғылыми-педагогикалық магистратура)');
+        } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану (ғылыми-педагогикалық магистратура)');
+        } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)') {
+            $templateProcessor->setValue('programs_kz', 'Тасымалдауды, қозғалысты ұйымдастыру және көлікті пайдалану (бейіндік магистратура)');
+        } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_kz', 'Тасымалдауды, қозғалысты ұйымдастыру және көлікті пайдалану (ғылыми-педагогикалық магистратура)');
+        }
+        else if ($data->programms === 'Авиационная техника и технологии') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар');
+        }
+
+
+
+
 
         //дата рождения
         if ($data->birthdate !== NULL) {

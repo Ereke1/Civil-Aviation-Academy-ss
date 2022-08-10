@@ -5,6 +5,7 @@
 @section('content')
     <div class="report">
         <h2>Выпускники бакалавриат, магистратура  2022г.</h2>
+        <h3>Скачать в <a href="{{route('admin.graduate.report.pdf_new')}}">PDF</a></h3>
         <table class="report">
             <tr style="background: #00249c;color: #fff;">
                 <th rowspan="2">№ п/п</th>
