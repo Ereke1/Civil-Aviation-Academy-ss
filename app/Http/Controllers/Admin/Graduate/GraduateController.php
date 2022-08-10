@@ -297,9 +297,15 @@ class GraduateController extends Controller
 		$data->work = $request->work;
         $data->work_place = $request->work_place;
 		$data->direction = $request->direction;
-		$data->direction_place1 = $request->directionPlace1;
-		$data->direction_place2 = $request->directionPlace2;
-		$data->direction_place3 = $request->directionPlace3;
+        if($request->direction === '0'){
+            $data->direction_place1 = null;
+		    $data->direction_place2 = null;
+		    $data->direction_place3 = null;
+        } else if (($request->direction === '1' || $data->direction === 1) && $request->direction !== '0'){
+            $data->direction_place1 = $request->direction_place1;
+            $data->direction_place2 = $request->direction_place1;
+            $data->direction_place3 = $request->direction_place1;
+        }
 		$data->document = $request->document;
 		$data->gpa = $request->gpa;
 		$data->graduation_year = $request->graduation_year;
