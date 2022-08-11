@@ -3,7 +3,7 @@
     {{ __('Кафедры') }}
 @endsection
 @section('content')
-<section class="wrapper" id="center">
+<section class="wrapper" id="departments_new">
         <div class="container">
             <h1>
                 {{ __('Кафедры') }}
@@ -21,7 +21,7 @@
                         <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                             <small class="card-meta mb-2" >---------------------</small>
-                            <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/departments/{!! $department->slug !!}">{{ __($department->name) }}</a></h3>
+                            <h3 class="card-title mt-0 "><a class="text-dep stretched-link" href="/departments/{!! $department->slug !!}">{{ __($department->name) }}</a></h3>
                         </div>
                         </div>
                     </div>
