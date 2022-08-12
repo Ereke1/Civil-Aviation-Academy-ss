@@ -42,7 +42,7 @@
                         @if ($item->type !== 3)
                             <div class="block">
                                 <h5 class="block__title">Группа</h5>
-                                <p class="block__info">{!! $item->groupe !!}</p>
+                                <input type="text" value="{!! $item->groupe !!}" name="groupe" class="block__info">
                             </div>
                         @endif
                         @if ($item->type === 1)
@@ -200,7 +200,7 @@
                                     @if ($item->region === 'Восточно-Казахстанская область') selected @endif>
                                     Восточно-Казахстанская область</option>
                                 <option value="Жамбыльская область"
-                                    @if ($item->region === 'Жамбыльская обл.') selected @endif>
+                                    @if ($item->region === 'Жамбылская область') selected @endif>
                                     Жамбыльская область</option>
                                 <option value="Жетысуская область" @if ($item->region === 'Жетысуская обл.') selected @endif>
                                     Жетысуская область</option>

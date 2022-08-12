@@ -37,25 +37,14 @@
         table {
             width: 100%;
             font-size: 10px;
-        }
-		  .table-grant{
-			  margin-bottom: 20px;
-		  }
-        .table-grant tr,
-        .table-grant th,
-        .table-grant td {
-            padding: 10px 0;
-        }
-        .table-paid tr,
-        .table-paid th,
-        .table-paid td {
-            padding: 2px 0;
+            border-collapse: collapse;
         }
 
         tr,
         th,
         td {
             border: 1px solid black;
+            border-collapse: collapse;
             text-align: center;
         }
 

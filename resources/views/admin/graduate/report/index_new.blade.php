@@ -5,7 +5,7 @@
 @section('content')
     <div class="report">
         <h2>Выпускники бакалавриат, магистратура  2022г.</h2>
-        <h3>Скачать в <a href="{{route('admin.graduate.report.pdf_new')}}">PDF</a></h3>
+        <h3>Скачать в <a href="{{route('admin.graduate.report.pdf_new')}}">PDF</a> | <a href="{{route('admin.graduate.report.excel')}}">Excel</a></h3>
         <table class="report">
             <tr style="background: #00249c;color: #fff;">
                 <th rowspan="2">№ п/п</th>
@@ -64,17 +64,7 @@
             <tr style="background: #00249c;color: #fff;">
                 <th></th>
                 <th>Магистратура</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th colspan="11"></th>
             </tr>
             @foreach ($dataMag as $item)
                 <tr>
@@ -114,8 +104,7 @@
 
             @foreach ($dataAll as $item)
                 <tr class="bg-chair-night">
-                    <td>{!! $item->num_row !!}</td>
-                    <td>{!! $item->op_group !!}</td>
+                    <td colspan="2">{!! $item->op_group !!}</td>
                     <td>{!! $item->ochnoe !!}</td>
                     <td>{!! $item->dot !!}</td>
                     <td>{!! $item->vse !!}</td>

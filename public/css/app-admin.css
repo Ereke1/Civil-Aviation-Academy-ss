@@ -17589,7 +17589,7 @@ main .blocks .block {
   padding: calc(100vw / (1920 / 10)) calc(100vw / (1920 / 20));
 }
 
-main .blocks .block:nth-child(3n) {
+main .blocks .block:nth-child(3n) .block:not(.disabled){
   border-right: none;
 }
 

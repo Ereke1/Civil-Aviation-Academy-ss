@@ -86,6 +86,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 		Route::get('report/index_new', 'ReportController@index_new')->name('report.index_new');
 		Route::get('pdf/{graduation_year}', 'ReportController@pdf')->name('report.pdf');
 		Route::get('pdf_new', 'ReportController@pdf_new')->name('report.pdf_new');
+		Route::get('excel', 'ReportController@excel')->name('report.excel');
 	});
 
 	// VACCINATION

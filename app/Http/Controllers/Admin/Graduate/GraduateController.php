@@ -287,6 +287,7 @@ class GraduateController extends Controller
         $data->surname = $request->surname;
         $data->name = $request->name;
         $data->patronymic = $request->patronymic;
+        $data->groupe = $request->groupe;
 		$data->type = $request->type;
 		$data->reg_address = $request->reg_address;
 		$data->res_address = $request->res_address;
