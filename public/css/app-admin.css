@@ -17306,7 +17306,7 @@ h1 {
 
 .wrapper .left-sidebar__nav {
   position: fixed;
-  height: 100vh;
+  height: 90vh;
   background: #f6f6f6;
   margin-top: calc(100vw / (1920 / 94));
   width: calc(100vw / (1920 / 317.16));
