@@ -17295,7 +17295,7 @@ header .logo img {
 
 @media (min-width: 1400px) {
   header .logo img {
-    height: calc(100vw / (1400 / 60));
+    height: calc(100vw / (1400 / 50));
   }
 }
 
