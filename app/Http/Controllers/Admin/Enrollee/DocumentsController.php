@@ -549,15 +549,20 @@ class DocumentsController extends Controller
         }
 
         //на базе
-        if ($data->base === '11-го класса') {
-            $templateProcessor->setValue('base_ru', '11-го класса');
-            $templateProcessor->setValue('base_kz', '11 сынып');
-        } else if ($data->base === 'Высшего образования') {
+        if($data->type === 'Бакалавриат'){
+            if ($data->base === '11-го класса') {
+                $templateProcessor->setValue('base_ru', '11-го класса');
+                $templateProcessor->setValue('base_kz', '11 сынып');
+            } else if ($data->base === 'Высшего образования') {
+                $templateProcessor->setValue('base_ru', 'ВО');
+                $templateProcessor->setValue('base_kz', 'ЖБ');
+            } else if ($data->base == 'Технического и профессионального образования (колледжа)') {
+                $templateProcessor->setValue('base_ru', 'ТиПО');
+                $templateProcessor->setValue('base_kz', 'ТжКБ');
+            }
+        } else {
             $templateProcessor->setValue('base_ru', 'ВО');
             $templateProcessor->setValue('base_kz', 'ЖБ');
-        } else if ($data->base == 'Технического и профессионального образования (колледжа)') {
-            $templateProcessor->setValue('base_ru', 'ТиПО');
-            $templateProcessor->setValue('base_kz', 'ТжКБ');
         }
 
         //национальность
