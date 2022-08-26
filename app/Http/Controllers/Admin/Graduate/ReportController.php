@@ -3074,28 +3074,167 @@ class ReportController extends Controller
 
     public function index_new()
     {
-        $dataBach = DB::table('graduates')
+        $dataBachInzh = DB::table('graduates')
             ->select(
-                DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row'),
-                'speciality',
-                DB::raw('sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe'),
-                DB::raw('sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot'),
-                DB::raw('count(id) as vse'),
-                DB::raw('sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant'),
-                DB::raw('sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn'),
-                DB::raw('sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot'),
-                DB::raw('sum(CASE WHEN work=1 then 1 else 0 end) as work_vse'),
-                DB::raw('count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse'),
-                DB::raw('concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent'),
-                DB::raw('"" as graduate_status'),
-                DB::raw('sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+                DB::raw('"" AS num_row,
+                "Направление: Инженерия и инженерное дело" as speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
             )
-            ->whereRaw('year(grad_year)=2022')
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Техническая эксплуатация летательных аппаратов и двигателей (механик)', 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)',
+            'Обслуживание наземного радиоэлектронного оборудования аэропортов', 'Обеспечение авиационной безопасности', 'Организация аэропортовой деятельности',
+            'Обслуживание воздушного движения (авиадиспетчер)', 'Летная эксплуатация гражданских самолетов (пилот)', 'Летная эксплуатация гражданских вертолетов (пилот)')
+            ")
+            ->where('type', '=', "1")
+            ->get();
+
+        $dataBachB067 = DB::table('graduates')
+            ->select(
+                DB::raw('"" AS num_row,
+                "B067 - Воздушный транспорт и технологии" as speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Техническая эксплуатация летательных аппаратов и двигателей (механик)', 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)',
+            'Обслуживание наземного радиоэлектронного оборудования аэропортов', 'Обеспечение авиационной безопасности', 'Организация аэропортовой деятельности')
+            ")
+            ->where('type', '=', "1")
+            ->get();
+
+
+        $dataBachB067op = DB::table('graduates')
+            ->select(
+                DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row,
+                speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Техническая эксплуатация летательных аппаратов и двигателей (механик)', 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)',
+            'Обслуживание наземного радиоэлектронного оборудования аэропортов', 'Обеспечение авиационной безопасности', 'Организация аэропортовой деятельности')
+            ")
             ->where('type', '=', "1")
             ->groupBy('speciality')
-            // ->groupBy(DB::raw('speciality WITH ROLLUP'))
             ->orderBy('speciality')
             ->get();
+
+            $dataBachB167 = DB::table('graduates')
+            ->select(
+                DB::raw('"" AS num_row,
+                "B167 - Летная эксплуатация летательных аппаратов и двигателей" as speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Обслуживание воздушного движения (авиадиспетчер)', 'Летная эксплуатация гражданских самолетов (пилот)',
+            'Летная эксплуатация гражданских вертолетов (пилот)')
+            ")
+            ->where('type', '=', "1")
+            ->get();
+
+            $dataBachB167op = DB::table('graduates')
+            ->select(
+                DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row,
+                speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Обслуживание воздушного движения (авиадиспетчер)', 'Летная эксплуатация гражданских самолетов (пилот)',
+            'Летная эксплуатация гражданских вертолетов (пилот)')
+            ")
+            ->where('type', '=', "1")
+            ->groupBy('speciality')
+            ->orderBy('speciality')
+            ->get();
+
+            $dataBachTransport = DB::table('graduates')
+            ->select(
+                DB::raw('"" AS num_row,
+                "Транспортные услуги" as speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Организация авиационных перевозок', 'Логистика на транспорте')
+            ")
+            ->where('type', '=', "1")
+            ->get();
+
+            $dataBachTransportOp = DB::table('graduates')
+            ->select(
+                DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row,
+                speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Организация авиационных перевозок', 'Логистика на транспорте')
+            ")
+            ->where('type', '=', "1")
+            ->groupBy('speciality')
+            ->orderBy('speciality')
+            ->get();
+
+
 
         $dataBachAll = DB::table('graduates')
             ->select(
@@ -3179,11 +3318,18 @@ class ReportController extends Controller
             ->get();
 
         $dataArray = [
-            'dataBach' => $dataBach,
+            'dataBachInzh' => $dataBachInzh,
+            'dataBachB067' => $dataBachB067,
+            'dataBachB067op' => $dataBachB067op,
+            'dataBachB167' => $dataBachB167,
+            'dataBachB167op' => $dataBachB167op,
+            'dataBachTransport' => $dataBachTransport,
+            'dataBachTransportOp' => $dataBachTransportOp,
             'dataBachAll' => $dataBachAll,
             'dataMag' => $dataMag,
             'dataMagAll' => $dataMagAll,
-            'dataAll' => $dataAll
+            'dataAll' => $dataAll,
+
         ];
         return view('admin.graduate.report.index_new', $dataArray);
     }
@@ -3193,26 +3339,163 @@ class ReportController extends Controller
 
         $today = now('Asia/Almaty');
 
-        $dataBach = DB::table('graduates')
+        $dataBachInzh = DB::table('graduates')
             ->select(
-                DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row'),
-                'speciality',
-                DB::raw('sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe'),
-                DB::raw('sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot'),
-                DB::raw('count(id) as vse'),
-                DB::raw('sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant'),
-                DB::raw('sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn'),
-                DB::raw('sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot'),
-                DB::raw('sum(CASE WHEN work=1 then 1 else 0 end) as work_vse'),
-                DB::raw('count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse'),
-                DB::raw('concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent'),
-                DB::raw('"" as graduate_status'),
-                DB::raw('sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+                DB::raw('"" AS num_row,
+                "Направление: Инженерия и инженерное дело" as speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
             )
-            ->whereRaw('year(grad_year)=2022')
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Техническая эксплуатация летательных аппаратов и двигателей (механик)', 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)',
+            'Обслуживание наземного радиоэлектронного оборудования аэропортов', 'Обеспечение авиационной безопасности', 'Организация аэропортовой деятельности',
+            'Обслуживание воздушного движения (авиадиспетчер)', 'Летная эксплуатация гражданских самолетов (пилот)', 'Летная эксплуатация гражданских вертолетов (пилот)')
+            ")
+            ->where('type', '=', "1")
+            ->get();
+
+        $dataBachB067 = DB::table('graduates')
+            ->select(
+                DB::raw('"" AS num_row,
+                "B067 - Воздушный транспорт и технологии" as speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Техническая эксплуатация летательных аппаратов и двигателей (механик)', 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)',
+            'Обслуживание наземного радиоэлектронного оборудования аэропортов', 'Обеспечение авиационной безопасности', 'Организация аэропортовой деятельности')
+            ")
+            ->where('type', '=', "1")
+            ->get();
+
+
+        $dataBachB067op = DB::table('graduates')
+            ->select(
+                DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row,
+                speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Техническая эксплуатация летательных аппаратов и двигателей (механик)', 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)',
+            'Обслуживание наземного радиоэлектронного оборудования аэропортов', 'Обеспечение авиационной безопасности', 'Организация аэропортовой деятельности')
+            ")
             ->where('type', '=', "1")
             ->groupBy('speciality')
-            // ->groupBy(DB::raw('speciality WITH ROLLUP'))
+            ->orderBy('speciality')
+            ->get();
+
+            $dataBachB167 = DB::table('graduates')
+            ->select(
+                DB::raw('"" AS num_row,
+                "B167 - Летная эксплуатация летательных аппаратов и двигателей" as speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Обслуживание воздушного движения (авиадиспетчер)', 'Летная эксплуатация гражданских самолетов (пилот)',
+            'Летная эксплуатация гражданских вертолетов (пилот)')
+            ")
+            ->where('type', '=', "1")
+            ->get();
+
+            $dataBachB167op = DB::table('graduates')
+            ->select(
+                DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row,
+                speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Обслуживание воздушного движения (авиадиспетчер)', 'Летная эксплуатация гражданских самолетов (пилот)',
+            'Летная эксплуатация гражданских вертолетов (пилот)')
+            ")
+            ->where('type', '=', "1")
+            ->groupBy('speciality')
+            ->orderBy('speciality')
+            ->get();
+
+            $dataBachTransport = DB::table('graduates')
+            ->select(
+                DB::raw('"" AS num_row,
+                "Транспортные услуги" as speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Организация авиационных перевозок', 'Логистика на транспорте')
+            ")
+            ->where('type', '=', "1")
+            ->get();
+
+            $dataBachTransportOp = DB::table('graduates')
+            ->select(
+                DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row,
+                speciality,
+                sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+                sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+                count(id) as vse,
+                sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+                sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+                sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+                sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+                count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+                concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+                "" as graduate_status,
+                sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+            )
+            ->whereRaw("year(grad_year)=2022 and speciality in ('Организация авиационных перевозок', 'Логистика на транспорте')
+            ")
+            ->where('type', '=', "1")
+            ->groupBy('speciality')
             ->orderBy('speciality')
             ->get();
 
@@ -3299,7 +3582,13 @@ class ReportController extends Controller
 
         $dataArray = [
             'today' => $today,
-            'dataBach' => $dataBach,
+            'dataBachInzh' => $dataBachInzh,
+            'dataBachB067' => $dataBachB067,
+            'dataBachB067op' => $dataBachB067op,
+            'dataBachB167' => $dataBachB167,
+            'dataBachB167op' => $dataBachB167op,
+            'dataBachTransport' => $dataBachTransport,
+            'dataBachTransportOp' => $dataBachTransportOp,
             'dataBachAll' => $dataBachAll,
             'dataMag' => $dataMag,
             'dataMagAll' => $dataMagAll,
@@ -3317,28 +3606,165 @@ class ReportController extends Controller
 
         $today = now('Asia/Almaty');
 
-        $dataBach = DB::table('graduates')
-            ->select(
-                DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row'),
-                'speciality',
-                DB::raw('sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe'),
-                DB::raw('sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot'),
-                DB::raw('count(id) as vse'),
-                DB::raw('sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant'),
-                DB::raw('sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn'),
-                DB::raw('sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot'),
-                DB::raw('sum(CASE WHEN work=1 then 1 else 0 end) as work_vse'),
-                DB::raw('count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse'),
-                DB::raw('concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent'),
-                DB::raw('"" as graduate_status'),
-                DB::raw('sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
-            )
-            ->whereRaw('year(grad_year)=2022')
-            ->where('type', '=', "1")
-            ->groupBy('speciality')
-            // ->groupBy(DB::raw('speciality WITH ROLLUP'))
-            ->orderBy('speciality')
-            ->get();
+        $dataBachInzh = DB::table('graduates')
+        ->select(
+            DB::raw('"" AS num_row,
+            "Направление: Инженерия и инженерное дело" as speciality,
+            sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+            sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+            count(id) as vse,
+            sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+            sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+            sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+            sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+            count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+            concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+            "" as graduate_status,
+            sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+        )
+        ->whereRaw("year(grad_year)=2022 and speciality in ('Техническая эксплуатация летательных аппаратов и двигателей (механик)', 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)',
+        'Обслуживание наземного радиоэлектронного оборудования аэропортов', 'Обеспечение авиационной безопасности', 'Организация аэропортовой деятельности',
+        'Обслуживание воздушного движения (авиадиспетчер)', 'Летная эксплуатация гражданских самолетов (пилот)', 'Летная эксплуатация гражданских вертолетов (пилот)')
+        ")
+        ->where('type', '=', "1")
+        ->get();
+
+    $dataBachB067 = DB::table('graduates')
+        ->select(
+            DB::raw('"" AS num_row,
+            "B067 - Воздушный транспорт и технологии" as speciality,
+            sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+            sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+            count(id) as vse,
+            sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+            sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+            sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+            sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+            count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+            concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+            "" as graduate_status,
+            sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+        )
+        ->whereRaw("year(grad_year)=2022 and speciality in ('Техническая эксплуатация летательных аппаратов и двигателей (механик)', 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)',
+        'Обслуживание наземного радиоэлектронного оборудования аэропортов', 'Обеспечение авиационной безопасности', 'Организация аэропортовой деятельности')
+        ")
+        ->where('type', '=', "1")
+        ->get();
+
+
+    $dataBachB067op = DB::table('graduates')
+        ->select(
+            DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row,
+            speciality,
+            sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+            sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+            count(id) as vse,
+            sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+            sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+            sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+            sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+            count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+            concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+            "" as graduate_status,
+            sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+        )
+        ->whereRaw("year(grad_year)=2022 and speciality in ('Техническая эксплуатация летательных аппаратов и двигателей (механик)', 'Техническая эксплуатация систем авионики летательных аппаратов (авионик)',
+        'Обслуживание наземного радиоэлектронного оборудования аэропортов', 'Обеспечение авиационной безопасности', 'Организация аэропортовой деятельности')
+        ")
+        ->where('type', '=', "1")
+        ->groupBy('speciality')
+        ->orderBy('speciality')
+        ->get();
+
+        $dataBachB167 = DB::table('graduates')
+        ->select(
+            DB::raw('"" AS num_row,
+            "B167 - Летная эксплуатация летательных аппаратов и двигателей" as speciality,
+            sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+            sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+            count(id) as vse,
+            sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+            sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+            sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+            sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+            count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+            concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+            "" as graduate_status,
+            sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+        )
+        ->whereRaw("year(grad_year)=2022 and speciality in ('Обслуживание воздушного движения (авиадиспетчер)', 'Летная эксплуатация гражданских самолетов (пилот)',
+        'Летная эксплуатация гражданских вертолетов (пилот)')
+        ")
+        ->where('type', '=', "1")
+        ->get();
+
+        $dataBachB167op = DB::table('graduates')
+        ->select(
+            DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row,
+            speciality,
+            sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+            sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+            count(id) as vse,
+            sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+            sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+            sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+            sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+            count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+            concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+            "" as graduate_status,
+            sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+        )
+        ->whereRaw("year(grad_year)=2022 and speciality in ('Обслуживание воздушного движения (авиадиспетчер)', 'Летная эксплуатация гражданских самолетов (пилот)',
+        'Летная эксплуатация гражданских вертолетов (пилот)')
+        ")
+        ->where('type', '=', "1")
+        ->groupBy('speciality')
+        ->orderBy('speciality')
+        ->get();
+
+        $dataBachTransport = DB::table('graduates')
+        ->select(
+            DB::raw('"" AS num_row,
+            "Транспортные услуги" as speciality,
+            sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+            sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+            count(id) as vse,
+            sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+            sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+            sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+            sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+            count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+            concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+            "" as graduate_status,
+            sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+        )
+        ->whereRaw("year(grad_year)=2022 and speciality in ('Организация авиационных перевозок', 'Логистика на транспорте')
+        ")
+        ->where('type', '=', "1")
+        ->get();
+
+        $dataBachTransportOp = DB::table('graduates')
+        ->select(
+            DB::raw('ROW_NUMBER() OVER(ORDER BY speciality) AS num_row,
+            speciality,
+            sum(CASE WHEN edu_form="очное" then 1 else 0 end) as ochnoe,
+            sum(CASE WHEN edu_form="очное с применением ДОТ" then 1 else 0 end) as dot,
+            count(id) as vse,
+            sum(CASE WHEN work=1 and form_study="грант" and edu_form="очное" then 1 else 0 end) as work_grant,
+            sum(CASE WHEN work=1 and form_study="платное" and edu_form="очное" then 1 else 0 end) as work_platn,
+            sum(CASE WHEN work=1 and edu_form="очное с применением ДОТ" then 1 else 0 end) as work_dot,
+            sum(CASE WHEN work=1 then 1 else 0 end) as work_vse,
+            count(id)-sum(CASE WHEN work=1 then 1 else 0 end) as notwork_vse,
+            concat_ws("",round(sum(CASE WHEN work=1 then 1 else 0 end)/count(id)*100),"%") as percent,
+            "" as graduate_status,
+            sum(CASE WHEN continue_education<>0 then 1 else 0 end) as magister')
+        )
+        ->whereRaw("year(grad_year)=2022 and speciality in ('Организация авиационных перевозок', 'Логистика на транспорте')
+        ")
+        ->where('type', '=', "1")
+        ->groupBy('speciality')
+        ->orderBy('speciality')
+        ->get();
 
         $dataBachAll = DB::table('graduates')
             ->select(
@@ -3450,10 +3876,106 @@ class ReportController extends Controller
         $sheet->setCellValue('I2', 'Всего');
         $sheet->setCellValue('J2', '%');
 
-        $sheet->setCellValue('B14', 'Магистратура');
+        $sheet->setCellValue('B18', 'Магистратура');
 
         $sn = 3;
-        foreach ($dataBach as $item) {
+        foreach ($dataBachInzh as $item) {
+            $sheet->setCellValue('A' . $sn, $item->num_row);
+            $sheet->setCellValue('B' . $sn, $item->speciality);
+            $sheet->setCellValue('C' . $sn, $item->ochnoe);
+            $sheet->setCellValue('D' . $sn, $item->dot);
+            $sheet->setCellValue('E' . $sn, $item->vse);
+            $sheet->setCellValue('F' . $sn, $item->work_grant);
+            $sheet->setCellValue('G' . $sn, $item->work_platn);
+            $sheet->setCellValue('H' . $sn, $item->work_dot);
+            $sheet->setCellValue('I' . $sn, $item->work_vse);
+            $sheet->setCellValue('J' . $sn, $item->percent);
+            $sheet->setCellValue('K' . $sn, $item->notwork_vse);
+            $sheet->setCellValue('L' . $sn, $item->graduate_status);
+            $sheet->setCellValue('M' . $sn, $item->magister);
+            $sn++;
+        }
+        foreach ($dataBachB067 as $item) {
+            $sheet->setCellValue('A' . $sn, $item->num_row);
+            $sheet->setCellValue('B' . $sn, $item->speciality);
+            $sheet->setCellValue('C' . $sn, $item->ochnoe);
+            $sheet->setCellValue('D' . $sn, $item->dot);
+            $sheet->setCellValue('E' . $sn, $item->vse);
+            $sheet->setCellValue('F' . $sn, $item->work_grant);
+            $sheet->setCellValue('G' . $sn, $item->work_platn);
+            $sheet->setCellValue('H' . $sn, $item->work_dot);
+            $sheet->setCellValue('I' . $sn, $item->work_vse);
+            $sheet->setCellValue('J' . $sn, $item->percent);
+            $sheet->setCellValue('K' . $sn, $item->notwork_vse);
+            $sheet->setCellValue('L' . $sn, $item->graduate_status);
+            $sheet->setCellValue('M' . $sn, $item->magister);
+            $sn++;
+        }
+        foreach ($dataBachB067op as $item) {
+            $sheet->setCellValue('A' . $sn, $item->num_row);
+            $sheet->setCellValue('B' . $sn, $item->speciality);
+            $sheet->setCellValue('C' . $sn, $item->ochnoe);
+            $sheet->setCellValue('D' . $sn, $item->dot);
+            $sheet->setCellValue('E' . $sn, $item->vse);
+            $sheet->setCellValue('F' . $sn, $item->work_grant);
+            $sheet->setCellValue('G' . $sn, $item->work_platn);
+            $sheet->setCellValue('H' . $sn, $item->work_dot);
+            $sheet->setCellValue('I' . $sn, $item->work_vse);
+            $sheet->setCellValue('J' . $sn, $item->percent);
+            $sheet->setCellValue('K' . $sn, $item->notwork_vse);
+            $sheet->setCellValue('L' . $sn, $item->graduate_status);
+            $sheet->setCellValue('M' . $sn, $item->magister);
+            $sn++;
+        }
+        foreach ($dataBachB167 as $item) {
+            $sheet->setCellValue('A' . $sn, $item->num_row);
+            $sheet->setCellValue('B' . $sn, $item->speciality);
+            $sheet->setCellValue('C' . $sn, $item->ochnoe);
+            $sheet->setCellValue('D' . $sn, $item->dot);
+            $sheet->setCellValue('E' . $sn, $item->vse);
+            $sheet->setCellValue('F' . $sn, $item->work_grant);
+            $sheet->setCellValue('G' . $sn, $item->work_platn);
+            $sheet->setCellValue('H' . $sn, $item->work_dot);
+            $sheet->setCellValue('I' . $sn, $item->work_vse);
+            $sheet->setCellValue('J' . $sn, $item->percent);
+            $sheet->setCellValue('K' . $sn, $item->notwork_vse);
+            $sheet->setCellValue('L' . $sn, $item->graduate_status);
+            $sheet->setCellValue('M' . $sn, $item->magister);
+            $sn++;
+        }
+        foreach ($dataBachB167op as $item) {
+            $sheet->setCellValue('A' . $sn, $item->num_row);
+            $sheet->setCellValue('B' . $sn, $item->speciality);
+            $sheet->setCellValue('C' . $sn, $item->ochnoe);
+            $sheet->setCellValue('D' . $sn, $item->dot);
+            $sheet->setCellValue('E' . $sn, $item->vse);
+            $sheet->setCellValue('F' . $sn, $item->work_grant);
+            $sheet->setCellValue('G' . $sn, $item->work_platn);
+            $sheet->setCellValue('H' . $sn, $item->work_dot);
+            $sheet->setCellValue('I' . $sn, $item->work_vse);
+            $sheet->setCellValue('J' . $sn, $item->percent);
+            $sheet->setCellValue('K' . $sn, $item->notwork_vse);
+            $sheet->setCellValue('L' . $sn, $item->graduate_status);
+            $sheet->setCellValue('M' . $sn, $item->magister);
+            $sn++;
+        }
+        foreach ($dataBachTransport as $item) {
+            $sheet->setCellValue('A' . $sn, $item->num_row);
+            $sheet->setCellValue('B' . $sn, $item->speciality);
+            $sheet->setCellValue('C' . $sn, $item->ochnoe);
+            $sheet->setCellValue('D' . $sn, $item->dot);
+            $sheet->setCellValue('E' . $sn, $item->vse);
+            $sheet->setCellValue('F' . $sn, $item->work_grant);
+            $sheet->setCellValue('G' . $sn, $item->work_platn);
+            $sheet->setCellValue('H' . $sn, $item->work_dot);
+            $sheet->setCellValue('I' . $sn, $item->work_vse);
+            $sheet->setCellValue('J' . $sn, $item->percent);
+            $sheet->setCellValue('K' . $sn, $item->notwork_vse);
+            $sheet->setCellValue('L' . $sn, $item->graduate_status);
+            $sheet->setCellValue('M' . $sn, $item->magister);
+            $sn++;
+        }
+        foreach ($dataBachTransportOp as $item) {
             $sheet->setCellValue('A' . $sn, $item->num_row);
             $sheet->setCellValue('B' . $sn, $item->speciality);
             $sheet->setCellValue('C' . $sn, $item->ochnoe);
@@ -3471,22 +3993,22 @@ class ReportController extends Controller
         }
 
         foreach ($dataBachAll as $item) {
-            $sheet->setCellValue('A13', $item->num_row);
-            $sheet->setCellValue('B13', $item->speciality);
-            $sheet->setCellValue('C13', $item->ochnoe);
-            $sheet->setCellValue('D13', $item->dot);
-            $sheet->setCellValue('E13', $item->vse);
-            $sheet->setCellValue('F13', $item->work_grant);
-            $sheet->setCellValue('G13', $item->work_platn);
-            $sheet->setCellValue('H13', $item->work_dot);
-            $sheet->setCellValue('I13', $item->work_vse);
-            $sheet->setCellValue('J13', $item->percent);
-            $sheet->setCellValue('K13', $item->notwork_vse);
-            $sheet->setCellValue('L13', $item->graduate_status);
-            $sheet->setCellValue('M13', $item->magister);
+            $sheet->setCellValue('A17', $item->num_row);
+            $sheet->setCellValue('B17', $item->speciality);
+            $sheet->setCellValue('C17', $item->ochnoe);
+            $sheet->setCellValue('D17', $item->dot);
+            $sheet->setCellValue('E17', $item->vse);
+            $sheet->setCellValue('F17', $item->work_grant);
+            $sheet->setCellValue('G17', $item->work_platn);
+            $sheet->setCellValue('H17', $item->work_dot);
+            $sheet->setCellValue('I17', $item->work_vse);
+            $sheet->setCellValue('J17', $item->percent);
+            $sheet->setCellValue('K17', $item->notwork_vse);
+            $sheet->setCellValue('L17', $item->graduate_status);
+            $sheet->setCellValue('M17', $item->magister);
         }
 
-        $sn = 15;
+        $sn = 19;
         foreach ($dataMag as $item) {
             $sheet->setCellValue('A' . $sn, $item->num_row);
             $sheet->setCellValue('B' . $sn, $item->op_group);
@@ -3505,45 +4027,49 @@ class ReportController extends Controller
         }
 
         foreach ($dataMagAll as $item) {
-            $sheet->setCellValue('A18', $item->num_row);
-            $sheet->setCellValue('B18', $item->op_group);
-            $sheet->setCellValue('C18', $item->ochnoe);
-            $sheet->setCellValue('D18', $item->dot);
-            $sheet->setCellValue('E18', $item->vse);
-            $sheet->setCellValue('F18', $item->work_grant);
-            $sheet->setCellValue('G18', $item->work_platn);
-            $sheet->setCellValue('H18', $item->work_dot);
-            $sheet->setCellValue('I18', $item->work_vse);
-            $sheet->setCellValue('J18', $item->percent);
-            $sheet->setCellValue('K18', $item->notwork_vse);
-            $sheet->setCellValue('L18', $item->graduate_status);
-            $sheet->setCellValue('M18', $item->magister);
+            $sheet->setCellValue('A22', $item->num_row);
+            $sheet->setCellValue('B22', $item->op_group);
+            $sheet->setCellValue('C22', $item->ochnoe);
+            $sheet->setCellValue('D22', $item->dot);
+            $sheet->setCellValue('E22', $item->vse);
+            $sheet->setCellValue('F22', $item->work_grant);
+            $sheet->setCellValue('G22', $item->work_platn);
+            $sheet->setCellValue('H22', $item->work_dot);
+            $sheet->setCellValue('I22', $item->work_vse);
+            $sheet->setCellValue('J22', $item->percent);
+            $sheet->setCellValue('K22', $item->notwork_vse);
+            $sheet->setCellValue('L22', $item->graduate_status);
+            $sheet->setCellValue('M22', $item->magister);
         }
 
         foreach ($dataAll as $item) {
-            $sheet->setCellValue('A19', $item->num_row);
-            $sheet->setCellValue('B19', $item->op_group);
-            $sheet->setCellValue('C19', $item->ochnoe);
-            $sheet->setCellValue('D19', $item->dot);
-            $sheet->setCellValue('E19', $item->vse);
-            $sheet->setCellValue('F19', $item->work_grant);
-            $sheet->setCellValue('G19', $item->work_platn);
-            $sheet->setCellValue('H19', $item->work_dot);
-            $sheet->setCellValue('I19', $item->work_vse);
-            $sheet->setCellValue('J19', $item->percent);
-            $sheet->setCellValue('K19', $item->notwork_vse);
-            $sheet->setCellValue('L19', $item->graduate_status);
-            $sheet->setCellValue('M19', $item->magister);
+            $sheet->setCellValue('A23', $item->num_row);
+            $sheet->setCellValue('B23', $item->op_group);
+            $sheet->setCellValue('C23', $item->ochnoe);
+            $sheet->setCellValue('D23', $item->dot);
+            $sheet->setCellValue('E23', $item->vse);
+            $sheet->setCellValue('F23', $item->work_grant);
+            $sheet->setCellValue('G23', $item->work_platn);
+            $sheet->setCellValue('H23', $item->work_dot);
+            $sheet->setCellValue('I23', $item->work_vse);
+            $sheet->setCellValue('J23', $item->percent);
+            $sheet->setCellValue('K23', $item->notwork_vse);
+            $sheet->setCellValue('L23', $item->graduate_status);
+            $sheet->setCellValue('M23', $item->magister);
         }
 
-        $sheet = $spreadsheet->getActiveSheet()->getStyle('A1:M19')->getAlignment()->setWrapText(true)->setHorizontal('center');
+        $sheet = $spreadsheet->getActiveSheet()->getStyle('A1:M23')->getAlignment()->setWrapText(true)->setHorizontal('center');
         $sheet->getActiveSheet()->getColumnDimension('B')->setWidth(45);
-        $sheet->getActiveSheet()->getStyle('A1:M19')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-        $sheet->getActiveSheet()->getStyle('A1:M2')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('69b2d6');
-        $sheet->getActiveSheet()->getStyle('A14:M14')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('69b2d6');
-        $sheet->getActiveSheet()->getStyle('A13:M13')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('afbbc4');
-        $sheet->getActiveSheet()->getStyle('A18:M18')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('afbbc4');
-        $sheet->getActiveSheet()->getStyle('A19:M19')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('60a689');
+        $sheet->getActiveSheet()->getStyle('A1:M23')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
+        $sheet->getActiveSheet()->getStyle('A1:M2')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('4682b4');
+        $sheet->getActiveSheet()->getStyle('A3:M3')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('8fbc8f');
+        $sheet->getActiveSheet()->getStyle('A4:M4')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('add8e6');
+        $sheet->getActiveSheet()->getStyle('A10:M10')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('add8e6');
+        $sheet->getActiveSheet()->getStyle('A14:M14')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('add8e6');
+        $sheet->getActiveSheet()->getStyle('A18:M18')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('4682b4');
+        $sheet->getActiveSheet()->getStyle('A17:M17')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('afbbc4');
+        $sheet->getActiveSheet()->getStyle('A22:M22')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('afbbc4');
+        $sheet->getActiveSheet()->getStyle('A23:M23')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('60a689');
 
 
 

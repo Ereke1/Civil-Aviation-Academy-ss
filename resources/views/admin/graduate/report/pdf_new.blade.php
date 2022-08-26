@@ -89,23 +89,125 @@
                     <th>Всего</th>
                     <th>%</th>
                 </tr>
-                @foreach ($dataBach as $item)
-                    <tr>
-                        <td>{!! $item->num_row !!}</td>
-                        <td>{!! $item->speciality !!}</td>
-                        <td>{!! $item->ochnoe !!}</td>
-                        <td>{!! $item->dot !!}</td>
-                        <td>{!! $item->vse !!}</td>
-                        <td>{!! $item->work_grant !!}</td>
-                        <td>{!! $item->work_platn !!}</td>
-                        <td>{!! $item->work_dot !!}</td>
-                        <td>{!! $item->work_vse !!}</td>
-                        <td>{!! $item->percent !!}</td>
-                        <td>{!! $item->notwork_vse !!}</td>
-                        <td>{!! $item->graduate_status !!}</td>
-                        <td>{!! $item->magister !!}</td>
-                    </tr>
-                @endforeach
+                @foreach ($dataBachInzh as $item)
+                <tr style="background-color: darkseagreen">
+                    <td>{!! $item->num_row !!}</td>
+                    <td>{!! $item->speciality !!}</td>
+                    <td>{!! $item->ochnoe !!}</td>
+                    <td>{!! $item->dot !!}</td>
+                    <td>{!! $item->vse !!}</td>
+                    <td>{!! $item->work_grant !!}</td>
+                    <td>{!! $item->work_platn !!}</td>
+                    <td>{!! $item->work_dot !!}</td>
+                    <td>{!! $item->work_vse !!}</td>
+                    <td>{!! $item->percent !!}</td>
+                    <td>{!! $item->notwork_vse !!}</td>
+                    <td>{!! $item->graduate_status !!}</td>
+                    <td>{!! $item->magister !!}</td>
+                </tr>
+            @endforeach
+            @foreach ($dataBachB067 as $item)
+                <tr style="background-color: lightblue">
+                    <td>{!! $item->num_row !!}</td>
+                    <td>{!! $item->speciality !!}</td>
+                    <td>{!! $item->ochnoe !!}</td>
+                    <td>{!! $item->dot !!}</td>
+                    <td>{!! $item->vse !!}</td>
+                    <td>{!! $item->work_grant !!}</td>
+                    <td>{!! $item->work_platn !!}</td>
+                    <td>{!! $item->work_dot !!}</td>
+                    <td>{!! $item->work_vse !!}</td>
+                    <td>{!! $item->percent !!}</td>
+                    <td>{!! $item->notwork_vse !!}</td>
+                    <td>{!! $item->graduate_status !!}</td>
+                    <td>{!! $item->magister !!}</td>
+                </tr>
+            @endforeach
+            @foreach ($dataBachB067op as $item)
+                <tr>
+                    <td>{!! $item->num_row !!}</td>
+                    <td>{!! $item->speciality !!}</td>
+                    <td>{!! $item->ochnoe !!}</td>
+                    <td>{!! $item->dot !!}</td>
+                    <td>{!! $item->vse !!}</td>
+                    <td>{!! $item->work_grant !!}</td>
+                    <td>{!! $item->work_platn !!}</td>
+                    <td>{!! $item->work_dot !!}</td>
+                    <td>{!! $item->work_vse !!}</td>
+                    <td>{!! $item->percent !!}</td>
+                    <td>{!! $item->notwork_vse !!}</td>
+                    <td>{!! $item->graduate_status !!}</td>
+                    <td>{!! $item->magister !!}</td>
+                </tr>
+            @endforeach
+            @foreach ($dataBachB167 as $item)
+                <tr style="background-color: lightblue">
+                    <td>{!! $item->num_row !!}</td>
+                    <td>{!! $item->speciality !!}</td>
+                    <td>{!! $item->ochnoe !!}</td>
+                    <td>{!! $item->dot !!}</td>
+                    <td>{!! $item->vse !!}</td>
+                    <td>{!! $item->work_grant !!}</td>
+                    <td>{!! $item->work_platn !!}</td>
+                    <td>{!! $item->work_dot !!}</td>
+                    <td>{!! $item->work_vse !!}</td>
+                    <td>{!! $item->percent !!}</td>
+                    <td>{!! $item->notwork_vse !!}</td>
+                    <td>{!! $item->graduate_status !!}</td>
+                    <td>{!! $item->magister !!}</td>
+                </tr>
+            @endforeach
+            @foreach ($dataBachB167op as $item)
+                <tr>
+                    <td>{!! $item->num_row !!}</td>
+                    <td>{!! $item->speciality !!}</td>
+                    <td>{!! $item->ochnoe !!}</td>
+                    <td>{!! $item->dot !!}</td>
+                    <td>{!! $item->vse !!}</td>
+                    <td>{!! $item->work_grant !!}</td>
+                    <td>{!! $item->work_platn !!}</td>
+                    <td>{!! $item->work_dot !!}</td>
+                    <td>{!! $item->work_vse !!}</td>
+                    <td>{!! $item->percent !!}</td>
+                    <td>{!! $item->notwork_vse !!}</td>
+                    <td>{!! $item->graduate_status !!}</td>
+                    <td>{!! $item->magister !!}</td>
+                </tr>
+            @endforeach
+            @foreach ($dataBachTransport as $item)
+                <tr style="background-color: lightblue">
+                    <td>{!! $item->num_row !!}</td>
+                    <td>{!! $item->speciality !!}</td>
+                    <td>{!! $item->ochnoe !!}</td>
+                    <td>{!! $item->dot !!}</td>
+                    <td>{!! $item->vse !!}</td>
+                    <td>{!! $item->work_grant !!}</td>
+                    <td>{!! $item->work_platn !!}</td>
+                    <td>{!! $item->work_dot !!}</td>
+                    <td>{!! $item->work_vse !!}</td>
+                    <td>{!! $item->percent !!}</td>
+                    <td>{!! $item->notwork_vse !!}</td>
+                    <td>{!! $item->graduate_status !!}</td>
+                    <td>{!! $item->magister !!}</td>
+                </tr>
+            @endforeach
+            @foreach ($dataBachTransportOp as $item)
+                <tr>
+                    <td>{!! $item->num_row !!}</td>
+                    <td>{!! $item->speciality !!}</td>
+                    <td>{!! $item->ochnoe !!}</td>
+                    <td>{!! $item->dot !!}</td>
+                    <td>{!! $item->vse !!}</td>
+                    <td>{!! $item->work_grant !!}</td>
+                    <td>{!! $item->work_platn !!}</td>
+                    <td>{!! $item->work_dot !!}</td>
+                    <td>{!! $item->work_vse !!}</td>
+                    <td>{!! $item->percent !!}</td>
+                    <td>{!! $item->notwork_vse !!}</td>
+                    <td>{!! $item->graduate_status !!}</td>
+                    <td>{!! $item->magister !!}</td>
+                </tr>
+            @endforeach
 
                 @foreach ($dataBachAll as $item)
                     <tr class="bg-chair">
