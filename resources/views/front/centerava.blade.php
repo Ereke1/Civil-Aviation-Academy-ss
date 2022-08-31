@@ -8,12 +8,12 @@
       <div class="breadcrumbs">
           <a href="{!! route('front.home') !!}">{{ __('Главная') }}</a>
           <span> > </span>
-          <span>Учебные центры</span>
+          <span>{{ __('Учебные центры') }}</span>
       </div>
     <div class="row">
       <div class="col text-center mb-5">
-        <h1 class="display-4">Учебные центры</h1>
-        <p class="lead">Академия гражданской авиации осуществляет профессиональную подготовку, переподготовку авиационных специалистов в соответствии с требованиями Типовых программ профессиональной подготовки авиационного персонала, а также правилами ИКАО. </p>
+        <h1 class="display-4">{{ __('Учебные центры') }}</h1>
+        <p class="lead">{{ __('Академия гражданской авиации осуществляет профессиональную подготовку, переподготовку авиационных специалистов в соответствии с требованиями Типовых программ профессиональной подготовки авиационного персонала, а также правилами ИКАО.') }}</p>
       </div>
     </div>
     <div class="row">
@@ -23,7 +23,7 @@
             <div class="card-img-overlay d-flex flex-column">
               <div class="card-body">
                 <small class="card-meta mb-2">---------------------</small>
-                <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/trenazhernyy-kompleks">Лётно-тренажерный центр</a></h3>
+                <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/trenazhernyy-kompleks">{{ __('Лётно-тренажерный центр') }}</a></h3>
               </div>
             </div>
         </div>
@@ -34,8 +34,8 @@
           <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
               <small class="card-meta mb-2">---------------------</small>
-              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/centr-iata">Учебный центр IATA</a></h3>
-              
+              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/centr-iata">{{ __('Учебный центр IATA') }}</a></h3>
+
             </div>
           </div>
         </div>
@@ -46,8 +46,8 @@
           <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
               <small class="card-meta mb-2">---------------------</small>
-              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/uchebnyy-centr-po-aviacionnoy-bezopasnosti-ikao">Учебный центр по авиационной безопасности ICAO</a></h3>
-             
+              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/uchebnyy-centr-po-aviacionnoy-bezopasnosti-ikao">{{ __('Учебный центр по авиационной безопасности ICAO') }}</a></h3>
+
             </div>
           </div>
         </div>
@@ -58,8 +58,8 @@
           <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
               <small class="card-meta mb-2">---------------------</small>
-              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/centr-podgotovki-specialistov-po-to-vs-i-aerodromnogo-obsluzhivaniya-183">Центр переподготовки авиационного персонала</a></h3>
-            
+              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/centr-podgotovki-specialistov-po-to-vs-i-aerodromnogo-obsluzhivaniya-183">{{ __('Центр переподготовки авиационного персонала') }}</a></h3>
+
             </div>
           </div>
         </div>
@@ -70,8 +70,8 @@
           <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
               <small class="card-meta mb-2">---------------------</small>
-              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="centr-podgotovki-specialistov-po-ovd-i-testirovaniya-aviacionnogo-personala-182">Центр тестирования и ОВД</a></h3>
-            
+              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="centr-podgotovki-specialistov-po-ovd-i-testirovaniya-aviacionnogo-personala-182">{{ __('Центр тестирования и ОВД') }}</a></h3>
+
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@
           <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
               <small class="card-meta mb-2">---------------------</small>
-              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/aviacionno-tehnicheskiy-centr-240">Авиационно-технический центр</a></h3>
+              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/aviacionno-tehnicheskiy-centr-240">{{ __('Авиационно-технический центр') }}</a></h3>
             </div>
           </div>
         </div>
@@ -92,8 +92,8 @@
     <div class="row">
       <div class="col text-center mb-5">
       <br>
-      <p class="lead"><a href="/upravlenie-bezopasnostyu-poletov">Управление безопасностью полётов</a></p><br>
-        <h2>НАШИ СЕРТИФИКАТЫ</h2>
+      <p class="lead"><a href="/upravlenie-bezopasnostyu-poletov">{{ __('Управление безопасностью полётов') }}</a></p><br>
+        <h2>{{ __('НАШИ СЕРТИФИКАТЫ') }}</h2>
         <p class="lead"><a href="https://aaq.kz/wp-content/uploads/2021/09/kz63vgl00000098_ru.pdf">Область действия сертификата авиационного учебного центра</a></p>
         <p class="lead"><a href="https://aaq.kz/wp-content/uploads/2021/10/sertifikat-trenazhera-alsim-alx-85-auk-aga-ot-01.10.2021.pdf">Сертификат соответствия тренажера ALSIM (ALX-85) FNPT II / MCC</a></p>
         <p class="lead"><a href="https://aaq.kz/wp-content/uploads/2021/09/sertifikat-trenazhera-v737ng-auk-aga-ot-05.08.2021.pdf">Сертификат соответствия тренажера FNPT Level II / MCC+FTD1 (B737NG)</a></p>
