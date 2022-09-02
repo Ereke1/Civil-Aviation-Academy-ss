@@ -40,7 +40,7 @@ class DepartmentPageController extends Controller
 	public function create()
 	{
 		$departments = Department::all();
-		$slugs = ['history', 'teachers', 'science'/* , 'laboratories' */];
+		$slugs = ['history', 'teachers', 'science', 'laboratories', 'page5', 'page6'];
 		return view('admin.website.department-page.create', compact('departments', 'slugs'));
 	}
 
@@ -113,7 +113,7 @@ class DepartmentPageController extends Controller
 		$slug = $department_page-> slug;
 		$image = $department_page->image;
 		$departments = Department::all();
-		$slugs = ['history', 'teachers', 'science'/* , 'laboratories' */];
+		$slugs = ['history', 'teachers', 'science', 'laboratories', 'page5', 'page6'];
 		return view('admin.website.department-page.edit', compact('department_page', 'departments', 'slugs', 'name', 'content', 'sort', 'department_id', 'slug', 'image'));
 	}
 
