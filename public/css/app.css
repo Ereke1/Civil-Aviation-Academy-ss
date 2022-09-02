@@ -18567,6 +18567,39 @@ h2 {
   min-height: 75vh;
 }
 
+#pages img {
+    max-width: 100% !important;
+    height: auto !important;
+    padding-right: 15px !important;
+}
+
+#pages table {
+    max-width: 100% !important;
+    height: auto !important;
+    margin-left: 0px !important;
+}
+
+#pages iframe {
+    width: 100% !important;
+}
+
+#departments img {
+    max-width: 100% !important;
+    height: auto !important;
+    padding-right: 15px !important;
+}
+
+#departments table {
+    max-width: 100% !important;
+    height: auto !important;
+    margin-left: 0px !important;
+}
+
+#departments iframe {
+    width: 100% !important;
+    height: auto !important;
+}
+
 h4 {
   font-size: 1.3rem;
 }
@@ -22431,17 +22464,27 @@ h2.section-heading {
   line-height: 24px;
   margin: 50px 0 15px 0 ;
 }
-#content95 .title {
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 24px;
-  margin: 0 50px 15px 0 ;
-}
-#content95 .timeline-content {
-  width: 50%;
-  padding:0 0 20px 50px;
-  float: right
-}
+
+@media screen and (min-width: 767px) {
+    #content95 .title {
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 24px;
+        margin: 0 50px 15px 0 ;
+      }
+      #content95 .timeline-content {
+        width: 50%;
+        padding:0 0 20px 50px;
+        float: right
+      }
+  }
+  @media screen and (min-width: 767px) {
+    .hr_history {
+        display: none;
+      }
+  }
+
+
 .main-timeline .description {
   margin-bottom: 0
 }

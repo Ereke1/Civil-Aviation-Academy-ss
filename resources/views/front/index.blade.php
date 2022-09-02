@@ -142,7 +142,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-university"></i></div>
-              <h4><a href="https://do.agakaz.kz">Platonus</a></h4>
+              <h4><a href="https://do.agakaz.kz" class="stretched-link">Platonus</a></h4>
               <p>{{ __('Автоматизированная информационная система, позволяющая комплексно автоматизировать процессы кредитной системы и дистанционной технологии обучения.') }}</p>
             </div>
           </div>
@@ -150,7 +150,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-user-plus"></i></div>
-              <h4><a href="/enrollee">{{ __('Онлайн регистрация абитуриентов') }}</a></h4>
+              <h4><a href="/enrollee" class="stretched-link">{{ __('Онлайн регистрация абитуриентов') }}</a></h4>
               <p>{{ __('Онлайн-регистрация на программы бакалавриата, магистратуры и докторантуры открыта круглый год, что является преимуществом и упрощает подачу заявления.') }}</p>
             </div>
           </div>
@@ -158,7 +158,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-id-card"></i></div>
-              <h4><a href="/virtualnaya-priemnaya-komissiya-174">{{ __('Виртуальная приемная') }}</a></h4>
+              <h4><a href="/virtualnaya-priemnaya-komissiya-174" class="stretched-link">{{ __('Виртуальная приемная') }}</a></h4>
               <p>{{ __('Наши сотрудники приемной комиссии помогут Вам подать заявку. График консультаций с 9:00 до 17:00 с понедельника по пятницу.') }}</p>
             </div>
           </div>
@@ -166,7 +166,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-book"></i></div>
-              <h4><a href="http://bi.agakaz.kz">{{ __('Онлайн библиотека') }}</a></h4>
+              <h4><a href="http://bi.agakaz.kz" class="stretched-link">{{ __('Онлайн библиотека') }}</a></h4>
               <p>{{ __('Распределенная информационная система, позволяющая надежно сохранять и эффективно использовать разнородные коллекции электронных документов.') }}</p>
             </div>
           </div>
@@ -174,7 +174,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-credit-card"></i></div>
-              <h4><a href="/bezkomissionnaya-onlayn-oplata-za-obuchenie">{{ __('Онлайн оплата') }}</a></h4>
+              <h4><a href="/bezkomissionnaya-onlayn-oplata-za-obuchenie" class="stretched-link">{{ __('Онлайн оплата') }}</a></h4>
               <p>{{ __('Безкомиссионная онлайн оплата за обучение. Инструкция для оплаты за обучение.') }}</p>
             </div>
           </div>
@@ -182,7 +182,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-graduation-cap"></i></div>
-              <h4><a href="https://moodle.agakaz.kz/">Moodle</a></h4>
+              <h4><a href="https://moodle.agakaz.kz/" class="stretched-link">Moodle</a></h4>
               <p>{{ __('Веб-система для организации дистанционного обучения и управления им.') }}</p>
             </div>
           </div>
