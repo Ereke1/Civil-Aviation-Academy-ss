@@ -101,7 +101,7 @@
                                         </div>
                                         <div>
                                             <label>Сортировка</label>
-                                            <input type="text" name="sort" value="{!! $item->sort !!}">
+                                            <input type="number" name="sort" value="{!! $item->sort !!}">
                                         </div>
                                         <div>
                                             <label for="active">Активен</label>
@@ -202,7 +202,7 @@
                                                 </div>
                                                 <div>
                                                     <label>Сортировка</label>
-                                                    <input type="text" name="sort" value="{!! $child->sort !!}">
+                                                    <input type="number" name="sort" value="{!! $child->sort !!}">
                                                 </div>
                                                 <div>
                                                     <label for="active">Активен</label>
@@ -307,7 +307,7 @@
                                                         </div>
                                                         <div>
                                                             <label>Сортировка</label>
-                                                            <input type="text" name="sort" value="{!! $chi->sort !!}">
+                                                            <input type="number" name="sort" value="{!! $chi->sort !!}">
                                                         </div>
                                                         <div>
                                                             <label for="active">Активен</label>
@@ -416,7 +416,7 @@
                                                                 </div>
                                                                 <div>
                                                                     <label>Сортировка</label>
-                                                                    <input type="text" name="sort"
+                                                                    <input type="number" name="sort"
                                                                         value="{!! $ch->sort !!}">
                                                                 </div>
                                                                 <div>
@@ -474,8 +474,16 @@
                                 </select>
                             </div>
                             <div>
-                                <label>Название:</label>
+                                <label>Название (ru):</label>
                                 <input type="text" name="title_ru" required>
+                            </div>
+                            <div>
+                                <label>Название (kk):</label>
+                                <input type="text" name="title_kk" required>
+                            </div>
+                            <div>
+                                <label>Название (en):</label>
+                                <input type="text" name="title_en" required>
                             </div>
                             <div>
                                 <label>Ссылка:</label>
@@ -483,7 +491,7 @@
                             </div>
                             <div>
                                 <label>Сортировка</label>
-                                <input type="text" name="sort">
+                                <input type="number" name="sort">
                             </div>
                             <div class="block">
                                 <button type="submit" class="btn btn-primary">Добавить элемент</button>

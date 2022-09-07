@@ -85,6 +85,7 @@ class BachelorController extends Controller
                         ->orderBy($sort, 'desc')
                         ->paginate(100)
                         ->appends($whereArray)
+                        ->appends('created_at_from',$created_at_from,)
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } elseif ($sort === 'surname') {
@@ -96,6 +97,7 @@ class BachelorController extends Controller
                         ->orderBy($sort, 'asc')
                         ->paginate(100)
                         ->appends($whereArray)
+                        ->appends('created_at_from',$created_at_from,)
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } else {
@@ -108,6 +110,7 @@ class BachelorController extends Controller
                         ->orderBy('created_at', 'desc')
                         ->paginate(100)
                         ->appends($whereArray)
+                        ->appends('created_at_from',$created_at_from,)
                         ->appends(compact('countENT'));
                 }
             }
@@ -122,6 +125,7 @@ class BachelorController extends Controller
                         ->orderBy($sort, 'desc')
                         ->paginate(100)
                         ->appends($whereArray)
+                        ->appends('created_at_to',$created_at_to,)
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } elseif ($sort === 'surname') {
@@ -134,6 +138,7 @@ class BachelorController extends Controller
                         ->orderBy($sort, 'asc')
                         ->paginate(100)
                         ->appends($whereArray)
+                        ->appends('created_at_to',$created_at_to,)
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } else {
@@ -146,6 +151,7 @@ class BachelorController extends Controller
                         ->orderBy('created_at', 'desc')
                         ->paginate(100)
                         ->appends($whereArray)
+                        ->appends('created_at_to',$created_at_to,)
                         ->appends(compact('countENT'));
                 }
             }
@@ -161,6 +167,8 @@ class BachelorController extends Controller
                         ->orderBy($sort, 'desc')
                         ->paginate(100)
                         ->appends($whereArray)
+                        ->appends('created_at_from',$created_at_from,)
+                        ->appends('created_at_to',$created_at_to,)
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } elseif ($sort === 'surname') {
@@ -174,6 +182,8 @@ class BachelorController extends Controller
                         ->orderBy($sort, 'asc')
                         ->paginate(100)
                         ->appends($whereArray)
+                        ->appends('created_at_from',$created_at_from,)
+                        ->appends('created_at_to',$created_at_to,)
                         ->appends(compact('countENT'))
                         ->appends(compact('sort'));
                 } else {
@@ -187,6 +197,8 @@ class BachelorController extends Controller
                         ->orderBy('created_at', 'desc')
                         ->paginate(100)
                         ->appends($whereArray)
+                        ->appends('created_at_from',$created_at_from,)
+                        ->appends('created_at_to',$created_at_to,)
                         ->appends(compact('countENT'));
                 }
             }
@@ -209,6 +221,7 @@ class BachelorController extends Controller
                     ->orderBy($sort, 'desc')
                     ->paginate(100)
                     ->appends($whereArray)
+                    ->appends('created_at_from',$created_at_from,)
                     ->appends(compact('sort'));
             } elseif (isset($created_at_to) && !isset($created_at_from)) {
                 $data = DB::table('applications')
@@ -219,6 +232,7 @@ class BachelorController extends Controller
                 ->orderBy($sort, 'desc')
                 ->paginate(100)
                 ->appends($whereArray)
+                ->appends('created_at_to',$created_at_to,)
                 ->appends(compact('sort'));
             }
             else {
@@ -231,6 +245,8 @@ class BachelorController extends Controller
                 ->orderBy($sort, 'desc')
                 ->paginate(100)
                 ->appends($whereArray)
+                ->appends('created_at_from',$created_at_from,)
+                ->appends('created_at_to',$created_at_to,)
                 ->appends(compact('sort'));
             }
         } elseif ($sort === 'surname') {
@@ -252,6 +268,7 @@ class BachelorController extends Controller
                     ->orderBy($sort, 'asc')
                     ->paginate(100)
                     ->appends($whereArray)
+                    ->appends('created_at_from',$created_at_from,)
                     ->appends(compact('sort'));
             } elseif (isset($created_at_to) && !isset($created_at_from)) {
                 $data = DB::table('applications')
@@ -262,6 +279,7 @@ class BachelorController extends Controller
                     ->orderBy($sort, 'asc')
                     ->paginate(100)
                     ->appends($whereArray)
+                    ->appends('created_at_to',$created_at_to,)
                     ->appends(compact('sort'));
             } else {
                 $data = DB::table('applications')
@@ -273,6 +291,8 @@ class BachelorController extends Controller
                 ->orderBy($sort, 'asc')
                 ->paginate(100)
                 ->appends($whereArray)
+                ->appends('created_at_from',$created_at_from,)
+                ->appends('created_at_to',$created_at_to,)
                 ->appends(compact('sort'));
             }
         } else {
@@ -293,7 +313,8 @@ class BachelorController extends Controller
                     ->where('created_at', '>=', "$created_at_from 00:00:00")
                     ->orderBy('created_at', 'desc')
                     ->paginate(100)
-                    ->appends($whereArray);
+                    ->appends($whereArray)
+                    ->appends('created_at_from',$created_at_from,);
             }
             elseif (isset($created_at_to) && !isset($created_at_from)) {
                 $data = DB::table('applications')
@@ -303,7 +324,8 @@ class BachelorController extends Controller
                     ->where('created_at', '<=', "$created_at_to 00:00:00")
                     ->orderBy('created_at', 'desc')
                     ->paginate(100)
-                    ->appends($whereArray);
+                    ->appends($whereArray)
+                    ->appends('created_at_to',$created_at_to,);
             }
             elseif (isset($created_at_to) && isset($created_at_from)) {
                 $data = DB::table('applications')
@@ -314,7 +336,9 @@ class BachelorController extends Controller
                     ->where('created_at', '<=', "$created_at_to 00:00:00")
                     ->orderBy('created_at', 'desc')
                     ->paginate(100)
-                    ->appends($whereArray);
+                    ->appends($whereArray)
+                    ->appends('created_at_from',$created_at_from,)
+                    ->appends('created_at_to',$created_at_to,);
             }
         }
 
