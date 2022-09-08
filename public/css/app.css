@@ -17647,6 +17647,7 @@ header .logo2 img {
     }
 
     .navbar .sitenavigation.is-tapped>ul li.nav-dropdown:after {
+        font-family: initial;
         content: "\2B9E";
         position: absolute;
         color: white;
@@ -17667,6 +17668,7 @@ header .logo2 img {
     }
 
     .navbar .sitenavigation.is-tapped>ul li.expanded li:first-child:before {
+        font-family: initial;
         content: "\2B9F";
         position: absolute;
         color: white;
