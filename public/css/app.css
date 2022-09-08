@@ -17647,7 +17647,7 @@ header .logo2 img {
     }
 
     .navbar .sitenavigation.is-tapped>ul li.nav-dropdown:after {
-        content: "⮞";
+        content: "\2B9E";
         position: absolute;
         color: white;
         padding: 0;
@@ -17667,7 +17667,7 @@ header .logo2 img {
     }
 
     .navbar .sitenavigation.is-tapped>ul li.expanded li:first-child:before {
-        content: "⮟";
+        content: "\2B9F";
         position: absolute;
         color: white;
         padding: 0;
