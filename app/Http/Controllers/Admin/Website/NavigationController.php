@@ -23,7 +23,12 @@ class NavigationController extends Controller
 				->where('college', true)
 				->get();
 			$tree = Navigation::treeCollege();
-		} else {
+		}
+        elseif ($user_department === 'ДМР') {
+			$data = Navigation::where('active', true)->get();
+			$tree = Navigation::tree();
+		}
+         else {
 			$data = Navigation::where(['active' => true, 'college' => false])->get();
 			$tree = Navigation::tree();
 		}
@@ -104,7 +109,7 @@ class NavigationController extends Controller
 	{
 		$worker_permission = User::find(Auth::user()->id)->workersPermissions;
 		$worker_permission = unserialize($worker_permission->permission);
-		
+
 		if (isset($worker_permission->navigation->update) && $worker_permission->navigation->update == true) {
 			$user_department = Navigation::userInfo()->department;
 			$data = Navigation::find($id);

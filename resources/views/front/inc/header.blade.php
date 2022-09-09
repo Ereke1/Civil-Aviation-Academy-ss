@@ -90,12 +90,10 @@
                                                                                     @if (Config::get('app.locale') == 'ru')
                                                                                         {!! $ch->title_ru !!}
                                                                                     @elseif (
-                                                                                        Config::get('app.locale') ==
-                                                                                        'kk' )
+                                                                                        Config::get('app.locale') == 'kk' )
                                                                                         {!! $ch->title_kk !!}
                                                                                     @elseif (
-                                                                                        Config::get('app.locale') ==
-                                                                                        'en' )
+                                                                                        Config::get('app.locale') == 'en' )
                                                                                         {!! $ch->title_en !!}
                                                                                     @endif
                                                                                 </a>

@@ -191,7 +191,7 @@
                                                             @if ($child->id !== $item->id)
                                                                 <option value="{!! $item->id !!}"
                                                                     @if ($child->parrent_id === $item->id) selected @endif>
-                                                                    {!! $item->title_ru !!}</option>
+                                                                    {!! $item->title_ru !!} @if ($item->college === 1) *(категория: колледж) @endif</option>
                                                             @endif
                                                         @endforeach
                                                     </select>
@@ -296,7 +296,7 @@
                                                                     @if ($chi->id !== $item->id)
                                                                         <option value="{!! $item->id !!}"
                                                                             @if ($chi->parrent_id === $item->id) selected @endif>
-                                                                            {!! $item->title_ru !!}</option>
+                                                                            {!! $item->title_ru !!} @if ($item->college === 1) *(категория: колледж) @endif</option>
                                                                     @endif
                                                                 @endforeach
                                                             </select>
@@ -403,8 +403,7 @@
                                                                             @if ($ch->id !== $item->id)
                                                                                 <option value="{!! $item->id !!}"
                                                                                     @if ($ch->parrent_id === $item->id) selected @endif>
-                                                                                    {!! $item->title_ru !!}
-                                                                                </option>
+                                                                                    {!! $item->title_ru !!} @if ($item->college === 1) *(категория: колледж) @endif</option>
                                                                             @endif
                                                                         @endforeach
                                                                     </select>
