@@ -17429,7 +17429,7 @@ header .logo2 img {
 
 .sitenavigation li a {
     color: black;
-    font-weight: 600;
+    font-weight: 530;
     text-decoration: none;
     display: block;
     padding: 11px 14px;
@@ -17591,7 +17591,7 @@ header .logo2 img {
     .navbar .sitenavigation.is-tapped>ul li {
         width: 100%;
         background: #04279d;
-        border-bottom: solid 2px #1e90ff;
+        border-bottom: solid 1px lightgrey;
         -webkit-tap-highlight-color: transparent;
     }
 
@@ -17616,9 +17616,9 @@ header .logo2 img {
         margin-top: 0;
     }
 
-    .navbar .sitenavigation.is-tapped>ul ul li {
+    /* .navbar .sitenavigation.is-tapped>ul ul li {
         border-bottom: solid 1px #f9f9f9;
-    }
+    } */
 
     .navbar .sitenavigation.is-tapped>ul ul li li a {
         background-color: #f9f9f9;
@@ -17659,7 +17659,6 @@ header .logo2 img {
         margin-top: -40px;
         text-align: center;
         font-size: 20px;
-        font-weight: 700;
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -17681,7 +17680,6 @@ header .logo2 img {
         margin-top: -40px;
         text-align: center;
         font-size: 20px;
-        font-weight: 700;
         padding-top: 10px;
         padding-bottom: 10px;
     }
