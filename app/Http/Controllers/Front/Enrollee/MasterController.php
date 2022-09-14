@@ -72,7 +72,7 @@ class MasterController extends Controller
 					'updated_at' => \Carbon\Carbon::now('Asia/Almaty'),
 				]
 			);
-		Mail::to('of.mok.aga@mail.ru')->send(new ApplicationsMail());
+		// Mail::to('of.mok.aga@mail.ru')->send(new ApplicationsMail());
 		return redirect()->back()->with('alert', 'Ваша анкета успешно отправлена!');
 	}
 

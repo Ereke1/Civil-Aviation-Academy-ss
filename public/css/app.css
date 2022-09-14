@@ -23109,3 +23109,10 @@ h2.section-heading {
         margin-bottom: 10px
     }
 }
+
+
+@media screen and (max-width: 1199px) {
+    #pages span {
+       font-size: 100% !important;
+    }
+}
