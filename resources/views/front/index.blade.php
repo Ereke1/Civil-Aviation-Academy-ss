@@ -34,20 +34,6 @@
                     </div>
                 </div>
             </div><!--/.item-->
-            {{-- <div class="item" style=" background:url(/assets/images/slider/fond_qh.png); width:100%; background-size: cover; background-position: center;">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 text-center">
-                                <div class="carousel-content">
-                                <h2></h2><br> <br><h2></h2>
-                                    <a class="btn btn-primary btn-lg stretched-link" href="/news/86" style="color:darkblue;" >Перейти на страницу</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item--> --}}
             <div class="item" style="background: url(/assets/images/slider/2.jfif);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
@@ -56,6 +42,20 @@
                                 <div class="carousel-content">
                                     <h2>Учебные центры</h2><br>
                                     <a class="btn btn-primary btn-lg" href="/centerava" style="">Перейти на страницу</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item" style="background: url(/assets/images/slider/psy.png);width: 100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2 style="color:darkblue;"></h2><br>
+                                    <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdzsqo6x-8rqi_gzQFaY38UqGK3yIaMaFcwHvr8CYR0ls1OPQ/viewform" style="color:darkblue;">Заявка на консультацию <br> психолога</a>
                                 </div>
                             </div>
                         </div>
