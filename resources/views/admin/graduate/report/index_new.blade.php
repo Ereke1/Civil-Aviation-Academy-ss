@@ -12,11 +12,9 @@
                 <th rowspan="2">Образовательная программа</th>
                 <th rowspan="2">Очная форма обучения</th>
                 <th rowspan="2">ДОТ</th>
-                <th rowspan="2">Ожидаемый выпуск в 2022 году</th>
+                <th rowspan="2">Выпуск 2022</th>
                 <th colspan="5">Трудоустроены</th>
                 <th rowspan="2">Не трудоустроены</th>
-                <th rowspan="2">примечание</th>
-                <th rowspan="2">Поступающие в магистратуру</th>
             </tr>
             <tr style="background: #00249c;color: #fff;">
                 <th>грант</th>
@@ -38,8 +36,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
             @foreach ($dataBachB067 as $item)
@@ -55,8 +51,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
             @foreach ($dataBachB067op as $item)
@@ -72,8 +66,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
             @foreach ($dataBachB167 as $item)
@@ -89,8 +81,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
             @foreach ($dataBachB167op as $item)
@@ -106,8 +96,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
             @foreach ($dataBachTransport as $item)
@@ -123,8 +111,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
             @foreach ($dataBachTransportOp as $item)
@@ -140,8 +126,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
 
@@ -158,8 +142,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
 
@@ -181,8 +163,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
 
@@ -199,8 +179,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
 
@@ -216,8 +194,6 @@
                     <td>{!! $item->work_vse !!}</td>
                     <td>{!! $item->percent !!}</td>
                     <td>{!! $item->notwork_vse !!}</td>
-                    <td>{!! $item->graduate_status !!}</td>
-                    <td>{!! $item->magister !!}</td>
                 </tr>
             @endforeach
         </table>

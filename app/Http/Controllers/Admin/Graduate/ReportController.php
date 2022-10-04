@@ -3858,18 +3858,14 @@ class ReportController extends Controller
         $sheet->mergeCells('E1:E2');
         $sheet->mergeCells('F1:J1');
         $sheet->mergeCells('K1:K2');
-        $sheet->mergeCells('L1:L2');
-        $sheet->mergeCells('M1:M2');
 
         $sheet->setCellValue('A1', '№ п/п');
         $sheet->setCellValue('B1', 'Образовательная программа');
         $sheet->setCellValue('C1', 'Очная форма обучения');
         $sheet->setCellValue('D1', 'ДОТ');
-        $sheet->setCellValue('E1', 'Ожидаемый выпуск в 2022 году');
+        $sheet->setCellValue('E1', 'Выпуск 2022');
         $sheet->setCellValue('F1', 'Трудоустроены');
         $sheet->setCellValue('K1', 'Не трудоустроены');
-        $sheet->setCellValue('L1', 'примечание');
-        $sheet->setCellValue('M1', 'Поступающие в магистратуру');
         $sheet->setCellValue('F2', 'грант');
         $sheet->setCellValue('G2', 'платное');
         $sheet->setCellValue('H2', 'ДОТ');
@@ -3891,8 +3887,6 @@ class ReportController extends Controller
             $sheet->setCellValue('I' . $sn, $item->work_vse);
             $sheet->setCellValue('J' . $sn, $item->percent);
             $sheet->setCellValue('K' . $sn, $item->notwork_vse);
-            $sheet->setCellValue('L' . $sn, $item->graduate_status);
-            $sheet->setCellValue('M' . $sn, $item->magister);
             $sn++;
         }
         foreach ($dataBachB067 as $item) {
@@ -3907,8 +3901,6 @@ class ReportController extends Controller
             $sheet->setCellValue('I' . $sn, $item->work_vse);
             $sheet->setCellValue('J' . $sn, $item->percent);
             $sheet->setCellValue('K' . $sn, $item->notwork_vse);
-            $sheet->setCellValue('L' . $sn, $item->graduate_status);
-            $sheet->setCellValue('M' . $sn, $item->magister);
             $sn++;
         }
         foreach ($dataBachB067op as $item) {
@@ -3923,8 +3915,6 @@ class ReportController extends Controller
             $sheet->setCellValue('I' . $sn, $item->work_vse);
             $sheet->setCellValue('J' . $sn, $item->percent);
             $sheet->setCellValue('K' . $sn, $item->notwork_vse);
-            $sheet->setCellValue('L' . $sn, $item->graduate_status);
-            $sheet->setCellValue('M' . $sn, $item->magister);
             $sn++;
         }
         foreach ($dataBachB167 as $item) {
@@ -3939,8 +3929,6 @@ class ReportController extends Controller
             $sheet->setCellValue('I' . $sn, $item->work_vse);
             $sheet->setCellValue('J' . $sn, $item->percent);
             $sheet->setCellValue('K' . $sn, $item->notwork_vse);
-            $sheet->setCellValue('L' . $sn, $item->graduate_status);
-            $sheet->setCellValue('M' . $sn, $item->magister);
             $sn++;
         }
         foreach ($dataBachB167op as $item) {
@@ -3955,8 +3943,6 @@ class ReportController extends Controller
             $sheet->setCellValue('I' . $sn, $item->work_vse);
             $sheet->setCellValue('J' . $sn, $item->percent);
             $sheet->setCellValue('K' . $sn, $item->notwork_vse);
-            $sheet->setCellValue('L' . $sn, $item->graduate_status);
-            $sheet->setCellValue('M' . $sn, $item->magister);
             $sn++;
         }
         foreach ($dataBachTransport as $item) {
@@ -3971,8 +3957,6 @@ class ReportController extends Controller
             $sheet->setCellValue('I' . $sn, $item->work_vse);
             $sheet->setCellValue('J' . $sn, $item->percent);
             $sheet->setCellValue('K' . $sn, $item->notwork_vse);
-            $sheet->setCellValue('L' . $sn, $item->graduate_status);
-            $sheet->setCellValue('M' . $sn, $item->magister);
             $sn++;
         }
         foreach ($dataBachTransportOp as $item) {
@@ -3987,8 +3971,6 @@ class ReportController extends Controller
             $sheet->setCellValue('I' . $sn, $item->work_vse);
             $sheet->setCellValue('J' . $sn, $item->percent);
             $sheet->setCellValue('K' . $sn, $item->notwork_vse);
-            $sheet->setCellValue('L' . $sn, $item->graduate_status);
-            $sheet->setCellValue('M' . $sn, $item->magister);
             $sn++;
         }
 
@@ -4004,8 +3986,6 @@ class ReportController extends Controller
             $sheet->setCellValue('I17', $item->work_vse);
             $sheet->setCellValue('J17', $item->percent);
             $sheet->setCellValue('K17', $item->notwork_vse);
-            $sheet->setCellValue('L17', $item->graduate_status);
-            $sheet->setCellValue('M17', $item->magister);
         }
 
         $sn = 19;
@@ -4021,8 +4001,6 @@ class ReportController extends Controller
             $sheet->setCellValue('I' . $sn, $item->work_vse);
             $sheet->setCellValue('J' . $sn, $item->percent);
             $sheet->setCellValue('K' . $sn, $item->notwork_vse);
-            $sheet->setCellValue('L' . $sn, $item->graduate_status);
-            $sheet->setCellValue('M' . $sn, $item->magister);
             $sn++;
         }
 
@@ -4038,8 +4016,6 @@ class ReportController extends Controller
             $sheet->setCellValue('I22', $item->work_vse);
             $sheet->setCellValue('J22', $item->percent);
             $sheet->setCellValue('K22', $item->notwork_vse);
-            $sheet->setCellValue('L22', $item->graduate_status);
-            $sheet->setCellValue('M22', $item->magister);
         }
 
         foreach ($dataAll as $item) {
@@ -4054,22 +4030,20 @@ class ReportController extends Controller
             $sheet->setCellValue('I23', $item->work_vse);
             $sheet->setCellValue('J23', $item->percent);
             $sheet->setCellValue('K23', $item->notwork_vse);
-            $sheet->setCellValue('L23', $item->graduate_status);
-            $sheet->setCellValue('M23', $item->magister);
         }
 
-        $sheet = $spreadsheet->getActiveSheet()->getStyle('A1:M23')->getAlignment()->setWrapText(true)->setHorizontal('center');
+        $sheet = $spreadsheet->getActiveSheet()->getStyle('A1:K23')->getAlignment()->setWrapText(true)->setHorizontal('center');
         $sheet->getActiveSheet()->getColumnDimension('B')->setWidth(45);
-        $sheet->getActiveSheet()->getStyle('A1:M23')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-        $sheet->getActiveSheet()->getStyle('A1:M2')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('4682b4');
-        $sheet->getActiveSheet()->getStyle('A3:M3')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('8fbc8f');
-        $sheet->getActiveSheet()->getStyle('A4:M4')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('add8e6');
-        $sheet->getActiveSheet()->getStyle('A10:M10')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('add8e6');
-        $sheet->getActiveSheet()->getStyle('A14:M14')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('add8e6');
-        $sheet->getActiveSheet()->getStyle('A18:M18')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('4682b4');
-        $sheet->getActiveSheet()->getStyle('A17:M17')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('afbbc4');
-        $sheet->getActiveSheet()->getStyle('A22:M22')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('afbbc4');
-        $sheet->getActiveSheet()->getStyle('A23:M23')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('60a689');
+        $sheet->getActiveSheet()->getStyle('A1:K23')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
+        $sheet->getActiveSheet()->getStyle('A1:K2')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('4682b4');
+        $sheet->getActiveSheet()->getStyle('A3:K3')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('8fbc8f');
+        $sheet->getActiveSheet()->getStyle('A4:K4')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('add8e6');
+        $sheet->getActiveSheet()->getStyle('A10:K10')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('add8e6');
+        $sheet->getActiveSheet()->getStyle('A14:K14')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('add8e6');
+        $sheet->getActiveSheet()->getStyle('A18:K18')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('4682b4');
+        $sheet->getActiveSheet()->getStyle('A17:K17')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('afbbc4');
+        $sheet->getActiveSheet()->getStyle('A22:K22')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('afbbc4');
+        $sheet->getActiveSheet()->getStyle('A23:K23')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('60a689');
 
 
 

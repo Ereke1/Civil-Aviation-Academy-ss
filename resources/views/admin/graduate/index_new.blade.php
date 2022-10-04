@@ -58,12 +58,21 @@
                         Докторантура</option>
                 </select>
             </div>
-            <div>
+            {{-- <div>
                 <label for="reference">Справка</label>
                 <select name="reference">
                     <option value=""></option>
                     <option value="1" @if ($reference === '1') selected @endif>Да</option>
                     <option value="0" @if ($reference === '0') selected @endif>Нет</option>
+                </select>
+            </div> --}}
+            <div>
+                <label for="employment_type">Вид трудоустройства</label>
+                <select name="employment_type">
+                    <option value=""></option>
+                    <option value="Трудоустроен, по специальности" @if ($employment_type === 'Трудоустроен, по специальности') selected @endif>Трудоустроен, по специальности</option>
+                    <option value="Трудоустроен, в авиации" @if ($employment_type === 'Трудоустроен, в авиации') selected @endif>Трудоустроен, в авиации</option>
+                    <option value="Трудоустроен, не в авиации" @if ($employment_type === 'Трудоустроен, не в авиации') selected @endif>Трудоустроен, не в авиации</option>
                 </select>
             </div>
             <div>
@@ -76,15 +85,15 @@
                         Да</option>
                 </select>
             </div>
-            <div>
+            {{-- <div>
                 <label for="direction">Направление</label>
                 <select name="direction">
                     <option value=""></option>
                     <option value="1" @if ($direction === '1') selected @endif>Да</option>
                     <option value="0" @if ($direction === '0') selected @endif>Нет</option>
                 </select>
-            </div>
-            <div>
+            </div> --}}
+            {{-- <div>
                 <label for="work">Имеется работа</label>
                 <select name="work">
                     <option value=""></option>
@@ -93,7 +102,7 @@
                     <option value="0" @if ($work === '0') selected @endif>Нет
                     </option>
                 </select>
-            </div>
+            </div> --}}
             <div>
                 <label for="graduate_status">Статус выпускника</label>
                 <select name="graduate_status">
