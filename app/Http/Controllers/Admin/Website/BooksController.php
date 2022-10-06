@@ -314,6 +314,6 @@ class BooksController extends Controller
 			}
 		}
 		$book->delete();
-		return redirect()->back()->with('alert', 'Новость успешно удалена!');
+		return redirect()->back()->with('alert', 'Книга успешно удалена!');
 	}
 }
