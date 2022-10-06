@@ -60,7 +60,7 @@
         </div>
     </section>
 
-    @if (!empty($bookcollection))
+    @if (count($bookcollection) > 0)
     <section id="book_collection">
         <div class="container">
             <div class="title text-center wow animated zoomInDown">
@@ -113,7 +113,7 @@
     </section>
     @endif
 
-    @if (!empty($newbooks))
+    @if (count($newbooks) > 0)
     <section id="newBooks">
         <div class="container">
             <div class="row">

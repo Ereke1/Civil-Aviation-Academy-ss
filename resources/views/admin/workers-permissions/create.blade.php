@@ -17,7 +17,7 @@
                 </label>
                 <select name="user_id" class="form-control">
 						@foreach ($users as $user)
-							<option value="{!! $user->user_id !!}">{!! $user->surname !!} {!! $user->name !!} {!! $user->patronymic !!}</option>	
+							<option value="{!! $user->user_id !!}">{!! $user->surname !!} {!! $user->name !!} {!! $user->patronymic !!}</option>
 						@endforeach
 					 </select>
             </div>
@@ -186,6 +186,41 @@
                             </div>
                             <div class="col-md-3 pl-1 pr-1 text-center">
                                 <select class="form-control" name="news_delete">
+                                    <option value="0">Нет</option>
+                                    <option value="1">Да</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom border-info pt-1 pb-1">
+                    <div class="col-md-3 pl-3 pr-3">
+                        <label class="mb-0">
+                            <h5 class="mb-0">Книги</h5>
+                        </label>
+                    </div>
+                    <div class="col-md-9 pl-0 pr-0">
+                        <div class="d-flex">
+                            <div class="col-md-3 pl-1 pr-1 text-center">
+                                <select class="form-control" name="books_read">
+                                    <option value="0">Нет</option>
+                                    <option value="1">Да</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 pl-1 pr-1 text-center">
+                                <select class="form-control" name="books_create">
+                                    <option value="0">Нет</option>
+                                    <option value="1">Да</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 pl-1 pr-1 text-center">
+                                <select class="form-control" name="books_update">
+                                    <option value="0">Нет</option>
+                                    <option value="1">Да</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 pl-1 pr-1 text-center">
+                                <select class="form-control" name="books_delete">
                                     <option value="0">Нет</option>
                                     <option value="1">Да</option>
                                 </select>
