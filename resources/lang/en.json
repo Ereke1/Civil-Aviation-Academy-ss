@@ -48,5 +48,12 @@
 	"Наши":"Our",
 	"Услуги":"Services",
 	"Сервисы":"Services",
-	"Посмотреть все":"View all"
+	"Посмотреть все":"View all",
+    "Библиотека":"Library",
+    "О библиотеке":"About the library",
+    "Электронная библиотека":"Electronic Library",
+    "Читателям":"To readers",
+    "Памятка для читателей":"A memo for readers",
+    "ПОДБОРКА КНИГ":"A SELECTION OF BOOKS",
+    "Новые поступления":"New arrivals"
 }

@@ -23,6 +23,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 		Route::resources([
 			'navigation' => 'NavigationController',
 			'pages' => 'PageController',
+			'books' => 'BooksController',
+			'book_collection' => 'BookCollectionController',
 			'news' => 'NewsController',
 			'events' => 'EventController',
 			'department' => 'DepartmentController',
@@ -100,6 +102,7 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	// HOMEPAGE
 	Route::get('', 'HomeController@index')->name('home');
 	Route::get('centerava','CenterController@index')->name('centerava');
+	Route::get('library','BooksController@index')->name('library');
 	Route::get('virtual_admission','VirtualAdmissionController@index')->name('virtual_admission');
 	Route::get('news', 'NewsController@index')->name('news');
 	Route::get('news/{slug}', 'NewsController@show')->name('news.show');

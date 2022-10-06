@@ -27,7 +27,7 @@
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
                                 <h2></h2><br> <br><h2></h2>
-                                    <a class="btn btn-primary btn-lg stretched-link" href="/vakansii" style="color:darkblue;">Перейти на страницу</a>
+                                    <a class="btn btn-primary btn-lg stretched-link" href="/vakansii">Перейти на страницу</a>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
                                     <h2>Учебные центры</h2><br>
-                                    <a class="btn btn-primary btn-lg" href="/centerava" style="">Перейти на страницу</a>
+                                    <a class="btn btn-primary btn-lg" href="/centerava">Перейти на страницу</a>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
                                     <h2 style="color:darkblue;"></h2><br>
-                                    <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdzsqo6x-8rqi_gzQFaY38UqGK3yIaMaFcwHvr8CYR0ls1OPQ/viewform" style="color:darkblue;">Заявка на консультацию <br> психолога</a>
+                                    <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdzsqo6x-8rqi_gzQFaY38UqGK3yIaMaFcwHvr8CYR0ls1OPQ/viewform">Заявка на консультацию <br> психолога</a>
                                 </div>
                             </div>
                         </div>
@@ -518,7 +518,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="title  wow animated rollIn">
+						<div class="title wow animated rollIn">
 							<h2>{{ __('Новости') }}</h2>
 							<p>Flying is a beautiful dream, and the Academy is the place <br> where your dreams come true.</p>
 						</div>
@@ -544,11 +544,11 @@
                                         </small>
 										<p>
                                         @if (Config::get('app.locale') === 'ru')
-                                            {!! Str::limit(strip_tags(unserialize($item->descriptions)->ru), 200) !!}
+                                            {!! Str::limit(strip_tags(unserialize($item->descriptions)->ru), 100) !!}
                                         @elseif(Config::get('app.locale') === 'kk')
-                                            {!! Str::limit(strip_tags(unserialize($item->descriptions)->kk), 200) !!}
+                                            {!! Str::limit(strip_tags(unserialize($item->descriptions)->kk), 100) !!}
                                         @else
-                                            {!! Str::limit(strip_tags(unserialize($item->descriptions)->en), 200) !!}
+                                            {!! Str::limit(strip_tags(unserialize($item->descriptions)->en), 100) !!}
                                         @endif
 										</p>
 										<a href="{{ route('front.news.show', $item->slug) }}" class="btn btn-read">{{ __('Подробнее') }}</a>

@@ -83,12 +83,12 @@ $(document).ready(function() {
 	var time = 7; // time in seconds
 
 	 var $progressBar,
-	  $bar, 
-	  $elem, 
-	  isPause, 
+	  $bar,
+	  $elem,
+	  isPause,
 	  tick,
 	  percentTime;
- 
+
 	//Init the carousel
 	$("#main-slider").find('.owl-carousel').owlCarousel({
 	  slideSpeed : 500,
@@ -105,7 +105,7 @@ $(document).ready(function() {
 	  //autoHeight : true,
 	  transitionStyle : "fadeUp"
 	});
-	
+
 	//Init progressBar where elem is $("#owl-demo")
 	function progressBar(elem){
 	  $elem = elem;
@@ -114,7 +114,7 @@ $(document).ready(function() {
 	  //start counting
 	  start();
 	}
- 
+
 	//create div#progressBar and div#bar then append to $(".owl-carousel")
 	function buildProgressBar(){
 	  $progressBar = $("<div>",{
@@ -125,7 +125,7 @@ $(document).ready(function() {
 	  });
 	  $progressBar.append($bar).appendTo($elem);
 	}
- 
+
 	function start() {
 	  //reset timer
 	  percentTime = 0;
@@ -133,7 +133,7 @@ $(document).ready(function() {
 	  //run interval every 0.01 second
 	  tick = setInterval(interval, 12);
 	};
- 
+
 	function interval() {
 	  if(isPause === false){
 		percentTime += 1 / time;
@@ -142,7 +142,7 @@ $(document).ready(function() {
 		 });
 		//if percentTime is equal or greater than 100
 		if(percentTime >= 100){
-		  //slide to next item 
+		  //slide to next item
 		  $elem.trigger('owl.next')
 		}
 	  }
@@ -166,11 +166,49 @@ $(document).ready(function() {
             }
         }
 	});
-	//pause while dragging 
+    $("#book_collections").owlCarousel({
+		autoPlay : 5000,
+	    items : 4,
+	    responsiveClass:true,
+	    responsive: {
+            0:{
+                items : 1
+            },
+            480:{
+                items : 1
+            },
+            768:{
+                items : 3
+            },
+            1200:{
+                items: 3
+            }
+        }
+	});
+	//pause while dragging
 	function pauseOnDragging(){
 	  isPause = true;
 	}
 	$("#blog-post").owlCarousel({
+        autoPlay : 5000,
+        items : 3,
+        responsiveClass:true,
+        responsive: {
+            0:{
+                items : 1
+            },
+            480:{
+                items : 1
+            },
+            768:{
+                items : 3
+            },
+            1200:{
+                items: 3
+            }
+        }
+    });
+	$("#newBook").owlCarousel({
         autoPlay : 5000,
         items : 3,
         responsiveClass:true,
@@ -251,8 +289,8 @@ jQuery(function ($) { "use strict";
 
 function parallaxInit() {
 	$('#counter').parallax("50%", 0.3);
-	
+
 }
 
- 
-            
+
+
