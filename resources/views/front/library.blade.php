@@ -97,11 +97,11 @@
                                         @endif
                                 </p>
                                         @if (Config::get('app.locale') === 'ru')
-                                            {!! Str::limit(unserialize($item->descriptions)->ru, 250) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->ru, 75) !!}
                                         @elseif(Config::get('app.locale') === 'kk')
-                                            {!! Str::limit(unserialize($item->descriptions)->kk, 250) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->kk, 75) !!}
                                         @else
-                                            {!! Str::limit(unserialize($item->descriptions)->en, 250) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->en, 75) !!}
                                         @endif
                             </div>
                         @endforeach
@@ -149,15 +149,13 @@
                                             {!! Str::limit(unserialize($item->authors)->en, 40) !!}
                                         @endif
                                     </small>
-                                    <p>
                                         @if (Config::get('app.locale') === 'ru')
-                                            {!! Str::limit(unserialize($item->descriptions)->ru, 250) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->ru, 150) !!}
                                         @elseif(Config::get('app.locale') === 'kk')
-                                            {!! Str::limit(unserialize($item->descriptions)->kk, 250) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->kk, 150) !!}
                                         @else
-                                            {!! Str::limit(unserialize($item->descriptions)->en, 250) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->en, 150) !!}
                                         @endif
-                                    </p>
                                 </div>
                             </div>
                         @endforeach
