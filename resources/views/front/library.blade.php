@@ -97,11 +97,11 @@
                                         @endif
                                 </p>
                                         @if (Config::get('app.locale') === 'ru')
-                                            {!! Str::limit(unserialize($item->descriptions)->ru) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->ru, 250) !!}
                                         @elseif(Config::get('app.locale') === 'kk')
-                                            {!! Str::limit(unserialize($item->descriptions)->kk) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->kk, 250) !!}
                                         @else
-                                            {!! Str::limit(unserialize($item->descriptions)->en) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->en, 250) !!}
                                         @endif
                             </div>
                         @endforeach
@@ -151,11 +151,11 @@
                                     </small>
                                     <p>
                                         @if (Config::get('app.locale') === 'ru')
-                                            {!! Str::limit(unserialize($item->descriptions)->ru) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->ru, 250) !!}
                                         @elseif(Config::get('app.locale') === 'kk')
-                                            {!! Str::limit(unserialize($item->descriptions)->kk) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->kk, 250) !!}
                                         @else
-                                            {!! Str::limit(unserialize($item->descriptions)->en) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->en, 250) !!}
                                         @endif
                                     </p>
                                 </div>

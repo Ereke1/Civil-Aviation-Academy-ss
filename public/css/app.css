@@ -23254,6 +23254,7 @@ h2.section-heading {
 #newBook .content {
     padding: 30px 25px;
     text-align: center;
+    height: 400px;
 }
 
 #newBook .content h4 {
