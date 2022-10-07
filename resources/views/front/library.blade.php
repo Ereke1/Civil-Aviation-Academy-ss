@@ -149,15 +149,13 @@
                                             {!! Str::limit(unserialize($item->authors)->en, 40) !!}
                                         @endif
                                     </small>
-                                    <p>
                                         @if (Config::get('app.locale') === 'ru')
-                                            {!! Str::limit(unserialize($item->descriptions)->ru, 150) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->ru, 100) !!}
                                         @elseif(Config::get('app.locale') === 'kk')
-                                            {!! Str::limit(unserialize($item->descriptions)->kk, 150) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->kk, 100) !!}
                                         @else
-                                            {!! Str::limit(unserialize($item->descriptions)->en, 150) !!}
+                                            {!! Str::limit(unserialize($item->descriptions)->en, 100) !!}
                                         @endif
-                                    </p>
                                 </div>
                             </div>
                         @endforeach
