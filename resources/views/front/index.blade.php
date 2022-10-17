@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                    <h2>Учебные центры</h2><br>
+                                    <h2>Профессиональная подготовка и переподготовка авиационного персонала в соответствии с требованиями ИКАО</h2><br>
                                     <a class="btn btn-primary btn-lg" href="/centerava">Перейти на страницу</a>
                                 </div>
                             </div>

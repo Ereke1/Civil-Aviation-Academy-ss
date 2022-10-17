@@ -19806,9 +19806,8 @@ h4 {
 
 #main-slider .slider-inner h2 {
     margin-top: 247px;
-    font-size: 40px;
+    font-size: 2vw;
     line-height: 1;
-    text-transform: capitalize;
     color: #fff;
     text-align: center;
 }
@@ -19822,9 +19821,8 @@ h4 {
 
     #main-slider .slider-inner h2 {
         margin-top: 80px;
-        font-size: 40px;
+        font-size: 4vw;
         line-height: 1;
-        text-transform: capitalize;
         color: #fff;
         text-align: center;
     }
@@ -19837,14 +19835,10 @@ h4 {
         width: 150%;
         min-height: 300px;
     }
-}
-
-@media (max-width:470) {
     #main-slider .slider-inner h2 {
         margin-top: 100px;
-        font-size: 40px;
+        font-size: 5vw;
         line-height: 1;
-        text-transform: capitalize;
         color: #fff;
         text-align: center;
     }
@@ -19912,6 +19906,7 @@ h4 {
         background: darkgoldenrod;
         border: 1px solid darkblue;
         color: white;
+        font-size: 13px;
     }
 
     #main-slider .slider-inner .btn.btn-primary {
@@ -19926,6 +19921,7 @@ h4 {
         background: darkgoldenrod;
         border: 1px solid darkblue;
         color: white;
+        font-size: 13px;
     }
 
     #main-slider .slider-inner .btn.btn-primary {
