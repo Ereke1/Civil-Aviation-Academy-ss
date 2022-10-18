@@ -20,6 +20,20 @@
                     </div>
                 </div>
             </div><!--/.item-->
+            <div class="item" style="background: url(/assets/images/slider/pen_cademy.png);width: 100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2></h2><br> <br><h2></h2>
+                                    <a class="btn btn-primary btn-lg" href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174">Перейти на страницу</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
             <div class="item" style=" background:url(/assets/images/slider/Screenshot_7.png); width:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
@@ -75,7 +89,20 @@
                     </div>
                 </div>
             </div><!--/.item-->
-
+            <div class="item" style="background: url(/assets/images/slider/pen_cademy.png);width: 100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2></h2><br> <br><h2></h2>
+                                    <a class="btn btn-primary btn-lg" href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174">Перейти на страницу</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
         </div><!--/.owl-carousel-->
     </section><!--/#main-slider-->
      <!-- <section id="slider" class="mb-4 mt-5">
