@@ -7,31 +7,40 @@
     <div class="container" style="margin-bottom: 5vw">
         <img src="/virtual consultations.jpeg" alt="">
       <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-          <div class="icon-box virtual_adm">
-            <h4><a class="stretched-link" href="/priemnaya-komissiya-242">Приемная комиссия</a></h4>
-            <p> График работы:<br>
-                • Период работы 1 июня – 15 сентября 2022 г.<br>
-                • Понедельник - суббота, с 9:00 ч. до 18:30 ч.<br>
-                • Выходной - воскресенье<br>
-                • С 13 по 20 июля в период приема заявлений для участия в конкурсе образовательного
-                гранта рабочее время 24/7 (онлайн)<br>
-                • С 10 по 28 августа в период приема оригиналов документов для зачисления на 1 курс
-                Рабочее время 24/7 (онлайн)
-            </p>
-          </div>
+        <div class="col-sm-6 col-lg-4 d-flex align-items-stretch mt-4 wow fadeInUp">
+            <p><img align="center" alt="" src="/assets/images/upload/antikor.png" style="width: 100%;" />&nbsp;</p>
         </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-          <div class="icon-box virtual_adm">
-            <h4><a class="stretched-link" href="#">Офис регистратора</a></h4>
+        <div class="col-sm-6 col-lg-8 align-items-stretch mt-4 wow fadeInUp">
+          <div class="icon-box antikor col-12">
+            <h4><a class="stretched-link" href="#">Комплаенс-офицер</a></h4>
             <p></p>
           </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-          <div class="icon-box virtual_adm">
-            <h4><a class="stretched-link" href="#">Эдвайзинг</a></h4>
+          <div class="icon-box antikor col-12">
+            <h4><a class="stretched-link" href="#">Цели и задачи </a></h4>
+            <p></p>
+          </div>
+          <div class="icon-box antikor col-12">
+            <h4><a class="stretched-link" href="#">Нормативно правовые и иные акты в сфере противодействия коррупции</a></h4>
+            <p></p>
+          </div>
+          <div class="icon-box antikor col-12">
+            <h4><a class="stretched-link" href="#">Внутренние НПА</a></h4>
+            <p></p>
+          </div>
+          <div class="icon-box antikor col-12">
+            <h4><a class="stretched-link" href="#">Внутренний анализ коррупционных рисков</a></h4>
+            <p></p>
+          </div>
+          <div class="icon-box antikor col-12">
+            <h4><a class="stretched-link" href="#">НПА по Международному стандарту ISO 37001:2016</a></h4>
+            <p></p>
+          </div>
+          <div class="icon-box antikor col-12">
+            <h4><a class="stretched-link" href="#">Мероприятия в рамках профилактики противодействия коррупции</a></h4>
+            <p></p>
+          </div>
+          <div class="icon-box antikor col-12">
+            <h4><a class="stretched-link" href="#">Аудиоматериалы, направленные на продвижение антикоррупционной политики и формирование рациональной идеологии</a></h4>
             <p></p>
           </div>
         </div>

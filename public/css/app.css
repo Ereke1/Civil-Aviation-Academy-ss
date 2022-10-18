@@ -19903,9 +19903,6 @@ h4 {
 
 @media (max-width: 470px) {
     #main-slider .slider-inner .btn.btn-primary:hover {
-        background: darkgoldenrod;
-        border: 1px solid darkblue;
-        color: white;
         font-size: 13px;
     }
 
@@ -19918,9 +19915,6 @@ h4 {
 
 @media (max-width: 979px) {
     #main-slider .slider-inner .btn.btn-primary:hover {
-        background: darkgoldenrod;
-        border: 1px solid darkblue;
-        color: white;
         font-size: 13px;
     }
 
@@ -20074,6 +20068,18 @@ h4 {
     width: 100%;
 }
 
+.services .antikor {
+    padding: 15px 10px;
+    transition: all ease-in-out 0.3s;
+    background: #fefefe;
+    box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
+    border-radius: 18px;
+    border-bottom: 5px solid #fff;
+    border: 1px solid darkblue;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
 .services .library {
     padding: 30px 20px;
     transition: all ease-in-out 0.3s;
@@ -20111,6 +20117,12 @@ h4 {
     font-size: 18px;
 }
 
+.services .antikor h4 {
+    font-weight: 700;
+    margin-bottom: -5px;
+    font-size: 15px;
+}
+
 .services .icon-box h4 a {
     color: #282828;
     transition: ease-in-out 0.3s;
@@ -20124,6 +20136,10 @@ h4 {
 }
 
 .services .virtual_adm h4 a:hover {
+    text-decoration: none;
+}
+
+.services .antikor h4 a:hover {
     text-decoration: none;
 }
 
@@ -20147,6 +20163,12 @@ h4 {
     transform: translateY(-10px);
     border-color: darkgoldenrod;
     border-bottom: 5px solid darkgoldenrod;
+}
+
+.services .antikor:hover {
+    transform: translateY(-2px);
+    border-color: darkgoldenrod;
+    border-bottom: 2px solid darkgoldenrod;
 }
 
 .services .library:hover {
