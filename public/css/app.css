@@ -19859,10 +19859,10 @@ h4 {
 
 #main-slider .slider-inner .btn {
     margin-top: 20px;
-    background: transparent;
+    background: #0244ad;
     border-radius: 30px;
-    /* color: black; */
-    background-image: linear-gradient(144deg,#0244ad, #437ad1,#6ba4ff);
+    border-color: #0244ad;
+    /* background-image: linear-gradient(144deg,#0244ad, #437ad1,#6ba4ff); */
 }
 
 #main-slider .slider-inner .btn.btn-primary {

@@ -68,7 +68,7 @@
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                    <h2 style="color:darkblue;"></h2><br>
+                                    <h2></h2><br>
                                     <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdzsqo6x-8rqi_gzQFaY38UqGK3yIaMaFcwHvr8CYR0ls1OPQ/viewform">Заявка на консультацию <br> психолога</a>
                                 </div>
                             </div>
@@ -83,20 +83,6 @@
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item-->
-            <div class="item" style="background: url(/assets/images/slider/pen_cademy.png);width: 100%; background-size: cover; background-position: center;">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 text-center">
-                                <div class="carousel-content">
-                                    <h2></h2><br> <br><h2></h2>
-                                    <a class="btn btn-primary btn-lg" href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174">Перейти на страницу</a>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +143,7 @@
             </div>
         </div>
     </section>-->
-        <section id="services" class="services">
+    <section id="services" class="services">
       <div class="container">
 
       <div class="title text-center wow animated zoomInDown">
@@ -185,15 +171,15 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-id-card"></i></div>
-              <h4><a href="/virtualnaya-priemnaya-komissiya-174" class="stretched-link">{{ __('Виртуальная приемная') }}</a></h4>
-              <p>{{ __('Наши сотрудники приемной комиссии помогут Вам подать заявку. График консультаций с 9:00 до 17:00 с понедельника по пятницу.') }}</p>
+              <h4><a href="/virtualnaya-priemnaya-komissiya-174" class="stretched-link">{{ __('Виртуальная общественная приемная - Open Academy') }}</a></h4>
+              <p>{{ __('В данном разделе обучающиеся, преподаватели и сотрудники Академии могут обратиться и задать интересующие их вопросы, поделиться новыми идеями и предложениями') }}</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-book"></i></div>
-              <h4><a href="http://bi.agakaz.kz" class="stretched-link">{{ __('Онлайн библиотека') }}</a></h4>
+              <h4><a href="/library" class="stretched-link">{{ __('Библиотека') }}</a></h4>
               <p>{{ __('Распределенная информационная система, позволяющая надежно сохранять и эффективно использовать разнородные коллекции электронных документов.') }}</p>
             </div>
           </div>
