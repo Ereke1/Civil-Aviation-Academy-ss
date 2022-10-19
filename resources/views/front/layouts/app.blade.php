@@ -43,6 +43,7 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/88889254" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <meta name="google-site-verification" content="-SmAC8_ritbytm6qztKH-Nql9SV6xun5O45UHHKFdLY" />
+    <script src="//code.jivosite.com/widget/Hsokgxk4wm" async></script>
 </head>
 
 <body class="homepage">
