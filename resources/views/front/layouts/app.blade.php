@@ -43,7 +43,6 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/88889254" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <meta name="google-site-verification" content="-SmAC8_ritbytm6qztKH-Nql9SV6xun5O45UHHKFdLY" />
-    <script src="//code.jivosite.com/widget/Hsokgxk4wm" async></script>
 </head>
 
 <body class="homepage">
@@ -52,6 +51,17 @@
     @include('front.inc.header')
     @yield('content')
     @include('front.inc.footer')
+    
+    <script type="text/javascript">
+            document.umnicoWidgetHash = 'a32ece089856b146b032f5d409e1e560';
+            var x = document.createElement('script');
+            x.src = 'https://umnico.com/assets/widget-loader.js';
+            x.type = 'text/javascript';
+            x.charset = 'UTF-8';
+            x.async = true;
+            document.body.appendChild(x);
+        </script>
+        
 </body>
 @yield('scripts')
 
