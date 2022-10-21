@@ -5,29 +5,29 @@
 @section('content')
 <section id="main-slider">
         <div class="owl-carousel">
-            <div class="item" style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/1n.jpg); width:100%; background-size: cover; background-position: center;">
+            <div class="item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/open_academy.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                    <h2>Приемная комиссия</h2> <br>
-
-                                    <a class="btn btn-primary btn-lg" href="/enrollee">Оставить заявку</a>
+                                    <h2>{{ __('Виртуальная общественная приемная - Open Academy') }}</h2>
+                                    <a class="btn btn-primary btn-lg" href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174">Перейти на страницу</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div><!--/.item-->
-            <div class="item" style="background: url(/assets/images/slider/pen_cademy.png);width: 100%; background-size: cover; background-position: center;">
+            <div class="item" style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/1n.jpg); width:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                    <h2></h2><br> <br><h2></h2>
-                                    <a class="btn btn-primary btn-lg" href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174">Перейти на страницу</a>
+                                    <h2>Приемная комиссия</h2>
+
+                                    <a class="btn btn-primary btn-lg" href="/enrollee">Оставить заявку</a>
                                 </div>
                             </div>
                         </div>
