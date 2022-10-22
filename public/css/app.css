@@ -20635,7 +20635,7 @@ h4 {
 /*---------BLOCKS-----------*/
 #blocks1 {
     background: white;
-    padding: 7vw 0;
+    padding: 1vw 0;
 }
 
 #blocks1_empty {
@@ -20682,11 +20682,47 @@ h4 {
     }
 }
 
+.cardscontainer{
+    width: 70% !important;
+}
+
+@media screen and (max-width: 1200px) {
+    .cardscontainer{
+        width: 80% !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .cardscontainer{
+        width: 100% !important;
+    }
+}
+
+/* @media screen and (max-width: 575px) {
+    .cardscontainer{
+        width: 70% !important;
+    }
+} */
+
 .material-card {
     position: relative;
     height: 0;
-    padding-bottom: calc(100% - 125px);
+    padding-bottom: 50%;
     margin-bottom: 6.6em;
+}
+
+@media screen and (max-width: 1200px) {
+    .material-card {
+        padding-bottom: 50%;
+        /* margin-bottom: 25vw; */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .material-card {
+        padding-bottom: calc(100% - 750px);
+        /* margin-bottom: 25vw; */
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -20703,7 +20739,7 @@ h4 {
     width: 100%;
     padding: 10px 16px;
     color: #fff;
-    font-size: .97vw;
+    font-size: .7vw;
     line-height: 1.6em;
     margin: 0;
     z-index: 10;
@@ -20712,6 +20748,46 @@ h4 {
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+}
+
+@media screen and (max-width: 1200px) {
+    .material-card h2 {
+        position: absolute;
+        top: calc(100% - 16px);
+        left: 0;
+        width: 100%;
+        padding: 10px 16px;
+        color: #fff;
+        font-size: .87vw;
+        line-height: 1.2em;
+        margin: 0;
+        z-index: 10;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .material-card h2 {
+        position: absolute;
+        top: calc(100% - 16px);
+        left: 0;
+        width: 100%;
+        padding: 10px 16px;
+        color: #fff;
+        font-size: 2vw;
+        line-height: 1.6em;
+        margin: 0;
+        z-index: 10;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -20777,7 +20853,16 @@ h4 {
     font-size: .8vw;
 }
 
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 767px) {
+    .material-card.mc-active h2 {
+        top: 0;
+        padding: 10px 16px 10px 90px;
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 575px) {
     .material-card.mc-active h2 {
         top: 0;
         padding: 10px 16px 10px 90px;
@@ -20840,7 +20925,18 @@ h4 {
     }
 }
 
-@media screen and (max-width: 1096px) and (min-width: 576px) {
+@media screen and (max-width: 767px) {
+    .material-card .mc-btn-action {
+        top: 100%;
+        font-size: 2.6vw;
+        width: 6vw;
+        height: 6vw;
+        line-height: 5.5vw;
+        border: 3px solid white;
+    }
+}
+
+@media screen and (max-width: 1096px) and (min-width: 768px) {
     .material-card .mc-btn-action {
         font-size: 0.95vw;
         width: 3vw;
@@ -20882,11 +20978,11 @@ h4 {
 
 .material-card .mc-footer h4 {
     position: absolute;
-    top: 100px;
+    /* top: 100px; */
     left: 30px;
     padding: 0;
     margin: 0;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     -webkit-transition: all 1.4s;
     -moz-transition: all 1.4s;
@@ -20895,7 +20991,13 @@ h4 {
     transition: all 1.4s;
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .material-card .mc-footer h4 {
+        font-size: 1vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
     .material-card .mc-footer h4 {
         top: 0px;
     }
@@ -20982,6 +21084,7 @@ h4 {
     z-index: 20;
 }
 
+
 .material-card.mc-active .mc-content {
     padding-top: 3vw;
 }
@@ -20999,6 +21102,17 @@ h4 {
     opacity: 1;
     overflow-y: auto;
     filter: alpha(opacity=100);
+    font-size: .7vw;
+}
+
+@media screen and (max-width: 992px) {
+    .material-card.mc-active .mc-description {
+        right: auto;
+        left: auto;
+        padding: 5px 30px 20px 10px;
+        bottom: 0;
+        font-size: .9vw;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -21007,9 +21121,9 @@ h4 {
         top: auto;
         right: auto;
         left: auto;
-        padding: 50px 30px 20px 30px;
+        padding: 55px 30px 20px 30px;
         bottom: 0;
-        font-size: 2.8vw;
+        font-size: 1.5vw;
     }
 }
 
@@ -21030,6 +21144,15 @@ h4 {
 
 .material-card.mc-active .mc-footer h4 {
     top: 15px;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .material-card.mc-active .mc-footer {
+        height: 30px;
+    }
+    .material-card.mc-active .mc-footer h4 {
+        top: 10px;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -22161,7 +22284,7 @@ h4 {
 
 .img-responsive {
     max-width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 #map {

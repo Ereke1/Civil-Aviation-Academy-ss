@@ -91,58 +91,6 @@
             </div><!--/.item-->
         </div><!--/.owl-carousel-->
     </section><!--/#main-slider-->
-     <!-- <section id="slider" class="mb-4 mt-5">
-        <div class="container">
-            <div class="d-flex flex-wrap">
-                <div class="col-md-3 col-12 pl-0 pr-0">
-                    <div class="online-services d-flex align-items-center">
-                        <div class="w-100 pl-4 pr-4">
-                            <p>
-                                <a href="/virtualnaya-priemnaya-komissiya-174" class="btn w-100">
-                                    {{ __('Виртуальная приемная комиссия') }}
-                                </a>
-                            </p>
-                            <p>
-                                <a href="/enrollee" class="btn w-100">
-                                    {{ __('Онлайн регистрация абитуриентов') }}
-                                </a>
-                            </p>
-                            <p>
-                                <a href="https://do.agakaz.kz" class="btn w-100">
-                                    Platonus
-                                </a>
-                            </p>
-                            <p>
-                                <a href="http://bi.agakaz.kz" class="btn w-100">
-                                    {{ __('Онлайн библиотека') }}
-                                </a>
-                            </p>
-                            <p>
-                                <a href="/bezkomissionnaya-onlayn-oplata-za-obuchenie"
-                                    class="btn w-100">
-                                    {{ __('Онлайн оплата') }}
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-9 col-12  pl-0 pr-0">
-
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/assets/images/slider/1.jfif" alt=""></div>
-                            <div class="swiper-slide"><img src="/assets/images/slider/2.jfif" alt=""></div>
-                            <div class="swiper-slide"><img src="/assets/images/slider/4.JPG" alt=""></div>
-                            <div class="swiper-slide"><img src="/assets/images/slider/3.JPG" alt=""></div>
-                            <div class="swiper-slide"><img src="/assets/images/slider/6.jpg" alt=""></div>
-                            <div class="swiper-slide"><img src="/assets/images/slider/5.jpeg" alt=""></div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
     <section id="services" class="services">
       <div class="container">
 
@@ -216,7 +164,7 @@
 
     </section>
     <section id="blocks1" >
-        <div class="container">
+        <div class="container cardscontainer">
             <div class="page-header title text-center" style="padding-bottom: 25px;">
                 <h1>{{ __('Академия гражданской авиации') }}<br></h1>
             </div>
@@ -224,10 +172,10 @@
                 {{-- <div id="blocks1_empty">
                 </div> --}}
 
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-12">
                     <article class="material-card Light-Blue">
                         <h2>
-                            <span>Бакалавриат</span>
+                            <span>БАКАЛАВРИАТ</span>
                             <strong>
                                 <i class="fa fa-fw fa-star"></i>
                                 11 образовательных программ
@@ -235,7 +183,7 @@
                         </h2>
                         <div class="mc-content">
                             <div class="img-container d-none d-sm-block">
-                                <img class="img-responsive" src="/assets/images/block1.jpg">
+                                <img class="img-responsive" src="/assets/images/1block1.jpg">
                             </div>
                             <div class="mc-description">
                                 Большое количество государственных образовательных грантов<br>
@@ -255,7 +203,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-12">
                     <article class="material-card Cyan">
                         <h2>
                             <span>МАГИСТРАТУРА</span>
@@ -266,7 +214,7 @@
                         </h2>
                         <div class="mc-content">
                             <div class="img-container d-none d-sm-block">
-                                <img class="img-responsive" src="/assets/images/block2.jpg">
+                                <img class="img-responsive" src="/assets/images/1block2.jpg">
                             </div>
                             <div class="mc-description">
                             Инновационные образовательные программы<br>
@@ -286,7 +234,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-12">
                     <article class="material-card Teal">
                         <h2>
                             <span>ДОКТОРАНТУРА</span>
@@ -297,7 +245,7 @@
                         </h2>
                         <div class="mc-content">
                             <div class="img-container d-none d-sm-block">
-                                <img class="img-responsive" src="/assets/images/block3.jpg">
+                                <img class="img-responsive" src="/assets/images/1block3.jpg">
                             </div>
                             <div class="mc-description">
                             Знания доступные лучшим из лучших<br>
@@ -317,97 +265,6 @@
                         </div>
                     </article>
                 </div>
-                {{-- <div  id="blocks1_empty">
-                </div>
-                <div  id="blocks1_empty">
-                </div> --}}
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <article class="material-card Deep-Purple">
-                        <h2>
-                            <span>КОЛЛЕДЖ</span>
-                            <strong>
-                                <i class="fa fa-fw fa-star"></i>
-                                Авиационный колледж
-                            </strong>
-                        </h2>
-                        <div class="mc-content">
-                            <div class="img-container d-none d-sm-block">
-                                <img class="img-responsive" src="/assets/images/block4.jpg">
-                            </div>
-                            <div class="mc-description">
-                                    Авиационный колледж является единственным учебным заведением технического и профессионального образования в Казахстане
-                            </div>
-                        </div>
-                        <a class="mc-btn-action">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                        <div class="mc-footer">
-                            <h4>
-                                <a href="/abiturientam-193">{{ __('Подробнее') }}</a>
-                            </h4>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <article class="material-card Indigo">
-                        <h2>
-                            <span>ДИСТАНЦИОННОЕ ОБУЧЕНИЕ</span>
-                            <strong>
-                                <i class="fa fa-fw fa-star"></i>
-                                Диплом престижного ВУЗа
-                            </strong>
-                        </h2>
-                        <div class="mc-content">
-                            <div class="img-container d-none d-sm-block">
-                                <img class="img-responsive" src="/assets/images/block5.jpg">
-                            </div>
-                            <div class="mc-description">
-                            Обучение в свободное время<br>
-                            Доступность учебных материалов<br>
-                            Диплом престижного ВУЗа<br>
-                            Доступные цены и удобная форма оплаты<br>
-                            Использование инновационных технологий обучения
-                            </div>
-                        </div>
-                        <a class="mc-btn-action">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                        <div class="mc-footer">
-                            <h4>
-                                <a href="https://moodle.agakaz.kz/">{{ __('Подробнее') }}</a>
-                            </h4>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <article class="material-card Blue">
-                        <h2>
-                            <span>АВИАЦИОННЫЙ УЧЕБНЫЙ КОМПЛЕКС</span>
-                            <strong>
-                                <i class="fa fa-fw fa-star"></i>
-                                Профессиональная подготовка
-                            </strong>
-                        </h2>
-                        <div class="mc-content">
-                            <div class="img-container d-none d-sm-block">
-                                <img class="img-responsive" src="/assets/images/block6.jpg">
-                            </div>
-                            <div class="mc-description">
-                                Своевременное, полное и качественное удовлетворение потребностей Академии в исправных и подготовленных к полетам воздушных судов и учебного оборудования;
-                            </div>
-                        </div>
-                        <a class="mc-btn-action">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                        <div class="mc-footer">
-                            <h4>
-                                <a href="#">{{ __('Подробнее') }}</a>
-                            </h4>
-                        </div>
-                    </article>
-                </div>
-                {{-- <div id="blocks1_empty">
-                </div> --}}
             </div>
         </div>
     </section>
@@ -477,56 +334,6 @@
 
 		</section>
 
-
-<!--    <section id="news">
-        <div class="container">
-            <h2>
-					{{ __('Новости') }}
-                <a href="/news/">
-						{{ __('Все новости') }}
-                </a>
-            </h2>
-
-            <div class="news">
-                @foreach ($news as $item)
-                    <div class="news__preview wow fadeInUp" data-wow-duration="500ms" data-wow-delay="600ms">
-                        <img class="wow fadeInUp" src="/storage/news/@if(Config::get('app.locale') === 'ru'){!! unserialize($item->bg_images)->ru !!}@elseif(Config::get('app.locale') === 'kk')@if (empty(unserialize($item->bg_images)->kk)){!! unserialize($item->bg_images)->ru !!}@else{!! unserialize($item->bg_images)->kk !!} @endif
-@elseif(Config::get('app.locale') === 'en')@if(empty(unserialize($item->bg_images)->en)) {!! unserialize($item->bg_images)->ru !!}@else{!! unserialize($item->bg_images)->en !!} @endif @endif" />
-                        <div class="content">
-                            <h4 class="heading animated fadeInDown">
-                                <a href="{{ route('front.news.show', $item->slug) }}">
-                                    @if (Config::get('app.locale') === 'ru')
-                                        {!! Str::limit(unserialize($item->titles)->ru, 38) !!}
-                                    @elseif(Config::get('app.locale') === 'kk')
-                                        {!! Str::limit(unserialize($item->titles)->kk, 35) !!}
-                                    @else
-                                        {!! Str::limit(unserialize($item->titles)->en, 38) !!}
-                                    @endif
-                                </a>
-                            </h4>
-                            <p class="content__desc animated fadeInUp">
-                                @if (Config::get('app.locale') === 'ru')
-                                    {!! Str::limit(strip_tags(unserialize($item->descriptions)->ru), 160) !!}
-                                @elseif(Config::get('app.locale') === 'kk')
-                                    {!! Str::limit(strip_tags(unserialize($item->descriptions)->kk), 160) !!}
-                                @else
-                                    {!! Str::limit(strip_tags(unserialize($item->descriptions)->en), 160) !!}
-                                @endif
-                            </p>
-                            <div class="department">
-                                <i class="fas fa-users"></i>
-                                <p>{!! $item->department !!}</p>
-                            </div>
-                            <div class="date-time">
-                                <p><i class="far fa-calendar-alt"></i> {!! date('d.m.Y', strtotime($item->publish_at)) !!}</p>
-                                <p><i class="fas fa-clock"></i> {!! date('H:i', strtotime($item->publish_at)) !!}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>-->
     <section id="blog">
 			<div class="container">
 				<div class="row">
@@ -578,48 +385,7 @@
 				</div>
 			</div>
 		</section>
-    <!-- <section id="events">
-        <div class="container wow fadeInUp">
-            <h2>{{ __('Объявления') }}</h2>
-            <div class="events">
-                @foreach ($events as $event)
-                    <div class="event wow fadeInUp">
-                        <div class="event__date-info">
-                            <p><i class="far fa-calendar-alt"></i> {!! date('d.m.Y', strtotime($event->publish_at)) !!}</p>
-                            <p><i class="fas fa-clock"></i> {!! date('H:i', strtotime($event->publish_at)) !!}</p>
-                        </div>
-                        <div class="event__preview">
-                            <h4>
-                                <a href="{{ route('front.events.show', $event->slug) }}">
-                                    @if (Config::get('app.locale') === 'ru')
-                                        {!! Str::limit(unserialize($event->titles)->ru, 38) !!}
-                                    @elseif(Config::get('app.locale') === 'kk')
-                                        {!! Str::limit(unserialize($event->titles)->kk, 35) !!}
-                                    @else
-                                        {!! Str::limit(unserialize($event->titles)->en, 38) !!}
-                                    @endif
-                                </a>
-                            </h4>
-                            <p class="content__desc">
-                                @if (Config::get('app.locale') === 'ru')
-                                    {!! Str::limit(strip_tags(unserialize($event->descriptions)->ru), 160) !!}
-                                @elseif(Config::get('app.locale') === 'kk')
-                                    {!! Str::limit(strip_tags(unserialize($event->descriptions)->kk), 160) !!}
-                                @else
-                                    {!! Str::limit(strip_tags(unserialize($event->descriptions)->en), 160) !!}
-                                @endif
-                            </p>
-                            <div class="department">
-                                <i class="fas fa-users"></i>
-                                <p>{!! $event->department !!}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-        </div>
-    </section> -->
+
     <section id="testimonial" class="parallax-section" >
 			<div class="container">
 				<div class="row">
