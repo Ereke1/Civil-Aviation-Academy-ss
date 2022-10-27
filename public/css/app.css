@@ -23544,3 +23544,26 @@ h2.section-heading {
     transform: translateY(-5px);
     border-color: darkgoldenrod;
 }
+
+.card-link{
+    font-weight: 700;
+    font-size: 15px;
+    color: #282828;
+}
+
+.card-link:hover{
+    color: #282828;
+}
+
+.card-link::after {
+    color: #282828;
+    content: "►";
+    position: absolute;
+    right: 2%;
+    transition: transform var(--collapsible-transition-duration)
+      var(--collapsible-transition-fn);
+  }
+
+.card-link:not(.collapsed)::after {
+    transform: rotate(90deg);
+}
