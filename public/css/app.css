@@ -23555,7 +23555,7 @@ h2.section-heading {
     color: #282828;
 }
 
-.card-link::after {
+.card-link .card-header::after {
     color: #282828;
     content: "►";
     position: absolute;
@@ -23564,6 +23564,6 @@ h2.section-heading {
       var(--collapsible-transition-fn);
   }
 
-.card-link:not(.collapsed)::after {
+.card-link:not(.collapsed) .card-header::after {
     transform: rotate(90deg);
 }
