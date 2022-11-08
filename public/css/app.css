@@ -17239,7 +17239,7 @@ readers do not read off random characters that represent icons */
 #top-bar .top-bar__left div a {
     color: white;
     text-decoration: none;
-    margin-left: 10px;
+    margin-left: 1px;
 }
 
 #top-bar .top-bar__left div a:hover {

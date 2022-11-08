@@ -8,6 +8,11 @@
                     </a>
                 </div>
                 <div>
+                    {{-- <div class="lang_choose float-left">
+                        <a href="/virtualnaya-priemnaya-komissiya-174" target="_blank">
+                            <i class="far fa-comments"></i> Общественная приемная
+                        </a>
+                    </div> --}}
                 <div class="lang_choose float-left">
                     <select onchange="location = this.value;">
                         @foreach ($available_locales as $locale_name => $available_locale)
