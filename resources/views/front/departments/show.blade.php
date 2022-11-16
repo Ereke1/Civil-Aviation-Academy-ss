@@ -5,9 +5,6 @@
 @section('content')
     <section id="departments">
         <div class="container">
-            <h1>
-                {{ __('Кафедры') }}
-            </h1>
             <div class="breadcrumbs">
                 <a href="{!! route('front.home') !!}">{{ __('Главная') }}</a>
                 <span> > </span>
@@ -15,16 +12,105 @@
                 <span> > </span>
                 <span>{!! __($department->name) !!}</span>
             </div>
-            <div class="d-flex flex-wrap">
-                @foreach ($pages as $page)
-                    @php
-                        $name = unserialize($page->name);
-                    @endphp
-                    <div class="col-md-4 col-sm-12">
-                        <img src="{!! $page->image !!}" alt="">
-                        <div class="title">
+            <div class="departmentBanner">
+                {!! __($department->name) !!}
+            </div>
+            @if (empty($eduP) == false)
+                <hr class="col-12" style="height: 5px; background:#081d63cc; max-width: -webkit-fill-available;" />
+                <h2 align="center">Образовательные программы</h2><br />
+                <div class="d-flex flex-wrap">
+                    @foreach ($pages as $page)
+                        @php
+                            $name = unserialize($page->name);
+                        @endphp
+                        @if ($page->slug == 'eduProgram1' ||
+                            $page->slug == 'eduProgram2' ||
+                            $page->slug == 'eduProgram3' ||
+                            $page->slug == 'eduProgram4' ||
+                            $page->slug == 'eduProgram5')
+                            <div class="col-md-4 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
+                                <div class="icon-box departmentSlug"
+                                    style="background-image: linear-gradient( rgba(8, 29, 99, 0.5), rgba(8, 29, 99, 0.5) ), url({!! $page->image !!}); border-radius:5px;">
+                                    <h4>
+                                        <a class="stretched-link" href="{!! $department->slug !!}/{!! $page->slug !!}">
+                                            @if (Config::get('app.locale') === 'ru')
+                                                {!! $name['ru'] !!}
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                {!! $name['kk'] !!}
+                                            @else
+                                                {!! $name['en'] !!}
+                                            @endif
+                                        </a>
+                                    </h4>
+                                    <p></p>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+
+                    <div class="col-md-4 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
+                        <div class="icon-box departmentSlug"
+                            style="background-image: linear-gradient( rgba(8, 29, 99, 0.5), rgba(8, 29, 99, 0.5) ), url(/assets/images/department/page/1582705041_2.jpg); border-radius:5px;">
                             <h4>
-                                <a href="{!! $department->slug !!}/{!! $page->slug !!}">
+                                <a class="stretched-link" href="/o-biblioteke">Образовательная программа</a>
+                            </h4>
+                            <p></p>
+                        </div>
+                    </div>
+            @endif
+
+            <hr class="col-12" style="height: 5px; background:#081d63cc; max-width: -webkit-fill-available;" />
+
+            @foreach ($pages as $page)
+                @php
+                    $name = unserialize($page->name);
+                    $content = unserialize($page->content);
+                @endphp
+                @if ($page->slug == 'history' || $page->slug == 'science' || $page->slug == 'laboratories')
+                    <div class="card" style="margin-bottom: 3px;">
+                        <a class="card-link collapsed" data-toggle="collapse" href="#{!! $page->slug . $page->id !!}">
+                            <div class="card-header"
+                                style="background-color:#081d63cc; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
+                                @if (Config::get('app.locale') === 'ru')
+                                    {!! $name['ru'] !!}
+                                @elseif(Config::get('app.locale') === 'kk')
+                                    {!! $name['kk'] !!}
+                                @else
+                                    {!! $name['en'] !!}
+                                @endif
+                            </div>
+                        </a>
+
+                        <div class="collapse show" data-parent="#accordion" id="{!! $page->slug . $page->id !!}"
+                            style="height: 0px;overflow: hidden;">
+                            <div class="card-body">
+                                <p>
+                                    @if (Config::get('app.locale') === 'ru')
+                                        {!! $content['ru'] !!}
+                                    @elseif(Config::get('app.locale') === 'kk')
+                                        {!! $content['kk'] !!}
+                                    @else
+                                        {!! $content['en'] !!}
+                                    @endif
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+
+            <hr class="col-12" style="height: 5px; background:#081d63cc; max-width: -webkit-fill-available;" />
+
+            @foreach ($pages as $page)
+                @php
+                    $name = unserialize($page->name);
+                @endphp
+                @if ($page->slug == 'teachers')
+                    <div class="col-12 d-flex align-items-stretch mt-4 wow fadeInUp">
+                        <div class="icon-box departmentSlug"
+                            style="background-image: linear-gradient( rgba(8, 29, 99, 0.8), rgba(8, 29, 99, 0.8) ); border-radius:5px;">
+                            <h4>
+                                <a class="stretched-link" href="{!! $department->slug !!}/{!! $page->slug !!}">
                                     @if (Config::get('app.locale') === 'ru')
                                         {!! $name['ru'] !!}
                                     @elseif(Config::get('app.locale') === 'kk')
@@ -34,10 +120,14 @@
                                     @endif
                                 </a>
                             </h4>
+                            <p></p>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                @endif
+            @endforeach
+
+            <hr class="col-12" style="height: 5px; background:#081d63cc; max-width: -webkit-fill-available;" />
+        </div>
         </div>
     </section>
 @endsection

@@ -18551,16 +18551,6 @@ section {
 	cursor: url("/assets/images/cursor-airplane.png"), auto !important;
 } */
 
-h1 {
-    font-size: 2.5vw !important;
-}
-
-@media screen and (max-width: 767px) {
-    h1 {
-        font-size: 4.5vw !important;
-    }
-}
-
 h2 {
     margin-bottom: 30px;
     color: #3f3f3f;
@@ -18586,7 +18576,7 @@ h2 {
     }
 }
 
-#pages {
+#pages, #news, #departments {
     min-height: 75vh;
 }
 
@@ -18641,7 +18631,7 @@ h2 {
     }
 }
 
-#departments img {
+#departments img:not(.teacher_img) {
     max-width: 100% !important;
     height: auto !important;
     padding-right: 15px !important;
@@ -20112,8 +20102,8 @@ h4 {
     margin-bottom: 5px;
 }
 
-.services .library {
-    padding: 30px 20px;
+.services .library, #departments .departmentSlug {
+    /* padding: 30px 20px; */
     transition: all ease-in-out 0.3s;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -20123,7 +20113,13 @@ h4 {
     border: 1px solid darkblue;
     width: 100%;
     min-height: 150px;
+    line-height: 150px;
+    text-align: center;
     background-position: center center;
+}
+
+#departments .departmentSlug:hover {
+    background-size: 120%;
 }
 
 .services .icon-box .icon {
@@ -20160,11 +20156,17 @@ h4 {
     transition: ease-in-out 0.3s;
 }
 
-.services .library h4 a {
+.services .library h4 a, #departments .departmentSlug h4 a {
     color: #fff;
     font-weight: 500;
     font-size: 20px;
     transition: ease-in-out 0.3s;
+}
+
+#departments .departmentSlug h4 {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
 }
 
 .services .virtual_adm h4 a:hover {
@@ -20175,7 +20177,7 @@ h4 {
     text-decoration: none;
 }
 
-.services .library h4 a:hover {
+.services .library h4 a:hover, #departments .departmentSlug h4 a:hover{
     text-decoration: none;
     color: #fff !important;
 }
@@ -23556,7 +23558,7 @@ h2.section-heading {
 }
 
 .card-link .card-header::after {
-    color: #282828;
+    color: white;
     content: "+";
     position: absolute;
     right: 2%;
@@ -23566,4 +23568,50 @@ h2.section-heading {
 
 .card-link:not(.collapsed) .card-header::after {
     content: "\2212";
+}
+
+.teacher_info_block{
+    padding: 15px;
+}
+
+.teacher_img{
+    width: 160px;
+    height: 180px;
+    border:3px solid lavender;
+    border-radius: 50%;
+    margin-bottom: min(25px);
+    margin-top: min(25px);
+}
+
+@media (min-width: 992px) {
+    .teacher_img{
+        margin-top: 55px;
+        width: 160px;
+        height: 180px;
+        border:3px solid lavender;
+        border-radius: 50%;
+        margin-bottom: min(25px);
+    }
+}
+
+.departmentBanner{
+    background-image: linear-gradient( rgba(8, 29, 99, 0.4), rgba(8, 29, 99, 0.8) ), url(/assets/images/main/30576_5f76b51a8.jpg);
+    height:300px;
+    background-size: 100%;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+    padding: 100px 10px;
+}
+
+.teacher_block{
+    background: #081d63cc;
+    color: white;
+    border-radius: 15px;
+}
+
+.teacher_img_block{
+    text-align: center;
 }

@@ -33,7 +33,7 @@
                             <select class="form-control" aria-label="Default select example" name="department_id"
                                 required>
                                 <option selected value="{!! $department_id !!}" disabled>-----</option>
-                                @foreach ($departments as $department) 
+                                @foreach ($departments as $department)
                                     <option value="{!! $department->id !!}"
                                         @if ($department_id == $department->id) selected @endif>{!! $department->name !!}</option>
                                 @endforeach
@@ -100,7 +100,7 @@
                         </div> --}}
                     </div>
                     <div class="block">
-                        <button type="submit" class="btn btn-primary">Создать</button>
+                        <button type="submit" class="btn btn-primary">Сохранить</button>
                     </div>
                 </form>
             </div>
