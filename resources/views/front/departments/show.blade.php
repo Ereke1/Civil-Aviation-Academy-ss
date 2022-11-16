@@ -82,7 +82,7 @@
                         </a>
 
                         <div class="collapse show" data-parent="#accordion" id="{!! $page->slug . $page->id !!}"
-                            style="height: 0px;overflow: hidden;">
+                            style="height: 0px; overflow-x: auto;">
                             <div class="card-body">
                                 <p>
                                     @if (Config::get('app.locale') === 'ru')
