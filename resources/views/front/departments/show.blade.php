@@ -16,7 +16,7 @@
                 {!! __($department->name) !!}
             </div>
             @if (empty($eduP) == false)
-                <hr class="col-12" style="height: 5px; background:#1e3b82; max-width: -webkit-fill-available;" />
+                <hr class="col-12" style="height: 5px; background:#0e2465; max-width: -webkit-fill-available;" />
                 <h2 align="center">Образовательные программы</h2><br />
                 <div class="d-flex flex-wrap">
                     @foreach ($pages as $page)
@@ -59,7 +59,7 @@
                     </div>
             @endif
 
-            <hr class="col-12" style="height: 5px; background:#1e3b82; max-width: -webkit-fill-available;" />
+            <hr class="col-12" style="height: 5px; background:#0e2465; max-width: -webkit-fill-available;" />
 
             @foreach ($pages as $page)
                 @php
@@ -99,7 +99,7 @@
                 @endif
             @endforeach
 
-            <hr class="col-12" style="height: 5px; background:#1e3b82; max-width: -webkit-fill-available;" />
+            <hr class="col-12" style="height: 5px; background:#0e2465; max-width: -webkit-fill-available;" />
 
             @foreach ($pages as $page)
                 @php
@@ -126,7 +126,7 @@
                 @endif
             @endforeach
 
-            <hr class="col-12" style="height: 5px; background:#1e3b82; max-width: -webkit-fill-available;" />
+            <hr class="col-12" style="height: 5px; background:#0e2465; max-width: -webkit-fill-available;" />
         </div>
         </div>
     </section>
