@@ -21,7 +21,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12 teacher_block">
+            <div class="col-lg-12 teacher_block_one">
                 <div class="row">
                     <div class="col-lg-3 teacher_img_block">
                         <img src="/assets/images/upload/Рисунок1.jpg" style="max-width: 100%" class="teacher_img"/>
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <hr class="col-lg-12">
-            <div class="col-lg-12 teacher_block">
+            <div class="col-lg-12 teacher_block_two">
                 <div class="row">
                     <div class="col-lg-3 teacher_img_block">
                         <img src="/assets/images/upload/Рисунок2.jpg" style="max-width: 100%" class="teacher_img"/>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <hr class="col-lg-12">
-            <div class="col-lg-12 teacher_block">
+            <div class="col-lg-12 teacher_block_one">
                 <div class="row">
                     <div class="col-lg-3 teacher_img_block">
                         <img src="/assets/images/upload/Рисунок3.jpg" style="max-width: 100%" class="teacher_img"/>
@@ -94,6 +94,27 @@
                             ККСОН МОН РК. Член грантового проекта МОН РК.
                             Преподаваемые дисциплины: психология, психология управления, педагогика высшей школы.
 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="col-lg-12">
+            <div class="col-lg-12 teacher_block_two">
+                <div class="row">
+                    <div class="col-lg-3 teacher_img_block">
+                        <img src="/assets/images/upload/Рисунок2.jpg" style="max-width: 100%" class="teacher_img"/>
+                    </div>
+
+                    <div class="col-lg-9 teacher_info_block">
+                        <h3 align="center">Акбаева Акмарал Наурызбаевна</h3>
+                        <p>Доктор философии (phd), ассоциированный профессор кафедры «Общеобразовательные дисциплины»
+                            Специалист в области Философии
+                            Педагогический стаж – 24 года. Вошла в Серию биографических сборников «Почитаемые люди земли Казахской». Книга 18-я по Республике Казахстан, Алматы, «Дәуір», 2009 (40 п.л.), в Энциклопедию «Қазақстан ғалымдары», 1 том «А–К». Алматы, «Қазақ энциклопедиясы», 2012 (50 п.л.), в Информационный справочник «Кто есть кто в казахстанской философии». Алматы, Институт философии, политологии и религиоведения НАН РК, 2013 (12,25 п.л.).
+                            2016г. Указом Федерального Президента ФРГ присвоено Почётное звание «Дипломатического лица высшего ранга (Консул)».
+                            Является автором 104 научных статей, из них 38 – в изданиях с импакт-фактором (Web of Science, БЦ РИНЦ, ККСОН), 27 – в зарубежных научных изданиях.
+                            Знание иностранных языков: Английский С2 8.5 (UK IELTS Certificate 2022), немецкий, французский.
+                            Преподаваемые дисциплины: философия, история и философия
+                            науки, социология, культурология.
                         </p>
                     </div>
                 </div>

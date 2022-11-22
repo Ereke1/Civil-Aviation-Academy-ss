@@ -23577,7 +23577,7 @@ h2.section-heading {
 .teacher_img{
     width: 160px;
     height: 180px;
-    border:3px solid lavender;
+    border:3px solid white;
     border-radius: 50%;
     margin-bottom: min(25px);
     margin-top: min(25px);
@@ -23588,7 +23588,7 @@ h2.section-heading {
         margin-top: 55px;
         width: 160px;
         height: 180px;
-        border:3px solid lavender;
+        border:3px solid white;
         border-radius: 50%;
         margin-bottom: min(25px);
     }
@@ -23606,8 +23606,14 @@ h2.section-heading {
     padding: 100px 10px;
 }
 
-.teacher_block{
-    background: #081d63cc;
+.teacher_block_one{
+    background: #00589B;
+    color: white;
+    border-radius: 15px;
+}
+
+.teacher_block_two{
+    background: #00656E;
     color: white;
     border-radius: 15px;
 }
