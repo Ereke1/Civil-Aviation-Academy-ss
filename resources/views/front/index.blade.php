@@ -5,6 +5,23 @@
 @section('content')
 <section id="main-slider">
         <div class="owl-carousel">
+            <div class="item" style="background: url(/assets/images/slider/forum.png);width: 100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2></h2>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-primary btn-lg" style="margin-top: calc(100vw / (1265 / 115));" href="https://docs.google.com/forms/d/e/1FAIpQLSc-H3BLKJKSYRh6X17WSeiSTOkaQpVxjSaYU5T885BCxzY1Vg/viewform?edit_requested=true">Регистрация на форум</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
             <div class="item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/open_academy.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
@@ -70,23 +87,6 @@
                                 <div class="carousel-content">
                                     <h2></h2><br>
                                     <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdzsqo6x-8rqi_gzQFaY38UqGK3yIaMaFcwHvr8CYR0ls1OPQ/viewform">Заявка на консультацию <br> психолога</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item-->
-            <div class="item" style="background: url(/assets/images/slider/forum.png);width: 100%; background-size: cover; background-position: center;">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 text-center">
-                                <div class="carousel-content">
-                                    <h2></h2>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <a class="btn btn-primary btn-lg" style="margin-top: calc(100vw / (1265 / 115));" href="https://docs.google.com/forms/d/e/1FAIpQLSc-H3BLKJKSYRh6X17WSeiSTOkaQpVxjSaYU5T885BCxzY1Vg/viewform?edit_requested=true">Регистрация на форум</a>
                                 </div>
                             </div>
                         </div>
