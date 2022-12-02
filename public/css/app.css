@@ -20110,7 +20110,7 @@ h4 {
     margin-bottom: 5px;
 }
 
-.services .library, #departments .departmentSlug {
+.services .library, #departments .departmentSlug, #pages .departmentSlug {
     /* padding: 30px 20px; */
     transition: all ease-in-out 0.3s;
     background-size: 100%;
@@ -20126,7 +20126,7 @@ h4 {
     background-position: center center;
 }
 
-#departments .departmentSlug:hover {
+#departments .departmentSlug:hover, #pages .departmentSlug:hover {
     background-size: 120%;
 }
 
@@ -20164,14 +20164,14 @@ h4 {
     transition: ease-in-out 0.3s;
 }
 
-.services .library h4 a, #departments .departmentSlug h4 a {
+.services .library h4 a, #departments .departmentSlug h4 a, #pages .departmentSlug h4 a {
     color: #fff;
     font-weight: 500;
     font-size: 20px;
     transition: ease-in-out 0.3s;
 }
 
-#departments .departmentSlug h4 {
+#departments .departmentSlug h4, #pages .departmentSlug h4 {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
@@ -20185,7 +20185,7 @@ h4 {
     text-decoration: none;
 }
 
-.services .library h4 a:hover, #departments .departmentSlug h4 a:hover{
+.services .library h4 a:hover, #departments .departmentSlug h4 a:hover, #pages .departmentSlug h4 a:hover{
     text-decoration: none;
     color: #fff !important;
 }

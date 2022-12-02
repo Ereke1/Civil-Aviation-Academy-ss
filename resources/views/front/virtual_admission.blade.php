@@ -3,124 +3,69 @@
     {{ __('Академия Гражданской Авиации') }}
 @endsection
 @section('content')
-    <div class="container">
-        <h1>
-            Тарих
-        </h1>
-        <div class="breadcrumbs">
-            <a href="http://localcaa.edu.kz:8000">Басты бет</a>
-            <span> &gt; </span>
-            <a href="http://localcaa.edu.kz:8000/departments">Кафедралар</a>
-            <span> &gt; </span>
-            <a href="http://localcaa.edu.kz:8000/departments/aviacionnaya-tekhnika-i-tekhnologiya">Авиациялық техника және
-                технология</a>
-            <span> &gt; </span>
-            <span>
-                Тарих
-            </span>
+    <section id="departments">
+        <div class="container">
+            <h1>
+                e-Orientation
+            </h1>
+            <div class="breadcrumbs">
+                <a href="http://localcaa.edu.kz:8000">Басты бет</a>
+                <span> &gt; </span>
+                <a href="http://localcaa.edu.kz:8000/departments">Кафедралар</a>
+                <span> &gt; </span>
+                <a href="http://localcaa.edu.kz:8000/departments/aviacionnaya-tekhnika-i-tekhnologiya">Авиациялық техника
+                    және
+                    технология</a>
+                <span> &gt; </span>
+                <span>
+                    e-Orientation
+                </span>
+            </div>
+
+            <div class="container" style="margin-bottom: 5vw">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
+                        <div class="icon-box departmentSlug"
+                            style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/images/our_team_orientation.jpg); border-radius:5px; min-height:220px; line-height:200px;">
+                            <h4>
+                                <a class="stretched-link" href="#">
+                                    Наша команда
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
+                        <div class="icon-box departmentSlug"
+                            style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/images/sthouse.png); border-radius:5px; min-height:220px; line-height:200px;">
+                            <h4>
+                                <a class="stretched-link" href="/dom-studentov-203">
+                                    Дом студентов
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
+                        <div class="icon-box departmentSlug"
+                            style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/images/medical_care.png); border-radius:5px; min-height:220px; line-height:200px;">
+                            <h4>
+                                <a class="stretched-link" href="#">
+                                    Медицинское обслуживание
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
+                        <div class="icon-box departmentSlug"
+                            style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/images/events.png); border-radius:5px; min-height:220px; line-height:200px;">
+                            <h4>
+                                <a class="stretched-link" href="/meropriyatiya-173">
+                                    Мероприятия
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="row">
-            <div class="col-lg-12 teacher_block_one">
-                <div class="row">
-                    <div class="col-lg-3 teacher_img_block">
-                        <img src="/assets/images/upload/Рисунок1.jpg" style="max-width: 100%" class="teacher_img"/>
-                    </div>
-
-                    <div class="col-lg-9 teacher_info_block">
-                        <h3 align="center">Сейдилдаева Аширкул Кемелбековна</h3>
-                        <p>Кандидат технических наук, ассоциированный профессор Академии ГА
-                            Заведующая кафедрой «Общеобразовательные дисциплины» с 2013 года.
-                            Педагогический стаж – 31 год
-                            Специалист в области прикладной математики. Награждена
-                            нагрудными знаками «За заслуги в учебно-просветительском деле страны», "Отличник образования",
-                            "Алтын фонд", Дипломом 1 степени Президента Касым-Жомарта Кемелевича Токаева
-                            "Конструктивный общественный диалог-основа стабильности и процветания Казахстана».
-                            Автор более 86 научных статей, 3 публикаций в базах данных Web of Science и
-                            Scopus, 7 публикаций в зарубежных научных журналах, 10 публикаций в журналах рекомендованных
-                            Министерством образования и культуры РК.
-                            Преподаваемые дисциплины: высшая математика
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <hr class="col-lg-12">
-            <div class="col-lg-12 teacher_block_two">
-                <div class="row">
-                    <div class="col-lg-3 teacher_img_block">
-                        <img src="/assets/images/upload/Рисунок2.jpg" style="max-width: 100%" class="teacher_img"/>
-                    </div>
-
-                    <div class="col-lg-9 teacher_info_block">
-                        <h3 align="center">Акбаева Акмарал Наурызбаевна</h3>
-                        <p>Доктор философии (phd), ассоциированный профессор кафедры «Общеобразовательные дисциплины»
-                            Специалист в области Философии
-                            Педагогический стаж – 24 года. Вошла в Серию биографических сборников «Почитаемые люди земли Казахской». Книга 18-я по Республике Казахстан, Алматы, «Дәуір», 2009 (40 п.л.), в Энциклопедию «Қазақстан ғалымдары», 1 том «А–К». Алматы, «Қазақ энциклопедиясы», 2012 (50 п.л.), в Информационный справочник «Кто есть кто в казахстанской философии». Алматы, Институт философии, политологии и религиоведения НАН РК, 2013 (12,25 п.л.).
-                            2016г. Указом Федерального Президента ФРГ присвоено Почётное звание «Дипломатического лица высшего ранга (Консул)».
-                            Является автором 104 научных статей, из них 38 – в изданиях с импакт-фактором (Web of Science, БЦ РИНЦ, ККСОН), 27 – в зарубежных научных изданиях.
-                            Знание иностранных языков: Английский С2 8.5 (UK IELTS Certificate 2022), немецкий, французский.
-                            Преподаваемые дисциплины: философия, история и философия
-                            науки, социология, культурология.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <hr class="col-lg-12">
-            <div class="col-lg-12 teacher_block_one">
-                <div class="row">
-                    <div class="col-lg-3 teacher_img_block">
-                        <img src="/assets/images/upload/Рисунок3.jpg" style="max-width: 100%" class="teacher_img"/>
-                    </div>
-
-                    <div class="col-lg-9 teacher_info_block">
-                        <h3 align="center">Бейсенбаева Айгуль Калтаевна</h3>
-                        <p>Кандидат педагогических наук, ассоциированный профессор кафедры «Общеобразовательные дисциплины»
-                            Трудовую деятельность начала в 1996 году школьным психологом в СШ №49 г.
-                            Алматы.
-                            В разные годы занимала должности:
-                            - воспитатель-психолог в Колледже Ж.Аубакировой;
-                            - старший преподаватель кафедры «Социально-гуманитарных дисциплин» в
-                            Академии гражданской авиации;
-                            - Ученый секретарь в Академии гражданской авиации;
-                            - заведующий кафедрой «Социально-гуманитарных дисциплин» в Академии
-                            гражданской авиации;
-                            - ассоциированный профессор кафедры «Общеобразовательных дисциплин» в
-                            Академии гражданской авиации;
-                            Имеет нагрудной знак «Құрметті авиатор» Министерства по инвистициям и
-                            развитию Республики Казахстан, почетные грамоты и благодарственные письма;
-                            Стипендиат Международной программы «Болашак».
-                            Является автором 40 публикации, включая 2 – в базе Web of Sciense и Scopus, 1-
-                            РИНЦ, 1 монографии, 2 патентов, 10 публикации в журналах рекомендованных
-                            ККСОН МОН РК. Член грантового проекта МОН РК.
-                            Преподаваемые дисциплины: психология, психология управления, педагогика высшей школы.
-
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <hr class="col-lg-12">
-            <div class="col-lg-12 teacher_block_two">
-                <div class="row">
-                    <div class="col-lg-3 teacher_img_block">
-                        <img src="/assets/images/upload/Рисунок2.jpg" style="max-width: 100%" class="teacher_img"/>
-                    </div>
-
-                    <div class="col-lg-9 teacher_info_block">
-                        <h3 align="center">Акбаева Акмарал Наурызбаевна</h3>
-                        <p>Доктор философии (phd), ассоциированный профессор кафедры «Общеобразовательные дисциплины»
-                            Специалист в области Философии
-                            Педагогический стаж – 24 года. Вошла в Серию биографических сборников «Почитаемые люди земли Казахской». Книга 18-я по Республике Казахстан, Алматы, «Дәуір», 2009 (40 п.л.), в Энциклопедию «Қазақстан ғалымдары», 1 том «А–К». Алматы, «Қазақ энциклопедиясы», 2012 (50 п.л.), в Информационный справочник «Кто есть кто в казахстанской философии». Алматы, Институт философии, политологии и религиоведения НАН РК, 2013 (12,25 п.л.).
-                            2016г. Указом Федерального Президента ФРГ присвоено Почётное звание «Дипломатического лица высшего ранга (Консул)».
-                            Является автором 104 научных статей, из них 38 – в изданиях с импакт-фактором (Web of Science, БЦ РИНЦ, ККСОН), 27 – в зарубежных научных изданиях.
-                            Знание иностранных языков: Английский С2 8.5 (UK IELTS Certificate 2022), немецкий, французский.
-                            Преподаваемые дисциплины: философия, история и философия
-                            науки, социология, культурология.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <hr class="col-lg-12">
-
-        </div>
-    </div>
+    </section>
 @endsection
