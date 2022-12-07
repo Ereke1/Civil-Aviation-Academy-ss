@@ -15,7 +15,7 @@
                                     <br>
                                     <br>
                                     <br>
-                                    <a class="btn btn-primary btn-lg" style="margin-top: calc(100vw / (1265 / 115));" href="https://docs.google.com/forms/d/e/1FAIpQLSc-H3BLKJKSYRh6X17WSeiSTOkaQpVxjSaYU5T885BCxzY1Vg/viewform?edit_requested=true">Регистрация на форум</a>
+                                    <a class="btn btn-primary btn-lg" style="margin-top: calc(100vw / (1265 / 115));" href="https://docs.google.com/forms/d/e/1FAIpQLSfu4gAXdQ5qPYniRP0_oEBwdjsXRquao92I2ahtH99qrL7ZuQ/viewform?usp=sf_link">Регистрация на форум</a>
                                 </div>
                             </div>
                         </div>
