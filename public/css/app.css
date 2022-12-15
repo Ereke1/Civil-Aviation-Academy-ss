@@ -23615,6 +23615,20 @@ h2.section-heading {
     padding: 100px 10px;
 }
 
+.studentHouseBanner{
+    background-image: linear-gradient( rgba(8, 29, 99, 0.4), rgba(8, 29, 99, 0.8) ), url(https://caa.edu.kz/assets/images/upload/WhatsApp%20Image%202022-10-19%20at%2014.10.17_1670490193.jpeg);
+    height:300px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+    padding: 100px 10px;
+    margin-bottom: 30px;
+}
+
 .teacher_block_one{
     background: #00589B;
     color: white;
