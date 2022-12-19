@@ -18580,7 +18580,7 @@ h2 {
     min-height: 75vh;
 }
 
-#pages img:not(.teacher_img)  {
+#pages img:not(.teacher_img):not(.d-block)  {
     max-width: 100% !important;
     height: auto !important;
     padding-right: 15px !important;
