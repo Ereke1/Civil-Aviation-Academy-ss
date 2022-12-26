@@ -27,16 +27,80 @@
             </div>
 
 
+            <p>Студенческий дом расположен на территории Академии. В общежитии созданы необходимые условия: бытовые комнаты,
+                холодильники, электрические плиты, стиральные машины и душевые кабины.</p>
+
+            <p><h5 style="color:rgba(8, 29, 99)"><b>О нас</b></h5>
+                Наша главная задача - создание благоприятных условий для развития творческих и профессиональных способностей
+                студентов, способствующих самовыражению и самореализации личности, вовлечение молодежи в общественную жизнь
+                общежития.</p>
+
             <p>Дом студентов предоставляет своим студентам проживание и среду, которая призывает студентов реализовываться и
                 быть более активными.</p>
+
+            <section id="statistic" class="statistic-section one-page-section">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-12 col-sm-4 col-lg-2">
+                            <div class="counter">
+                                <img class="" src="https://caa.edu.kz/assets/images/upload/room.png" style=""
+                                    alt="First slide">
+                                <div class="stats-line-black"></div>
+                                <p class="stats-text">380 мест</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-lg-2">
+                            <div class="counter">
+                                <img class="" src="https://caa.edu.kz/assets/images/upload/security.png"
+                                    style="" alt="First slide">
+                                <div class="stats-line-black"></div>
+                                <p class="stats-text">Круглосуточная охрана</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-lg-2">
+                            <div class="counter">
+                                <img class="" src="https://caa.edu.kz/assets/images/upload/securitycam.png"
+                                    style="" alt="First slide">
+                                <div class="stats-line-black"></div>
+                                <p class="stats-text">Видеонаблюдение </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-lg-2">
+                            <div class="counter">
+                                <img class="" src="https://caa.edu.kz/assets/images/upload/shower.png" style=""
+                                    alt="First slide">
+                                <div class="stats-line-black"></div>
+                                <p class="stats-text">Душевые кабины</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-lg-2">
+                            <div class="counter">
+                                <img class="" src="https://caa.edu.kz/assets/images/upload/laundry.png" style=""
+                                    alt="First slide">
+                                <div class="stats-line-black"></div>
+                                <p class="stats-text">Прачечные кабины</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-lg-2">
+                            <div class="counter">
+                                <img class="" src="https://caa.edu.kz/assets/images/upload/wifi.png" style=""
+                                    alt="First slide">
+                                <div class="stats-line-black"></div>
+                                <p class="stats-text">Бесплатный Wi-Fi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             <p>Рассчитан на 380 мест с комфортными условиями проживания, двух и трехместные комнаты, круглосуточная охрана и
                 видеонаблюдение по периметру и коридорам, душевые и прачечные кабины с современными стиральными машинками,
                 бесплатный Wi-Fi и многое другое. В ДС дежурит квалифицированный врач, который всегда готов оказать жильцам
                 первую медицинскую помощь и проконсультировать в случае проблем со здоровьем. В корпусах также есть
-                специальные комнаты-изоляторы для отселения студентов при острых заболеваниях.</p>
+                специальные комнаты-изоляторы для отселения студентов при острых заболеваниях.</p><br>
 
-            <p><strong>При заселении в ДС, студенты должны предоставлять:</strong></p>
+            <h5 style="color:rgba(8, 29, 99)"><b>При заселении в ДС, студенты должны предоставлять:</b></h5>
 
             <p>1) Заявление на имя руководителя ДВСР;</p>
 
@@ -52,8 +116,7 @@
 
 
             <div class="row" style="margin-bottom: 20px">
-                <div class="col-md-0 col-lg-3"></div>
-                <div id="carouselstudents" class="col-12 col-md-12 col-lg-6 carousel slide" data-ride="carousel">
+                <div id="carouselstudents" class="col-12 carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="d-block w-100"
@@ -90,7 +153,6 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <div class="col-md-0 col-lg-3"></div>
             </div>
 
             <section class="mindcraft-action section" id="mindcraft-action" style="text-align: center;">

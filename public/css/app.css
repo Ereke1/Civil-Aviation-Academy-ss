@@ -18583,7 +18583,7 @@ h2 {
 #pages img:not(.teacher_img):not(.d-block)  {
     max-width: 100% !important;
     height: auto !important;
-    padding-right: 15px !important;
+    /* padding-right: 15px !important; */
 }
 
 #pages table {
@@ -23643,4 +23643,40 @@ h2.section-heading {
 
 .teacher_img_block{
     text-align: center;
+}
+
+#statistic img {
+    padding: 0px !important;
+    width: 85px;
+}
+
+#statistic {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #58aae8;
+    border-radius: 10px;
+}
+
+.stats-line-black {
+	margin: 12px auto 0;
+    width: 55px;
+    height: 2px;
+    background-color: #000;
+}
+
+.stats-text {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 0;
+    text-align: center;
+	color: #000;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+@media (max-width: 992px) {
+	.counter {
+		margin-bottom: 40px;
+	}
 }
