@@ -23633,12 +23633,16 @@ h2.section-heading {
     background: #00589B;
     color: white;
     border-radius: 15px;
+    border: 5px solid;
+    margin-bottom: 10px;
 }
 
 .teacher_block_two{
     background: #00656E;
     color: white;
     border-radius: 15px;
+    border: 5px solid;
+    margin-bottom: 10px;
 }
 
 .teacher_img_block{
