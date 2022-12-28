@@ -23698,3 +23698,32 @@ h2.section-heading {
 		margin-bottom: 40px;
 	}
 }
+
+.arrow{
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    background: #00589B;
+    color: white;
+    margin-bottom: 23px;
+    font-size: 16px;
+  }
+/* arrow shape */
+.arrow::after{
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    border: 18px solid;
+  }
+
+  /* bottom arrow */
+.bottom::after {
+    border-color: #00589B transparent transparent transparent;
+    bottom: -36px;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+  }
