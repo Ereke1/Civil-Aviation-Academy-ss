@@ -179,8 +179,8 @@
                                 <option value="">-----</option>
                                 <option value="Город Алматы" @if ($item->region == 'Город Алматы' || $item->region == 'Город Алматы') selected @endif>Город
                                     Алматы</option>
-                                <option value="Город Нур-Султан" @if ($item->region === 'Город Нур-Султан') selected @endif>
-                                    Город Нур-Султан (Астана)</option>
+                                <option value="Город Астана" @if ($item->region === 'Город Астана') selected @endif>
+                                    Город Астана</option>
                                 <option value="Город Шымкент" @if ($item->region === 'Город Шымкент') selected @endif>Город
                                     Шымкент</option>
                                 <option value="Абайская область" @if ($item->region === 'Абайская область') selected @endif>

@@ -17,7 +17,7 @@
                 <select name="region">
                     <option value=""></option>
                     <option value="г. Алматы" @if ($region === 'г. Алматы') selected @endif>г. Алматы</option>
-                    <option value="г. Нур-Султан" @if ($region === 'г. Нур-Султан') selected @endif>г. Нур-Султан (Астана)</option>
+                    <option value="г. Астана" @if ($region === 'г. Астана') selected @endif>г. Астана</option>
                     <option value="г. Шымкент" @if ($region === 'г. Шымкент') selected @endif>г. Шымкент</option>
                     <option value="Акмолинская обл." @if ($region === 'Акмолинская обл.') selected @endif>Акмолинская обл.</option>
                     <option value="Актюбинская обл." @if ($region === 'Актюбинская обл.') selected @endif>Актюбинская обл.</option>

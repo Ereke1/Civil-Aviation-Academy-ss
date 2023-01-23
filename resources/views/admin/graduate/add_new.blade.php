@@ -114,7 +114,7 @@
                 <select class="block__info" name="region">
                     <option value="" disabled selected>-----</option>
                     <option value="Город Алматы">г. Алматы</option>
-                    <option value="Город Нур-Султан">г. Нур-Султан (Астана)</option>
+                    <option value="Город Астана">г. Астана</option>
                     <option value="Город Шымкент">г. Шымкент</option>
                     <option value="Абайская область">Абайская обл.</option>
                     <option value="Акмолинская область">Акмолинская обл.</option>
