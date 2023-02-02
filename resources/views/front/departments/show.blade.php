@@ -27,8 +27,8 @@
                             $page->slug == 'eduProgram2' ||
                             $page->slug == 'eduProgram3' ||
                             $page->slug == 'eduProgram4' ||
-                            $page->slug == 'eduProgram5')||
-                            $page->slug == 'eduProgram6')||
+                            $page->slug == 'eduProgram5' ||
+                            $page->slug == 'eduProgram6' ||
                             $page->slug == 'eduProgram7')
                             <div class="col-md-4 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
                                 <div class="icon-box departmentSlug"
