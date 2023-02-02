@@ -48,7 +48,7 @@
                         @endif
                     @endforeach
 
-                    <div class="col-md-4 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
+                    <!--<div class="col-md-4 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
                         <div class="icon-box departmentSlug"
                             style="background:#1e3b82, url(/assets/images/department/page/1582705041_2.jpg); border-radius:5px;">
                             <h4>
@@ -57,6 +57,7 @@
                             <p></p>
                         </div>
                     </div>
+                    -->
             @endif
 
             <hr class="col-12" style="height: 5px; background:#0e2465; max-width: -webkit-fill-available;" />
