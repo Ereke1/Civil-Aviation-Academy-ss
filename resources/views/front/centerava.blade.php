@@ -93,6 +93,7 @@
       <div class="col text-center mb-5">
       <br>
       <p class="lead"><a href="/upravlenie-bezopasnostyu-poletov">{{ __('Управление безопасностью полётов') }}</a></p><br>
+      <p class="lead"><a href="/assets/images/upload/Декларация Руководителя РУБП_1677233267.pdf">Руководство по управлению безопасностью полетов</a></p><br>
         <h2>{{ __('НАШИ СЕРТИФИКАТЫ') }}</h2>
         <p class="lead"><a href="https://aaq.kz/wp-content/uploads/2021/09/kz63vgl00000098_ru.pdf">Область действия сертификата авиационного учебного центра</a></p>
         <p class="lead"><a href="https://aaq.kz/wp-content/uploads/2021/10/sertifikat-trenazhera-alsim-alx-85-auk-aga-ot-01.10.2021.pdf">Сертификат соответствия тренажера ALSIM (ALX-85) FNPT II / MCC</a></p>
