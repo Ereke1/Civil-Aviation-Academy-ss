@@ -81,6 +81,7 @@
     <script type="text/javascript" src="/js/wow.min.js"></script>
     <script type="text/javascript" src="/js/jquery.appear.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+    <script id="aioa-adawidget" src="https://www.skynettechnologies.com/accessibility/js/all-in-one-accessibility-js-widget-minify.js?colorcode=#b8860b&token=&position=top_right"></script>
     @if (Request::url() == URL::to('/') . '/enrollee/bachelor')
         <script src="/js/enrollee/bachelor.js"></script>
     @endif
