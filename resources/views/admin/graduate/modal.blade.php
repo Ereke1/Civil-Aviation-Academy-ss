@@ -81,7 +81,7 @@
                             <select class="block__info" name="region">
                                 <option value="">-----</option>
                                 <option value="г. Алматы" @if ($item->region === 'г. Алматы') selected @endif>г. Алматы</option>
-                                <option value="г. Нур-Султан" @if ($item->region === 'г. Нур-Султан') selected @endif>г. Нур-Султан (Астана)</option>
+                                <option value="г. Астана" @if ($item->region === 'г. Астана') selected @endif>г. Астана</option>
                                 <option value="г. Шымкент" @if ($item->region === 'г. Шымкент') selected @endif>г. Шымкент</option>
                                 <option value="Акмолинская обл." @if ($item->region === 'Акмолинская обл.') selected @endif>Акмолинская обл.</option>
                                 <option value="Актюбинская обл." @if ($item->region === 'Актюбинская обл.') selected @endif>Актюбинская обл.</option>

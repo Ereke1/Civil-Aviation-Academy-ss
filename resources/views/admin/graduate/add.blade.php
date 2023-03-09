@@ -80,7 +80,7 @@
                 <select class="block__info" name="region">
                     <option value="">-----</option>
                     <option value="г. Алматы">г. Алматы</option>
-                    <option value="г. Нур-Султан">г. Нур-Султан (Астана)</option>
+                    <option value="г. Астана">г. Астана</option>
                     <option value="г. Шымкент">г. Шымкент</option>
                     <option value="Акмолинская обл.">Акмолинская обл.</option>
                     <option value="Актюбинская обл.">Актюбинская обл.</option>

@@ -133,7 +133,8 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 
 	// PAGES
 	Route::get('{page}', 'PageController@show')->name('pages');
-
+	Route::post('review-store', 'ReviewRatingController@store')->name('review.store');
+	Route::get('review-show', 'ReviewRatingController@index')->name('review.index');
 	// LANGUAGE SWITCHER
 	Route::get('/language/{locale}', function ($locale) {
 		app()->setLocale($locale);

@@ -7,6 +7,7 @@ use App\Models\Navigation;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use App\Models\ReviewRating;
 
 class PageController extends Controller
 {
@@ -77,7 +78,8 @@ class PageController extends Controller
 			$data->title = $data->title_en;
 			$data->desc = $data->desc_en;
 		}
-		return view('front.page', compact('tree', 'data'));
+        $revR = ReviewRating::orderBy('created_at', 'asc')->get();
+		return view('front.page', compact('tree', 'data','revR'));
     }
 
     /**

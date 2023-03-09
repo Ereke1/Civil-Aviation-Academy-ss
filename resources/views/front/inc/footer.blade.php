@@ -6,6 +6,14 @@
                         <h4>{{ __('Контакты') }}</h4>
                         <p> {{ __('Приемная комиссия Академии:') }}<br />
                             <a href="tel:87273469208">+7 (727) 346-92-08</a><br/>
+                            {{ __('Канцелярия:') }}<br />
+                            <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 215)</a><br/>
+                            {{ __('Бухгалтерия') }}:<br />
+                            <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 281)</a><br/>
+                            {{ __('Лётно-тренажёрный центр') }}:<br />
+                            <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 206)</a><br/>
+                            {{ __('Военная кафедра') }}:<br />
+                            <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 256)</a><br/>
                             {{ __('Центр обслуживания студентов:') }}<br />
                             <a href="tel:87273399929">+7 (727) 339-99-29</a><br/>
                             {{ __('Офис-регистратор:') }}<br />
@@ -73,6 +81,7 @@
     <script type="text/javascript" src="/js/wow.min.js"></script>
     <script type="text/javascript" src="/js/jquery.appear.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+    <script id="aioa-adawidget" src="https://www.skynettechnologies.com/accessibility/js/all-in-one-accessibility-js-widget-minify.js?colorcode=#b8860b&token=&position=top_right"></script>
     @if (Request::url() == URL::to('/') . '/enrollee/bachelor')
         <script src="/js/enrollee/bachelor.js"></script>
     @endif
