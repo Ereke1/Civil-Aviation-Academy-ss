@@ -142,22 +142,22 @@
                 <tr>
                     <td>1</td>
                     <td>Техническая эксплуатация летательных аппаратов и двигателей</td>
-                    <td rowspan="6"><b>327</b></td>
-                    <td rowspan="6">327</td>
-                    <td>20</td>
+                    <td rowspan="6"><b>-</b></td>
+                    <td rowspan="6">-</td>
+                    <td>40</td>
                     <td class="bg-chair">{!! $count1 !!}</td>
-                    <td rowspan="6">10</td>
-                    <td rowspan="6">60</td>
+                    <td rowspan="6">-</td>
+                    <td rowspan="6">80</td>
                     <td class="bg-chair">{!! $count2 !!}</td>
-                    <td rowspan="6">25</td>
+                    <td rowspan="6">20</td>
                     <td class="bg-chair">{!! $count3 !!}</td>
-                    <td rowspan="6">185</td>
+                    <td rowspan="6">320</td>
                     <td class="bg-chair-night">{!! $summVTT_1 !!}</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Техническая эксплуатация систем авионики летательных аппаратов и двигателей</td>
-                    <td>20</td>
+                    <td>40</td>
                     <td class="bg-chair">{!! $count4 !!}</td>
                     <td class="bg-chair">{!! $count5 !!}</td>
                     <td class="bg-chair">{!! $count6 !!}</td>
@@ -166,7 +166,7 @@
                 <tr>
                     <td>3</td>
                     <td>Обслуживание наземного радиоэлектронного оборудования аэропортов</td>
-                    <td>20</td>
+                    <td>30</td>
                     <td class="bg-chair">{!! $count7 !!}</td>
                     <td class="bg-chair">{!! $count8 !!}</td>
                     <td class="bg-chair">{!! $count9 !!}</td>
@@ -175,7 +175,7 @@
                 <tr>
                     <td>4</td>
                     <td>Обеспечение авиационной безопасности</td>
-                    <td>20</td>
+                    <td>40</td>
                     <td class="bg-chair">{!! $count10 !!}</td>
                     <td class="bg-chair">{!! $count11 !!}</td>
                     <td class="bg-chair">{!! $count12 !!}</td>
@@ -184,7 +184,7 @@
                 <tr>
                     <td>5</td>
                     <td>Организация аэропортовой деятельности</td>
-                    <td>20</td>
+                    <td>30</td>
                     <td class="bg-chair">{!! $count13 !!}</td>
                     <td class="bg-chair">{!! $count14 !!}</td>
                     <td class="bg-chair">{!! $count15 !!}</td>
@@ -193,7 +193,7 @@
                 <tr>
                     <td>6</td>
                     <td>Технология транспортных процессов в авиации</td>
-                    <td>0</td>
+                    <td>40</td>
                     <td class="bg-chair">{!! $countTTPA1 !!}</td>
                     <td class="bg-chair">{!! $countTTPA2 !!}</td>
                     <td class="bg-chair">{!! $countTTPA3 !!}</td>
@@ -201,37 +201,37 @@
                 </tr>
                 <tr class="bg-chair">
                     <td colspan="2"><b>ВТТ</b></td>
-                    <td><b>327</b></td>
-                    <td><b>327</b></td>
-                    <td><b>100</b></td>
+                    <td><b>-</b></td>
+                    <td><b>-</b></td>
+                    <td><b>220</b></td>
                     <td><b>{!! $summVTT_11kl !!}</b></td>
-                    <td><b>10</b></td>
-                    <td><b>60</b></td>
+                    <td><b>-</b></td>
+                    <td><b>80</b></td>
                     <td><b>{!! $summVTT_TiPO !!}</td>
-                    <td><b>25</b></td>
+                    <td><b>20</b></td>
                     <td><b>{!! $summVTT_VV !!}</td>
-                    <td><b>185</b></td>
+                    <td><b>320</b></td>
                     <td class="bg-chair-night"><b>{!! $summVTT !!}</td>
                 </tr>
                 <tr>
                     <td>7</td>
                     <td>Обслуживание воздушного движения</td>
-                    <td rowspan="3"><b>136</b></td>
-                    <td rowspan="3">136</td>
+                    <td rowspan="3"><b>-</b></td>
+                    <td rowspan="3">-</td>
                     <td>10</td>
                     <td class="bg-chair">{!! $count16 !!}</td>
-                    <td rowspan="3">10</td>
+                    <td rowspan="3">-</td>
                     <td rowspan="3">0</td>
                     <td class="bg-chair">{!! $count17 !!}</td>
                     <td rowspan="3">5</td>
                     <td class="bg-chair">{!! $count18 !!}</td>
-                    <td rowspan="3">55</td>
+                    <td rowspan="3">75</td>
                     <td class="bg-chair-night">{!! $summLELAD_1 !!}</td>
                 </tr>
                 <tr>
                     <td>8</td>
                     <td>Лётная эксплуатация самолётов (пилот)</td>
-                    <td>30</td>
+                    <td>40</td>
                     <td class="bg-chair">{!! $count19 !!}</td>
                     <td class="bg-chair">{!! $count20 !!}</td>
                     <td class="bg-chair">{!! $count21 !!}</td>
@@ -240,7 +240,7 @@
                 <tr>
                     <td>9</td>
                     <td>Лётная эксплуатация вертолётов (пилот)</td>
-                    <td>10</td>
+                    <td>20</td>
                     <td class="bg-chair">{!! $count22 !!}</td>
                     <td class="bg-chair">{!! $count23 !!}</td>
                     <td class="bg-chair">{!! $count24 !!}</td>
@@ -248,37 +248,37 @@
                 </tr>
                 <tr class="bg-chair">
                     <td colspan="2"><b>ЛЭЛАД</b></td>
-                    <td><b>136</b></td>
-                    <td><b>136</b></td>
-                    <td><b>50</b></td>
+                    <td><b>-</b></td>
+                    <td><b>-</b></td>
+                    <td><b>70</b></td>
                     <td><b>{!! $summLELAD_11kl !!}</b></td>
-                    <td><b>10</b></td>
+                    <td><b>-</b></td>
                     <td>0</td>
                     <td><b>{!! $summLELAD_TiPO !!}</td>
                     <td><b>5</b></td>
                     <td><b>{!! $summLELAD_VV !!}</td>
-                    <td><b>55</b></td>
+                    <td><b>75</b></td>
                     <td class="bg-chair-night"><b>{!! $summLELAD !!}</td>
                 </tr>
                 <tr>
                     <td>10</td>
                     <td>Организация авиационных перевозок</td>
-                    <td rowspan="2"><b>348</b></td>
-                    <td rowspan="2">298</td>
-                    <td>10</td>
+                    <td rowspan="2"><b>-</b></td>
+                    <td rowspan="2">-</td>
+                    <td>20</td>
                     <td class="bg-chair">{!! $count25 !!}</td>
-                    <td rowspan="2">50</td>
+                    <td rowspan="2">-</td>
                     <td rowspan="2">30</td>
                     <td class="bg-chair">{!! $count26 !!}</td>
-                    <td rowspan="2">10</td>
+                    <td rowspan="2">20</td>
                     <td class="bg-chair">{!! $count27 !!}</td>
-                    <td rowspan="2">60</td>
+                    <td rowspan="2">90</td>
                     <td class="bg-chair-night">{!! $summTU_1 !!}</td>
                 </tr>
                 <tr>
                     <td>11</td>
                     <td>Логистика на транспорте</td>
-                    <td>10</td>
+                    <td>20</td>
                     <td class="bg-chair">{!! $count28 !!}</td>
                     <td class="bg-chair">{!! $count29 !!}</td>
                     <td class="bg-chair">{!! $count30 !!}</td>
@@ -286,30 +286,30 @@
                 </tr>
                 <tr class="bg-chair">
                     <td colspan="2"><b>ТУ</b></td>
-                    <td><b>348</b></td>
-                    <td><b>298</b></td>
-                    <td><b>20</b></td>
+                    <td><b>-</b></td>
+                    <td><b>-</b></td>
+                    <td><b>40</b></td>
                     <td><b>{!! $summTU_11kl !!}</b></td>
-                    <td><b>50</b></td>
+                    <td><b>-</b></td>
                     <td><b>30</b></td>
                     <td><b>{!! $summTU_TiPO !!}</td>
-                    <td><b>10</b></td>
+                    <td><b>20</b></td>
                     <td><b>{!! $summTU_VV !!}</td>
-                    <td><b>60</b></td>
+                    <td><b>90</b></td>
                     <td class="bg-chair-night"><b>{!! $summTU !!}</td>
                 </tr>
                 <tr>
                     <td colspan="2" class="bg-chair-night">Всего</td>
-                    <td class="bg-chair-night">811</td>
-                    <td class="bg-chair-night">761</td>
-                    <td class="bg-chair-night">170</td>
+                    <td class="bg-chair-night">-</td>
+                    <td class="bg-chair-night">-</td>
+                    <td class="bg-chair-night">330</td>
                     <td class="bg-chair-night">{!! $summ11kl !!}</td>
-                    <td class="bg-chair-night">50</td>
-                    <td class="bg-chair-night">90</td>
+                    <td class="bg-chair-night">-</td>
+                    <td class="bg-chair-night">110</td>
                     <td class="bg-chair-night">{!! $summTiPO !!}</td>
-                    <td class="bg-chair-night">40</td>
+                    <td class="bg-chair-night">45</td>
                     <td class="bg-chair-night">{!! $summVV !!}</td>
-                    <td class="bg-chair-night">300</td>
+                    <td class="bg-chair-night">485</td>
                     <td class="bg-chair-night">{!! $totalBachelor !!}</td>
                 </tr>
             </table>
@@ -324,7 +324,7 @@
                 <tr>
                     <td>1</td>
                     <td>Авиационная техника и технологии (профильная магистратура)</td>
-                    <td rowspan="2">12</td>
+                    <td rowspan="2">-</td>
                     <td>-</td>
                     <td class="bg-chair">{!! $countMaster1 !!}</td>
                 </tr>
@@ -337,14 +337,14 @@
                 <tr>
                     <td>3</td>
                     <td>Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)</td>
-                    <td rowspan="1">5</td>
+                    <td rowspan="1">-</td>
                     <td>5</td>
                     <td class="bg-chair">{!! $countMaster4 !!}</td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)</td>
-                    <td rowspan="2">20</td>
+                    <td rowspan="2">-</td>
                     <td>-</td>
                     <td class="bg-chair">{!! $countMaster5 !!}</td>
                 </tr>
@@ -352,13 +352,13 @@
                     <td>5</td>
                     <td>Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)
                     </td>
-                    <td>8</td>
+                    <td>5</td>
                     <td class="bg-chair">{!! $countMaster6 !!}</td>
                 </tr>
                 <tr>
                     <td colspan="2" class="bg-chair-night">Всего</td>
-                    <td class="bg-chair-night"><b>37</b></td>
-                    <td class="bg-chair-night"><b>25</b></td>
+                    <td class="bg-chair-night"><b>-</b></td>
+                    <td class="bg-chair-night"><b>22</b></td>
                     <td class="bg-chair-night"><b>{!! $totalMaster !!}</b></td>
                 </tr>
             </table>
@@ -376,8 +376,8 @@
                 <tr>
                     <td>1</td>
                     <td>Авиационная техника и технологии</td>
+                    <td>-</td>
                     <td>3</td>
-                    <td>5</td>
                     <td class="bg-chair-night">{!! $countDoctoral !!}</td>
                 </tr>
             </table>
