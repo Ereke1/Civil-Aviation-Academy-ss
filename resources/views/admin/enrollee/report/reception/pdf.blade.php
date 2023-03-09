@@ -80,32 +80,32 @@
 
 <body>
     @php
-        $summVTT_11kl = $count1 + $count4 + $count7 + $count10 + $count13;
-        $summVTT_TiPO = $count2 + $count5 + $count8 + $count11 + $count14;
-        $summVTT_VV = $count3 + $count6 + $count9 + $count12 + $count15;
+        $summVTT_11kl = $count1 + $count4 + $count7 + $count10 + $count13 + $countTTPA1;
+        $summVTT_TiPO = $count2 + $count5 + $count8 + $count11 + $count14 + $countTTPA2;
+        $summVTT_VV = $count3 + $count6 + $count9 + $count12 + $count15 + $countTTPA3;
         $summVTT = $summVTT_11kl + $summVTT_TiPO + $summVTT_VV;
-        
+
         $summLELAD_11kl = $count16 + $count19 + $count22;
         $summLELAD_TiPO = $count17 + $count20 + $count23;
         $summLELAD_VV = $count18 + $count21 + $count24;
         $summLELAD = $summLELAD_11kl + $summLELAD_TiPO + $summLELAD_VV;
-        
+
         $summTU_11kl = $count25 + $count28;
         $summTU_TiPO = $count26 + $count29;
         $summTU_VV = $count27 + $count30;
         $summTU = $summTU_11kl + $summTU_TiPO + $summTU_VV;
-        
+
         $summVTT_1 = $count1 + $count2 + $count3;
         $summVTT_2 = $count4 + $count5 + $count6;
         $summVTT_3 = $count7 + $count8 + $count9;
         $summVTT_4 = $count10 + $count11 + $count12;
         $summVTT_5 = $count13 + $count14 + $count15;
         $sumTTPA = $countTTPA1 + $countTTPA2 + $countTTPA3;
-        
+
         $summLELAD_1 = $count16 + $count17 + $count18;
         $summLELAD_2 = $count19 + $count20 + $count21;
         $summLELAD_3 = $count22 + $count23 + $count24;
-        
+
         $summTU_1 = $count25 + $count26 + $count27;
         $summTU_2 = $count28 + $count29 + $count30;
         $summ11kl = $summVTT_11kl + $summLELAD_11kl + $summTU_11kl;
