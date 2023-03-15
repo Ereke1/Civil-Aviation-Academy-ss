@@ -18643,7 +18643,7 @@ h2 {
     margin-left: 0px !important;
 }
 
-#departments iframe {
+#departments iframe:not(.powerpoint) {
     width: 100% !important;
     height: auto !important;
 }
