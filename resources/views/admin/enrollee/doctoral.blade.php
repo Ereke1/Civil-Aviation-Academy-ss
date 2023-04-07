@@ -101,6 +101,9 @@
             <div>
                 <a href="{{ route('admin.enrollee.doctoral.index') }}"><button>Сбросить фильтры</button></a>
             </div>
+            <div>
+                <a href="{{ route('admin.enrollee.documents.pdf').'?type=Докторантура'.str_replace('?','&',str_replace(Request::url(), '', Request::fullUrl())) }}" class="button">Выгрузка PDF</a>
+            </div>
         </form>
     </div>
     <h3>Всего анкет: {!! $countData !!}</h3>

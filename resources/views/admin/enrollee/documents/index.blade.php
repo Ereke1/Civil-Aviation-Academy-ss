@@ -27,8 +27,12 @@
             <div>
                 <a href="{{ route('admin.enrollee.documents.index') }}"><button>Сбросить фильтры</button></a>
             </div>
+            <div>
+                <a href="{{ route('admin.enrollee.documents.pdfdocs').'?status=0&page='.$data->currentPage() }}" class="button">Выгрузка PDF</a>
+            </div>
         </form>
     </div>
+
     <h3>Всего анкет: {!! $countData !!}</h3>
     <table class="table-filter">
         <tr>

@@ -17457,6 +17457,17 @@ main .filter form div button {
   transition: all linear 0.4s;
 }
 
+main .filter form div .button {
+    padding: calc(100vw / (1920 / 11)) calc(100vw / (1920 / 10)) calc(100vw / (1920 / 10)) calc(100vw / (1920 / 10));
+    margin-top: calc(100vw / (1920 / 49));
+    width: 100%;
+    font-size: calc(100vw / (1920 / 20));
+    background: #0082d6;
+    color: white;
+    transition: all linear 0.4s;
+    display: block;
+  }
+
 main .table-filter {
   color: black;
   margin-right: calc(100vw / (1920 / 1));

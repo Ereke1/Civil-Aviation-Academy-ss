@@ -55,7 +55,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'documents' => 'DocumentsController',
 		]);
 
+
         //Documents
+		Route::get('pdf', 'DocumentsController@pdf')->name('documents.pdf');
+		Route::get('pdfdocs', 'DocumentsController@pdfdocs')->name('documents.pdfdocs');
 		Route::get('documents', 'DocumentsController@index')->name('documents.index');
 		Route::get('documents/word-statements/{id}', 'DocumentsController@wordExportStatements')->name('documents.wordExportStatements');
 		Route::get('documents/word-bilateralAgreement/{id}', 'DocumentsController@wordExportBilateralAgreement')->name('documents.wordExportBilateralAgreement');
