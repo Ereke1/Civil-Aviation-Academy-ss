@@ -23047,7 +23047,7 @@ h2.section-heading {
     display: block;
     width: 2px;
     height: 100%;
-    background: #c6c6c6;
+    background: #204299;
     margin: 0 auto;
     position: absolute;
     top: 0;
@@ -23092,12 +23092,12 @@ h2.section-heading {
 
 .main-timeline .icon:before {
     background: #fff;
-    border: 2px solid #232323;
+    border: 2px solid #d99f64;
     left: -3px
 }
 
 .main-timeline .icon:after {
-    border: 2px solid #c6c6c6;
+    border: 2px solid #204299;
     left: 3px
 }
 
@@ -23120,7 +23120,7 @@ h2.section-heading {
     content: "";
     width: 36.5%;
     height: 2px;
-    background: #c6c6c6;
+    background: #204299;
     margin: auto 0;
     position: absolute;
     top: 0;
@@ -23153,12 +23153,12 @@ h2.section-heading {
 
 .main-timeline .date-outer:before {
     background: #fff;
-    border: 2px solid #232323;
+    border: 2px solid #d99f64;
     left: -6px
 }
 
 .main-timeline .date-outer:after {
-    border: 2px solid #c6c6c6;
+    border: 2px solid #204299;
     left: 6px
 }
 
@@ -23626,6 +23626,20 @@ h2.section-heading {
     font-size: 2em;
     font-weight: 600;
     padding: 100px 10px;
+    margin-bottom: 30px;
+}
+
+.confBanner{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8) ), url(/assets/images/conf.jpg);
+    height:500px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    font-size: 1.65em;
+    font-weight: 400;
+    padding: 150px 10px;
     margin-bottom: 30px;
 }
 
