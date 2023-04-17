@@ -23090,7 +23090,7 @@ h2.section-heading {
     transition: all 0.33s ease-out 0s
 }
 
-.main-timeline .icon:before {
+/* .main-timeline .icon:before {
     background: #fff;
     border: 2px solid #d99f64;
     left: -3px
@@ -23099,7 +23099,7 @@ h2.section-heading {
 .main-timeline .icon:after {
     border: 2px solid #204299;
     left: 3px
-}
+} */
 
 .main-timeline .timeline:hover .icon:before {
     left: 3px
@@ -23230,18 +23230,18 @@ h2.section-heading {
     margin-bottom: 0
 }
 
-.main-timeline .timeline:nth-child(2n) .date-content {
+/* .main-timeline .timeline:nth-child(2n) .date-content {
     float: right
-}
+} */
 
-.main-timeline .timeline:nth-child(2n) .date-content:before {
+/* .main-timeline .timeline:nth-child(2n) .date-content:before {
     left: 10px
-}
+} */
 
-.main-timeline .timeline:nth-child(2n) .timeline-content {
+/* .main-timeline .timeline:nth-child(2n) .timeline-content {
     padding: 20px 50px 20px 0;
     text-align: right
-}
+} */
 
 @media only screen and (max-width: 991px) {
     .main-timeline .date-content {
@@ -23260,9 +23260,9 @@ h2.section-heading {
         font-size: 17px
     }
 
-    .main-timeline .timeline:nth-child(2n) .timeline-content {
+    /* .main-timeline .timeline:nth-child(2n) .timeline-content {
         padding: 10px 30px 10px 0
-    }
+    } */
 }
 
 @media only screen and (max-width: 767px) {
@@ -23313,11 +23313,11 @@ h2.section-heading {
     }
 
     .main-timeline .timeline-content,
-    .main-timeline .timeline:nth-child(2n) .timeline-content {
+    /* .main-timeline .timeline:nth-child(2n) .timeline-content {
         width: 95%;
         text-align: center;
         padding: 10px 0
-    }
+    } */
 
     .main-timeline .title {
         margin-bottom: 10px
