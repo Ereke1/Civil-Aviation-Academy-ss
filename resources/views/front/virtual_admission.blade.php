@@ -22,403 +22,185 @@
                 </span>
             </div>
 
-            <div class="confBanner">
-                <b>Весенняя школа «Безопасная образовательная среда»</b><br />
-                <i class="fa fa-calendar-alt" aria-hidden="true"></i> 20-21 апреля <i class="fa fa-map-marker-alt"
-                    aria-hidden="true"></i> Алматы, Казахстан<br />
-                <i><img src="/assets/images/aga_colledge(without_blue_background).png"
-                        style="width: 80px; height:80px;"></i> Академия Гражданской Авиации<br />
-                <a class="btn btn-primary btn-lg"
-                    href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174">Регистрация</a><br />
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <p>
+                            <b>Международное сотрудничество </b> в области образования и науки осуществляется в рамках
+                            международных договоров,
+                            заключаемых Академией Гражданской Авиации с зарубежными научно-образовательными учреждениями,
+                            лётными учебными центрами,
+                            ассоциациями и организациями. <br />
+                            <b>Академическая мобильность </b> предполагает обучение студентов на академический период в
+                            иностранном вузе-партнере.
+                            Участие в программе — это шанс получить опыт обучения в зарубежном вузе и опыт проживания за
+                            границей одновременно.
+                            <b>Требования к претендентам </b> <br />
+                            1. Обучение на 2-3 курсах бакалавриата;<br />
+                            2. Иметь гражданство РК;<br />
+                            3. Уровень знания английского языка – В1, подтверждающие сертификаты IELTS, TOEFL (для участия в
+                            стипендиальных программах, в таких как Erasmus+, Bolashaq и т. д.);<br />
+                            4. GPA от 2.8 и выше. (студенты с GPA от 2.8 за свой счет, GPA выше 3.0 участвуют в
+                            стипендиальных программах).
+
+                        </p>
+
+                        <section class="services" id="services" style="background: #fff">
+                            <div class="container" style="margin-bottom: 3vw">
+                                <div class="row">
+                                    <div class="col-12 d-flex align-items-stretch mt-4 wow fadeInUp">
+                                        <div class="icon-box library"
+                                            style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/images/opinion.png);
+                                            background-size: contain;
+                                            background-repeat: round;">
+                                            <h4>
+                                                <a class="stretched-link" href="/o-biblioteke">Отзывы</a>
+                                            </h4>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="title text-center wow animated zoomInDown">
+                            <h2>Наши <span class="color">Партнеры</span></h2>
+                            <div class="border"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <div id="Client_Logo" class="owl-carousel outer">
+                                        <div class="inner">
+                                            <a href="https://nau.edu.ua/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/nau.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://naa.edu.az/ru" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/naa.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://www.patriagroup.com/products-and-services/through-life-capability/professional-pilot-training"
+                                                target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/patria.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://erau.edu/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/erau.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://www.tsi.lv/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/tsi.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://bsa.edu.lv/ru/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/bsa_edu.gif" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://www.f-air.cz/en/professional-pilot?no-cookies#tab1"
+                                                target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/fair.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://www.uvauga.ru/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/uvauga.jpg" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="http://www.mstuca.ru/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/mstuca.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://www.eskisehir.edu.tr/" target="_blank"><img
+                                                    class="img-responsive" src="/assets/images/clientLogo/eskisehir.png"
+                                                    alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://bgaa.by/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/bgaa.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://ugatu.su/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/ugatuu.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://pnzgu.ru/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/pnzgu.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://kai.kg/ru" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/kai.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="http://osu.ru/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/osu.png" alt=""></a>
+                                        </div>
+                                        <div class="inner">
+                                            <a href="https://ksu.lt/en/" target="_blank"><img class="img-responsive"
+                                                    src="/assets/images/clientLogo/ksult.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border"></div>
+                        <br />
+                        <br />
+                        <br />
+
+                        <div class="row">
+                            <div class="col-lg-6 teacher_block_one">
+                                <div class="row">
+                                    <div class="col-lg-12 teacher_info_block">
+                                        <h5>Главный менеджер по международному сотрудничеству<br />
+                                            Ахметова Клара Абдуллакыз<br />
+                                            8 727 346 92 06<br />
+                                            k.akhmetova@agakaz.kz
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 teacher_block_one">
+                                <div class="row">
+                                    <div class="col-lg-12 teacher_info_block">
+                                        <h5>Менеджер по международному сотрудничеству<br />
+                                            Сулейманова Емилия <br />
+                                            8 7781108559<br />
+                                            emilia.suleimanova@agakaz.kz
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <a href="https://kai.kg/ru" target="_blank">
+                                            <h5>Педагог-психолог Авиационного колледжа Ануарбекова Рузана Кайратовна</h5>
+                                        </a>
+                                    </div>
+                                    <hr class="col-lg-12" />
+                                    <div class="col-lg-12">
+                                        <a href="https://kai.kg/ru" target="_blank">
+                                            <h5>Педагог-психолог Авиационного колледжа Ануарбекова Рузана Кайратовна</h5>
+                                        </a>
+                                    </div>
+                                    <hr class="col-lg-12" />
+                                    <div class="col-lg-12">
+                                        <a href="https://kai.kg/ru" target="_blank">
+                                            <h5>Педагог-психолог Авиационного колледжа Ануарбекова Рузана Кайратовна</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
-            <p>Авиационный колледж АО «Академии гражданской авиации» приглашает психологов колледжей г.Алматы 20.04 и
-                21.04.2023 года принять участие в весенней школе «Безопасная образовательная среда». <br />
-                Встреча весенней школы «Безопасная образовательная среда» предполагает участие ведущих специалистов по
-                поддержанию психического и физического здоровья обучающейся молодёжи г. Алматы. <br />
-                <b>Цель мероприятия:</b> рассмотреть основные пути и способы обеспечения условий безопасной среды, путём
-                повышения компетентности участников образовательной системы. <br />
-                <b>Задачи мероприятия:</b> <br />
-                - рассмотреть основные факторы и условия по сохранению безопасной среды в образовательной среде;<br />
-                - установление социального партнёрства между структурными организациями системы здравоохранения и
-                образования по обеспечению сохранности физического и психического здоровья молодёжи;<br />
-                - усилить работу психологических служб ТиПО г. Алматы;<br />
-                - повысить осведомленность социально - психологических служб и педагогических работников по выбору критериев
-                работы по обеспечению условий безопасной среды в работе со студентами и поддержания психического
-                благополучия.<br />
-                Данное мероприятие позволяет объединить усилия работников системы здравоохранения и системы образования по
-                оказанию условий безопасной среды. <br />
-                Программа встречи предусматривает заседание, совместную работу, обмен опытом работы, дискуссию. <br />
-                Форма участия: очная<br />
-                Для участия и определения количества слушателей просим Вас заполнить форму регистрации участников по ссылке:
-            </p>
-            <br/>
-            <br/>
-
-
-            <p>
-            <h5 style="color:rgba(8, 29, 99)"><b>Первый день 20.04.2023г.</b></h5>
-            <p><b>Цель встречи:</b> рассмотреть основные пути и способы обеспечения условий безопасной среды, путем
-                повышения компетентности участников образовательной системы. <br />
-                <b>Дата и время проведения:</b> апрель 2023 г.<br />
-                <b>Формат проведения:</b> офлайн<br />
-                <b>Место проведения:</b> Академия Гражданской Авиации, Актовый зал<br />
-                <b>Участники:</b> руководители, зав. кафедры, ППС и сотрудники, зав. отделением и преподаватели
-                колледжа.<br />
-                <b>Модераторы:</b> Алминова Д.С. – психолог
-                Ануарбекова Р.К. – педагог-психолог
-            </p>
-
-            <div class="main-timeline">
-                <!-- start experience section-->
-                <div class="timeline">
-                    <div class="icon">&nbsp;</div>
-
-                    <div class="date-content">
-                        <div class="date-outer"><span class="date"><span
-                                    style="font-weight: 700;line-height: 36px;">10:00-10:05</span> </span></div>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Встреча участников.<br />
-                            Ректор Академии Сейдахметов Б.К.
-                        </h5>
-
-                        <hr class="hr_history" />
-                    </div>
-                </div>
-                <!-- end experience section-->
-                <!-- start experience section-->
-                <div class="timeline">
-                    <div class="icon">&nbsp;</div>
-
-                    <div class="date-content">
-                        <div class="date-outer"><span class="date"><span
-                                    style="font-weight: 700;line-height: 36px;">10:05-10:45</span> </span></div>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Директор департамента молодежной политики АУЭС,
-                            профессор ф.н. Абдуллина Зарема Альфредовна<br />
-                            Религиозная аддикция
-                        </h5>
-
-                        <hr class="hr_history" />
-                    </div>
-                </div>
-                <!-- end experience section-->
-                <!-- start experience section-->
-                <div class="timeline">
-                    <div class="icon">&nbsp;</div>
-
-                    <div class="date-content">
-                        <div class="date-outer"><span class="date"><span
-                                    style="font-weight: 700;line-height: 36px;">10:45-11:15</span> </span></div>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Ергужин Ракиш Тлекович, <br />
-                            руководитель Центра трансформации личности и терапии зависимостей «VITA NOVA», г. Алматы<br />
-                            Игровая зависимость - лудомания
-
-                        </h5>
-
-                        <hr class="hr_history" />
-                    </div>
-                </div>
-                <!-- end experience section-->
-                <!-- start experience section-->
-                <div class="timeline">
-                    <div class="icon">&nbsp;</div>
-
-                    <div class="date-content">
-                        <div class="date-outer"><span class="date"><span
-                                    style="font-weight: 700;line-height: 36px;">11:15-11:05</span> </span></div>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Касымжанова Мадина Калибеккызы<br />
-                            Касымжанова Мадина Калибеккызы<br />
-                            Профилактика деструктивного поведения среди молодежи
-                        </h5>
-
-                        <hr class="hr_history" />
-                    </div>
-                </div>
-                <!-- end experience section-->
-                <!-- start experience section-->
-                <div class="timeline">
-                    <div class="icon">&nbsp;</div>
-
-                    <div class="date-content">
-                        <div class="date-outer"><span class="date"><span
-                                    style="font-weight: 700;line-height: 36px;">11:45-12:35</span> </span></div>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Мельникова Людмила Алексеевна- психолог, <br />
-                            действительный член Ассоциации психологов РК, действительный член ОППЛ (Профессиональная
-                            психотерапевтическая Лига). Профессиональный медиатор по урегулированию конфликтных
-                            ситуаций.<br />
-                            «Трансформация конфликта в конструктивный диалог»
-                        </h5>
-
-                        <hr class="hr_history" />
-                    </div>
-                </div>
-                <!-- end experience section-->
-                <!-- start experience section-->
-                <div class="timeline">
-                    <div class="icon">&nbsp;</div>
-
-                    <div class="date-content">
-                        <div class="date-outer"><span class="date"><span
-                                    style="font-weight: 700;line-height: 36px;">12:35-12:40</span> </span></div>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Руководитель молодежного центра здоровья «Ак
-                            жол» Кусаинова Дина Тургунбаевна «О деятельности молодежных центров здоровья: формы
-                            сотрудничества с психологическими службами г. Алматы»
-                        </h5>
-
-                        <hr class="hr_history" />
-                    </div>
-                </div>
-                <!-- end experience section-->
-                <!-- start experience section-->
-                <div class="timeline">
-                    <div class="icon">&nbsp;</div>
-
-                    <div class="date-content">
-                        <div class="date-outer"><span class="date"><span
-                                    style="font-weight: 700;line-height: 36px;">12:40-12:55</span> </span></div>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Педагог-психолог Авиационного колледжа
-                            Ануарбекова Рузана Кайратовна<br />
-                            Профилактика эмоционального и профессионального выгорания среди ППС
-                        </h5>
-
-                        <hr class="hr_history" />
-                    </div>
-                </div>
-                <!-- end experience section-->
-                <!-- start experience section-->
-                <div class="timeline">
-                    <div class="icon">&nbsp;</div>
-
-                    <div class="date-content">
-                        <div class="date-outer"><span class="date"><span
-                                    style="font-weight: 700;line-height: 36px;">12:55</span> </span></div>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Подведение итогов работы весенней школы
-                            «Безопасная образовательная среда». Обсуждение актуальных вопросов. Свободный микрофон.
-                        </h5>
-
-                        <hr class="hr_history" />
-                    </div>
-                </div>
-                <!-- end experience section-->
-                <!-- start experience section-->
-                <div class="timeline">
-                    <div class="icon">&nbsp;</div>
-
-                    <div class="date-content">
-                        <div class="date-outer"><span class="date"><span
-                                    style="font-weight: 700;line-height: 36px;">13:00</span> </span></div>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Обед
-                        </h5>
-
-                        <hr class="hr_history" />
-                    </div>
-                </div>
-                <!-- end experience section-->
-            </div>
-            <br/>
-            <br/>
-
-            <p>
-                <h5 style="color:rgba(8, 29, 99)"><b>Второй день 21.04.2023г.</b></h5>
-                <p><b>Цель встречи:</b> рассмотреть основные пути и способы обеспечения условий безопасной среды, путем повышения компетентности участников образовательной системы.  <br />
-                    <b>Дата и время проведения:</b> апрель 2023 г.<br />
-                    <b>Формат проведения:</b> офлайн<br />
-                    <b>Место проведения:</b> Академия Гражданской Авиации, Актовый зал<br />
-                    <b>Участники:</b> директоры, зав. Кафедры, ППС и сотрудники, преподаватели Авиационного колледжа. <br />
-                    <b>Модераторы:</b> Алминова Д.С. – психолог
-                    Ануарбекова Р.К. – педагог-психолог
-                </p>
-
-                <div class="main-timeline">
-                    <!-- start experience section-->
-                    <div class="timeline">
-                        <div class="icon">&nbsp;</div>
-
-                        <div class="date-content">
-                            <div class="date-outer"><span class="date"><span
-                                        style="font-weight: 700;line-height: 36px;">10:00-10:05</span> </span></div>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Встреча участников.<br />
-                                Первый проректор Академии Жакупов К.Б
-                            </h5>
-
-                            <hr class="hr_history" />
-                        </div>
-                    </div>
-                    <!-- end experience section-->
-                    <!-- start experience section-->
-                    <div class="timeline">
-                        <div class="icon">&nbsp;</div>
-
-                        <div class="date-content">
-                            <div class="date-outer"><span class="date"><span
-                                        style="font-weight: 700;line-height: 36px;">10:05-10:20</span> </span></div>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Cпикер (Кризисного центра)<br />
-                                «Бытовое насилия в семье»
-                            </h5>
-
-                            <hr class="hr_history" />
-                        </div>
-                    </div>
-                    <!-- end experience section-->
-                    <!-- start experience section-->
-                    <div class="timeline">
-                        <div class="icon">&nbsp;</div>
-
-                        <div class="date-content">
-                            <div class="date-outer"><span class="date"><span
-                                        style="font-weight: 700;line-height: 36px;">10:20-10:35</span> </span></div>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Жастар және отбасы денсаулығы орталығының басшысы Қаржаубаева Шолпан Естемесқызы "Жастар денсаулығы орталығы қызметінің негізгі бағыттары"
-
-                            </h5>
-
-                            <hr class="hr_history" />
-                        </div>
-                    </div>
-                    <!-- end experience section-->
-                    <!-- start experience section-->
-                    <div class="timeline">
-                        <div class="icon">&nbsp;</div>
-
-                        <div class="date-content">
-                            <div class="date-outer"><span class="date"><span
-                                        style="font-weight: 700;line-height: 36px;">10:35-11:00</span> </span></div>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Врач психиатр-нарколог КГП на ПХВ «ЦПЗ» Трубникова Анна Александровна  <br />
-                                Профилактика употребление наркотических веществ среди обучающейся молодежи
-                            </h5>
-
-                            <hr class="hr_history" />
-                        </div>
-                    </div>
-                    <!-- end experience section-->
-                    <!-- start experience section-->
-                    <div class="timeline">
-                        <div class="icon">&nbsp;</div>
-
-                        <div class="date-content">
-                            <div class="date-outer"><span class="date"><span
-                                        style="font-weight: 700;line-height: 36px;">11:00-11:20</span> </span></div>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Координатор города Алматы, международного молодежного проекта Dance4life, реализуемый ОФ «ЭФЬЮ Казахстан» Еникеева Диляра Рамильевна <br />
-                                «Гендерное равенство и противостояние домашнему насилию»
-                            </h5>
-
-                            <hr class="hr_history" />
-                        </div>
-                    </div>
-                    <!-- end experience section-->
-                    <!-- start experience section-->
-                    <div class="timeline">
-                        <div class="icon">&nbsp;</div>
-
-                        <div class="date-content">
-                            <div class="date-outer"><span class="date"><span
-                                        style="font-weight: 700;line-height: 36px;">11:20-11:40</span> </span></div>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Врач эпидемиолог центр СПИД Тулегенова Айнур <br />
-                                «Профилактика ВИЧ-инфекции»
-                            </h5>
-
-                            <hr class="hr_history" />
-                        </div>
-                    </div>
-                    <!-- end experience section-->
-                    <!-- start experience section-->
-                    <div class="timeline">
-                        <div class="icon">&nbsp;</div>
-
-                        <div class="date-content">
-                            <div class="date-outer"><span class="date"><span
-                                        style="font-weight: 700;line-height: 36px;">11:40-12:25</span> </span></div>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Психолог Академии гражданской авиации
-                                Алминова Джамила Сапаровна «Суицид или крик души»
-
-                            </h5>
-
-                            <hr class="hr_history" />
-                        </div>
-                    </div>
-                    <!-- end experience section-->
-                    <!-- start experience section-->
-                    <div class="timeline">
-                        <div class="icon">&nbsp;</div>
-
-                        <div class="date-content">
-                            <div class="date-outer"><span class="date"><span
-                                        style="font-weight: 700;line-height: 36px;">12:25-12:35</span> </span></div>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Подведение итогов  работы весенней школы «Безопасная образовательная среда». Обсуждение актуальных вопросов. Свободный микрофон.
-                            </h5>
-
-                            <hr class="hr_history" />
-                        </div>
-                    </div>
-                    <!-- end experience section-->
-                    <!-- start experience section-->
-                    <div class="timeline">
-                        <div class="icon">&nbsp;</div>
-
-                        <div class="date-content">
-                            <div class="date-outer"><span class="date"><span
-                                        style="font-weight: 700;line-height: 36px;">12:35</span> </span></div>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h5 style="line-height: 24px;margin: 50px 0 15px 0;">Обед
-                            </h5>
-
-                            <hr class="hr_history" />
-                        </div>
-                    </div>
-                    <!-- end experience section-->
-                </div>
 
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
                 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
