@@ -469,7 +469,7 @@
             <div class="title text-center wow animated zoomInDown">
 							<h2>Наши <span class="color">Партнеры</span></h2>
 							<div class="border"></div>
-	  </div>
+	        </div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="block">

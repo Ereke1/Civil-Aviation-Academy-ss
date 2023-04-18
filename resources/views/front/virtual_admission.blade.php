@@ -44,24 +44,10 @@
                             стипендиальных программах).
 
                         </p>
+                        <br>
+                        <br>
+                        <br>
 
-                        <section class="services" id="services" style="background: #fff">
-                            <div class="container" style="margin-bottom: 3vw">
-                                <div class="row">
-                                    <div class="col-12 d-flex align-items-stretch mt-4 wow fadeInUp">
-                                        <div class="icon-box library"
-                                            style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/images/opinion.png);
-                                            background-size: contain;
-                                            background-repeat: round;">
-                                            <h4>
-                                                <a class="stretched-link" href="/o-biblioteke">Отзывы</a>
-                                            </h4>
-                                            <p></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
 
                         <div class="title text-center wow animated zoomInDown">
                             <h2>Наши <span class="color">Партнеры</span></h2>
@@ -144,16 +130,32 @@
                         </div>
 
                         <div class="border"></div>
-                        <br />
-                        <br />
-                        <br />
+
+                        <section class="services" id="services" style="background: #fff">
+                            <div class="container" style="margin-bottom: 3vw">
+                                <div class="row">
+                                    <div class="col-12 d-flex align-items-stretch mt-4 wow fadeInUp">
+                                        <div class="icon-box library"
+                                            style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/images/opinion2.png);
+                                            background-size: contain;
+                                            background-repeat: round;">
+                                            <h4>
+                                                <a class="stretched-link" href="#">Отзывы</a>
+                                            </h4>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
 
                         <div class="row">
                             <div class="col-lg-6 teacher_block_one">
                                 <div class="row">
                                     <div class="col-lg-12 teacher_info_block">
                                         <h5>Главный менеджер по международному сотрудничеству<br />
-                                            Ахметова Клара Абдуллакыз<br />
+                                            Ахметова Клара Абдуллакызы0<br />
                                             8 727 346 92 06<br />
                                             k.akhmetova@agakaz.kz
                                         </h5>
@@ -180,19 +182,19 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <a href="https://kai.kg/ru" target="_blank">
-                                            <h5>Педагог-психолог Авиационного колледжа Ануарбекова Рузана Кайратовна</h5>
+                                            <h5>Международное сотрудничество</h5>
                                         </a>
                                     </div>
                                     <hr class="col-lg-12" />
                                     <div class="col-lg-12">
                                         <a href="https://kai.kg/ru" target="_blank">
-                                            <h5>Педагог-психолог Авиационного колледжа Ануарбекова Рузана Кайратовна</h5>
+                                            <h5>Обзор системы воздушного транспорта </h5>
                                         </a>
                                     </div>
                                     <hr class="col-lg-12" />
                                     <div class="col-lg-12">
                                         <a href="https://kai.kg/ru" target="_blank">
-                                            <h5>Педагог-психолог Авиационного колледжа Ануарбекова Рузана Кайратовна</h5>
+                                            <h5>IATA TRAINING COURSES</h5>
                                         </a>
                                     </div>
                                 </div>
