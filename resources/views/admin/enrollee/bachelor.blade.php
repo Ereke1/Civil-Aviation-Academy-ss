@@ -83,6 +83,8 @@
                     <option value="г. Алматы" @if ($region === 'г. Алматы') selected @endif>г. Алматы</option>
                     <option value="г. Астана" @if ($region === 'г. Астана') selected @endif>г. Астана</option>
                     <option value="г. Шымкент" @if ($region === 'г. Шымкент') selected @endif>г. Шымкент</option>
+                    <option value="Абайская обл." @if ($region === 'Абайская обл.') selected @endif>Абайская обл.
+                    </option>
                     <option value="Акмолинская обл." @if ($region === 'Акмолинская обл.') selected @endif>Акмолинская обл.
                     </option>
                     <option value="Актюбинская обл." @if ($region === 'Актюбинская обл.') selected @endif>Актюбинская обл.
@@ -94,6 +96,8 @@
                     <option value="Восточно-Казахстанская обл." @if ($region === 'Восточно-Казахстанская обл.') selected @endif>
                         Восточно-Казахстанская обл.</option>
                     <option value="Жамбыльская обл." @if ($region === 'Жамбыльская обл.') selected @endif>Жамбыльская обл.
+                    </option>
+                    <option value="Жетысуская обл." @if ($region === 'Жетысуская обл.') selected @endif>Жетысуская обл.
                     </option>
                     <option value="Западно-Казахстанская обл." @if ($region === 'Западно-Казахстанская обл.') selected @endif>
                         Западно-Казахстанская обл.</option>
@@ -111,6 +115,7 @@
                         Северо-Казахстанская обл.</option>
                     <option value="Туркестанская обл." @if ($region === 'Туркестанская обл.') selected @endif>Туркестанская
                         обл.</option>
+                    <option value="Улытауская обл." @if ($region === 'Улытауская обл.') selected @endif>Улытауская обл.</option>
                 </select>
             </div>
             <div>

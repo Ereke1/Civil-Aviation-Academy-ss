@@ -24,182 +24,108 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9">
-                        <p>
-                            <b>Международное сотрудничество </b> в области образования и науки осуществляется в рамках
-                            международных договоров,
-                            заключаемых Академией Гражданской Авиации с зарубежными научно-образовательными учреждениями,
-                            лётными учебными центрами,
-                            ассоциациями и организациями. <br />
-                            <b>Академическая мобильность </b> предполагает обучение студентов на академический период в
-                            иностранном вузе-партнере.
-                            Участие в программе — это шанс получить опыт обучения в зарубежном вузе и опыт проживания за
-                            границей одновременно.
-                            <b>Требования к претендентам </b> <br />
-                            1. Обучение на 2-3 курсах бакалавриата;<br />
-                            2. Иметь гражданство РК;<br />
-                            3. Уровень знания английского языка – В1, подтверждающие сертификаты IELTS, TOEFL (для участия в
-                            стипендиальных программах, в таких как Erasmus+, Bolashaq и т. д.);<br />
-                            4. GPA от 2.8 и выше. (студенты с GPA от 2.8 за свой счет, GPA выше 3.0 участвуют в
-                            стипендиальных программах).
-
-                        </p>
-                        <br>
-                        <br>
-                        <br>
-
-
-                        <div class="title text-center wow animated zoomInDown">
-                            <h2>Наши <span class="color">Партнеры</span></h2>
-                            <div class="border"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="block">
-                                    <div id="Client_Logo" class="owl-carousel outer">
-                                        <div class="inner">
-                                            <a href="https://nau.edu.ua/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/nau.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://naa.edu.az/ru" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/naa.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://www.patriagroup.com/products-and-services/through-life-capability/professional-pilot-training"
-                                                target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/patria.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://erau.edu/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/erau.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://www.tsi.lv/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/tsi.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://bsa.edu.lv/ru/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/bsa_edu.gif" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://www.f-air.cz/en/professional-pilot?no-cookies#tab1"
-                                                target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/fair.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://www.uvauga.ru/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/uvauga.jpg" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="http://www.mstuca.ru/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/mstuca.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://www.eskisehir.edu.tr/" target="_blank"><img
-                                                    class="img-responsive" src="/assets/images/clientLogo/eskisehir.png"
-                                                    alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://bgaa.by/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/bgaa.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://ugatu.su/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/ugatuu.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://pnzgu.ru/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/pnzgu.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://kai.kg/ru" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/kai.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="http://osu.ru/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/osu.png" alt=""></a>
-                                        </div>
-                                        <div class="inner">
-                                            <a href="https://ksu.lt/en/" target="_blank"><img class="img-responsive"
-                                                    src="/assets/images/clientLogo/ksult.png" alt=""></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="border"></div>
-
-                        <section class="services" id="services" style="background: #fff">
-                            <div class="container" style="margin-bottom: 3vw">
-                                <div class="row">
-                                    <div class="col-12 d-flex align-items-stretch mt-4 wow fadeInUp">
-                                        <div class="icon-box library"
-                                            style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/images/opinion2.png);
-                                            background-size: contain;
-                                            background-repeat: round;">
-                                            <h4>
-                                                <a class="stretched-link" href="#">Отзывы</a>
-                                            </h4>
-                                            <p></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
+                    <div class="col-lg-12">
 
                         <div class="row">
-                            <div class="col-lg-6 teacher_block_one">
+                            <div class="col-lg-12 teacher_block_one">
                                 <div class="row">
                                     <div class="col-lg-12 teacher_info_block">
-                                        <h5>Главный менеджер по международному сотрудничеству<br />
-                                            Ахметова Клара Абдуллакызы0<br />
-                                            8 727 346 92 06<br />
-                                            k.akhmetova@agakaz.kz
+                                        <h5>
+                                            Олжас Галиахметов
                                         </h5>
+                                        <p>
+                                            Я являюсь студентом 3 курса Академии Гражданской Авиации, в данный момент
+                                            обучаюсь в ВАА(Baltic Aviation Academy), который находится в Литве, в городе
+                                            Вильнюс. В 2022 году Академия Гражданской Авиации запустила программу по
+                                            обучению студентов в BAA, по которой в данный момент мы обучаемся уже 7 месяцев.
+                                            По плану данного проекта, обучение занимает 18 месяцев, из которых 10 месяцев
+                                            проходят в Литве, а именно теоретическая подготовка и сдача экзаменов по
+                                            дисциплинам ATPL, а также 8 месяцев занимает практическая подготовка, проходящая
+                                            в Испании, в городе Льейда. Нам с ребятами выпал шанс на участие в данной
+                                            программе, сейчас в нашей группе обучаются 9 человек, из которых 5 студентов
+                                            АГА, а также ребята с других стран. В течение данного курса, мы проходим
+                                            предметы для получения лицензии, а также проходим различные тестирования по
+                                            определению нашей компетентности и подтверждению наших навыков. После окончания
+                                            обучения в ВАА, студенты получают европейскую лицензию о прохождении
+                                            теоретического и практического курса. От лица казахстанских студентов, хотелось
+                                            бы выразить благодарность Академии Гражданской Авиации и Baltic Aviation Academy
+                                            за предоставленную возможность и поддержку в наших начинаниях. Мы являемся
+                                            пилотным проектом, который обучается в BAA от Академии Гражданской Авиации.
+                                            Надеемся, что в будущем наш университет будет и дальше обмениваться опытом с
+                                            зарубежными компаниями, которые готовят пилотов, а также надеемся увидеть еще
+                                            больше наших студентов в таких организациях, как ВАА. Хотелось бы пожелать удачи
+                                            всем ребятам, кто собирается обучаться заграницей.
+                                        </p>
+                                        <div class="col-md-10 col-lg-8 col-12 p-0">
+                                            <div class="more-images">
+                                                <div class="d-flex flex-wrap h-100">
+                                                    <div class="col-md-2 col-3 pr-1 mb-1 pl-0">
+                                                        <div class="more-images__bg">&nbsp;</div>
+                                                        <a class="group more-images__link" data-fancybox="images"
+                                                            href="https://caa.edu.kz/assets/images/upload/WhatsApp Image 2023-04-14 at 16.17.43_1681806270.jpeg"><img
+                                                                alt="" class="h-100 w-100"
+                                                                src="https://caa.edu.kz/assets/images/upload/WhatsApp Image 2023-04-14 at 16.17.43_1681806270.jpeg" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 teacher_block_one">
+                            <div class="col-lg-12 teacher_block_one">
                                 <div class="row">
                                     <div class="col-lg-12 teacher_info_block">
-                                        <h5>Менеджер по международному сотрудничеству<br />
-                                            Сулейманова Емилия <br />
-                                            8 7781108559<br />
-                                            emilia.suleimanova@agakaz.kz
+                                        <h5>
+                                            Аламан Ахметжанов
                                         </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                        <p>
+                                            Академическая мобильность от Академии Гражданской Авиации дала нам как студентам
+                                            возможность учиться в другом университете и изучать новые предметы и дисциплины.
+                                            Это помогло нам расширить свои знания и навыки в определенной области и получить
+                                            уникальный опыт, который может пригодиться в нашей будущей карьере.
+                                            Еще одним плюсом опыта академической мобильности является повышение языковых
+                                            навыков. Мы, участвующие в программе обмена, общались с местными жителями и
+                                            преподавателями на иностранном языке, что помогло нам улучшить свою языковую
+                                            компетенцию.
+                                            Кроме того, опыт академической мобильности помог нам развить личностные
+                                            качества, такие как самостоятельность, адаптивность и терпимость к другим
+                                            культурам. Мы научились справляться с непредвиденными ситуациями и решать
+                                            проблемы, что определенно поможет в будущем.
+                                            В целом, опыт академической мобильности в другой стране является очень ценным и
+                                            полезным для студентов, которые хотят расширить свои горизонты и получить
+                                            уникальный опыт обучения и жизни в другой культуре.
+                                        </p>
+                                        <div class="col-md-10 col-lg-8 col-12 p-0">
+                                            <div class="more-images">
+                                                <div class="d-flex flex-wrap h-100">
 
-                    <div class="col-lg-3">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <a href="https://kai.kg/ru" target="_blank">
-                                            <h5>Международное сотрудничество</h5>
-                                        </a>
-                                    </div>
-                                    <hr class="col-lg-12" />
-                                    <div class="col-lg-12">
-                                        <a href="https://kai.kg/ru" target="_blank">
-                                            <h5>Обзор системы воздушного транспорта </h5>
-                                        </a>
-                                    </div>
-                                    <hr class="col-lg-12" />
-                                    <div class="col-lg-12">
-                                        <a href="https://kai.kg/ru" target="_blank">
-                                            <h5>IATA TRAINING COURSES</h5>
-                                        </a>
+                                                    <div class="col-md-2 col-3 pr-1 mb-1 pl-0">
+                                                        <div class="more-images__bg">&nbsp;</div>
+                                                        <a class="group more-images__link" data-fancybox="images"
+                                                            href="https://caa.edu.kz/assets/images/upload/WhatsApp Image 2023-04-14 at 16.18.34_1681806296.jpeg"><img
+                                                                alt="" class="h-100 w-100"
+                                                                src="https://caa.edu.kz/assets/images/upload/WhatsApp Image 2023-04-14 at 16.18.34_1681806296.jpeg" />
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="col-md-2 col-3 pr-1 mb-1 pl-0">
+                                                        <div class="more-images__bg">&nbsp;</div>
+                                                        <a class="group more-images__link" data-fancybox="images"
+                                                            href="https://caa.edu.kz/assets/images/upload/WhatsApp Image 2023-04-14 at 16.18.35_1681806405.jpeg"><img
+                                                                alt="" class="h-100 w-100"
+                                                                src="https://caa.edu.kz/assets/images/upload/WhatsApp Image 2023-04-14 at 16.18.35_1681806405.jpeg" />
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

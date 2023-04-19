@@ -24,26 +24,42 @@
                 <label for="region">Регион</label>
                 <select name="region">
                     <option value=""></option>
-                    <option value="Город Алматы" @if ($region === 'Город Алматы') selected @endif>Город Алматы</option>
-                    <option value="Город Астана" @if ($region === 'Город Астана') selected @endif>Город Астана</option>
-                    <option value="Город Шымкент" @if ($region === 'Город Шымкент') selected @endif>Город Шымкент</option>
-                    <option value="Акмолинская область" @if ($region === 'Акмолинская область') selected @endif>Акмолинская область</option>
-                    <option value="Актюбинская область" @if ($region === 'Актюбинская область') selected @endif>Актюбинская область</option>
-                    <option value="Алматинская область" @if ($region === 'Алматинская область') selected @endif>Алматинская область</option>
-                    <option value="Атырауская область" @if ($region === 'Атырауская область') selected @endif>Атырауская область</option>
-                    <option value="Восточно-Казахстанская область" @if ($region === 'Восточно-Казахстанская область') selected @endif>
-                        Восточно-Казахстанская область</option>
-                    <option value="Жамбыльская область" @if ($region === 'Жамбыльская обл.') selected @endif>Жамбыльская область</option>
-                    <option value="Западно-Казахстанская область" @if ($region === 'Западно-Казахстанская область') selected @endif>
-                        Западно-Казахстанская область</option>
-                    <option value="Карагандинская область" @if ($region === 'Карагандинская область') selected @endif>Карагандинская область</option>
-                    <option value="Костанайская область" @if ($region === 'Костанайская область') selected @endif>Костанайская область</option>
-                    <option value="Кызылординская область" @if ($region === 'Кызылординская область') selected @endif>Кызылординская область</option>
-                    <option value="Мангистауская область" @if ($region === 'Мангистауская область') selected @endif>Мангистауская область</option>
-                    <option value="Павлодарская область" @if ($region === 'Павлодарская область') selected @endif>Павлодарская область</option>
-                    <option value="Северо-Казахстанская область" @if ($region === 'Северо-Казахстанская область') selected @endif>
-                        Северо-Казахстанская область</option>
-                    <option value="Туркестанская область" @if ($region === 'Туркестанская область') selected @endif>Туркестанская область</option>
+                    <option value="г. Алматы" @if ($region === 'г. Алматы') selected @endif>г. Алматы</option>
+                    <option value="г. Астана" @if ($region === 'г. Астана') selected @endif>г. Астана</option>
+                    <option value="г. Шымкент" @if ($region === 'г. Шымкент') selected @endif>г. Шымкент</option>
+                    <option value="Абайская обл." @if ($region === 'Абайская обл.') selected @endif>Абайская обл.
+                    </option>
+                    <option value="Акмолинская обл." @if ($region === 'Акмолинская обл.') selected @endif>Акмолинская обл.
+                    </option>
+                    <option value="Актюбинская обл." @if ($region === 'Актюбинская обл.') selected @endif>Актюбинская обл.
+                    </option>
+                    <option value="Алматинская обл." @if ($region === 'Алматинская обл.') selected @endif>Алматинская обл.
+                    </option>
+                    <option value="Атырауская обл." @if ($region === 'Атырауская обл.') selected @endif>Атырауская обл.
+                    </option>
+                    <option value="Восточно-Казахстанская обл." @if ($region === 'Восточно-Казахстанская обл.') selected @endif>
+                        Восточно-Казахстанская обл.</option>
+                    <option value="Жамбыльская обл." @if ($region === 'Жамбыльская обл.') selected @endif>Жамбыльская обл.
+                    </option>
+                    <option value="Жетысуская обл." @if ($region === 'Жетысуская обл.') selected @endif>Жетысуская обл.
+                    </option>
+                    <option value="Западно-Казахстанская обл." @if ($region === 'Западно-Казахстанская обл.') selected @endif>
+                        Западно-Казахстанская обл.</option>
+                    <option value="Карагандинская обл." @if ($region === 'Карагандинская обл.') selected @endif>Карагандинская
+                        обл.</option>
+                    <option value="Костанайская обл." @if ($region === 'Костанайская обл.') selected @endif>Костанайская обл.
+                    </option>
+                    <option value="Кызылординская обл." @if ($region === 'Кызылординская обл.') selected @endif>Кызылординская
+                        обл.</option>
+                    <option value="Мангистауская обл." @if ($region === 'Мангистауская обл.') selected @endif>Мангистауская
+                        обл.</option>
+                    <option value="Павлодарская обл." @if ($region === 'Павлодарская обл.') selected @endif>Павлодарская обл.
+                    </option>
+                    <option value="Северо-Казахстанская обл." @if ($region === 'Северо-Казахстанская обл.') selected @endif>
+                        Северо-Казахстанская обл.</option>
+                    <option value="Туркестанская обл." @if ($region === 'Туркестанская обл.') selected @endif>Туркестанская
+                        обл.</option>
+                    <option value="Улытауская обл." @if ($region === 'Улытауская обл.') selected @endif>Улытауская обл.</option>
                 </select>
             </div>
             <div>

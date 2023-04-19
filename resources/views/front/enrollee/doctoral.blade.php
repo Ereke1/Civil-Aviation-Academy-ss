@@ -281,12 +281,14 @@
                                 <option value="г. Алматы">г. Алматы</option>
                                 <option value="г. Астана">г. Астана</option>
                                 <option value="г. Шымкент">г. Шымкент</option>
+                                <option value="Абайская обл.">Абайская обл.</option>
                                 <option value="Акмолинская обл.">Акмолинская обл.</option>
                                 <option value="Актюбинская обл.">Актюбинская обл.</option>
                                 <option value="Алматинская обл.">Алматинская обл.</option>
                                 <option value="Атырауская обл.">Атырауская обл.</option>
                                 <option value="Восточно-Казахстанская обл.">Восточно-Казахстанская обл.</option>
                                 <option value="Жамбыльская обл.">Жамбыльская обл.</option>
+                                <option value="Жетысуская обл.">Жетысуская обл.</option>
                                 <option value="Западно-Казахстанская обл.">Западно-Казахстанская обл.</option>
                                 <option value="Карагандинская обл.">Карагандинская обл.</option>
                                 <option value="Костанайская обл.">Костанайская обл.</option>
@@ -295,6 +297,7 @@
                                 <option value="Павлодарская обл.">Павлодарская обл.</option>
                                 <option value="Северо-Казахстанская обл.">Северо-Казахстанская обл.</option>
                                 <option value="Туркестанская обл.">Туркестанская обл.</option>
+                                <option value="Улытауская обл.">Улытауская обл.</option>
                             </select>
                         </div>
                         <div id="iinBlock" class="disabled">
