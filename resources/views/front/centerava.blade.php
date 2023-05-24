@@ -95,11 +95,10 @@
       <p class="lead"><a href="/upravlenie-bezopasnostyu-poletov">{{ __('Управление безопасностью полётов') }}</a></p><br>
       <p class="lead"><a href="/assets/images/upload/Декларация Руководителя РУБП_1677233267.pdf">Руководство по управлению безопасностью полетов</a></p><br>
         <h2>{{ __('НАШИ СЕРТИФИКАТЫ') }}</h2>
-        <p class="lead"><a href="https://aaq.kz/wp-content/uploads/2021/09/kz63vgl00000098_ru.pdf">Область действия сертификата авиационного учебного центра</a></p>
+        <p class="lead"><a href="/assets/images/сертификат обл д от 2022г.pdf">Область действия сертификата авиационного учебного центра</a></p>
         <p class="lead"><a href="https://aaq.kz/wp-content/uploads/2021/10/sertifikat-trenazhera-alsim-alx-85-auk-aga-ot-01.10.2021.pdf">Сертификат соответствия тренажера ALSIM (ALX-85) FNPT II / MCC</a></p>
         <p class="lead"><a href="https://aaq.kz/wp-content/uploads/2021/09/sertifikat-trenazhera-v737ng-auk-aga-ot-05.08.2021.pdf">Сертификат соответствия тренажера FNPT Level II / MCC+FTD1 (B737NG)</a></p>
         <p class="lead"><a href="https://aaq.kz/wp-content/uploads/2021/09/sertifikat-trenazhera-a320-200-auk-aga-ot-03.09.2021.pdf">Сертификат соответствия тренажера FNPT II / MCC+FTD1 (A320-200)</a></p>
-        <p class="lead"><a href="/assets/images/upload/%D0%9D%D0%9E%D0%92%D0%AB%D0%99%20%D0%A1%D0%95%D0%A0%D0%A2%D0%98%D0%A4%D0%98%D0%9A%D0%90%D0%A2%20%D0%90%D0%A3%D0%9A.pdf"> Сертификат (Профессиональная подготовка авиационного персонала)</a></p>
       </div>
     </div>
   </div>
