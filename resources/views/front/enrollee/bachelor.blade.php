@@ -113,6 +113,11 @@
                                 <option value="13">13</option>
                                 <option value="14">14</option>
                                 <option value="15">15</option>
+                                <option value="10">16</option>
+                                <option value="11">17</option>
+                                <option value="12">18</option>
+                                <option value="13">19</option>
+                                <option value="14">20</option>
                             </select>
                         </div>
                         <div id="mathBlock" class="disabled">
