@@ -91,6 +91,11 @@
                                 <option value="13">13</option>
                                 <option value="14">14</option>
                                 <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
                             </select>
                         </div>
                         <div id="historyKZBlock" class="disabled">
@@ -150,6 +155,16 @@
                                 <option value="33">33</option>
                                 <option value="34">34</option>
                                 <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
                             </select>
                         </div>
                         <div id="profSubBlock" class="disabled">
@@ -198,7 +213,16 @@
                                 <option value="33">33</option>
                                 <option value="34">34</option>
                                 <option value="35">35</option>
-                    
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
                             </select>
                         </div>
                         <div id="natureSecBlock" class="disabled">
@@ -236,7 +260,16 @@
                                 <option value="33">33</option>
                                 <option value="34">34</option>
                                 <option value="35">35</option>
-                              
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
                             </select>
                         </div>
                         <div id="geographyBlock" class="disabled">
@@ -274,7 +307,16 @@
                                 <option value="33">33</option>
                                 <option value="34">34</option>
                                 <option value="35">35</option>
-                             
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
                             </select>
                         </div>
 
@@ -313,7 +355,16 @@
                                 <option value="33">33</option>
                                 <option value="34">34</option>
                                 <option value="35">35</option>
-                              
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
                             </select>
                         </div>
                         <div id="countryBlock" class="disabled">
