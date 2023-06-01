@@ -535,6 +535,7 @@ function physicsFunc() {
 		}
 		// Показываем список образовательных программам
 		document.getElementById('programmsBlock').classList.remove('disabled')
+        document.getElementById('programms').value = "";
 	} else if (quantENTInputVal() === '2' && physicsInputVal() !== '-----' && profsubInputVal() === 'Авиационная безопасность') {
 		// Скрываем недоступные обр. программы
 		let geogr = document.querySelectorAll('.geogr-opt')
@@ -553,6 +554,7 @@ function physicsFunc() {
 		}
 		// Показываем список образовательных программам
 		document.getElementById('programmsBlock').classList.remove('disabled')
+        document.getElementById('programms').value = "";
 	} else if (quantENTInputVal() === '2' && physicsInputVal() !== '-----' && profsubInputVal() === 'Охрана труда') {
 		// Скрываем недоступные обр. программы
 		let geogr = document.querySelectorAll('.geogr-opt')
@@ -571,6 +573,7 @@ function physicsFunc() {
 		}
 		// Показываем список образовательных программам
 		document.getElementById('programmsBlock').classList.remove('disabled')
+        document.getElementById('programms').value = "";
 	}
 }
 
@@ -584,6 +587,7 @@ function geographyFunc() {
 		}
 		// Показываем список образовательных программам
 		document.getElementById('programmsBlock').classList.remove('disabled')
+        document.getElementById('programms').value = "";
 		// Скрываем недоступные обр. программы
 		let physic = document.querySelectorAll('.physic-opt')
 		for (let i = 0; i < physic.length; i++) {
