@@ -403,7 +403,7 @@ function quantENTFunc() {
         document.getElementById('profSub').required = true
 
 
-		document.getElementById('profSubBlock').querySelector('label').innerHTML = '2-й проф. предмет'
+		document.getElementById('profSubBlock').querySelector('label').innerHTML = translation2profSubj
 		document.getElementById('profSubBlock').classList.remove('disabled')
 		document.getElementById('profSub').options[1].classList.remove('disabled')
 		document.getElementById('profSub').options[2].classList.remove('disabled')
@@ -443,7 +443,7 @@ function quantENTFunc() {
         document.getElementById('profSub').required = true
 
 		// Показываем блок ЕНТ с 2 предметами
-		document.getElementById('profSubBlock').querySelector('label').innerHTML = '1-й профильный предмет'
+		document.getElementById('profSubBlock').querySelector('label').innerHTML = translation1profSubj
 		document.getElementById('profSubBlock').classList.remove('disabled')
 		document.getElementById('profSub').options[3].classList.remove('disabled')
 		document.getElementById('profSub').options[4].classList.remove('disabled')
@@ -491,7 +491,7 @@ function profSubFunc() {
 		document.getElementById('aviaSecBlock').classList.remove('disabled')
         document.getElementById('aviaSec').value = "";
         document.getElementById('aviaSec').required = true
-		document.getElementById('physicsBlock').querySelector('label').innerHTML = 'Физика (2-ой проф. предм.)'
+		document.getElementById('physicsBlock').querySelector('label').innerHTML = translationPhis2profSubj
 		document.getElementById('physicsBlock').classList.remove('disabled')
         document.getElementById('physics').value = "";
         document.getElementById('physics').required = true
@@ -506,7 +506,7 @@ function profSubFunc() {
 		document.getElementById('natureSecBlock').classList.remove('disabled')
         document.getElementById('natureSec').value = "";
         document.getElementById('natureSec').required = true
-		document.getElementById('physicsBlock').querySelector('label').innerHTML = 'Физика (2-ой проф. предм.)'
+		document.getElementById('physicsBlock').querySelector('label').innerHTML = translationPhis2profSubj
 		document.getElementById('physicsBlock').classList.remove('disabled')
         document.getElementById('physics').value = "";
         document.getElementById('physics').required = true

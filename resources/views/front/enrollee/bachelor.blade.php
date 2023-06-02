@@ -5,7 +5,7 @@
 @section('content')
     <section id="enrollee">
         <div class="container">
-            <h1>Онлайн регистрация на бакалавриат</h1>
+            <h1>{{ __('Онлайн регистрация на бакалавриат') }}</h1>
             <div class="enrollee">
                 <form action="{{ route('front.enrollee.bachelor.store') }}" method="POST" id="form"
                     enctype="multipart/form-data">
@@ -14,44 +14,45 @@
                     <input type="hidden" name="status" value="0">
                     <div class="flex">
                         <div>
-                            <label for="base">Что окончил:</label>
+                            <label for="base">{{ __('На базе') }}</label>
                             <select name="base" id="base" onchange="admissionFunc()" required>
                                 <option value="" disabled selected>-----</option>
-                                <option value="11-го класса">Среднюю школу</option>
-                                <option value="Технического и профессионального образования (колледжа)">Колледж</option>
-                                <option value="Высшего образования">Выпускник ВУЗа</option>
+                                <option value="11-го класса">{{ __('11 классов') }}</option>
+                                <option value="Технического и профессионального образования (колледжа)">{{ __('ТиПО') }}</option>
+                                <option value="Высшего образования">{{ __('Высшего образования') }}</option>
                             </select>
                         </div>
 
                         <div class="disabled" id="languageBlock">
-                            <label for="language">Язык обучения:</label>
+                            <label for="language">{{ __('Язык обучения') }}</label>
                             <select name="language" id="language" onchange="languageFunc()" required>
                                 <option value="" disabled selected>-----</option>
-                                <option value="Казахский">Казахский</option>
-                                <option value="Русский">Русский</option>
+                                <option value="Казахский">{{ __('Казахский') }}</option>
+                                <option value="Русский">{{ __('Русский') }}</option>
+                                <option value="Русский">{{ __('Английский') }}</option>
                             </select>
                         </div>
 
                         <div class="disabled" id="citizenBlock">
-                            <label for="citizen">Гражданство:</label>
+                            <label for="citizen">{{ __('Гражданство') }}</label>
                             <select name="citizen" id="citizen" onchange="citizenFunc()" required>
                                 <option value="" disabled selected>-----</option>
-                                <option value="Резидент РК">Гражданин Республики Казахстан</option>
-                                <option value="Нерезидент РК">Гражданин другого государства</option>
+                                <option value="Резидент РК">{{ __('Гражданин Республики Казахстан') }}</option>
+                                <option value="Нерезидент РК">{{ __('Гражданин другого государства') }}</option>
                             </select>
                         </div>
 
                         <div class="disabled" id="haveENTBlock">
-                            <label for="haveENT">Наличие результатов ЕНТ:</label>
+                            <label for="haveENT">{{ __('Имеется ЕНТ') }}</label>
                             <select name="haveENT" id="haveENT" onchange="haveENTFunc()">
                                 <option value="" disabled selected>-----</option>
-                                <option value="Да">Да</option>
-                                <option value="Нет">Нет</option>
+                                <option value="Да">{{ __('Да') }}</option>
+                                <option value="Нет">{{ __('Нет') }}</option>
                             </select>
                         </div>
 
                         <div class="disabled" id="quantENTBlock">
-                            <label for="quantENT">Количество предметов:</label>
+                            <label for="quantENT">{{ __('Количество предметов') }}</label>
                             <select name="quantENT" id="quantENT" onchange="quantENTFunc()">
                                 <option value="">-----</option>
                                 <option value="5">5</option>
@@ -60,7 +61,7 @@
                         </div>
 
                         <div id="mathLitBlock" class="disabled">
-                            <label for="mathLit">Математическая грамотность</label>
+                            <label for="mathLit">{{ __('Математическая грамотность') }}</label>
                             <select name="mathLit" id="mathLit">
                                 <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
@@ -77,7 +78,7 @@
                             </select>
                         </div>
                         <div id="readLitBlock" class="disabled">
-                            <label for="readLit">Грамотность чтения</label>
+                            <label for="readLit">{{ __('Грамотность чтения') }}</label>
                             <select name="readLit" id="readLit">
                                 <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
@@ -99,7 +100,7 @@
                             </select>
                         </div>
                         <div id="historyKZBlock" class="disabled">
-                            <label for="historyKZ">История Казахстана</label>
+                            <label for="historyKZ">{{ __('История Казахстана') }}</label>
                             <select name="historyKZ" id="historyKZ">
                                 <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
@@ -121,7 +122,7 @@
                             </select>
                         </div>
                         <div id="mathBlock" class="disabled">
-                            <label for="math">Математика (1-й проф. предмет)</label>
+                            <label for="math">{{ __('Математика (1-й проф. предмет)') }}</label>
                             <select name="math" id="math">
                                 <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
@@ -168,18 +169,17 @@
                             </select>
                         </div>
                         <div id="profSubBlock" class="disabled">
-                            <label for="profSub">2-й проф. предмет</label>
+                            <label for="profSub">{{ __('2-й проф. предмет') }}</label>
                             <select name="profSub" id="profSub" onchange="profSubFunc()">
                                 <option value="" disabled selected>-----</option>
-                                <option value="Физика" class="disabled">Физика</option>
-                                <option value="География" class="disabled">География</option>
-                                <option value="Авиационная безопасность" class="disabled">Авиационная безопасность
-                                </option>
-                                <option value="Охрана труда" class="disabled">Охрана труда</option>
+                                <option value="Физика" class="disabled">{{ __('Физика') }}</option>
+                                <option value="География" class="disabled">{{ __('География') }}</option>
+                                <option value="Авиационная безопасность" class="disabled">{{ __('Авиационная безопасность') }}</option>
+                                <option value="Охрана труда" class="disabled">{{ __('Охрана труда') }}</option>
                             </select>
                         </div>
                         <div id="aviaSecBlock" class="disabled">
-                            <label for="aviaSec">Авиационная безопасность</label>
+                            <label for="aviaSec">{{ __('Авиационная безопасность') }}</label>
                             <select name="aviaSec" id="aviaSec">
                                 <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
@@ -226,7 +226,7 @@
                             </select>
                         </div>
                         <div id="natureSecBlock" class="disabled">
-                            <label for="natureSec">Охрана труда</label>
+                            <label for="natureSec">{{ __('Охрана труда') }}</label>
                             <select name="natureSec" id="natureSec">
                                 <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
@@ -273,7 +273,7 @@
                             </select>
                         </div>
                         <div id="geographyBlock" class="disabled">
-                            <label for="geography">География</label>
+                            <label for="geography">{{ __('География') }}</label>
                             <select name="geography" id="geography" onchange="geographyFunc()">
                                 <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
@@ -321,7 +321,7 @@
                         </div>
 
                         <div id="physicsBlock" class="disabled">
-                            <label for="physics">Физика</label>
+                            <label for="physics">{{ __('Физика') }}</label>
                             <select name="physics" id="physics" onchange="physicsFunc()">
                                 <option value="" disabled selected>-----</option>
                                 <option value="5">5</option>
@@ -368,7 +368,7 @@
                             </select>
                         </div>
                         <div id="countryBlock" class="disabled">
-                            <label for="countries">Страна</label>
+                            <label for="countries">{{ __('Гражданство') }}</label>
                             <select name="countries" id="countries" onchange="countryFunc()">
                                 <option value="" disabled selected>-----</option>
                                 <option value="Австралия">Австралия</option>
@@ -610,133 +610,127 @@
                             </select>
                         </div>
                         <div id="programmsBlock" class="disabled">
-                            <label for="programms">Образовательная программа</label>
+                            <label for="programms">{{ __('Образовательная программа') }}</label>
                             <select name="programms" id="programms" onchange="programmsFunc()" required>
                                 <option value="" disabled selected>-----</option>
 
                                 <!-- B167 Лётная эксплуатация летательных аппаратов и двигателей -->
-                                <option class="physic-opt disabled" value="Лётная эксплуатация самолётов (пилот)">Летная
-                                    эксплуатация гражданских самолетов (пилот)</option>
-                                <option class="physic-opt disabled" value="Лётная эксплуатация вертолётов (пилот)">Летная
-                                    эксплуатация гражданских вертолетов (пилот)</option>
-                                <option class="physic-opt disabled" value="Обслуживание воздушного движения">Обслуживание
-                                    воздушного движения и аэронавигационное обеспечение полетов
+                                <option class="physic-opt disabled" value="Лётная эксплуатация самолётов (пилот)">{{ __('Летная эксплуатация гражданских самолётов (пилот)') }}</option>
+                                <option class="physic-opt disabled" value="Лётная эксплуатация вертолётов (пилот)">{{ __('Летная эксплуатация гражданских вертолётов (пилот)') }}</option>
+                                <option class="physic-opt disabled" value="Обслуживание воздушного движения">{{ __('Обслуживание воздушного движения и аэронавигационное обеспечение полетов (авиадиспетчер)') }}
                                 </option>
 
                                 <!-- B067 Воздушный транспорт и технологии -->
                                 <option class="physic-opt b067 disabled"
                                     value="Техническая эксплуатация систем авионики летательных аппаратов и двигателей">
-                                    Техническая эксплуатация систем авионики летательных аппаратов</option>
+                                    {{ __('Техническая эксплуатация систем авионики летательных аппаратов и двигателей') }}</option>
                                 <option class="physic-opt b067 disabled"
-                                    value="Техническая эксплуатация летательных аппаратов и двигателей">Техническая
-                                    эксплуатация летательных аппаратов и двигателей</option>
+                                    value="Техническая эксплуатация летательных аппаратов и двигателей">{{ __('Техническая эксплуатация летательных аппаратов и двигателей') }}</option>
                                 <option class="physic-opt b067 disabled" value="Обеспечение авиационной безопасности">
-                                    Обеспечение авиационной безопасности</option>
+                                    {{ __('Обеспечение авиационной безопасности') }}</option>
                                 <option class="physic-opt b067 disabled"
-                                    value="Обслуживание наземного радиоэлектронного оборудования аэропортов">Обслуживание
-                                    наземного радиоэлектронного оборудования аэропортов</option>
+                                    value="Обслуживание наземного радиоэлектронного оборудования аэропортов">{{ __('Обслуживание наземного радиоэлектронного оборудования аэропортов') }}</option>
                                 <option class="physic-opt b067 disabled" value="Организация аэропортовой деятельности">
-                                    Организация аэропортовой деятельности</option>
+                                    {{ __('Организация аэропортовой деятельности') }}</option>
                                 <option class="physic-opt b067 disabled"
                                     value="Технология транспортных процессов в авиации">
-                                    Технология транспортных процессов в авиации</option>
+                                    {{ __('Технология транспортных процессов в авиации') }}</option>
 
                                 <!-- B095 Транспортные услуги -->
                                 <option class="geogr-opt disabled b095" value="Организация авиационных перевозок">
-                                    Организация авиационных перевозок</option>
-                                <option class="geogr-opt disabled b095" value="Логистика на транспорте">Логистика на
-                                    транспорте</option>
+                                    {{ __('Организация авиационных перевозок') }}</option>
+                                <option class="geogr-opt disabled b095" value="Логистика на транспорте">{{ __('Логистика на транспорте') }}</option>
                             </select>
                         </div>
                         <div id="vlekBlock" class="disabled">
-                            <label for="haveVLEK">Пройден ВЛЭК?</label>
+                            <label for="haveVLEK">{{ __('Медицинский сертификат (ВЛЭК)') }}</label>
                             <select name="haveVLEK" id="vlek" onchange="vlekFunc()">
                                 <option value="" disabled selected>-----</option>
-                                <option value="Да">Да</option>
-                                <option value="Нет">Нет</option>
+                                <option value="Да">{{ __('Да') }}</option>
+                                <option value="Нет">{{ __('Нет') }}</option>
                             </select>
                         </div>
                         <div id="vlekBlockImage" class="disabled">
-                            <label for="vlekImage">Прикрепите пройденный ВЛЭК</label>
+                            <label for="vlekImage">{{ __('Прикрепите медицинский сертификат') }}</label>
                             <input type="file" id="vlekImage" name="vlekImage">
                         </div>
                         <div id="psychoBlockImage" class="disabled">
-                            <label for="psychoImage">Прикрепите пройденный психотест</label>
+                            <label for="psychoImage">{{ __('Прикрепите пройденный психотест') }}</label>
                             <input type="file" name="psychoImage" id="psychoImage" onchange="vlekImageFunc()">
                         </div>
                         <div id="ieltsBlock" class="disabled">
-                            <label for="haveIELTS">Имеется IELTS/TOEFL</label>
+                            <label for="haveIELTS">{{ __('Имеется IELTS/TOEFL') }}</label>
                             <select name="haveIELTS" id="ielts" onchange="ieltsFunc()">
                                 <option value="" disabled selected>-----</option>
-                                <option value="Да">Да</option>
-                                <option value="Нет">Нет</option>
+                                <option value="Да">{{ __('Да') }}</option>
+                                <option value="Нет">{{ __('Нет') }}</option>
                             </select>
                         </div>
                         <div id="ieltsBlockImage" class="disabled">
-                            <label for="ieltsImage">Прикрепите сертификат IELTS/TOEFL</label>
+                            <label for="ieltsImage">{{ __('Прикрепите сертификат IELTS/TOEFL') }}</label>
                             <input type="file" name="ieltsImage" id="ieltsImage" onchange="ieltsImageFunc()">
                         </div>
                         <div id="regionBlock" class="disabled">
-                            <label for="region">Регион</label>
+                            <label for="region">{{ __('Регион') }}</label>
                             <select name="region" id="region" onchange="regionFunc()">
                                 <option value="" disabled selected>-----</option>
-                                <option value="г. Алматы">г. Алматы</option>
-                                <option value="г. Астана">г. Астана</option>
-                                <option value="г. Шымкент">г. Шымкент</option>
-                                <option value="Абайская обл.">Абайская обл.</option>
-                                <option value="Акмолинская обл.">Акмолинская обл.</option>
-                                <option value="Актюбинская обл.">Актюбинская обл.</option>
-                                <option value="Алматинская обл.">Алматинская обл.</option>
-                                <option value="Атырауская обл.">Атырауская обл.</option>
-                                <option value="Восточно-Казахстанская обл.">Восточно-Казахстанская обл.</option>
-                                <option value="Жамбыльская обл.">Жамбыльская обл.</option>
-                                <option value="Жетысуская обл.">Жетысуская обл.</option>
-                                <option value="Западно-Казахстанская обл.">Западно-Казахстанская обл.</option>
-                                <option value="Карагандинская обл.">Карагандинская обл.</option>
-                                <option value="Костанайская обл.">Костанайская обл.</option>
-                                <option value="Кызылординская обл.">Кызылординская обл.</option>
-                                <option value="Мангистауская обл.">Мангистауская обл.</option>
-                                <option value="Павлодарская обл.">Павлодарская обл.</option>
-                                <option value="Северо-Казахстанская обл.">Северо-Казахстанская обл.</option>
-                                <option value="Туркестанская обл.">Туркестанская обл.</option>
-                                <option value="Улытауская обл.">Улытауская обл.</option>
+                                <option value="г. Алматы">{{ __('г. Алматы') }}</option>
+                                <option value="г. Астана">{{ __('г. Астана') }}</option>
+                                <option value="г. Шымкент">{{ __('г. Шымкент') }}</option>
+                                <option value="Абайская обл.">{{ __('Абайская обл.') }}</option>
+                                <option value="Акмолинская обл.">{{ __('Акмолинская обл.') }}</option>
+                                <option value="Актюбинская обл.">{{ __('Актюбинская обл.') }}</option>
+                                <option value="Алматинская обл.">{{ __('Алматинская обл.') }}</option>
+                                <option value="Атырауская обл.">{{ __('Атырауская обл.') }}</option>
+                                <option value="Восточно-Казахстанская обл.">{{ __('Восточно-Казахстанская обл.') }}</option>
+                                <option value="Жамбыльская обл.">{{ __('Жамбыльская обл.') }}</option>
+                                <option value="Жетысуская обл.">{{ __('Жетысуская обл.') }}</option>
+                                <option value="Западно-Казахстанская обл.">{{ __('Западно-Казахстанская обл.') }}</option>
+                                <option value="Карагандинская обл.">{{ __('Карагандинская обл.') }}</option>
+                                <option value="Костанайская обл.">{{ __('Костанайская обл.') }}</option>
+                                <option value="Кызылординская обл.">{{ __('Кызылординская обл.') }}</option>
+                                <option value="Мангистауская обл.">{{ __('Мангистауская обл.') }}</option>
+                                <option value="Павлодарская обл.">{{ __('Павлодарская обл.') }}</option>
+                                <option value="Северо-Казахстанская обл.">{{ __('Северо-Казахстанская обл.') }}</option>
+                                <option value="Туркестанская обл.">{{ __('Туркестанская обл.') }}</option>
+                                <option value="Улытауская обл.">{{ __('Улытауская обл.') }}</option>
                             </select>
                         </div>
                         <div id="iinBlock" class="disabled">
-                            <label for="iin">ИИН</label>
+                            <label for="iin">{{ __('ИИН') }}</label>
                             <input type="text" name="iin" id="iin" placeholder="Введите номер ИИН">
                         </div>
                         <div id="surnameBlock" class="disabled">
-                            <label for="surname">Фамилия</label>
-                            <input type="text" name="surname" placeholder="Согласно удостоверению личности" required>
+                            <label for="surname">{{ __('Фамилия') }}</label>
+                            <input type="text" name="surname" placeholder="{{ __('Согласно удостоверению личности') }}" required>
                         </div>
 
                         <div id="nameBlock" class="disabled">
-                            <label for="name">Имя</label>
-                            <input type="text" name="name" placeholder="Согласно удостоверению личности" required>
+                            <label for="name">{{ __('Имя') }}</label>
+                            <input type="text" name="name" placeholder="{{ __('Согласно удостоверению личности') }}" required>
                         </div>
 
                         <div id="patronymicBlock" class="disabled">
-                            <label for="patronymic">Отчество (при наличии)</label>
-                            <input type="text" name="patronymic" placeholder="Согласно удостоверению личности">
+                            <label for="patronymic">{{ __('Отчество (при наличии)') }}</label>
+                            <input type="text" name="patronymic" placeholder="{{ __('Согласно удостоверению личности') }}">
                         </div>
 
                         <div id="birthdateBlock" class="disabled">
-                            <label for="birthdate">Дата рождения</label>
-                            <input type="date" name="birthdate" placeholder="Введите дату рождения" required>
+                            <label for="birthdate">{{ __('Дата рождения') }}</label>
+                            <input type="date" name="birthdate" required>
                         </div>
 
                         <div id="genderBlock" class="disabled">
-                            <label for="gender">Выберите пол</label>
+                            <label for="gender">{{ __('Пол') }}</label>
                             <select name="gender" id="gender" required>
                                 <option value="">-----</option>
-                                <option value="мужской">мужской</option>
-                                <option value="женский">женский</option>
+                                <option value="мужской">{{ __('мужской') }}</option>
+                                <option value="женский">{{ __('женский') }}</option>
                             </select>
                         </div>
 
                         <div id="nationalityBlock" class="disabled">
-                            <label for="nationality">Национальность</label>
+                            <label for="nationality">{{ __('Национальность') }}</label>
                             <select name="nationality" id="nationality" class="nationality">
                                 <option value="" disabled selected>-----</option>
                                 @foreach ($nationality_list as $nationality)
@@ -752,23 +746,22 @@
                         </div>
 
                         <div id="phoneBlock-1" class="disabled">
-                            <label for="phone_1">Телефон</label>
-                            <input type="tel" name="phone_1" class="phone" placeholder="Введите телефон" required>
+                            <label for="phone_1">{{ __('Телефон') }}</label>
+                            <input type="tel" name="phone_1" class="phone" placeholder="{{ __('Введите номер телефона') }}" required>
                         </div>
                         <div id="phoneBlock-2" class="disabled">
-                            <label for="phone_2">Телефон 2</label>
-                            <input type="tel" name="phone_2" class="phone" placeholder="Введите телефон">
+                            <label for="phone_2">{{ __('Телефон') }} 2</label>
+                            <input type="tel" name="phone_2" class="phone" placeholder="{{ __('Введите номер телефона') }}">
                         </div>
                         <div id="emailBlock" class="disabled">
                             <label for="email">E-mail</label>
-                            <input type="mail" name="email" id="email" placeholder="Введите вашу почту"
+                            <input type="mail" name="email" id="email" placeholder="{{ __('Введите вашу почту') }}"
                                 required>
                         </div>
                     </div>
                     <div id="buttonBlock">
                         <button type="button" onclick="sendApplication()" id="button"
-                            class="disabled first">Отправить
-                            анкету</button>
+                            class="disabled first">{{ __('Отправить анкету') }}</button>
                     </div>
                 </form>
                 <div id="myModal" class="modal">
@@ -776,8 +769,7 @@
                         <!-- Modal content -->
                         <div class="modal-content">
                             <span class="close">&times;</span>
-                            <p>Пожалуйста, проверьте правильность внесения Ваших данных в соответствии с удостоверением
-                                личности.</p>
+                            <p>{{ __('Пожалуйста, проверьте правильность внесения Ваших данных в соответствии с удостоверением личности.') }}</p>
                         </div>
                     </div>
                 </div>
