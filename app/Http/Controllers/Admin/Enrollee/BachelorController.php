@@ -923,7 +923,7 @@ class BachelorController extends Controller
 				$data->process = $request->process;
 				$findLastCaseNumber = DB::table('applications')
                 ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where('created_at', '>=', "2022-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
+                ->where('created_at', '>=', "2023-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
 				$data->case_number = $findLastCaseNumber + 1;
 				$data->case_number_date = $today;
 				$data->save();
