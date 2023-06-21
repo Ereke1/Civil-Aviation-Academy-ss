@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-md-4 mb-2 pl-1">
                     <label>Пароль</label>
-                    <input class="form-control" type="text" placeholder="Введите Пароль" name="password" required>
+                    <input class="form-control" type="password" placeholder="Введите Пароль" name="password" required>
                 </div>
                 <div class="col-md-4 mb-2 pl-1">
                     <label>Email</label>

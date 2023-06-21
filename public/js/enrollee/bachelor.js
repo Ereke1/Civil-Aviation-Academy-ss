@@ -367,6 +367,7 @@ function quantENTFunc() {
 	let quantLess = document.getElementById('profSubBlock').querySelectorAll('option')
 	for (let quantLessOne = 0; quantLessOne < quantLess.length; quantLessOne++) { quantLess[quantLessOne].classList.add('disabled') }
 	if (quantENTInputVal() === '5') {
+        console.log(document.getElementById('natureSec').value);
 		// Показываем блок ЕНТ с предметами
 		document.getElementById('mathLitBlock').classList.remove('disabled')
 		document.getElementById('mathLit').classList.remove('disabled')
@@ -402,6 +403,7 @@ function quantENTFunc() {
         document.getElementById('profSub').value = "";
         document.getElementById('profSub').required = true
 
+        console.log(document.getElementById('natureSec').value);
 
 		document.getElementById('profSubBlock').querySelector('label').innerHTML = translation2profSubj
 		document.getElementById('profSubBlock').classList.remove('disabled')
@@ -456,7 +458,6 @@ function quantENTFunc() {
 
 // Выбор профильного предмета
 function profSubFunc() {
-    console.log("fddf");
 	if (profsubInputVal() === 'Физика') {
 		// Показываем поле для ввода баллов по ФИЗИКЕ
 		document.getElementById('physicsBlock').classList.remove('disabled')
