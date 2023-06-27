@@ -920,6 +920,13 @@ class BachelorController extends Controller
 				$data->save();
 				return redirect()->back()->with('alert', 'Процесс изменен и удалён № дела');
 			} elseif ($request->process === 'Сдал документы' && $data->case_number === NULL) {
+
+
+
+
+
+
+
 				$data->process = $request->process;
 				$findLastCaseNumber = DB::table('applications')
                 ->join('nationalities','applications.nationality_id','=','nationalities.id')
