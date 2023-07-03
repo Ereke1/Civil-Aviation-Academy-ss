@@ -154,7 +154,20 @@ class MasterController extends Controller
 				return redirect()->back()->with('alert', 'Процесс изменен и удалён № дела');
 			} elseif ($request->process === 'Сдал документы' && $data->case_number === NULL) {
 				$data->process = $request->process;
-				$findLastCaseNumber = Applications::where('created_at', '>=', "2023-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
+				$findLastCaseNumber = DB::table('applications')
+                    ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
+                    ->where(function($query) {
+                        $query->where('created_at', '>=', "2022-09-01 00:00:00")
+                        ->where('type','Бакалавриат');
+                        })
+                    ->orWhere(function($query) {
+                        $query->where('created_at', '>=', "2023-02-01 00:00:00")
+                        ->where(function($query) {
+                            $query->where('type','Магистратура')
+                                        ->orWhere('type','Докторантура');
+                            });
+                        })
+                    ->orderBy('case_number', 'desc')->pluck('case_number')->first();
 				$data->case_number = $findLastCaseNumber + 1;
 				$data->save();
 				return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);

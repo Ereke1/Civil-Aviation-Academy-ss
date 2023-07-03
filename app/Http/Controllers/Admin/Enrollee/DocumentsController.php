@@ -1151,7 +1151,18 @@ class DocumentsController extends Controller
                 $data->process = $request->process;
                 $findLastCaseNumber = DB::table('applications')
                     ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
-                    ->where('created_at', '>=', "2023-05-01 00:00:00")->orderBy('case_number', 'desc')->pluck('case_number')->first();
+                    ->where(function($query) {
+                        $query->where('created_at', '>=', "2022-09-01 00:00:00")
+                        ->where('type','Бакалавриат');
+                        })
+                    ->orWhere(function($query) {
+                        $query->where('created_at', '>=', "2023-02-01 00:00:00")
+                        ->where(function($query) {
+                            $query->where('type','Магистратура')
+                                        ->orWhere('type','Докторантура');
+                            });
+                        })
+                    ->orderBy('case_number', 'desc')->pluck('case_number')->first();
                 $data->case_number = $findLastCaseNumber + 1;
                 $data->save();
                 return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
