@@ -312,7 +312,7 @@
 					<div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms">
 						<div class="counters-item">
 							<div>
-							    <span data-speed="3000" data-to="6984">6984</span>
+							    <span data-speed="3000" data-to="7366">7366</span>
 							</div>
 							<i class="fa fa-graduation-cap fa-3x"></i>
 							<h3>Выпускников</h3>
