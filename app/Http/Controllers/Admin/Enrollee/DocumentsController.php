@@ -809,16 +809,28 @@ class DocumentsController extends Controller
         } else {
             if($data->type === 'Бакалавриат'){
                 if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
-                    $templateProcessor->setValue('price', '714 900');
+                    if($data->citizen === 'Резидент РК'){
+                        $templateProcessor->setValue('price', '714 900');
+                    } else {
+                        $templateProcessor->setValue('price', '1 000 000');
+                    }
                 } else {
-                    $templateProcessor->setValue('price', '920 500');
+                    if($data->citizen === 'Резидент РК'){
+                        $templateProcessor->setValue('price', '980 000');
+                    } else {
+                        if ($data->programms === 'Лётная эксплуатация самолётов (пилот)' || $data->programms === 'Лётная эксплуатация вертолётов (пилот)' || $data->programms === 'Обслуживание воздушного движения') {
+                            $templateProcessor->setValue('price', '1 500 000');
+                        } else {
+                            $templateProcessor->setValue('price', '1 250 000');
+                        }
+                    }
                 }
             }
             else if ($data->type === 'Магистратура'){
-                $templateProcessor->setValue('price', '639 100');
+                $templateProcessor->setValue('price', '980 000');
             }
             else if ($data->type === 'Докторантура'){
-                $templateProcessor->setValue('price', '1 900 000');
+                $templateProcessor->setValue('price', '1 950 000');
             }
         }
 
@@ -828,16 +840,28 @@ class DocumentsController extends Controller
         } else {
             if($data->type === 'Бакалавриат'){
                 if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
-                    $templateProcessor->setValue('price_ru', '(Семьсот четырнадцать тысяч девятьсот)');
+                    if($data->citizen === 'Резидент РК'){
+                        $templateProcessor->setValue('price_ru', '(Семьсот четырнадцать тысяч девятьсот)');
+                    } else {
+                        $templateProcessor->setValue('price_ru', '(Один миллион)');
+                    }
                 } else {
-                    $templateProcessor->setValue('price_ru', '(Девятьсот двадцать тысяч пятьсот)');
+                    if($data->citizen === 'Резидент РК'){
+                        $templateProcessor->setValue('price_ru', '(Девятьсот восемьдесят тысяч)');
+                    } else {
+                        if ($data->programms === 'Лётная эксплуатация самолётов (пилот)' || $data->programms === 'Лётная эксплуатация вертолётов (пилот)' || $data->programms === 'Обслуживание воздушного движения') {
+                            $templateProcessor->setValue('price_ru', '(Один миллион пятьсот тысяч)');
+                        } else {
+                            $templateProcessor->setValue('price_ru', '(Один миллион двести пятьдесят тысяч)');
+                        }
+                    }
                 }
             }
             else if ($data->type === 'Магистратура'){
-                $templateProcessor->setValue('price_ru', '(Шестьсот тридцать девять тысяч сто)');
+                $templateProcessor->setValue('price_ru', '(Девятьсот восемьдесят тысяч)');
             }
             else if ($data->type === 'Докторантура'){
-                $templateProcessor->setValue('price_ru', '(Один миллион девятьсот тысяч)');
+                $templateProcessor->setValue('price_ru', '(Один миллион девятьсот пятьдесят тысяч)');
             }
         }
 
@@ -847,16 +871,28 @@ class DocumentsController extends Controller
         } else {
             if($data->type === 'Бакалавриат'){
                 if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
-                    $templateProcessor->setValue('price_kz', '(Жеті жүз он төрт мың тоғыз жүз)');
+                    if($data->citizen === 'Резидент РК'){
+                        $templateProcessor->setValue('price_kz', '(Жеті жүз он төрт мың тоғыз жүз)');
+                    } else {
+                        $templateProcessor->setValue('price_kz', '(Бір миллион)');
+                    }
                 } else {
-                    $templateProcessor->setValue('price_kz', '(Тоғыз жүз жиырма мың бес жүз)');
+                    if($data->citizen === 'Резидент РК'){
+                        $templateProcessor->setValue('price_kz', '(Тоғыз жүз сексен мың)');
+                    } else {
+                        if ($data->programms === 'Лётная эксплуатация самолётов (пилот)' || $data->programms === 'Лётная эксплуатация вертолётов (пилот)' || $data->programms === 'Обслуживание воздушного движения') {
+                            $templateProcessor->setValue('price_kz', '(Бір миллион бес жүз мың)');
+                        } else {
+                            $templateProcessor->setValue('price_kz', '(Бір миллион екі жүз елу мың)');
+                        }
+                    }
                 }
             }
             else if ($data->type === 'Магистратура'){
-                $templateProcessor->setValue('price_kz', '(Алты жүз отыз тоғыз мың бір жүз)');
+                $templateProcessor->setValue('price_kz', '(Тоғыз жүз сексен мың)');
             }
             else if ($data->type === 'Докторантура'){
-                $templateProcessor->setValue('price_kz', '(Бір миллион тоғыз жүз мың)');
+                $templateProcessor->setValue('price_kz', '(Бір миллион тоғыз жүз елу мың)');
             }
         }
 

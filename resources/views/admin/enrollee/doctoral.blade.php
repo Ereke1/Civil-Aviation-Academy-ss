@@ -164,16 +164,18 @@
                                     <div class="blocks">
                                         <div class="block">
                                             <h5 class="block__title">Фамилия</h5>
-                                            <p class="block__info">{!! $item->surname !!}</p>
+                                            <input type="text" value="{!! $item->surname !!}" name="surname" class="block__info">
                                         </div>
                                         <div class="block">
                                             <h5 class="block__title">Имя</h5>
-                                            <p class="block__info">{!! $item->name !!}</p>
+                                            <input type="text" value="{!! $item->name !!}" name="name"
+                                                class="block__info">
                                         </div>
                                         @if (isset($item->patronymic))
                                             <div class="block">
                                                 <h5 class="block__title">Отчество</h5>
-                                                <p class="block__info">{!! $item->patronymic !!}</p>
+                                                <input type="text" value="{!! $item->patronymic !!}" name="patronymic"
+                                                    class="block__info">
                                             </div>
                                         @endif
                                         @if ($item->birthdate !== NULL)

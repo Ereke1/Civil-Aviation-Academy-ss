@@ -173,6 +173,9 @@ class MasterController extends Controller
 				return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
 			} else {
 				$data->iin = $request->iin;
+                $data->surname = $request->surname;
+                $data->name = $request->name;
+                $data->patronymic = $request->patronymic;
 				$data->programms = $request->programms;
 				$data->lang_edu = $request->lang_edu;
 				$data->phone_1 = $request->phone_1;

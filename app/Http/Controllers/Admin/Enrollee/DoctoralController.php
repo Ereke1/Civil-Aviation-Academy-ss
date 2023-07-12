@@ -172,6 +172,9 @@ class DoctoralController extends Controller
 				return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
 			} else {
 				$data->iin = $request->iin;
+                $data->surname = $request->surname;
+                $data->name = $request->name;
+                $data->patronymic = $request->patronymic;
 				$data->lang_edu = $request->lang_edu;
 				$data->phone_1 = $request->phone_1;
 				$data->phone_2 = $request->phone_2;
