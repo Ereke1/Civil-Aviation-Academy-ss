@@ -1213,6 +1213,15 @@ class DocumentsController extends Controller
                 $data->surname = $request->surname;
                 $data->name = $request->name;
                 $data->patronymic = $request->patronymic;
+                $data->mathLit = $request->mathLit;
+                $data->readLit = $request->readLit;
+                $data->historyKZ = $request->historyKZ;
+                $data->math = $request->math;
+                $data->aviaSec = $request->aviaSec;
+                $data->natureSec = $request->natureSec;
+                $data->geography = $request->geography;
+                $data->physics = $request->physics;
+                $data->countENT = $request->countENT;
                 $data->nationality_id = $request->nationality_id;
 
                 $data->statement = $request->statement;
