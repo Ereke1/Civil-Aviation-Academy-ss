@@ -152,7 +152,7 @@ $countAll = $countDoctoral + $totalMaster + $total;
             </tr>
             <tr>
                 <td>7</td>
-                <td>Обслуживание воздушного движения</td>
+                <td>Обслуживание воздушного движения и аэронавигационное обеспечение полетов</td>
                 <td rowspan="3"><b>151</b></td>
                 <td rowspan="3">151</td>
                 <td>10</td>

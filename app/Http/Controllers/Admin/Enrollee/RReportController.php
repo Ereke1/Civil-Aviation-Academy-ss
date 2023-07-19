@@ -236,16 +236,16 @@ class RReportController extends Controller
 				->count();
 			$count15 = $count15_1 + $count15_2;
 
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count16_1 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->count();
 			$count16_2 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->count();
@@ -253,13 +253,13 @@ class RReportController extends Controller
 
 			$count17_1 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->count();
 			$count17_2 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->count();
@@ -267,19 +267,19 @@ class RReportController extends Controller
 
 			$count18_1 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->count();
 			$count18_2 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->count();
 			$count18 = $count18_1 + $count18_2;
 
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count19_1 = Applications::select('*')
 				->where('base', '11-го класса')
 				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
@@ -904,10 +904,10 @@ class RReportController extends Controller
 				->count();
 			$count15 = $count15_1 + $count15_2;
 
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count16_1 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -915,7 +915,7 @@ class RReportController extends Controller
 				->count();
 			$count16_2 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -925,7 +925,7 @@ class RReportController extends Controller
 
 			$count17_1 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -933,7 +933,7 @@ class RReportController extends Controller
 				->count();
 			$count17_2 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -943,7 +943,7 @@ class RReportController extends Controller
 
 			$count18_1 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -951,7 +951,7 @@ class RReportController extends Controller
 				->count();
 			$count18_2 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -959,7 +959,7 @@ class RReportController extends Controller
 				->count();
 			$count18 = $count18_1 + $count18_2;
 
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count19_1 = Applications::select('*')
 				->where('base', '11-го класса')
 				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
@@ -1708,16 +1708,16 @@ class RReportController extends Controller
 				->where('status', 0)
 				->count();
 
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count16_1 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->count();
 			$count16_2 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->count();
@@ -1725,13 +1725,13 @@ class RReportController extends Controller
 
 			$count17_1 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->count();
 			$count17_2 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->count();
@@ -1739,19 +1739,19 @@ class RReportController extends Controller
 
 			$count18_1 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->count();
 			$count18_2 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->count();
 			$count18 = $count18_1 + $count18_2;
 
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count19_1 = Applications::select('*')
 				->where('base', '11-го класса')
 				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
@@ -2363,10 +2363,10 @@ class RReportController extends Controller
 				->whereDate('created_at', '<=', $created_at_to)
 				->count();
 
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count16_1 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -2374,7 +2374,7 @@ class RReportController extends Controller
 				->count();
 			$count16_2 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -2384,7 +2384,7 @@ class RReportController extends Controller
 
 			$count17_1 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -2392,7 +2392,7 @@ class RReportController extends Controller
 				->count();
 			$count17_2 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -2402,7 +2402,7 @@ class RReportController extends Controller
 
 			$count18_1 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Обработанный')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -2410,7 +2410,7 @@ class RReportController extends Controller
 				->count();
 			$count18_2 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('process', 'Сдал документы')
 				->where('status', 0)
 				->whereDate('created_at', '>=', $created_at_from)
@@ -2418,7 +2418,7 @@ class RReportController extends Controller
 				->count();
 			$count18 = $count18_1 + $count18_2;
 
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count19_1 = Applications::select('*')
 				->where('base', '11-го класса')
 				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
