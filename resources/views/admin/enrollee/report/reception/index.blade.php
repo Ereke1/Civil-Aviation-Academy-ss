@@ -167,7 +167,7 @@ $countAll = $countDoctoral + $totalMaster + $total;
             </tr>
             <tr>
                 <td>8</td>
-                <td>Лётная эксплуатация самолётов (пилот)</td>
+                <td>Лётная эксплуатация гражданских самолетов (пилот)</td>
                 <td>40</td>
                 <td class="bg-chair">{!! $count19 !!}</td>
                 <td class="bg-chair">{!! $count20 !!}</td>
@@ -176,7 +176,7 @@ $countAll = $countDoctoral + $totalMaster + $total;
             </tr>
             <tr>
                 <td>9</td>
-                <td>Лётная эксплуатация вертолётов (пилот)</td>
+                <td>Лётная эксплуатация гражданских вертолетов (пилот)</td>
                 <td>20</td>
                 <td class="bg-chair">{!! $count22 !!}</td>
                 <td class="bg-chair">{!! $count23 !!}</td>
