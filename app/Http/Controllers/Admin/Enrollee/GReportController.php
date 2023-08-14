@@ -211,6 +211,10 @@ class GReportController extends Controller
 				->where('programms', 'Авиационная техника и технологии (научно-педагогическая магистратура)')
 				->where('status', 0)
 				->count();
+            $countMaster3 = Applications::select('*')
+                ->where('programms', 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)')
+                ->where('status', 0)
+                ->count();
 			$countMaster4 = Applications::select('*')
 				->where('programms', 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)')
 				->where('status', 0)
@@ -223,7 +227,7 @@ class GReportController extends Controller
 				->where('programms', 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)')
 				->where('status', 0)
 				->count();
-			$totalMaster = $countMaster1 + $countMaster2 + $countMaster4 + $countMaster5 + $countMaster6;
+			$totalMaster = $countMaster1 + $countMaster2 + $countMaster3 + $countMaster4 + $countMaster5 + $countMaster6;
 
 			// ДОКТОРАНТУРА
 			$countDoctoral = Applications::select('*')
@@ -492,6 +496,12 @@ class GReportController extends Controller
 				->where('programms', 'Авиационная техника и технологии (научно-педагогическая магистратура)')
 				->where('status', 0)
 				->count();
+            $countMaster3 = Applications::select('*')
+				->whereDate('created_at', '>=', $created_at_from)
+				->whereDate('created_at', '<=', $created_at_to)
+				->where('programms', 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)')
+				->where('status', 0)
+				->count();
 			$countMaster4 = Applications::select('*')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
@@ -510,7 +520,7 @@ class GReportController extends Controller
 				->where('programms', 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)')
 				->where('status', 0)
 				->count();
-			$totalMaster = $countMaster1 + $countMaster2 + $countMaster4 + $countMaster5 + $countMaster6;
+			$totalMaster = $countMaster1 + $countMaster2 + $countMaster3 + $countMaster4 + $countMaster5 + $countMaster6;
 
 			// ДОКТОРАНТУРА
 			$countDoctoral = Applications::select('*')
@@ -560,6 +570,7 @@ class GReportController extends Controller
 			'sum9_10' => $sum9_10,
 			'countMaster1' => $countMaster1,
 			'countMaster2' => $countMaster2,
+			'countMaster3' => $countMaster3,
 			'countMaster4' => $countMaster4,
 			'countMaster5' => $countMaster5,
 			'countMaster6' => $countMaster6,
@@ -572,10 +583,10 @@ class GReportController extends Controller
 
 		return view('admin.enrollee.report.general.index', $array);
 	}
-	
+
 	public function pdf($created_at_from, $created_at_to )
 	{
-		
+
 		if($created_at_from == 0 || $created_at_to == 0){
 			// БАКАЛАВРИАТ
 		// Техническая эксплуатация летательных аппаратов и двигателей
@@ -658,7 +669,7 @@ class GReportController extends Controller
 				->where('programms', 'Организация аэропортовой деятельности')
 				->where('status', 0)
 				->count();
-			// Технология транспортных процессов в авиации	
+			// Технология транспортных процессов в авиации
 			$countTTPA1 = Applications::select('*')
 				->where('base', '11-го класса')
 				->where('programms', 'Технология транспортных процессов в авиации')
@@ -802,14 +813,14 @@ class GReportController extends Controller
 				->where('programms', 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)')
 				->where('status', 0)
 				->count();
-			$totalMaster = $countMaster1 + $countMaster2 + $countMaster4 + $countMaster5 + $countMaster6;
+			$totalMaster = $countMaster1 + $countMaster2 + $countMaster3 + $countMaster4 + $countMaster5 + $countMaster6;
 
 			// ДОКТОРАНТУРА
 			$countDoctoral = Applications::select('*')
 				->where('programms', 'Авиационная техника и технологии')
 				->where('status', 0)
 				->count();
-			
+
 			$today = now('Asia/Almaty');
 		}
 		else {
@@ -922,7 +933,7 @@ class GReportController extends Controller
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
-		// Технология транспортных процессов в авиации	
+		// Технология транспортных процессов в авиации
 		$countTTPA1 = Applications::select('*')
 			->where('base', '11-го класса')
 			->where('programms', 'Технология транспортных процессов в авиации')
@@ -1120,7 +1131,7 @@ class GReportController extends Controller
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
-		$totalMaster = $countMaster1 + $countMaster2 + $countMaster4 + $countMaster5 + $countMaster6;
+		$totalMaster = $countMaster1 + $countMaster2 + $countMaster3 + $countMaster4 + $countMaster5 + $countMaster6;
 
 		// ДОКТОРАНТУРА
 		$countDoctoral = Applications::select('*')
