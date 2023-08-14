@@ -101,52 +101,52 @@ class GReportController extends Controller
 				->where('programms', 'Организация аэропортовой деятельности')
 				->where('status', 0)
 				->count();
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count16 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('status', 0)
 				->count();
 			$count17 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('status', 0)
 				->count();
 			$count18 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('status', 0)
 				->count();
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count19 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count20 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count21 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 				->where('status', 0)
 				->count();
-			// Лётная эксплуатация вертолётов (пилот)
+			// Лётная эксплуатация гражданских вертолетов (пилот)
 			$count22 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count23 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count24 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 				->where('status', 0)
 				->count();
 			// Организация авиационных перевозок
@@ -346,70 +346,70 @@ class GReportController extends Controller
 				->where('programms', 'Организация аэропортовой деятельности')
 				->where('status', 0)
 				->count();
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count16 = Applications::select('*')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('status', 0)
 				->count();
 			$count17 = Applications::select('*')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('status', 0)
 				->count();
 			$count18 = Applications::select('*')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('status', 0)
 				->count();
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count19 = Applications::select('*')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
 				->where('base', '11-го класса')
-				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count20 = Applications::select('*')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count21 = Applications::select('*')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
 				->where('base', 'Высшего образования')
-				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 				->where('status', 0)
 				->count();
-			// Лётная эксплуатация вертолётов (пилот)
+			// Лётная эксплуатация гражданских вертолетов (пилот)
 			$count22 = Applications::select('*')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
 				->where('base', '11-го класса')
-				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count23 = Applications::select('*')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count24 = Applications::select('*')
 				->whereDate('created_at', '>=', $created_at_from)
 				->whereDate('created_at', '<=', $created_at_to)
 				->where('base', 'Высшего образования')
-				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 				->where('status', 0)
 				->count();
 			// Организация авиационных перевозок
@@ -685,52 +685,52 @@ class GReportController extends Controller
 				->where('programms', 'Технология транспортных процессов в авиации')
 				->where('status', 0)
 				->count();
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count16 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('status', 0)
 				->count();
 			$count17 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('status', 0)
 				->count();
 			$count18 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Обслуживание воздушного движения')
+				->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 				->where('status', 0)
 				->count();
-			// Обслуживание воздушного движения
+			// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 			$count19 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count20 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count21 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 				->where('status', 0)
 				->count();
-			// Лётная эксплуатация вертолётов (пилот)
+			// Лётная эксплуатация гражданских вертолетов (пилот)
 			$count22 = Applications::select('*')
 				->where('base', '11-го класса')
-				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count23 = Applications::select('*')
 				->where('base', 'Технического и профессионального образования (колледжа)')
-				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 				->where('status', 0)
 				->count();
 			$count24 = Applications::select('*')
 				->where('base', 'Высшего образования')
-				->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+				->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 				->where('status', 0)
 				->count();
 			// Организация авиационных перевозок
@@ -955,68 +955,68 @@ class GReportController extends Controller
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
-		// Обслуживание воздушного движения
+		// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 		$count16 = Applications::select('*')
 			->where('base', '11-го класса')
-			->where('programms', 'Обслуживание воздушного движения')
+			->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 			->where('status', 0)
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
 		$count17 = Applications::select('*')
 			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Обслуживание воздушного движения')
+			->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 			->where('status', 0)
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
 		$count18 = Applications::select('*')
 			->where('base', 'Высшего образования')
-			->where('programms', 'Обслуживание воздушного движения')
+			->where('programms', 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов')
 			->where('status', 0)
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
-		// Обслуживание воздушного движения
+		// Обслуживание воздушного движения и аэронавигационное обеспечение полетов
 		$count19 = Applications::select('*')
 			->where('base', '11-го класса')
-			->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+			->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 			->where('status', 0)
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
 		$count20 = Applications::select('*')
 			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+			->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 			->where('status', 0)
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
 		$count21 = Applications::select('*')
 			->where('base', 'Высшего образования')
-			->where('programms', 'Лётная эксплуатация самолётов (пилот)')
+			->where('programms', 'Лётная эксплуатация гражданских самолетов (пилот)')
 			->where('status', 0)
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
-		// Лётная эксплуатация вертолётов (пилот)
+		// Лётная эксплуатация гражданских вертолетов (пилот)
 		$count22 = Applications::select('*')
 			->where('base', '11-го класса')
-			->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+			->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 			->where('status', 0)
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
 		$count23 = Applications::select('*')
 			->where('base', 'Технического и профессионального образования (колледжа)')
-			->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+			->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 			->where('status', 0)
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)
 			->count();
 		$count24 = Applications::select('*')
 			->where('base', 'Высшего образования')
-			->where('programms', 'Лётная эксплуатация вертолётов (пилот)')
+			->where('programms', 'Лётная эксплуатация гражданских вертолетов (пилот)')
 			->where('status', 0)
 			->whereDate('created_at', '>=', $created_at_from)
 			->whereDate('created_at', '<=', $created_at_to)

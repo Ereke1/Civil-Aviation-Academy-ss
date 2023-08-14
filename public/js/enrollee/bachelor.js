@@ -599,7 +599,7 @@ function geographyFunc() {
 
 // Выбор образовательной программы
 function programmsFunc() {
-	if (programmsInputVal() === 'Лётная эксплуатация самолётов (пилот)' || programmsInputVal() === 'Лётная эксплуатация вертолётов (пилот)' || programmsInputVal() === 'Обслуживание воздушного движения') {
+	if (programmsInputVal() === 'Лётная эксплуатация гражданских самолетов (пилот)' || programmsInputVal() === 'Лётная эксплуатация гражданских вертолетов (пилот)' || programmsInputVal() === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
 		document.getElementById('vlekBlock').classList.remove('disabled')
 
 		document.getElementById('ieltsBlock').classList.add('disabled')
@@ -608,7 +608,7 @@ function programmsFunc() {
 		document.getElementById('psychoImage').value = "";
 		document.getElementById('ielts').value = "";
         document.getElementById('ieltsImage').value = "";
-	} else if (citizenInputVal() === 'Резидент РК' && programmsInputVal() !== 'Лётная эксплуатация самолётов (пилот)' || citizenInputVal() === 'Резидент РК' && programmsInputVal() !== 'Лётная эксплуатация вертолётов (пилот)' || citizenInputVal() === 'Резидент РК' && programmsInputVal() !== 'Обслуживание воздушного движения') {
+	} else if (citizenInputVal() === 'Резидент РК' && programmsInputVal() !== 'Лётная эксплуатация гражданских самолетов (пилот)' || citizenInputVal() === 'Резидент РК' && programmsInputVal() !== 'Лётная эксплуатация гражданских вертолетов (пилот)' || citizenInputVal() === 'Резидент РК' && programmsInputVal() !== 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
 		// Показываем список регионов
 		document.getElementById('regionBlock').classList.remove('disabled')
         document.getElementById('region').value = "";
@@ -630,7 +630,7 @@ function programmsFunc() {
         document.getElementById('ieltsBlockImage').classList.add('disabled')
 		document.getElementById('ieltsImage').value = "";
 
-	} else if (citizenInputVal() === 'Нерезидент РК' && programmsInputVal() !== 'Лётная эксплуатация самолётов (пилот)' || citizenInputVal() === 'Нерезидент РК' && programmsInputVal() !== 'Лётная эксплуатация вертолётов (пилот)' || citizenInputVal() === 'Нерезидент РК' && programmsInputVal() !== 'Обслуживание воздушного движения') {
+	} else if (citizenInputVal() === 'Нерезидент РК' && programmsInputVal() !== 'Лётная эксплуатация гражданских самолетов (пилот)' || citizenInputVal() === 'Нерезидент РК' && programmsInputVal() !== 'Лётная эксплуатация гражданских вертолетов (пилот)' || citizenInputVal() === 'Нерезидент РК' && programmsInputVal() !== 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
 		// Показываем список стран
 		document.getElementById('countryBlock').classList.remove('disabled')
         document.getElementById('countries').value = "";
