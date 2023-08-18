@@ -902,7 +902,7 @@ class DocumentsController extends Controller
         if ($data->type === 'Бакалавриат') {
             $templateProcessor->setValue('cr', '240');
         } else if ($data->type === 'Магистратура') {
-            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)'){
+            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)'){
                 $templateProcessor->setValue('cr', '60');
             } else {
                 $templateProcessor->setValue('cr', '120');
