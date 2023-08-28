@@ -68,6 +68,8 @@ class PageController extends Controller
     {
 		$tree = Navigation::tree();
 		$data = Page::where('slug', $page)->first();
+        if($data===null)
+        abort(404);
 		if (Config::get('app.locale') === 'ru') {
 			$data->title = $data->title_ru;
 			$data->desc = $data->desc_ru;
