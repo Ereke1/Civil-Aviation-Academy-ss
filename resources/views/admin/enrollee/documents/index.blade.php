@@ -198,6 +198,8 @@
                                                 </option>
                                                 <option value="Русский" @if ($item->lang_edu === 'Русский') selected @endif>
                                                     Русский</option>
+                                                <option value="Английский" @if ($item->lang_edu === 'Английский') selected @endif>
+                                                    Английский</option>
                                             </select>
                                         </div>
                                         @if (isset($item->iin))

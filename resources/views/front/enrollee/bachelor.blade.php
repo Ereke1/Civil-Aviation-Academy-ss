@@ -29,7 +29,7 @@
                                 <option value="" disabled selected>-----</option>
                                 <option value="Казахский">{{ __('Казахский') }}</option>
                                 <option value="Русский">{{ __('Русский') }}</option>
-                                <option value="Русский">{{ __('Английский') }}</option>
+                                <option value="Английский">{{ __('Английский') }}</option>
                             </select>
                         </div>
 
