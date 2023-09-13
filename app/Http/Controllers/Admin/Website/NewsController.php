@@ -50,7 +50,7 @@ class NewsController extends Controller
         if($userDepartment == "ДМР"){
             $createForCompliance = true;
         }
-		return view('admin.website.news.create', compact('createForComplaince'));
+		return view('admin.website.news.create', compact('createForCompliance'));
 	}
 
 	/**
