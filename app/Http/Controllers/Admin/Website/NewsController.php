@@ -45,10 +45,10 @@ class NewsController extends Controller
 	 */
 	public function create()
 	{
-        $createForComplaince = false;
+        $createForCompliance = false;
 		$userDepartment = User::find(Auth::user()->id)->workersInfo->department;
-        if($userDepartment == "ДeМР"){
-            $createForComplaince = true;
+        if($userDepartment == "ДМР"){
+            $createForCompliance = true;
         }
 		return view('admin.website.news.create', compact('createForComplaince'));
 	}

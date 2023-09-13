@@ -34,7 +34,7 @@
                             <label class="font-weight-bold">Описание</label>
                             <textarea name="desc_ru" id="editor-ru" class="form-control"></textarea>
                         </div>
-                        @if($createForComplaince === true)
+                        @if($createForCompliance === true)
                         <div class="mb-4">
                             <label><b>for compliance</b></label>
                             <input type='hidden' value='0' name='compliance'>
