@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Admin\Website;
 use App\Http\Controllers\Controller;
 use App\Models\Navigation;
 use App\Models\Page;
+use App\Models\WorkerPage;
 use App\Models\User;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -20,12 +22,21 @@ class PageController extends Controller
 	public function index()
 	{
 		$user_department = Page::userInfo()->department;
+        $canCreate = false;
 		if ($user_department === 'Авиационный колледж') {
 			$data = Page::select('*')->where('user_id', 13)->get();
-		} else {
+		} else if ($user_department === 'ДМР') {
 			$data = Page::select('*')->where('user_id', '>', 0)->get();
-		}
-		return view('admin.website.pages.index', compact('data'));
+            $canCreate = true;
+		} else {
+            $data = DB::table('pages')
+                    ->select('pages.*')
+                    ->join('worker_pages','pages.id','=','worker_pages.page_id')
+                    ->where('worker_pages.worker_id', Auth::user()->id)
+                    ->get();
+        }
+
+		return view('admin.website.pages.index', compact('data','canCreate'));
 	}
 
 	/**
@@ -62,6 +73,13 @@ class PageController extends Controller
 			$data->slug = $slug;
 			$data->user_id = Auth::user()->id;
 			$data->save();
+
+            $dataWorkerPages = new WorkerPage;
+			$wplastID = Page::orderBy('id', 'desc')->pluck('id')->first();
+			$dataWorkerPages->worker_id = Auth::user()->id;
+			$dataWorkerPages->page_id = $wplastID;
+			$dataWorkerPages->save();
+
 			return redirect()->route('admin.website.pages.index')->with('alert', 'Страница успешно добавлена');
 		} else {
 			return abort('403', 'У вас нет доступа на это действие');

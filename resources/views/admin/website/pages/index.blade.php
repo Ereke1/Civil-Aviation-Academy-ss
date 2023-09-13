@@ -15,9 +15,11 @@
                     <h2>Страницы</h2>
                 </div>
                 <div class="pages__add-page">
+                    @if($canCreate === true)
                     <a href="{{ route('admin.website.pages.create') }}" class="btn btn-primary">
                         Создать страницу
                     </a>
+                    @endif
                 </div>
             </div>
             <div class="d-flex">

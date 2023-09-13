@@ -771,7 +771,7 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_group_kz', 'В067 – Әуе көлігі және технологиялары');
         }
 
-        //образовательная программа(каз)
+        //образовательная программа(каз, анг)
         if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)') {
             $templateProcessor->setValue('programs_kz', 'Азаматтық ұшақтарды ұшуда пайдалану (ұшқыш)');
             $templateProcessor->setValue('programs_en', 'Flight operation of civil aircraft (pilot)');
