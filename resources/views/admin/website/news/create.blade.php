@@ -34,6 +34,13 @@
                             <label class="font-weight-bold">Описание</label>
                             <textarea name="desc_ru" id="editor-ru" class="form-control"></textarea>
                         </div>
+                        @if($createForComplaince === true)
+                        <div class="mb-4">
+                            <label><b>for compliance</b></label>
+                            <input type='hidden' value='0' name='compliance'>
+                            <input type="checkbox" name="compliance" value="1" unchecked/>
+                        </div>
+                        @endif
                         <div class="mb-4">
                             <label class="font-weight-bold">Фоновое изображение</label>
                             <input type="file" name="bg_image_ru" class="form-control-file" required />

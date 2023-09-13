@@ -17,7 +17,7 @@ class NewsController extends Controller
 	{
 		/* $user_id = User::find(Auth::user()->id)->permissions->permission;
 		$unserialize = unserialize($user_id);
-		
+
 		if($unserialize->news->read == true){
 			return abort('403', 'Доступ разрешён');
 		}
@@ -45,7 +45,12 @@ class NewsController extends Controller
 	 */
 	public function create()
 	{
-		return view('admin.website.news.create');
+        $createForComplaince = false;
+		$userDepartment = User::find(Auth::user()->id)->workersInfo->department;
+        if($userDepartment == "ДeМР"){
+            $createForComplaince = true;
+        }
+		return view('admin.website.news.create', compact('createForComplaince'));
 	}
 
 	/**
@@ -74,14 +79,14 @@ class NewsController extends Controller
 			'more_image_9',
 		];
 
-		// Validate Background Images 
+		// Validate Background Images
 		foreach ($bg_images as $k) {
 			$request->validate([
 				$k => 'image|mimes:jpeg,png,jpg,gif,pdf,jfif',
 			]);
 		}
 
-		// Validate More Images 
+		// Validate More Images
 		foreach ($more_images as $k) {
 			$request->validate([
 				$k => 'image|mimes:jpeg,png,jpg,gif,pdf,jfif',
@@ -152,7 +157,7 @@ class NewsController extends Controller
 		$bg_obj = json_decode(json_encode($bg_arr));
 		$bg_ser = serialize($bg_obj);
 
-		// More Images 
+		// More Images
 		$more_img_arr = [];
 		foreach ($more_images as $v) {
 			$more_image = $request->file($v);
@@ -175,6 +180,7 @@ class NewsController extends Controller
 		$data->bg_images = $bg_ser;
 		$data->more_images = $more_img_ser;
 		$data->department = $user->department;
+        $data->compliance = $request->compliance;
 
 		$data->publish_at = $request->publish_at;
 		$data->save();
@@ -224,14 +230,14 @@ class NewsController extends Controller
 			'en' => 'bg_image_en',
 		];
 
-		// Validate Background Images 
+		// Validate Background Images
 		foreach ($bg_images as $bg_image) {
 			$request->validate([
 				$bg_image => 'image|mimes:jpeg,png,jpg,gif,pdf,jfif',
 			]);
 		}
 
-		// Get department name 
+		// Get department name
 		$news = News::find($id);
 
 		// Delete Bg Images

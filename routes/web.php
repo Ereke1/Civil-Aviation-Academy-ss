@@ -109,6 +109,8 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	Route::get('virtual_admission','VirtualAdmissionController@index')->name('virtual_admission');
 	Route::get('news', 'NewsController@index')->name('news');
 	Route::get('news/{slug}', 'NewsController@show')->name('news.show');
+	Route::get('newsCompliance', 'NewsComplianceController@index')->name('newsCompliance');
+	Route::get('newsCompliance/{slug}', 'NewsComplianceController@show')->name('newsCompliance.show');
 	Route::get('events', 'EventController@index')->name('events');
 	Route::get('events/{slug}', 'EventController@show')->name('events.show');
 	// ENROLLEE

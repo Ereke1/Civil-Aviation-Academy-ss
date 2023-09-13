@@ -28,7 +28,11 @@
                 </div>
                 @foreach ($news as $item)
                     <div class="pages__page">
-                        <p style="width: 50%">{!! unserialize($item->titles)->ru !!}</p>
+                        <p style="width: 50%">{!! unserialize($item->titles)->ru !!}
+                            @if($item->compliance === 1)
+                            <span class="btn-danger">compliance</span>
+                            @endif
+                        </p>
                         <p class="text-center" style="width: 20%">{!! date('d.m.Y H:i', strtotime($item->publish_at)) !!}</p>
                         <div class="text-right d-flex flex-row-reverse" style="width: 30%">
                             <a href="{{ route('admin.website.news.edit', $item->id) }}"
