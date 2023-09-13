@@ -13,13 +13,13 @@ class NewsController extends Controller
 	public function index()
 	{
 		$tree = Navigation::tree();
-		$data = News::orderBy('publish_at', 'desc')->get();
+		$data = News::where('compliance', 0)->orderBy('publish_at', 'desc')->get();
 		return view('front.news.index', compact('tree', 'data'));
 	}
 	public function show($slug)
 	{
 		$tree = Navigation::tree();
-		$data = News::where('slug', $slug)->first();
+		$data = News::where('compliance', 0)->where('slug', $slug)->first();
 		if(isset($data->more_images)){
 			$more_images = unserialize($data->more_images);
 		}
