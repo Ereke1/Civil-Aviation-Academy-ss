@@ -97,7 +97,7 @@
         <h2>{{ __('НАШИ СЕРТИФИКАТЫ') }}</h2>
         <p class="lead"><a href="/assets/images/Сертификат АУК рус.pdf">Область действия сертификата авиационного учебного центра</a></p>
         <p class="lead"><a href="/assets/images/Сертификат тренажера ALSIM АУК АГА от 20.02.2023_.pdf">Сертификат соответствия тренажера ALSIM (ALX-85) FNPT II / MCC</a></p>
-        <p class="lead"><a href="/assets/images/Сертификат Boeing do 2024.pdf.pdf">Сертификат соответствия тренажера FNPT Level II / MCC+FTD1 (B737NG)</a></p>
+        <p class="lead"><a href="/assets/images/Сертификат Boeing do 2024.pdf">Сертификат соответствия тренажера FNPT Level II / MCC+FTD1 (B737NG)</a></p>
         <p class="lead"><a href="/assets/images/Сертификат А320 от 08.09.2023.pdf">Сертификат соответствия тренажера FNPT II / MCC+FTD1 (A320-200)</a></p>
       </div>
     </div>
