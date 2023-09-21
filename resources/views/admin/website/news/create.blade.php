@@ -33,11 +33,11 @@
                         <div class="mb-4">
                             <label class="font-weight-bold">Описание</label>
                             <textarea name="desc_ru" id="editor-ru" class="form-control"></textarea>
+                            <input type='hidden' value='0' name='compliance'>
                         </div>
                         @if($createForCompliance === true)
                         <div class="mb-4">
                             <label><b>for compliance</b></label>
-                            <input type='hidden' value='0' name='compliance'>
                             <input type="checkbox" name="compliance" value="1" unchecked/>
                         </div>
                         @endif
