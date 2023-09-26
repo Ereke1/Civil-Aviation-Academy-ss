@@ -29,7 +29,9 @@
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
                                     <h2>{{ __('Виртуальная общественная приемная - Open Academy') }}</h2>
-                                    <a class="btn btn-primary btn-lg" href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174">Перейти на страницу</a>
+                                    <a class="btn btn-primary btn-lg" href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174">Перейти на страницу</a><br>
+                                    <a class="btn btn-primary btn-lg" href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174"
+                                    style="background: #027cad !important;border-color: #027cad !important;">Часто задаваемые вопросы</a>
                                 </div>
                             </div>
                         </div>
