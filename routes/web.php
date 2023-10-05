@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 	Route::group(['prefix' => 'website', 'namespace' => 'Website', 'as' => 'website.'], function () {
 		Route::resources([
 			'navigation' => 'NavigationController',
+			'workerpage' => 'WorkerPageController',
 			'pages' => 'PageController',
 			'books' => 'BooksController',
 			'book_collection' => 'BookCollectionController',
