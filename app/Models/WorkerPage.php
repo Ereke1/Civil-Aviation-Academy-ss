@@ -24,14 +24,14 @@ class WorkerPage extends Model
 
     public static function allUsers()
 	{
-		$allUsers = WorkersInfo::get();
+		$allUsers = WorkersInfo::orderBy('surname', 'asc')->orderBy('name', 'asc')->get();
 
 		return $allUsers;
 	}
 
     public static function allPages()
 	{
-		$allPages = Page::get();
+		$allPages = Page::orderBy('slug', 'asc')->get();
 
 		return $allPages;
 	}

@@ -83,7 +83,9 @@
                                     <label>Выберите страницу:</label>
                                     <select name="page_id">
                                         @foreach ($allPages as $item)
-                                            <option value="{!! $item->id !!}">{!! $item->id." | ".$item->slug !!}</option>
+                                            <option value="{!! $item->id !!}">
+                                                {!! $item->id !!} @if (strlen($item->id) == 3)&nbsp;|&nbsp;@else&nbsp;&nbsp;&nbsp;|&nbsp;@endif  {!! $item->slug !!}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
