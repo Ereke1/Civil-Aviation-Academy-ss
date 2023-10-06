@@ -18576,11 +18576,13 @@ h2 {
     }
 }
 
-#pages, #news, #departments {
+#pages,
+#news,
+#departments {
     min-height: 75vh;
 }
 
-#pages img:not(.teacher_img):not(.d-block)  {
+#pages img:not(.teacher_img):not(.d-block) {
     max-width: 100% !important;
     height: auto !important;
     /* padding-right: 15px !important; */
@@ -18647,6 +18649,11 @@ h2 {
     width: 100% !important;
     height: auto !important;
 }
+
+
+#departments .card{
+    width: 100%;
+   }
 
 h4 {
     font-size: 1.3rem;
@@ -18825,12 +18832,14 @@ h4 {
     }
 } */
 
-#news .news, #pages .news {
+#news .news,
+#pages .news {
     display: flex;
     flex-wrap: wrap;
 }
 
-#news .news__preview, #pages .news__preview {
+#news .news__preview,
+#pages .news__preview {
     width: calc(30% - 10px);
     margin-right: 30px;
     margin-bottom: 30px;
@@ -18840,12 +18849,14 @@ h4 {
     background: white;
 }
 
-#news .news__preview:hover, #pages .news__preview:hover {
+#news .news__preview:hover,
+#pages .news__preview:hover {
     transform: scale(1.03, 1.03);
     cursor: pointer;
 }
 
-#news .news__preview img, #pages .news__preview img {
+#news .news__preview img,
+#pages .news__preview img {
     width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
@@ -18853,60 +18864,75 @@ h4 {
 }
 
 @media (min-width: 1265px) {
-    #news .news__preview img, #pages .news__preview img {
+
+    #news .news__preview img,
+    #pages .news__preview img {
         height: calc(100vw / (1265 / 206));
     }
 }
 
-#news .news__preview .content, #pages .news__preview .content {
+#news .news__preview .content,
+#pages .news__preview .content {
     padding: 0 15px;
 }
 
-#news .news__preview .content h4, #pages .news__preview .content h4 {
+#news .news__preview .content h4,
+#pages .news__preview .content h4 {
     margin: 10px 0;
     height: 80px;
     font-size: 18px;
 }
 
 @media (min-width: 1265px) {
-    #news .news__preview .content h4, #pages .news__preview .content h4 {
+
+    #news .news__preview .content h4,
+    #pages .news__preview .content h4 {
         height: calc(100vw / (1265 / 80));
         font-size: calc(100vw / (1265 / 18));
     }
 }
 
-#news .news__preview .content h4 a, #pages .news__preview .content h4 a {
+#news .news__preview .content h4 a,
+#pages .news__preview .content h4 a {
     color: #004176;
     text-decoration: underline;
 }
 
-#news .news__preview .content h4 a:hover, #pages .news__preview .content h4 a:hover {
+#news .news__preview .content h4 a:hover,
+#pages .news__preview .content h4 a:hover {
     text-decoration: none;
 }
 
-#news .news__preview .content__desc, #pages .news__preview .content__desc {
+#news .news__preview .content__desc,
+#pages .news__preview .content__desc {
     height: 200px;
 }
 
 @media (min-width: 1265px) {
-    #news .news__preview .content__desc, #pages .news__preview .content__desc {
+
+    #news .news__preview .content__desc,
+    #pages .news__preview .content__desc {
         height: calc(100vw / (1265 / 200));
     }
 }
 
-#news .news__preview .content p, #pages .news__preview .content p {
+#news .news__preview .content p,
+#pages .news__preview .content p {
     margin-bottom: 0;
     color: black;
     font-size: 16px;
 }
 
 @media (min-width: 1265px) {
-    #news .news__preview .content p, #pages .news__preview .content p {
+
+    #news .news__preview .content p,
+    #pages .news__preview .content p {
         font-size: calc(100vw / (1265 / 16));
     }
 }
 
-#news .news__preview .content .department, #pages .news__preview .content .department {
+#news .news__preview .content .department,
+#pages .news__preview .content .department {
     background: #04279e;
     padding: 5px 15px;
     transition: 0.8s ease all;
@@ -18915,34 +18941,42 @@ h4 {
     align-items: center;
 }
 
-#news .news__preview .content .department:hover, #pages .news__preview .content .department:hover {
+#news .news__preview .content .department:hover,
+#pages .news__preview .content .department:hover {
     background: #c99e67;
 }
 
-#news .news__preview .content .department i, #pages .news__preview .content .department i {
+#news .news__preview .content .department i,
+#pages .news__preview .content .department i {
     font-size: 20px;
     color: white;
     margin-right: 10px;
 }
 
 @media (min-width: 1265px) {
-    #news .news__preview .content .department i, #pages .news__preview .content .department i {
+
+    #news .news__preview .content .department i,
+    #pages .news__preview .content .department i {
         font-size: calc(100vw / (1265 / 20));
     }
 }
 
-#news .news__preview .content .department p, #pages .news__preview .content .department p {
+#news .news__preview .content .department p,
+#pages .news__preview .content .department p {
     font-size: 14px;
     color: white;
 }
 
 @media (min-width: 1265px) {
-    #news .news__preview .content .department p, #pages .news__preview .content .department p {
+
+    #news .news__preview .content .department p,
+    #pages .news__preview .content .department p {
         font-size: calc(100vw / (1265 / 14));
     }
 }
 
-#news .news__preview .content .date-time, #pages .news__preview .content .date-time {
+#news .news__preview .content .date-time,
+#pages .news__preview .content .date-time {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
@@ -18951,7 +18985,8 @@ h4 {
     padding-bottom: 10px;
 }
 
-#news .news__preview .content .date-time i, #pages .news__preview .content .date-time i {
+#news .news__preview .content .date-time i,
+#pages .news__preview .content .date-time i {
     color: #1c3ca7;
 }
 
@@ -19018,14 +19053,16 @@ h4 {
     /* font-size: 16px; */
 }
 
-#news .detail-news br{
+#news .detail-news br {
     display: block;
     margin-top: 5px;
     content: "";
 }
-#news .detail-news p{
+
+#news .detail-news p {
     line-height: 23px;
 }
+
 /* @media (min-width: 1265px) {
     #news .detail-news {
         font-size: calc(100vw / (1265 / 16));
@@ -19264,25 +19301,30 @@ h4 {
         margin-bottom: 20px;
     }
 
-    #news .news, #pages .news {
+    #news .news,
+    #pages .news {
         display: block;
     }
 
-    #news .news__preview, #pages .news__preview {
+    #news .news__preview,
+    #pages .news__preview {
         width: 100%;
         margin-bottom: 30px;
         border-bottom: 4px solid red;
     }
 
-    #news .news__preview img, #pages .news__preview img {
+    #news .news__preview img,
+    #pages .news__preview img {
         height: auto;
     }
 
-    #news .news__preview h4, #pages .news__preview h4 {
+    #news .news__preview h4,
+    #pages .news__preview h4 {
         margin: 10px 0;
     }
 
-    #news .news__public-info, #pages .news__public-info {
+    #news .news__public-info,
+    #pages .news__public-info {
         display: flex;
         justify-content: space-between;
         font-size: 12px;
@@ -19865,6 +19907,7 @@ h4 {
         width: 150%;
         min-height: 240px;
     }
+
     #main-slider .slider-inner h2 {
         margin-top: 70px;
         font-size: 4vw;
@@ -20110,7 +20153,9 @@ h4 {
     margin-bottom: 5px;
 }
 
-.services .library, #departments .departmentSlug, #pages .departmentSlug {
+.services .library,
+#departments .departmentSlug,
+#pages .departmentSlug {
     /* padding: 30px 20px; */
     transition: all ease-in-out 0.3s;
     background-size: 100%;
@@ -20126,7 +20171,8 @@ h4 {
     background-position: center center;
 }
 
-#departments .departmentSlug:hover, #pages .departmentSlug:hover {
+#departments .departmentSlug:hover,
+#pages .departmentSlug:hover {
     background-size: 120%;
 }
 
@@ -20164,14 +20210,17 @@ h4 {
     transition: ease-in-out 0.3s;
 }
 
-.services .library h4 a, #departments .departmentSlug h4 a, #pages .departmentSlug h4 a {
+.services .library h4 a,
+#departments .departmentSlug h4 a,
+#pages .departmentSlug h4 a {
     color: #fff;
     font-weight: 500;
     font-size: 20px;
     transition: ease-in-out 0.3s;
 }
 
-#departments .departmentSlug h4, #pages .departmentSlug h4 {
+#departments .departmentSlug h4,
+#pages .departmentSlug h4 {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
@@ -20185,7 +20234,9 @@ h4 {
     text-decoration: none;
 }
 
-.services .library h4 a:hover, #departments .departmentSlug h4 a:hover, #pages .departmentSlug h4 a:hover{
+.services .library h4 a:hover,
+#departments .departmentSlug h4 a:hover,
+#pages .departmentSlug h4 a:hover {
     text-decoration: none;
     color: #fff !important;
 }
@@ -20692,18 +20743,18 @@ h4 {
     }
 }
 
-.cardscontainer{
+.cardscontainer {
     width: 70% !important;
 }
 
 @media screen and (max-width: 1200px) {
-    .cardscontainer{
+    .cardscontainer {
         width: 80% !important;
     }
 }
 
 @media screen and (max-width: 992px) {
-    .cardscontainer{
+    .cardscontainer {
         width: 100% !important;
     }
 }
@@ -21160,6 +21211,7 @@ h4 {
     .material-card.mc-active .mc-footer {
         height: 30px;
     }
+
     .material-card.mc-active .mc-footer h4 {
         top: 10px;
     }
@@ -23327,7 +23379,7 @@ h2.section-heading {
 
 @media screen and (max-width: 1199px) {
     #pages span {
-       font-size: 100% !important;
+        font-size: 100% !important;
     }
 }
 
@@ -23556,13 +23608,13 @@ h2.section-heading {
     border-color: darkgoldenrod;
 }
 
-.card-link{
+.card-link {
     font-weight: 700;
     font-size: 15px;
     color: #282828;
 }
 
-.card-link:hover{
+.card-link:hover {
     color: #282828;
 }
 
@@ -23571,41 +23623,40 @@ h2.section-heading {
     content: "+";
     position: absolute;
     right: 2%;
-    transition: transform var(--collapsible-transition-duration)
-      var(--collapsible-transition-fn);
-  }
+    transition: transform var(--collapsible-transition-duration) var(--collapsible-transition-fn);
+}
 
 .card-link:not(.collapsed) .card-header::after {
     content: "\2212";
 }
 
-.teacher_info_block{
+.teacher_info_block {
     padding: 15px;
 }
 
-.teacher_img{
+.teacher_img {
     width: 160px;
     height: 180px;
-    border:3px solid white;
+    border: 3px solid white;
     border-radius: 50%;
     margin-bottom: min(25px);
     margin-top: min(25px);
 }
 
 @media (min-width: 992px) {
-    .teacher_img{
+    .teacher_img {
         margin-top: 55px;
         width: 160px;
         height: 180px;
-        border:3px solid white;
+        border: 3px solid white;
         border-radius: 50%;
         margin-bottom: min(55px);
     }
 }
 
-.departmentBanner{
-    background-image: linear-gradient( rgba(8, 29, 99, 0.4), rgba(8, 29, 99, 0.8) ), url(/assets/images/main/30576_5f76b51a8.jpg);
-    height:300px;
+.departmentBanner {
+    background-image: linear-gradient(rgba(8, 29, 99, 0.4), rgba(8, 29, 99, 0.8)), url(/assets/images/main/30576_5f76b51a8.jpg);
+    height: 300px;
     background-size: 100%;
     background-position: center center;
     text-align: center;
@@ -23615,9 +23666,9 @@ h2.section-heading {
     padding: 100px 10px;
 }
 
-.studentHouseBanner{
-    background-image: linear-gradient( rgba(8, 29, 99, 0.4), rgba(8, 29, 99, 0.8) ), url(https://caa.edu.kz/assets/images/upload/WhatsApp%20Image%202022-10-19%20at%2014.10.17_1670490193.jpeg);
-    height:300px;
+.studentHouseBanner {
+    background-image: linear-gradient(rgba(8, 29, 99, 0.4), rgba(8, 29, 99, 0.8)), url(https://caa.edu.kz/assets/images/upload/WhatsApp%20Image%202022-10-19%20at%2014.10.17_1670490193.jpeg);
+    height: 300px;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -23629,9 +23680,9 @@ h2.section-heading {
     margin-bottom: 30px;
 }
 
-.confBanner{
-    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8) ), url(/assets/images/conf.jpg);
-    height:500px;
+.confBanner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(/assets/images/conf.jpg);
+    height: 500px;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -23643,9 +23694,9 @@ h2.section-heading {
     margin-bottom: 30px;
 }
 
-.medicalBanner{
-    background-image: linear-gradient( rgba(8, 29, 99, 0.4), rgba(8, 29, 99, 0.8) ), url(https://caa.edu.kz/assets/images/upload/WhatsApp%20Image%202022-12-22%20at%2010.36.01.jpeg);
-    height:300px;
+.medicalBanner {
+    background-image: linear-gradient(rgba(8, 29, 99, 0.4), rgba(8, 29, 99, 0.8)), url(https://caa.edu.kz/assets/images/upload/WhatsApp%20Image%202022-12-22%20at%2010.36.01.jpeg);
+    height: 300px;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -23657,7 +23708,7 @@ h2.section-heading {
     margin-bottom: 30px;
 }
 
-.teacher_block_one{
+.teacher_block_one {
     background: #00589B;
     color: white;
     border-radius: 15px;
@@ -23665,7 +23716,7 @@ h2.section-heading {
     margin-bottom: 10px;
 }
 
-.teacher_block_two{
+.teacher_block_two {
     background: #00656E;
     color: white;
     border-radius: 15px;
@@ -23673,7 +23724,7 @@ h2.section-heading {
     margin-bottom: 10px;
 }
 
-.teacher_img_block{
+.teacher_img_block {
     text-align: center;
 }
 
@@ -23690,7 +23741,7 @@ h2.section-heading {
 }
 
 .stats-line-black {
-	margin: 12px auto 0;
+    margin: 12px auto 0;
     width: 55px;
     height: 2px;
     background-color: #000;
@@ -23702,18 +23753,18 @@ h2.section-heading {
     margin-top: 15px;
     margin-bottom: 0;
     text-align: center;
-	color: #000;
-	text-transform: uppercase;
-	font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 @media (max-width: 992px) {
-	.counter {
-		margin-bottom: 40px;
-	}
+    .counter {
+        margin-bottom: 40px;
+    }
 }
 
-.arrow{
+.arrow {
     padding: 10px;
     position: relative;
     text-align: center;
@@ -23721,16 +23772,17 @@ h2.section-heading {
     color: white;
     margin-bottom: 23px;
     font-size: 16px;
-  }
+}
+
 /* arrow shape */
-.arrow::after{
+.arrow::after {
     content: "";
     position: absolute;
     background-color: transparent;
     border: 18px solid;
-  }
+}
 
-  /* bottom arrow */
+/* bottom arrow */
 .bottom::after {
     border-color: #00589B transparent transparent transparent;
     bottom: -36px;
@@ -23740,93 +23792,114 @@ h2.section-heading {
     -moz-transform: translate(-50%);
     -ms-transform: translate(-50%);
     -o-transform: translate(-50%);
-  }
-  .rate {
+}
+
+.rate {
     float: left;
     height: 46px;
     padding: 0 10px;
-    }
-    .rate:not(:checked) > input {
-    position:absolute;
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
     display: none;
-    }
-    .rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-    }
-    .rated:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-    }
-    .rate:not(:checked) > label:before {
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rated:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
     content: '★ ';
-    }
-    .rate > input:checked ~ label {
+}
+
+.rate>input:checked~label {
     color: #ffc700;
-    }
-    .rate:not(:checked) > label:hover,
-    .rate:not(:checked) > label:hover ~ label {
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
     color: #deb217;
-    }
-    .rate > input:checked + label:hover,
-    .rate > input:checked + label:hover ~ label,
-    .rate > input:checked ~ label:hover,
-    .rate > input:checked ~ label:hover ~ label,
-    .rate > label:hover ~ input:checked ~ label {
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
     color: #c59b08;
-    }
-    .star-rating-complete{
-       color: #c59b08;
-    }
-    .rating-container .form-control:hover, .rating-container .form-control:focus{
+}
+
+.star-rating-complete {
+    color: #c59b08;
+}
+
+.rating-container .form-control:hover,
+.rating-container .form-control:focus {
     background: #fff;
     border: 1px solid #ced4da;
-    }
-    .rating-container textarea:focus, .rating-container input:focus {
+}
+
+.rating-container textarea:focus,
+.rating-container input:focus {
     color: #000;
-    }
-    .rated {
+}
+
+.rated {
     float: left;
     height: 46px;
     padding: 0 10px;
-    }
-    .rated:not(:checked) > input {
-    position:absolute;
+}
+
+.rated:not(:checked)>input {
+    position: absolute;
     display: none;
-    }
-    .rated:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ffc700;
-    }
-    .rated:not(:checked) > label:before {
-    content: '★ ';
-    }
-    .rated > input:checked ~ label {
+}
+
+.rated:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
     color: #ffc700;
-    }
-    .rated:not(:checked) > label:hover,
-    .rated:not(:checked) > label:hover ~ label {
+}
+
+.rated:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rated>input:checked~label {
+    color: #ffc700;
+}
+
+.rated:not(:checked)>label:hover,
+.rated:not(:checked)>label:hover~label {
     color: #deb217;
-    }
-    .rated > input:checked + label:hover,
-    .rated > input:checked + label:hover ~ label,
-    .rated > input:checked ~ label:hover,
-    .rated > input:checked ~ label:hover ~ label,
-    .rated > label:hover ~ input:checked ~ label {
+}
+
+.rated>input:checked+label:hover,
+.rated>input:checked+label:hover~label,
+.rated>input:checked~label:hover,
+.rated>input:checked~label:hover~label,
+.rated>label:hover~input:checked~label {
     color: #c59b08;
-    }
+}
+
