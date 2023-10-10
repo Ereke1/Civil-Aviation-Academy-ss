@@ -25,7 +25,7 @@ class NavigationController extends Controller
 			$tree = Navigation::treeCollege();
 		}
         elseif ($user_department === 'ДМР') {
-			$data = Navigation::where('active', true)->get();
+			$data = Navigation::where('active', true)->orderBy('title_ru', 'asc')->get();
 			$tree = Navigation::tree();
 		}
          else {

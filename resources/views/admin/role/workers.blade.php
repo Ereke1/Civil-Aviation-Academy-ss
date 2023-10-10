@@ -14,5 +14,8 @@
         <a href="{{ route('admin.workers.create') }}" @if ($active_menu === 'Добавить работника') class="active" @endif>
             Добавить работника
         </a>
+        <a href="{{ route('admin.workerpage.index') }}" @if ($active_menu === 'Доступ к страницам') class="active" @endif>
+            Доступ к страницам
+        </a>
     </div>
 </div>

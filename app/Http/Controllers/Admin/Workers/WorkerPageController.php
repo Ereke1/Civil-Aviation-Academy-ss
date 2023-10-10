@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Website;
+namespace App\Http\Controllers\Admin\Workers;
 
 use App\Http\Controllers\Controller;
 use App\Models\WorkerPage;
@@ -22,7 +22,7 @@ class WorkerPageController extends Controller
             $allUsers = WorkerPage::allUsers();
             $allPages = WorkerPage::allPages();
             $list = WorkerPage::list();
-            return view('admin.website.workerpage.index', compact('list', 'allUsers', 'allPages', 'user_department'));
+            return view('admin.workerpage.index', compact('list', 'allUsers', 'allPages', 'user_department'));
         } else {
             return abort('403', 'У вас нет доступа на это действие');
         }

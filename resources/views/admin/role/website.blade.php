@@ -19,9 +19,6 @@ $worker_permission = unserialize($worker_permission->permission);
         <a href="{{ route('admin.website.pages.index') }}" @if ($active_menu === 'Страницы') class="active" @endif>
             Страницы
         </a>
-        <a href="{{ route('admin.website.workerpage.index') }}" @if ($active_menu === 'Доступ к страницам') class="active" @endif>
-            Доступ к страницам
-        </a>
         @if (isset($worker_permission->department->read) && $worker_permission->department->read == true)
             <a href="{{ route('admin.website.department.index') }}"
                 @if ($active_menu === 'Кафедры') class="active" @endif>

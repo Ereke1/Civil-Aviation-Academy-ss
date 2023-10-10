@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@php $parrentCat  = 'Управление сайтом' @endphp
+@php $parrentCat  = 'Управление работниками' @endphp
 @php $active_menu  = 'Доступ к страницам' @endphp
 @section('content')
     @if (session('alert'))
@@ -44,7 +44,7 @@
                             </p>
                         </div>
                         <div class="col-md-2 text-center">
-                            <form class="p-0" action="{{ route('admin.website.workerpage.destroy', $item->id) }}"
+                            <form class="p-0" action="{{ route('admin.workerpage.destroy', $item->id) }}"
                                 method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -68,7 +68,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form class="modal-form" action="{!! route('admin.website.workerpage.store') !!}" method="POST">
+                            <form class="modal-form" action="{!! route('admin.workerpage.store') !!}" method="POST">
                                 @csrf
                                 @method('POST')
                                 <div id="user_id">

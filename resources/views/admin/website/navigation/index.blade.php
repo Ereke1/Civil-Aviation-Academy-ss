@@ -468,7 +468,7 @@
                                 <label>Выберите родительскую категорию:</label>
                                 <select name="parrent_id">
                                     @foreach ($data as $item)
-                                        <option value="{!! $item->id !!}">{!! $item->title_ru !!}</option>
+                                        <option value="{!! $item->id !!}">{!! $item->title_ru !!} @if ($item->college === 1) *(категория: колледж) @endif</option>
                                     @endforeach
                                 </select>
                             </div>
