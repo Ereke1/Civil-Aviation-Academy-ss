@@ -15,9 +15,11 @@
                     <h2>Страницы кафедр</h2>
                 </div>
                 <div class="pages__add-page">
+                    @if($canCreate === true)
                     <a href="{{ route('admin.website.department-page.create') }}" class="btn btn-secondary">
                         Добавить страницу
                     </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -34,9 +36,11 @@
             <div class="col-md-2 text-center">
                 <b>Сортировка</b>
             </div>
+            @if($canCreate === true)
             <div class="col-md-1 text-center">
                 <b>Удаление</b>
             </div>
+            @endif
             <div class="col-md-1 text-right">
                 <b>Редактирование</b>
             </div>
@@ -59,6 +63,7 @@
                 <div class="col-md-2 text-center">
                     {!! $department->sort !!}
                 </div>
+                @if($canCreate === true)
                 <div class="col-md-1 text-center">
                     <form action="{{ route('admin.website.department-page.destroy', $department->id) }}" method="POST">
                         @csrf
@@ -69,6 +74,7 @@
                         </button>
                     </form>
                 </div>
+                @endif
                 <div class="col-md-1 text-right">
                     <a class="btn btn-primary" href="{{ route('admin.website.department-page.edit', $department->id) }}">
                         Редактировать

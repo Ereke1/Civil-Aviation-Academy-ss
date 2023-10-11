@@ -17,5 +17,8 @@
         <a href="{{ route('admin.workerpage.index') }}" @if ($active_menu === 'Доступ к страницам') class="active" @endif>
             Доступ к страницам
         </a>
+        <a href="{{ route('admin.worker_department_page.index') }}" @if ($active_menu === 'Доступ к страницам кафедры') class="active" @endif>
+            Доступ к страницам кафедры
+        </a>
     </div>
 </div>

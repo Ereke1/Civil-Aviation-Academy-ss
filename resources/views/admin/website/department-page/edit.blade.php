@@ -30,6 +30,7 @@
                     <div id="ru-block">
                         <div class="mb-4">
                             <label class="font-weight-bold">Кафедра</label>
+                            @if($canCreate === true)
                             <select class="form-control" aria-label="Default select example" name="department_id"
                                 required>
                                 <option selected value="{!! $department_id !!}" disabled>-----</option>
@@ -38,6 +39,10 @@
                                         @if ($department_id == $department->id) selected @endif>{!! $department->name !!}</option>
                                 @endforeach
                             </select>
+                            @endif
+                            @if($canCreate === false)
+                            <input type="text" name="department_id" class="form-control" value="{!! $department_id !!}" disabled />
+                            @endif
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Название страницы</label>
@@ -48,6 +53,7 @@
                             <label class="font-weight-bold">Контент</label>
                             <textarea name="content_ru" id="editor-ru" class="form-control"> {!! $content['ru'] !!}</textarea>
                         </div>
+                        @if($canCreate === true)
                         <div class="mb-4">
                             <label class="font-weight-bold d-block">Фоновое изображение</label>
                             <img src="{!! $image !!}" class="mb-2" alt="" width="200" height="150">
@@ -70,6 +76,11 @@
                                 @endforeach
                             </select>
                         </div>
+                        @endif
+                        @if($canCreate === false)
+                        <input type="hidden" name="sort" class="form-control" value="{!! $sort !!}" required />
+                        <input type="hidden" name="slug" class="form-control" value="{!! $slug !!}" required />
+                        @endif
                     </div>
                     <div id="kk-block" style="display: none">
                         <div class="mb-4">

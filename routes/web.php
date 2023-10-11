@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'workers' => 'WorkersController',
 			'workers-permissions' => 'WorkersPermissionsController',
 			'workerpage' => 'WorkerPageController',
+			'worker_department_page' => 'WorkerDepartmentPageController',
 		]);
 	});
 

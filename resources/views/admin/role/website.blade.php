@@ -19,14 +19,14 @@ $worker_permission = unserialize($worker_permission->permission);
         <a href="{{ route('admin.website.pages.index') }}" @if ($active_menu === 'Страницы') class="active" @endif>
             Страницы
         </a>
+        <a href="{{ route('admin.website.department-page.index') }}"
+            @if ($active_menu === 'Страницы кафедр') class="active" @endif>
+            Страницы кафедр
+        </a>
         @if (isset($worker_permission->department->read) && $worker_permission->department->read == true)
             <a href="{{ route('admin.website.department.index') }}"
                 @if ($active_menu === 'Кафедры') class="active" @endif>
                 Кафедры
-            </a>
-            <a href="{{ route('admin.website.department-page.index') }}"
-                @if ($active_menu === 'Страницы кафедр') class="active" @endif>
-                Страницы кафедр
             </a>
             <a href="{{ route('admin.department.teacher.index') }}"
                 @if ($active_menu === 'Преподаватели кафедр') class="active" @endif>

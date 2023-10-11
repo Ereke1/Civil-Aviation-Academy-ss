@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @php $parrentCat  = 'Управление работниками' @endphp
-@php $active_menu  = 'Доступ к страницам' @endphp
+@php $active_menu  = 'Доступ к страницам кафедры' @endphp
 @section('content')
     @if (session('alert'))
         <div class="alert alert-success">
@@ -22,7 +22,10 @@
                     <div class="col-md-4 pl-0">
                         <p><b>Сотрудник</b></p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
+                        <p><b>Кафедра</b></p>
+                    </div>
+                    <div class="col-md-3">
                         <p><b>Страница</b></p>
                     </div>
                     <div class="col-md-2 text-center">
@@ -30,17 +33,24 @@
                     </div>
                 </div>
                 @foreach ($list as $item)
+                @php
+                    $dep_page_name = unserialize($item->department_page_name);
+                    $dep_page_name = $dep_page_name['ru'];
+                @endphp
                     <div class="d-flex flex-wrap">
                         <div class="col-md-4 pl-0">
                             <p>{!! $item->surname . ' ' . $item->name . ' ' . $item->patronymic !!}</p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3 pl-0">
+                            <p>{!! $item->department_name !!}</p>
+                        </div>
+                        <div class="col-md-3">
                             <p>
-                                    {!! $item->slug !!}
+                                    {!! $dep_page_name. " | ".$item->slug !!}
                             </p>
                         </div>
                         <div class="col-md-2 text-center">
-                            <form class="p-0" action="{{ route('admin.workerpage.destroy', $item->id) }}"
+                            <form class="p-0" action="{{ route('admin.worker_department_page.destroy', $item->id) }}"
                                 method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -64,7 +74,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form class="modal-form" action="{!! route('admin.workerpage.store') !!}" method="POST">
+                            <form class="modal-form" action="{!! route('admin.worker_department_page.store') !!}" method="POST">
                                 @csrf
                                 @method('POST')
                                 <div id="user_id">
@@ -75,12 +85,16 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div id="page_id">
+                                <div id="department_page_id">
                                     <label>Выберите страницу:</label>
-                                    <select name="page_id">
+                                    <select name="department_page_id">
                                         @foreach ($allPages as $item)
+                                        @php
+                                            $dep_page_name = unserialize($item->department_page_name);
+                                            $dep_page_name = $dep_page_name['ru'];
+                                        @endphp
                                             <option value="{!! $item->id !!}">
-                                                {!! $item->id !!} @if (strlen($item->id) == 3)&nbsp;|&nbsp;@else&nbsp;&nbsp;&nbsp;|&nbsp;@endif  {!! $item->slug !!}
+                                                {!! $item->id !!}) {!! $item->department_name." | ".$dep_page_name." | ".$item->slug !!}
                                             </option>
                                         @endforeach
                                     </select>

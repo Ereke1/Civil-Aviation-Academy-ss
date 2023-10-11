@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Admin\Website;
 use App\Http\Controllers\Controller;
 use App\Models\Department;
 use App\Models\DepartmentPages;
+use App\Models\Page;
 use Illuminate\Http\Request;
+use App\Models\WorkerDepartmentPage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Auth;
 
 class DepartmentPageController extends Controller
 {
@@ -17,7 +20,12 @@ class DepartmentPageController extends Controller
 	 */
 	public function index()
 	{
-		$departments = Department::join('department_pages', 'departments.id', 'department_pages.department_id')
+		$user_department = Page::userInfo()->department;
+        $canCreate = false;
+
+        if ($user_department === 'ДМР') {
+            $canCreate = true;
+		    $departments = Department::join('department_pages', 'departments.id', 'department_pages.department_id')
 			->select(
 				'department_pages.id',
 				'departments.name as department_name',
@@ -28,8 +36,23 @@ class DepartmentPageController extends Controller
 			)
 			->orderBy('departments.name', 'asc')
 			->get();
+        } else {
+            $departments = Department::join('department_pages', 'departments.id', 'department_pages.department_id')
+            ->join('worker_department_pages', 'worker_department_pages.department_page_id', 'department_pages.id')
+            ->where('worker_department_pages.worker_id', Auth::user()->id)
+			->select(
+				'department_pages.id',
+				'departments.name as department_name',
+				'department_pages.name',
+				'department_pages.content',
+				'department_pages.slug',
+				'department_pages.sort',
+			)
+			->orderBy('departments.name', 'asc')
+			->get();
+        }
 
-		return view('admin.website.department-page.index', compact('departments'));
+		return view('admin.website.department-page.index', compact('departments','canCreate'));
 	}
 
 	/**
@@ -105,6 +128,12 @@ class DepartmentPageController extends Controller
 	 */
 	public function edit($id)
 	{
+        $user_department = Page::userInfo()->department;
+        $canCreate = false;
+        if ($user_department === 'ДМР') {
+            $canCreate = true;
+        }
+
 		$department_page = DepartmentPages::find($id);
 		$name = unserialize($department_page->name);
 		$content = unserialize($department_page->content);
@@ -114,7 +143,7 @@ class DepartmentPageController extends Controller
 		$image = $department_page->image;
 		$departments = Department::all();
 		$slugs = ['history', 'teachers', 'science', 'laboratories', 'eduProgram1', 'eduProgram2', 'eduProgram3', 'eduProgram4', 'eduProgram5', 'eduProgram6', 'eduProgram7', 'eduProgram8', 'eduProgram9', 'eduProgram10'];
-		return view('admin.website.department-page.edit', compact('department_page', 'departments', 'slugs', 'name', 'content', 'sort', 'department_id', 'slug', 'image'));
+		return view('admin.website.department-page.edit', compact('department_page', 'departments', 'slugs', 'name', 'content', 'sort', 'department_id', 'slug', 'image', 'canCreate'));
 	}
 
 	/**

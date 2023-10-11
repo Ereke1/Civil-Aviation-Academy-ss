@@ -6,6 +6,7 @@ use App\Models\DepartmentTeacher;
 use App\Http\Controllers\Controller;
 use App\Models\Department;
 use Illuminate\Http\Request;
+use App\Models\WorkerDepartmentPage;
 
 class DepartmentTeacherController extends Controller
 {
@@ -16,7 +17,12 @@ class DepartmentTeacherController extends Controller
 	 */
 	public function index()
 	{
+        $user_department = WorkerDepartmentPage::userInfo()->department;
+        if ($user_department === 'ДМР') {
 		return view('admin.department.teacher.index');
+    } else {
+        return abort('403', 'У вас нет доступа на это действие');
+    }
 	}
 
 	/**
