@@ -12,10 +12,14 @@ $worker_permission = unserialize($worker_permission->permission);
         <i class="fa fa-angle-right @if ($parrentCat === 'Управление сайтом') rotate-90 @endif'"></i>
     </div>
     <div class='menu @if ($parrentCat === 'Управление сайтом') active @else hide @endif'>
+        @if ($worker_permission->navigation->read == true)
         <a href="{{ route('admin.website.navigation.index') }}"
             @if ($active_menu === 'Меню') class="active" @endif>
             Навигация
         </a>
+        @endif
+
+        @if ($worker_permission->pages->read == true)
         <a href="{{ route('admin.website.pages.index') }}" @if ($active_menu === 'Страницы') class="active" @endif>
             Страницы
         </a>
@@ -23,7 +27,9 @@ $worker_permission = unserialize($worker_permission->permission);
             @if ($active_menu === 'Страницы кафедр') class="active" @endif>
             Страницы кафедр
         </a>
-        @if (isset($worker_permission->department->read) && $worker_permission->department->read == true)
+        @endif
+
+        @if ($worker_permission->department->read == true)
             <a href="{{ route('admin.website.department.index') }}"
                 @if ($active_menu === 'Кафедры') class="active" @endif>
                 Кафедры

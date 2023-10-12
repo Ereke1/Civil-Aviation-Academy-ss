@@ -22,10 +22,10 @@ $worker_permission = unserialize($worker_permission->permission);
         @if (isset($worker_permission->vaccination->read) && $worker_permission->vaccination->read == true)
             @include('admin.role.vaccination')
         @endif
-        @if (isset($worker_permission->pages->read) && $worker_permission->navigation->read == true)
+        @if (isset($worker_permission->pages->read) || $worker_permission->navigation->read == true)
             @include('admin.role.website')
         @endif
-        @if (isset($worker_permission->news->read) || isset($worker_permission->events->read))
+        @if ($worker_permission->news->read == true || $worker_permission->events->read == true)
             @include('admin.role.news-and-events')
         @endif
         @if (isset($worker_permission->books->read) && $worker_permission->books->read == true)
