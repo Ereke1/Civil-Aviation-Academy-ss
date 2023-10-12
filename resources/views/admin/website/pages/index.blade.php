@@ -32,9 +32,11 @@
                 <div class="col-md-3">
                     <p><b>URL</b></p>
                 </div>
+                @if($canCreate === true)
                 <div class="col-md-2 text-center">
                     <p><b>Удалить</b></p>
                 </div>
+                @endif
                 <div class="col-md-2 pr-0 text-right">
                     <p><b>Редактировать</b></p>
                 </div>
@@ -51,6 +53,7 @@
                         <div class="col-md-3">
                             <p>{!! $item->slug !!}</p>
                         </div>
+                        @if($canCreate === true)
                         <div class="col-md-2 text-center">
                             <form action="{{ route('admin.website.pages.destroy', $item->id) }}" method="POST">
                                 @csrf
@@ -61,6 +64,7 @@
                                 </button>
                             </form>
                         </div>
+                        @endif
                         <div class="col-md-2 pr-0 text-right">
                             <a class="btn btn-primary" href="{{ route('admin.website.pages.edit', $item->id) }}">
                                 Редактировать страницу
