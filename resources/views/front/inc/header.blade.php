@@ -126,15 +126,33 @@
                                                 </li>
                                             @else
                                                 <li>
-                                                    <a href="{!! $child->link !!}">
+                                                    @if ($child->link == 'https://vestnik.agakaz.kz/')
                                                         @if (Config::get('app.locale') == 'ru')
-                                                            {!! $child->title_ru !!}
-                                                        @elseif ( Config::get('app.locale') == 'kk' )
-                                                            {!! $child->title_kk !!}
-                                                        @elseif ( Config::get('app.locale') == 'en' )
-                                                            {!! $child->title_en !!}
+                                                            <a href="https://vestnik.agakaz.kz/">
+                                                                {!! $child->title_ru !!}
+                                                            </a>
                                                         @endif
-                                                    </a>
+                                                        @if (Config::get('app.locale') == 'kk')
+                                                            <a href="https://vestnik.agakaz.kz/kk">
+                                                                {!! $child->title_kk !!}
+                                                            </a>
+                                                        @endif
+                                                        @if (Config::get('app.locale') == 'en')
+                                                            <a href="https://vestnik.agakaz.kz/en">
+                                                                {!! $child->title_en !!}
+                                                            </a>
+                                                        @endif
+                                                    @else
+                                                        <a href="{!! $child->link !!}">
+                                                            @if (Config::get('app.locale') == 'ru')
+                                                                {!! $child->title_ru !!}
+                                                            @elseif ( Config::get('app.locale') == 'kk' )
+                                                                {!! $child->title_kk !!}
+                                                            @elseif ( Config::get('app.locale') == 'en' )
+                                                                {!! $child->title_en !!}
+                                                            @endif
+                                                        </a>
+                                                    @endif
                                                 </li>
                                             @endif
                                         @endforeach
