@@ -17,7 +17,6 @@ class WorkerPage extends Model
 	{
 		$userInfo = WorkersInfo::select('department')
 			->where('user_id', Auth::user()->id)
-            ->where('working', true)
 			->first();
 
 		return $userInfo;
