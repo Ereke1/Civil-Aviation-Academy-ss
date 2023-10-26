@@ -23,9 +23,7 @@ class PageController extends Controller
 	{
 		$user_department = Page::userInfo()->department;
         $canCreate = false;
-		if ($user_department === 'Авиационный колледж') {
-			$data = Page::select('*')->where('user_id', 13)->get();
-		} else if ($user_department === 'ДМР') {
+		if ($user_department === 'ДМР') {
 			$data = Page::select('*')->where('user_id', '>', 0)->get();
             $canCreate = true;
 		} else {
