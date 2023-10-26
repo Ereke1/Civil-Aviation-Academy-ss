@@ -17,6 +17,7 @@ class WorkerPage extends Model
 	{
 		$userInfo = WorkersInfo::select('department')
 			->where('user_id', Auth::user()->id)
+            ->where('working', true)
 			->first();
 
 		return $userInfo;
@@ -24,7 +25,9 @@ class WorkerPage extends Model
 
     public static function allUsers()
 	{
-		$allUsers = WorkersInfo::orderBy('surname', 'asc')->orderBy('name', 'asc')->get();
+		$allUsers = WorkersInfo::orderBy('surname', 'asc')
+        ->where('working', true)
+        ->orderBy('name', 'asc')->get();
 
 		return $allUsers;
 	}
