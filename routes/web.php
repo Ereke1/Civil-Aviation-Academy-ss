@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'books' => 'BooksController',
 			'book_collection' => 'BookCollectionController',
 			'news' => 'NewsController',
+			'studevents' => 'StudEventsController',
 			'events' => 'EventController',
 			'department' => 'DepartmentController',
 			'department-page' => 'DepartmentPageController',
@@ -113,6 +114,8 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	Route::get('news/{slug}', 'NewsController@show')->name('news.show');
 	Route::get('newsCompliance', 'NewsComplianceController@index')->name('newsCompliance');
 	Route::get('newsCompliance/{slug}', 'NewsComplianceController@show')->name('newsCompliance.show');
+	Route::get('studevents', 'StudEventsController@index')->name('studevents');
+	Route::get('studevents/{slug}', 'StudEventsController@show')->name('studevents.show');
 	Route::get('events', 'EventController@index')->name('events');
 	Route::get('events/{slug}', 'EventController@show')->name('events.show');
 	// ENROLLEE

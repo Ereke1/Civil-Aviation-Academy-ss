@@ -25,7 +25,7 @@ $worker_permission = unserialize($worker_permission->permission);
         @if (isset($worker_permission->pages->read) || $worker_permission->navigation->read == true)
             @include('admin.role.website')
         @endif
-        @if ($worker_permission->news->read == true || $worker_permission->events->read == true)
+        @if ($worker_permission->news->read == true || isset($worker_permission->studevents->read) && $worker_permission->studevents->read == true)
             @include('admin.role.news-and-events')
         @endif
         @if (isset($worker_permission->books->read) && $worker_permission->books->read == true)
