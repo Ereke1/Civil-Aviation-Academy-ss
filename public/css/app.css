@@ -43,6 +43,14 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+/* траурный день */
+/* html {
+    -moz-filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+    filter: grayscale(100%);
+} */
+
 input,
 button,
 textarea {
@@ -23619,7 +23627,7 @@ h2.section-heading {
 }
 
 .card-link .card-header::after {
-    color: white;
+    /* color: white; */
     content: "+";
     position: absolute;
     right: 2%;
