@@ -20224,6 +20224,7 @@ h4 {
     color: #fff;
     font-weight: 500;
     font-size: 20px;
+    text-decoration: auto;
     transition: ease-in-out 0.3s;
 }
 
@@ -23620,6 +23621,7 @@ h2.section-heading {
     font-weight: 700;
     font-size: 15px;
     color: #282828;
+    text-decoration: auto;
 }
 
 .card-link:hover {
@@ -23911,3 +23913,8 @@ h2.section-heading {
     color: #c59b08;
 }
 
+/* .accordion-button:after {
+    order: -1;
+    margin-left: 0;
+    margin-right:0.5em;
+} */

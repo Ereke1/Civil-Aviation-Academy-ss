@@ -30,13 +30,13 @@
             <div class="col-md-3">
                 <b>Кафедра</b>
             </div>
+            @if($canCreate === true)
             <div class="col-md-2 text-center">
                 <b>Слаг</b>
             </div>
             <div class="col-md-2 text-center">
                 <b>Сортировка</b>
             </div>
-            @if($canCreate === true)
             <div class="col-md-1 text-center">
                 <b>Удаление</b>
             </div>
@@ -57,13 +57,13 @@
                 <div class="col-md-3">
                     {!! $department->department_name !!}
                 </div>
+                @if($canCreate === true)
                 <div class="col-md-2 text-center">
                     {!! $department->slug !!}
                 </div>
                 <div class="col-md-2 text-center">
                     {!! $department->sort !!}
                 </div>
-                @if($canCreate === true)
                 <div class="col-md-1 text-center">
                     <form action="{{ route('admin.website.department-page.destroy', $department->id) }}" method="POST">
                         @csrf

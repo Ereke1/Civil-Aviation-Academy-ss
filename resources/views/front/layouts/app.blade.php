@@ -19,7 +19,8 @@
     <link href="{{ asset('css/owl.transitions.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.css"/>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNHJTJFX4K"></script>
     <script>
@@ -27,7 +28,7 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-RNHJTJFX4K');
-    </script>       
+    </script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -63,12 +64,12 @@ src="https://www.facebook.com/tr?id=2407336032763655&ev=PageView&noscript=1"
 </head>
 
 <body class="homepage">
-    
+
     @include('front.inc.top_bar')
     @include('front.inc.header')
     @yield('content')
     @include('front.inc.footer')
-    
+
     <script type="text/javascript">
             document.umnicoWidgetHash = 'a32ece089856b146b032f5d409e1e560';
             var x = document.createElement('script');
@@ -78,7 +79,7 @@ src="https://www.facebook.com/tr?id=2407336032763655&ev=PageView&noscript=1"
             x.async = true;
             document.body.appendChild(x);
         </script>
-        
+
 </body>
 @yield('scripts')
 
