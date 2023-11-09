@@ -22655,6 +22655,35 @@ h4 {
     opacity: 1;
 }
 
+#portfolio .portfolio-item .portfolio-link:hover .img-fluid {
+    opacity: 0.5;
+}
+
+#portfolio .portfolio-item .portfolio-link:hover span {
+        /* font-size: 14px; */
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        color: #444;
+        background: rgb(1 77 175 / 80%);;
+        font-size: 18px;
+        text-decoration: none;
+        text-align: center;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        opacity: 0.8;
+}
+
+#portfolio .portfolio-item .portfolio-link span {
+    display: none;
+}
+
+
 #portfolio .portfolio-item .portfolio-caption {
     padding: 1.5rem;
     text-align: center;
