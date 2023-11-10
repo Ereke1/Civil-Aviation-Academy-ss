@@ -81,7 +81,7 @@
     <script type="text/javascript" src="/js/wow.min.js"></script>
     <script type="text/javascript" src="/js/jquery.appear.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-    <script id="aioa-adawidget" src="https://www.skynettechnologies.com/accessibility/js/all-in-one-accessibility-js-widget-minify.js?colorcode=#b8860b&token=&position=top_right"></script>
+    <script id="aioa-adawidget" src="https://www.skynettechnologies.com/accessibility/js/all-in-one-accessibility-js-widget-minify.js?colorcode=#b8860b&token=&position=bottom_right"></script>
     @if (Request::url() == URL::to('/') . '/enrollee/bachelor')
     <script>var translation1profSubj = "{{ __('1-й профильный предмет') }}";</script>
     <script>var translationPhis2profSubj = "{{ __('Физика (2-ой проф. предм.)') }}";</script>

@@ -17579,7 +17579,7 @@ header .logo2 img {
         margin: 0;
         background: white;
         display: block;
-        font-size: 1.1875em;
+        font-size: 1.1875em !important;
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 20px;

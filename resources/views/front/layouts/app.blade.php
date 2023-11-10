@@ -70,7 +70,7 @@ src="https://www.facebook.com/tr?id=2407336032763655&ev=PageView&noscript=1"
     @yield('content')
     @include('front.inc.footer')
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
             document.umnicoWidgetHash = 'a32ece089856b146b032f5d409e1e560';
             var x = document.createElement('script');
             x.src = 'https://umnico.com/assets/widget-loader.js';
@@ -78,7 +78,7 @@ src="https://www.facebook.com/tr?id=2407336032763655&ev=PageView&noscript=1"
             x.charset = 'UTF-8';
             x.async = true;
             document.body.appendChild(x);
-        </script>
+        </script> --}}
 
 </body>
 @yield('scripts')
