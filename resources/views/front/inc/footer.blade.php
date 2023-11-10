@@ -6,23 +6,24 @@
                         <h4>{{ __('Контакты') }}</h4>
                         <p> {{ __('Приемная комиссия Академии:') }}<br />
                             <a href="tel:87273469208">+7 (727) 346-92-08 (вн. 245)</a>
-                            <a href="tel:87073169281">+7 (707) 316-92-81</a><br/>
+                            <a href="tel:87073169281">+7 (707) 316-92-81</a><br />
                             {{ __('Канцелярия:') }}<br />
-                            <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 215)</a><br/>
+                            <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 215)</a><br />
                             {{-- {{ __('Лётно-тренажёрный центр') }}:<br />
                             <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 206)</a><br/>
                             {{ __('Военная кафедра') }}:<br />
                             <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 256)</a><br/> --}}
                             {{ __('Центр обслуживания студентов:') }}<br />
-                            <a href="tel:87273399929">+7 (727) 339-99-29</a><br/>
+                            <a href="tel:87273399929">+7 (727) 339-99-29</a><br />
                             {{ __('Колл-центр Академии:') }}<br />
-                            <a href="tel:87020244512">+7 (702) 024-45-12</a><br/>
+                            <a href="tel:87020244512">+7 (702) 024-45-12</a><br />
                             {{ __('Колл-центр Колледжа:') }}<br />
                             <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 253)</a>
-                            <a href="tel:87478198730">+7 (747) 819-87-30</a><br/>
+                            <a href="tel:87478198730">+7 (747) 819-87-30</a><br />
                             {{ __('ул. Закарпатская, 44') }}
                             {{ __('050039, Алматы') }} <br />
-                            {{ __('Республика Казахстан') }} </p>
+                            {{ __('Республика Казахстан') }}
+                        </p>
                     </div>
                     <div class="info-block wow fadeInUp">
                         <h4>{{ __('Об Академии') }}</h4>
@@ -40,6 +41,18 @@
                     </div>
                     <div class="info-block last  wow fadeInUp">
                         <h4>{{ __('Присоединяйтесь') }}</h4>
+                        <div class="d-flex flex-row">
+                            <a href="https://www.instagram.com/agakaz_almaty"><img style="height: 33px; width: auto; margin: 3px;"
+                                    src="/assets/images/footer_social/insta.png" /></a>
+                            <a href="https://www.youtube.com/@civilaviationacademy"><img style="height: 33px; width: auto; margin: 3px;"
+                                    src="/assets/images/footer_social/youtube.png" /></a>
+                            <a href="https://www.facebook.com/agakaz2019/"><img style="height: 33px; width: auto; margin: 3px;"
+                                    src="/assets/images/footer_social/facebook.png" /></a>
+                            <a href="https://www.tiktok.com/@agakaz_almaty"><img style="height: 33px; width: auto; margin: 3px;"
+                                    src="/assets/images/footer_social/tiktok.png" /></a>
+                            <a href="https://t.me/civilaviationacademy"><img style="height: 33px; width: auto; margin: 3px;"
+                                    src="/assets/images/footer_social/telegram.png" /></a>
+                        </div>
                         <!-- Go to www.addthis.com/dashboard to customize your tools -->
                         <div class="addthis_inline_follow_toolbox last"></div>
                     </div>
@@ -50,7 +63,8 @@
     <section id="bottom-bar">
         <div class="container">
             <div class="bottom-bar">
-                <p style="font-size: 0.85vw; font-weight: lighter;">{{ __('© 1995 - 2022 Академия Гражданской Авиации') }}</p>
+                <p style="font-size: 0.85vw; font-weight: lighter;">
+                    {{ __('© 1995 - 2022 Академия Гражданской Авиации') }}</p>
             </div>
         </div>
     </section>
@@ -81,11 +95,19 @@
     <script type="text/javascript" src="/js/wow.min.js"></script>
     <script type="text/javascript" src="/js/jquery.appear.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-    <script id="aioa-adawidget" src="https://www.skynettechnologies.com/accessibility/js/all-in-one-accessibility-js-widget-minify.js?colorcode=#b8860b&token=&position=bottom_right"></script>
+    <script id="aioa-adawidget"
+        src="https://www.skynettechnologies.com/accessibility/js/all-in-one-accessibility-js-widget-minify.js?colorcode=#b8860b&token=&position=bottom_right">
+    </script>
     @if (Request::url() == URL::to('/') . '/enrollee/bachelor')
-    <script>var translation1profSubj = "{{ __('1-й профильный предмет') }}";</script>
-    <script>var translationPhis2profSubj = "{{ __('Физика (2-ой проф. предм.)') }}";</script>
-    <script>var translation2profSubj = "{{ __('2-й проф. предмет') }}";</script>
+        <script>
+            var translation1profSubj = "{{ __('1-й профильный предмет') }}";
+        </script>
+        <script>
+            var translationPhis2profSubj = "{{ __('Физика (2-ой проф. предм.)') }}";
+        </script>
+        <script>
+            var translation2profSubj = "{{ __('2-й проф. предмет') }}";
+        </script>
         <script src="/js/enrollee/bachelor.js"></script>
     @endif
     @if (Request::url() == URL::to('/') . '/enrollee/master')
@@ -96,7 +118,7 @@
     @endif
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6154886463032954"></script> -->
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-634f98ee3660e716"></script>
 
     @yield('fancybox')
