@@ -7,8 +7,8 @@
                         <p> {{ __('Приемная комиссия Академии:') }}<br />
                             <a href="tel:87273469208">+7 (727) 346-92-08 (вн. 245)</a>
                             <a href="tel:87073169281">+7 (707) 316-92-81</a><br />
-                            {{ __('Канцелярия:') }}<br />
-                            <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 215)</a><br />
+                            {{-- {{ __('Канцелярия:') }}<br />
+                            <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 215)</a><br /> --}}
                             {{-- {{ __('Лётно-тренажёрный центр') }}:<br />
                             <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 206)</a><br/>
                             {{ __('Военная кафедра') }}:<br />
@@ -52,6 +52,8 @@
                                     src="/assets/images/footer_social/tiktok.png" /></a>
                             <a href="https://t.me/civilaviationacademy"><img style="height: 33px; width: auto; margin: 3px;"
                                     src="/assets/images/footer_social/telegram.png" /></a>
+                            <a href="https://wa.me/+77020244512"><img style="height: 33px; width: auto; margin: 3px;"
+                                    src="/assets/images/footer_social/whatsapp.png" /></a>
                         </div>
                         <!-- Go to www.addthis.com/dashboard to customize your tools -->
                         <div class="addthis_inline_follow_toolbox last"></div>

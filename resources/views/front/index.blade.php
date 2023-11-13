@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </div><!--/.item-->
-             <div class="item" style="background: url(/assets/images/slider/7.png);width: 100%; background-size: cover; background-position: center;">
+             <div class="item" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/images/slider/last_slide.JPG);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
@@ -419,7 +419,7 @@
 			</div>
 		</section>
 
-    <section id="testimonial" class="parallax-section" >
+    {{-- <section id="testimonial" class="parallax-section" >
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -479,7 +479,8 @@
 					</div> 		<!-- end col lg 12 -->
 				</div>	    <!-- End row -->
 			</div>       <!-- End container -->
-		</section>    <!-- End Section -->
+		</section>    <!-- End Section --> --}}
+
         <section id="client-logo">
 			<div class="container">
             <div class="title text-center wow animated zoomInDown">
