@@ -46,6 +46,7 @@ class WorkerPage extends Model
             ->select('worker_pages.*', 'workers_infos.surname as surname', 'workers_infos.name as name', 'workers_infos.patronymic as patronymic', 'pages.slug as slug')
             ->orderBy('surname', 'asc')
             ->orderBy('name', 'asc')
+            ->orderBy('slug', 'asc')
             ->get();
 
 		return $allWorkerPages;
