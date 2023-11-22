@@ -1,3 +1,9 @@
+@php
+use App\Models\User;
+$worker_permission = User::find(Auth::user()->id)->workersPermissions;
+$worker_permission = unserialize($worker_permission->permission);
+@endphp
+
 @extends('admin.layouts.app')
 @php $parrentCat  = 'Управление сайтом' @endphp
 @php $active_menu  = 'Страницы' @endphp
@@ -15,7 +21,7 @@
                     <h2>Страницы</h2>
                 </div>
                 <div class="pages__add-page">
-                    @if($canCreate === true)
+                    @if($canCreate === true || $worker_permission->pages->create == true)
                     <a href="{{ route('admin.website.pages.create') }}" class="btn btn-primary">
                         Создать страницу
                     </a>
@@ -32,7 +38,7 @@
                 <div class="col-md-3">
                     <p><b>URL</b></p>
                 </div>
-                @if($canCreate === true)
+                @if($canCreate === true || $worker_permission->pages->delete == true)
                 <div class="col-md-2 text-center">
                     <p><b>Удалить</b></p>
                 </div>
@@ -53,7 +59,7 @@
                         <div class="col-md-3">
                             <p>{!! $item->slug !!}</p>
                         </div>
-                        @if($canCreate === true)
+                        @if($canCreate === true || $worker_permission->pages->delete == true)
                         <div class="col-md-2 text-center">
                             <form action="{{ route('admin.website.pages.destroy', $item->id) }}" method="POST">
                                 @csrf
