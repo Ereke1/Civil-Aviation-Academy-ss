@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'books' => 'BooksController',
 			'book_collection' => 'BookCollectionController',
 			'news' => 'NewsController',
+			'media_about_us' => 'MediaAboutUsController',
 			'studevents' => 'StudEventsController',
 			'events' => 'EventController',
 			'department' => 'DepartmentController',
@@ -112,6 +113,8 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	Route::get('virtual_admission','VirtualAdmissionController@index')->name('virtual_admission');
 	Route::get('news', 'NewsController@index')->name('news');
 	Route::get('news/{slug}', 'NewsController@show')->name('news.show');
+	Route::get('media_about_us', 'MediaAboutUsController@index')->name('media_about_us');
+	Route::get('media_about_us/{slug}', 'MediaAboutUsController@show')->name('media_about_us.show');
 	Route::get('newsCompliance', 'NewsComplianceController@index')->name('newsCompliance');
 	Route::get('newsCompliance/{slug}', 'NewsComplianceController@show')->name('newsCompliance.show');
 	Route::get('studevents', 'StudEventsController@index')->name('studevents');
