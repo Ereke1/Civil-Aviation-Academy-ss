@@ -24162,6 +24162,7 @@ h2.section-heading {
 
   .timeline_gallery .navigation-line {
     width: 50px;
+    height: 1px;
     background: #fff;
     border: 1px solid #00008b;
     border-radius: 50px;

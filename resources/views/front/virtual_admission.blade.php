@@ -30,7 +30,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>1937</h3>
@@ -44,7 +44,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>1962</h3>
@@ -59,7 +59,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>1995</h3>
@@ -76,7 +76,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>1998</h3>
@@ -89,7 +89,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2000</h3>
@@ -103,7 +103,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2001</h3>
@@ -117,7 +117,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2002</h3>
@@ -131,7 +131,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2004</h3>
@@ -147,7 +147,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2005</h3>
@@ -166,7 +166,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2009</h3>
@@ -182,7 +182,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2013</h3>
@@ -199,7 +199,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2014</h3>
@@ -214,7 +214,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2015</h3>
@@ -227,7 +227,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2016</h3>
@@ -240,7 +240,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2017</h3>
@@ -254,7 +254,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2018</h3>
@@ -269,7 +269,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2019</h3>
@@ -288,7 +288,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2020</h3>
@@ -303,7 +303,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2021</h3>
@@ -317,7 +317,7 @@
                             <div class="timeline-item">
                                 <div class="row">
                                     <div class="timeline-img col-md-5 d-none d-lg-block">
-                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" alt="Year 1 Image">
+                                        <img src="https://caa.edu.kz/storage/news/20230524ruAGA.jpg" height="300px" alt="Year 1 Image">
                                     </div>
                                     <div class="time-wrap col-lg-2 col-3">
                                         <h3>2022</h3>
