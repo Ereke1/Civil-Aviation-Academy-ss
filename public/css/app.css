@@ -17749,9 +17749,9 @@ footer .footer__info a:hover {
     text-decoration: none;
 }
 
-footer .footer__info .info-block {
+/* footer .footer__info .info-block {
     width: 33.3%;
-}
+} */
 
 @media (max-width: 767px) {
     footer .footer__info .info-block {

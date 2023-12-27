@@ -40,7 +40,7 @@
                         <a href="">{{ __('Докторантура') }}</a>
                         <a href="">{{ __('Колледж') }}</a>
                     </div>
-                    <div class="info-block last  wow fadeInUp">
+                    <div class="info-block last wow fadeInUp">
                         <h4>{{ __('Присоединяйтесь') }}</h4>
                         <div class="d-flex flex-row">
                             <a href="https://www.instagram.com/agakaz_almaty"><img style="height: 33px; width: auto; margin: 3px;"
