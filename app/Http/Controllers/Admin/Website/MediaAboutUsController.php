@@ -33,7 +33,7 @@ class MediaAboutUsController extends Controller
 	 */
 	public function index()
 	{
-		$media_about_us = MediaAboutUs::get();
+		$media_about_us = MediaAboutUs::orderBy('id', 'desc')->get();
 		return view('admin.website.media_about_us.index', compact('media_about_us'));
 	}
 

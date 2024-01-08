@@ -23,15 +23,17 @@
             <div class="pages__content">
                 <div class="pages__page thead">
                     <p style="width: 50%">Название</p>
-                    <p class="text-center" style="width: 20%">СМИ</p>
-                    <p class="text-right" style="width: 30%">Редактирование</p>
+                    <p class="text-center" style="width: 15%">СМИ</p>
+                    <p class="text-center" style="width: 15%">Дата и время</p>
+                    <p class="text-right" style="width: 20%">Редактирование</p>
                 </div>
                 @foreach ($media_about_us as $item)
                     <div class="pages__page">
                         <p style="width: 50%">{!! $item->title_ru !!}
                         </p>
-                        <p class="text-center" style="width: 20%">{!! $item->media_ru !!}</p>
-                        <div class="text-right d-flex flex-row-reverse" style="width: 30%">
+                        <p class="text-center" style="width: 15%">{!! $item->media_ru !!}</p>
+                        <p class="text-center" style="width: 15%">{!! date('d.m.Y H:i', strtotime($item->created_at)) !!}</p>
+                        <div class="text-right d-flex flex-row-reverse" style="width: 20%">
                             <a href="{{ route('admin.website.media_about_us.edit', $item->id) }}"
                                 class="btn btn-primary ml-1">Редактировать</a>
                             <form action="{{ route('admin.website.media_about_us.destroy', $item->id) }}" method="POST">

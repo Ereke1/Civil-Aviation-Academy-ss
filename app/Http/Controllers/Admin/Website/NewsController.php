@@ -34,7 +34,7 @@ class NewsController extends Controller
 	public function index()
 	{
 		$userDepartment = User::find(Auth::user()->id)->workersInfo->department;
-		$news = News::where('department', $userDepartment)->get();
+		$news = News::where('department', $userDepartment)->orderBy('id', 'desc')->get();
 		return view('admin.website.news.index', compact('news'));
 	}
 
