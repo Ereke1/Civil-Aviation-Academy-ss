@@ -1,8 +1,9 @@
 <header>
     <div class="container">
         <div class="row">
-            <nav id="navMenu" class="navbar navbar-expand-lg">
-                <div id="my_image" class="logo">
+
+            <nav id="navMenu" class="navbar navbar-expand-lg navbar-bg fixed-top">
+                <div id="my_image" class="logo2">
                     <a href="/">
                         <img src="/assets/images/logo_agakaz_b.png" />
                     </a>
@@ -26,8 +27,9 @@
                     @endforeach
                     </select>
                 </div>
+
                 <div class="sitenavigation float-right">
-                <span class="menu-icon">
+                    <span class="menu-icon">
                         <a href="#" class="menu example5"><span></span></a>
                         <div id="hamburger">
                             <span></span>
@@ -39,7 +41,7 @@
                         @foreach ($tree as $item)
                             @if ($item->children->count() > 0)
                                 <li class="nav-dropdown">
-                                    <a href="{!! $item->link !!}">
+                                    <a class="text-uppercase" href="{!! $item->link !!}">
                                         @if (Config::get('app.locale') == 'ru')
                                             {!! $item->title_ru !!}
                                         @elseif ( Config::get('app.locale') == 'kk' )
@@ -160,7 +162,7 @@
                                 </li>
                             @else
                                 <li>
-                                    <a href="/{!! $item->link !!}">
+                                    <a class="text-uppercase" href="/{!! $item->link !!}">
                                         @if (Config::get('app.locale') == 'ru')
                                             {!! $item->title_ru !!}
                                         @elseif ( Config::get('app.locale') == 'kk' )

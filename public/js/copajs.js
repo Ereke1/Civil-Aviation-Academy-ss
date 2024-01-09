@@ -30,13 +30,8 @@ var previousScroll = 0;
   $(window).scroll(function(){
 
     var scroll = $(window).scrollTop();
-      if (scroll > 80 && scroll < previousScroll) {
-        $(".navbar-bg").css("background" , "#fff");
-        $(".navbar-bg").css("box-shadow","0 20px 30px rgba(0,0,0,.15)");
-        $('#my_image').attr('class','logo2');
-        $('#my_image').css('margin-right','20px');
-        $('#navMenu').attr('class','navbar navbar-expand-lg navbar-light navbar-bg fixed-top top-nav-collapse');
-        $('#main-slider').css("padding-top", "150px");
+      if (scroll > 0 && scroll < previousScroll) {
+        $('#navMenu').css("transform","translateY(-0%)");
 
         function myFunction(x) {
             if (x.matches) { // If media query matches
@@ -49,16 +44,34 @@ var previousScroll = 0;
           var x = window.matchMedia("(max-width: 991px)")
           myFunction(x)
 
+      } else if (scroll > 0 && scroll > previousScroll){
+        $('#navMenu').css("transform","translateY(-100%)");
+
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                $('#my_image').css('margin-left','0vw');
+            } else {
+                $('#my_image').css('margin-left','80px');
+            }
+        }
+
+          var x = window.matchMedia("(max-width: 991px)")
+          myFunction(x)
       }
 
       else{
-          $(".navbar-bg").css("background" , "none");
-          $(".navbar-bg").css("box-shadow","none");
-          $('#navMenu').attr('class','navbar navbar-expand-lg');
-          $('#my_image').attr('class','logo');
-          $('#my_image').css('margin-left','0');
-          $('#my_image').css('margin-right','0');
-          $('#main-slider').css("padding-top", "10px");
+
+
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                $('#navMenu').css("transform","translateY(0px)");
+            } else {
+                $('#navMenu').css("transform","translateY(31.5px)");
+            }
+        }
+
+        var x = window.matchMedia("(max-width: 991px)")
+        myFunction(x)
       }
 	  previousScroll = scroll;
 
