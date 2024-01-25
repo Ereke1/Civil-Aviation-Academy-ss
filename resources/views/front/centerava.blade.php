@@ -58,7 +58,7 @@
           <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
               <small class="card-meta mb-2">---------------------</small>
-              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/centr-podgotovki-specialistov-po-to-vs-i-aerodromnogo-obsluzhivaniya-183">{{ __('Центр переподготовки авиационного персонала') }}</a></h3>
+              <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/centr-podgotovki-specialistov-po-to-vs-i-aerodromnogo-obsluzhivaniya-183">{{ __('Центр подготовки авиационного персонала') }}</a></h3>
 
             </div>
           </div>
@@ -93,12 +93,12 @@
       <div class="col text-center mb-5">
       <br>
       <p class="lead"><a href="/upravlenie-bezopasnostyu-poletov">{{ __('Управление безопасностью полётов') }}</a></p><br>
-      <p class="lead"><a href="/assets/images/upload/Декларация Руководителя РУБП_1677233267.pdf">Руководство по управлению безопасностью полетов</a></p><br>
+      <p class="lead"><a href="/assets/images/upload/Декларация Руководителя РУБП_1677233267.pdf">{{ __('Руководство по управлению безопасностью полетов') }}</a></p><br>
         <h2>{{ __('НАШИ СЕРТИФИКАТЫ') }}</h2>
-        <p class="lead"><a href="/assets/images/Сертификат АУК рус.pdf">Область действия сертификата авиационного учебного центра</a></p>
-        <p class="lead"><a href="/assets/images/Сертификат тренажера ALSIM АУК АГА от 20.02.2023_.pdf">Сертификат соответствия тренажера ALSIM (ALX-85) FNPT II / MCC</a></p>
-        <p class="lead"><a href="/assets/images/Сертификат Boeing do 2024.pdf">Сертификат соответствия тренажера FNPT Level II / MCC+FTD1 (B737NG)</a></p>
-        <p class="lead"><a href="/assets/images/Сертификат А320 от 08.09.2023.pdf">Сертификат соответствия тренажера FNPT II / MCC+FTD1 (A320-200)</a></p>
+        <p class="lead"><a href="/assets/images/Сертификат АУК рус.pdf">{{ __('Область действия сертификата авиационного учебного центра') }}</a></p>
+        <p class="lead"><a href="/assets/images/Сертификат тренажера ALSIM АУК АГА от 20.02.2023_.pdf">{{ __('Сертификат соответствия тренажера ALSIM (ALX-85) FNPT II / MCC') }}</a></p>
+        <p class="lead"><a href="/assets/images/Сертификат Boeing do 2024.pdf">{{ __('Сертификат соответствия тренажера FNPT Level II / MCC+FTD1 (B737NG)') }}</a></p>
+        <p class="lead"><a href="/assets/images/Сертификат А320 от 08.09.2023.pdf">{{ __('Сертификат соответствия тренажера FNPT II / MCC+FTD1 (A320-200)') }}</a></p>
       </div>
     </div>
   </div>
