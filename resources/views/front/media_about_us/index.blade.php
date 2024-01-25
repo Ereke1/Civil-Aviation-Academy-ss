@@ -36,9 +36,20 @@
                 </span>
             </div>
             <br>
+
+            <p>Уважаемые представители СМИ!<br/>
+                Академия гражданской авиации открыта к сотрудничеству и готова предоставить интересующую информацию о работе Академии. <br/>
+                По вопросам сотрудничества, записи интервью и предоставления материалов, пожалуйста, обращайтесь по телефону +7 727 346 92 06 вн.227, <br/>
+                email: __<br/>
+                <br/>
+                БУДЕМ РАДЫ РАБОТАТЬ ВМЕСТЕ!
+            </p>
+            <br/>
+            <br/>
+
             <div class="news">
                 @foreach ($data as $item)
-                    <div style="background: white;font-size: 15px;padding: 15px 10px;width: 100%;border-bottom: 2px solid darkblue;">
+                    <div style="background: #eef1ff; font-size: 15px;padding: 15px 10px;width: 100%;border-bottom: 2px solid darkblue;">
                         <p>
                             <span class="h5">
                                 <b>
