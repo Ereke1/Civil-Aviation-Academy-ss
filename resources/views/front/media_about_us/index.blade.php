@@ -37,39 +37,61 @@
             </div>
             <br>
 
-            <p>Уважаемые представители СМИ!<br/>
-                Академия гражданской авиации открыта к сотрудничеству и готова предоставить интересующую информацию о работе Академии. <br/>
-                По вопросам сотрудничества, записи интервью и предоставления материалов, пожалуйста, обращайтесь по телефону +7 727 346 92 06 вн.227, <br/>
-                email: __<br/>
-                <br/>
-                БУДЕМ РАДЫ РАБОТАТЬ ВМЕСТЕ!
-            </p>
-            <br/>
-            <br/>
+            @if (Config::get('app.locale') === 'ru')
+                <p>Уважаемые представители СМИ!<br />
+                    Академия гражданской авиации открыта к сотрудничеству и готова предоставить интересующую информацию о
+                    работе Академии. <br />
+                    По вопросам сотрудничества, записи интервью и предоставления материалов, пожалуйста, обращайтесь по
+                    телефону +7 727 346 92 06 вн.227, <br />
+                    email: pr@agakaz.kz<br />
+                    <br />
+                    БУДЕМ РАДЫ РАБОТАТЬ ВМЕСТЕ!
+                </p>
+            @elseif(Config::get('app.locale') === 'kk')
+                <p>Құрметті БАҚ өкілдері!<br />
+                    Азаматтық авиация академиясы ынтымақтастыққа ашық және Академияның жұмысы туралы қызықты ақпарат беруге
+                    дайынбіз. Сұхбаттарды, материалдар алу және ынтымақтастық мәселелері бойынша <br />
+                    +7 727 346 92 06 (ішкі 227) нөмірі немесе pr@agakaz.kz email арқылы хабарласуыңызды сұраймыз.<br />
+                    <br />
+                    БІРГЕ ЖҰМЫС ІСТЕУГЕ ҚУАНЫШТЫМЫЗ!
+                </p>
+            @else
+                <p>Dear media representatives!<br />
+                    The Civil Aviation Academy is open to cooperation. We are always glad to provide information about the
+                    Academy.
+                    If you have any questions, please do not hasitate co contact us by phone <br />
+                    +7 727 346 92 06 ext.227 or email us pr@agakaz.kz <br />
+                    <br />
+                    OUR PLEASURE TO WORK WITH YOU!
+                </p>
+            @endif
+            <br />
+            <br />
 
             <div class="news">
                 @foreach ($data as $item)
-                    <div style="background: #eef1ff; font-size: 15px;padding: 15px 10px;width: 100%;border-bottom: 2px solid darkblue;">
+                    <div
+                        style="background: #eef1ff; font-size: 15px;padding: 15px 10px;width: 100%;border-bottom: 2px solid darkblue;">
                         <p>
                             <span class="h5">
                                 <b>
                                     <a href="{{ $item->link }}">
                                         @if (Config::get('app.locale') === 'ru')
-                                            {{$item->media_en}}
+                                            {{ $item->media_en }}
                                         @elseif(Config::get('app.locale') === 'kk')
-                                            {{$item->media_en}}
+                                            {{ $item->media_en }}
                                         @else
-                                            {{$item->media_en}}
+                                            {{ $item->media_en }}
                                         @endif
                                     </a>
                                 </b>
                             </span> -
                             @if (Config::get('app.locale') === 'ru')
-                                {{$item->title_ru}}
+                                {{ $item->title_ru }}
                             @elseif(Config::get('app.locale') === 'kk')
-                                {{$item->title_kk}}
+                                {{ $item->title_kk }}
                             @else
-                                {{$item->title_en}}
+                                {{ $item->title_en }}
                             @endif
                         </p>
                         <a href="{{ $item->link }}">
