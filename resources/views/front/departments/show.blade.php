@@ -17,7 +17,7 @@
             </div>
             @if (empty($eduP) == false && $department->name !== "Авиационный английский язык" && $department->name !== "Общеобразовательные дисциплины")
                 <hr class="col-12" style="height: 5px; background:#0e2465; max-width: -webkit-fill-available;" />
-                <h2 align="center">Образовательные программы</h2><br />
+                <h2 align="center">{{ __('Образовательные программы') }}</h2><br />
                 <div class="d-flex flex-wrap">
                     @foreach ($pages as $page)
                         @php
