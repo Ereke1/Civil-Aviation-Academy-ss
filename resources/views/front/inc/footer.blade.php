@@ -28,17 +28,17 @@
                     </div>
                     <div class="info-block wow fadeInUp">
                         <h4>{{ __('Об Академии') }}</h4>
-                        <a href="">{{ __('Руководство') }}</a>
-                        <a href="">{{ __('Корпоративное управление') }}</a>
-                        <a href="">{{ __('Учёный совет') }}</a>
-                        <a href="">{{ __('Наука и цифровизация') }}</a>
+                        <a href="/rukovodstvo">{{ __('Руководство') }}</a>
+                        <a href="/korporativnoe-upravlenie">{{ __('Корпоративное управление') }}</a>
+                        <a href="/uchenyy-sovet">{{ __('Учёный совет') }}</a>
+                        <a href="/nauka-i-cifrovizaciya">{{ __('Наука и цифровизация') }}</a>
                     </div>
                     <div class="info-block wow fadeInDown">
                         <h4>{{ __('Поступление') }}</h4>
-                        <a href="">{{ __('Бакалавриат') }}</a>
-                        <a href="">{{ __('Магистратура') }}</a>
-                        <a href="">{{ __('Докторантура') }}</a>
-                        <a href="">{{ __('Колледж') }}</a>
+                        <a href="/obrazovatelnye-programmy-na-bakalavriat">{{ __('Бакалавриат') }}</a>
+                        <a href="/obrazovatelnye-programmy-na-magistraturu-187">{{ __('Магистратура') }}</a>
+                        <a href="/obrazovatelnye-programmy-na-doktoranturu-189">{{ __('Докторантура') }}</a>
+                        <a href="/o-kolledzhe-192">{{ __('Колледж') }}</a>
                     </div>
                     <div class="info-block last wow fadeInUp">
                         <h4>{{ __('Присоединяйтесь') }}</h4>
