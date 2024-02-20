@@ -69,7 +69,7 @@
             </div>
             <div class="row" id="book_collections">
                             <div class="oneBook col-md-3 col-12 col-sm-6">
-                                <a href="#book_collection">
+                                <a href="http://rmebrk.kz/">
                                     <img
                                     src="\assets\images\library\riel.png">
                                 </a>
@@ -80,7 +80,7 @@
                             </div>
 
                             <div class="oneBook col-md-3 col-12 col-sm-6">
-                                <a href="#book_collection">
+                                <a href="https://www.iprbookshop.ru/">
                                     <img
                                     src="\assets\images\library\iprSmart.png">
                                 </a>
@@ -91,7 +91,7 @@
                             </div>
 
                             <div class="oneBook col-md-3 col-12 col-sm-6">
-                                <a href="#book_collection">
+                                <a href="https://search.ebscohost.com/">
                                     <img
                                     src="\assets\images\library\EBSCO.png">
                                 </a>
@@ -102,7 +102,7 @@
                             </div>
 
                             <div class="oneBook col-md-3 col-12 col-sm-6">
-                                <a href="#book_collection">
+                                <a href="https://www.elibrary.ru/">
                                     <img
                                     src="\assets\images\library\eLibrary.png">
                                 </a>
