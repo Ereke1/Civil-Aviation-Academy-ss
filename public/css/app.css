@@ -23467,7 +23467,7 @@ h2.section-heading {
     width: 100%;
     /* or whatever you want */
     height: 100%;
-    line-height: 200px;
+    /* line-height: 200px; */
     /* or whatever you want, should match height */
     text-align: center;
 }
@@ -23478,13 +23478,29 @@ h2.section-heading {
     vertical-align: middle;
     border-bottom: 1px solid lightgray;
     width: 1000px;
+    height: 200px;
+    line-height: 200px;
 }
 
 #book_collection a img {
     margin: 0 auto;
     vertical-align: middle;
-    height: 170px;
+    max-height: 170px;
+    max-width: 100%;
 }
+
+.oneBook{
+    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(100%);
+}
+
+.oneBook:hover{
+    transition: filter .1s ease-in-out;
+    -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(0%);
+}
+
+
 
 #book_collection h3 {
     padding: 10px 5px;
@@ -23513,8 +23529,8 @@ h2.section-heading {
 #book_collection .owl-carousel .owl-item {
     height: 450px;
     /* border: 1px solid black; */
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    /* border-left: 1px solid black; */
+    /* border-right: 1px solid black; */
 }
 
 

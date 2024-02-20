@@ -60,58 +60,61 @@
         </div>
     </section>
 
-    @if (count($bookcollection) > 0)
+
     <section id="book_collection">
         <div class="container">
-            <div class="title text-center wow animated zoomInDown">
-                <h2>{{ __('ПОДБОРКА КНИГ') }}</h2>
+            <div class="title text-center">
+                <h2>{{ __('ПОДПИСНЫЕ БАЗЫ ДАННЫХ') }}</h2>
                 <div class="border"></div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block">
-                        <div id="book_collections" class="owl-carousel outer">
-
-                            @foreach ($bookcollection as $item)
-                            <div class="inner">
+            <div class="row" id="book_collections">
+                            <div class="oneBook col-md-3 col-12 col-sm-6">
                                 <a href="#book_collection">
-                                    <img class="img-responsive"
-                                    src="/storage/books/book_collection/@if (Config::get('app.locale') === 'ru'){!! unserialize($item->cover_imgs)->ru !!}@elseif(Config::get('app.locale') === 'kk')@if(empty(unserialize($item->cover_imgs)->kk)){!! unserialize($item->cover_imgs)->ru !!}@else{!! unserialize($item->cover_imgs)->kk !!}@endif @elseif(Config::get('app.locale') === 'en')@if(empty(unserialize($item->cover_imgs)->en)){!! unserialize($item->cover_imgs)->ru !!}@else{!! unserialize($item->cover_imgs)->en !!}@endif @endif">
+                                    <img
+                                    src="\assets\images\library\riel.png">
                                 </a>
                                 <h3>
-                                    @if (Config::get('app.locale') === 'ru')
-                                            {!! Str::limit(unserialize($item->titles)->ru, 40) !!}
-                                        @elseif(Config::get('app.locale') === 'kk')
-                                            {!! Str::limit(unserialize($item->titles)->kk, 40) !!}
-                                        @else
-                                            {!! Str::limit(unserialize($item->titles)->en, 40) !!}
-                                        @endif
+                                    РМЭБ
                                 </h3>
-                                <p style="line-height: normal">
-                                    @if (Config::get('app.locale') === 'ru')
-                                            {!! Str::limit(unserialize($item->authors)->ru, 40) !!}
-                                        @elseif(Config::get('app.locale') === 'kk')
-                                            {!! Str::limit(unserialize($item->authors)->kk, 40) !!}
-                                        @else
-                                            {!! Str::limit(unserialize($item->authors)->en, 40) !!}
-                                        @endif
-                                </p>
-                                        @if (Config::get('app.locale') === 'ru')
-                                            {!! Str::limit(unserialize($item->descriptions)->ru, 75) !!}
-                                        @elseif(Config::get('app.locale') === 'kk')
-                                            {!! Str::limit(unserialize($item->descriptions)->kk, 75) !!}
-                                        @else
-                                            {!! Str::limit(unserialize($item->descriptions)->en, 75) !!}
-                                        @endif
+                                Республиканская межвузовская электронная библиотека - информационная и справочно-поисковая библиотечная система
                             </div>
-                        @endforeach
-                        </div>
-                    </div>
-                </div>
+
+                            <div class="oneBook col-md-3 col-12 col-sm-6">
+                                <a href="#book_collection">
+                                    <img
+                                    src="\assets\images\library\iprSmart.png">
+                                </a>
+                                <h3>
+                                    IPR SMART
+                                </h3>
+                                Содержится литература по различным группам специальностей, что дает возможность учебным заведениям разных профилей найти интересующие их издания
+                            </div>
+
+                            <div class="oneBook col-md-3 col-12 col-sm-6">
+                                <a href="#book_collection">
+                                    <img
+                                    src="\assets\images\library\EBSCO.png">
+                                </a>
+                                <h3>
+                                    EBSCO
+                                </h3>
+                                EBSCO Publishing - крупнейший поставщик научных ресурсов ведущих издательств мира
+                            </div>
+
+                            <div class="oneBook col-md-3 col-12 col-sm-6">
+                                <a href="#book_collection">
+                                    <img
+                                    src="\assets\images\library\eLibrary.png">
+                                </a>
+                                <h3>
+                                    eLIBRARY
+                                </h3>
+                                Крупнейший российский информационно-аналитический портал в области науки, технологии, медицины и образования
+                            </div>
             </div>
         </div>
     </section>
-    @endif
+
 
     @if (count($newbooks) > 0)
     <section id="newBooks">
