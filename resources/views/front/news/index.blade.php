@@ -46,9 +46,9 @@
                                     @if (Config::get('app.locale') === 'ru')
                                         {!! unserialize($item->titles)->ru !!}
                                     @elseif(Config::get('app.locale') === 'kk')
-                                        {!! Str::limit(unserialize($item->titles)->kk, 40) !!}
+                                        {!! unserialize($item->titles)->kk !!}
                                     @else
-                                        {!! Str::limit(unserialize($item->titles)->en, 40) !!}
+                                        {!! unserialize($item->titles)->en !!}
                                     @endif
                                 </a>
                             </h4>
