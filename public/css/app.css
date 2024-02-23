@@ -20193,7 +20193,7 @@ h4 {
     background-size: 100%;
     background-repeat: no-repeat;
     box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
-    border-radius: 18px;
+    border-radius: 5px;
     border-bottom: 5px solid #fff;
     border: 1px solid darkblue;
     width: 100%;
@@ -20201,6 +20201,14 @@ h4 {
     line-height: 150px;
     text-align: center;
     background-position: center center;
+}
+
+.services .library{
+    padding: 0px 0px;
+}
+
+.services .library h4{
+    background: darkblue;
 }
 
 #departments .departmentSlug:hover,
@@ -20298,7 +20306,7 @@ h4 {
 }
 
 .services .library:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     border-color: darkgoldenrod;
     border-bottom: 5px solid darkgoldenrod;
 }

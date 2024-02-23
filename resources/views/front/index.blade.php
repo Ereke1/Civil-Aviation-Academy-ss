@@ -5,24 +5,7 @@
 @section('content')
     <section id="main-slider">
         <div class="owl-carousel">
-            {{-- <div class="item" style="background: url(/assets/images/slider/forum.png);width: 100%; background-size: cover; background-position: center;">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 text-center">
-                                <div class="carousel-content">
-                                    <h2></h2>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <a class="btn btn-primary btn-lg" style="margin-top: calc(100vw / (1265 / 115));" href="https://docs.google.com/forms/d/e/1FAIpQLSfu4gAXdQ5qPYniRP0_oEBwdjsXRquao92I2ahtH99qrL7ZuQ/viewform?usp=sf_link">Регистрация на форум</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item--> --}}
-            <div class="item"
+            {{-- <div class="item"
                 style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/open_academy.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
@@ -42,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!--/.item-->
+            </div> --}}
             <div class="item"
                 style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/priemn.jpg); width:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
