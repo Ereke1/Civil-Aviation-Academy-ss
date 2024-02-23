@@ -67,7 +67,7 @@
         </div>
     </section>
 
-    <div class="col-12 d-flex align-items-stretch mt-4 wow fadeInUp animated" style="background-color: darkblue;">
+    <div class="d-flex align-items-stretch mt-4 wow fadeInUp animated" style="background-color: darkblue;">
         <div class="icon-box virtual_adm" style="padding: 10px 20px;">
             <h4 align="center"><img alt="" src="\assets\images\library\MinistryOfScience150x150.png"
                     style="width: 100px;" /></h4>
@@ -76,7 +76,7 @@
         </div>
     </div>
 
-    <hr class="col-12" style="background: darkblue;margin: 50px 0 45px 0;" />
+    <hr style="background: darkblue;margin: 50px 0 45px 0;" />
 
     <section id="book_collection">
         <div class="container">
