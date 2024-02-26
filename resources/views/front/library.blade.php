@@ -173,13 +173,30 @@
                         </div>
                         <div id="newBook" class="owl-carousel">
                             @foreach ($newbooks as $item)
+
+                            @php
+                                if (Config::get('app.locale') === 'ru') {
+                                    $cover_imgg = unserialize($item->cover_imgs)->ru;
+                                } elseif (Config::get('app.locale') === 'kk') {
+                                    if (empty(unserialize($item->cover_imgs)->kk)) {
+                                        $cover_imgg = unserialize($item->cover_imgs)->ru;
+                                    } else {
+                                        $cover_imgg = unserialize($item->cover_imgs)->kk;
+                                    }
+                                } elseif (Config::get('app.locale') === 'en') {
+                                    if (empty(unserialize($item->cover_imgs)->en)) {
+                                        $cover_imgg = unserialize($item->cover_imgs)->ru;
+                                    } else {
+                                        $cover_imgg = unserialize($item->cover_imgs)->en;
+                                    }
+                                }
+                            @endphp
+
                                 <div class="row block wow fadeInRight">
                                     <div class="col-5">
                                         <span>
                                             <img alt="" class="img-responsive"
-                                                src="/storage/books/newbooks/@if (Config::get('app.locale') === 'ru') {!! unserialize($item->cover_imgs)->ru !!}@elseif(Config::get('app.locale') === 'kk')@if (empty(unserialize($item->cover_imgs)->kk)){!! unserialize($item->cover_imgs)->ru !!}@else{!! unserialize($item->cover_imgs)->kk !!} @endif
-@elseif(Config::get('app.locale') === 'en')
-@if (empty(unserialize($item->cover_imgs)->en)) {!! unserialize($item->cover_imgs)->ru !!}@else{!! unserialize($item->cover_imgs)->en !!} @endif @endif">
+                                                src="/storage/books/newbooks/{!! $cover_imgg !!}">
                                         </span>
                                     </div>
                                     <div class="content col-7">
