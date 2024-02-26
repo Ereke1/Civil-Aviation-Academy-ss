@@ -4,7 +4,9 @@
 @endsection
 @section('content')
     <section class="wrapper" id="center"
-        style="background: linear-gradient( rgb(0 0 0 / 40%), rgb(0 0 0 / 40%) ), url(/assets/images/library/library-zoom-background-1920-x-1080.jpg);">
+        {{-- style="background: linear-gradient( rgb(0 0 0 / 40%), rgb(0 0 0 / 40%) ), url(/assets/images/library/library-zoom-background-1920-x-1080.jpg);" --}}
+        style="background: darkgoldenrod;"
+        >
         <div class="container">
             {{-- <div class="breadcrumbs">
                 <a href="{!! route('front.home') !!}">{{ __('Главная') }}</a>
