@@ -23489,16 +23489,16 @@ h2.section-heading {
     max-width: 100%;
 }
 
-.oneBook{
-    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+/* .oneBook{
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
 .oneBook:hover{
     transition: filter .1s ease-in-out;
-    -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
-}
+} */
 
 
 

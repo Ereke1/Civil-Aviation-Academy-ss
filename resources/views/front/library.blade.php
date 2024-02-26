@@ -67,12 +67,17 @@
         </div>
     </section>
 
-    <div class="d-flex align-items-stretch mt-4 wow fadeInUp animated" style="background-color: darkblue;">
-        <div class="icon-box virtual_adm" style="padding: 10px 20px;">
-            <h4 align="center"><img alt="" src="\assets\images\library\MinistryOfScience150x150.png"
-                    style="width: 100px;" /></h4>
-
-            <h4 align="center"><a class="stretched-link" href="https://caa.edu.kz/ministerstvo-obrazovaniya-i-nauki-respubliki-kazahstan-razrabotalo-elektronnye-portaly-napravlennye-na-rasshirenie-ispolzovaniya-kazahskogo-yazyka-403" style="text-decoration: none; color: white;">Министерство образования и науки Республики Казахстан разработало электронные порталы, направленные на расширение использования казахского языка.Подробнее...</a></h4>
+    <div class="d-flex align-items-stretch mt-4 wow fadeInUp animated container-fluid" style="background-color: darkblue;">
+        <div class="col-12 icon-box virtual_adm row" style="padding: 10px 20px;">
+            <div class="col-sm-12 col-md-3 col-lg-2"><p align="center"><img alt="" src="\assets\images\library\MinistryOfScience150x150.png" style="width: 85px;"></p></div>
+            <div class="col-sm-12 col-md-9 col-lg-10" style="display: grid;align-items: center;">
+                <h4 style="text-align: left;">
+                    <a class="stretched-link" href="https://caa.edu.kz/ministerstvo-obrazovaniya-i-nauki-respubliki-kazahstan-razrabotalo-elektronnye-portaly-napravlennye-na-rasshirenie-ispolzovaniya-kazahskogo-yazyka-403"
+                        style="text-decoration: none;color: white;/* vertical-align: middle; */">Министерство образования и
+                        науки Республики Казахстан разработало электронные порталы, направленные на расширение использования
+                        казахского языка.Подробнее...</a>
+                    </h4>
+            </div>
         </div>
     </div>
 
@@ -118,7 +123,7 @@
                 </div>
 
                 <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://www.elibrary.ru/">
+                    <a href="https://illman.loc.gov/ILLiad/DLC/Lending/LendingLogon.html">
                         <img src="\assets\images\library\libraryOfCongress.png">
                     </a>
                     <h3>
@@ -130,7 +135,7 @@
                 </div>
 
                 <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://www.elibrary.ru/">
+                    <a href="https://elibrary.icao.int/">
                         <img src="\assets\images\library\libraryICAO.png">
                     </a>
                     <h3>
