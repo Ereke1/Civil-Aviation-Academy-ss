@@ -3,10 +3,7 @@
     {{ __('Академия Гражданской Авиации') }}
 @endsection
 @section('content')
-    <section class="wrapper" id="center"
-        {{-- style="background: linear-gradient( rgb(0 0 0 / 40%), rgb(0 0 0 / 40%) ), url(/assets/images/library/library-zoom-background-1920-x-1080.jpg);" --}}
-        style="background: darkgoldenrod;"
-        >
+    <section class="wrapper" id="center" {{-- style="background: linear-gradient( rgb(0 0 0 / 40%), rgb(0 0 0 / 40%) ), url(/assets/images/library/library-zoom-background-1920-x-1080.jpg);" --}} style="background: darkgoldenrod;">
         <div class="container">
             {{-- <div class="breadcrumbs">
                 <a href="{!! route('front.home') !!}">{{ __('Главная') }}</a>
@@ -71,14 +68,18 @@
 
     <div class="d-flex align-items-stretch mt-4 wow fadeInUp animated container-fluid" style="background-color: darkblue;">
         <div class="col-12 icon-box virtual_adm row" style="padding: 10px 20px;">
-            <div class="col-sm-12 col-md-3 col-lg-2"><p align="center"><img alt="" src="\assets\images\library\MinistryOfScience150x150.png" style="width: 85px;"></p></div>
+            <div class="col-sm-12 col-md-3 col-lg-2">
+                <p align="center"><img alt="" src="\assets\images\library\MinistryOfScience150x150.png"
+                        style="width: 85px;"></p>
+            </div>
             <div class="col-sm-12 col-md-9 col-lg-10" style="display: grid;align-items: center;">
                 <h4 style="text-align: left;">
-                    <a class="stretched-link" href="https://caa.edu.kz/ministerstvo-obrazovaniya-i-nauki-respubliki-kazahstan-razrabotalo-elektronnye-portaly-napravlennye-na-rasshirenie-ispolzovaniya-kazahskogo-yazyka-403"
+                    <a class="stretched-link"
+                        href="https://caa.edu.kz/ministerstvo-obrazovaniya-i-nauki-respubliki-kazahstan-razrabotalo-elektronnye-portaly-napravlennye-na-rasshirenie-ispolzovaniya-kazahskogo-yazyka-403"
                         style="text-decoration: none;color: white;/* vertical-align: middle; */">Министерство образования и
                         науки Республики Казахстан разработало электронные порталы, направленные на расширение использования
                         казахского языка.Подробнее...</a>
-                    </h4>
+                </h4>
             </div>
         </div>
     </div>
@@ -87,76 +88,98 @@
 
     <section id="book_collection">
         <div class="container">
-            <div class="title text-center">
-                <h2>{{ __('ПОДПИСНЫЕ БАЗЫ ДАННЫХ') }}</h2>
-                <div class="border"></div>
-            </div>
             <div class="row" id="book_collections">
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="http://rmebrk.kz/">
-                        <img src="\assets\images\library\riel.png">
-                    </a>
-                    <h3>
-                        РМЭБ
-                    </h3>
-                    Республиканская межвузовская электронная библиотека - информационная и справочно-поисковая библиотечная
-                    система
-                </div>
+                <div class="col-12 col-md-8">
+                    <div class="row">
+                        <div class="title text-center">
+                            <h3>{{ __('ПОДПИСНЫЕ БАЗЫ ДАННЫХ') }}</h3>
+                            <div class="border"></div>
+                        </div>
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="http://rmebrk.kz/">
+                                <img src="\assets\images\library\riel.png">
+                            </a>
+                            <h3>
+                                РМЭБ
+                            </h3>
+                            Республиканская межвузовская электронная библиотека - информационная и справочно-поисковая
+                            библиотечная
+                            система
+                        </div>
 
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://www.iprbookshop.ru/">
-                        <img src="\assets\images\library\iprSmart.png">
-                    </a>
-                    <h3>
-                        IPR SMART
-                    </h3>
-                    Содержится литература по различным группам специальностей, что дает возможность учебным заведениям
-                    разных профилей найти интересующие их издания
-                </div>
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://www.iprbookshop.ru/">
+                                <img src="\assets\images\library\iprSmart.png">
+                            </a>
+                            <h3>
+                                IPR SMART
+                            </h3>
+                            Содержится литература по различным группам специальностей, что дает возможность учебным
+                            заведениям
+                            разных профилей найти интересующие их издания
+                        </div>
 
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://search.ebscohost.com/">
-                        <img src="\assets\images\library\EBSCO.png">
-                    </a>
-                    <h3>
-                        EBSCO
-                    </h3>
-                    EBSCO Publishing - крупнейший поставщик научных ресурсов ведущих издательств мира
-                </div>
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://search.ebscohost.com/">
+                                <img src="\assets\images\library\EBSCO.png">
+                            </a>
+                            <h3>
+                                EBSCO
+                            </h3>
+                            EBSCO Publishing - крупнейший поставщик научных ресурсов ведущих издательств мира
+                        </div>
 
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://illman.loc.gov/ILLiad/DLC/Lending/LendingLogon.html">
-                        <img src="\assets\images\library\libraryOfCongress.png">
-                    </a>
-                    <h3>
-                        Library of Congress
-                    </h3>
-                    Библиотека Конгресса является крупнейшей библиотекой в мире, в ее фондах хранятся миллионы книг, фильмов
-                    и видео, аудиозаписей, фотографий, газет, карт и рукописей. Библиотека является главным
-                    исследовательским подразделением Конгресса США и штаб-квартирой Управления авторского права США.
-                </div>
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://illman.loc.gov/ILLiad/DLC/Lending/LendingLogon.html">
+                                <img src="\assets\images\library\libraryOfCongress.png">
+                            </a>
+                            <h3>
+                                Library of Congress
+                            </h3>
+                            Библиотека Конгресса является крупнейшей библиотекой в мире, в ее фондах хранятся миллионы книг,
+                            фильмов
+                            и видео, аудиозаписей, фотографий, газет, карт и рукописей. Библиотека является главным
+                            исследовательским подразделением Конгресса США и штаб-квартирой Управления авторского права США.
+                        </div>
 
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://elibrary.icao.int/">
-                        <img src="\assets\images\library\libraryICAO.png">
-                    </a>
-                    <h3>
-                        ICAO eLibrary
-                    </h3>
-                    Электронная библиотека ИКАО - это онлайн-хранилище цифровых публикаций Международной организации
-                    гражданской авиации (ИКАО), содержащее стандарты и рекомендуемую практику (SARPS) в области
-                    международной гражданской авиации, конвенции и связанные с ними акты.
-                </div>
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://elibrary.icao.int/">
+                                <img src="\assets\images\library\libraryICAO.png">
+                            </a>
+                            <h3>
+                                ICAO eLibrary
+                            </h3>
+                            Электронная библиотека ИКАО - это онлайн-хранилище цифровых публикаций Международной организации
+                            гражданской авиации (ИКАО), содержащее стандарты и рекомендуемую практику (SARPS) в области
+                            международной гражданской авиации, конвенции и связанные с ними акты.
+                        </div>
 
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://www.elibrary.ru/">
-                        <img src="\assets\images\library\eLibrary.png">
-                    </a>
-                    <h3>
-                        eLIBRARY
-                    </h3>
-                    Крупнейший российский информационно-аналитический портал в области науки, технологии, медицины и
-                    образования
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://www.elibrary.ru/">
+                                <img src="\assets\images\library\eLibrary.png">
+                            </a>
+                            <h3>
+                                eLIBRARY
+                            </h3>
+                            Крупнейший российский информационно-аналитический портал в области науки, технологии, медицины и
+                            образования
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 lib-news">
+                    <div class="row">
+                        <div class="title text-center">
+                            <h3>{{ __('НОВОСТИ') }}</h3>
+                            <div class="border"></div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <h6>
+                                <a href="/uvazhaemye-prepodavateli-i-obuchayushchiesya-404"
+                                    target="_blank">Открыт тестовый доступ базам данных научных изданий от компании EBSCO!</a>
+                            </h6>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,24 +196,23 @@
                         </div>
                         <div id="newBook" class="owl-carousel">
                             @foreach ($newbooks as $item)
-
-                            @php
-                                if (Config::get('app.locale') === 'ru') {
-                                    $cover_imgg = unserialize($item->cover_imgs)->ru;
-                                } elseif (Config::get('app.locale') === 'kk') {
-                                    if (empty(unserialize($item->cover_imgs)->kk)) {
+                                @php
+                                    if (Config::get('app.locale') === 'ru') {
                                         $cover_imgg = unserialize($item->cover_imgs)->ru;
-                                    } else {
-                                        $cover_imgg = unserialize($item->cover_imgs)->kk;
+                                    } elseif (Config::get('app.locale') === 'kk') {
+                                        if (empty(unserialize($item->cover_imgs)->kk)) {
+                                            $cover_imgg = unserialize($item->cover_imgs)->ru;
+                                        } else {
+                                            $cover_imgg = unserialize($item->cover_imgs)->kk;
+                                        }
+                                    } elseif (Config::get('app.locale') === 'en') {
+                                        if (empty(unserialize($item->cover_imgs)->en)) {
+                                            $cover_imgg = unserialize($item->cover_imgs)->ru;
+                                        } else {
+                                            $cover_imgg = unserialize($item->cover_imgs)->en;
+                                        }
                                     }
-                                } elseif (Config::get('app.locale') === 'en') {
-                                    if (empty(unserialize($item->cover_imgs)->en)) {
-                                        $cover_imgg = unserialize($item->cover_imgs)->ru;
-                                    } else {
-                                        $cover_imgg = unserialize($item->cover_imgs)->en;
-                                    }
-                                }
-                            @endphp
+                                @endphp
 
                                 <div class="row block wow fadeInRight">
                                     <div class="col-5">

@@ -23500,6 +23500,12 @@ h2.section-heading {
     filter: grayscale(0%);
 } */
 
+#book_collection .lib-news a {
+    line-height: unset;
+    text-align: left;
+    height: auto;
+    text-decoration: none;
+}
 
 
 #book_collection h3 {
