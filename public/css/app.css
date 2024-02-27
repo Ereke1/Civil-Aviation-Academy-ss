@@ -23505,6 +23505,13 @@ h2.section-heading {
     text-align: left;
     height: auto;
     text-decoration: none;
+    border-bottom: 0px solid;
+    color:white;
+}
+
+.lib-news {
+    background:darkblue;
+    text-align: left;
 }
 
 

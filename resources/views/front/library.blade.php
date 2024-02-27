@@ -169,16 +169,18 @@
                 <div class="col-12 col-md-4 lib-news">
                     <div class="row">
                         <div class="title text-center">
-                            <h3>{{ __('НОВОСТИ') }}</h3>
+                            <h3 style="color: white;">{{ __('НОВОСТИ') }}</h3>
                             <div class="border"></div>
                         </div>
 
                         <div class="col-lg-12">
                             <h6>
                                 <a href="/uvazhaemye-prepodavateli-i-obuchayushchiesya-404"
-                                    target="_blank">Открыт тестовый доступ базам данных научных изданий от компании EBSCO!</a>
+                                    target="_blank">Открыт тестовый доступ базам данных научных изданий от компании EBSCO!
+                                </a>
+                                <span style="color: white; text-align:left; font-size: 12px;padding: 14px 24px;">27.02.2024</span>
                             </h6>
-                        </div>
+                        <hr style="color: white;">
                     </div>
                 </div>
             </div>
