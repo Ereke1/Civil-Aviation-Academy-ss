@@ -46,13 +46,13 @@
             <div class="news">
                 @foreach ($data as $item)
                     <div class="news__preview">
-                        <a href="{{ route('front.news.show', $item->slug) }}">
+                        <a href="{{ route('front.newsCompliance.show', $item->slug) }}">
                             <img src="/storage/news/@if (Config::get('app.locale') === 'ru'){!! unserialize($item->bg_images)->ru !!}@elseif(Config::get('app.locale') === 'kk')@if(empty(unserialize($item->bg_images)->kk)){!! unserialize($item->bg_images)->ru !!}@else{!! unserialize($item->bg_images)->kk !!}@endif @elseif(Config::get('app.locale') === 'en')@if(empty(unserialize($item->bg_images)->en)){!! unserialize($item->bg_images)->ru !!}@else{!! unserialize($item->bg_images)->en !!}@endif @endif" />
                         </a>
                             <div class="content">
                             <div class="content-title">
                             <h4>
-                                <a href="{{ route('front.news.show', $item->slug) }}">
+                                <a href="{{ route('front.newsCompliance.show', $item->slug) }}">
                                     @if (Config::get('app.locale') === 'ru')
                                         {!! unserialize($item->titles)->ru !!}
                                     @elseif(Config::get('app.locale') === 'kk')
