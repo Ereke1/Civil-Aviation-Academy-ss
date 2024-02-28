@@ -18887,7 +18887,7 @@ h4 {
     margin-bottom: 30px;
     box-shadow: 0px 0px 1px 1px white;
     transition: 0.5s all ease;
-    border-bottom: 4px solid white;
+    border-bottom: 4px solid darkblue;
     background: white;
 }
 
@@ -18921,6 +18921,7 @@ h4 {
 #pages .news__preview .content h4 {
     margin: 10px 0;
     text-align: left;
+    font-size: 1.3rem;
 }
 
 
@@ -18952,7 +18953,7 @@ h4 {
 #pages .news__preview .content p {
     margin-bottom: 0;
     color: black;
-    font-size: 16px;
+    font-size: 1rem !important;
 }
 
 @media (min-width: 1265px) {
@@ -19010,8 +19011,8 @@ h4 {
 #news .news__preview .content .date-time,
 #pages .news__preview .content .date-time {
     display: flex;
-    justify-content: space-between;
-    font-size: 12px;
+    /* justify-content: space-between; */
+    font-size: 1.2rem;
     color: #1c3ca7;
     margin-top: 15px;
     padding-bottom: 10px;
@@ -19342,7 +19343,7 @@ h4 {
     #pages .news__preview {
         width: 100%;
         margin-bottom: 30px;
-        border-bottom: 4px solid red;
+        border-bottom: 4px solid darkblue;
     }
 
     #news .news__preview img,
