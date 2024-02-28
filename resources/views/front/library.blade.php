@@ -130,7 +130,7 @@
                         </div>
 
                         <div class="oneBook col-md-4 col-12 col-sm-6">
-                            <a href="https://illman.loc.gov/ILLiad/DLC/Lending/LendingLogon.html">
+                            <a href="https://www.wdl.org/fr">
                                 <img src="\assets\images\library\libraryOfCongress.png">
                             </a>
                             <h3>
