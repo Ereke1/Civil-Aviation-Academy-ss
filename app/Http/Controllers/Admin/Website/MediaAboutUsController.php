@@ -55,6 +55,11 @@ class MediaAboutUsController extends Controller
 	 */
 	public function store(Request $request)
 	{
+        // Validate Background Images
+			$request->validate([
+				'bg_image' => 'image|mimes:jpeg,png,jpg,gif,pdf,jfif',
+			]);
+
 		$user = User::find(Auth::user()->id)->workersInfo;
 		$media_about_us_id = MediaAboutUs::orderBy('id', 'desc')->first();
 		if (empty($media_about_us_id)) {
@@ -65,6 +70,18 @@ class MediaAboutUsController extends Controller
 		}
 		$data = new MediaAboutUs();
 
+
+        $now = date_format(now('Asia/Almaty'), 'Ymd');
+		$folder = public_path('/storage/mediaAboutUs/');
+
+        // Background Images
+        $bg_image = $request->file('bg_image');
+		if (!empty($bg_image)) {
+			$bg_image_name = $now . $bg_image->getClientOriginalName();
+			$bg_image = Image::make($bg_image);
+			$bg_image->save($folder . $bg_image_name, 40);
+		}
+
 		// Сохраняём в базу
 		$data->user_id = $user->user_id;
 		$data->title_ru = $request->title_ru;
@@ -73,6 +90,8 @@ class MediaAboutUsController extends Controller
 		$data->media_ru = $request->media_ru;
 		$data->media_kk = $request->media_kk;
 		$data->media_en = $request->media_en;
+		$data->bg_image = $bg_image_name;
+		$data->publish_at = $request->publish_at;
 		$data->link = $request->link;
 
 		$data->save();
@@ -113,10 +132,28 @@ class MediaAboutUsController extends Controller
 	public function update(Request $request, $id)
 	{
 		// For generate name images ...
-		// $now = date_format(now('Asia/Almaty'), 'Ymd');
+		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$folder = public_path('/storage/mediaAboutUs/');
 
-		// Get department name
+        // Validate Background Images
+        $request->validate([
+            'bg_image' => 'image|mimes:jpeg,png,jpg,gif,pdf,jfif',
+        ]);;
+
 		$media_about_us = MediaAboutUs::find($id);
+        // Delete Bg Images
+		$oldBgImage = $media_about_us->bg_image;
+
+
+        $bg_image = $request->file('bg_image');
+		if (!empty($bg_image)) {
+            if ($oldBgImage === $bg_image) {
+                File::delete(public_path('/storage/mediaAboutUs/' . $oldBgImage));
+            }
+		    $bg_image_name = $now . $bg_image->getClientOriginalName();
+			$bg_image = Image::make($bg_image);
+			$bg_image->save($folder . $bg_image_name, 40);
+		}
 
 
 		$media_about_us->title_ru = $request->title_ru;
@@ -125,6 +162,8 @@ class MediaAboutUsController extends Controller
 		$media_about_us->media_ru = $request->media_ru;
 		$media_about_us->media_kk = $request->media_kk;
 		$media_about_us->media_en = $request->media_en;
+		$media_about_us->bg_image = $bg_image_name;
+		$media_about_us->publish_at = $request->publish_at;
 		$media_about_us->link = $request->link;
 		$media_about_us->save();
 

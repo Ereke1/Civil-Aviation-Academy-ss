@@ -68,6 +68,21 @@
                                 value="{!! $media_about_us->media_en !!}" />
                         </div>
                     </div>
+
+                    <div class="mb-4">
+                        <label class="font-weight-bold d-block">Фоновое изображение</label>
+                        <img src="/storage/mediaAboutUs/{!! $media_about_us->bg_image !!}" class="mb-2" alt="" width="200"
+                            height="150">
+                    </div>
+                    <div class="mb-4">
+                        <label>Если хотите изменить фононовое изображения, <b>выберите новое</b></label>
+                        <input type="file" name="bg_image" class="form-control-file" />
+                    </div>
+                    <div>
+                        <label class="font-weight-bold">Дата и время публикации</label>
+                        <input class="form-control" type="datetime-local" name="publish_at"
+                            value="{!! date('Y-m-d\TH:i', strtotime($media_about_us->publish_at)) !!}">
+                    </div>
                     <br />
                     <div class="block">
                         <button type="submit" class="btn btn-primary">Сохранить</button>

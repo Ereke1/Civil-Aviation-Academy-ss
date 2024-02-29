@@ -95,6 +95,7 @@ class NewsController extends Controller
 
 		$now = date_format(now('Asia/Almaty'), 'Ymd');
 		$folder = public_path('/storage/news/');
+
 		$user = User::find(Auth::user()->id)->workersInfo;
 		$news_id = News::orderBy('id', 'desc')->first();
 		if (empty($news_id)) {

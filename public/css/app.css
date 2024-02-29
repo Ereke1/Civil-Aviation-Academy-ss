@@ -18926,13 +18926,15 @@ h4 {
 
 
 #news .news__preview .content h4 a,
-#pages .news__preview .content h4 a {
+#pages .news__preview .content h4 a,
+.news a {
     color: #004176;
     text-decoration: none;
 }
 
 #news .news__preview .content h4 a:hover,
-#pages .news__preview .content h4 a:hover {
+#pages .news__preview .content h4 a:hover,
+.news a:hover {
     text-decoration: none;
 }
 

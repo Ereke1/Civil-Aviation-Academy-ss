@@ -60,6 +60,15 @@
                             <input type="text" name="media_en" class="form-control"/>
                         </div>
                     </div>
+
+                    <div class="mb-4">
+                        <label class="font-weight-bold">Фоновое изображение</label>
+                        <input type="file" name="bg_image" class="form-control-file"  required/>
+                    </div>
+                    <div>
+                        <label class="font-weight-bold">Дата и время публикации</label>
+                        <input type="datetime-local" name="publish_at" class="form-control" required>
+                    </div>
                     <br />
                     <div class="block">
                         <button type="submit" class="btn btn-primary">Сохранить</button>

@@ -32,7 +32,7 @@
                         <p style="width: 50%">{!! $item->title_ru !!}
                         </p>
                         <p class="text-center" style="width: 15%">{!! $item->media_ru !!}</p>
-                        <p class="text-center" style="width: 15%">{!! date('d.m.Y H:i', strtotime($item->created_at)) !!}</p>
+                        <p class="text-center" style="width: 15%">{!! date('d.m.Y H:i', strtotime($item->publish_at)) !!}</p>
                         <div class="text-right d-flex flex-row-reverse" style="width: 20%">
                             <a href="{{ route('admin.website.media_about_us.edit', $item->id) }}"
                                 class="btn btn-primary ml-1">Редактировать</a>

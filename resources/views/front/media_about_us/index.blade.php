@@ -68,43 +68,46 @@
             <br />
             <br />
 
-            <div class="news">
+            <div class="news row">
                 @foreach ($data as $item)
-                    <div
-                        style="background: #eef1ff; font-size: 15px;padding: 15px 10px;width: 100%;border-bottom: 2px solid darkblue;">
-                        <p>
-                            <span class="h5">
-                                <b>
-                                    <a href="{{ $item->link }}">
-                                        @if (Config::get('app.locale') === 'ru')
-                                            {{ $item->media_en }}
-                                        @elseif(Config::get('app.locale') === 'kk')
-                                            {{ $item->media_en }}
-                                        @else
-                                            {{ $item->media_en }}
-                                        @endif
-                                    </a>
-                                </b>
-                            </span> -
-                            @if (Config::get('app.locale') === 'ru')
-                                {{ $item->title_ru }}
-                            @elseif(Config::get('app.locale') === 'kk')
-                                {{ $item->title_kk }}
-                            @else
-                                {{ $item->title_en }}
-                            @endif
-                        </p>
-                        <a href="{{ $item->link }}">
-                            @if (Config::get('app.locale') === 'ru')
-                                Подробнее...
-                            @elseif(Config::get('app.locale') === 'kk')
-                                Толығырақ...
-                            @else
-                                Read more...
-                            @endif
-                        </a>
+                    <div class="col-12" style="border-bottom: 2px solid darkblue;background: #f5f5fd; margin-bottom: 25px;">
+                        <div style="font-size: 15px;padding: 15px 10px;">
+                            <p>
+                                <span class="h5">
+                                    <b>
+                                        <a href="{{ $item->link }}">
+                                            <img src="/storage/mediaAboutUs/{!! $item->bg_image !!}" style="width: 80px;" alt="{{ $item->media_en }}">
+                                            {{-- <a href="{{ $item->link }}">
+                                            @if (Config::get('app.locale') === 'ru')
+                                                {{ $item->media_en }}
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                {{ $item->media_en }}
+                                            @else
+                                                {{ $item->media_en }}
+                                            @endif
+                                         --}}
+                                        </a>
+                                </span> -
+                                @if (Config::get('app.locale') === 'ru')
+                                    {{ $item->title_ru }}
+                                @elseif(Config::get('app.locale') === 'kk')
+                                    {{ $item->title_kk }}
+                                @else
+                                    {{ $item->title_en }}
+                                @endif
+                            </p>
+                            <a href="{{ $item->link }}">
+                                @if (Config::get('app.locale') === 'ru')
+                                    Подробнее...
+                                @elseif(Config::get('app.locale') === 'kk')
+                                    Толығырақ...
+                                @else
+                                    Read more...
+                                @endif
+                            </a>
+                            </b>
+                        </div>
                     </div>
-                    <hr class="col-12">
                 @endforeach
             </div>
         </div>
