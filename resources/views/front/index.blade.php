@@ -5,16 +5,16 @@
 @section('content')
     <section id="main-slider">
         <div class="owl-carousel">
-            {{-- <div class="item"
+            <div class="item"
                 style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/open_academy.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                    <h2>{{ __('Виртуальная общественная приемная - Open Academy') }}</h2>
+                                    <h2>{{ __('Запись на личный прием ректора') }}</h2>
                                     <a class="btn btn-primary btn-lg"
-                                        href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174">Перейти на
+                                        href="https://docs.google.com/forms/u/2/d/e/1FAIpQLSfylFgyYRZ-gFEIKLUumJkWF7gr_g3CRpqtw5ArCr9nkN9wXA/viewform?usp=send_form">Перейти на
                                         страницу</a><br>
                                     <a class="btn btn-primary btn-lg"
                                         href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174"
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
             <div class="item"
                 style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/priemn.jpg); width:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
