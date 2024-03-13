@@ -3,21 +3,19 @@
     {{ __('Академия Гражданской Авиации') }}
 @endsection
 @section('content')
-    <section class="wrapper" id="center" {{-- style="background: linear-gradient( rgb(0 0 0 / 40%), rgb(0 0 0 / 40%) ), url(/assets/images/library/library-zoom-background-1920-x-1080.jpg);" --}} style="background: darkgoldenrod;">
+    <section class="wrapper" id="center"
+        style="background-image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url(/assets/images/library/library_wallpaper.jpg); background-size: cover;height: 500px;">
         <div class="container">
-            {{-- <div class="breadcrumbs">
-                <a href="{!! route('front.home') !!}">{{ __('Главная') }}</a>
-                <span> > </span>
-                <span>{{ __('Библиотека') }}</span>
-            </div> --}}
+
+            @include('front.inc.header_library')
+
             <div class="row">
                 <div class="col text-center mb-5 text-white">
-                    <h1 class="display-4">{{ __('Библиотека') }}</h1>
-                    <p class="lead">
-                    </p>
+                    <h1 class="display-4" style="font-weight: bold;margin-top: 70px;">{{ __('Библиотека') }}</h1>
+                    <p class="lead">{{ __('Академия гражданской авиации') }}</p>
                 </div>
             </div>
-            <section class="services" id="services" style="background: transparent">
+            {{-- <section class="services" id="services" style="background: transparent">
                 <div class="container" style="margin-bottom: 5vw">
                     <div class="row">
                         <div class="col-lg-3 col-sm-6 d-flex align-items-stretch mt-4 wow fadeInUp">
@@ -62,11 +60,11 @@
 
                     </div>
                 </div>
-            </section>
+            </section> --}}
         </div>
     </section>
 
-    <div class="d-flex align-items-stretch mt-4 wow fadeInUp animated container-fluid" style="background-color: darkblue;">
+    <div class="d-flex align-items-stretch mt-4 wow fadeInUp animated container-fluid" style="background-color: #00249c;">
         <div class="col-12 icon-box virtual_adm row" style="padding: 10px 20px;">
             <div class="col-sm-12 col-md-3 col-lg-2">
                 <p align="center"><img alt="" src="\assets\images\library\MinistryOfScience150x150.png"
@@ -87,61 +85,55 @@
     <section id="book_collection">
         <div class="container">
             <div class="row" id="book_collections">
-                <div class="col-12 col-md-8">
+                <div class="col-12 col-md-8" style="background: white">
                     <div class="row">
                         <div class="title text-center">
-                            <h3>{{ __('ПОДПИСНЫЕ БАЗЫ ДАННЫХ') }}</h3>
+                            <h3>{{ __('ВИДЕОМАТЕРИАЛЫ') }}</h3>
                             <div class="border"></div>
                         </div>
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
-                            <a href="http://rmebrk.kz/">
-                                <img src="\assets\images\library\riel.png">
-                            </a>
+                        <div class="oneMedia col-md-6 col-12">
+                            <video controls width="250">
+                                <source src="/assets/images/library/кабис.mp4" type="video/mp4" />
+                                Ваш браузер не поддерживает встроенные видео :(
+                            </video>
+
+                            <h3>
+                                КАБИС
+                            </h3>
+                        </div>
+
+                        <div class="oneMedia col-md-6 col-12">
+
+                            <video controls width="250">
+                                <source src="/assets/images/library/РМЭБ.mp4" type="video/mp4" />
+                                Ваш браузер не поддерживает встроенные видео :(
+                            </video>
                             <h3>
                                 РМЭБ
                             </h3>
-                            {{ __('Республиканская межвузовская электронная библиотека - информационная и справочно-поисковая библиотечная система') }}
-                        </div>
+                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
-                            <a href="https://www.iprbookshop.ru/">
-                                <img src="\assets\images\library\iprSmart.png">
-                            </a>
+                        <div class="oneMedia col-md-6 col-12">
+
+                            <video controls width="250">
+                                <source src="/assets/images/library/iprSmart.mp4" type="video/mp4" />
+                                Ваш браузер не поддерживает встроенные видео :(
+                            </video>
                             <h3>
                                 IPR SMART
                             </h3>
-                            {{ __('Содержится литература по различным группам специальностей, что дает возможность учебным заведениям разных профилей найти интересующие их издания') }}
                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
-                            <a href="https://search.ebscohost.com/">
-                                <img src="\assets\images\library\EBSCO.png">
-                            </a>
-                            <h3>
-                                EBSCO
-                            </h3>
-                            {{ __('EBSCO Publishing - крупнейший поставщик научных ресурсов ведущих издательств мира') }}
-                        </div>
+                        <div class="oneMedia col-md-6 col-12">
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
-                            <a href="https://www.wdl.org/fr">
-                                <img src="\assets\images\library\libraryOfCongress.png">
-                            </a>
+                            <video controls width="250">
+                                <source src="/assets/images/library/ikaoLibrary.mp4" type="video/mp4" />
+                                Ваш браузер не поддерживает встроенные видео :(
+                            </video>
                             <h3>
-                                Library of Congress
+                                IKAO Library
                             </h3>
-                            {{ __('Библиотека Конгресса является крупнейшей библиотекой в мире, в ее фондах хранятся миллионы книг, фильмов и видео, аудиозаписей, фотографий, газет, карт и рукописей. Библиотека является главным исследовательским подразделением Конгресса США и штаб-квартирой Управления авторского права США.') }}
-                        </div>
-
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
-                            <a href="https://elibrary.icao.int/">
-                                <img src="\assets\images\library\libraryICAO.png">
-                            </a>
-                            <h3>
-                                ICAO eLibrary
-                            </h3>
-                            {{ __('Электронная библиотека ИКАО - это онлайн-хранилище цифровых публикаций Международной организации гражданской авиации (ИКАО), содержащее стандарты и рекомендуемую практику (SARPS) в области международной гражданской авиации, конвенции и связанные с ними акты.') }}
-                        </div>
+                         </div>
 
                     </div>
                 </div>
@@ -154,7 +146,17 @@
 
                         <div class="col-lg-12">
                             <h6>
-                                <a href="/uvazhaemye-prepodavateli-i-obuchayushchiesya-404" target="_blank">Открыт тестовый
+                                <a href="#">В целях объединения любителей книг в стенах Академии создан клуб читателей. За месяц будут обсуждаться две книги. Клуб будет проходить на казахском, русском, и английском языках.
+                                </a>
+                                <span
+                                    style="color: white; text-align:left; font-size: 12px;padding: 14px 24px;">12.03.2024</span>
+                            </h6>
+                            <hr style="color: white;">
+                        </div>
+
+                        <div class="col-lg-12">
+                            <h6>
+                                <a href="/uvazhaemye-prepodavateli-i-obuchayushchiesya-404">Открыт тестовый
                                     доступ базам данных научных изданий от компании EBSCO!
                                 </a>
                                 <span
@@ -165,6 +167,68 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+
+    <section id="book_collection">
+        <div class="container">
+            <div class="row" id="book_collections">
+                <div class="title text-center">
+                    <h3>{{ __('ПОДПИСНЫЕ БАЗЫ ДАННЫХ') }}</h3>
+                    <div class="border"></div>
+                </div>
+                <div class="oneBook col-md-4 col-12 col-sm-6">
+                    <a href="http://rmebrk.kz/">
+                        <img src="\assets\images\library\riel.png">
+                    </a>
+                    <h3>
+                        РМЭБ
+                    </h3>
+                    {{ __('Республиканская межвузовская электронная библиотека - информационная и справочно-поисковая библиотечная система') }}
+                </div>
+
+                <div class="oneBook col-md-4 col-12 col-sm-6">
+                    <a href="https://www.iprbookshop.ru/">
+                        <img src="\assets\images\library\iprSmart.png">
+                    </a>
+                    <h3>
+                        IPR SMART
+                    </h3>
+                    {{ __('Содержится литература по различным группам специальностей, что дает возможность учебным заведениям разных профилей найти интересующие их издания') }}
+                </div>
+
+                <div class="oneBook col-md-4 col-12 col-sm-6">
+                    <a href="https://search.ebscohost.com/">
+                        <img src="\assets\images\library\EBSCO.png">
+                    </a>
+                    <h3>
+                        EBSCO
+                    </h3>
+                    {{ __('EBSCO Publishing - крупнейший поставщик научных ресурсов ведущих издательств мира') }}
+                </div>
+
+                <div class="oneBook col-md-4 col-12 col-sm-6">
+                    <a href="https://www.wdl.org/fr">
+                        <img src="\assets\images\library\libraryOfCongress.png">
+                    </a>
+                    <h3>
+                        Library of Congress
+                    </h3>
+                    {{ __('Библиотека Конгресса является крупнейшей библиотекой в мире, в ее фондах хранятся миллионы книг, фильмов и видео, аудиозаписей, фотографий, газет, карт и рукописей. Библиотека является главным исследовательским подразделением Конгресса США и штаб-квартирой Управления авторского права США.') }}
+                </div>
+
+                <div class="oneBook col-md-4 col-12 col-sm-6">
+                    <a href="https://elibrary.icao.int/">
+                        <img src="\assets\images\library\libraryICAO.png">
+                    </a>
+                    <h3>
+                        ICAO eLibrary
+                    </h3>
+                    {{ __('Электронная библиотека ИКАО - это онлайн-хранилище цифровых публикаций Международной организации гражданской авиации (ИКАО), содержащее стандарты и рекомендуемую практику (SARPS) в области международной гражданской авиации, конвенции и связанные с ними акты.') }}
+                </div>
+            </div>
+        </div>
     </section>
 
 

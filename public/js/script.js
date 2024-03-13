@@ -6,6 +6,13 @@ $(document).ready(function () {
 		$('#hamburger').toggleClass('open');
 		$('body').toggleClass('overflow-hidden');
 	});
+
+    $('.menu-iconLib').click(function () {
+		$(this).parent().toggleClass('is-tapped');
+		$('#hamburgerLib').toggleClass('open');
+		$('body').toggleClass('overflow-hidden');
+	});
+
 	// handle touch device events on drop down, first tap adds class, second navigates
 	$('.touch .sitenavigation li.nav-dropdown > a').on('touchend',
 		function (e) {

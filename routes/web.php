@@ -22,9 +22,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 	Route::group(['prefix' => 'website', 'namespace' => 'Website', 'as' => 'website.'], function () {
 		Route::resources([
 			'navigation' => 'NavigationController',
+			'library_navigation' => 'LibraryNavigationController',
 			'pages' => 'PageController',
 			'books' => 'BooksController',
 			'book_collection' => 'BookCollectionController',
+			'library_pages' => 'LibraryController',
 			'news' => 'NewsController',
 			'media_about_us' => 'MediaAboutUsController',
 			'studevents' => 'StudEventsController',
@@ -110,6 +112,7 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	Route::get('', 'HomeController@index')->name('home');
 	Route::get('centerava','CenterController@index')->name('centerava');
 	Route::get('library','BooksController@index')->name('library');
+	Route::get('library/{libpage}', 'LibraryController@show')->name('library_pages');
 	Route::get('virtual_admission','VirtualAdmissionController@index')->name('virtual_admission');
 	Route::get('news', 'NewsController@index')->name('news');
 	Route::get('news/{slug}', 'NewsController@show')->name('news.show');
@@ -143,6 +146,16 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 			Route::get('{department}/teachers/{teacher}', 'DepartmentController@teacher')->name('teachers.show');
 		});
 	});
+
+    // // LIBRARY
+	// Route::group(['namespace' => 'Library'], function () {
+	// 	Route::resources([
+	// 		'library' => 'LibraryController',
+	// 	]);
+	// 	Route::group(['prefix' => 'library', 'as' => 'library.'], function () {
+	// 		Route::get('library/{libpage}', 'LibraryController@libpage')->name('libpage.index');
+	// 	});
+	// });
 
 	// PAGES
 	Route::get('{page}', 'PageController@show')->name('pages');

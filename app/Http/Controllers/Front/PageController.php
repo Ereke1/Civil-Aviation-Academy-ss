@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Navigation;
+use App\Models\LibraryNavigation;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -67,6 +68,7 @@ class PageController extends Controller
     public function show($page)
     {
 		$tree = Navigation::tree();
+		$libtree = LibraryNavigation::tree();
 		$data = Page::where('slug', $page)->first();
         if($data===null)
         abort(404);
@@ -81,7 +83,7 @@ class PageController extends Controller
 			$data->desc = $data->desc_en;
 		}
         $revR = ReviewRating::orderBy('created_at', 'asc')->get();
-		return view('front.page', compact('tree', 'data','revR'));
+		return view('front.page', compact('tree','libtree', 'data','revR'));
     }
 
     /**

@@ -17314,7 +17314,7 @@ readers do not read off random characters that represent icons */
 
 header {
     position: relative;
-    background: white;
+    /* background: white; */
 }
 
 #navMenu{
@@ -17324,7 +17324,16 @@ header {
     height: 100px;
 }
 
-@media (max-width: 768px) {
+#navMenuLib{
+    transform: translateY(-20px);
+    padding: 10px;
+    transition: all 0.4s;
+    height: 100px;
+    margin: auto;
+    width: auto;
+}
+
+@media (max-width: 991px) {
     header {
         height: 65px;
     }
@@ -17351,6 +17360,13 @@ header .logo2 img {
         height: 65px;
     }
 
+    #navMenuLib{
+        transform: translateY(0px);
+        padding: 10px;
+        height: 65px;
+        width: 90%;
+    }
+
     header .logo2 img {
         height: 3rem;
     }
@@ -17366,7 +17382,7 @@ header .logo2 img {
 @media (min-width: 992px) {
     .navbar {
         width: 100%;
-        padding: 20px 0 !important;
+        padding: 20px 20px !important;
         align-items: end;
     }
 
@@ -17385,7 +17401,7 @@ header .logo2 img {
     margin-right: 20px;
 }
 
-#hamburger {
+#hamburger, #hamburgerLib {
     width: 35px;
     position: relative;
     margin: auto;
@@ -17394,12 +17410,12 @@ header .logo2 img {
     cursor: pointer;
 }
 
-#hamburger span {
+#hamburger span, #hamburgerLib span {
     display: block;
     position: absolute;
     height: 5px;
     width: 100%;
-    background: dodgerblue;
+    background: #04279D;
     border-radius: 9px;
     opacity: 1;
     left: 7px;
@@ -17407,29 +17423,29 @@ header .logo2 img {
     transition: 0.25s ease-in-out;
 }
 
-#hamburger span:nth-child(1) {
+#hamburger span:nth-child(1), #hamburgerLib span:nth-child(1) {
     top: 0px;
 }
 
-#hamburger span:nth-child(2) {
+#hamburger span:nth-child(2), #hamburgerLib span:nth-child(2) {
     top: 11px;
 }
 
-#hamburger span:nth-child(3) {
+#hamburger span:nth-child(3), #hamburgerLib span:nth-child(3){
     top: 22px;
 }
 
-#hamburger.open span:nth-child(1) {
+#hamburger.open span:nth-child(1), #hamburgerLib.open span:nth-child(1) {
     top: 11px;
     transform: rotate(135deg);
 }
 
-#hamburger.open span:nth-child(2) {
+#hamburger.open span:nth-child(2), #hamburgerLib.open span:nth-child(2) {
     opacity: 0;
     left: -30px;
 }
 
-#hamburger.open span:nth-child(3) {
+#hamburger.open span:nth-child(3), #hamburgerLib.open span:nth-child(3) {
     top: 11px;
     transform: rotate(-135deg);
 }
@@ -17540,7 +17556,7 @@ header .logo2 img {
     display: block !important;
 }
 
-.menu-icon {
+.menu-icon, .menu-iconLib {
     display: none;
 }
 
@@ -17552,7 +17568,7 @@ header .logo2 img {
     .navbar {
         width: 100%;
         background: white;
-        box-shadow: 0px 4px 4px #1e90ff;
+        box-shadow: 0 20px 30px rgba(0,0,0,.15);
         height: 80px;
         position: fixed;
         top: 0;
@@ -17571,7 +17587,7 @@ header .logo2 img {
         height: 3rem;
     }
 
-    .navbar .menu-icon {
+    .navbar .menu-icon, .navbar .menu-iconLib {
         width: 30px;
         height: 25px;
         margin-right: 10px;
@@ -23492,6 +23508,16 @@ h2.section-heading {
     max-width: 100%;
 }
 
+#book_collection video {
+    width: 100%;
+    height: 250px;
+}
+
+#book_collection .oneMedia {
+    border-bottom: 1px solid #bbbbbb;
+    margin: 20px 0px;
+}
+
 /* .oneBook{
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -23513,7 +23539,7 @@ h2.section-heading {
 }
 
 .lib-news {
-    background:darkblue;
+    background:#00249c;
     text-align: left;
 }
 
