@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <section class="wrapper" id="center"
-        style="background-image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url(/assets/images/library/library_wallpaper.jpg); background-size: cover;height: 500px;">
+        style="background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(/assets/images/library/lib_wallpaper.jpg); background-size: cover;height: 500px;">
         <div class="container">
 
             @include('front.inc.header_library')
@@ -92,7 +92,7 @@
                             <div class="border"></div>
                         </div>
                         <div class="oneMedia col-md-6 col-12">
-                            <video controls width="250">
+                            <video controls width="250" poster="/assets/images/library/kabis.png">
                                 <source src="/assets/images/library/кабис.mp4" type="video/mp4" />
                                 Ваш браузер не поддерживает встроенные видео :(
                             </video>
@@ -104,7 +104,7 @@
 
                         <div class="oneMedia col-md-6 col-12">
 
-                            <video controls width="250">
+                            <video controls width="250" poster="/assets/images/library/riel.png">
                                 <source src="/assets/images/library/РМЭБ.mp4" type="video/mp4" />
                                 Ваш браузер не поддерживает встроенные видео :(
                             </video>
@@ -115,7 +115,7 @@
 
                         <div class="oneMedia col-md-6 col-12">
 
-                            <video controls width="250">
+                            <video controls width="250" poster="/assets/images/library/iprSmart.png">
                                 <source src="/assets/images/library/iprSmart.mp4" type="video/mp4" />
                                 Ваш браузер не поддерживает встроенные видео :(
                             </video>
@@ -126,7 +126,7 @@
 
                         <div class="oneMedia col-md-6 col-12">
 
-                            <video controls width="250">
+                            <video controls width="250" poster="/assets/images/library/libraryICAO.png">
                                 <source src="/assets/images/library/ikaoLibrary.mp4" type="video/mp4" />
                                 Ваш браузер не поддерживает встроенные видео :(
                             </video>
