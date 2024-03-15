@@ -67,7 +67,7 @@
         <div class="container">
             <div class="bottom-bar">
                 <p style="font-size: 0.85vw; font-weight: lighter;">
-                    {{ __('© 1995 - 2022 Академия Гражданской Авиации') }}</p>
+                    © 1995 - <?php echo date("Y"); ?> {{ __('Академия Гражданской Авиации') }}</p>
             </div>
         </div>
     </section>
