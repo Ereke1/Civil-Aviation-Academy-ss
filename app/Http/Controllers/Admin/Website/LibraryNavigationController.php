@@ -18,13 +18,8 @@ class LibraryNavigationController extends Controller
 	public function index()
 	{
 		$user_department = LibraryNavigation::userInfo()->department;
-		if ($user_department === 'Авиационный колледж') {
-			$data = LibraryNavigation::where('active', true)
-				->where('college', true)
-				->get();
-			$tree = LibraryNavigation::treeCollege();
-		}
-        elseif ($user_department === 'ДМР') {
+
+        if ($user_department === 'ДМР') {
 			$data = LibraryNavigation::where('active', true)->orderBy('title_ru', 'asc')->get();
 			$tree = LibraryNavigation::tree();
 		}

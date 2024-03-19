@@ -146,7 +146,7 @@
 
                         <div class="col-lg-12">
                             <h6>
-                                <a href="#">В целях объединения любителей книг в стенах Академии создан клуб читателей. За месяц будут обсуждаться две книги. Клуб будет проходить на казахском, русском, и английском языках.
+                                <a href="/dlya-obuchayushchihsya-i-prepodavateley-otkryt-dostup-k-krupneyshey-baze-uchebnoy-i-prakticheskoy-literatury-elektronno-bibliotechnoy-sisteme-ipr-smart-405">{{ __('Для обучающихся и преподавателей открыт доступ к крупнейшей базе учебной и практической литературы — электронно-библиотечной системе IPR SMART') }}
                                 </a>
                                 <span
                                     style="color: white; text-align:left; font-size: 12px;padding: 14px 24px;">12.03.2024</span>
@@ -156,8 +156,17 @@
 
                         <div class="col-lg-12">
                             <h6>
-                                <a href="/uvazhaemye-prepodavateli-i-obuchayushchiesya-404">Открыт тестовый
-                                    доступ базам данных научных изданий от компании EBSCO!
+                                <a href="#">{{ __('В целях объединения любителей книг в стенах Академии создан клуб читателей. За месяц будут обсуждаться две книги. Клуб будет проходить на казахском, русском, и английском языках.') }}
+                                </a>
+                                <span
+                                    style="color: white; text-align:left; font-size: 12px;padding: 14px 24px;">12.03.2024</span>
+                            </h6>
+                            <hr style="color: white;">
+                        </div>
+
+                        <div class="col-lg-12">
+                            <h6>
+                                <a href="/uvazhaemye-prepodavateli-i-obuchayushchiesya-404">{{ __('Открыт тестовый доступ базам данных научных изданий от компании EBSCO!') }}
                                 </a>
                                 <span
                                     style="color: white; text-align:left; font-size: 12px;padding: 14px 24px;">27.02.2024</span>
