@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'book_collection' => 'BookCollectionController',
 			'library_pages' => 'LibraryController',
 			'news' => 'NewsController',
+			'library_news' => 'LibraryNewsController',
 			'media_about_us' => 'MediaAboutUsController',
 			'studevents' => 'StudEventsController',
 			'events' => 'EventController',
@@ -112,10 +113,12 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	Route::get('', 'HomeController@index')->name('home');
 	Route::get('centerava','CenterController@index')->name('centerava');
 	Route::get('library','BooksController@index')->name('library');
-	Route::get('library/{libpage}', 'LibraryController@show')->name('library_pages');
 	Route::get('virtual_admission','VirtualAdmissionController@index')->name('virtual_admission');
 	Route::get('news', 'NewsController@index')->name('news');
 	Route::get('news/{slug}', 'NewsController@show')->name('news.show');
+	Route::get('library/library_news', 'LibraryNewsController@index')->name('library_news');
+	Route::get('library/library_news/{slug}', 'LibraryNewsController@show')->name('library_news.show');
+	Route::get('library/{libpage}', 'LibraryController@show')->name('library_pages');
 	Route::get('media_about_us', 'MediaAboutUsController@index')->name('media_about_us');
 	Route::get('media_about_us/{slug}', 'MediaAboutUsController@show')->name('media_about_us.show');
 	Route::get('newsCompliance', 'NewsComplianceController@index')->name('newsCompliance');

@@ -34,5 +34,11 @@ $worker_permission = unserialize($worker_permission->permission);
                 Страницы библиотеки
             </a>
         @endif
+        @if (isset($worker_permission->books->read) && $worker_permission->books->read == true)
+            <a href="{{ route('admin.website.library_news.index') }}"
+                @if ($active_menu === 'Новости библиотеки') class="active" @endif>
+                Новости библиотеки
+            </a>
+        @endif
     </div>
 </div>

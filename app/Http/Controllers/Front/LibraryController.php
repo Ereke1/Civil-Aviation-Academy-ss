@@ -9,6 +9,7 @@ use App\Models\LibraryPage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use App\Models\ReviewRating;
+use App\Models\LibraryNews;
 
 class LibraryController extends Controller
 {
@@ -19,7 +20,7 @@ class LibraryController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**

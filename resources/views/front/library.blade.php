@@ -111,7 +111,7 @@
                             <h3>
                                 РМЭБ
                             </h3>
-                         </div>
+                        </div>
 
                         <div class="oneMedia col-md-6 col-12">
 
@@ -133,46 +133,34 @@
                             <h3>
                                 IKAO Library
                             </h3>
-                         </div>
+                        </div>
 
                     </div>
                 </div>
                 <div class="col-12 col-md-4 lib-news">
                     <div class="row">
                         <div class="title text-center">
-                            <h3 style="color: white;">{{ __('НОВОСТИ') }}</h3>
+                            <a href="{{ route('front.library_news') }}" style="padding: 0px;"><h3 style="color: white;">{{ __('НОВОСТИ') }}</h3></a>
                             <div class="border"></div>
                         </div>
-
-                        <div class="col-lg-12">
-                            <h6>
-                                <a href="/dlya-obuchayushchihsya-i-prepodavateley-otkryt-dostup-k-krupneyshey-baze-uchebnoy-i-prakticheskoy-literatury-elektronno-bibliotechnoy-sisteme-ipr-smart-405">{{ __('Для обучающихся и преподавателей открыт доступ к крупнейшей базе учебной и практической литературы — электронно-библиотечной системе IPR SMART') }}
-                                </a>
-                                <span
-                                    style="color: white; text-align:left; font-size: 12px;padding: 14px 24px;">12.03.2024</span>
-                            </h6>
-                            <hr style="color: white;">
-                        </div>
-
-                        <div class="col-lg-12">
-                            <h6>
-                                <a href="#">{{ __('В целях объединения любителей книг в стенах Академии создан клуб читателей. За месяц будут обсуждаться две книги. Клуб будет проходить на казахском, русском, и английском языках.') }}
-                                </a>
-                                <span
-                                    style="color: white; text-align:left; font-size: 12px;padding: 14px 24px;">12.03.2024</span>
-                            </h6>
-                            <hr style="color: white;">
-                        </div>
-
-                        <div class="col-lg-12">
-                            <h6>
-                                <a href="/uvazhaemye-prepodavateli-i-obuchayushchiesya-404">{{ __('Открыт тестовый доступ базам данных научных изданий от компании EBSCO!') }}
-                                </a>
-                                <span
-                                    style="color: white; text-align:left; font-size: 12px;padding: 14px 24px;">27.02.2024</span>
-                            </h6>
-                            <hr style="color: white;">
-                        </div>
+                        @foreach ($library_news as $item)
+                            <div class="col-lg-12">
+                                <h6>
+                                    <a href="{{ route('front.library_news.show', $item->slug) }}">
+                                        @if (Config::get('app.locale') === 'ru')
+                                            {!! unserialize($item->titles)->ru !!}
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            {!! unserialize($item->titles)->kk !!}
+                                        @else
+                                            {!! unserialize($item->titles)->en !!}
+                                        @endif
+                                    </a>
+                                    <span
+                                        style="color: white; text-align:left; font-size: 12px;padding: 14px 24px;">{!! date('d.m.Y', strtotime($item->publish_at)) !!}</span>
+                                </h6>
+                                <hr style="color: white;">
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
