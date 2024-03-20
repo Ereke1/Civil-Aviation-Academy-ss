@@ -2,7 +2,7 @@
 @php $parrentCat  = 'Управление книгами' @endphp
 @php $active_menu  = 'Новости библиотеки' @endphp
 @section('content')
-    <h1>Управление новостями</h1>
+    <h1>Новости библиотеки</h1>
     @if (session('alert'))
         <div class="alert alert-success">
             <h3>{{ session('alert') }}</h3>

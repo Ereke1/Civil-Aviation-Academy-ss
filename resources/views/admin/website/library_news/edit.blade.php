@@ -7,7 +7,7 @@
             <h3>{{ session('alert') }}</h3>
         </div>
     @endif
-    <h1>Управление новостями</h1>
+    <h1>Новости библиотеки</h1>
     <section id="pages">
         <div class="pages">
             <div class="pages__head">
