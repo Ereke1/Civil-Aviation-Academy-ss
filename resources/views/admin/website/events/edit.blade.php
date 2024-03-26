@@ -34,7 +34,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Описание</label>
-                            <textarea name="desc_ru" class="form-control">{!! unserialize($event->descriptions)->ru !!}</textarea>
+                            <textarea name="desc_ru" id="editor-ru">{!! unserialize($event->descriptions)->ru !!}</textarea>
                         </div>
                     </div>
                     <div id="kk-block" style="display: none">
@@ -44,7 +44,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Сипаттамасы</label>
-                            <textarea name="desc_kk" class="form-control">{!! unserialize($event->descriptions)->kk !!}</textarea>
+                            <textarea name="desc_kk" id="editor-kk">{!! unserialize($event->descriptions)->kk !!}</textarea>
                         </div>
                     </div>
                     <div id="en-block" style="display: none">
@@ -54,7 +54,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Description</label>
-                            <textarea name="desc_en" class="form-control">{!! unserialize($event->descriptions)->en !!}</textarea>
+                            <textarea name="desc_en" id="editor-en">{!! unserialize($event->descriptions)->en !!}</textarea>
                         </div>
                     </div>
                     <br />
@@ -80,6 +80,8 @@
     </section>
     @include('admin.languages')
 @endsection
+
 @section('scripts')
-    @include('admin.tinymce')
+    @include('admin.ckeditor')
 @endsection
+
