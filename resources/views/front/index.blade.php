@@ -14,7 +14,8 @@
                                 <div class="carousel-content">
                                     <h2>{{ __('Запись на личный прием ректора') }}</h2>
                                     <a class="btn btn-primary btn-lg"
-                                        href="https://docs.google.com/forms/u/2/d/e/1FAIpQLSfylFgyYRZ-gFEIKLUumJkWF7gr_g3CRpqtw5ArCr9nkN9wXA/viewform?usp=send_form">Перейти на
+                                        href="https://docs.google.com/forms/u/2/d/e/1FAIpQLSfylFgyYRZ-gFEIKLUumJkWF7gr_g3CRpqtw5ArCr9nkN9wXA/viewform?usp=send_form">Перейти
+                                        на
                                         страницу</a><br>
                                     <a class="btn btn-primary btn-lg"
                                         href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174"
@@ -59,20 +60,20 @@
                     </div>
                 </div>
             </div><!--/.item--><!--
-                    <div class="item" style=" background:url(/assets/images/slider/Screenshot_7.png); width:100%; background-size: cover; background-position: center;">
-                        <div class="slider-inner">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-sm-12 text-center">
-                                        <div class="carousel-content">
-                                        <h2></h2><br> <br><h2></h2>
-                                            <a class="btn btn-primary btn-lg stretched-link" href="/vakansii">Перейти на страницу</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>--><!--/.item-->
+                                                            <div class="item" style=" background:url(/assets/images/slider/Screenshot_7.png); width:100%; background-size: cover; background-position: center;">
+                                                                <div class="slider-inner">
+                                                                    <div class="container">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-12 text-center">
+                                                                                <div class="carousel-content">
+                                                                                <h2></h2><br> <br><h2></h2>
+                                                                                    <a class="btn btn-primary btn-lg stretched-link" href="/vakansii">Перейти на страницу</a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>--><!--/.item-->
             <div class="item"
                 style="background: url(/assets/images/slider/2.jfif);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
@@ -122,6 +123,7 @@
             </div><!--/.item-->
         </div><!--/.owl-carousel-->
     </section><!--/#main-slider-->
+
     <section id="services" class="services">
         <div class="container">
 
@@ -186,20 +188,127 @@
                 </div>
 
             </div>
-
         </div>
-
     </section>
-    <section id="paraVideo" class="parallax">
 
+
+    <div class="trending-area fix">
+        <div class="container">
+            <div class="trending-main">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2>{{ __('Новости') }}</h2>
+                        @foreach ($news as $item)
+                            @php
+                                if (Config::get('app.locale') === 'ru') {
+                                    $bg_imagess = unserialize($item->bg_images)->ru;
+                                } elseif (Config::get('app.locale') === 'kk') {
+                                    if (empty(unserialize($item->bg_images)->kk)) {
+                                        $bg_imagess = unserialize($item->bg_images)->ru;
+                                    } else {
+                                        $bg_imagess = unserialize($item->bg_images)->kk;
+                                    }
+                                } elseif (Config::get('app.locale') === 'en') {
+                                    if (empty(unserialize($item->bg_images)->en)) {
+                                        $bg_imagess = unserialize($item->bg_images)->ru;
+                                    } else {
+                                        $bg_imagess = unserialize($item->bg_images)->en;
+                                    }
+                                }
+                            @endphp
+
+                            @if ($loop->first)
+                                <div class="trending-top mb-30">
+                                    <div class="trend-top-img"
+                                        style="background-image: url('https://caa.edu.kz/storage/news/{!! $bg_imagess !!}')">
+                                        {{-- <img src="https://caa.edu.kz/storage/news/{!! $bg_imagess !!}" alt=""> --}}
+                                        <div class="trend-top-cap">
+                                            <h2><a href="{{ route('front.news.show', $item->slug) }}">
+                                                    @if (Config::get('app.locale') === 'ru')
+                                                        {!! unserialize($item->titles)->ru !!}
+                                                    @elseif(Config::get('app.locale') === 'kk')
+                                                        {!! unserialize($item->titles)->kk !!}
+                                                    @else
+                                                        {!! unserialize($item->titles)->en !!}
+                                                    @endif
+                                                </a></h2>
+                                            <small>
+                                                <p><i class="far fa-calendar-alt"></i> {!! date('d.m.Y', strtotime($item->publish_at)) !!}</p>
+                                            </small>
+                                            {{-- <a href="{{ route('front.news.show', $item->slug) }}"
+                                                class="btn btn-read">{{ __('Подробнее') }}</a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="trending-bottom">
+                                    <div class="row">
+                                    @else
+                                        <div class="col-lg-4">
+                                            <div class="single-bottom mb-35">
+                                                <div class="trend-bottom-img mb-30"
+                                                    style="background-image: url('/storage/news/{!! $bg_imagess !!}')">
+                                                    {{-- <img src="https://caa.edu.kz/storage/news/{!! $bg_imagess !!}" alt=""> --}}
+                                                </div>
+                                                <div class="trend-bottom-cap">
+                                                    <h4><a href="{{ route('front.news.show', $item->slug) }}">
+                                                            @if (Config::get('app.locale') === 'ru')
+                                                                {!! unserialize($item->titles)->ru !!}
+                                                            @elseif(Config::get('app.locale') === 'kk')
+                                                                {!! unserialize($item->titles)->kk !!}
+                                                            @else
+                                                                {!! unserialize($item->titles)->en !!}
+                                                            @endif
+                                                        </a></h4>
+                                                    <small>
+                                                        <p><i class="far fa-calendar-alt"></i> {!! date('d.m.Y', strtotime($item->publish_at)) !!}</p>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="portfolio_btn text-center fix m-top-100">
+                    <a href="/news/" class="btn btn-read">{{ __('Посмотреть все') }}</a>
+                </div>
+            </div>
+            <div class="col-lg-4 caa_events">
+                <h2 style="padding: 10px 0px;">{{ __('Объявления') }}</h2>
+                @foreach ($events as $event)
+                    <div class="col-lg-12 caa_event">
+                        <h5>
+                            <a href="{{ route('front.events.show', $event->slug) }}">
+                                @if (Config::get('app.locale') === 'ru')
+                                    {!! unserialize($event->titles)->ru !!}
+                                @elseif(Config::get('app.locale') === 'kk')
+                                    {!! unserialize($event->titles)->kk !!}
+                                @else
+                                    {!! unserialize($event->titles)->en !!}
+                                @endif
+                            </a>
+                            <br>
+                            <span style="color: #ffffff; text-align:left; font-size: 12px;">
+                                {!! date('d.m.Y', strtotime($event->publish_at)) !!}</span>
+                        </h5>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <section id="paraVideo" class="parallax">
         <div class="ParallaxVideo">
             <video autoplay muted loop>
                 <source src="/assets/images/Rolik_AVIA без титров.mp4" type="video/mp4">
             </video>
             <h3 class="animated pulse infinite" id="paraVideoText">{{ __('Полет к мечте начинается здесь!') }}</h3>
         </div>
-
     </section>
+
     <section id="blocks1">
         <div class="container cardscontainer">
             <div class="page-header title text-center" style="padding-bottom: 25px;">
@@ -374,139 +483,6 @@
 
     </section>
 
-    <section id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title wow animated rollIn">
-                        <h2>{{ __('Новости') }}</h2>
-                        <p>Flying is a beautiful dream, and the Academy is the place <br> where your dreams come true.</p>
-                    </div>
-                    <div id="blog-post" class="owl-carousel">
-                        @foreach ($news as $item)
-                            @php
-                                if (Config::get('app.locale') === 'ru') {
-                                    $bg_imagess = unserialize($item->bg_images)->ru;
-                                } elseif (Config::get('app.locale') === 'kk') {
-                                    if (empty(unserialize($item->bg_images)->kk)) {
-                                        $bg_imagess = unserialize($item->bg_images)->ru;
-                                    } else {
-                                        $bg_imagess = unserialize($item->bg_images)->kk;
-                                    }
-                                } elseif (Config::get('app.locale') === 'en') {
-                                    if (empty(unserialize($item->bg_images)->en)) {
-                                        $bg_imagess = unserialize($item->bg_images)->ru;
-                                    } else {
-                                        $bg_imagess = unserialize($item->bg_images)->en;
-                                    }
-                                }
-                            @endphp
-
-                            <div>
-                                <div class="block wow fadeInRight">
-                                    <a href="{{ route('front.news.show', $item->slug) }}">
-                                        <img alt="" class="img-responsive" src="/storage/news/{!! $bg_imagess !!}" />
-                                    </a>
-                                    <div class="content">
-                                        <h4> <a href="{{ route('front.news.show', $item->slug) }}">
-                                                @if (Config::get('app.locale') === 'ru')
-                                                    {!! Str::limit(unserialize($item->titles)->ru, 60) !!}
-                                                @elseif(Config::get('app.locale') === 'kk')
-                                                    {!! Str::limit(unserialize($item->titles)->kk, 60) !!}
-                                                @else
-                                                    {!! Str::limit(unserialize($item->titles)->en, 60) !!}
-                                                @endif
-                                            </a>
-                                        </h4>
-                                        <p>
-                                            @if (Config::get('app.locale') === 'ru')
-                                                {!! Str::limit(strip_tags(unserialize($item->descriptions)->ru), 100) !!}
-                                            @elseif(Config::get('app.locale') === 'kk')
-                                                {!! Str::limit(strip_tags(unserialize($item->descriptions)->kk), 100) !!}
-                                            @else
-                                                {!! Str::limit(strip_tags(unserialize($item->descriptions)->en), 100) !!}
-                                            @endif
-                                        </p>
-                                        <small>
-                                            <p><i class="far fa-calendar-alt"></i> {!! date('d.m.Y', strtotime($item->publish_at)) !!}</p>
-                                        </small>
-                                        <a href="{{ route('front.news.show', $item->slug) }}"
-                                            class="btn btn-read">{{ __('Подробнее') }}</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="portfolio_btn text-center fix m-top-100">
-                    <a href="/news/" class="btn btn-read">{{ __('Посмотреть все') }}</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- <section id="testimonial" class="parallax-section" >
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-
-						<!-- section title -->
-						<div class="sub-title text-center wow fadeInDown" data-wow-duration="500ms">
-							<h3>Объявления Академии</h3>
-						</div>
-						<!-- /section title -->
-
-						<!-- testimonial wrapper -->
-						<div id="testimonials" class="wow fadeInUp" data-wow-duration="500ms" data-wow-delay="100ms">
-                        @foreach ($events as $event)
-							<!-- testimonial single -->
-							<div class="item text-center">
-
-								<!-- client photo -->
-								<div class="client-thumb">
-									<img src="/assets/images/logo_agakaz_b.jpg" class="img-responsive" alt="Meghna">
-								</div>
-								<!-- /client photo -->
-
-								<!-- client info -->
-								<div class="client-info">
-									<div class="client-meta">
-										<h3><a href="{{ route('front.events.show', $event->slug) }}">
-                                    @if (Config::get('app.locale') === 'ru')
-                                        {!! Str::limit(unserialize($event->titles)->ru, 50) !!}
-                                    @elseif(Config::get('app.locale') === 'kk')
-                                        {!! Str::limit(unserialize($event->titles)->kk, 50) !!}
-                                    @else
-                                        {!! Str::limit(unserialize($event->titles)->en, 50) !!}
-                                    @endif
-                                </a></h3>
-										<span>  <p><i class="far fa-calendar-alt"></i> {!! date('d.m.Y', strtotime($event->publish_at)) !!}        <i class="fas fa-clock"></i> {!! date('H:i', strtotime($event->publish_at)) !!}</p></span>
-									</div>
-									<div class="client-comment">
-										<p>@if (Config::get('app.locale') === 'ru')
-                                    {!! Str::limit(strip_tags(unserialize($event->descriptions)->ru), 260) !!}
-                                @elseif(Config::get('app.locale') === 'kk')
-                                    {!! Str::limit(strip_tags(unserialize($event->descriptions)->kk), 260) !!}
-                                @else
-                                    {!! Str::limit(strip_tags(unserialize($event->descriptions)->en), 260) !!}
-                                @endif</p>
-										<ul class="social-profile">
-											<li><a href="#"><i class="fa fa-facebook-square fa-lg"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter-square fa-lg"></i></a></li>
-											<li><a href="#"><i class="fa fa-linkedin-square fa-lg"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<!-- /client info -->
-							</div>
-                            @endforeach
-							<!-- /testimonial single -->
-						</div>		<!-- end testimonial wrapper -->
-					</div> 		<!-- end col lg 12 -->
-				</div>	    <!-- End row -->
-			</div>       <!-- End container -->
-		</section>    <!-- End Section --> --}}
 
     <section id="client-logo">
         <div class="container">
@@ -606,6 +582,7 @@
             </div>
         </div>
     </section>
+
     <section id="map">
         <div class="map">
             <iframe

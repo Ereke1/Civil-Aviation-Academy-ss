@@ -15,8 +15,8 @@ class HomeController extends Controller
 	{
 		$tree = Navigation::tree();
 		$libtree = LibraryNavigation::tree();
-		$news = News::where('compliance', 0)->orderBy('publish_at', 'desc')->take(6)->get();
-		$events = Event::orderBy('publish_at', 'desc')->take(4)->get();
+		$news = News::where('compliance', 0)->orderBy('publish_at', 'desc')->take(4)->get();
+		$events = Event::orderBy('publish_at', 'desc')->take(5)->get();
 		//return view('front.index', compact('tree', 'news', 'events'));
 		$myvar = "<script> localStorage.getItem('welcomInfo')</script>";
 
