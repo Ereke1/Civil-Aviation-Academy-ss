@@ -86,61 +86,70 @@
         <div class="container">
             <div class="row" id="book_collections">
                 <div class="col-12 col-md-8" style="background: white">
-                    <div class="row">
+
+                    <div class="row" id="book_collections">
                         <div class="title text-center">
-                            <h3>{{ __('ВИДЕОМАТЕРИАЛЫ') }}</h3>
+                            <h3>{{ __('ПОДПИСНЫЕ БАЗЫ ДАННЫХ') }}</h3>
                             <div class="border"></div>
                         </div>
-                        <div class="oneMedia col-md-6 col-12">
-                            <video controls width="250" poster="/assets/images/library/kabis.png">
-                                <source src="/assets/images/library/кабис.mp4" type="video/mp4" />
-                                Ваш браузер не поддерживает встроенные видео :(
-                            </video>
-
-                            <h3>
-                                КАБИС
-                            </h3>
-                        </div>
-
-                        <div class="oneMedia col-md-6 col-12">
-
-                            <video controls width="250" poster="/assets/images/library/riel.png">
-                                <source src="/assets/images/library/РМЭБ.mp4" type="video/mp4" />
-                                Ваш браузер не поддерживает встроенные видео :(
-                            </video>
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="http://rmebrk.kz/">
+                                <img src="\assets\images\library\riel.png">
+                            </a>
                             <h3>
                                 РМЭБ
                             </h3>
+                            {{ __('Республиканская межвузовская электронная библиотека - информационная и справочно-поисковая библиотечная система') }}
                         </div>
 
-                        <div class="oneMedia col-md-6 col-12">
-
-                            <video controls width="250" poster="/assets/images/library/iprSmart.png">
-                                <source src="/assets/images/library/iprSmart.mp4" type="video/mp4" />
-                                Ваш браузер не поддерживает встроенные видео :(
-                            </video>
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://www.iprbookshop.ru/">
+                                <img src="\assets\images\library\iprSmart.png">
+                            </a>
                             <h3>
                                 IPR SMART
                             </h3>
+                            {{ __('Содержится литература по различным группам специальностей, что дает возможность учебным заведениям разных профилей найти интересующие их издания') }}
                         </div>
 
-                        <div class="oneMedia col-md-6 col-12">
-
-                            <video controls width="250" poster="/assets/images/library/libraryICAO.png">
-                                <source src="/assets/images/library/ikaoLibrary.mp4" type="video/mp4" />
-                                Ваш браузер не поддерживает встроенные видео :(
-                            </video>
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://search.ebscohost.com/">
+                                <img src="\assets\images\library\EBSCO.png">
+                            </a>
                             <h3>
-                                IKAO Library
+                                EBSCO
                             </h3>
+                            {{ __('EBSCO Publishing - крупнейший поставщик научных ресурсов ведущих издательств мира') }}
                         </div>
 
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://www.wdl.org/fr">
+                                <img src="\assets\images\library\libraryOfCongress.png">
+                            </a>
+                            <h3>
+                                Library of Congress
+                            </h3>
+                            {{ __('Библиотека Конгресса является крупнейшей библиотекой в мире, в ее фондах хранятся миллионы книг, фильмов и видео, аудиозаписей, фотографий, газет, карт и рукописей. Библиотека является главным исследовательским подразделением Конгресса США и штаб-квартирой Управления авторского права США.') }}
+                        </div>
+
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://elibrary.icao.int/">
+                                <img src="\assets\images\library\libraryICAO.png">
+                            </a>
+                            <h3>
+                                ICAO eLibrary
+                            </h3>
+                            {{ __('Электронная библиотека ИКАО - это онлайн-хранилище цифровых публикаций Международной организации гражданской авиации (ИКАО), содержащее стандарты и рекомендуемую практику (SARPS) в области международной гражданской авиации, конвенции и связанные с ними акты.') }}
+                        </div>
                     </div>
+
                 </div>
                 <div class="col-12 col-md-4 lib-news">
                     <div class="row">
                         <div class="title text-center">
-                            <a href="{{ route('front.library_news') }}" style="padding: 0px;"><h3 style="color: white;">{{ __('НОВОСТИ') }}</h3></a>
+                            <a href="{{ route('front.library_news') }}" style="padding: 0px;">
+                                <h3 style="color: white;">{{ __('НОВОСТИ') }}</h3>
+                            </a>
                             <div class="border"></div>
                         </div>
                         @foreach ($library_news as $item)
@@ -167,66 +176,6 @@
         </div>
     </section>
 
-
-    <section id="book_collection">
-        <div class="container">
-            <div class="row" id="book_collections">
-                <div class="title text-center">
-                    <h3>{{ __('ПОДПИСНЫЕ БАЗЫ ДАННЫХ') }}</h3>
-                    <div class="border"></div>
-                </div>
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="http://rmebrk.kz/">
-                        <img src="\assets\images\library\riel.png">
-                    </a>
-                    <h3>
-                        РМЭБ
-                    </h3>
-                    {{ __('Республиканская межвузовская электронная библиотека - информационная и справочно-поисковая библиотечная система') }}
-                </div>
-
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://www.iprbookshop.ru/">
-                        <img src="\assets\images\library\iprSmart.png">
-                    </a>
-                    <h3>
-                        IPR SMART
-                    </h3>
-                    {{ __('Содержится литература по различным группам специальностей, что дает возможность учебным заведениям разных профилей найти интересующие их издания') }}
-                </div>
-
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://search.ebscohost.com/">
-                        <img src="\assets\images\library\EBSCO.png">
-                    </a>
-                    <h3>
-                        EBSCO
-                    </h3>
-                    {{ __('EBSCO Publishing - крупнейший поставщик научных ресурсов ведущих издательств мира') }}
-                </div>
-
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://www.wdl.org/fr">
-                        <img src="\assets\images\library\libraryOfCongress.png">
-                    </a>
-                    <h3>
-                        Library of Congress
-                    </h3>
-                    {{ __('Библиотека Конгресса является крупнейшей библиотекой в мире, в ее фондах хранятся миллионы книг, фильмов и видео, аудиозаписей, фотографий, газет, карт и рукописей. Библиотека является главным исследовательским подразделением Конгресса США и штаб-квартирой Управления авторского права США.') }}
-                </div>
-
-                <div class="oneBook col-md-4 col-12 col-sm-6">
-                    <a href="https://elibrary.icao.int/">
-                        <img src="\assets\images\library\libraryICAO.png">
-                    </a>
-                    <h3>
-                        ICAO eLibrary
-                    </h3>
-                    {{ __('Электронная библиотека ИКАО - это онлайн-хранилище цифровых публикаций Международной организации гражданской авиации (ИКАО), содержащее стандарты и рекомендуемую практику (SARPS) в области международной гражданской авиации, конвенции и связанные с ними акты.') }}
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     @if (count($newbooks) > 0)
@@ -299,4 +248,65 @@
             </div>
         </section>
     @endif
+
+
+    <section id="book_collection">
+        <div class="container">
+            <div class="row" id="book_collections">
+                <div class="col-12" style="background: white">
+                    <div class="row">
+                        <div class="title text-center">
+                            <h3>{{ __('ВИДЕОМАТЕРИАЛЫ') }}</h3>
+                            <div class="border"></div>
+                        </div>
+                        <div class="oneMedia col-md-6 col-12">
+                            <video controls width="250" poster="/assets/images/library/kabis.png">
+                                <source src="/assets/images/library/кабис.mp4" type="video/mp4" />
+                                Ваш браузер не поддерживает встроенные видео :(
+                            </video>
+
+                            <h3>
+                                КАБИС
+                            </h3>
+                        </div>
+
+                        <div class="oneMedia col-md-6 col-12">
+
+                            <video controls width="250" poster="/assets/images/library/riel.png">
+                                <source src="/assets/images/library/РМЭБ.mp4" type="video/mp4" />
+                                Ваш браузер не поддерживает встроенные видео :(
+                            </video>
+                            <h3>
+                                РМЭБ
+                            </h3>
+                        </div>
+
+                        <div class="oneMedia col-md-6 col-12">
+
+                            <video controls width="250" poster="/assets/images/library/iprSmart.png">
+                                <source src="/assets/images/library/iprSmart.mp4" type="video/mp4" />
+                                Ваш браузер не поддерживает встроенные видео :(
+                            </video>
+                            <h3>
+                                IPR SMART
+                            </h3>
+                        </div>
+
+                        <div class="oneMedia col-md-6 col-12">
+
+                            <video controls width="250" poster="/assets/images/library/libraryICAO.png">
+                                <source src="/assets/images/library/ikaoLibrary.mp4" type="video/mp4" />
+                                Ваш браузер не поддерживает встроенные видео :(
+                            </video>
+                            <h3>
+                                IKAO Library
+                            </h3>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
