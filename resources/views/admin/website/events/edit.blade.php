@@ -44,7 +44,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Сипаттамасы</label>
-                            <textarea name="desc_kk" id="editor-kk">{!! unserialize($event->descriptions)->kk !!}</textarea>
+                            <textarea name="desc_kk" id="editor-kz">{!! unserialize($event->descriptions)->kk !!}</textarea>
                         </div>
                     </div>
                     <div id="en-block" style="display: none">
