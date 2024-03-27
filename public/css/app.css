@@ -163,7 +163,7 @@ section {
 
 body {
     margin: 0;
-    font-family: "Montserrat", sans-serif !important;
+    font-family: "Roboto Condensed", sans-serif !important;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.6;
@@ -19112,7 +19112,7 @@ h4 {
 
 #news .detail-news {
     margin-top: 20px;
-    /* font-size: 16px; */
+    font-size: 16px;
 }
 
 #news .detail-news br {
@@ -20314,7 +20314,7 @@ h4 {
 
 
 .services .icon-box p {
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 0;
 }
 
