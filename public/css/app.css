@@ -24625,3 +24625,17 @@ h4 {
     background: linear-gradient(to bottom, rgba(2, 26, 71, 0) 0%, rgba(2, 26, 71, 0.6) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00021a47', endColorstr='#99021a47', GradientType=0)
 }
+
+
+.img-top-cardd {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 20px;
+}
+
+.img-top-cardd img {
+    max-height: 100% !important;
+    width: auto;
+    margin: auto;
+}
