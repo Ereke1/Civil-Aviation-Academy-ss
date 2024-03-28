@@ -18651,6 +18651,14 @@ h2 {
     min-height: 75vh;
 }
 
+#pages a,
+#news a,
+#departments a {
+    color: #00249c !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+}
+
 #pages img:not(.teacher_img):not(.d-block) {
     max-width: 100% !important;
     height: auto !important;
@@ -20283,7 +20291,7 @@ h4 {
 .services .library h4 a,
 #departments .departmentSlug h4 a,
 #pages .departmentSlug h4 a {
-    color: #fff;
+    color: #fff !important;
     font-weight: 500;
     font-size: 20px;
     text-decoration: auto;
