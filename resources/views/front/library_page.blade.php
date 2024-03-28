@@ -3,7 +3,7 @@
 @section('content')
     <section id="pages">
         <div class="container">
-            @include('front.inc.header_library')
+            {{-- @include('front.inc.header_library') --}}
             <h1>
                 {!! $data->title !!}
             </h1>

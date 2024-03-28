@@ -1,4 +1,4 @@
-<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.dtd.$removeEmpty['i'] = false;
     CKEDITOR.config.allowedContent = true
@@ -15,7 +15,7 @@
         filebrowserUploadMethod: 'form',
     });
 
-	 
+
     CKEDITOR.replace('editor-dep-page-ru', {
         filebrowserUploadUrl: "{{ route('admin.website.department-page.upload', ['_token' => csrf_token()]) }}",
         filebrowserUploadMethod: 'form',

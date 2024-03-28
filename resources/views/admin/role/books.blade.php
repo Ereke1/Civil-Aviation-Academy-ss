@@ -22,12 +22,12 @@ $worker_permission = unserialize($worker_permission->permission);
                 Подборка книг
             </a>
         @endif
-        @if (isset($worker_permission->books->read) && $worker_permission->books->read == true)
+        {{-- @if (isset($worker_permission->books->read) && $worker_permission->books->read == true)
             <a href="{{ route('admin.website.library_navigation.index') }}"
                 @if ($active_menu === 'Меню библиотеки') class="active" @endif>
                 Меню библиотеки
             </a>
-        @endif
+        @endif --}}
         @if (isset($worker_permission->books->read) && $worker_permission->books->read == true)
             <a href="{{ route('admin.website.library_pages.index') }}"
                 @if ($active_menu === 'Страницы библиотеки') class="active" @endif>

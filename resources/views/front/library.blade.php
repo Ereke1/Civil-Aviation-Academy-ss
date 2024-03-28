@@ -7,11 +7,11 @@
         style="background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(/assets/images/library/lib_wallpaper.jpg); background-size: cover;height: 500px;">
         <div class="container">
 
-            @include('front.inc.header_library')
+            {{-- @include('front.inc.header_library') --}}
 
             <div class="row">
                 <div class="col text-center mb-5 text-white">
-                    <h1 class="display-4" style="font-weight: bold;margin-top: 70px;">{{ __('Библиотека') }}</h1>
+                    <h1 class="display-4" style="font-weight: bold;margin-top: 100px;">{{ __('Библиотека') }}</h1>
                     <p class="lead">{{ __('Академия гражданской авиации') }}</p>
                 </div>
             </div>
