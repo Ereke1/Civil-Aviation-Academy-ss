@@ -58,7 +58,7 @@ class DepartmentController extends Controller
 		$eduP = DepartmentPages::where('slug','LIKE','%eduProgram%')->first();
 		$department_id = $department->id;
 
-		$pages = DepartmentPages::where('department_id', $department_id)->get();
+		$pages = DepartmentPages::where('department_id', $department_id)->orderBy('department_id', 'asc')->orderBy('sort', 'asc')->get();
 		$data = Department::where('slug', $slug)->get();
 		return view('front.departments.show', compact('department', 'data', 'tree', 'pages', 'eduP'));
 	}
