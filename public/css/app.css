@@ -273,7 +273,7 @@ a {
 }
 
 a:hover {
-    color: #1d68a7;
+    color: #00249c;
     text-decoration: underline;
 }
 
@@ -17755,7 +17755,7 @@ header .logo2 img {
 }
 
 footer {
-    background: darkblue;
+    background: #00249c;
     color: white;
 }
 
@@ -18922,7 +18922,7 @@ h4 {
     margin-bottom: 30px;
     box-shadow: 0px 0px 1px 1px white;
     transition: 0.5s all ease;
-    border-bottom: 4px solid darkblue;
+    border-bottom: 4px solid #00249c;
     background: white;
 }
 
@@ -19380,7 +19380,7 @@ h4 {
     #pages .news__preview {
         width: 100%;
         margin-bottom: 30px;
-        border-bottom: 4px solid darkblue;
+        border-bottom: 4px solid #00249c;
     }
 
     #news .news__preview img,
@@ -19888,7 +19888,7 @@ h4 {
 
 
 .color {
-    color: darkblue;
+    color: #00249c;
 }
 
 #main-slider {
@@ -20090,7 +20090,7 @@ h4 {
 
 #main-slider .owl-prev:hover,
 #main-slider .owl-next:hover {
-    background-color: darkblue;
+    background-color: #00249c;
     color: darkgoldenrod;
 }
 
@@ -20207,7 +20207,7 @@ h4 {
     box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
     border-radius: 18px;
     border-bottom: 5px solid #fff;
-    border: 1px solid darkblue;
+    border: 1px solid #00249c;
     width: 100%;
 }
 
@@ -20218,7 +20218,7 @@ h4 {
     box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
     border-radius: 18px;
     border-bottom: 5px solid #fff;
-    border: 1px solid darkblue;
+    border: 1px solid #00249c;
     width: 100%;
     margin-bottom: 5px;
 }
@@ -20232,8 +20232,6 @@ h4 {
     background-repeat: no-repeat;
     box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
     border-radius: 5px;
-    border-bottom: 5px solid #fff;
-    border: 1px solid darkblue;
     width: 100%;
     min-height: 150px;
     line-height: 150px;
@@ -20246,7 +20244,7 @@ h4 {
 }
 
 .services .library h4 {
-    background: darkblue;
+    background: #00249c;
 }
 
 #departments .departmentSlug:hover,
@@ -20257,7 +20255,7 @@ h4 {
 .services .icon-box .icon {
     width: 64px;
     height: 64px;
-    background: darkblue;
+    background: #00249c;
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -20275,6 +20273,7 @@ h4 {
     font-weight: 700;
     margin-bottom: 15px;
     font-size: 18px;
+    text-align:left;
 }
 
 .services .antikor h4 {
@@ -20284,7 +20283,8 @@ h4 {
 }
 
 .services .icon-box h4 a {
-    color: #282828;
+    color: #00249c;
+    text-decoration: none;
     transition: ease-in-out 0.3s;
 }
 
@@ -20350,14 +20350,14 @@ h4 {
 }
 
 .services .icon-box:hover h4 a {
-    color: darkblue;
+    color: #00249c;
 }
 
 .carousel-content h3 {
     color: #fff;
     overflow: hidden;
     /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid darkblue;
+    border-right: .15em solid #00249c;
     /* The typwriter cursor */
     white-space: nowrap;
     /* Keeps the content on a single line */
@@ -20396,7 +20396,7 @@ h4 {
     }
 
     100% {
-        border-color: darkblue
+        border-color: #00249c
     }
 }
 
@@ -20486,7 +20486,7 @@ h4 {
     padding-bottom: 99999px;
     box-shadow: 0px 0px 1px 1px white;
     transition: 0.5s all ease;
-    border-bottom: 4px solid darkblue;
+    border-bottom: 4px solid #00249c;
 }
 
 #blog-post .block :hover {
@@ -20519,7 +20519,7 @@ h4 {
 }
 
 #blog-post .content h4 a:hover {
-    color: darkblue;
+    color: #00249c;
     text-decoration: none;
 }
 
@@ -20530,7 +20530,7 @@ h4 {
     top: -6px;
     width: 30px;
     height: 2px;
-    background-color: darkblue;
+    background-color: #00249c;
     -webkit-transition: .3s all;
     -o-transition: .3s all;
     transition: .3s all;
@@ -20547,13 +20547,13 @@ h4 {
 }
 
 #blog-post .content .btn-read {
-    background: darkblue;
+    background: #00249c;
     color: #fff;
     padding: 10px 20px;
     font-size: 13px;
     margin-top: 15px;
     border-radius: 25px;
-    border-bottom: 2px solid darkblue;
+    border-bottom: 2px solid #00249c;
 }
 
 #blog-post .content .btn-read:hover {
@@ -20579,7 +20579,7 @@ h4 {
     content: '';
     width: 40px;
     height: 2px;
-    background: darkblue;
+    background: #00249c;
     position: absolute;
     top: 12px;
     left: -60px;
@@ -20589,7 +20589,7 @@ h4 {
     content: '';
     width: 40px;
     height: 2px;
-    background: darkblue;
+    background: #00249c;
     position: absolute;
     top: 12px;
     right: -60px;
@@ -20609,23 +20609,23 @@ h4 {
 }
 
 #blog .btn-read {
-    background: darkblue;
+    background: #00249c;
     color: #fff;
     padding: 10px 30px;
     font-size: 13px;
     margin-top: 15px;
     border-radius: 25px;
-    border-bottom: 2px solid darkblue;
+    border-bottom: 2px solid #00249c;
 }
 
 .trending-main .btn-read {
-    background: darkblue;
+    background: #00249c;
     color: #fff;
     padding: 10px 30px;
     font-size: 13px;
     margin-top: 15px;
     border-radius: 25px;
-    border-bottom: 2px solid darkblue;
+    border-bottom: 2px solid #00249c;
     font-weight: bold;
 }
 
@@ -20702,7 +20702,7 @@ h4 {
 }
 
 .social-profile a {
-    color: darkblue;
+    color: #00249c;
     display: block;
 }
 
@@ -20711,7 +20711,7 @@ h4 {
 }
 
 .social-profile li a:hover {
-    color: darkblue;
+    color: #00249c;
 }
 
 #testimonial .owl-pagination,
@@ -22681,7 +22681,7 @@ h4 {
 }
 
 #departments_new .card .card-meta {
-    color: darkblue;
+    color: #00249c;
 }
 
 #departments_new .card:hover {
@@ -22975,8 +22975,8 @@ h4 {
 
 #portfolio .btn-primary {
     color: #fff;
-    background-color: darkblue;
-    border-color: darkblue;
+    background-color: #00249c;
+    border-color: #00249c;
 }
 
 #portfolio .btn-primary:hover {
@@ -23661,7 +23661,7 @@ h2.section-heading {
     padding-bottom: 99999px;
     box-shadow: 0px 0px 1px 1px white;
     transition: 0.5s all ease;
-    border-bottom: 4px solid darkblue;
+    border-bottom: 4px solid #00249c;
 }
 
 /* #newBook .block :hover {
@@ -23698,7 +23698,7 @@ h2.section-heading {
 }
 
 #newBook .content h4 a:hover {
-    color: darkblue;
+    color: #00249c;
     text-decoration: none;
 }
 
@@ -23709,7 +23709,7 @@ h2.section-heading {
     top: -6px;
     width: 30px;
     height: 2px;
-    background-color: darkblue;
+    background-color: #00249c;
     -webkit-transition: .3s all;
     -o-transition: .3s all;
     transition: .3s all;
@@ -23725,13 +23725,13 @@ h2.section-heading {
 }
 
 #newBook .content .btn-read {
-    background: darkblue;
+    background: #00249c;
     color: #fff;
     padding: 10px 20px;
     font-size: 13px;
     margin-top: 15px;
     border-radius: 25px;
-    border-bottom: 4px solid darkblue;
+    border-bottom: 4px solid #00249c;
 }
 
 /* #newBook .content .btn-read:hover {
@@ -23757,7 +23757,7 @@ h2.section-heading {
     content: '';
     width: 40px;
     height: 2px;
-    background: darkblue;
+    background: #00249c;
     position: absolute;
     top: 12px;
     left: -60px;
@@ -23767,7 +23767,7 @@ h2.section-heading {
     content: '';
     width: 40px;
     height: 2px;
-    background: darkblue;
+    background: #00249c;
     position: absolute;
     top: 12px;
     right: -60px;
@@ -23787,13 +23787,13 @@ h2.section-heading {
 }
 
 #newBooks .btn-read {
-    background: darkblue;
+    background: #00249c;
     color: #fff;
     padding: 10px 30px;
     font-size: 13px;
     margin-top: 15px;
     border-radius: 25px;
-    border-bottom: 4px solid darkblue;
+    border-bottom: 4px solid #00249c;
 }
 
 #newBooks .btn-read:hover {
@@ -24105,7 +24105,7 @@ h2.section-heading {
 
 
 .timeline {
-    border-left: 3px solid darkblue;
+    border-left: 3px solid #00249c;
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
     background: rgba(114, 124, 245, 0.09);

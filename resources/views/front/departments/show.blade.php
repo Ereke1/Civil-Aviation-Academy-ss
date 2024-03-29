@@ -16,7 +16,7 @@
                 {!! __($department->name) !!}
             </div>
             @if (empty($eduP) == false && $department->name !== "Авиационный английский язык" && $department->name !== "Общеобразовательные дисциплины")
-                <hr class="col-12" style="height: 5px; background:#0e2465; max-width: -webkit-fill-available;" />
+                <hr class="col-12" style="height: 5px; background:#00249c; max-width: -webkit-fill-available;" />
                 <h2 align="center">{{ __('Образовательные программы') }}</h2><br />
                 <div class="d-flex flex-wrap">
                     @foreach ($pages as $page)
@@ -35,7 +35,7 @@
                             $page->slug == 'eduProgram10')
                             <div class="col-md-4 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
                                 <div class="icon-box departmentSlug"
-                                    style="background-image: linear-gradient( rgba(8, 29, 99, 0.5), rgba(8, 29, 99, 0.5) ), url({!! $page->image !!}); border-radius:5px;">
+                                    style="background-image: linear-gradient( rgba(0, 36, 156, 0.5), rgba(0, 36, 156, 0.5) ), url({!! $page->image !!}); border-radius:5px;">
                                     <h4>
                                         <a class="stretched-link" href="{!! $department->slug !!}/{!! $page->slug !!}">
                                             @if (Config::get('app.locale') === 'ru')
@@ -65,7 +65,7 @@
                     -->
             @endif
 
-            <hr class="col-12" style="height: 5px; background:#0e2465; max-width: -webkit-fill-available;" />
+            <hr class="col-12" style="height: 5px; background:#00249c; max-width: -webkit-fill-available;" />
 
             @foreach ($pages as $page)
                 @php
@@ -76,7 +76,7 @@
                     <div class="card" style="margin-bottom: 3px;">
                         <a class="card-link collapsed" data-toggle="collapse" href="#{!! $page->slug . $page->id !!}">
                             <div class="card-header"
-                                style="background-color:#1e3b82; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
+                                style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
                                 @if (Config::get('app.locale') === 'ru')
                                     {!! $name['ru'] !!}
                                 @elseif(Config::get('app.locale') === 'kk')
@@ -105,7 +105,7 @@
                 @endif
             @endforeach
 
-            <hr class="col-12" style="height: 5px; background:#0e2465; max-width: -webkit-fill-available;" />
+            <hr class="col-12" style="height: 5px; background:#00249c; max-width: -webkit-fill-available;" />
 
             @foreach ($pages as $page)
                 @php
@@ -114,7 +114,7 @@
                 @if ($page->slug == 'teachers')
                     <div class="col-12 d-flex align-items-stretch mt-4 wow fadeInUp">
                         <div class="icon-box departmentSlug"
-                            style="background:#1e3b82; border-radius:5px;">
+                            style="background:#00249c; border-radius:5px;">
                             <h4>
                                 <a class="stretched-link" href="{!! $department->slug !!}/{!! $page->slug !!}">
                                     @if (Config::get('app.locale') === 'ru')
@@ -132,7 +132,7 @@
                 @endif
             @endforeach
 
-            <hr class="col-12" style="height: 5px; background:#0e2465; max-width: -webkit-fill-available;" />
+            <hr class="col-12" style="height: 5px; background:#00249c; max-width: -webkit-fill-available;" />
         </div>
         </div>
     </section>
