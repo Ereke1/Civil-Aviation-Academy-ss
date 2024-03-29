@@ -76,7 +76,7 @@
                                 <span class="h5">
                                     <b>
                                         <a href="{{ $item->link }}">
-                                            <img src="/storage/mediaAboutUs/{!! $item->bg_image !!}" style="width: 80px;" alt="{{ $item->media_en }}">
+                                            <img src="/storage/mediaAboutUs/{!! $item->bg_image !!}" style="max-width: 200px;max-height: 90px;width: auto;" alt="{{ $item->media_en }}">
                                             {{-- <a href="{{ $item->link }}">
                                             @if (Config::get('app.locale') === 'ru')
                                                 {{ $item->media_en }}
