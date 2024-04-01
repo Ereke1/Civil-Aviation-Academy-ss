@@ -18654,9 +18654,9 @@ h2 {
 #pages a,
 #news a,
 #departments a {
-    color: #00249c !important;
-    text-decoration: none !important;
-    background-color: transparent !important;
+    color: #00249c ;
+    text-decoration: none;
+    background-color: transparent;
 }
 
 #pages img:not(.teacher_img):not(.d-block) {
@@ -22681,7 +22681,7 @@ h4 {
 }
 
 #departments_new .card .card-meta {
-    color: #00249c;
+    color: transparent;
 }
 
 #departments_new .card:hover {
@@ -22701,6 +22701,7 @@ h4 {
 
 .text-dep {
     color: black;
+    text-decoration: none;
     font-weight: bold;
 }
 
