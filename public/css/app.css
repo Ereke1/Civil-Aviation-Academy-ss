@@ -18938,6 +18938,7 @@ h4 {
     -o-object-fit: cover;
     object-fit: cover;
     height: 206px;
+    border-radius: 5px;
 }
 
 @media (min-width: 1265px) {
