@@ -18678,7 +18678,7 @@ h2 {
 @media screen and (max-width: 1500px) {
     #pages td {
         height: auto !important;
-        padding: 1px 1px 1px 1px !important;
+        padding: 5px !important;
     }
 }
 
@@ -24648,4 +24648,10 @@ h4 {
     max-height: 100% !important;
     width: auto;
     margin: auto;
+}
+
+​table, td {
+    border-collapse: separate;
+    border: 1px solid #999;
+    padding: 5px;
 }
