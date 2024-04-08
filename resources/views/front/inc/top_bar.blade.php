@@ -10,10 +10,6 @@
 							  		 </a>
                         </div>
                         <div>
-                            <i class="fas fa-envelope-open"></i>
-                            <a href="mailto:office@agakaz.kz" target="_blank">office@agakaz.kz</a>
-                        </div>
-                        <div>
                             <a href="/virtualnaya-priemnaya-komissiya-174" target="_blank">
                                 <i class="far fa-comments"></i> Общественная приемная
                             </a>
