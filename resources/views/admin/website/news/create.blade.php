@@ -49,7 +49,7 @@
                     <div id="kk-block" style="display: none">
                         <div class="mb-4">
                             <label class="font-weight-bold">Аты</label>
-                            <input type="text" name="title_kk" class="form-control">
+                            <input type="text" name="title_kk" class="form-control" required >
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Сипаттамасы</label>
@@ -63,7 +63,7 @@
                     <div id="en-block" style="display: none">
                         <div class="mb-4">
                             <label class="font-weight-bold">Title</label>
-                            <input type="text" name="title_en" class="form-control" />
+                            <input type="text" name="title_en" class="form-control"  required />
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Description</label>

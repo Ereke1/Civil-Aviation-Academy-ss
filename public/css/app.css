@@ -457,6 +457,7 @@ output {
 summary {
     display: list-item;
     cursor: pointer;
+    padding-bottom: 5px;
 }
 
 template {
