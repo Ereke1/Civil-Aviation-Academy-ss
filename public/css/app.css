@@ -17698,9 +17698,23 @@ header .logo2 img {
     }
 
     .navbar .sitenavigation.is-tapped>ul ul a:before {
-        content: "-";
+        content: "•";
         display: inline-block;
         margin-right: 8px;
+        color: #000;
+    }
+
+    .navbar .sitenavigation.is-tapped>ul ul ul a:before {
+        content: "•";
+        display: inline-block;
+        margin-right: 8px;
+        color: #000;
+    }
+
+    .navbar .sitenavigation.is-tapped>ul ul ul ul a:before {
+        content: "•";
+        display: inline-block;
+        margin-left: 18px;
         color: #000;
     }
 
@@ -17715,7 +17729,7 @@ header .logo2 img {
     .navbar .sitenavigation.is-tapped>ul li.nav-dropdown:after {
         font-family: initial;
         overflow: visible;
-        content: "\2B9E";
+        content: "⯆";
         position: absolute;
         color: white;
         padding: 0;
@@ -17730,13 +17744,9 @@ header .logo2 img {
     }
 
     .navbar .sitenavigation.is-tapped>ul li.expanded:after {
-        display: none;
-    }
-
-    .navbar .sitenavigation.is-tapped>ul li.expanded li:first-child:before {
         font-family: initial;
         overflow: visible;
-        content: "\2B9F";
+        content: "⯅";
         position: absolute;
         color: white;
         padding: 0;
@@ -17749,6 +17759,7 @@ header .logo2 img {
         padding-top: 10px;
         padding-bottom: 10px;
     }
+
 
     .sitenavigation li.nav-dropdown:hover>a {
         color: white !important;

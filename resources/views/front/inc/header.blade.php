@@ -50,7 +50,8 @@
                                             {!! $item->title_en !!}
                                         @endif
                                     </a>
-                                    <ul class>
+                                    <ul>
+                                        <li hidden><a href="#">__</a></li>
                                         @foreach ($item->children as $child)
                                             @if ($child->children->count() > 0)
                                                 <li class="nav-dropdown">
@@ -76,6 +77,7 @@
                                                         </a>
                                                     @endif
                                                     <ul>
+                                                        <li hidden><a href="#">__</a></li>
                                                         @foreach ($child->children as $chi)
                                                             @if ($chi->children->count() > 0)
                                                                 <li class="nav-dropdown">
