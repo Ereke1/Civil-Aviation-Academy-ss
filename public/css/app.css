@@ -17729,7 +17729,7 @@ header .logo2 img {
     .navbar .sitenavigation.is-tapped>ul li.nav-dropdown:after {
         font-family: initial;
         overflow: visible;
-        content: "⯆";
+        content: "\25BC";
         position: absolute;
         color: white;
         padding: 0;
@@ -17746,7 +17746,7 @@ header .logo2 img {
     .navbar .sitenavigation.is-tapped>ul li.expanded:after {
         font-family: initial;
         overflow: visible;
-        content: "⯅";
+        content: "\25B2";
         position: absolute;
         color: white;
         padding: 0;
