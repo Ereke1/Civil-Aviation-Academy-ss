@@ -45,7 +45,7 @@
                                                 </div>
                                                 <hr>
                                             </div>
-        
+
                     @endif
                 @endif
         @endforeach
@@ -89,4 +89,9 @@
                                  </div>
 </section>
       @endif
+@endsection
+
+
+@section('fancybox')
+    @include('front.fancybox')
 @endsection

@@ -32,7 +32,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Описание</label>
-                            <textarea name="desc_ru" id="editor-ru" class="form-control"></textarea>
+                            <textarea name="desc_ru" id="editor-ru" class="form-control" required ></textarea>
                             <input type='hidden' value='0' name='compliance'>
                         </div>
                         @if($createForCompliance === true)

@@ -35,7 +35,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Описание</label>
-                            <textarea name="desc_ru" id="editor-ru" class="form-control">{!! unserialize($news->descriptions)->ru !!}</textarea>
+                            <textarea name="desc_ru" id="editor-ru" class="form-control" required >{!! unserialize($news->descriptions)->ru !!}</textarea>
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold d-block">Фоновое изображение</label>
@@ -50,7 +50,7 @@
                     <div id="kk-block" style="display: none">
                         <div class="mb-4">
                             <label class="font-weight-bold">Аты</label>
-                            <input type="text" name="title_kk" value="{!! unserialize($news->titles)->kk !!}" class="form-control">
+                            <input type="text" name="title_kk" value="{!! unserialize($news->titles)->kk !!}" class="form-control" required >
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Сипаттамасы</label>
@@ -71,7 +71,7 @@
                     <div id="en-block" style="display: none">
                         <div class="mb-4">
                             <label class="font-weight-bold">Title</label>
-                            <input type="text" name="title_en" value="{!! unserialize($news->titles)->en !!}" class="form-control">
+                            <input type="text" name="title_en" value="{!! unserialize($news->titles)->en !!}" class="form-control" required >
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Description</label>

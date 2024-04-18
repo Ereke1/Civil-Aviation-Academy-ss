@@ -19102,6 +19102,46 @@ h4 {
     background: #0000007a;
 }
 
+
+#pages .main-images {
+    margin: 20px 0px;
+}
+
+#pages .main-image {
+    position: relative;
+}
+
+#pages .main-image__bg {
+    height: 100%;
+    position: absolute;
+    width: calc(100% - 0.25rem);
+    /* background: #0000007a; */
+    transition: 0.5s ease;
+}
+
+#pages .main-image__link{
+    display: block;
+    height: 100%;
+    cursor: zoom-in;
+}
+
+#pages .main-image__link img{
+    /* height: 31vw !important; */
+    object-fit: contain;
+}
+
+#pages  .main-image__link img :hover {
+    transform: scale(1.03, 1.03);
+}
+
+#pages .main-image__link :hover{
+    /* opacity: 0;
+  transform: scale(1.03, 1.03); */
+    background: #00249c82;
+}
+
+
+
 #news .more-images__bg {
     height: 100%;
     position: absolute;
