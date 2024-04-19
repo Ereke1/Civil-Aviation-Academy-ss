@@ -22,23 +22,39 @@
                 </span>
             </div>
 
-            <div class="container pt-3 pb-3">
-                <div class="d-flex flex-wrap">
-
-                    <div class="col-md-6 col-lg-3 col-12 main-images">
-                        <div class="main-image">
-                            <a class="group main-image__link" data-fancybox="images"
-                                href="/assets/images/upload/Сертификат АУЦ каз jpg.jpg">
-                                <span class="main-image__bg">&nbsp;</span>
-                                <img src="/assets/images/upload/Сертификат АУЦ каз jpg.jpg" class="h-100 w-100"
-                                    alt="" />
-                            </a>
-                        </div>
-                        <div class="portfolio-caption-heading">Сейдахметов</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        Учебный центр по авиационной безопасности ИКАО:
                     </div>
-
+                    <div class="col-md-12">
+                        Менеджер по работе центров АБ ИКАО, IATA - Сая Сабазова
+                    </div>
+                    <div class="col-md-6">
+                        s.sabazova@agakaz.kz
+                    </div>
+                    <div class="col-md-6">
+                        +7 707 764 40 74
+                    </div>
+                    <div class="col-md-12">
+                        One of three columns
+                    </div>
                 </div>
             </div>
+
+            <section id="services" class="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
+                            <div class="icon-box">
+                                <h4>Учебный центр по авиационной безопасности ИКАО:</h4>
+                                <h6>Менеджер по работе центров АБ ИКАО, IATA - Сая Сабазова</h6>
+                                <p><a href="tel:87273469208"></i> +7 (727) 346-92-08 (вн. 245)</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
                 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

@@ -28,6 +28,23 @@
                 </div>
             </div>
             <div class="item"
+                style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/rate.jpg); width:100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2>Рейтинг ППС</h2>
+
+                                    <a class="btn btn-primary btn-lg" href="https://rate.agakaz.kz/result/list">Рейтинг преподавателей</a><br>
+                                    <a class="btn btn-primary btn-lg" href="https://rate.agakaz.kz/result/cafedra">Рейтинг кафедр</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item"
                 style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/priemn.jpg); width:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
