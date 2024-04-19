@@ -22,34 +22,51 @@
                 </span>
             </div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        Учебный центр по авиационной безопасности ИКАО:
-                    </div>
-                    <div class="col-md-12">
-                        Менеджер по работе центров АБ ИКАО, IATA - Сая Сабазова
-                    </div>
-                    <div class="col-md-6">
-                        s.sabazova@agakaz.kz
-                    </div>
-                    <div class="col-md-6">
-                        +7 707 764 40 74
-                    </div>
-                    <div class="col-md-12">
-                        One of three columns
-                    </div>
-                </div>
-            </div>
-
             <section id="services" class="services">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
                             <div class="icon-box">
-                                <h4>Учебный центр по авиационной безопасности ИКАО:</h4>
+                                <h4>Учебный центр по авиационной безопасности ИКАО</h4>
                                 <h6>Менеджер по работе центров АБ ИКАО, IATA - Сая Сабазова</h6>
-                                <p><a href="tel:87273469208"></i> +7 (727) 346-92-08 (вн. 245)</a></p>
+                                <h6><a href="mailto:s.sabazova@agakaz.kz"><i class="fa fa-envelope"></i> s.sabazova@agakaz.kz</a></h6>
+                                <h6><a href="tel:+77077644074"><i class="fa fa-phone-alt"></i> +7 707 764 40 74</a></h6>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
+                            <div class="icon-box">
+                                <h4>Центр подготовки и тестирования авиационного персонала</h4>
+                                <h6>Главный менеджер - Аида Нурсултанова</h6>
+                                <h6><a href="mailto:a.nursultanova@agakaz.kz"><i class="fa fa-envelope"></i> a.nursultanova@agakaz.kz</a></h6>
+                                <h6><a href="tel:+77016309301"><i class="fa fa-phone-alt"></i> +7 701 630 93 01</a></h6><br>
+                                <h6>Менеджер по работе с инвесторами - Сабина Тулебаева-Нагайбаева</h6>
+                                <h6><a href="mailto:tn.sabina@agakaz.kz"><i class="fa fa-envelope"></i> tn.sabina@agakaz.kz</a></h6>
+                                <h6><a href="tel:+77054119265"><i class="fa fa-phone-alt"></i> +7 705 411 92 65</a></h6><br>
+                                <h6>Администратор тестирования EALTS и ATPL, PART 147 - Руфина Сагынбек</h6>
+                                <h6><a href="mailto:r.sagynbek@agakaz.kz"><i class="fa fa-envelope"></i> r.sagynbek@agakaz.kz</a></h6>
+                                <h6><a href="tel:+77772209223"><i class="fa fa-phone-alt"></i> +7 777 220 92 23</a></h6>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
+                            <div class="icon-box">
+                                <h4>Авторизованный центр IATA</h4>
+                                <h6>Главный менеджер (бизнес-продвижение проектов) - Маргарита Никитина</h6>
+                                <h6><a href="mailto:m.nikitina@agakaz.kz"><i class="fa fa-envelope"></i> m.nikitina@agakaz.kz</a></h6>
+                                <h6><a href="tel:+77007555697"><i class="fa fa-phone-alt"></i> +7 700 755 56 97</a></h6>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
+                            <div class="icon-box">
+                                <h4>Центр EASA PART FCL</h4>
+                                <h6>Директор департамента по коммерции - Сулеймен Рахматулла</h6>
+                                <h6><a href="mailto:s.rakhmatulla@agakaz.kz"><i class="fa fa-envelope"></i> s.rakhmatulla@agakaz.kz</a></h6>
+                                <h6><a href="tel:+77017267452"><i class="fa fa-phone-alt"></i> +7 701 726 74 52</a></h6>
                             </div>
                         </div>
                     </div>
