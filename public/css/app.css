@@ -24711,3 +24711,10 @@ h4 {
     border: 1px solid #999;
     padding: 5px;
 }
+
+.ourteam img {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    display: block;
+}

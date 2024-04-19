@@ -22,56 +22,775 @@
                 </span>
             </div>
 
-            <section id="services" class="services">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-                            <div class="icon-box">
-                                <h4>Учебный центр по авиационной безопасности ИКАО</h4>
-                                <h6>Менеджер по работе центров АБ ИКАО, IATA - Сая Сабазова</h6>
-                                <h6><a href="mailto:s.sabazova@agakaz.kz"><i class="fa fa-envelope"></i> s.sabazova@agakaz.kz</a></h6>
-                                <h6><a href="tel:+77077644074"><i class="fa fa-phone-alt"></i> +7 707 764 40 74</a></h6>
+            <div class="container overflow-hidden ourteam">
+                <div class="row gy-4 gy-lg-0 gx-xxl-5">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
                             </div>
                         </div>
+                    </div>
 
-
-                        <div class="col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-                            <div class="icon-box">
-                                <h4>Центр подготовки и тестирования авиационного персонала</h4>
-                                <h6>Главный менеджер - Аида Нурсултанова</h6>
-                                <h6><a href="mailto:a.nursultanova@agakaz.kz"><i class="fa fa-envelope"></i> a.nursultanova@agakaz.kz</a></h6>
-                                <h6><a href="tel:+77016309301"><i class="fa fa-phone-alt"></i> +7 701 630 93 01</a></h6><br>
-                                <h6>Менеджер по работе с инвесторами - Сабина Тулебаева-Нагайбаева</h6>
-                                <h6><a href="mailto:tn.sabina@agakaz.kz"><i class="fa fa-envelope"></i> tn.sabina@agakaz.kz</a></h6>
-                                <h6><a href="tel:+77054119265"><i class="fa fa-phone-alt"></i> +7 705 411 92 65</a></h6><br>
-                                <h6>Администратор тестирования EALTS и ATPL, PART 147 - Руфина Сагынбек</h6>
-                                <h6><a href="mailto:r.sagynbek@agakaz.kz"><i class="fa fa-envelope"></i> r.sagynbek@agakaz.kz</a></h6>
-                                <h6><a href="tel:+77772209223"><i class="fa fa-phone-alt"></i> +7 777 220 92 23</a></h6>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Аманбаев Шарип</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Пилот-инструктор ППП (IFR)
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>50 год</p>
+                                    </figcaption>
+                                </figure>
                             </div>
                         </div>
+                    </div>
 
-
-                        <div class="col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-                            <div class="icon-box">
-                                <h4>Авторизованный центр IATA</h4>
-                                <h6>Главный менеджер (бизнес-продвижение проектов) - Маргарита Никитина</h6>
-                                <h6><a href="mailto:m.nikitina@agakaz.kz"><i class="fa fa-envelope"></i> m.nikitina@agakaz.kz</a></h6>
-                                <h6><a href="tel:+77007555697"><i class="fa fa-phone-alt"></i> +7 700 755 56 97</a></h6>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Анаятова Разиям</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
                             </div>
                         </div>
+                    </div>
 
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-                            <div class="icon-box">
-                                <h4>Центр EASA PART FCL</h4>
-                                <h6>Директор департамента по коммерции - Сулеймен Рахматулла</h6>
-                                <h6><a href="mailto:s.rakhmatulla@agakaz.kz"><i class="fa fa-envelope"></i> s.rakhmatulla@agakaz.kz</a></h6>
-                                <h6><a href="tel:+77017267452"><i class="fa fa-phone-alt"></i> +7 701 726 74 52</a></h6>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                            <div class="card-body p-0">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy" src="/assets/images/teammember1.png">
+                                    <figcaption class="m-0 p-4">
+                                        <h4 class="mb-1">Абаев Алмат</h4>
+                                        <h6>Курсы:</h6>
+                                        <p>• Эколого-орнитологическое
+                                            обследование аэродрома;<br>
+                                            • Подготовка специалистов по
+                                            орнитологическому обеспечению
+                                            полетов.
+                                        </p>
+                                        <h6>Стаж работы: </h6>
+                                        <p>21 год</p>
+                                    </figcaption>
+                                </figure>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
                 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
