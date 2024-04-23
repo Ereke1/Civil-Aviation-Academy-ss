@@ -103,13 +103,12 @@
     </div>
   </div>
 </section>
-<section id="paraVideo" class="parallax">
 
+<section id="paraVideo" class="parallax">
 <div class="ParallaxVideo">
     <video autoplay muted loop>
         <source src="/assets/images/pages/AGA.mp4" type="video/mp4">
     </video>
 </div>
-
 </section>
 @endsection

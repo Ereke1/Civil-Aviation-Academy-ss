@@ -23933,16 +23933,16 @@ h2.section-heading {
 }
 
 .confBanner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(/assets/images/conf.jpg);
-    height: 500px;
-    background-size: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(/assets/images/123123.png);
+    height: 300px;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     text-align: center;
     color: white;
-    font-size: 1.65em;
+    font-size: 2em;
     font-weight: 400;
-    padding: 150px 10px;
+    padding: 120px 10px;
     margin-bottom: 30px;
 }
 
@@ -24718,3 +24718,30 @@ h4 {
     margin: auto;
     display: block;
 }
+
+.ourteam .row {
+    margin-bottom: 10px;
+}
+
+
+
+@media (min-width: 576px) {
+    .rounded-nav {
+      border-radius: 50rem !important;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .rounded-nav .nav-link {
+      border-radius: 50rem !important;
+    }
+  }
+
+.nav-pills .nav-link {
+    color: #555;
+}
+
+.nav-pills .nav-link.active {
+    color: #fff !important;
+    background-color:#00249c !important;
+  }
