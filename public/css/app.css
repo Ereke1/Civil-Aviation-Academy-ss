@@ -24725,20 +24725,16 @@ h4 {
 
 
 
-@media (min-width: 576px) {
-    .rounded-nav {
-      border-radius: 50rem !important;
+@media (max-width: 768px) {
+    .center-icon {
+      display: none;
     }
-  }
+}
 
-  @media (min-width: 576px) {
-    .rounded-nav .nav-link {
-      border-radius: 50rem !important;
-    }
-  }
 
 .nav-pills .nav-link {
     color: #555;
+    background-color:#f8f9fa !important;
 }
 
 .nav-pills .nav-link.active {
