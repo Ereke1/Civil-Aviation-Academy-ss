@@ -112,6 +112,7 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	// HOMEPAGE
 	Route::get('', 'HomeController@index')->name('home');
 	Route::get('centerava','CenterController@index')->name('centerava');
+	Route::get('training_centers','TrainingCenterController@index')->name('training_centers');
 	Route::get('library','BooksController@index')->name('library');
 	Route::get('virtual_admission','VirtualAdmissionController@index')->name('virtual_admission');
 	Route::get('news', 'NewsController@index')->name('news');
