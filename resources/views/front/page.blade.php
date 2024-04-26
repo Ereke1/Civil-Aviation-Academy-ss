@@ -7,7 +7,7 @@
                 {!! $data->title !!}
             </h1>
 				<div class="breadcrumbs">
-					<a href="{!! route('front.home') !!}">Главная</a>
+					<a href="{!! route('front.home') !!}">{{ __('Главная') }}</a>
 					<span> > </span>
 					<span>{!! $data->title !!}</span>
 				</div>
