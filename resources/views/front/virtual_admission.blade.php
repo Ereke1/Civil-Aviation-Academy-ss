@@ -32,432 +32,19 @@
                 </div>
             </div>
 
-            <div class="container overflow-hidden ourteam">
-                <div class="row gy-4 gy-lg-4 gx-xxl-5">
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Алпысбаева А_2._1713848145.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Алпысбаева Аида</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull; Курсы по авиационной безопасности (региональные и национальные);<br />
-                                            &bull; Курсы по безопасной перевозке опасных грузов по воздуху (национальные).
-                                        </p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>7 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Бекмухамбетов А._1713848212.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Бекмухамбетов Аслан<br />
-                                            (инструктор ИКАО по<br />
-                                            АБ)</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull; Курсы по авиационной безопасности (региональные и национальные).</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>11 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Таспай Ж._1713848407.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Таспай Жандарбек</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull;&nbsp;&nbsp; &nbsp;Курсы по авиационной безопасности (региональные и
-                                            национальные);<br />
-                                            &bull;&nbsp;&nbsp; &nbsp;Курсы по безопасной перевозке опасных грузов по воздуху
-                                            (национальные).</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>27 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Усова Г._1713848427.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Усова Галина (инструктор ИКАО по АБ)</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull;&nbsp;&nbsp; &nbsp;Курсы по авиационной безопасности (региональные и
-                                            национальные).</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>24 года</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-                        <h4 class="text-uppercase text-center mt-5"><span><img src="\assets\images\2ик.png" alt="" style="height: 35px !important"></span> Центр подготовки и тестирования авиационного персонала
-                        </h4>
-
-                        <hr class="w-50 mx-auto mb-3 border-dark-subtle" />
-                    </div>
-                </div>
-            </div>
 
             <div class="container overflow-hidden ourteam">
                 <div class="row gy-4 gy-lg-4 gx-xxl-5">
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
+
+                    <div class="col-12 col-md-6 col-lg-12">
+                        <div class="card h-100 border-0 border-bottom border-primary shadow overflow-hidden">
                             <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Абаев А._1713848126.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Абаев Алмат</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull; Эколого-орнитологическое обследование аэродрома;<br />
-                                            &bull; Подготовка специалистов по орнитологическому обеспечению полетов.</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>21 год</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Анаятова Р._1713848169.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Анаятова Разиям</h4>
-
-                                        <h6>&nbsp;</h6>
-
-                                        <p>&bull; Экзаменатор по определению уровня владения общим и авиационным английским
-                                            языком по шкале ИКАО (EALTS).</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>20 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Бигамбетов У._1713848222.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Бигамбетов Уразбай</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull; Расследование авиационных происшествий;<br />
-                                            &bull; Система управления безопасностью полетов (включая план действий при АП и
-                                            И).</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>29 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="/assets/images/teammember1.png" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Битенов Алмас</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull; Управление качеством в авиации;<br />
-                                            &bull; Авиационное законодательство;<br />
-                                            &bull; Подготовка экзаменатора/оценщика;<br />
-                                            &bull; Модульное обучение по ТО ВС.</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>30 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Богачева М._1713848241.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Богачева Марина</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull; Подготовка инструкторов авиационных учебных центров/Train the
-                                            trainers;<br />
-                                            &bull; Человеческий фактор;<br />
-                                            &bull; Подготовка экзаменатора/оценщика;<br />
-                                            &bull; Модульное обучение по ТО ВС.</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>20 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Боромбаев М._1713848250.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Боромбаев Муратбек</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull; Подготовка сотрудников по обеспечению полетов/Полетный диспетчер.</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>43 года</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="/assets/images/teammember1.png" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Бугенов Азат</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull; Подготовка специалистов по аварийно-спасательному обеспечению полетов.</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>34 года</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="/assets/images/teammember1.png" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Бунияди Мохаммад Хасиб</h4>
-
-                                        <h6>&nbsp;</h6>
-
-                                        <p>&bull;&nbsp;&nbsp; &nbsp;Экзаменатор по определению уровня владения общим и
-                                            авиационным английским языком по шкале ИКАО (EALTS).</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>7 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Гурецкий С._1713848280.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Гурецкий Станислав</h4>
-
-                                        <h6>&nbsp;</h6>
-
-                                        <p>&bull;&nbsp;&nbsp; &nbsp;Экзаменатор по определению уровня владения общим и
-                                            авиационным английским языком по шкале ИКАО (EALTS).</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>4 года</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Джанпейсова Ж._1713848312.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Джанпейсова Жансая</h4>
-
-                                        <h6>&nbsp;</h6>
-
-                                        <p>&bull;&nbsp;&nbsp; &nbsp;Экзаменатор по определению уровня владения общим и
-                                            авиационным английским языком по шкале ИКАО (EALTS).</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>12 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Утегенов Е._1713848436.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Утегенов Ерсаин</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull;&nbsp;&nbsp; &nbsp;Подготовка специалистов по аэродромному обеспечению
-                                            полетов.</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>60 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Фролов И._1713848444.jpg" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Фролов Иван</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull;&nbsp;&nbsp; &nbsp;Эколого-орнитологическое обследование аэродрома;<br />
-                                            &bull;&nbsp;&nbsp; &nbsp;Подготовка специалистов по орнитологическому
-                                            обеспечению полетов.</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>9 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="/assets/images/teammember1.png" />
-                                    <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1">Шинжирбеков Махмут</h4>
-
-                                        <h6>Курсы:</h6>
-
-                                        <p>&bull;&nbsp;&nbsp; &nbsp;Подготовка специалистов по аэродромному обеспечению
-                                            полетов;<br />
-                                            &bull;&nbsp;&nbsp; &nbsp;Подготовка специалистов по орнитологическому
-                                            обеспечению полетов;<br />
-                                            &bull;&nbsp;&nbsp; &nbsp;Подготовка операторов по противообледенительной
-                                            обработке воздушных судов (категории DI-L20 SAE AS6286B);<br />
-                                            &bull;&nbsp;&nbsp; &nbsp;Подготовка водителей спецмашины (деайсера) (категории
-                                            DI-L10 SAE AS6286B).</p>
-
-                                        <h6>Стаж работы:</h6>
-
-                                        <p>30 лет</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-                        <h4 class="text-uppercase text-center mt-5"><span><img src="\assets\images\1ик.png" alt="" style="height: 35px !important"></span> Центр EASA PART FCL</h4>
-
-                        <hr class="w-50 mx-auto mb-3 border-dark-subtle" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="container overflow-hidden ourteam">
-                <div class="row gy-4 gy-lg-4 gx-xxl-5">
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0"><img class="img-fluid" loading="lazy"
-                                        src="https://caa.edu.kz/assets/images/upload/Аманбаев Ш._1713848158.jpg" />
-                                    <figcaption class="m-0 p-4">
+                                <figure class="m-0 p-0 row">
+                                    <div class="col-lg-3">
+                                        <img class="img-fluid" loading="lazy" src="\assets\images\2ик.png" />
+                                    </div>
+
+                                    <figcaption class="m-0 p-4 col-lg-9">
                                         <h4 class="mb-1">Аманбаев Шарип</h4>
 
                                         <h6>&nbsp;</h6>
@@ -467,7 +54,27 @@
                                         <h6>Стаж работы:</h6>
 
                                         <p>50 лет</p>
+
+
+                                    <div class="card" style="margin-bottom: 3px;">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#ccourse1">
+                                            <div class="card-header"
+                                                style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
+                                                ydjhtr
+                                            </div>
+                                        </a>
+
+                                        <div class="collapse show" data-parent="#accordion" id="ccourse1"
+                                            style="height: 0px; overflow-x: auto;">
+                                            <div class="card-body">
+                                                <p>
+                                                    gdrgrdg regr thrtdhtrdh trdhrdhrdt ydjhtr
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                     </figcaption>
+
                                 </figure>
                             </div>
                         </div>
@@ -816,14 +423,7 @@
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
                 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
             </script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-            </script>
 
         </div>
     </section>
-@endsection
-
-@section('fancybox')
-    @include('front.fancybox')
 @endsection
