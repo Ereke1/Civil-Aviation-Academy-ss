@@ -65,6 +65,9 @@
                     </div>
                 @endforeach
             </div>
+            <div style="margin-top: 20px">
+                {{ $data->links('admin.pagination.default') }}
+            </div>
         </div>
     </section>
 @endsection

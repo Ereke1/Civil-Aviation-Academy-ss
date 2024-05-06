@@ -572,3 +572,5 @@
         </div>
     </section>
 @endsection
+
+<script src="//code.jivo.ru/widget/bYmff7N0x8" async></script>

@@ -13,7 +13,7 @@ class NewsController extends Controller
 	public function index()
 	{
 		$tree = Navigation::tree();
-		$data = News::where('compliance', 0)->orderBy('publish_at', 'desc')->take(36)->get();
+		$data = News::orderBy('publish_at', 'desc')->where('compliance', 0)->paginate(24);
 		return view('front.news.index', compact('tree', 'data'));
 	}
 	public function show($slug)
