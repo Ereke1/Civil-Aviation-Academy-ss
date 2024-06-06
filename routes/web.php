@@ -32,6 +32,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'media_about_us' => 'MediaAboutUsController',
 			'studevents' => 'StudEventsController',
 			'events' => 'EventController',
+			'training_courses' => 'TrainingСoursesController',
 			'department' => 'DepartmentController',
 			'department-page' => 'DepartmentPageController',
 		]);
@@ -128,6 +129,7 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	Route::get('studevents/{slug}', 'StudEventsController@show')->name('studevents.show');
 	Route::get('events', 'EventController@index')->name('events');
 	Route::get('events/{slug}', 'EventController@show')->name('events.show');
+	Route::get('training_courses', 'TrainingCoursesController@index')->name('training_courses');
 	// ENROLLEE
 	Route::group(['prefix' => 'enrollee', 'namespace' => 'Enrollee', 'as' => 'enrollee.'], function () {
 		Route::resources([
