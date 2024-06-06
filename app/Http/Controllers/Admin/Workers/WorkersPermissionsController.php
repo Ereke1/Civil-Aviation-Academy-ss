@@ -142,7 +142,7 @@ class WorkersPermissionsController extends Controller
 				'workers_infos.patronymic',
 				'workers_permissions.permission',
 			)
-			->where('id', $id)
+			->where('users.id', $id)
 			->first();
 		$permissions = unserialize($user->permission);
 		return view('admin.workers-permissions.show', compact('user', 'data', 'permissions'));
