@@ -18,7 +18,7 @@
                                         на
                                         страницу</a><br>
                                     <a class="btn btn-primary btn-lg"
-                                        href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-174"
+                                        href= "{!! env('APP_URL') !!}virtualnaya-priemnaya-komissiya-174"
                                         style="background: #027cad !important;border-color: #027cad !important;">Часто
                                         задаваемые вопросы</a>
                                 </div>
@@ -69,7 +69,7 @@
                                 <div class="carousel-content">
                                     <h2>{{ __('Виртуальная приемная комиссия') }}</h2>
                                     <a class="btn btn-primary btn-lg"
-                                        href="https://caa.edu.kz/virtualnaya-priemnaya-komissiya-244">Перейти на
+                                        href="{!! env('APP_URL') !!}virtualnaya-priemnaya-komissiya-244">Перейти на
                                         страницу</a>
                                 </div>
                             </div>
@@ -237,8 +237,8 @@
                             @if ($loop->first)
                                 <div class="trending-top mb-30">
                                     <div class="trend-top-img"
-                                        style="background-image: url('https://caa.edu.kz/storage/news/{!! $bg_imagess !!}')">
-                                        {{-- <img src="https://caa.edu.kz/storage/news/{!! $bg_imagess !!}" alt=""> --}}
+                                        style="background-image: url('/storage/news/{!! $bg_imagess !!}')">
+                                        {{-- <img src="/storage/news/{!! $bg_imagess !!}" alt=""> --}}
                                         <div class="trend-top-cap">
                                             <h2><a href="{{ route('front.news.show', $item->slug) }}">
                                                     @if (Config::get('app.locale') === 'ru')
@@ -264,7 +264,7 @@
                                             <div class="single-bottom mb-35">
                                                 <div class="trend-bottom-img mb-30"
                                                     style="background-image: url('/storage/news/{!! $bg_imagess !!}')">
-                                                    {{-- <img src="https://caa.edu.kz/storage/news/{!! $bg_imagess !!}" alt=""> --}}
+                                                    {{-- <img src="/storage/news/{!! $bg_imagess !!}" alt=""> --}}
                                                 </div>
                                                 <div class="trend-bottom-cap">
                                                     <h4><a href="{{ route('front.news.show', $item->slug) }}">

@@ -23,7 +23,7 @@
                     @endif
                 </a>
                 <span> > </span>
-                <a href="https://caa.edu.kz/antikorrupcionnaya-deyatelnost">
+                <a href="{!! env('APP_URL') !!}antikorrupcionnaya-deyatelnost">
                     @if (Config::get('app.locale') === 'ru')
                     Антикоррупционная деятельность
                     @elseif(Config::get('app.locale') === 'kk')

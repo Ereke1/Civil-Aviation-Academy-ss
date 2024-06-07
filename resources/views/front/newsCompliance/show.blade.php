@@ -18,7 +18,7 @@
                     <div class="breadcrumbs">
                         <a href="{!! route('front.home') !!}">Главная</a>
                         <span> > </span>
-                        <a href="https://caa.edu.kz/antikorrupcionnaya-deyatelnost">Антикоррупционная деятельность</a>
+                        <a href="{!! env('APP_URL') !!}antikorrupcionnaya-deyatelnost">Антикоррупционная деятельность</a>
                         <span> > </span>
                         <a href="{!! route('front.newsCompliance') !!}">Мероприятия</a>
                         <span> > </span>
