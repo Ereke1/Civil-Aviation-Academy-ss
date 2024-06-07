@@ -73,7 +73,7 @@
             <div class="col-sm-12 col-md-9 col-lg-10" style="display: grid;align-items: center;">
                 <h4 style="text-align: left;">
                     <a class="stretched-link"
-                        href="https://caa.edu.kz/ministerstvo-obrazovaniya-i-nauki-respubliki-kazahstan-razrabotalo-elektronnye-portaly-napravlennye-na-rasshirenie-ispolzovaniya-kazahskogo-yazyka-403"
+                        href="{!! env('APP_URL') !!}ministerstvo-obrazovaniya-i-nauki-respubliki-kazahstan-razrabotalo-elektronnye-portaly-napravlennye-na-rasshirenie-ispolzovaniya-kazahskogo-yazyka-403"
                         style="text-decoration: none;color: white;/* vertical-align: middle; */">{{ __('Министерство науки и высшего образования Республики Казахстан разработало электронные порталы, направленные на расширение использования казахского языка.Подробнее...') }}</a>
                 </h4>
             </div>
