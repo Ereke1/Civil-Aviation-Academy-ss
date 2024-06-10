@@ -118,8 +118,9 @@
                                             <p>{!! $course->price !!} {{ __('тенге') }}</p>
 
                                             <h6>{{ __('Ближайшие даты') }}:</h6>
+                                            @if($course->start_date != NULL && $course->end_date != NULL)
                                             <p>{!! date('d.m.Y', strtotime($course->start_date)) !!} - {!! date('d.m.Y', strtotime($course->end_date)) !!}</p>
-
+                                            @endif
 
                                             <div class="card" style="margin-bottom: 3px;">
                                                 <a class="card-link collapsed" data-toggle="collapse"

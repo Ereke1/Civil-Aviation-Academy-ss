@@ -77,11 +77,11 @@
                     </div>
                     <div class="mb-4">
                         <label class="font-weight-bold">Продолжительность - часы</label>
-                        <input type="text" name="duration_hours" class="form-control" />
+                        <input type="number" name="duration_hours" class="form-control"  style="width: auto;"/>
                     </div>
                     <div class="mb-4">
                         <label class="font-weight-bold">Продолжительность - дни</label>
-                        <input type="text" name="duration_days" class="form-control" />
+                        <input type="number" name="duration_days" class="form-control" style="width: auto;" />
                     </div>
                     <div class="mb-4">
                         <label class="font-weight-bold">Цена</label>
