@@ -13,8 +13,28 @@ use Illuminate\Support\Facades\DB;
 
 class TrainingCoursesController extends Controller
 {
+    public function courseQuery($locale)
+    {
+        $orderParam = 'training_courses.title_ru';
+        if ($locale === 'ru') {
+            $orderParam = 'training_courses.title_ru';
+        } elseif ($locale === 'kk') {
+            $orderParam = 'training_courses.title_kk';
+        } else {
+            $orderParam = 'training_courses.title_en';
+        }
+
+        $training_courses = DB::table('training_courses')
+            ->select('training_courses.*', 'training_types.name_ru as training_type_name_ru', 'training_types.name_kz as training_type_name_kk', 'training_types.name_en as training_type_name_en')
+            ->join('training_types', 'training_types.id', '=', 'training_courses.training_type_id')
+            ->orderBy($orderParam, 'asc');
+
+        return $training_courses;
+    }
+
     public function index(Request $request)
     {
+        $locale = Config::get('app.locale');
         $tree = Navigation::tree();
         $training_centers = TrainingCenter::get();
         $training_types = TrainingType::get();
@@ -25,11 +45,7 @@ class TrainingCoursesController extends Controller
             'training_courses.training_type_id' => $request->filter_training_type_id
         ];
         $whereArray = array_filter($whereArray, 'strlen');
-        $training_courses = DB::table('training_courses')
-            ->select('training_courses.*', 'training_types.name_ru as training_type_name_ru', 'training_types.name_kz as training_type_name_kk', 'training_types.name_en as training_type_name_en')
-            ->join('training_types', 'training_types.id', '=', 'training_courses.training_type_id')
-            ->orderBy('training_courses.id', 'desc')
-            ->where($whereArray);
+        $training_courses = $this->courseQuery($locale);
 
         // Добавление условий для даты
         if ($request->has('filter_from_date') && !empty($request->filter_from_date)) {
@@ -41,7 +57,7 @@ class TrainingCoursesController extends Controller
         }
 
         // Выполнение запроса с пагинацией и добавлением фильтров к URL
-        $training_courses = $training_courses->paginate(1000)->appends($request->all());
+        $training_courses = $training_courses->where($whereArray)->paginate(1000)->appends($request->all());
 
         $dataArr = [
             'training_courses' => $training_courses,

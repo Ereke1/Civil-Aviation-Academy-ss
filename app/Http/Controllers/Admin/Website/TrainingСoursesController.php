@@ -25,6 +25,7 @@ class TrainingСoursesController extends Controller
                 ->select('training_courses.id', 'training_courses.title_ru as training_course', 'training_centers.name_ru as training_center', 'training_types.name_ru as training_type')
                 ->join('training_centers', 'training_centers.id', '=', 'training_courses.training_center_id')
                 ->join('training_types', 'training_types.id', '=', 'training_courses.training_type_id')
+                ->orderBy('training_courses.id', 'desc')
                 ->get();
 		return view('admin.website.training_courses.index', compact('training_courses'));
 	}
