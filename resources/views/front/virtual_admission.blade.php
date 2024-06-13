@@ -3,242 +3,104 @@
     {{ __('Академия Гражданской Авиации') }}
 @endsection
 @section('content')
-    <section id="pages">
-        <div class="container">
-            <h1>
-                Курсы
-            </h1>
-            <div class="breadcrumbs">
-                <a href="http://localcaa.edu.kz:8000">Басты бет</a>
-                <span> &gt; </span>
-                <a href="http://localcaa.edu.kz:8000/departments">Кафедралар</a>
-                <span> &gt; </span>
-                <a href="http://localcaa.edu.kz:8000/departments/aviacionnaya-tekhnika-i-tekhnologiya">Авиациялық техника
-                    және
-                    технология</a>
-                <span> &gt; </span>
-                <span>
-                    Курсы
-                </span>
-            </div>
-
-
-            <div class="container overflow-hidden ourteam">
-                <div class="row gy-4 gy-lg-4 gx-xxl-5">
-
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0 row">
-                                    <div class="col-lg-3 d-flex ">
-                                        <img class="img-fluid" loading="lazy" src="\assets\images\2ик.png" />
-                                    </div>
-
-                                    <figcaption class="m-0 p-4 col-lg-9">
-                                        <h4 class="mb-1">ПОДГОТОВКА ЭКЗАМЕНАТОРА/ОЦЕНЩИКА</h4>
-
-                                        <h6>&nbsp;</h6>
-                                        <h6>Тип подготовки:</h6>
-                                        <p>Первоначальная подготовка</p>
-
-                                        <h6>Продолжительность:</h6>
-                                        <p>14 часов/3 дня</p>
-
-                                        <h6>Цена:</h6>
-                                        <p>110 000 тенге</p>
-
-                                        <h6>Ближайшие даты:</h6>
-                                        <p></p>
-
-
-                                    <div class="card" style="margin-bottom: 3px;">
-                                        <a class="card-link collapsed" data-toggle="collapse" href="#ccourse1">
-                                            <div class="card-header"
-                                                style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
-                                                Подробнее
-                                            </div>
-                                        </a>
-
-                                        <div class="collapse show" data-parent="#accordion" id="ccourse1"
-                                            style="height: 0px; overflow-x: auto;">
-                                            <div class="card-body">
-                                                <p>
-                                                    Программа предназначена для подготовки лиц, имеющих право определять уровень квалификации авиационного персонала по следующим направлениям:
-1) экзаменатор по проверке знаний первоначально профессиональной подготовки специалистов по ТО ВС и курса обучения на тип ВС;
-2) экзаменатор практического элемента;
-3) экзаменатор практической стажировки;
-4) экзаменатор, имеющий право определять уровень квалификации специалистов по ТО ВС в легкой и сверхлегкой авиации.
-
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </figcaption>
-
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0 row">
-                                    <div class="col-lg-3 d-flex ">
-                                        <img class="img-fluid" loading="lazy" src="\assets\images\3ик.png" />
-                                    </div>
-
-                                    <figcaption class="m-0 p-4 col-lg-9">
-                                        <h4 class="mb-1">НАЗЕМНОЕ ОБСЛУЖИВАНИЕ ПАССАЖИРОВ</h4>
-
-                                        <h6>&nbsp;</h6>
-                                        <h6>Тип подготовки:</h6>
-                                        <p>Первоначальная подготовка</p>
-
-                                        <h6>Продолжительность:</h6>
-                                        <p>45-135 часов/7-17 дней </p>
-
-                                        <h6>Цена:</h6>
-                                        <p>от 318 000 тенге</p>
-
-                                        <h6>Ближайшие даты:</h6>
-                                        <p>по запросу</p>
-
-
-                                    <div class="card" style="margin-bottom: 3px;">
-                                        <a class="card-link collapsed" data-toggle="collapse" href="#ccourse2">
-                                            <div class="card-header"
-                                                style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
-                                                Подробнее
-                                            </div>
-                                        </a>
-
-                                        <div class="collapse show" data-parent="#accordion" id="ccourse2"
-                                            style="height: 0px; overflow-x: auto;">
-                                            <div class="card-body">
-                                                <p>
-                                                    Целью этого курса является предоставление всем желающим стать агентом по наземному обслуживанию пассажиров базовые навыки и знания, связанные с должностью. Курс также даст знания и навыки о различных процессах и правилах, которые им необходимо соблюдать при выполнении своих обязанностей - от регистрации до посадки и взлета.
-
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </figcaption>
-
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0 row">
-                                    <div class="col-lg-3 d-flex ">
-                                        <img class="img-fluid" loading="lazy" src="\assets\images\4ик.png" />
-                                    </div>
-
-                                    <figcaption class="m-0 p-4 col-lg-9">
-                                        <h4 class="mb-1">БАЗОВЫЙ (КУРСЫ ПО АВИАЦИОННОЙ БЕЗОПАСНОСТИ)</h4>
-
-                                        <h6>&nbsp;</h6>
-                                        <h6>Тип подготовки:</h6>
-                                        <p>Первоначальная подготовка</p>
-
-                                        <h6>Продолжительность:</h6>
-                                        <p>70 часов/10 дней</p>
-
-                                        <h6>Цена:</h6>
-                                        <p>180 600 тенге</p>
-
-                                        <h6>Ближайшие даты:</h6>
-                                        <p></p>
-
-
-                                    <div class="card" style="margin-bottom: 3px;">
-                                        <a class="card-link collapsed" data-toggle="collapse" href="#ccourse3">
-                                            <div class="card-header"
-                                                style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
-                                                Подробнее
-                                            </div>
-                                        </a>
-
-                                        <div class="collapse show" data-parent="#accordion" id="ccourse3"
-                                            style="height: 0px; overflow-x: auto;">
-                                            <div class="card-body">
-                                                <p>
-                                                    Контингент кандидатов для обучения на этом курсе состоит из персонала служб безопасности и сотрудников полномочных органов или организаций, начинающих работать в данной области и опытного персонала, который несет ответственность за осуществление превентивных мер, связанных с обеспечением безопасности
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </figcaption>
-
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0 row">
-                                    <div class="col-lg-3 d-flex ">
-                                        <img class="img-fluid" loading="lazy" src="\assets\images\2ик.png" />
-                                    </div>
-
-                                    <figcaption class="m-0 p-4 col-lg-9">
-                                        <h4 class="mb-1">ЧЕЛОВЕЧЕСКИЙ ФАКТОР</h4>
-
-                                        <h6>&nbsp;</h6>
-                                        <h6>Тип подготовки:</h6>
-                                        <p>Первоначальная подготовка</p>
-
-                                        <h6>Продолжительность:</h6>
-                                        <p>12 часов/2 дня</p>
-
-                                        <h6>Цена:</h6>
-                                        <p>26 000 тенге</p>
-
-                                        <h6>Ближайшие даты:</h6>
-                                        <p></p>
-
-
-                                    <div class="card" style="margin-bottom: 3px;">
-                                        <a class="card-link collapsed" data-toggle="collapse" href="#ccourse4">
-                                            <div class="card-header"
-                                                style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
-                                                Подробнее
-                                            </div>
-                                        </a>
-
-                                        <div class="collapse show" data-parent="#accordion" id="ccourse4"
-                                            style="height: 0px; overflow-x: auto;">
-                                            <div class="card-body">
-                                                <p>
-                                                    Обучение по программе обеспечивает подготовку специалистов, руководящего и эксплуатационного персонала операторов авиационной деятельности (поставщиков обслуживания) на аэродромах (в аэропортах) гражданской авиации, включая категории, не вошедших в перечень специалистов авиационного персонала гражданской авиации РК и другие специалисты транспортной отрасли имеющих необходимую специальную подготовку, высшее или среднее профессиональное образование.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </figcaption>
-
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <br>
-            <br>
-            <br>
-
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-            </script>
-
+<section class="wrapper" id="pages">
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="{!! route('front.home') !!}">{{ __('Главная') }}</a>
+            <span> > </span>
+            <span>{{ __('Учебные центры') }}</span>
         </div>
-    </section>
+      <div class="row">
+        <div class="col text-center mb-5">
+          <h1 class="text-uppercase">{{ __('Учебные центры') }}</h1>
+          <p class="lead">{{ __('Академия гражданской авиации осуществляет профессиональную подготовку, переподготовку авиационных специалистов в соответствии с требованиями Типовых программ профессиональной подготовки авиационного персонала, а также правилами ИКАО.') }}</p>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="card text-white card-has-bg click-col" style="background-image:url('/assets/images/pages/71119_5e82deef9.jpg');">
+              <img class="card-img d-none" src="/assets/images/pages/71119_5e82deef9.jpg" alt="Лётно-тренажерный центр">
+              <div class="card-img-overlay d-flex flex-column">
+                <div class="card-body">
+                  <small class="card-meta mb-2">---------------------</small>
+                  <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/trenazhernyy-kompleks">{{ __('Лётно-тренажерный центр') }}</a></h3>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="card text-white card-has-bg click-col" style="background-image:url('/assets/images/80cad5bd-adaf-4ab5-a982-327d1cb560ad.jpg');">
+            <img class="card-img d-none" src="/assets/images/80cad5bd-adaf-4ab5-a982-327d1cb560ad.jpg" alt="Центр развития авиационной отрасли ИАТА">
+            <div class="card-img-overlay d-flex flex-column">
+              <div class="card-body">
+                <small class="card-meta mb-2">---------------------</small>
+                <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/centr-iata">{{ __('Учебный центр IATA') }}</a></h3>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="card text-white card-has-bg click-col" style="background-image:url('/assets/images/9a1a775e-9e83-477f-90e8-7ce9916d8d8a.jpg');">
+            <img class="card-img d-none" src="/assets/images/9a1a775e-9e83-477f-90e8-7ce9916d8d8a.jpg" alt="Учебный центр ИКАО по авиационной безопасности">
+            <div class="card-img-overlay d-flex flex-column">
+              <div class="card-body">
+                <small class="card-meta mb-2">---------------------</small>
+                <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/uchebnyy-centr-po-aviacionnoy-bezopasnosti-ikao">{{ __('Учебный центр по авиационной безопасности ICAO') }}</a></h3>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="card text-white card-has-bg click-col" style="background-image:url('/assets/images/b96e257f-8e4d-4247-a58a-8e238344098c.jpg');">
+            <img class="card-img d-none" src="/assets/images/b96e257f-8e4d-4247-a58a-8e238344098c.jpg" alt="Центр подготовки специалистов по ТО ВС и аэродромного обслуживания">
+            <div class="card-img-overlay d-flex flex-column">
+              <div class="card-body">
+                <small class="card-meta mb-2">---------------------</small>
+                <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/centr-podgotovki-specialistov-po-to-vs-i-aerodromnogo-obsluzhivaniya-183">{{ __('Центр подготовки авиационного персонала') }}</a></h3>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="card text-white card-has-bg click-col" style="background-image:url('/assets/images/f9ca47be-aabd-46a7-bf74-a49f8ce861a9.jpg');">
+            <img class="card-img d-none" src="/assets/images/f9ca47be-aabd-46a7-bf74-a49f8ce861a9.jpg" alt="Центр подготовки специалистов обслуживания воздушного движения и тестирования авиационного персонала">
+            <div class="card-img-overlay d-flex flex-column">
+              <div class="card-body">
+                <small class="card-meta mb-2">---------------------</small>
+                <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="centr-podgotovki-specialistov-po-ovd-i-testirovaniya-aviacionnogo-personala-182">{{ __('Центр тестирования и ОВД') }}</a></h3>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="card text-white card-has-bg click-col" style="background-image:url('/assets/images/123_1657533883.jpg');">
+            <img class="card-img d-none" src="/assets/images/123_1657533883.jpg" alt="Авиационно-технический центр">
+            <div class="card-img-overlay d-flex flex-column">
+              <div class="card-body">
+                <small class="card-meta mb-2">---------------------</small>
+                <h3 class="card-title mt-0 "><a class="text-white stretched-link" href="/aviacionno-tehnicheskiy-centr-240">{{ __('Авиационно-технический центр') }}</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col text-center mb-5">
+        <br>
+        <p class="lead"><a href="/upravlenie-bezopasnostyu-poletov">{{ __('Управление безопасностью полётов') }}</a></p><br>
+        <p class="lead"><a href="/assets/images/upload/Декларация Руководителя РУБП_1677233267.pdf">{{ __('Руководство по управлению безопасностью полетов') }}</a></p><br>
+          <h2>{{ __('НАШИ СЕРТИФИКАТЫ') }}</h2>
+          <p class="lead"><a href="/assets/images/Сертификат АУК рус.pdf">{{ __('Область действия сертификата авиационного учебного центра') }}</a></p>
+          <p class="lead"><a href="/assets/images/Сертификат тренажера ALSIM АУК АГА от 20.02.2023_.pdf">{{ __('Сертификат соответствия тренажера ALSIM (ALX-85) FNPT II / MCC') }}</a></p>
+          <p class="lead"><a href="/assets/images/Сертификат Boeing do 2024.pdf">{{ __('Сертификат соответствия тренажера FNPT Level II / MCC+FTD1 (B737NG)') }}</a></p>
+          <p class="lead"><a href="/assets/images/Сертификат А320 от 08.09.2023.pdf">{{ __('Сертификат соответствия тренажера FNPT II / MCC+FTD1 (A320-200)') }}</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
 @endsection

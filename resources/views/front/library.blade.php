@@ -15,52 +15,6 @@
                     <p class="lead">{{ __('Академия гражданской авиации') }}</p>
                 </div>
             </div>
-            {{-- <section class="services" id="services" style="background: transparent">
-                <div class="container" style="margin-bottom: 5vw">
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-                            <div class="icon-box library"
-                                style="background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(/assets/images/lib.jpg)">
-                                <h4>
-                                    <a class="stretched-link" href="/o-biblioteke">{{ __('О библиотеке') }}</a>
-                                </h4>
-                                <p></p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-sm-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-                            <div class="icon-box library"
-                                style="background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(/assets/images/elib.jpg);">
-                                <h4><a class="stretched-link"
-                                        href="http://bi.agakaz.kz/">{{ __('Электронная библиотека') }}</a></h4>
-
-                                <p></p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-sm-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-                            <div class="icon-box library"
-                                style="background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(/assets/images/for_readers.jpg);">
-                                <h4><a class="stretched-link" href="/chitatelyam">{{ __('Читателям') }}</a>
-                                </h4>
-
-                                <p></p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-sm-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-                            <div class="icon-box library"
-                                style="background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(/assets/images/memo.jpg);">
-                                <h4><a class="stretched-link"
-                                        href="/pamyatka-dlya-chitateley">{{ __('Памятка для читателей') }}</a></h4>
-
-                                <p></p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section> --}}
         </div>
     </section>
 
@@ -142,15 +96,37 @@
                             {{ __('Электронная библиотека ИКАО - это онлайн-хранилище цифровых публикаций Международной организации гражданской авиации (ИКАО), содержащее стандарты и рекомендуемую практику (SARPS) в области международной гражданской авиации, конвенции и связанные с ними акты.') }}
                         </div>
 
+
                         <div class="oneBook col-md-4 col-12 col-sm-6">
                             <a href="https://elibrary.icao.int/">
-                                <img src="\assets\images\library\Access Engineering.jpeg">
+                                <img src="/assets/images/library/Scopus.png">
                             </a>
                             <h3>
-                                Access Engineering
+                                Scopus
                             </h3>
-                            {{ __('Access Engineering – онлайн-указатель инженерных интерфейсов и обучающая платформа, предлагающая авторитетный, всемирно признанный инженерный контент со встроенными интерактивными инструментами.') }}
+                            {{ __('Scopus - это крупнейшая информационная база рецензируемых библиографических ссылок и рефератов: научных журналов, книг и материалов конференций.') }}
                         </div>
+
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://elibrary.icao.int/">
+                                <img src="\assets\images\library\WebOfScience.png">
+                            </a>
+                            <h3>
+                                Web of science
+                            </h3>
+                            {{ __('Web of science- поисковая платформа, объединяющая несколько библиографических и реферативных баз данных рецензируемой научной литературы.') }}
+                        </div>
+
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://elibrary.icao.int/">
+                                <img src="\assets\images\library\WileyLogo.png">
+                            </a>
+                            <h3>
+                                Wiley
+                            </h3>
+                            {{ __('Онлайн-библиотека Wiley - это  портал к самой широкой и глубокой в мире междисциплинарной коллекции онлайн-ресурсов, охватывающих вопросы жизни, здравоохранения, физики, социальных и гуманитарных наук.') }}
+                        </div>
+
                     </div>
 
                 </div>
