@@ -922,17 +922,8 @@ class BachelorController extends Controller
 			} elseif ($request->process === 'Сдал документы' && $data->case_number === NULL) {
 				$data->process = $request->process;
 				$findLastCaseNumber = DB::table('applications')
-                    ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
                     ->where(function($query) {
-                        $query->where('created_at', '>=', "2023-09-01 00:00:00")
-                        ->where('type','Бакалавриат');
-                        })
-                    ->orWhere(function($query) {
-                        $query->where('created_at', '>=', "2024-02-01 00:00:00")
-                        ->where(function($query) {
-                            $query->where('type','Магистратура')
-                                        ->orWhere('type','Докторантура');
-                            });
+                        $query->where('case_number_date', '>=', "2024-06-01 00:00:00");
                         })
                     ->orderBy('case_number', 'desc')->pluck('case_number')->first();
 				$data->case_number = $findLastCaseNumber + 1;
