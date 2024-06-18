@@ -22616,6 +22616,10 @@ h4 {
     background: linear-gradient(0deg, rgba(35, 79, 109, 0.3785889356) 0%, #455f71 100%);
 }
 
+#center a:hover {
+    text-decoration: none;
+}
+
 #client-logo {
     padding: 100px 0 100px;
     text-align: center;

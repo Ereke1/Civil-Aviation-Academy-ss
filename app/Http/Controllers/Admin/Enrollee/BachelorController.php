@@ -924,11 +924,11 @@ class BachelorController extends Controller
 				$findLastCaseNumber = DB::table('applications')
                     ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
                     ->where(function($query) {
-                        $query->where('created_at', '>=', "2022-09-01 00:00:00")
+                        $query->where('created_at', '>=', "2023-09-01 00:00:00")
                         ->where('type','Бакалавриат');
                         })
                     ->orWhere(function($query) {
-                        $query->where('created_at', '>=', "2023-02-01 00:00:00")
+                        $query->where('created_at', '>=', "2024-02-01 00:00:00")
                         ->where(function($query) {
                             $query->where('type','Магистратура')
                                         ->orWhere('type','Докторантура');

@@ -18,6 +18,9 @@ $worker_permission = unserialize($worker_permission->permission);
             <a href="{{ route('admin.website.media_about_us.index') }}" @if ($active_menu === 'СМИ о нас') class="active" @endif>
                 СМИ о нас
             </a>
+            <a href="{{ route('admin.website.sustainable_development_goals.index') }}" @if ($active_menu === 'ЦУР') class="active" @endif>
+                ЦУР
+            </a>
         @endif
         @if (isset($worker_permission->studevents->read) && $worker_permission->studevents->read == true)
             <a href="{{ route('admin.website.studevents.index') }}" @if ($active_menu === 'Мероприятия') class="active" @endif>

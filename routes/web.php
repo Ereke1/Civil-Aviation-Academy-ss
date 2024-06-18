@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'training_courses' => 'TrainingСoursesController',
 			'department' => 'DepartmentController',
 			'department-page' => 'DepartmentPageController',
+			'sustainable_development_goals' => 'SustainableDevelopmentGoalsController',
 		]);
 
 		// CK EDITOR
@@ -130,7 +131,10 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	Route::get('events', 'EventController@index')->name('events');
 	Route::get('events/{slug}', 'EventController@show')->name('events.show');
 	Route::get('training_courses', 'TrainingCoursesController@index')->name('training_courses');
-	// ENROLLEE
+	Route::get('sustainable_development_goals', 'SustainableDevelopmentGoalsController@index')->name('sustainable_development_goals');
+	Route::get('sustainable_development_goals/{id}', 'SustainableDevelopmentGoalsController@show')->name('sustainable_development_goals.show');
+
+    // ENROLLEE
 	Route::group(['prefix' => 'enrollee', 'namespace' => 'Enrollee', 'as' => 'enrollee.'], function () {
 		Route::resources([
 			'bachelor' => 'BachelorController',
