@@ -11085,7 +11085,6 @@ a.text-dark:focus {
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
-    line-height: 1;
 }
 
 .fa-lg {
@@ -22499,7 +22498,7 @@ h4 {
 }
 
 .img-responsive {
-    max-width: 100%;
+    max-width: 90%;
     height: 100%;
 }
 
@@ -22637,7 +22636,6 @@ h4 {
 
 #client-logo a {
     padding: 14px 24px;
-    display: table-cell;
     vertical-align: middle;
 }
 
