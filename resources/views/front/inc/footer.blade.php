@@ -19,6 +19,7 @@
                             <a href="mailto:sscenter@agakaz.kz"><i class="fa fa-envelope"></i> sscenter@agakaz.kz</a><br />
                             {{ __('Колл-центр Академии:') }}<br />
                             <a href="tel:87020244512"><i class="fa fa-phone-alt"></i> +7 (702) 024-45-12</a>
+                            <a href="tel:77273469206"><i class="fa fa-phone-alt"></i> +7 (727) 346 9206 вн.228</a>
                             <a href="mailto:info@agakaz.kz"><i class="fa fa-envelope"></i> info@agakaz.kz</a><br />
                             {{ __('Колл-центр Колледжа:') }}<br />
                             <a href="tel:87273469206"><i class="fa fa-phone-alt"></i> +7 (727) 346-92-06 (вн. 253)</a>
