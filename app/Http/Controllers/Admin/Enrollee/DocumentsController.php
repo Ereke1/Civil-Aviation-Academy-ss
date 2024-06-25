@@ -840,10 +840,10 @@ class DocumentsController extends Controller
             if($data->type === 'Бакалавриат'){
                 if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
                     if($data->citizen === 'Резидент РК'){
-                        $templateProcessor->setValue('price', '884 000');
-                        $templateProcessor->setValue('price_ru', '(Восемьсот восемьдесят четыре тысячи)');
-                        $templateProcessor->setValue('price_kz', '(Cегіз жүз сексен төрт мың)');
-                        $templateProcessor->setValue('price_en', '(Eight hundred eighty four thousand)');
+                        $templateProcessor->setValue('price', '884 290');
+                        $templateProcessor->setValue('price_ru', '(Восемьсот восемьдесят четыре тысячи двести девяносто)');
+                        $templateProcessor->setValue('price_kz', '(Сегіз жүз сексен төрт мың екі жүз тоқсан)');
+                        $templateProcessor->setValue('price_en', '(Eight hundred eighty four thousand two hundred ninety)');
                     } else {
                         $templateProcessor->setValue('price', '1 000 000');
                         $templateProcessor->setValue('price_ru', '(Один миллион)');
@@ -852,10 +852,10 @@ class DocumentsController extends Controller
                     }
                 } else {
                     if($data->citizen === 'Резидент РК'){
-                        $templateProcessor->setValue('price', '1 111 000');
-                        $templateProcessor->setValue('price_ru', '(Один миллион сто одиннадцать тысяч)');
-                        $templateProcessor->setValue('price_kz', '(Бір миллион бір жүз он бір мың)');
-                        $templateProcessor->setValue('price_en', '(One million one hundred eleven thousand)');
+                        $templateProcessor->setValue('price', '1 110 560');
+                        $templateProcessor->setValue('price_ru', '(Один миллион сто десять тысяч пятьсот шестьдесят)');
+                        $templateProcessor->setValue('price_kz', '(Бір миллион бір жүз он мың бес жүз алпыс)');
+                        $templateProcessor->setValue('price_en', '(One million one hundred ten thousand five hundred sixty)');
                     } else {
                         if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
                             $templateProcessor->setValue('price', '1 500 000');
@@ -872,16 +872,16 @@ class DocumentsController extends Controller
                 }
             }
             else if ($data->type === 'Магистратура'){
-                $templateProcessor->setValue('price', '1 111 000');
-                $templateProcessor->setValue('price_ru', '(Один миллион сто одиннадцать тысяч)');
-                $templateProcessor->setValue('price_kz', '(Бір миллион бір жүз он бір мың)');
-                $templateProcessor->setValue('price_en', '(One million one hundred eleven thousand)');
+                $templateProcessor->setValue('price', '1 110 560');
+                $templateProcessor->setValue('price_ru', '(Один миллион сто десять тысяч пятьсот шестьдесят)');
+                $templateProcessor->setValue('price_kz', '(Бір миллион бір жүз он мың бес жүз алпыс)');
+                $templateProcessor->setValue('price_en', '(One million one hundred ten thousand five hundred sixty)');
             }
             else if ($data->type === 'Докторантура'){
-                $templateProcessor->setValue('price', '2 441 850');
-                $templateProcessor->setValue('price_ru', '(Два миллиона четыреста сорок одна тысяча восемьсот пятьдесят)');
-                $templateProcessor->setValue('price_kz', '(Екі миллион төрт жүз қырық бір мың сегіз жүз елу)');
-                $templateProcessor->setValue('price_en', '(Two million four hundred forty one thousand eight hundred fifty)');
+                $templateProcessor->setValue('price', '2 441 900');
+                $templateProcessor->setValue('price_ru', '(Два миллиона четыреста сорок одна тысяча девятьсот)');
+                $templateProcessor->setValue('price_kz', '(Екі миллион төрт жүз қырық бір мың тоғыз жүз)');
+                $templateProcessor->setValue('price_en', '(Two million four hundred forty one thousand nine hundred)');
             }
         }
 
