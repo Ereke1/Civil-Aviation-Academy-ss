@@ -5,6 +5,40 @@
 @section('content')
     <section id="main-slider">
         <div class="owl-carousel">
+
+            <div class="item"
+                style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/priemn.jpg); width:100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2>Приемная комиссия</h2>
+
+                                    <a class="btn btn-primary btn-lg" href="/enrollee">Оставить заявку</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/virtual_admission_com.jpg);width: 100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2>{{ __('Виртуальная приемная комиссия') }}</h2>
+                                    <a class="btn btn-primary btn-lg"
+                                        href="{!! env('APP_URL') !!}virtualnaya-priemnaya-komissiya-244">Перейти на
+                                        страницу</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
             <div class="item"
                 style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/open_academy.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
@@ -44,53 +78,6 @@
                     </div>
                 </div>
             </div><!--/.item-->
-            <div class="item"
-                style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/priemn.jpg); width:100%; background-size: cover; background-position: center;">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 text-center">
-                                <div class="carousel-content">
-                                    <h2>Приемная комиссия</h2>
-
-                                    <a class="btn btn-primary btn-lg" href="/enrollee">Оставить заявку</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item-->
-            <div class="item"
-                style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/virtual_admission_com.jpg);width: 100%; background-size: cover; background-position: center;">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 text-center">
-                                <div class="carousel-content">
-                                    <h2>{{ __('Виртуальная приемная комиссия') }}</h2>
-                                    <a class="btn btn-primary btn-lg"
-                                        href="{!! env('APP_URL') !!}virtualnaya-priemnaya-komissiya-244">Перейти на
-                                        страницу</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item--><!--
-                                                            <div class="item" style=" background:url(/assets/images/slider/Screenshot_7.png); width:100%; background-size: cover; background-position: center;">
-                                                                <div class="slider-inner">
-                                                                    <div class="container">
-                                                                        <div class="row">
-                                                                            <div class="col-sm-12 text-center">
-                                                                                <div class="carousel-content">
-                                                                                <h2></h2><br> <br><h2></h2>
-                                                                                    <a class="btn btn-primary btn-lg stretched-link" href="/vakansii">Перейти на страницу</a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>--><!--/.item-->
             <div class="item"
                 style="background: url(/assets/images/slider/2.jfif);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
@@ -441,10 +428,10 @@
             </div>
             <div class="row">
                 <!-- first count item -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="200ms">
                     <div class="counters-item">
                         <div>
-                            <span data-speed="3000" data-to="7366">7366</span>
+                            <span data-speed="2000" data-to="7366">7366</span>
                         </div>
                         <i class="fa fa-graduation-cap fa-3x"></i>
                         <h3>Выпускников</h3>
@@ -459,10 +446,10 @@
 
                 <!-- third count item -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms"
-                    data-wow-delay="400ms">
+                    data-wow-delay="200ms">
                     <div class="counters-item">
                         <div>
-                            <span data-speed="3000" data-to="84">84</span>
+                            <span data-speed="2000" data-to="84">84</span>
                             <span>%</span>
                         </div>
                         <i class="fa fa-thumbs-up fa-3x"></i>
@@ -474,10 +461,10 @@
 
                 <!-- fourth count item -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms"
-                    data-wow-delay="600ms">
+                    data-wow-delay="200ms">
                     <div class="counters-item kill-margin-bottom">
                         <div>
-                            <span data-speed="3000" data-to="17">17</span>
+                            <span data-speed="2000" data-to="17">17</span>
                         </div>
                         <i class="fa fa-book fa-3x"></i>
                         <h3>Образовательных <br> программ</h3>
@@ -488,7 +475,7 @@
                     data-wow-delay="200ms">
                     <div class="counters-item">
                         <div>
-                            <span data-speed="3000" data-to="89">89</span>
+                            <span data-speed="2000" data-to="89">89</span>
                         </div>
                         <i class="fa fa-check-square fa-3x"></i>
                         <h3>Преподавателей</h3>
