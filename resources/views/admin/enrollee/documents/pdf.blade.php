@@ -68,7 +68,7 @@
 <body>
     <div class="wrapper">
         <div class="report">
-            <h1>Выпускники бакалавриат, магистратура 2022г.<span> {!! $today->format('d.m.Y') !!}</span></h1>
+            <h1>Абитуриенты<span> {!! $today->format('d.m.Y') !!}</span></h1>
             <table class="report">
                 <tr style="background: #00249c;color: #fff;">
                     <th>№</th>

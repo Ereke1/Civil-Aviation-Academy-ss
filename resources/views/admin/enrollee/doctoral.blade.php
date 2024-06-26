@@ -80,6 +80,11 @@
                  @if ($created_at_to != '') value="{!! $created_at_to !!}" @endif>
             </div>
             <div>
+                <label for="case_number_date_from">Дата № дела с</label>
+                <input type="date" name="case_number_date_from"
+                 @if ($case_number_date_from != '') value="{!! $case_number_date_from !!}" @endif>
+            </div>
+            <div>
                 <label for="process">Процесс</label>
                 <select name="process">
                     <option value=""></option>

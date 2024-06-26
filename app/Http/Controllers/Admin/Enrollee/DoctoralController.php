@@ -21,6 +21,8 @@ class DoctoralController extends Controller
 		$years = $request->years;
 		$created_at_from = $request->created_at_from;
 		$created_at_to = $request->created_at_to;
+        $case_number_date_from = $request->case_number_date_from;
+        $sort = $request->sort;
 		// Filter
 		$whereArray = [
 			'type' => 'Докторантура',
@@ -32,46 +34,38 @@ class DoctoralController extends Controller
 			'surname' => $request->surname
 		];
 		$whereArray = array_filter($whereArray, 'strlen');
-		if (!isset($created_at_from) || !isset($created_at_to)) {
-			$data = DB::table('applications')
-            ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-            ->join('nationalities','applications.nationality_id','=','nationalities.id')
-			//	->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			//	->whereDate('created_at', '<=', $years . '-' . '08-31')
-				->where($whereArray)
-				->orderBy('created_at', 'desc')
-				->paginate(100)
-				->appends($whereArray);
 
-			$countData = DB::table('applications')
-            ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-            ->join('nationalities','applications.nationality_id','=','nationalities.id')
-			//	->whereDate('created_at', '>=', $years - 1 . '-' . '09-01')
-			//	->whereDate('created_at', '<=', $years . '-' . '08-31')
-				->where($whereArray)
-				->count();
-		}else {
-			$data = DB::table('applications')
-            ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-            ->join('nationalities','applications.nationality_id','=','nationalities.id')
-				->whereDate('created_at', '>=', $created_at_from)
-				->whereDate('created_at', '<=', $created_at_to)
-				->where($whereArray)
-				->orderBy('created_at', 'desc')
-				->paginate(100)
-				->appends($whereArray);
+        $query = DB::table('applications')
+            ->select('applications.id as applid', 'applications.*', 'nationalities.id', 'nationalities.*')
+            ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
+            ->where($whereArray);
 
-			$countData = Applications::select('*')
-				->whereDate('created_at', '>=', $created_at_from)
-				->whereDate('created_at', '<=', $created_at_to)
-				->where($whereArray)
-				->count();
-		}
-		//Sort
-		// if (isset($request->sort)) {
-		// 	$data = $data->sortBy($request->sort);
-		// 	$data->values()->all();
-		// }
+        if ($request->has('case_number_date_from') && !empty($case_number_date_from)) {
+            $query->whereDate('case_number_date', '>=', "$case_number_date_from 00:00:00");
+        }
+        if ($request->has('created_at_from') && !empty($created_at_from)) {
+            $query->whereDate('created_at', '>=', "$created_at_from 00:00:00");
+        }
+        if ($request->has('created_at_to') && !empty($created_at_to)) {
+            $query->whereDate('created_at', '<=', "$created_at_to 00:00:00");
+        }
+        if ($request->has('sort') && !empty($sort)) {
+            if ($sort === 'surname') {
+                $query->orderBy($sort, 'asc');
+            }
+        } else {
+            $query->orderBy('created_at', 'desc');
+        }
+
+        $data = $query->paginate(100)
+            ->appends($whereArray)
+            ->appends('created_at_from', $created_at_from)
+            ->appends('created_at_to', $created_at_to)
+            ->appends('case_number_date_from', $case_number_date_from)
+            ->appends(compact('sort'));
+
+        $countData = $query->count();
+
 		// Data
 		$dataArr = [
 			'data' => $data,
@@ -81,6 +75,7 @@ class DoctoralController extends Controller
 			'years' => $request->years,
 			'created_at_from' => $request->created_at_from,
             'created_at_to' => $request->created_at_to,
+            'case_number_date_from' => $request->case_number_date_from,
 			'process' => $request->process,
 			'sort' => $request->sort,
 			'countData' => $countData

@@ -186,378 +186,47 @@ class DocumentsController extends Controller
 		$countENT = $request->countENT;
 		$created_at_from = $request->created_at_from;
         $created_at_to = $request->created_at_to;
+        $case_number_date_from = $request->case_number_date_from;
 		$sort = $request->sort;
-        if (isset($countENT)) {
-            if (!isset($created_at_from) && !isset($created_at_to)) {
-                if ($sort === 'countENT') {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->orderBy($sort, 'desc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends(compact('countENT'))
-                        ->appends(compact('sort'));
-                } elseif ($sort === 'surname') {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->orderBy($sort, 'asc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends(compact('countENT'))
-                        ->appends(compact('sort'));
-                } else {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->orderBy('created_at', 'desc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends(compact('countENT'));
-                }
-            } elseif (isset($created_at_from) && !isset($created_at_to)) {
-                if ($sort === 'countENT') {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                        ->orderBy($sort, 'desc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends('created_at_from',$created_at_from,)
-                        ->appends(compact('countENT'))
-                        ->appends(compact('sort'));
-                } elseif ($sort === 'surname') {
-                    $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                        ->orderBy($sort, 'asc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends('created_at_from',$created_at_from,)
-                        ->appends(compact('countENT'))
-                        ->appends(compact('sort'));
-                } else {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                        ->orderBy('created_at', 'desc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends('created_at_from',$created_at_from,)
-                        ->appends(compact('countENT'));
-                }
-            }
-            elseif(isset($created_at_to) && !isset($created_at_from)){
-                if ($sort === 'countENT') {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                        ->orderBy($sort, 'desc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends('created_at_to',$created_at_to,)
-                        ->appends(compact('countENT'))
-                        ->appends(compact('sort'));
-                } elseif ($sort === 'surname') {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                        ->orderBy($sort, 'asc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends('created_at_to',$created_at_to,)
-                        ->appends(compact('countENT'))
-                        ->appends(compact('sort'));
-                } else {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                        ->orderBy('created_at', 'desc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends('created_at_to',$created_at_to,)
-                        ->appends(compact('countENT'));
-                }
-            }
-            else {
-                if ($sort === 'countENT') {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                        ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                        ->orderBy($sort, 'desc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends('created_at_from',$created_at_from,)
-                        ->appends('created_at_to',$created_at_to,)
-                        ->appends(compact('countENT'))
-                        ->appends(compact('sort'));
-                } elseif ($sort === 'surname') {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                        ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                        ->orderBy($sort, 'asc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends('created_at_from',$created_at_from,)
-                        ->appends('created_at_to',$created_at_to,)
-                        ->appends(compact('countENT'))
-                        ->appends(compact('sort'));
-                } else {
-                    $data = DB::table('applications')
-                    ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                    ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                        ->where($whereArray)
-                        ->where('countENT', '>=', $countENT)
-                        ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                        ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                        ->orderBy('created_at', 'desc')
-                        ->paginate(100)
-                        ->appends($whereArray)
-                        ->appends('created_at_from',$created_at_from,)
-                        ->appends('created_at_to',$created_at_to,)
-                        ->appends(compact('countENT'));
-                }
-            }
-        } elseif ($sort === 'countENT') {
-            if (!isset($created_at_from) && !isset($created_at_to)) {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                    ->where($whereArray)
-                    ->orderBy($sort, 'desc')
-                    ->paginate(100)
-                    ->appends($whereArray)
-                    ->appends(compact('sort'));
-            } elseif (isset($created_at_from) && !isset($created_at_to)) {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                    ->where($whereArray)
-                    ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                    ->orderBy($sort, 'desc')
-                    ->paginate(100)
-                    ->appends($whereArray)
-                    ->appends('created_at_from',$created_at_from,)
-                    ->appends(compact('sort'));
-            } elseif (isset($created_at_to) && !isset($created_at_from)) {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                ->orderBy($sort, 'desc')
-                ->paginate(100)
-                ->appends($whereArray)
-                ->appends('created_at_to',$created_at_to,)
-                ->appends(compact('sort'));
-            }
-            else {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                ->orderBy($sort, 'desc')
-                ->paginate(100)
-                ->appends($whereArray)
-                ->appends('created_at_from',$created_at_from,)
-                ->appends('created_at_to',$created_at_to,)
-                ->appends(compact('sort'));
-            }
-        } elseif ($sort === 'surname') {
-            if (!isset($created_at_from) && !isset($created_at_to)) {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                    ->where($whereArray)
-                    ->orderBy($sort, 'asc')
-                    ->paginate(100)
-                    ->appends($whereArray)
-                    ->appends(compact('sort'));
-            } elseif (isset($created_at_from) && !isset($created_at_to)) {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                    ->where($whereArray)
-                    ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                    ->orderBy($sort, 'asc')
-                    ->paginate(100)
-                    ->appends($whereArray)
-                    ->appends('created_at_from',$created_at_from,)
-                    ->appends(compact('sort'));
-            } elseif (isset($created_at_to) && !isset($created_at_from)) {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                    ->where($whereArray)
-                    ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                    ->orderBy($sort, 'asc')
-                    ->paginate(100)
-                    ->appends($whereArray)
-                    ->appends('created_at_to',$created_at_to,)
-                    ->appends(compact('sort'));
-            } else {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                ->orderBy($sort, 'asc')
-                ->paginate(100)
-                ->appends($whereArray)
-                ->appends('created_at_from',$created_at_from,)
-                ->appends('created_at_to',$created_at_to,)
-                ->appends(compact('sort'));
+
+        $query = DB::table('applications')
+            ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid', 'applications.*', 'nationalities.id', 'nationalities.*')
+            ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
+            ->where($whereArray);
+
+        if ($request->has('case_number_date_from') && !empty($case_number_date_from)) {
+            $query->whereDate('case_number_date', '>=', $case_number_date_from);
+        }
+        if ($request->has('created_at_from') && !empty($created_at_from)) {
+            $query->whereDate('created_at', '>=', "$created_at_from 00:00:00");
+        }
+        if ($request->has('created_at_to') && !empty($created_at_to)) {
+            $query->whereDate('created_at', '<=', "$created_at_to 00:00:00");
+        }
+        if ($request->has('countENT') && !empty($countENT)) {
+            $query->where('countENT', '>=', $countENT);
+        }
+        if ($request->has('sort') && !empty($sort)) {
+            if($sort === 'surname'){
+                $query->orderBy($sort, 'asc');
+            } elseif ($sort === 'countENT'){
+                $query->orderBy($sort, 'desc');
             }
         } else {
-            if (!isset($created_at_from) && !isset($created_at_to)) {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                    ->where($whereArray)
-                    ->orderBy('created_at', 'desc')
-                    ->paginate(100)
-                    ->appends($whereArray);
-            }
-            elseif (isset($created_at_from) && !isset($created_at_to)) {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                    ->where($whereArray)
-                    ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                    ->orderBy('created_at', 'desc')
-                    ->paginate(100)
-                    ->appends($whereArray)
-                    ->appends('created_at_from',$created_at_from,);
-            }
-            elseif (isset($created_at_to) && !isset($created_at_from)) {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                    ->where($whereArray)
-                    ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                    ->orderBy('created_at', 'desc')
-                    ->paginate(100)
-                    ->appends($whereArray)
-                    ->appends('created_at_to',$created_at_to,);
-            }
-            elseif (isset($created_at_to) && isset($created_at_from)) {
-                $data = DB::table('applications')
-                ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                    ->where($whereArray)
-                    ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                    ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                    ->orderBy('created_at', 'desc')
-                    ->paginate(100)
-                    ->appends($whereArray)
-                    ->appends('created_at_from',$created_at_from,)
-                    ->appends('created_at_to',$created_at_to,);
-            }
+            $query->orderBy('created_at', 'desc');
         }
 
+        $data = $query->paginate(100)
+            ->appends($whereArray)
+            ->appends('created_at_from', $created_at_from)
+            ->appends('created_at_to', $created_at_to)
+            ->appends('case_number_date_from', $case_number_date_from)
+            ->appends(compact('countENT'))
+            ->appends(compact('sort'));
 
-        // Count
-        if (isset($countENT)) {
-            if(isset($created_at_from) && isset($created_at_to)){
-                $countData =DB::table('applications')
-                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->where('countENT', '>=', $countENT)
-                ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                ->count();
-            } elseif (isset($created_at_from) && !isset($created_at_to)) {
-                $countData = DB::table('applications')
-                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->where('countENT', '>=', $countENT)
-                ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                ->count();
-            } elseif (!isset($created_at_from) && isset($created_at_to)) {
-                $countData = DB::table('applications')
-                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->where('countENT', '>=', $countENT)
-                ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                ->count();
-            } else {
-                $countData = DB::table('applications')
-                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->where('countENT', '>=', $countENT)
-                ->count();
-            }
-        } else {
-            if(isset($created_at_from) && isset($created_at_to)){
-                $countData = DB::table('applications')
-                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                ->count();
-            } elseif (isset($created_at_from) && !isset($created_at_to)) {
-                $countData = DB::table('applications')
-                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->whereDate('created_at', '>=', "$created_at_from 00:00:00")
-                ->count();
-            } elseif (!isset($created_at_from) && isset($created_at_to)) {
-                $countData = DB::table('applications')
-                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->whereDate('created_at', '<=', "$created_at_to 00:00:00")
-                ->count();
-            } else {
-                $countData = DB::table('applications')
-                ->select('applications.id as applid','applications.*','nationalities.id', 'nationalities.*')
-                ->join('nationalities','applications.nationality_id','=','nationalities.id')
-                ->where($whereArray)
-                ->count();
-            }
-        }
+        $countData = $query->count();
+
+
         // Data
         $dataArr = [
             'data' => $data,
