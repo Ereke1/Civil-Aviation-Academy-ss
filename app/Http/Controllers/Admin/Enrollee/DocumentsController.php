@@ -739,6 +739,19 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('gender_ru', 'женский');
         }
 
+        //кредит
+        if ($data->type === 'Бакалавриат') {
+            $templateProcessor->setValue('cr', '240');
+        } else if ($data->type === 'Магистратура') {
+            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)'){
+                $templateProcessor->setValue('cr', '60');
+            } else {
+                $templateProcessor->setValue('cr', '120');
+            }
+        } else if ($data->type === 'Докторантура') {
+            $templateProcessor->setValue('cr', '180');
+        }
+
         //на базе
         if($data->type === 'Бакалавриат'){
             if ($data->base === '11-го класса') {
