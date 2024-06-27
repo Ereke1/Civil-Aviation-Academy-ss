@@ -109,22 +109,22 @@
                 <tr>
                     <td>1</td>
                     <td>Техническая эксплуатация летательных аппаратов и двигателей</td>
-                    <td rowspan="6"><b>298</b></td>
-                    <td rowspan="6">288</td>
-                    <td>40</td>
+                    <td rowspan="6"><b>335 + 5/5</b></td>
+                    <td rowspan="6">325 + 5/5</td>
+                    <td>120</td>
                     <td class="bg-chair">{!! $counts['Техническая эксплуатация летательных аппаратов и двигателей']['11-го класса'] !!}</td>
                     <td rowspan="6">10</td>
-                    <td rowspan="6">80</td>
+                    <td rowspan="6">40</td>
                     <td class="bg-chair">{!! $counts['Техническая эксплуатация летательных аппаратов и двигателей']['Технического и профессионального образования (колледжа)'] !!}</td>
                     <td rowspan="6">20</td>
                     <td class="bg-chair">{!! $counts['Техническая эксплуатация летательных аппаратов и двигателей']['Высшего образования'] !!}</td>
-                    <td rowspan="6">320</td>
+                    <td rowspan="6">410</td>
                     <td class="bg-chair-night">{!! $summVTT_1 !!}</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Техническая эксплуатация систем авионики летательных аппаратов и двигателей</td>
-                    <td>40</td>
+                    <td>110</td>
                     <td class="bg-chair">{!! $counts['Техническая эксплуатация систем авионики летательных аппаратов и двигателей']['11-го класса'] !!}</td>
                     <td class="bg-chair">{!! $counts['Техническая эксплуатация систем авионики летательных аппаратов и двигателей']['Технического и профессионального образования (колледжа)'] !!}</td>
                     <td class="bg-chair">{!! $counts['Техническая эксплуатация систем авионики летательных аппаратов и двигателей']['Высшего образования'] !!}</td>
@@ -133,7 +133,7 @@
                 <tr>
                     <td>3</td>
                     <td>Обслуживание наземного радиоэлектронного оборудования аэропортов</td>
-                    <td>30</td>
+                    <td>20</td>
                     <td class="bg-chair">{!! $counts['Обслуживание наземного радиоэлектронного оборудования аэропортов']['11-го класса'] !!}</td>
                     <td class="bg-chair">{!! $counts['Обслуживание наземного радиоэлектронного оборудования аэропортов']['Технического и профессионального образования (колледжа)'] !!}</td>
                     <td class="bg-chair">{!! $counts['Обслуживание наземного радиоэлектронного оборудования аэропортов']['Высшего образования'] !!}</td>
@@ -142,14 +142,14 @@
                 <tr>
                     <td>4</td>
                     <td>Обеспечение авиационной безопасности</td>
-                    <td>40</td>
+                    <td>50</td>
                     <td class="bg-chair">{!! $counts['Обеспечение авиационной безопасности']['11-го класса'] !!}</td>
                     <td class="bg-chair">{!! $counts['Обеспечение авиационной безопасности']['Технического и профессионального образования (колледжа)'] !!}</td>
                     <td class="bg-chair">{!! $counts['Обеспечение авиационной безопасности']['Высшего образования'] !!}</td>
                     <td class="bg-chair-night">{!! $summVTT_4 !!}</td>
                 </tr>
                 <tr>
-                    <td>5</td>
+                    <td>30</td>
                     <td>Организация аэропортовой деятельности</td>
                     <td>30</td>
                     <td class="bg-chair">{!! $counts['Организация аэропортовой деятельности']['11-го класса'] !!}</td>
@@ -160,45 +160,45 @@
                 <tr>
                     <td>6</td>
                     <td>Технология транспортных процессов в авиации</td>
-                    <td>40</td>
+                    <td>20</td>
                     <td class="bg-chair">{!! $counts['Технология транспортных процессов в авиации']['11-го класса'] !!}</td>
                     <td class="bg-chair">{!! $counts['Технология транспортных процессов в авиации']['Технического и профессионального образования (колледжа)'] !!}</td>
                     <td class="bg-chair">{!! $counts['Технология транспортных процессов в авиации']['Высшего образования'] !!}</td>
                     <td class="bg-chair-night">{!! $summVTT_6 !!}</td>
                 </tr>
                 <tr class="bg-chair">
-                    <td colspan="2"><b>ВТТ</b></td>
-                    <td><b>298</b></td>
-                    <td><b>288</b></td>
-                    <td><b>220</b></td>
+                    <td colspan="2"><b>ИТОГО по ГОП "В067 - Воздушный транспорт и технологии"</b></td>
+                    <td><b>345</b></td>
+                    <td><b>335</b></td>
+                    <td><b>350</b></td>
                     <td><b>{!! $summVTT_11kl !!}</b></td>
                     <td><b>10</b></td>
-                    <td><b>80</b></td>
+                    <td><b>40</b></td>
                     <td><b>{!! $summVTT_TiPO !!}</td>
                     <td><b>20</b></td>
                     <td><b>{!! $summVTT_VV !!}</td>
-                    <td><b>320</b></td>
+                    <td><b>410</b></td>
                     <td class="bg-chair-night"><b>{!! $summVTT !!}</td>
                 </tr>
                 <tr>
                     <td>7</td>
                     <td>Обслуживание воздушного движения и аэронавигационное обеспечение полетов</td>
-                    <td rowspan="3"><b>151</b></td>
-                    <td rowspan="3">151</td>
-                    <td>10</td>
+                    <td rowspan="3"><b>185 + 5/5</b></td>
+                    <td rowspan="3">185</td>
+                    <td>20</td>
                     <td class="bg-chair">{!! $counts['Обслуживание воздушного движения и аэронавигационное обеспечение полетов']['11-го класса'] !!}</td>
                     <td rowspan="3">0</td>
                     <td rowspan="3">0</td>
                     <td class="bg-chair">{!! $counts['Обслуживание воздушного движения и аэронавигационное обеспечение полетов']['Технического и профессионального образования (колледжа)'] !!}</td>
-                    <td rowspan="3">5</td>
+                    <td rowspan="3">0</td>
                     <td class="bg-chair">{!! $counts['Обслуживание воздушного движения и аэронавигационное обеспечение полетов']['Высшего образования'] !!}</td>
-                    <td rowspan="3">75</td>
+                    <td rowspan="3">170</td>
                     <td class="bg-chair-night">{!! $summLELAD_1 !!}</td>
                 </tr>
                 <tr>
                     <td>8</td>
                     <td>Лётная эксплуатация гражданских самолетов (пилот)</td>
-                    <td>40</td>
+                    <td>140</td>
                     <td class="bg-chair">{!! $counts['Лётная эксплуатация гражданских самолетов (пилот)']['11-го класса'] !!}</td>
                     <td class="bg-chair">{!! $counts['Лётная эксплуатация гражданских самолетов (пилот)']['Технического и профессионального образования (колледжа)'] !!}</td>
                     <td class="bg-chair">{!! $counts['Лётная эксплуатация гражданских самолетов (пилот)']['Высшего образования'] !!}</td>
@@ -207,76 +207,76 @@
                 <tr>
                     <td>9</td>
                     <td>Лётная эксплуатация гражданских вертолетов (пилот)</td>
-                    <td>20</td>
+                    <td>10</td>
                     <td class="bg-chair">{!! $counts['Лётная эксплуатация гражданских вертолетов (пилот)']['11-го класса'] !!}</td>
                     <td class="bg-chair">{!! $counts['Лётная эксплуатация гражданских вертолетов (пилот)']['Технического и профессионального образования (колледжа)'] !!}</td>
                     <td class="bg-chair">{!! $counts['Лётная эксплуатация гражданских вертолетов (пилот)']['Высшего образования'] !!}</td>
                     <td class="bg-chair-night">{!! $summLELAD_3 !!}</td>
                 </tr>
                 <tr class="bg-chair">
-                    <td colspan="2"><b>ЛЭЛАД</b></td>
-                    <td><b>151</b></td>
-                    <td><b>151</b></td>
-                    <td><b>70</b></td>
+                    <td colspan="2"><b>ИТОГО по ГОП "В167 - Летная эксплуатация летательных аппаратов и двигателей"</b></td>
+                    <td><b>195</b></td>
+                    <td><b>185</b></td>
+                    <td><b>170</b></td>
                     <td><b>{!! $summLELAD_11kl !!}</b></td>
                     <td><b>0</b></td>
-                    <td>0</td>
+                    <td><b>0</b></td>
                     <td><b>{!! $summLELAD_TiPO !!}</td>
-                    <td><b>5</b></td>
+                    <td><b>0</b></td>
                     <td><b>{!! $summLELAD_VV !!}</td>
-                    <td><b>75</b></td>
+                    <td><b>170</b></td>
                     <td class="bg-chair-night"><b>{!! $summLELAD !!}</td>
                 </tr>
                 <tr>
                     <td>10</td>
                     <td>Организация авиационных перевозок</td>
-                    <td rowspan="2"><b>348</b></td>
-                    <td rowspan="2">298</td>
-                    <td>20</td>
+                    <td rowspan="2"><b>217</b></td>
+                    <td rowspan="2">130</td>
+                    <td>32</td>
                     <td class="bg-chair">{!! $counts['Организация авиационных перевозок']['11-го класса'] !!}</td>
                     <td rowspan="2">50</td>
-                    <td rowspan="2">30</td>
+                    <td rowspan="2">45</td>
                     <td class="bg-chair">{!! $counts['Организация авиационных перевозок']['Технического и профессионального образования (колледжа)'] !!}</td>
                     <td rowspan="2">20</td>
                     <td class="bg-chair">{!! $counts['Организация авиационных перевозок']['Высшего образования'] !!}</td>
-                    <td rowspan="2">90</td>
+                    <td rowspan="2">130</td>
                     <td class="bg-chair-night">{!! $summTU_1 !!}</td>
                 </tr>
                 <tr>
                     <td>11</td>
                     <td>Логистика на транспорте</td>
-                    <td>20</td>
+                    <td>33</td>
                     <td class="bg-chair">{!! $counts['Логистика на транспорте']['11-го класса'] !!}</td>
                     <td class="bg-chair">{!! $counts['Логистика на транспорте']['Технического и профессионального образования (колледжа)'] !!}</td>
                     <td class="bg-chair">{!! $counts['Логистика на транспорте']['Высшего образования'] !!}</td>
                     <td class="bg-chair-night">{!! $summTU_2 !!}</td>
                 </tr>
                 <tr class="bg-chair">
-                    <td colspan="2"><b>ТУ</b></td>
-                    <td><b>348</b></td>
-                    <td><b>298</b></td>
-                    <td><b>40</b></td>
+                    <td colspan="2"><b>ИТОГО по ГОП "В095 - Транспортные услуги"</b></td>
+                    <td><b>217</b></td>
+                    <td><b>130</b></td>
+                    <td><b>65</b></td>
                     <td><b>{!! $summTU_11kl !!}</b></td>
                     <td><b>50</b></td>
-                    <td><b>30</b></td>
+                    <td><b>45</b></td>
                     <td><b>{!! $summTU_TiPO !!}</td>
                     <td><b>20</b></td>
                     <td><b>{!! $summTU_VV !!}</td>
-                    <td><b>90</b></td>
+                    <td><b>130</b></td>
                     <td class="bg-chair-night"><b>{!! $summTU !!}</td>
                 </tr>
                 <tr>
                     <td colspan="2" class="bg-chair-night">Всего</td>
-                    <td class="bg-chair-night">797</td>
-                    <td class="bg-chair-night">737</td>
-                    <td class="bg-chair-night">330</td>
+                    <td class="bg-chair-night">757</td>
+                    <td class="bg-chair-night">650</td>
+                    <td class="bg-chair-night">585</td>
                     <td class="bg-chair-night">{!! $sum1 !!}</td>
                     <td class="bg-chair-night">60</td>
-                    <td class="bg-chair-night">110</td>
+                    <td class="bg-chair-night">85</td>
                     <td class="bg-chair-night">{!! $sum2 !!}</td>
-                    <td class="bg-chair-night">45</td>
+                    <td class="bg-chair-night">40</td>
                     <td class="bg-chair-night">{!! $sum3 !!}</td>
-                    <td class="bg-chair-night">485</td>
+                    <td class="bg-chair-night">710</td>
                     <td class="bg-chair-night">{!! $total !!}</td>
                 </tr>
             </table>
@@ -292,13 +292,13 @@
                     <td>1</td>
                     <td>Авиационная техника и технологии (профильная магистратура)</td>
                     <td rowspan="2">12</td>
-                    <td>-</td>
+                    <td>12</td>
                     <td class="bg-chair">{!! $countMaster1 !!}</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Авиационная техника и технологии (научно-педагогическая магистратура)</td>
-                    <td>12</td>
+                    <td>0</td>
                     <td class="bg-chair">{!! $countMaster2 !!}</td>
                 </tr>
                 <tr>
@@ -317,20 +317,19 @@
                 <tr>
                     <td>5</td>
                     <td>Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)</td>
-                    <td rowspan="2">20</td>
+                    <td rowspan="2">30</td>
                     <td>-</td>
                     <td class="bg-chair">{!! $countMaster5 !!}</td>
                 </tr>
                 <tr>
                     <td>6</td>
-                    <td>Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)
-                    </td>
+                    <td>Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)</td>
                     <td>5</td>
                     <td class="bg-chair">{!! $countMaster6 !!}</td>
                 </tr>
                 <tr>
                     <td colspan="2" class="bg-chair-night">Всего</td>
-                    <td class="bg-chair-night"><b>37</b></td>
+                    <td class="bg-chair-night"><b>47</b></td>
                     <td class="bg-chair-night"><b>22</b></td>
                     <td class="bg-chair-night"><b>{!! $totalMaster !!}</b></td>
                 </tr>

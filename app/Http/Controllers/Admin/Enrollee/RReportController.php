@@ -20,7 +20,7 @@ class RReportController extends Controller
         $created_at_to = $request->created_at_to;
 
 
-        $counts = $this->allCounts($created_at_from, $created_at_to);
+        $counts = $this->allCountsRReport($created_at_from, $created_at_to);
 
 
         // You can now use the $counts array to get the counts for each program and base
@@ -74,13 +74,13 @@ class RReportController extends Controller
         $summTU = $summTU_11kl + $summTU_TiPO + $summTU_VV;
 
         $summVTT_1 = $this->sumValuesByProgram($countsCollection, 'Техническая эксплуатация летательных аппаратов и двигателей');
-        $summVTT_2 = $this->sumValuesByProgram($countsCollection, 'Техническая эксплуатация систем авионики летательных аппаратов');
+        $summVTT_2 = $this->sumValuesByProgram($countsCollection, 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей');
         $summVTT_3 = $this->sumValuesByProgram($countsCollection, 'Обслуживание наземного радиоэлектронного оборудования аэропортов');
         $summVTT_4 = $this->sumValuesByProgram($countsCollection, 'Обеспечение авиационной безопасности');
         $summVTT_5 = $this->sumValuesByProgram($countsCollection, 'Организация аэропортовой деятельности');
         $summVTT_6 = $this->sumValuesByProgram($countsCollection, 'Технология транспортных процессов в авиации');
 
-        $summLELAD_1 = $this->sumValuesByProgram($countsCollection, 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов и аэронавигационное обеспечение полетов');
+        $summLELAD_1 = $this->sumValuesByProgram($countsCollection, 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов');
         $summLELAD_2 = $this->sumValuesByProgram($countsCollection, 'Лётная эксплуатация гражданских самолетов (пилот)');
         $summLELAD_3 = $this->sumValuesByProgram($countsCollection, 'Лётная эксплуатация гражданских вертолетов (пилот)');
 
@@ -170,7 +170,7 @@ class RReportController extends Controller
         return $sum;
     }
 
-    function allCounts($created_at_from, $created_at_to)
+    function allCountsRReport($created_at_from, $created_at_to)
     {
         $counts = [];
         $programs = [
@@ -197,40 +197,31 @@ class RReportController extends Controller
             '11-го класса',
             'Технического и профессионального образования (колледжа)',
             'Высшего образования',
+            NULL
         ];
         $statuses = ['Обработанный', 'Сдал документы'];
 
-        if (!isset($created_at_from) || !isset($created_at_to) || ($created_at_from == 0 || $created_at_to == 0)) {
-            foreach ($programs as $program) {
-                foreach ($bases as $base) {
-                    $count = 0;
-                    foreach ($statuses as $status) {
-                        $count += Applications::where('base', $base)
-                            ->where('programms', $program)
-                            ->where('process', $status)
-                            ->where('status', 0)
-                            ->where('case_number_date', '>=', "2024-06-01 00:00:00")
-                            ->count();
-                    }
-                    $counts[$program][$base] = $count;
+        $baseQuery = Applications::where('status', 0)
+            ->where('case_number_date', '>=', "2024-06-01 00:00:00");
+
+        // If date range filters are set, apply them
+        if (isset($created_at_from) && isset($created_at_to) && $created_at_from != 0 && $created_at_to != 0) {
+            $baseQuery = $baseQuery
+                ->whereDate('created_at', '>=', $created_at_from)
+                ->whereDate('created_at', '<=', $created_at_to);
+        }
+
+        foreach ($programs as $program) {
+            foreach ($bases as $base) {
+                $count = 0;
+                foreach ($statuses as $status) {
+                    $count += (clone $baseQuery)
+                        ->where('base', $base)
+                        ->where('programms', $program)
+                        ->where('process', $status)
+                        ->count();
                 }
-            }
-        } else {
-            foreach ($programs as $program) {
-                foreach ($bases as $base) {
-                    $count = 0;
-                    foreach ($statuses as $status) {
-                        $count += Applications::where('base', $base)
-                            ->where('programms', $program)
-                            ->where('process', $status)
-                            ->where('status', 0)
-                            ->where('case_number_date', '>=', "2024-06-01 00:00:00")
-                            ->whereDate('created_at', '>=', $created_at_from)
-                            ->whereDate('created_at', '<=', $created_at_to)
-                            ->count();
-                    }
-                    $counts[$program][$base] = $count;
-                }
+                $counts[$program][$base] = $count;
             }
         }
 
@@ -239,7 +230,7 @@ class RReportController extends Controller
 
     public function pdf($created_at_from, $created_at_to)
     {
-        $counts = $this->allCounts($created_at_from, $created_at_to);
+        $counts = $this->allCountsRReport($created_at_from, $created_at_to);
 
 
         // You can now use the $counts array to get the counts for each program and base
