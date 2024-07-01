@@ -23873,16 +23873,20 @@ h2.section-heading {
 }
 
 .card-link .card-header::after {
-    /* color: white; */
-    content: "+";
+    content: "";
     position: absolute;
+    background-image: url("/assets/images/whiteArrowDown.svg");
+    background-size: contain; /* ensures the image scales properly */
+    background-repeat: no-repeat;
+    width: 1rem; /* Adjust size as needed */
+    height: 1rem; /* Adjust size as needed */
     right: 2%;
+    top: 25px; /* Vertically center the arrow */
+    transform: translateY(-50%); /* Adjust positioning */
     transition: transform var(--collapsible-transition-duration) var(--collapsible-transition-fn);
 }
 
-.card-link:not(.collapsed) .card-header::after {
-    content: "\2212";
-}
+
 
 .teacher_info_block {
     padding: 15px;

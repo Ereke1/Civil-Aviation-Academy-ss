@@ -3,28 +3,48 @@
     {{ __('Академия Гражданской Авиации') }}
 @endsection
 @section('content')
-    <section class="wrapper" id="pages">
+    <section id="pages">
         <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">&nbsp;</div>
+            <h1>
+                efefe
+            </h1>
+            <div class="breadcrumbs">
+                <a href="{!! route('front.home') !!}">{{ __('Главная') }}</a>
+                <span> > </span>
+                <span>efef</span>
             </div>
+            <div>
+                <div class="card" style="margin-bottom: 3px;">
+                    <a class="card-link collapsed" data-toggle="collapse" href="#id1">
+                        <div class="card-header"
+                            style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
+                            efefef
+                        </div>
+                    </a>
 
-            <div class="container overflow-hidden ourteam">
-                <div class="row gy-4 gy-lg-4 gx-xxl-5">
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
-                            <div class="card-body p-0">
-                                <figure class="m-0 p-0">
-                                    <a class="stretched-link" href="/trenazhernyy-kompleks">
-                                        <img class="img-fluid" loading="lazy"
-                                        src="/assets/images/pages/71119_5e82deef9.jpg"
-                                        style="width: 400px; height: 400px;" />
-                                    </a>
-                                    {{-- <figcaption class="m-0 p-4">
-                                        <h4 class="mb-1"><a class="stretched-link" href="/trenazhernyy-kompleks">{{ __('Ликвидация нищеты') }}</a></h4>
-                                    </figcaption> --}}
-                                </figure>
-                            </div>
+                    <div class="collapse show" data-parent="#accordion" id="id1"
+                        style="height: 0px; overflow-x: auto;">
+                        <div class="card-body">
+                            <p>
+                                dhdrgdhr
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-bottom: 3px;">
+                    <div class="card-link">
+                        <button class="card-header collapsed" data-toggle="collapse" data-target="#id11"
+                            style="background:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500; width: 100%;">
+                                Профессорско-преподавательский состав
+                                    докторантуры
+                        </button>
+                    </div>
+
+                    <div class="collapse show" data-parent="#accordion" id="id11"
+                        style="height: 0px; overflow-x: auto;">
+                        <div class="card-body">
+                            <p>dhdrgdhr</p>
                         </div>
                     </div>
                 </div>
