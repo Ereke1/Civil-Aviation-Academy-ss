@@ -470,7 +470,7 @@ details > summary {
     padding: 10px;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
-    transition: all 400ms ease-out;
+    transition: all 200ms ease-out;
     margin-bottom: 0;
 }
 
@@ -479,7 +479,7 @@ details[open] > summary {
 }
 
 details > summary + * {
-    transition: margin-bottom 400ms ease-out;
+    transition: margin-bottom 200ms ease-out;
 }
 
 details[open] > summary + * {
