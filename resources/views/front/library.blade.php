@@ -98,7 +98,7 @@
 
 
                         <div class="oneBook col-md-4 col-12 col-sm-6">
-                            <a href="https://elibrary.icao.int/">
+                            <a href="https://www.scopus.com/home.uri/">
                                 <img src="/assets/images/library/Scopus.png">
                             </a>
                             <h3>
@@ -108,7 +108,7 @@
                         </div>
 
                         <div class="oneBook col-md-4 col-12 col-sm-6">
-                            <a href="https://elibrary.icao.int/">
+                            <a href="https://www.webofscience.com/wos//">
                                 <img src="\assets\images\library\WebOfScience.png">
                             </a>
                             <h3>
@@ -118,7 +118,7 @@
                         </div>
 
                         <div class="oneBook col-md-4 col-12 col-sm-6">
-                            <a href="https://elibrary.icao.int/">
+                            <a href="https://onlinelibrary.wiley.com//">
                                 <img src="\assets\images\library\WileyLogo.png">
                             </a>
                             <h3>
