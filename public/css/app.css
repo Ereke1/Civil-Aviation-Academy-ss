@@ -458,9 +458,10 @@ details {
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
     margin-bottom: 5px;
+    position: relative;
 }
 
-summary {
+details > summary {
     display: list-item;
     cursor: pointer;
     padding-bottom: 5px;
@@ -469,7 +470,22 @@ summary {
     padding: 10px;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+    transition: all 400ms ease-out;
+    margin-bottom: 0;
 }
+
+details[open] > summary {
+    margin-bottom: 20px;
+}
+
+details > summary + * {
+    transition: margin-bottom 400ms ease-out;
+}
+
+details[open] > summary + * {
+    margin-bottom: 20px;
+}
+
 
 template {
     display: none;
