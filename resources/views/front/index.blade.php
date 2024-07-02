@@ -422,8 +422,8 @@
     <section id="counter" class="parallax-section">
         <div class="container">
             <div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
-                <h2>{{ __('Академия Гражданской Авиации') }}</h2>
-                <h2>в цифрах</h2>
+                <h2 style="color: #ffffff">{{ __('Академия Гражданской Авиации') }}
+                    <br>в цифрах</br>
                 <div class="devider"><i class="fa fa-plane fa-3x"></i></div>
             </div>
             <div class="row">

@@ -42,7 +42,7 @@
                 <div class="col-12 col-md-8" style="background: white">
 
                     <div class="row" id="book_collections">
-                        <div class="title text-center">
+                        <div class="title text-center col-12">
                             <h3>{{ __('ПОДПИСНЫЕ БАЗЫ ДАННЫХ') }}</h3>
                             <div class="border"></div>
                         </div>
@@ -241,7 +241,7 @@
             <div class="row" id="book_collections">
                 <div class="col-12" style="background: white">
                     <div class="row">
-                        <div class="title text-center">
+                        <div class="title text-center col-12">
                             <h3>{{ __('ВИДЕОМАТЕРИАЛЫ') }}</h3>
                             <div class="border"></div>
                         </div>
