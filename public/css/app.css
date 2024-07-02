@@ -454,10 +454,20 @@ output {
     display: inline-block;
 }
 
+details {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
 summary {
     display: list-item;
     cursor: pointer;
     padding-bottom: 5px;
+    background: #00249c;
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
 }
 
 template {
