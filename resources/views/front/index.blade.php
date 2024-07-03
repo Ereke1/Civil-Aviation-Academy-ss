@@ -40,6 +40,23 @@
                 </div>
             </div><!--/.item-->
             <div class="item"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/Screenshot_7.png);width: 100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2>{{ __('АО «Академия гражданской авиации» объявляет конкурс на замещение вакантных должностей ППС на 2024-2025 учебный год') }}</h2>
+                                    <a class="btn btn-primary btn-lg"
+                                        href="{!! env('APP_URL') !!}vakansii">Перейти на
+                                        страницу</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item"
                 style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/open_academy.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
