@@ -46,10 +46,11 @@
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                    <h2>{{ __('АО «Академия гражданской авиации» объявляет конкурс на замещение вакантных должностей ППС на 2024-2025 учебный год') }}</h2>
+                                    <h2>{{ __('АО «Академия гражданской авиации» объявляет конкурс на замещение вакантных должностей профессорско-преподавательского состава на 2024-2025 учебный год') }}</h2>
                                     <a class="btn btn-primary btn-lg"
-                                        href="{!! env('APP_URL') !!}vakansii">Перейти на
-                                        страницу</a>
+                                        href="{!! env('APP_URL') !!}vakansii">{{ __('Академия гражданской авиации') }}</a> <br>
+                                    <a class="btn btn-primary btn-lg"
+                                        href="{!! env('APP_URL') !!}vakansii-aviacionnyy-kolledzh-463">{{ __('Авиационный колледж') }}</a>
                                 </div>
                             </div>
                         </div>
