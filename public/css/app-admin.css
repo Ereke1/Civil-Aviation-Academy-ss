@@ -17385,12 +17385,12 @@ h1 {
 }
 
 .dropdown .menu a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   background-color: #9A7620
 }
 
 .dropdown .menu a.active {
-  text-decoration: underline;
+  text-decoration: none;
   background-color: #9A7620 !important;
 }
 
