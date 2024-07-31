@@ -664,6 +664,7 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар');
         }else if ($data->programms === 'Беспилотные летательные аппараты и системы') {
             $templateProcessor->setValue('programs_kz', 'Ұшқышсыз ұшу аппараттары мен жүйелері');
+        }
 
 
 
