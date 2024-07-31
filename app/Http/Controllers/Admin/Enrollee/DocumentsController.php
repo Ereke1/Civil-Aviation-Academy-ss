@@ -497,8 +497,7 @@ class DocumentsController extends Controller
        } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') {
            $templateProcessor->setValue('programs_kz', 'Тасымалдауды, қозғалысты ұйымдастыру және көлікті пайдалану (ғылыми-педагогикалық магистратура)');
            $templateProcessor->setValue('programs_en', 'Organization of transportation, traffic and operation of transport (scientific and pedagogical direction)');
-       }
-       else if ($data->programms === 'Авиационная техника и технологии') {
+       }else if ($data->programms === 'Авиационная техника и технологии') {
            $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар');
            $templateProcessor->setValue('programs_en', 'Aviation equipment and technologies');
        }else if ($data->programms === 'Беспилотные летательные аппараты и системы') {
