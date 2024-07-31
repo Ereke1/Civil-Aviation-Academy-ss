@@ -501,7 +501,9 @@ class DocumentsController extends Controller
        else if ($data->programms === 'Авиационная техника и технологии') {
            $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар');
            $templateProcessor->setValue('programs_en', 'Aviation equipment and technologies');
-       }
+       }else if ($data->programms === 'Беспилотные летательные аппараты и системы') {
+        $templateProcessor->setValue('programs_kz', 'Ұшқышсыз ұшу аппараттары мен жүйелері');
+        $templateProcessor->setValue('programs_en', 'Unmanned aerial vehicles and systems');
 
         //стоимость
         if ($data->have_grant === 1) {
@@ -660,7 +662,8 @@ class DocumentsController extends Controller
         }
         else if ($data->programms === 'Авиационная техника и технологии') {
             $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар');
-        }
+        }else if ($data->programms === 'Беспилотные летательные аппараты и системы') {
+            $templateProcessor->setValue('programs_kz', 'Ұшқышсыз ұшу аппараттары мен жүйелері');
 
 
 

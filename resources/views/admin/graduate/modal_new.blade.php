@@ -85,6 +85,9 @@
                                     <option value="Логистика на транспорте"
                                         @if ($item->speciality === 'Логистика на транспорте') selected @endif>Логистика на транспорте
                                     </option>
+                                    <option value="Беспилотные летательные аппараты и системы"
+                                        @if ($item->speciality === 'Беспилотные летательные аппараты и системы') selected @endif>Беспилотные летательные аппараты и системы
+                                    </option>
                                 </select>
                             </div>
                         @endif
