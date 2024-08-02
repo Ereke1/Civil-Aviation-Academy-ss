@@ -89,7 +89,7 @@
                 <td class="bg-chair-night">{!! $summVTT_4 !!}</td>
             </tr>
             <tr>
-                <td>6</td>
+                <td>5</td>
                 <td>Организация аэропортовой деятельности</td>
                 <td>30</td>
                 <td class="bg-chair">{!! $counts['Организация аэропортовой деятельности']['11-го класса'] !!}</td>
@@ -139,7 +139,7 @@
                 <td class="bg-chair-night"><b>{!! $summVTT !!}</td>
             </tr>
             <tr>
-                <td>7</td>
+                <td>9</td>
                 <td>Обслуживание воздушного движения и аэронавигационное обеспечение полетов</td>
                 <td rowspan="3"><b>185 + 5/5</b></td>
                 <td rowspan="3">185</td>
@@ -154,7 +154,7 @@
                 <td class="bg-chair-night">{!! $summLELAD_1 !!}</td>
             </tr>
             <tr>
-                <td>8</td>
+                <td>10</td>
                 <td>Лётная эксплуатация гражданских самолетов (пилот)</td>
                 <td>140</td>
                 <td class="bg-chair">{!! $counts['Лётная эксплуатация гражданских самолетов (пилот)']['11-го класса'] !!}</td>
@@ -163,7 +163,7 @@
                 <td class="bg-chair-night">{!! $summLELAD_2 !!}</td>
             </tr>
             <tr>
-                <td>9</td>
+                <td>11</td>
                 <td>Лётная эксплуатация гражданских вертолетов (пилот)</td>
                 <td>10</td>
                 <td class="bg-chair">{!! $counts['Лётная эксплуатация гражданских вертолетов (пилот)']['11-го класса'] !!}</td>
@@ -186,7 +186,7 @@
                 <td class="bg-chair-night"><b>{!! $summLELAD !!}</td>
             </tr>
             <tr>
-                <td>10</td>
+                <td>12</td>
                 <td>Организация авиационных перевозок</td>
                 <td rowspan="2"><b>217</b></td>
                 <td rowspan="2">130</td>
@@ -201,7 +201,7 @@
                 <td class="bg-chair-night">{!! $summTU_1 !!}</td>
             </tr>
             <tr>
-                <td>11</td>
+                <td>13</td>
                 <td>Логистика на транспорте</td>
                 <td>33</td>
                 <td class="bg-chair">{!! $counts['Логистика на транспорте']['11-го класса'] !!}</td>
