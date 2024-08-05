@@ -404,7 +404,7 @@
                                                 <option value="Технология транспортных процессов в авиации"
                                                     @if ($item->programms === 'Технология транспортных процессов в авиации') selected @endif>Технология транспортных процессов в авиации
                                                 </option>
-                                                
+                                            </select>
                                         </div>
                                         @if (isset($item->haveENT))
                                             <div class="block">
