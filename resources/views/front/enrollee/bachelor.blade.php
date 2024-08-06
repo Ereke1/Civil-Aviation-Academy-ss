@@ -83,6 +83,8 @@
                             <label for="readLit">{{ __('Грамотность чтения') }}</label>
                             <select name="readLit" id="readLit">
                                 <option value="" disabled selected>-----</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>
@@ -157,6 +159,8 @@
                             <label for="math">{{ __('Математика (1-й проф. предмет)') }}</label>
                             <select name="math" id="math">
                                 <option value="" disabled selected>-----</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>
