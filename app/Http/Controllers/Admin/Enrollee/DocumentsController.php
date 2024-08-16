@@ -464,7 +464,7 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_kz', 'Әуежайлардың жердегі радиоэлектрондық жабдықтарына қызмет көрсету');
             $templateProcessor->setValue('programs_en', 'Maintenance of ground radio-electronic equipment of airports');
         } else if ($data->programms === 'Техническая эксплуатация авиационного и радиоэлектронного оборудования') {
-            $templateProcessor->setValue('programs_kz', 'Авиациялық және радиоэлектрондық жабдықтырды техникалық пайдалану');
+            $templateProcessor->setValue('programs_kz', 'Авиациялық және радиоэлектрондық жабдықтарды техникалық пайдалану');
             $templateProcessor->setValue('programs_en', 'Technical operation of aviation and electronic equipment');
         } else if ($data->programms === 'Организация аэропортовой деятельности') {
             $templateProcessor->setValue('programs_kz', 'Әуежай қызметін ұйымдастыру');
@@ -636,7 +636,7 @@ class DocumentsController extends Controller
         } else if ($data->programms === 'Обслуживание наземного радиоэлектронного оборудования аэропортов') {
             $templateProcessor->setValue('programs_kz', 'Әуежайлардың жердегі радиоэлектрондық жабдықтарына қызмет көрсету');
         } else if ($data->programms === 'Техническая эксплуатация авиационного и радиоэлектронного оборудования') {
-            $templateProcessor->setValue('programs_kz', 'Авиациялық және радиоэлектрондық жабдықтырды техникалық пайдалану');
+            $templateProcessor->setValue('programs_kz', 'Авиациялық және радиоэлектрондық жабдықтарды техникалық пайдалану');
         } else if ($data->programms === 'Организация аэропортовой деятельности') {
             $templateProcessor->setValue('programs_kz', 'Әуежай қызметін ұйымдастыру');
         } else if ($data->programms === 'Организация авиационных перевозок') {
