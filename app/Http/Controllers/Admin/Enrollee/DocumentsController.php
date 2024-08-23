@@ -415,7 +415,7 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_group_ru', 'В167 – Лётная эксплуатация летательных аппаратов и двигателей');
             $templateProcessor->setValue('programs_group_en', 'В167 – Flight operation of aircraft and engines');
             $templateProcessor->setValue('programs_group_kz', 'В167 – Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану');
-        } else if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
+        } else if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте' || $data->programms === 'Системная интеграция наземного обслуживания') {
             $templateProcessor->setValue('programs_group_ru', 'В095 – Транспортные услуги');
             $templateProcessor->setValue('programs_group_en', 'В095 – Transport services');
             $templateProcessor->setValue('programs_group_kz', 'В095 – Көлік қызметтері');
@@ -475,6 +475,12 @@ class DocumentsController extends Controller
         } else if ($data->programms === 'Логистика на транспорте') {
             $templateProcessor->setValue('programs_kz', 'Көліктегі логистика');
             $templateProcessor->setValue('programs_en', 'Transport logistics');
+        } else if ($data->programms === 'Системная интеграция наземного обслуживания') {
+            $templateProcessor->setValue('programs_kz', 'Жер үсті қызметін көрсетуді жүйелік интеграциялау');
+            $templateProcessor->setValue('programs_en', 'System integration of ground maintenance');
+        } else if ($data->programms === 'Авиационная безопасность и интеллектуальные системы') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық қауіпсіздік және зияткерлік жүйелер');
+            $templateProcessor->setValue('programs_en', 'Aviation Security and Intelligent Systems');
         } else if ($data->programms === 'Технология транспортных процессов в авиации') {
             $templateProcessor->setValue('programs_kz', 'Авиациядағы көлік процестерінің технологиясы');
             $templateProcessor->setValue('programs_en', 'Technology of transport processes in aviation');
@@ -643,6 +649,10 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_kz', 'Авиациялық тасымалдауды ұйымдастыру');
         } else if ($data->programms === 'Логистика на транспорте') {
             $templateProcessor->setValue('programs_kz', 'Көліктегі логистика');
+        } else if ($data->programms === 'Системная интеграция наземного обслуживания') {
+            $templateProcessor->setValue('programs_kz', 'Жер үсті қызметін көрсетуді жүйелік интеграциялау');
+        } else if ($data->programms === 'Авиационная безопасность и интеллектуальные системы') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық қауіпсіздік және зияткерлік жүйелер');
         } else if ($data->programms === 'Технология транспортных процессов в авиации') {
             $templateProcessor->setValue('programs_kz', 'Авиациядағы көлік процестерінің технологиясы');
         }
