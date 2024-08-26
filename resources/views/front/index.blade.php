@@ -13,9 +13,9 @@
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                    <h2>Приемная комиссия</h2>
+                                    <h2>{{ __('Приемная комиссия') }}</h2>
 
-                                    <a class="btn btn-primary btn-lg" href="/enrollee">Оставить заявку</a>
+                                    <a class="btn btn-primary btn-lg" href="/enrollee">{{ __('Оставить заявку') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -31,8 +31,7 @@
                                 <div class="carousel-content">
                                     <h2>{{ __('Виртуальная приемная комиссия') }}</h2>
                                     <a class="btn btn-primary btn-lg"
-                                        href="{!! env('APP_URL') !!}virtualnaya-priemnaya-komissiya-244">Перейти на
-                                        страницу</a>
+                                        href="{!! env('APP_URL') !!}virtualnaya-priemnaya-komissiya-244">{{ __('Перейти на страницу') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -66,13 +65,10 @@
                                 <div class="carousel-content">
                                     <h2>{{ __('Запись на личный прием ректора') }}</h2>
                                     <a class="btn btn-primary btn-lg"
-                                        href="https://docs.google.com/forms/u/2/d/e/1FAIpQLSfylFgyYRZ-gFEIKLUumJkWF7gr_g3CRpqtw5ArCr9nkN9wXA/viewform?usp=send_form">Перейти
-                                        на
-                                        страницу</a><br>
+                                        href="https://docs.google.com/forms/u/2/d/e/1FAIpQLSfylFgyYRZ-gFEIKLUumJkWF7gr_g3CRpqtw5ArCr9nkN9wXA/viewform?usp=send_form">{{ __('Перейти на страницу') }}</a><br>
                                     <a class="btn btn-primary btn-lg"
                                         href= "{!! env('APP_URL') !!}virtualnaya-priemnaya-komissiya-174"
-                                        style="background: #027cad !important;border-color: #027cad !important;">Часто
-                                        задаваемые вопросы</a>
+                                        style="background: #027cad !important;border-color: #027cad !important;">{{ __('Часто задаваемые вопросы') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -88,8 +84,8 @@
                                 <div class="carousel-content">
                                     <h2>Рейтинг ППС</h2>
 
-                                    <a class="btn btn-primary btn-lg" href="https://rate.agakaz.kz/result/list">Рейтинг преподавателей</a><br>
-                                    <a class="btn btn-primary btn-lg" href="https://rate.agakaz.kz/result/cafedra">Рейтинг кафедр</a>
+                                    <a class="btn btn-primary btn-lg" href="https://rate.agakaz.kz/result/list">{{ __('Рейтинг преподавателей') }}</a><br>
+                                    <a class="btn btn-primary btn-lg" href="https://rate.agakaz.kz/result/cafedra">{{ __('Рейтинг кафедр') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -103,9 +99,8 @@
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                    <h2>Профессиональная подготовка и переподготовка авиационного персонала в соответствии с
-                                        требованиями ИКАО</h2><br>
-                                    <a class="btn btn-primary btn-lg" href="/centerava">Перейти на страницу</a>
+                                    <h2>{{ __('Профессиональная подготовка и переподготовка авиационного персонала в соответствии с требованиями ИКАО') }}</h2><br>
+                                    <a class="btn btn-primary btn-lg" href="/centerava">{{ __('Перейти на страницу') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -121,8 +116,7 @@
                                 <div class="carousel-content">
                                     <h2></h2><br>
                                     <a class="btn btn-primary btn-lg"
-                                        href="https://docs.google.com/forms/d/e/1FAIpQLSdzsqo6x-8rqi_gzQFaY38UqGK3yIaMaFcwHvr8CYR0ls1OPQ/viewform">Заявка
-                                        на консультацию <br> психолога</a>
+                                        href="https://docs.google.com/forms/d/e/1FAIpQLSdzsqo6x-8rqi_gzQFaY38UqGK3yIaMaFcwHvr8CYR0ls1OPQ/viewform">{{ __('Заявка на консультацию психолога') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -441,7 +435,7 @@
         <div class="container">
             <div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
                 <h2 style="color: #ffffff">{{ __('Академия Гражданской Авиации') }}
-                    <br>в цифрах</br>
+                    <br>{{ __('в цифрах') }}</br>
                 <div class="devider"><i class="fa fa-plane fa-3x"></i></div>
             </div>
             <div class="row">
@@ -509,7 +503,7 @@
     <section id="client-logo">
         <div class="container">
             <div class="title text-center wow animated zoomInDown">
-                <h2>Наши <span class="color">Партнеры</span></h2>
+                <h2>{{ __('Наши') }} <span class="color">{{ __('Партнеры') }}</span></h2>
                 <div class="border"></div>
             </div>
             <div class="row">

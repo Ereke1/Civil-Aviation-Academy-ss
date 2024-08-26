@@ -20,14 +20,13 @@ class HomeController extends Controller
 		//return view('front.index', compact('tree', 'news', 'events'));
 		$myvar = "<script> localStorage.getItem('welcomInfo')</script>";
 
-        //return view('front.index', compact('tree', 'news', 'events'));
-		 if(isset($_COOKIE['welcomeAGA'])){
-		 	 //return view('front.index', compact('tree', 'libtree', 'news', 'events'));
-			  return view('front.index', compact('tree', 'news', 'events'));
-		  }else{
-		  	setcookie('welcomeAGA', 'yes', time() + (86400 * 15), "/");
-		  	return view('welcome', compact('tree', 'news', 'events'));
-             return view('front.index', compact('tree', 'news', 'events'));
-		  }
+        return view('front.index', compact('tree', 'news', 'events'));
+		//  if(isset($_COOKIE['welcomeAGA'])){
+		// 	  return view('front.index', compact('tree', 'news', 'events'));
+		//   }else{
+		//   	setcookie('welcomeAGA', 'yes', time() + (86400 * 15), "/");
+		//   	return view('welcome', compact('tree', 'news', 'events'));
+        //      return view('front.index', compact('tree', 'news', 'events'));
+		//   }
 	}
 }

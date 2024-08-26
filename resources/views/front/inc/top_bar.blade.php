@@ -11,7 +11,7 @@
                         </div>
                         <div>
                             <a href="/virtualnaya-priemnaya-komissiya-174" target="_blank">
-                                <i class="far fa-comments"></i> Общественная приемная
+                                <i class="far fa-comments"></i> {{ __('Общественная приемная') }}
                             </a>
                         </div>
                     </div>
