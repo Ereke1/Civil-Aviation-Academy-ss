@@ -130,7 +130,7 @@
                     </div>
 
                 </div>
-                <div class="col-12 col-md-4 lib-news">
+                <div class="col-12 col-md-4 lib-news mt-5 mt-md-0">
                     <div class="row">
                         <div class="title text-center">
                             <a href="{{ route('front.library_news') }}" style="padding: 0px;">
@@ -235,64 +235,201 @@
         </section>
     @endif
 
-
     <section id="book_collection">
         <div class="container">
-            <div class="row" id="book_collections">
-                <div class="col-12" style="background: white">
+            <div class="row">
+                <div class="col-12 col-md-8" style="background: white">
+
                     <div class="row">
-                        <div class="title text-center col-12">
-                            <h3>{{ __('ВИДЕОМАТЕРИАЛЫ') }}</h3>
+                        <div class="title text-center col-12 mb-2">
+                            <h3>{{ __('Часто задаваемые вопросы') }}</h3>
                             <div class="border"></div>
                         </div>
-                        <div class="oneMedia col-md-6 col-12">
-                            <video controls width="250" poster="/assets/images/library/kabis.png">
-                                <source src="/assets/images/library/кабис.mp4" type="video/mp4" />
-                                Ваш браузер не поддерживает встроенные видео :(
-                            </video>
 
-                            <h3>
-                                КАБИС
-                            </h3>
+
+                        <div class="col-12 text-left">
+                            <details>
+                                <summary>
+                                    <strong>
+                                        @if (Config::get('app.locale') === 'ru')
+                                            На какой срок я могу взять книги домой?
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            Үйге кітаптарды қанша уақытқа алып кете аламын?
+                                        @else
+                                            For how long can I take books home?
+                                        @endif
+                                    </strong>
+                                </summary>
+                                <div style="margin-left:15px;">
+                                    <p>
+                                        @if (Config::get('app.locale') === 'ru')
+                                            Учебники и методические пособия предоставляются до конца семестра, а
+                                            художественная и мотивационная литература предоставляется на 2 недели.
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            Оқулықтар мен әдістемелік кітаптар оқу жылының соңына дейін, ал көркем әдебиет
+                                            пен мотивациялық кітаптар 2 аптаға дейін беріледі.
+                                        @else
+                                            Textbooks and teaching aids are provided until the end of the semester, and
+                                            fiction and motivational literature are provided for 2 weeks.
+                                        @endif
+                                    </p>
+                                </div>
+                            </details>
                         </div>
 
-                        <div class="oneMedia col-md-6 col-12">
-
-                            <video controls width="250" poster="/assets/images/library/riel.png">
-                                <source src="/assets/images/library/РМЭБ.mp4" type="video/mp4" />
-                                Ваш браузер не поддерживает встроенные видео :(
-                            </video>
-                            <h3>
-                                РМЭБ
-                            </h3>
+                        <div class="col-12 text-left">
+                            <details>
+                                <summary>
+                                    <strong>
+                                        @if (Config::get('app.locale') === 'ru')
+                                            Где находится библиотека?
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            Кітапхана қай жерде орналасқан?
+                                        @else
+                                            Where is the library?
+                                        @endif
+                                    </strong>
+                                </summary>
+                                <div style="margin-left:15px;">
+                                    <p>
+                                        @if (Config::get('app.locale') === 'ru')
+                                            Читальный зал расположен на 1 этаже, в кабинете 133, электронный зал - на 1
+                                            этаже, кабинет 139, абонемент на 3 этаже, в кабинете 319.
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            Оқу залы 1 қабат, 133 кабинетте, электронды зал 1 қабат, 139 кабинетте,
+                                            абонемент бөлімі 3 қабат, 319 кабинетте орналасқан
+                                        @else
+                                            The reading room is located on the 1st floor, in room 133, the electronic room
+                                            is on the 1st floor, room 139, the subscription is on the 3rd floor, in room
+                                            319.
+                                        @endif
+                                    </p>
+                                </div>
+                            </details>
                         </div>
 
-                        <div class="oneMedia col-md-6 col-12">
-
-                            <video controls width="250" poster="/assets/images/library/iprSmart.png">
-                                <source src="/assets/images/library/iprSmart.mp4" type="video/mp4" />
-                                Ваш браузер не поддерживает встроенные видео :(
-                            </video>
-                            <h3>
-                                IPR SMART
-                            </h3>
+                        <div class="col-12 text-left">
+                            <details>
+                                <summary>
+                                    <strong>
+                                        @if (Config::get('app.locale') === 'ru')
+                                            Какой график работы библиотеки?
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            Кітапхананың жұмыс уақыты қандай?
+                                        @else
+                                            What are the library's opening hours?What are the library's opening hours?
+                                        @endif
+                                    </strong>
+                                </summary>
+                                <div style="margin-left:15px;">
+                                    <p>
+                                        @if (Config::get('app.locale') === 'ru')
+                                            Абонемент и электронная библиотека работают с 8:30 до 17:30, читальный зал – с
+                                            8:30 до 22:00.
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            Абонемент бөлімі мен электронды кітапхана таңғы 8:30-17.30 аралығында, ал оқу
+                                            залы 8.30-22.00 аралығында жұмыс жасайды.
+                                        @else
+                                            The subscription and electronic library are open from 8:30 to 17:30, the reading
+                                            room - from 8:30 to 22:00.
+                                        @endif
+                                    </p>
+                                </div>
+                            </details>
                         </div>
 
-                        <div class="oneMedia col-md-6 col-12">
-
-                            <video controls width="250" poster="/assets/images/library/libraryICAO.png">
-                                <source src="/assets/images/library/ikaoLibrary.mp4" type="video/mp4" />
-                                Ваш браузер не поддерживает встроенные видео :(
-                            </video>
-                            <h3>
-                                IKAO Library
-                            </h3>
+                        <div class="col-12 text-left">
+                            <details>
+                                <summary>
+                                    <strong>
+                                        @if (Config::get('app.locale') === 'ru')
+                                            Какие документы нужны для получения книг?
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            Кітап алу үшін қандай құжат қажет?
+                                        @else
+                                            What documents are needed to receive books?
+                                        @endif
+                                    </strong>
+                                </summary>
+                                <div style="margin-left:15px;">
+                                    <p>
+                                        @if (Config::get('app.locale') === 'ru')
+                                            Для получения книг требуется только ID карта студентов.
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            Кітап алу үшін студенттер мен оқытушылардың ID карталары ғана қажет.
+                                        @else
+                                            To receive books, only a student ID card is required.
+                                        @endif
+                                    </p>
+                                </div>
+                            </details>
                         </div>
 
+                        <div class="col-12 text-left">
+                            <details>
+                                <summary>
+                                    <strong>
+                                        @if (Config::get('app.locale') === 'ru')
+                                            Как я могу узнать, есть ли в нашей библиотеке необходимые учебники и книги, не
+                                            посещая библиотеку?
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            Қажетті оқулықтар мен кітаптар біздің кітапхананың қорында бар яки жоқ екенін
+                                            кітапханаға бармай-ақ қалай білуге болады?
+                                        @else
+                                            How can I find out if our library has the necessary textbooks and books without
+                                            visiting the library?
+                                        @endif
+                                    </strong>
+                                </summary>
+                                <div style="margin-left:15px;">
+                                    <p>
+                                        @if (Config::get('app.locale') === 'ru')
+                                            Через программу «Кабис» вы можете узнать онлайн, есть ли в нашей библиотеке те
+                                            книги, которые вы ищете.
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                            Кабис бағдарламасы арқылы іздеген кітаптардың біздің кітап қорымызда бар яки жоқ
+                                            екенін онлайн түрде білуге болады.
+                                        @else
+                                            Through the Cabis program you can find out online whether our library has the
+                                            books you are looking for.
+                                        @endif
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
                     </div>
 
+                </div>
+                <div class="col-12 col-md-4 lib-news mt-5 mt-md-0">
+                    <div class="row">
+                        <div class="title text-center col-12 mb-2">
+                            <h3 style="color: white;">
+                                {{ __('Контакты') }}
+                                @if (Config::get('app.locale') === 'ru')
+                                Онлайн-консультация
+                                @elseif(Config::get('app.locale') === 'kk')
+                                Онлайн кеңес беру
+                                @else
+                                Online consultation
+                                @endif
+                            </h3>
+                            <div class="border"></div>
+                        </div>
+
+                        <div class="col-12">
+                            <a class="text-center" href="{!! $whatsappLink !!}" title="Chat with us on WhatsApp"
+                                style="margin: 0 0 20px 0 !important;
+height: 42px; min-width: 42px; padding: 10px 0px 0px 10px; background-color: #00E785; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem;">
+                                <img style="height: 23px; width: auto; padding-bottom: 5px;"
+                                    src="/assets/images/footer_social/whatsapp-white-icon.png"
+                                    alt="Description missing for this image.">
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 @endsection

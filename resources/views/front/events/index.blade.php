@@ -17,7 +17,7 @@
                     @if (Config::get('app.locale') === 'ru')
                         Главная
                     @elseif(Config::get('app.locale') === 'kk')
-                        Уйге
+                        Үйге
                     @else
                         Home
                     @endif

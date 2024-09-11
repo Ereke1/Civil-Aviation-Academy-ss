@@ -22866,6 +22866,7 @@ h4 {
     padding: 1.5rem;
     text-align: center;
     background-color: #fff;
+    height: 200px;
 }
 
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
@@ -23602,7 +23603,7 @@ h2.section-heading {
 
 
 #book_collection {
-    padding: 100px 0 100px;
+    /* padding: 100px 0 100px; */
     text-align: center;
     background: #f7f7f9;
 }
@@ -23730,7 +23731,7 @@ h2.section-heading {
 
 /* Blog */
 #newBooks {
-    padding: 100px 0;
+    /* padding: 100px 0; */
     background: #f1f1f1;
 }
 

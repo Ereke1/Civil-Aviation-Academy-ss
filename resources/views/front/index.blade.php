@@ -57,6 +57,38 @@
                 </div>
             </div><!--/.item-->
             <div class="item"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/investorPartner.png);width: 100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2>
+                                        @if (Config::get('app.locale') === 'ru')
+                                        АО «Академия Гражданской Авиации» объявляет конкурс на определение Инвестора-партнера для реконструкции гостиничного комплекса «Экипаж» под общежитие для проживания студентов
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                        «Азаматтық Авиация Академиясы» АҚ «Экипаж» қонақ үй кешенін студенттерге арналған жатақханаға реконструкциялау бойынша Инвестор-серіктесті анықтау бойынша конкурс жариялайды
+                                        @else
+                                        АО «Академия Гражданской Авиации» объявляет конкурс на определение Инвестора-партнера для реконструкции гостиничного комплекса «Экипаж» под общежитие для проживания студентов
+                                        @endif
+                                    </h2>
+                                    <a class="btn btn-primary btn-lg"
+                                        href="{!! env('APP_URL') !!}events/28">
+                                        @if (Config::get('app.locale') === 'ru')
+                                        Подать заявку
+                                        @elseif(Config::get('app.locale') === 'kk')
+                                        Өтініш беру
+                                        @else
+                                        Apply
+                                        @endif
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item"
                 style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/open_academy.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
