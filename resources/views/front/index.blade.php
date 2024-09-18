@@ -351,7 +351,7 @@
     <section id="paraVideo" class="parallax">
         <div class="ParallaxVideo">
             <video autoplay muted loop>
-                <source src="/assets/images/Rolik_AVIA без титров.mp4" type="video/mp4">
+                <source src="/assets/images/videoForMain.mp4" type="video/mp4">
             </video>
             <h3 class="animated pulse infinite" id="paraVideoText">{{ __('Полет к мечте начинается здесь!') }}</h3>
         </div>

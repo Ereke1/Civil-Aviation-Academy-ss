@@ -127,6 +127,28 @@
                             {{ __('Онлайн-библиотека Wiley - это  портал к самой широкой и глубокой в мире междисциплинарной коллекции онлайн-ресурсов, охватывающих вопросы жизни, здравоохранения, физики, социальных и гуманитарных наук.') }}
                         </div>
 
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://eivis.ru/">
+                                <img src="\assets\images\library\IVIS300x86.png">
+                            </a>
+                            <h3>
+                                IVIS
+                            </h3>
+                            @if (Config::get('app.locale') === 'ru')
+                                Универсальная база данных IVIS Library содержит электронные версии ведущих российских
+                                журналов, независимые научные издания, книги по технологии и инжинирингу, а также социальные
+                                и гуманитарного науки
+                            @elseif(Config::get('app.locale') === 'kk')
+                                IVIS Library әмбебап дерекқорында жетекші ресейлік журналдардың электронды нұсқалары,
+                                тәуелсіз ғылыми басылымдар, технология және инжиниринг кітаптары, Әлеуметтік және
+                                гуманитарлық ғылымдар бар
+                            @else
+                                The IVIS Library universal database contains electronic versions of leading Russian
+                                journals, independent scientific publications, books on technology and engineering, as well
+                                as social sciences and humanities
+                            @endif
+                        </div>
+
                     </div>
 
                 </div>
@@ -406,11 +428,11 @@
                             <h3 style="color: white;">
                                 {{ __('Контакты') }}
                                 @if (Config::get('app.locale') === 'ru')
-                                Онлайн-консультация
+                                    Онлайн-консультация
                                 @elseif(Config::get('app.locale') === 'kk')
-                                Онлайн кеңес беру
+                                    Онлайн кеңес беру
                                 @else
-                                Online consultation
+                                    Online consultation
                                 @endif
                             </h3>
                             <div class="border"></div>
