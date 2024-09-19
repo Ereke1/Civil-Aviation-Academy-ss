@@ -26,6 +26,9 @@ class LibraryNewsController extends Controller
 	{
 		$userDepartment = User::find(Auth::user()->id)->workersInfo->department;
 		$library_news = LibraryNews::where('department', $userDepartment)->orderBy('id', 'desc')->get();
+        if($userDepartment == "ДМР"){
+            $library_news = LibraryNews::orderBy('id', 'desc')->get();
+        }
 		return view('admin.website.library_news.index', compact('library_news'));
 	}
 
