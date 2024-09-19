@@ -19116,7 +19116,7 @@ h4 {
 }
 
 #news .main-image__link img {
-    /* height: 31vw !important; */
+    height: 31vw !important;
     object-fit: contain;
 }
 
