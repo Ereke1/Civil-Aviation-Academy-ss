@@ -5,7 +5,7 @@
 @section('content')
     <section id="enrollee">
         <div class="container">
-            <h1>Онлайн регистрация на магистратуру</h1>
+            <h1>{{ __('Онлайн регистрация на магистратуру') }}</h1>
             <div class="enrollee">
                 <form action="{{ route('front.enrollee.master.store') }}" method="POST" id="form">
                     @csrf
@@ -13,50 +13,45 @@
                     <input type="hidden" name="status" value="0">
                     <div class="flex">
                         <div id="programmsBlock">
-                            <label for="programms">Образовательная программа</label>
+                            <label for="programms">{{ __('Образовательная программа') }}</label>
                             <select name="programms" id="programms" onchange="programmsFunc()" required>
                                 <option value="null" disabled selected>-----</option>
-                                <option value="Авиационная техника и технологии (профильная магистратура)">Авиационная
-                                    техника и
-                                    технологии (профильная магистратура)</option>
-                                <option value="Авиационная техника и технологии (научно-педагогическая магистратура)">
-                                    Авиационная техника и технологии (научно-педагогическая магистратура)</option>
+                                <option value="Авиационная техника и технологии (профильная магистратура)">{{ __('Авиационная техника и технологии (профильная магистратура)') }}</option>
+                                <option value="Авиационная техника и технологии (научно-педагогическая магистратура)">{{ __('Авиационная техника и технологии (научно-педагогическая магистратура)') }}</option>
                                 <option
-                                    value="Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)">
-                                    Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая
-                                    магистратура)
+                                    value="Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)">{{ __('Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') }}
+
                                 </option>
                                 <option
-                                    value="Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)">
-                                    Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)
+                                    value="Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)">{{ __('Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)') }}
+
                                 </option>
                                 <option
-                                    value="Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)">
-                                    Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)
+                                    value="Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)">{{ __('Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)') }}
+
                                 </option>
                                 <option
-                                    value="Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)">
-                                    Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая
-                                    магистратура)</option>
+                                    value="Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)">{{ __('Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') }}
+                                    </option>
                             </select>
                         </div>
                         <div class="disabled" id="languageBlock">
-                            <label for="language">Язык обучения:</label>
+                            <label for="language">{{ __('Язык обучения') }}</label>
                             <select name="language" id="language" onchange="languageFunc()" required>
                                 <option value="" disabled selected>-----</option>
-                                <option value="Русский">Русский</option>
+                                <option value="Русский">{{ __('Русский') }}</option>
                             </select>
                         </div>
                         <div class="disabled" id="haveTestBlock">
-                            <label for="have_test">Имеются ли результаты комплексного тестирования (КТ)?</label>
+                            <label for="have_test">{{ __('Имеются ли результаты комплексного тестирования (КТ)?') }}</label>
                             <select name="have_test" id="have_test" onchange="haveTestFunction()" required>
                                 <option value="" disabled selected>-----</option>
-                                <option value="0">Нет</option>
-                                <option value="1">Да</option>
+                                <option value="0">{{ __('Нет') }}</option>
+                                <option value="1">{{ __('Да') }}</option>
                             </select>
                         </div>
                         <div class="disabled" id="tgoMagisterBlock">
-                            <label for="tgo_magister">Тест на готовность к обучению:</label>
+                            <label for="tgo_magister">{{ __('Тест на готовность к обучению') }}:</label>
                             <select name="tgo_magister" id="tgo_magister" onchange="tgoFunction()">
                                 <option value="" disabled selected>-----</option>
                                 <option value="0">0</option>
@@ -87,7 +82,7 @@
                             </select>
                         </div>
                         <div class="disabled" id="profSubMagister1Block">
-                            <label for="prof_sub_magister_1">Тест с 1 правильным ответом</label>
+                            <label for="prof_sub_magister_1">{{ __('Тест с 1 правильным ответом') }}</label>
                             <select name="prof_sub_magister_1" id="prof_sub_magister_1" onchange="profSubMagister1Func()">
                                 <option value="" disabled selected>-----</option>
                                 <option value="0">0</option>
@@ -138,7 +133,7 @@
                             </select>
                         </div>
                         <div class="disabled" id="profSubMagister2Block">
-                            <label for="prof_sub_magister_2">Тест с 1 и несколькими правильными ответами</label>
+                            <label for="prof_sub_magister_2">{{ __('Тест с 1 и несколькими правильными ответами') }}</label>
                             <select name="prof_sub_magister_2" id="prof_sub_magister_2" onchange="profSubMagister2Func()">
                                 <option value="" disabled selected>-----</option>
                                 <option value="7">7</option>
@@ -188,7 +183,7 @@
                             </select>
                         </div>
                         <div class="disabled" id="engMagisterBlock">
-                            <label for="eng_magister">Английский язык:</label>
+                            <label for="eng_magister">{{ __('Английский язык') }}:</label>
                             <select name="eng_magister" id="eng_magister" onchange="englishMasterFunc()">
                                 <option value="" disabled selected>-----</option>
                                 <option value="0">0</option>
@@ -221,15 +216,15 @@
                             </select>
                         </div>
                         <div class="disabled" id="citizenBlock">
-                            <label for="citizen">Гражданство:</label>
+                            <label for="citizen">{{ __('Гражданство') }}</label>
                             <select name="citizen" id="citizen" onchange="citizenFunc()" required>
                                 <option value="null" disabled selected>-----</option>
-                                <option value="Резидент РК">Резидент РК</option>
-                                <option value="Нерезидент РК">Нерезидент РК</option>
+                                <option value="Резидент РК">{{ __('Гражданин Республики Казахстан') }}</option>
+                                <option value="Нерезидент РК">{{ __('Гражданин другого государства') }}</option>
                             </select>
                         </div>
                         <div id="countryBlock" class="disabled">
-                            <label for="countries">Страна</label>
+                            <label for="countries">{{ __('Гражданство') }}</label>
                             <select name="countries" id="countries" onchange="countryFunc()">
                                 <option value="null" disabled selected>-----</option>
                                 <option value="Австралия">Австралия</option>
@@ -469,64 +464,64 @@
                             </select>
                         </div>
                         <div id="regionBlock" class="disabled">
-                            <label for="region">Регион</label>
+                            <label for="region">{{ __('Регион') }}</label>
                             <select name="region" id="region" onchange="regionFunc()">
                                 <option value="null" disabled selected>-----</option>
-                                <option value="г. Алматы">г. Алматы</option>
-                                <option value="г. Астана">г. Астана</option>
-                                <option value="г. Шымкент">г. Шымкент</option>
-                                <option value="Абайская обл.">Абайская обл.</option>
-                                <option value="Акмолинская обл.">Акмолинская обл.</option>
-                                <option value="Актюбинская обл.">Актюбинская обл.</option>
-                                <option value="Алматинская обл.">Алматинская обл.</option>
-                                <option value="Атырауская обл.">Атырауская обл.</option>
-                                <option value="Восточно-Казахстанская обл.">Восточно-Казахстанская обл.</option>
-                                <option value="Жамбыльская обл.">Жамбыльская обл.</option>
-                                <option value="Жетысуская обл.">Жетысуская обл.</option>
-                                <option value="Западно-Казахстанская обл.">Западно-Казахстанская обл.</option>
-                                <option value="Карагандинская обл.">Карагандинская обл.</option>
-                                <option value="Костанайская обл.">Костанайская обл.</option>
-                                <option value="Кызылординская обл.">Кызылординская обл.</option>
-                                <option value="Мангистауская обл.">Мангистауская обл.</option>
-                                <option value="Павлодарская обл.">Павлодарская обл.</option>
-                                <option value="Северо-Казахстанская обл.">Северо-Казахстанская обл.</option>
-                                <option value="Туркестанская обл.">Туркестанская обл.</option>
-                                <option value="Улытауская обл.">Улытауская обл.</option>
+                                <option value="г. Алматы">{{ __('г. Алматы') }}</option>
+                                <option value="г. Астана">{{ __('г. Астана') }}</option>
+                                <option value="г. Шымкент">{{ __('г. Шымкент') }}</option>
+                                <option value="Абайская обл.">{{ __('Абайская обл.') }}</option>
+                                <option value="Акмолинская обл.">{{ __('Акмолинская обл.') }}</option>
+                                <option value="Актюбинская обл.">{{ __('Актюбинская обл.') }}</option>
+                                <option value="Алматинская обл.">{{ __('Алматинская обл.') }}</option>
+                                <option value="Атырауская обл.">{{ __('Атырауская обл.') }}</option>
+                                <option value="Восточно-Казахстанская обл.">{{ __('Восточно-Казахстанская обл.') }}</option>
+                                <option value="Жамбыльская обл.">{{ __('Жамбыльская обл.') }}</option>
+                                <option value="Жетысуская обл.">{{ __('Жетысуская обл.') }}</option>
+                                <option value="Западно-Казахстанская обл.">{{ __('Западно-Казахстанская обл.') }}</option>
+                                <option value="Карагандинская обл.">{{ __('Карагандинская обл.') }}</option>
+                                <option value="Костанайская обл.">{{ __('Костанайская обл.') }}</option>
+                                <option value="Кызылординская обл.">{{ __('Кызылординская обл.') }}</option>
+                                <option value="Мангистауская обл.">{{ __('Мангистауская обл.') }}</option>
+                                <option value="Павлодарская обл.">{{ __('Павлодарская обл.') }}</option>
+                                <option value="Северо-Казахстанская обл.">{{ __('Северо-Казахстанская обл.') }}</option>
+                                <option value="Туркестанская обл.">{{ __('Туркестанская обл.') }}</option>
+                                <option value="Улытауская обл.">{{ __('Улытауская обл.') }}</option>
                             </select>
                         </div>
                         <div id="iinBlock" class="disabled">
-                            <label for="iin">ИИН</label>
-                            <input type="text" name="iin" id="iin" placeholder="Введите номер ИИН">
+                            <label for="iin">{{ __('ИИН') }}</label>
+                            <input type="text" name="iin" id="iin" placeholder="{{ __('Введите номер ИИН') }}">
                         </div>
                         <div id="surnameBlock" class="disabled">
-                            <label for="surname">Фамилия</label>
-                            <input type="text" name="surname" placeholder="Согласно документу" required>
+                            <label for="surname">{{ __('Фамилия') }}</label>
+                            <input type="text" name="surname" placeholder="{{ __('Согласно удостоверению личности') }}" required>
                         </div>
 
                         <div id="nameBlock" class="disabled">
-                            <label for="name">Имя</label>
-                            <input type="text" name="name" placeholder="Согласно документу" required>
+                            <label for="name">{{ __('Имя') }}</label>
+                            <input type="text" name="name" placeholder="{{ __('Согласно удостоверению личности') }}" required>
                         </div>
 
                         <div id="patronymicBlock" class="disabled">
-                            <label for="patronymic">Отчество (при наличии)</label>
-                            <input type="text" name="patronymic" placeholder="Согласно документу">
+                            <label for="patronymic">{{ __('Отчество (при наличии)') }}</label>
+                            <input type="text" name="patronymic" placeholder="{{ __('Согласно удостоверению личности') }}">
                         </div>
                         <div id="birthdateBlock" class="disabled">
-                            <label for="birthdate">Дата рождения</label>
-                            <input type="date" name="birthdate" placeholder="Введите дату рождения" required>
+                            <label for="birthdate">{{ __('Дата рождения') }}</label>
+                            <input type="date" name="birthdate" placeholder="{{ __('Введите дату рождения') }}" required>
                         </div>
                         <div id="genderBlock" class="disabled">
-                            <label for="gender">Выберите пол</label>
+                            <label for="gender">{{ __('Пол') }}</label>
                             <select name="gender" id="gender" required>
                                 <option value="">-----</option>
-                                <option value="мужской">мужской</option>
-                                <option value="женский">женский</option>
+                                <option value="мужской">{{ __('мужской') }}</option>
+                                <option value="женский">{{ __('женский') }}</option>
                             </select>
                         </div>
 
                         <div id="nationalityBlock" class="disabled">
-                            <label for="nationality">Национальность</label>
+                            <label for="nationality">{{ __('Национальность') }}</label>
                             <select name="nationality" id="nationality" class="nationality">
                                 <option value="" disabled selected>-----</option>
                                 @foreach ($nationality_list as $nationality)
@@ -542,20 +537,20 @@
                         </div>
 
                         <div id="phoneBlock-1" class="disabled">
-                            <label for="phone_1">Телефон</label>
-                            <input type="tel" name="phone_1" class="phone" placeholder="Введите телефон" required>
+                            <label for="phone_1">{{ __('Телефон') }}</label>
+                            <input type="tel" name="phone_1" class="phone" placeholder="{{ __('Введите номер телефона') }}" required>
                         </div>
                         <div id="phoneBlock-2" class="disabled">
-                            <label for="phone_2">Телефон</label>
-                            <input type="tel" name="phone_2" class="phone" placeholder="Введите телефон">
+                            <label for="phone_2">{{ __('Телефон') }} 2</label>
+                            <input type="tel" name="phone_2" class="phone" placeholder="{{ __('Введите номер телефона') }}">
                         </div>
                         <div id="emailBlock" class="disabled">
                             <label for="email">E-mail</label>
-                            <input type="mail" name="email" id="email" placeholder="Введите вашу почту" required>
+                            <input type="mail" name="email" id="email" placeholder="{{ __('Введите вашу почту') }}" required>
                         </div>
                     </div>
                     <div id="buttonBlock">
-                        <button type="submit" id="button" class="disabled">Отправить анкету</button>
+                        <button type="submit" id="button" class="disabled">{{ __('Отправить анкету') }}</button>
                     </div>
                 </form>
                 @if (session('alert'))

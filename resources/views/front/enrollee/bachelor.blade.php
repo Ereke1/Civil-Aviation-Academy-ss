@@ -751,7 +751,7 @@
                         </div>
                         <div id="iinBlock" class="disabled">
                             <label for="iin">{{ __('ИИН') }}</label>
-                            <input type="text" name="iin" id="iin" placeholder="Введите номер ИИН">
+                            <input type="text" name="iin" id="iin" placeholder="{{ __('Введите номер ИИН') }}">
                         </div>
                         <div id="surnameBlock" class="disabled">
                             <label for="surname">{{ __('Фамилия') }}</label>
