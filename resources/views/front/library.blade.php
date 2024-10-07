@@ -149,6 +149,31 @@
                             @endif
                         </div>
 
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://eivis.ru/">
+                                <img src="\assets\images\library\sae.png">
+                            </a>
+                            <h3>
+                                SASAE
+                            </h3>
+                            @if (Config::get('app.locale') === 'ru')
+                                SAE MOBILUS - это полноценная онлайн-библиотека, содержащая более 200 000 действующих и
+                                исторических стандартов, технических документов, электронных книг и журналов, материалы
+                                которых используются в изучении, разработке, производстве, обслуживании и управлении
+                                воздушных, аэрокосмических и наземных транспортных средств.
+                            @elseif(Config::get('app.locale') === 'kk')
+                                SAE MOBILUS-бұл 200 000-нан астам қолданыстағы техникалық құжаттарды, электронды кітаптар
+                                мен журналдарды қамтитын толыққанды онлайн кітапхана, олардың материалдары әуе, аэроғарыш
+                                және жер үсті көліктерін зерттеу, әзірлеу, өндіру, техникалық қызмет көрсету және басқаруда
+                                қолданылады
+                            @else
+                                SAE MOBILUS is a full-fledged online library containing more than 200,000 current and
+                                historical standards, technical documents, e-books and journals, the materials of which are
+                                used in the study, development, production, maintenance and management of air, aerospace and
+                                ground vehicles.
+                            @endif
+                        </div>
+
                     </div>
 
                 </div>
