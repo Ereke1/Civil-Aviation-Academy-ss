@@ -154,7 +154,7 @@
                                 <img src="\assets\images\library\sae.png">
                             </a>
                             <h3>
-                                SASAE
+                                SAE
                             </h3>
                             @if (Config::get('app.locale') === 'ru')
                                 SAE MOBILUS - это полноценная онлайн-библиотека, содержащая более 200 000 действующих и
