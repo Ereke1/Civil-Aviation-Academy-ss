@@ -30,18 +30,33 @@
                                     <option value=""></option>
                                     @foreach ($training_centers as $training_center)
                                         <option value="{!! $training_center->id !!}"
-                                            @if ($filter_training_center_id == $training_center->id) selected @endif>{!! $training_center->name_ru !!}
+                                            @if ($filter_training_center_id == $training_center->id) selected @endif>
+                                            @if (Config::get('app.locale') === 'ru')
+                                                {!! $training_center->name_ru !!}
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                {!! $training_center->name_kz !!}
+                                            @else
+                                                {!! $training_center->name_en !!}
+                                            @endif
                                         </option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="col-md-6 form-group">
-                                <label for="filter_training_type_id" class="font-weight-bold">{{ __('Тип подготовки') }}</label>
+                                <label for="filter_training_type_id"
+                                    class="font-weight-bold">{{ __('Тип подготовки') }}</label>
                                 <select name="filter_training_type_id" class="custom-select">
                                     <option value=""></option>
                                     @foreach ($training_types as $training_type)
                                         <option value="{!! $training_type->id !!}"
-                                            @if ($filter_training_type_id == $training_type->id) selected @endif>{!! $training_type->name_ru !!}
+                                            @if ($filter_training_type_id == $training_type->id) selected @endif>
+                                            @if (Config::get('app.locale') === 'ru')
+                                                {!! $training_type->name_ru !!}
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                {!! $training_type->name_kz !!}
+                                            @else
+                                                {!! $training_type->name_en !!}
+                                            @endif
                                         </option>
                                     @endforeach
                                 </select>
@@ -112,14 +127,15 @@
                                             </p>
 
                                             <h6>{{ __('Продолжительность') }}:</h6>
-                                            <p>{!! $course->duration_hours !!} {{ __('часов') }}/{!! $course->duration_days !!} {{ __('дня') }}</p>
+                                            <p>{!! $course->duration_hours !!} {{ __('часов') }}/{!! $course->duration_days !!}
+                                                {{ __('дня') }}</p>
 
                                             <h6>{{ __('Цена') }}:</h6>
                                             <p>{!! $course->price !!} {{ __('тенге') }}</p>
 
                                             <h6>{{ __('Ближайшие даты') }}:</h6>
-                                            @if($course->start_date != NULL && $course->end_date != NULL)
-                                            <p>{!! date('d.m.Y', strtotime($course->start_date)) !!} - {!! date('d.m.Y', strtotime($course->end_date)) !!}</p>
+                                            @if ($course->start_date != null && $course->end_date != null)
+                                                <p>{!! date('d.m.Y', strtotime($course->start_date)) !!} - {!! date('d.m.Y', strtotime($course->end_date)) !!}</p>
                                             @endif
 
                                             <div class="card" style="margin-bottom: 3px;">
@@ -166,16 +182,15 @@
     </section>
 
 
-<script>
-    $(document).ready(function() {
-        $("#searchInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $(".col-12.col-md-6.col-lg-6").filter(function() {
-                $(this).toggle($(this).find("figcaption h4").text().toLowerCase().indexOf(value) > -1);
+    <script>
+        $(document).ready(function() {
+            $("#searchInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $(".col-12.col-md-6.col-lg-6").filter(function() {
+                    $(this).toggle($(this).find("figcaption h4").text().toLowerCase().indexOf(
+                        value) > -1);
+                });
             });
         });
-    });
-</script>
+    </script>
 @endsection
-
-
