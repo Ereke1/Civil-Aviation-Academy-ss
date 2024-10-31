@@ -17,6 +17,7 @@
                             <select name="programms" id="programms" onchange="programmsFunc()" required>
                                 <option value="null" disabled selected>-----</option>
                                 <option value="Авиационная техника и технологии">{{ __('Авиационная техника и технологии') }}</option>
+                                <option value="Летная эксплуатация летательных аппаратов и двигателей">{{ __('Летная эксплуатация летательных аппаратов и двигателей') }}</option>
                             </select>
                         </div>
                         <div class="disabled" id="languageBlock">

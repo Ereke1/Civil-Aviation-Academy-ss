@@ -25,6 +25,7 @@
                 <select name="programms">
                     <option value=""></option>
                     <option value="Авиационная техника и технологии" @if ($programms === 'Авиационная техника и технологии') selected @endif>Авиационная техника и технологии</option>
+                    <option value="Летная эксплуатация летательных аппаратов и двигателей" @if ($programms === 'Летная эксплуатация летательных аппаратов и двигателей') selected @endif>Летная эксплуатация летательных аппаратов и двигателей</option>
                 </select>
             </div>
             <div>
@@ -241,8 +242,8 @@
                                             <h5 class="block__title">Образовательная программа</h5>
                                             <select name="programms" class="block__info" id="programms">
                                                 <option value="-----" @if ($item->programms === null) selected @endif>-----</option>
-                                                <option value="Авиационная техника и технологии" @if ($item->programms === 'Авиационная техника и технологии') selected @endif>Авиационная техника и технологии
-                                                </option>
+                                                <option value="Авиационная техника и технологии" @if ($item->programms === 'Авиационная техника и технологии') selected @endif>Авиационная техника и технологии</option>
+                                                <option value="Летная эксплуатация летательных аппаратов и двигателей" @if ($item->programms === 'Летная эксплуатация летательных аппаратов и двигателей') selected @endif>Летная эксплуатация летательных аппаратов и двигателей</option>
                                             </select>
                                         </div>
                                         @if (isset($item->countries))
