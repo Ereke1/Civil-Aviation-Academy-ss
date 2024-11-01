@@ -87,7 +87,7 @@
                 <div class="row gy-4 gy-lg-4 gx-xxl-5">
 
                     @foreach ($training_courses as $course)
-                        <div class="col-12 col-md-6 col-lg-6">
+                        <div class="col-12 col-md-6 col-lg-6 mb-3">
                             <div class="card h-100 border-0 border-bottom border-primary shadow overflow-hidden">
                                 <div class="card-body p-0">
                                     <figure class="m-0 p-0 row">
