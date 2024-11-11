@@ -90,6 +90,8 @@ class PageController extends Controller
     {
         if ($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
+            $originName = mb_convert_encoding($originName, 'UTF-8', 'auto');
+
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
             $extension = $request->file('upload')->getClientOriginalExtension();
             $fileName = $fileName . '_' . time() . '.' . $extension;
