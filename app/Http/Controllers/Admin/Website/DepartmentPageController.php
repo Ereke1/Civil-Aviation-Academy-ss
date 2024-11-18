@@ -63,7 +63,7 @@ class DepartmentPageController extends Controller
 	public function create()
 	{
 		$departments = Department::all();
-		$slugs = ['history', 'teachers', 'science', 'laboratories', 'eduProgram1', 'eduProgram2', 'eduProgram3', 'eduProgram4', 'eduProgram5', 'eduProgram6', 'eduProgram7', 'eduProgram8', 'eduProgram9', 'eduProgram10'];
+		$slugs = ['history', 'teachers', 'science', 'laboratories', 'eduProgram1', 'eduProgram2', 'eduProgram3', 'eduProgram4', 'eduProgram5', 'eduProgram6', 'eduProgram7', 'eduProgram8', 'eduProgram9', 'eduProgram10', 'eduProgram11', 'eduProgram12', 'eduProgram13', 'eduProgram14'];
 		return view('admin.website.department-page.create', compact('departments', 'slugs'));
 	}
 
@@ -142,7 +142,7 @@ class DepartmentPageController extends Controller
 		$slug = $department_page-> slug;
 		$image = $department_page->image;
 		$departments = Department::all();
-		$slugs = ['history', 'teachers', 'science', 'laboratories', 'eduProgram1', 'eduProgram2', 'eduProgram3', 'eduProgram4', 'eduProgram5', 'eduProgram6', 'eduProgram7', 'eduProgram8', 'eduProgram9', 'eduProgram10'];
+		$slugs = ['history', 'teachers', 'science', 'laboratories', 'eduProgram1', 'eduProgram2', 'eduProgram3', 'eduProgram4', 'eduProgram5', 'eduProgram6', 'eduProgram7', 'eduProgram8', 'eduProgram9', 'eduProgram10', 'eduProgram11', 'eduProgram12', 'eduProgram13', 'eduProgram14'];
 		return view('admin.website.department-page.edit', compact('department_page', 'departments', 'slugs', 'name', 'content', 'sort', 'department_id', 'slug', 'image', 'canCreate'));
 	}
 

@@ -32,7 +32,11 @@
                             $page->slug == 'eduProgram7' ||
                             $page->slug == 'eduProgram8' ||
                             $page->slug == 'eduProgram9' ||
-                            $page->slug == 'eduProgram10')
+                            $page->slug == 'eduProgram10' ||
+                            $page->slug == 'eduProgram11' ||
+                            $page->slug == 'eduProgram12' ||
+                            $page->slug == 'eduProgram13' ||
+                            $page->slug == 'eduProgram14')
                             <div class="col-md-4 col-sm-12 d-flex align-items-stretch mt-4 wow fadeInUp">
                                 <div class="icon-box departmentSlug"
                                     style="background-image: linear-gradient( rgba(0, 36, 156, 0.5), rgba(0, 36, 156, 0.5) ), url({!! $page->image !!}); border-radius:5px;">
