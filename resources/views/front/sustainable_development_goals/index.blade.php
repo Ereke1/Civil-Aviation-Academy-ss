@@ -40,7 +40,7 @@
             <div class="container overflow-hidden ourteam">
                 <div class="row gy-4 gy-lg-4 gx-xxl-5">
                     @foreach ($goals as $goal)
-                        <div class="col-12 col-md-6 col-lg-2">
+                        <div class="col-12 col-md-6 col-lg-2 mb-3">
                             <div class="card h-100 border-0 border-bottom border-primary shadow-sm overflow-hidden">
                                 <div class="card-body p-0">
                                     <figure class="m-0 p-0">
