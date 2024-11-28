@@ -12,11 +12,11 @@
         <div class="pages">
             <div class="pages__head">
                 <div class="pages__title">
-                    <h2>Страницы ЦУР</h2>
+                    <h2>Публикации ЦУР</h2>
                 </div>
                 <div class="pages__add-page">
                     <a href="{{ route('admin.website.sustainable_development_goals.create') }}" class="btn btn-secondary">
-                        Добавить страницу
+                        Добавить публикацию
                     </a>
                 </div>
             </div>

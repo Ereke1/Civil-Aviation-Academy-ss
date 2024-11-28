@@ -7,12 +7,12 @@
             <h3>{{ session('alert') }}</h3>
         </div>
     @endif
-    <h1>Создание страниц ЦУР</h1>
+    <h1>Создание публикации ЦУР</h1>
     <section id="pages">
         <div class="pages">
             <div class="pages__head">
                 <div class="pages__title">
-                    <h2>Создание страницы ЦУР</h2>
+                    <h2>Создание публикации ЦУР</h2>
                 </div>
             </div>
             <div id="lang-blocks" class="mt-3">

@@ -12,7 +12,7 @@
         <div class="pages">
             <div class="pages__head">
                 <div class="pages__title">
-                    <h2>Редактирование страницы ЦУР</h2>
+                    <h2>Редактирование публикации ЦУР</h2>
                 </div>
             </div>
             <div id="lang-blocks" class="mt-3">
