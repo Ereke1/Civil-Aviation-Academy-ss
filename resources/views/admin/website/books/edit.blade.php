@@ -58,7 +58,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Автор</label>
-                            <input type="text" name="author_ru" value="{!! unserialize($books->authors)->kk !!}" class="form-control" required />
+                            <input type="text" name="author_kk" value="{!! unserialize($books->authors)->kk !!}" class="form-control" required />
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Сипаттамасы</label>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Author</label>
-                            <input type="text" name="author_ru" value="{!! unserialize($books->authors)->en !!}" class="form-control" required />
+                            <input type="text" name="author_en" value="{!! unserialize($books->authors)->en !!}" class="form-control" required />
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Description</label>
