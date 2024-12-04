@@ -149,7 +149,7 @@
                             @endif
                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        {{-- <div class="oneBook col-md-4 col-12 col-sm-6">
                             <a href="https://eivis.ru/">
                                 <img src="\assets\images\library\sae.png">
                             </a>
@@ -172,7 +172,7 @@
                                 used in the study, development, production, maintenance and management of air, aerospace and
                                 ground vehicles.
                             @endif
-                        </div>
+                        </div> --}}
 
                     </div>
 
