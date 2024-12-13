@@ -128,15 +128,15 @@
                         <p class="">
 
                             @if (Config::get('app.locale') === 'ru')
-                            <a href="https://caa.edu.kz/assets/images/upload/ безопосность полетов_1727089327.pdf">
+                            <a href="https://caa.edu.kz/assets/images/upload/_1734088476.pdf">
                                 Политика в области обеспечения безопасности полетов
                             </a>
                             @elseif(Config::get('app.locale') === 'kk')
-                            <a href="https://caa.edu.kz/assets/images/upload/ ұшу_1727089557.pdf">
+                            <a href="https://caa.edu.kz/assets/images/upload/_1734088500.pdf">
                                 Ұшу қауіпсіздігін қамтамасыз ету саясаты
                             </a>
                             @else
-                            <a href="https://caa.edu.kz/assets/images/upload/Safety police_1727089590.pdf">
+                            <a href="https://caa.edu.kz/assets/images/upload/eng_1734088514.pdf">
                                 Flight safety policy
                             </a>
                             @endif

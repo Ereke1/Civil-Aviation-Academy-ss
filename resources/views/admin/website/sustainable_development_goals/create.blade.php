@@ -34,7 +34,7 @@
                             <input type="text" name="title_ru" class="form-control" required />
                         </div>
                         <div class="mb-4">
-                            <label class="font-weight-bold">Тапқырыбы (қаз)</label>
+                            <label class="font-weight-bold">Тақырыбы (қаз)</label>
                             <input type="text" name="title_kk" class="form-control">
                         </div>
                         <div class="mb-4">
