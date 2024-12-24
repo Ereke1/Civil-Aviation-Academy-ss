@@ -572,10 +572,6 @@
                                         src="/assets/images/clientLogo/erau.png" alt=""></a>
                             </div>
                             <div class="inner">
-                                <a href="https://www.iata.org/" target="_blank"><img class="img-responsive"
-                                        src="/assets/images/clientLogo/iata.png" alt=""></a>
-                            </div>
-                            <div class="inner">
                                 <a href="https://airastana.com/kaz/ru-RU" target="_blank"><img class="img-responsive"
                                         src="/assets/images/clientLogo/airAstana.png" alt=""></a>
                             </div>
