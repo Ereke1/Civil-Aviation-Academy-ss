@@ -168,6 +168,7 @@ class DoctoralController extends Controller
 				$data->phone_1 = $request->phone_1;
 				$data->phone_2 = $request->phone_2;
 				$data->process = $request->process;
+				$data->programms = $request->programms;
 				$data->save();
 				return redirect()->back()->with('alert', 'Корректировка выполнена!');
 			}
