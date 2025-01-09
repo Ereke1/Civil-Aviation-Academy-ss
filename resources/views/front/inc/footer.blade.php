@@ -69,6 +69,19 @@
                         <div class="addthis_inline_follow_toolbox last"></div>
                     </div>
                 </div>
+                <div class="footer__info">
+                    <div class="info-block last wow fadeInUp">
+
+                        <div class="d-flex flex-row">
+                            <a href="https://www.instagram.com/agakaz_almaty"><img style="height: 90px; width: auto; margin: 3px;"
+                                    src="https://caa.edu.kz/assets/images/upload/LogoEUROCERT21001_1736160726.png" /></a>
+                            <a href="https://www.youtube.com/@civilaviationacademy"><img style="height: 90px; width: auto; margin: 3px;"
+                                    src="https://caa.edu.kz/assets/images/upload/LogoEUROCERT9001_1736160760.png" /></a>
+                        </div>
+                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                        <div class="addthis_inline_follow_toolbox last"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
