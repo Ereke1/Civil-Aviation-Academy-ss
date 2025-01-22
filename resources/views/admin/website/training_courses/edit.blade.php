@@ -90,11 +90,19 @@
                     </div>
                     <div class="mb-4">
                         <label class="font-weight-bold">Дата с</label>
-                        <input type="datetime-local" name="start_date" value="{!! date('Y-m-d\TH:i', strtotime($training_courses->start_date)) !!}"  class="form-control" style="width: auto;">
+                        <input type="datetime-local" name="start_date"
+                        @if ($training_courses->start_date != NULL)
+                        value="{!! date('Y-m-d\TH:i', strtotime($training_courses->start_date)) !!}"
+                        @endif
+                        class="form-control" style="width: auto;">
                     </div>
                     <div class="mb-4">
                         <label class="font-weight-bold">Дата до</label>
-                        <input type="datetime-local" name="end_date" value="{!! date('Y-m-d\TH:i', strtotime($training_courses->end_date)) !!}"  class="form-control" style="width: auto;">
+                        <input type="datetime-local" name="end_date"
+                        @if ($training_courses->end_date != NULL)
+                        value="{!! date('Y-m-d\TH:i', strtotime($training_courses->end_date)) !!}"
+                        @endif
+                        class="form-control" style="width: auto;">
                     </div>
                     <br />
 
