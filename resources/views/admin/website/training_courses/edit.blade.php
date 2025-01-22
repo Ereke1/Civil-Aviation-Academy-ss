@@ -30,7 +30,7 @@
                     <div id="ru-block">
                         <div class="mb-4">
                             <label class="font-weight-bold">Название</label>
-                            <input type="text" name="title_ru" value="{!! $training_courses->title_ru !!}" class="form-control" required />
+                            <input type="text" name="title_ru" value="{{ $training_courses->title_ru }}" class="form-control" required />
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Описание</label>
@@ -40,7 +40,7 @@
                     <div id="kk-block" style="display: none">
                         <div class="mb-4">
                             <label class="font-weight-bold">Атауы</label>
-                            <input type="text" name="title_kk" value="{!! $training_courses->title_kk !!}" class="form-control" required />
+                            <input type="text" name="title_kk" value="{{ $training_courses->title_kk }}" class="form-control" required />
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Сипаттамасы</label>
@@ -50,7 +50,7 @@
                     <div id="en-block" style="display: none">
                         <div class="mb-4">
                             <label class="font-weight-bold">Title</label>
-                            <input type="text" name="title_en" value="{!! $training_courses->title_en !!}" class="form-control" required />
+                            <input type="text" name="title_en" value="{{ $training_courses->title_en }}" class="form-control" required />
                         </div>
                         <div class="mb-4">
                             <label class="font-weight-bold">Description</label>
