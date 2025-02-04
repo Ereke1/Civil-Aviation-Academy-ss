@@ -45,9 +45,11 @@
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                    <h2>{{ __('АО «Академия гражданской авиации» объявляет конкурс на замещение вакантных должностей профессорско-преподавательского состава на 2024-2025 учебный год') }}</h2>
+                                    <h2>{{ __('АО «Академия гражданской авиации» объявляет конкурс на замещение вакантных должностей профессорско-преподавательского состава на 2024-2025 учебный год') }}
+                                    </h2>
                                     <a class="btn btn-primary btn-lg"
-                                        href="{!! env('APP_URL') !!}vakansii">{{ __('Академия гражданской авиации') }}</a> <br>
+                                        href="{!! env('APP_URL') !!}vakansii">{{ __('Академия гражданской авиации') }}</a>
+                                    <br>
                                     <a class="btn btn-primary btn-lg"
                                         href="{!! env('APP_URL') !!}vakansii-aviacionnyy-kolledzh-463">{{ __('Авиационный колледж') }}</a>
                                 </div>
@@ -65,21 +67,26 @@
                                 <div class="carousel-content">
                                     <h2>
                                         @if (Config::get('app.locale') === 'ru')
-                                        АО «Академия Гражданской Авиации» объявляет конкурс на определение Инвестора-партнера для реконструкции гостиничного комплекса «Экипаж» под общежитие для проживания студентов
+                                            АО «Академия Гражданской Авиации» объявляет конкурс на определение
+                                            Инвестора-партнера для реконструкции гостиничного комплекса «Экипаж» под
+                                            общежитие для проживания студентов
                                         @elseif(Config::get('app.locale') === 'kk')
-                                        «Азаматтық Авиация Академиясы» АҚ «Экипаж» қонақ үй кешенін студенттерге арналған жатақханаға реконструкциялау бойынша Инвестор-серіктесті анықтау бойынша конкурс жариялайды
+                                            «Азаматтық Авиация Академиясы» АҚ «Экипаж» қонақ үй кешенін студенттерге
+                                            арналған жатақханаға реконструкциялау бойынша Инвестор-серіктесті анықтау
+                                            бойынша конкурс жариялайды
                                         @else
-                                        АО «Академия Гражданской Авиации» объявляет конкурс на определение Инвестора-партнера для реконструкции гостиничного комплекса «Экипаж» под общежитие для проживания студентов
+                                            АО «Академия Гражданской Авиации» объявляет конкурс на определение
+                                            Инвестора-партнера для реконструкции гостиничного комплекса «Экипаж» под
+                                            общежитие для проживания студентов
                                         @endif
                                     </h2>
-                                    <a class="btn btn-primary btn-lg"
-                                        href="{!! env('APP_URL') !!}events/28">
+                                    <a class="btn btn-primary btn-lg" href="{!! env('APP_URL') !!}events/28">
                                         @if (Config::get('app.locale') === 'ru')
-                                        Подать заявку
+                                            Подать заявку
                                         @elseif(Config::get('app.locale') === 'kk')
-                                        Өтініш беру
+                                            Өтініш беру
                                         @else
-                                        Apply
+                                            Apply
                                         @endif
                                     </a>
                                 </div>
@@ -116,8 +123,10 @@
                                 <div class="carousel-content">
                                     <h2>Рейтинг ППС</h2>
 
-                                    <a class="btn btn-primary btn-lg" href="https://rate.agakaz.kz/result/list">{{ __('Рейтинг преподавателей') }}</a><br>
-                                    <a class="btn btn-primary btn-lg" href="https://rate.agakaz.kz/result/cafedra">{{ __('Рейтинг кафедр') }}</a>
+                                    <a class="btn btn-primary btn-lg"
+                                        href="https://rate.agakaz.kz/result/list">{{ __('Рейтинг преподавателей') }}</a><br>
+                                    <a class="btn btn-primary btn-lg"
+                                        href="https://rate.agakaz.kz/result/cafedra">{{ __('Рейтинг кафедр') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -131,7 +140,8 @@
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <div class="carousel-content">
-                                    <h2>{{ __('Профессиональная подготовка и переподготовка авиационного персонала в соответствии с требованиями ИКАО') }}</h2><br>
+                                    <h2>{{ __('Профессиональная подготовка и переподготовка авиационного персонала в соответствии с требованиями ИКАО') }}
+                                    </h2><br>
                                     <a class="btn btn-primary btn-lg" href="/centerava">{{ __('Перейти на страницу') }}</a>
                                 </div>
                             </div>
@@ -193,7 +203,8 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
                     <div class="icon-box">
                         <div class="icon"><i class="fa fa-user-plus"></i></div>
-                        <h4><a href="/enrollee" class="stretched-link">{{ __('Онлайн регистрация абитуриентов') }}</a></h4>
+                        <h4><a href="/enrollee" class="stretched-link">{{ __('Онлайн регистрация абитуриентов') }}</a>
+                        </h4>
                         <p>{{ __('Онлайн-регистрация на программы бакалавриата, магистратуры и докторантуры открыта круглый год, что является преимуществом и упрощает подачу заявления.') }}
                         </p>
                     </div>
@@ -203,7 +214,8 @@
                     <div class="icon-box">
                         <div class="icon"><i class="fa fa-id-card"></i></div>
                         <h4><a href="/virtualnaya-priemnaya-komissiya-174"
-                                class="stretched-link">{{ __('Виртуальная общественная приемная - Open Academy') }}</a></h4>
+                                class="stretched-link">{{ __('Виртуальная общественная приемная - Open Academy') }}</a>
+                        </h4>
                         <p>{{ __('В данном разделе обучающиеся, преподаватели и сотрудники Академии могут обратиться и задать интересующие их вопросы, поделиться новыми идеями и предложениями') }}
                         </p>
                     </div>
@@ -372,7 +384,13 @@
                             <span>БАКАЛАВРИАТ</span>
                             <strong>
                                 <i class="fa fa-fw fa-star"></i>
+                                @if (Config::get('app.locale') === 'ru')
                                 11 образовательных программ
+                                @elseif(Config::get('app.locale') === 'kk')
+                                11 білім беру бағдарламасы
+                                @else
+                                11 educational programs
+                                @endif
                             </strong>
                         </h2>
                         <div class="mc-content">
@@ -380,10 +398,22 @@
                                 <img class="img-responsive" src="/assets/images/1block1.jpg">
                             </div>
                             <div class="mc-description">
+                                @if (Config::get('app.locale') === 'ru')
                                 Большое количество государственных образовательных грантов<br>
                                 Гранты Ректора<br>
                                 Диплом, признаваемый во всем мире<br>
                                 Доступная цена за обучение и гибкие условия оплаты
+                                @elseif(Config::get('app.locale') === 'kk')
+                                Мемлекеттік білім беру гранттарының көп саны<br>
+                                Ректордың гранттары<br>
+                                Бүкіл әлемде танылған Диплом<br>
+                                Қол жетімді оқу бағасы және икемді Төлем шарттары
+                                @else
+                                A large number of state educational grants<br>
+                                Rector's grants<br>
+                                A diploma recognized all over the world<br>
+                                Affordable tuition fees and flexible payment terms
+                                @endif
                             </div>
                         </div>
                         <a class="mc-btn-action">
@@ -403,7 +433,13 @@
                             <span>МАГИСТРАТУРА</span>
                             <strong>
                                 <i class="fa fa-fw fa-star"></i>
+                                @if (Config::get('app.locale') === 'ru')
                                 5 образовательных программ
+                                @elseif(Config::get('app.locale') === 'kk')
+                                5 білім беру бағдарламасы
+                                @else
+                                5 educational programs
+                                @endif
                             </strong>
                         </h2>
                         <div class="mc-content">
@@ -411,11 +447,25 @@
                                 <img class="img-responsive" src="/assets/images/1block2.jpg">
                             </div>
                             <div class="mc-description">
+                                @if (Config::get('app.locale') === 'ru')
                                 Инновационные образовательные программы<br>
                                 Актуальная тематика диссертаций, имеющая практическое значение<br>
                                 Развитая научно-исследовательская база<br>
                                 Зарубежная стажировка<br>
                                 Гибкие условия оплаты за обучение
+                                @elseif(Config::get('app.locale') === 'kk')
+                                Инновациялық білім беру бағдарламалары<br>
+                                Практикалық маңызы бар диссертациялардың өзекті тақырыбы<br>
+                                Дамыған ғылыми-зерттеу базасы<br>
+                                Шетелдік тағылымдама<br>
+                                Оқу ақысының икемді шарттары
+                                @else
+                                Innovative educational programs<br>
+                                Current dissertation topics of practical importance<br>
+                                Developed scientific research base<br>
+                                Overseas internship<br>
+                                Flexible tuition fees
+                                @endif
                             </div>
                         </div>
                         <a class="mc-btn-action">
@@ -434,7 +484,13 @@
                             <span>ДОКТОРАНТУРА</span>
                             <strong>
                                 <i class="fa fa-fw fa-star"></i>
+                                @if (Config::get('app.locale') === 'ru')
                                 1 образовательная программа
+                                @elseif(Config::get('app.locale') === 'kk')
+                                1 білім беру бағдарламасы
+                                @else
+                                1 educational program
+                                @endif
                             </strong>
                         </h2>
                         <div class="mc-content">
@@ -442,11 +498,25 @@
                                 <img class="img-responsive" src="/assets/images/1block3.jpg">
                             </div>
                             <div class="mc-description">
+                                @if (Config::get('app.locale') === 'ru')
                                 Знания доступные лучшим из лучших<br>
                                 Мощная научно-исследовательская инфраструктура<br>
                                 Исследовательская деятельность<br>
                                 Зарубежная стажировка<br>
                                 Адекватная стоимость образовательных услуг, гибкие условия оплаты
+                                @elseif(Config::get('app.locale') === 'kk')
+                                Ең жақсы қол жетімді білім<br>
+                                Қуатты ғылыми-зерттеу инфрақұрылымы<br>
+                                Зерттеу қызметі<br>
+                                Шетелдік тағылымдама<br>
+                                Білім беру қызметтерінің барабар құны, икемді Төлем шарттары
+                                @else
+                                Knowledge available to the best of the best<br>
+                                Powerful research infrastructure<br>
+                                Research activities<br>
+                                Overseas internship<br>
+                                Adequate cost of educational services, flexible payment terms
+                                @endif
                             </div>
                         </div>
                         <a class="mc-btn-action">
@@ -468,17 +538,26 @@
             <div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
                 <h2 style="color: #ffffff">{{ __('Академия Гражданской Авиации') }}
                     <br>{{ __('в цифрах') }}</br>
-                <div class="devider"><i class="fa fa-plane fa-3x"></i></div>
+                    <div class="devider"><i class="fa fa-plane fa-3x"></i></div>
             </div>
             <div class="row">
                 <!-- first count item -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="200ms">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms"
+                    data-wow-delay="200ms">
                     <div class="counters-item">
                         <div>
                             <span data-speed="2000" data-to="7366">7366</span>
                         </div>
                         <i class="fa fa-graduation-cap fa-3x"></i>
-                        <h3>Выпускников</h3>
+                        <h3>
+                            @if (Config::get('app.locale') === 'ru')
+                            Выпускников
+                            @elseif(Config::get('app.locale') === 'kk')
+                            Түлектер
+                            @else
+                            Graduates
+                            @endif
+                        </h3>
                         <br>
                     </div>
                 </div>
@@ -497,7 +576,15 @@
                             <span>%</span>
                         </div>
                         <i class="fa fa-thumbs-up fa-3x"></i>
-                        <h3>Трудоустроенных <br> Выпускников</h3>
+                        <h3>
+                            @if (Config::get('app.locale') === 'ru')
+                            Трудоустроенных <br> Выпускников
+                            @elseif(Config::get('app.locale') === 'kk')
+                            Жұмысқа орналастырылған <br> түлектер
+                            @else
+                            Employed <br> Graduates
+                            @endif
+                        </h3>
 
                     </div>
                 </div>
@@ -511,7 +598,15 @@
                             <span data-speed="2000" data-to="17">17</span>
                         </div>
                         <i class="fa fa-book fa-3x"></i>
-                        <h3>Образовательных <br> программ</h3>
+                        <h3>
+                            @if (Config::get('app.locale') === 'ru')
+                            Образовательных <br> программ
+                            @elseif(Config::get('app.locale') === 'kk')
+                            Білім беру <br> бағдарламалары
+                            @else
+                            Educational <br> programs
+                            @endif
+                        </h3>
                     </div>
                 </div>
                 <!-- end fourth count item -->
@@ -522,7 +617,15 @@
                             <span data-speed="2000" data-to="89">89</span>
                         </div>
                         <i class="fa fa-check-square fa-3x"></i>
-                        <h3>Преподавателей</h3>
+                        <h3>
+                            @if (Config::get('app.locale') === 'ru')
+                            Преподавателей
+                            @elseif(Config::get('app.locale') === 'kk')
+                            Оқытушылар
+                            @else
+                            Teachers
+                            @endif
+                        </h3>
                         <br>
                     </div>
                 </div>
