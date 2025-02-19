@@ -122,11 +122,10 @@
                 <div class="row">
                     <div class="col text-center">
                         <br>
-                        <p class=""><a
+                        <p><a
                                 href="/assets/images/upload/Руководство по системе управления НОВОЕ.pdf">{{ __('Руководство по системе управления') }}</a>
                         </p><br>
-                        <p class="">
-
+                        <p>
                             @if (Config::get('app.locale') === 'ru')
                             <a href="https://caa.edu.kz/assets/images/upload/ русском safety policy_1737457619.pdf">
                                 Политика в области обеспечения безопасности полетов
@@ -138,6 +137,21 @@
                             @else
                             <a href="https://caa.edu.kz/assets/images/upload/In English safety policy_1737457653.pdf">
                                 Flight safety policy
+                            </a>
+                            @endif
+                        </p><br>
+                        <p>
+                            @if (Config::get('app.locale') === 'ru')
+                            <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы на русском языке_1739942589.docx">
+                                Заявка УЦАБ ИКАО на региональные курсы
+                            </a>
+                            @elseif(Config::get('app.locale') === 'kk')
+                            <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы қазақша тілінде_1739942610.docx">
+                                ICAO бағдарламалары бойынша оқытуға өтініш
+                            </a>
+                            @else
+                            <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы на русском языке_1739942589.docx">
+                                Заявка УЦАБ ИКАО на региональные курсы
                             </a>
                             @endif
                         </p><br>
