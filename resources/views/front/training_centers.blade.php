@@ -155,6 +155,21 @@
                             </a>
                             @endif
                         </p><br>
+                        <p>
+                            @if (Config::get('app.locale') === 'ru')
+                            <a href="https://caa.edu.kz/assets/images/upload/ информация УЦАБ ИКАО на русском языке_1740047525.pdf">
+                                Справочная информация УЦАБ ИКАО
+                            </a>
+                            @elseif(Config::get('app.locale') === 'kk')
+                            <a href="https://caa.edu.kz/assets/images/upload/ информация УЦАБ ИКАО қазақша тілінде_1740047563.pdf">
+                                Анықтамалық ақпарат УЦАБ ИКАО
+                            </a>
+                            @else
+                            <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы на русском языке_1739942589.docx">
+                                Справочная информация УЦАБ ИКАО
+                            </a>
+                            @endif
+                        </p><br>
                     </div>
                 </div>
             </div>
