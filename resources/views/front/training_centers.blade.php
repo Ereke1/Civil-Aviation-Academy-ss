@@ -147,7 +147,7 @@
                             </a>
                             @elseif(Config::get('app.locale') === 'kk')
                             <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы қазақша тілінде_1739942610.docx">
-                                ICAO бағдарламалары бойынша оқытуға өтініш
+                                ИКАО бағдарламалары бойынша оқытуға өтініш
                             </a>
                             @else
                             <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы на русском языке_1739942589.docx">
@@ -162,7 +162,7 @@
                             </a>
                             @elseif(Config::get('app.locale') === 'kk')
                             <a href="https://caa.edu.kz/assets/images/upload/ информация УЦАБ ИКАО қазақша тілінде_1740047563.pdf">
-                                Анықтамалық ақпарат УЦАБ ИКАО
+                                ИКАО АҚОО-ның анықтамалық ақпараты
                             </a>
                             @else
                             <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы на русском языке_1739942589.docx">
