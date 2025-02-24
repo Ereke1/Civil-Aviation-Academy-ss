@@ -49,9 +49,6 @@
                                     </h2>
                                     <a class="btn btn-primary btn-lg"
                                         href="{!! env('APP_URL') !!}vakansii">{{ __('Академия гражданской авиации') }}</a>
-                                    <br>
-                                    <a class="btn btn-primary btn-lg"
-                                        href="{!! env('APP_URL') !!}vakansii-aviacionnyy-kolledzh-463">{{ __('Авиационный колледж') }}</a>
                                 </div>
                             </div>
                         </div>
