@@ -35,6 +35,8 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+
+    config.contentsCss = [ 'css/app.css' ];
 };
 CKEDITOR.editorConfig = function(config) {
     config.extraPlugins = "TableTools";
