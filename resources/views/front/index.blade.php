@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div><!--/.item-->
-            <div class="item"
+            {{-- <div class="item"
                 style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/Screenshot_7.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!--/.item-->
+            </div><!--/.item--> --}}
             <div class="item"
                 style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/investorPartner.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
