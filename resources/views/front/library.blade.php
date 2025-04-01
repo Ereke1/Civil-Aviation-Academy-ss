@@ -340,15 +340,15 @@
                                 <div style="margin-left:15px;">
                                     <p>
                                         @if (Config::get('app.locale') === 'ru')
-                                            Читальный зал расположен на 1 этаже, в кабинете 133, электронный зал - на 1
-                                            этаже, кабинет 139, абонемент на 3 этаже, в кабинете 319.
+                                            Читальный зал расположен на 1 этаже, в кабинете B123, электронный зал - на 1
+                                            этаже, кабинет В125, абонемент на 1 этаже, в кабинете B119.
                                         @elseif(Config::get('app.locale') === 'kk')
-                                            Оқу залы 1 қабат, 133 кабинетте, электронды зал 1 қабат, 139 кабинетте,
-                                            абонемент бөлімі 3 қабат, 319 кабинетте орналасқан
+                                            Оқу залы 1 қабат, B123 кабинетте, электронды зал 1 қабат, В125 кабинетте,
+                                            абонемент бөлімі 1 қабат, B119 кабинетте орналасқан
                                         @else
-                                            The reading room is located on the 1st floor, in room 133, the electronic room
-                                            is on the 1st floor, room 139, the subscription is on the 3rd floor, in room
-                                            319.
+                                            The reading room is located on the 1st floor, in room B123, the electronic room
+                                            is on the 1st floor, room В125, the subscription is on the 1st floor, in room
+                                            B119.
                                         @endif
                                     </p>
                                 </div>
