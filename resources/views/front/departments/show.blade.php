@@ -108,6 +108,20 @@
                     </div>
                 @endif
             @endforeach
+            <div class="card" style="margin-bottom: 3px;">
+                <a class="card-link collapsed"  href="{!! $department->slug !!}/{!! $department->id !!}/newsCafedras">
+                    <div class="card-header without-after"
+                        style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
+                        @if (Config::get('app.locale') === 'ru')
+                        Мероприятия
+                        @elseif(Config::get('app.locale') === 'kk')
+                        Іс-шаралар
+                        @else
+                        Events
+                        @endif
+                    </div>
+                </a>
+            </div>
 
             <hr class="col-12" style="height: 5px; background:#00249c; max-width: -webkit-fill-available;" />
 

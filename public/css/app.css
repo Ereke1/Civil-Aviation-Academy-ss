@@ -24801,3 +24801,7 @@ h4 {
 .visually-hidden{
     display: none;
 }
+
+.without-after::after {
+    content: none !important;
+}

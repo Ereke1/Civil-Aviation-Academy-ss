@@ -34,6 +34,10 @@ $worker_permission = unserialize($worker_permission->permission);
                 @if ($active_menu === 'Кафедры') class="active" @endif>
                 Кафедры
             </a>
+            <a href="{{ route('admin.website.news_cafedras.index') }}"
+                @if ($active_menu === 'Мероприятия кафедры') class="active" @endif>
+                Мероприятия кафедры
+            </a>
             <a href="{{ route('admin.department.teacher.index') }}"
                 @if ($active_menu === 'Преподаватели кафедр') class="active" @endif>
                 Преподаватели кафедр

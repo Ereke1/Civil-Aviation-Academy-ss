@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'news' => 'NewsController',
 			'library_news' => 'LibraryNewsController',
 			'media_about_us' => 'MediaAboutUsController',
+			'news_cafedras' => 'NewsCafedrasController',
 			'studevents' => 'StudEventsController',
 			'events' => 'EventController',
 			'training_courses' => 'TrainingСoursesController',
@@ -152,6 +153,8 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 		]);
 		Route::group(['prefix' => 'departments', 'as' => 'department.'], function () {
 			Route::get('{department}/{history}', 'DepartmentController@history')->name('history.index');
+            Route::get('{slug}/{department_id}/newsCafedras', 'NewsCafedrasController@index')->name('newsCafedras');
+            Route::get('{slug}/{department_id}/newsCafedras/{id}', 'NewsCafedrasController@show')->name('newsCafedras.show');
 			Route::get('{department}/teachers', 'DepartmentController@teachers')->name('teachers.index');
 			Route::get('{department}/teachers/{teacher}', 'DepartmentController@teacher')->name('teachers.show');
 		});

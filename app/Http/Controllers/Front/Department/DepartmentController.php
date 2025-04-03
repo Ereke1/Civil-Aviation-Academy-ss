@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Department;
 use App\Models\DepartmentPages;
 use App\Models\DepartmentTeacher;
+use App\Models\NewsCafedra;
 use App\Models\Navigation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -60,7 +61,8 @@ class DepartmentController extends Controller
 
 		$pages = DepartmentPages::where('department_id', $department_id)->orderBy('department_id', 'asc')->orderBy('sort', 'asc')->get();
 		$data = Department::where('slug', $slug)->get();
-		return view('front.departments.show', compact('department', 'data', 'tree', 'pages', 'eduP'));
+        $newsCafedras = NewsCafedra::where('department_id', $department_id)->get();
+		return view('front.departments.show', compact('department', 'data', 'tree', 'pages', 'eduP', 'newsCafedras'));
 	}
 
 	/**
