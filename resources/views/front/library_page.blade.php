@@ -14,7 +14,7 @@
 					<span> > </span>
 					<span>{!! $data->title !!}</span>
 				</div>
-            <div>еу4ке4
+            <div>
                 {!! $data->desc !!}
             </div>
         </div>

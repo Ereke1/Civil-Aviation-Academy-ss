@@ -14,65 +14,33 @@
                 <span>efef</span>
             </div>
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <div class="img-top-cardd" style="height: 200px"><img alt="..." class="card-img-top"
-                                src="https://caa.edu.kz/assets/images/upload/Рисунок1_1711620668.png" /></div>
+            <form action="{{ route('registration.submit') }}" method="POST">
+                @csrf
+                <label for="email">Ваш Email:</label>
+                <input type="email" id="email" name="email" required>
 
-                    </div>
-                </div>
+                <label for="name">Ваше Имя:</label>
+                <input type="text" id="name" name="name" required>
 
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <div class="img-top-cardd" style="height: 200px"><img alt="..." class="card-img-top"
-                                src="https://caa.edu.kz/assets/images/upload/Рисунок2_1711620721.png" /></div>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
 
-                    </div>
-                </div>
 
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <div class="img-top-cardd" style="height: 200px"><img alt="..." class="card-img-top"
-                                src="https://caa.edu.kz/assets/images/upload/Рисунок3_1711620755.png" /></div>
+            <input type="text" id="datepicker" name="date" class="form-control">
 
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <div class="img-top-cardd" style="height: 200px"><img alt="..." class="card-img-top"
-                                src="https://caa.edu.kz/assets/images/upload/Рисунок4_1711620784.png" /></div>
-
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <div class="img-top-cardd" style="height: 200px"><img alt="..." class="card-img-top"
-                                src="https://caa.edu.kz/assets/images/upload/Рисунок5_1711621262.png" /></div>
-
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <div class="img-top-cardd" style="height: 200px"><img alt="..." class="card-img-top"
-                                src="https://caa.edu.kz/assets/images/upload/Рисунок7_1711621283.png" /></div>
-
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <div class="img-top-cardd" style="height: 200px"><img alt="..." class="card-img-top"
-                                src="https://caa.edu.kz/assets/images/upload/Рисунок8_1711621292.png" /></div>
-
-                    </div>
-                </div>
-
-            </div>
-
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    fetch('/available-dates')
+                        .then(response => response.json())
+                        .then(dates => {
+                            flatpickr("#datepicker", {
+                                enable: dates, // Доступные даты
+                                dateFormat: "Y-m-d",
+                                locale: "ru"
+                            });
+                        });
+                });
+                </script>
 
         </div>
     </section>

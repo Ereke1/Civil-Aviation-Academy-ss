@@ -135,6 +135,11 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	Route::get('sustainable_development_goals', 'SustainableDevelopmentGoalsController@index')->name('sustainable_development_goals');
 	Route::get('sustainable_development_goals/{id}', 'SustainableDevelopmentGoalsController@show')->name('sustainable_development_goals.show');
 
+    Route::post('testRegistration', 'RegForTestController@submit')->name('testRegistration.submit');
+    Route::post('testRegistrationChangeDate', 'RegForTestController@changeDate')->name('testRegistrationChangeDate.changeDate');
+	Route::get('regForTest','RegForTestController@index')->name('regForTest');
+    Route::get('/confirm/{token}', 'RegForTestController@confirm')->name('testRegistration.confirm');
+
     // ENROLLEE
 	Route::group(['prefix' => 'enrollee', 'namespace' => 'Enrollee', 'as' => 'enrollee.'], function () {
 		Route::resources([
