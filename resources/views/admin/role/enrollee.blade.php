@@ -11,13 +11,15 @@
         <a href="{{ route('admin.enrollee.master.index') }}" @if ($active_menu === 'Магистратура') class="active" @endif>
             Магистратура
         </a>
-        <a href="{{ route('admin.enrollee.doctoral.index') }}" @if ($active_menu === 'Докторантура') class="active" @endif>
+        <a href="{{ route('admin.enrollee.doctoral.index') }}" @if ($active_menu === 'Докторантура') class="active"
+        @endif>
             Докторантура
         </a>
         <a href="{{ route('admin.enrollee.greport.index') }}" @if ($active_menu === 'Общий отчёт') class="active" @endif>
             Общий отчёт
         </a>
-        <a href="{{ route('admin.enrollee.rreport.index') }}" @if ($active_menu === 'Отчёт по приёму') class="active" @endif>
+        <a href="{{ route('admin.enrollee.rreport.index') }}" @if ($active_menu === 'Отчёт по приёму') class="active"
+        @endif>
             Отчёт по приёму
         </a>
         <a href="{{ route('admin.enrollee.deleted.index') }}" @if ($active_menu === 'Удалённые') class="active" @endif>
@@ -25,6 +27,9 @@
         </a>
         <a href="{{ route('admin.enrollee.documents.index') }}" @if ($active_menu === 'Документы') class="active" @endif>
             Документы
+        </a>
+        <a href="{{ route('admin.enrollee.onlineRegForTest.index') }}" @if ($active_menu === 'Регистрация на тест и интервью') class="active" @endif>
+            Регистрация на тест и интервью
         </a>
     </div>
 </div>

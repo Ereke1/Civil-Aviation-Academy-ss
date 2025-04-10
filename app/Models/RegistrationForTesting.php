@@ -18,5 +18,6 @@ class RegistrationForTesting extends Model
         'pending_test_date',
         'confirmation_token',
         'is_confirmed',
+        'is_deleted',
     ];
 }
