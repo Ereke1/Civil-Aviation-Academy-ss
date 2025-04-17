@@ -172,7 +172,7 @@
                         </p><br>
                         <p>
                             @if (Config::get('app.locale') === 'ru')
-                            <a href="caa.edu.kz/assets/images/upload/ по ТО ВС_1744885081.pdf">
+                            <a href="https://caa.edu.kz/assets/images/upload/ по ТО ВС_1744885081.pdf">
                                 Тарифы по ТО ВС
                             </a>
                             <!-- @elseif(Config::get('app.locale') === 'kk')
