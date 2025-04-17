@@ -170,6 +170,21 @@
                             </a>
                             @endif
                         </p><br>
+                        <p>
+                            @if (Config::get('app.locale') === 'ru')
+                            <a href="caa.edu.kz/assets/images/upload/ по ТО ВС_1744885081.pdf">
+                                Тарифы по ТО ВС
+                            </a>
+                            <!-- @elseif(Config::get('app.locale') === 'kk')
+                            <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы қазақша тілінде_1739942610.docx">
+                                Тарифы по ТО ВС
+                            </a>
+                            @else
+                            <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы на русском языке_1739942589.docx">
+                                Тарифы по ТО ВС
+                            </a> -->
+                            @endif
+                        </p><br>
                     </div>
                 </div>
             </div>
