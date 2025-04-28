@@ -42,7 +42,7 @@ class RegForTestController extends Controller
         ]);
 
         // Проверка: есть ли уже запись с таким email
-        $existing = RegistrationForTesting::where('email', $validated['email'])->first();
+        $existing = RegistrationForTesting::where('email', $validated['email'])->where('is_deleted', 1)->first();
 
         if ($existing) {
             return redirect()->back()->with('error', 'Данная почта уже зарегистрирована! Выберите "Запись на другую дату" если хотите изменить дату записи');
