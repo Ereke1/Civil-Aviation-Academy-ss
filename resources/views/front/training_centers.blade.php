@@ -176,7 +176,7 @@
                                 Тарифы по ТО ВС
                             </a>
                            @elseif(Config::get('app.locale') === 'kk')
-                            <a href="https://caa.edu.kz/assets/images/upload/ кемелеріне техникалық қызмет көрсету тарифтері қазақша тілінде_1746172267.pdf">
+                            <a href="https://caa.edu.kz/assets/images/upload/%20%D0%BA%D0%B5%D0%BC%D0%B5%D0%BB%D0%B5%D1%80%D1%96%D0%BD%D0%B5%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8B%D2%9B%20%D2%9B%D1%8B%D0%B7%D0%BC%D0%B5%D1%82%20%D0%BA%D3%A9%D1%80%D1%81%D0%B5%D1%82%D1%83%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%82%D0%B5%D1%80%D1%96%20%D2%9B%D0%B0%D0%B7%D0%B0%D2%9B%D1%88%D0%B0%20%D1%82%D1%96%D0%BB%D1%96%D0%BD%D0%B4%D0%B5%20(2)_1746173002.pdf">
                                 Әуе кемелеріне техникалық қызмет көрсету тарифтері
                             </a>
                             @else
