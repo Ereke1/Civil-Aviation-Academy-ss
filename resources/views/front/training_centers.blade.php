@@ -172,17 +172,17 @@
                         </p><br>
                         <p>
                             @if (Config::get('app.locale') === 'ru')
-                            <a href="https://caa.edu.kz/assets/images/upload/ по ТО ВС_1744885081.pdf">
+                            <a href="caa.edu.kz/assets/images/upload/ по ТО ВС на русском (1)_1746172244.pdf">
                                 Тарифы по ТО ВС
                             </a>
-                            <!-- @elseif(Config::get('app.locale') === 'kk')
-                            <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы қазақша тілінде_1739942610.docx">
-                                Тарифы по ТО ВС
+                           @elseif(Config::get('app.locale') === 'kk')
+                            <a href="caa.edu.kz/assets/images/upload/ кемелеріне техникалық қызмет көрсету тарифтері қазақша тілінде_1746172267.pdf">
+                                Әуе кемелеріне техникалық қызмет көрсету тарифтері
                             </a>
                             @else
-                            <a href="https://caa.edu.kz/assets/images/upload/ УЦАБ ИКАО на региональные курсы на русском языке_1739942589.docx">
+                            <a href="caa.edu.kz/assets/images/upload/ по ТО ВС на русском (1)_1746172244.pdf">
                                 Тарифы по ТО ВС
-                            </a> -->
+                            </a> 
                             @endif
                         </p><br>
                     </div>
