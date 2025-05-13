@@ -77,14 +77,15 @@
                         </div>
 
                         <div class="oneBook col-md-4 col-12 col-sm-6">
-                            <a href="https://www.wdl.org/fr">
-                                <img src="\assets\images\library\libraryOfCongress.png">
+                            <a href="https://www.easa.europa.eu/en">
+                                <img src="/assets/images/library/EASA.jpg">
                             </a>
                             <h3>
-                                Library of Congress
+                                EASA
                             </h3>
-                            {{ __('Библиотека Конгресса является крупнейшей библиотекой в мире, в ее фондах хранятся миллионы книг, фильмов и видео, аудиозаписей, фотографий, газет, карт и рукописей. Библиотека является главным исследовательским подразделением Конгресса США и штаб-квартирой Управления авторского права США.') }}
+                            {{ __('EASA (European Union Aviation Safety Agency) — это агентство Европейского союза, ответственное за обеспечение безопасности в авиации.') }}
                         </div>
+
 
                         <div class="oneBook col-md-4 col-12 col-sm-6">
                             <a href="https://elibrary.icao.int/">
@@ -127,6 +128,7 @@
                             {{ __('Онлайн-библиотека Wiley - это  портал к самой широкой и глубокой в мире междисциплинарной коллекции онлайн-ресурсов, охватывающих вопросы жизни, здравоохранения, физики, социальных и гуманитарных наук.') }}
                         </div>
 
+
                         <div class="oneBook col-md-4 col-12 col-sm-6">
                             <a href="https://eivis.ru/">
                                 <img src="\assets\images\library\IVIS300x86.png">
@@ -147,6 +149,16 @@
                                 journals, independent scientific publications, books on technology and engineering, as well
                                 as social sciences and humanities
                             @endif
+                        </div>
+
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://www.wdl.org/fr">
+                                <img src="\assets\images\library\libraryOfCongress.png">
+                            </a>
+                            <h3>
+                                Library of Congress
+                            </h3>
+                            {{ __('Библиотека Конгресса является крупнейшей библиотекой в мире, в ее фондах хранятся миллионы книг, фильмов и видео, аудиозаписей, фотографий, газет, карт и рукописей. Библиотека является главным исследовательским подразделением Конгресса США и штаб-квартирой Управления авторского права США.') }}
                         </div>
 
                         {{-- <div class="oneBook col-md-4 col-12 col-sm-6">
