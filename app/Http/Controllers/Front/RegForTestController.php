@@ -7,8 +7,10 @@ use App\Models\Navigation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ConfirmRegistration;
+use App\Mail\RegistrationConfirmedDateMail;
 use App\Models\RegistrationForTesting;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Config;
 
@@ -19,6 +21,13 @@ class RegForTestController extends Controller
     {
         $tree = Navigation::tree();
 
+        $checkDatesFromDB = RegistrationForTesting::select('test_date', DB::raw('count(*) as total'))
+            ->groupBy('test_date')
+            ->having('total', '>', 50)
+            ->pluck('test_date')
+            ->toArray();
+
+
         $availableDates = [
             "2025-07-06",
             "2025-07-07",
@@ -28,6 +37,10 @@ class RegForTestController extends Controller
             "2025-07-11",
             "2025-07-12"
         ];
+
+        $availableDates = array_diff($availableDates, $checkDatesFromDB);
+
+        $availableDates = array_values($availableDates);
 
         return view('front.testRegistration.regForTest', compact('tree', 'availableDates'));
     }
@@ -42,7 +55,7 @@ class RegForTestController extends Controller
         ]);
 
         // Проверка: есть ли уже запись с таким email
-        $existing = RegistrationForTesting::where('email', $validated['email'])->first();
+        $existing = RegistrationForTesting::where('email', $validated['email'])->where('is_deleted', 0)->first();
 
         if ($existing) {
             return redirect()->back()->with('error', 'Данная почта уже зарегистрирована! Выберите "Запись на другую дату" если хотите изменить дату записи');
@@ -118,6 +131,9 @@ class RegForTestController extends Controller
             'is_confirmed' => true,
             'confirmation_token' => null,
         ]);
+
+        // Отправка email пользователю
+        Mail::to($registration['email'])->send(new RegistrationConfirmedDateMail($registration));
 
         return view('front.testRegistration.confirmed');
     }

@@ -63,6 +63,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'doctoral' => 'DoctoralController',
 			'deleted' => 'DeletedController',
 			'documents' => 'DocumentsController',
+			'onlineRegForTest' => 'OnlineRegForTestController',
 		]);
 
 
