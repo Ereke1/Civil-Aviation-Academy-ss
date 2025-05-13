@@ -53,7 +53,7 @@
                             <h3>
                                 РМЭБ
                             </h3>
-                            {{ __('Республиканская межвузовская электронная библиотека - информационная и справочно-поисковая библиотечная система') }}
+                            {{ __('Республиканская межвузовская электронная библиотека - информационная и справочно-поисковая библиотечная система.') }}
                         </div>
 
                         <div class="oneBook col-md-4 col-12 col-sm-6">
@@ -63,7 +63,7 @@
                             <h3>
                                 IPR SMART
                             </h3>
-                            {{ __('Содержится литература по различным группам специальностей, что дает возможность учебным заведениям разных профилей найти интересующие их издания') }}
+                            {{ __('Содержится литература по различным группам специальностей, что дает возможность учебным заведениям разных профилей найти интересующие их издания.') }}
                         </div>
 
                         <div class="oneBook col-md-4 col-12 col-sm-6">
@@ -73,7 +73,7 @@
                             <h3>
                                 EBSCO
                             </h3>
-                            {{ __('EBSCO Publishing - крупнейший поставщик научных ресурсов ведущих издательств мира') }}
+                            {{ __('EBSCO Publishing - крупнейший поставщик научных ресурсов ведущих издательств мира.') }}
                         </div>
 
                         <div class="oneBook col-md-4 col-12 col-sm-6">
@@ -85,14 +85,14 @@
                             </h3>
                             @if (Config::get('app.locale') === 'ru')
                                 EASA (European Union Aviation Safety Agency) — это агентство Европейского союза, ответственное за обеспечение безопасности в авиации.
-                                Основная цель EASA — содействие развитию и поддержанию высоких стандартов безопасности в авиации в странах-членах ЕС
+                                Основная цель EASA — содействие развитию и поддержанию высоких стандартов безопасности в авиации в странах-членах ЕС.
 
                             @elseif(Config::get('app.locale') === 'kk')
                                 EASA (European Union Aviation Safety Agency) — авиациядағы қауіпсіздікті қамтамасыз етуге жауапты Еуропалық Одақ агенттігі.
-                                EASA-ның негізгі мақсаты-ЕО-ға мүше елдерде авиацияда қауіпсіздіктің жоғары стандарттарын дамытуға және қолдауға жәрдемдесу
+                                EASA-ның негізгі мақсаты-ЕО-ға мүше елдерде авиацияда қауіпсіздіктің жоғары стандарттарын дамытуға және қолдауға жәрдемдесу.
                             @else
                                 EASA (European Union Aviation Safety Agency) is the agency of the European Union responsible for aviation safety.
-                                EASA's main goal is to promote the development and maintenance of high aviation safety standards in the EU member States
+                                EASA's main goal is to promote the development and maintenance of high aviation safety standards in the EU member States.
                             @endif
                         </div>
 
@@ -149,15 +149,15 @@
                             @if (Config::get('app.locale') === 'ru')
                                 Универсальная база данных IVIS Library содержит электронные версии ведущих российских
                                 журналов, независимые научные издания, книги по технологии и инжинирингу, а также социальные
-                                и гуманитарного науки
+                                и гуманитарного науки.
                             @elseif(Config::get('app.locale') === 'kk')
                                 IVIS Library әмбебап дерекқорында жетекші ресейлік журналдардың электронды нұсқалары,
                                 тәуелсіз ғылыми басылымдар, технология және инжиниринг кітаптары, Әлеуметтік және
-                                гуманитарлық ғылымдар бар
+                                гуманитарлық ғылымдар бар.
                             @else
                                 The IVIS Library universal database contains electronic versions of leading Russian
                                 journals, independent scientific publications, books on technology and engineering, as well
-                                as social sciences and humanities
+                                as social sciences and humanities.
                             @endif
                         </div>
 
