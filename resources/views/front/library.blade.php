@@ -83,7 +83,17 @@
                             <h3>
                                 EASA
                             </h3>
-                            {{ __('EASA (European Union Aviation Safety Agency) — это агентство Европейского союза, ответственное за обеспечение безопасности в авиации.') }}
+                            @if (Config::get('app.locale') === 'ru')
+                                EASA (European Union Aviation Safety Agency) — это агентство Европейского союза, ответственное за обеспечение безопасности в авиации.
+                                Основная цель EASA — содействие развитию и поддержанию высоких стандартов безопасности в авиации в странах-членах ЕС
+
+                            @elseif(Config::get('app.locale') === 'kk')
+                                EASA (European Union Aviation Safety Agency) — авиациядағы қауіпсіздікті қамтамасыз етуге жауапты Еуропалық Одақ агенттігі.
+                                EASA-ның негізгі мақсаты-ЕО-ға мүше елдерде авиацияда қауіпсіздіктің жоғары стандарттарын дамытуға және қолдауға жәрдемдесу
+                            @else
+                                EASA (European Union Aviation Safety Agency) is the agency of the European Union responsible for aviation safety.
+                                EASA's main goal is to promote the development and maintenance of high aviation safety standards in the EU member States
+                            @endif
                         </div>
 
 
