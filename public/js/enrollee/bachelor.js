@@ -15,6 +15,14 @@ function citizenInputVal() {
     let citizen = document.getElementById('citizen').value
     return citizen
 }
+function haveAltynInputVal() {
+    let haveAltyn = document.getElementById('haveAltyn').value
+    return haveAltyn
+}
+function haveQuotaInputVal() {
+    let havequota = document.getElementById('quota').value
+    return havequota
+}
 function haveENTInputVal() {
     let haveENT = document.getElementById('haveENT').value
     return haveENT
@@ -88,9 +96,12 @@ function showFor11kl() {
 function admissionFunc() {
     if (admissionInputVal() !== null) {
         if (admissionInputVal() === 'Технического и профессионального образования (колледжа)') {
-
+            document.getElementById('haveAltyn').value = "";
+            document.getElementById('haveAltynBlock').classList.remove('disabled')
             document.getElementById('haveENT').value = "";
             document.getElementById('haveENTBlock').classList.remove('disabled')
+            document.getElementById('quota').value = "";
+            document.getElementById('quotaBlock').classList.remove('disabled')
 
             document.getElementById('mathLitBlock').classList.add('disabled')
             document.getElementById('mathLit').value = "";
@@ -125,9 +136,13 @@ function admissionFunc() {
             showNotFor11kl();
 
         } else if (admissionInputVal() === '11-го класса') {
-
+            document.getElementById('haveAltyn').value = "";
+            document.getElementById('haveAltynBlock').classList.remove('disabled')
             document.getElementById('haveENT').value = "";
             document.getElementById('haveENTBlock').classList.remove('disabled')
+            document.getElementById('quota').value = "";
+            document.getElementById('quotaBlock').classList.remove('disabled')
+
 
             document.getElementById('mathLitBlock').classList.add('disabled')
             document.getElementById('mathLit').value = "";
@@ -218,6 +233,14 @@ function admissionFunc() {
 function languageFunc() {
     // Показываем поле гражданство
     document.getElementById('citizenBlock').classList.remove('disabled')
+}
+function haveAltynFunc() {
+    // Показываем поле алтын белги
+    document.getElementById('haveAltynBlock').classList.remove('disabled')
+}
+function quotaFunc() {
+    // Показываем поле квоты
+    document.getElementById('quotaBlock').classList.remove('disabled')
 }
 
 // Выбор гражданства

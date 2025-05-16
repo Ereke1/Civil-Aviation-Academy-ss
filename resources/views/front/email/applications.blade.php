@@ -17,6 +17,12 @@
     @if (isset($bachelor->haveENT))
         Имеется ЕНТ: {{ $bachelor->haveENT }} <br />
     @endif
+    @if (isset($bachelor->haveAltyn))
+        Имеется Алтын белги: {{ $bachelor->haveAltyn }} <br />
+    @endif
+    @if (isset($bachelor->quota))
+        КВОТЫ: {{ $bachelor->quota }} <br />
+    @endif
     @if (isset($bachelor->quantENT))
         Количество предметов: {{ $bachelor->quantENT }} <br />
     @endif

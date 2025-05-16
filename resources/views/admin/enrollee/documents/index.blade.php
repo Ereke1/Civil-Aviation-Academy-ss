@@ -341,6 +341,18 @@
 
                                             </select>
                                         </div>
+                                        @if (isset($item->haveAltyn))
+                                        <div class="block">
+                                            <h5 class="block__title">Имеется Алтын белги</h5>
+                                            <p class="block__info">{!! $item->haveAltyn !!}</p>
+                                        </div>
+                                        @endif
+                                        @if (isset($item->quota))
+                                        <div class="block">
+                                            <h5 class="block__title">КВОТЫ</h5>
+                                            <p class="block__info">{!! $item->quota !!}</p>
+                                        </div>
+                                        @endif
                                         @if (isset($item->haveENT))
                                             <div class="block">
                                                 <h5 class="block__title">Имеется ЕНТ</h5>
