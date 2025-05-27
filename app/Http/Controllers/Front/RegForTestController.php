@@ -124,7 +124,7 @@ class RegForTestController extends Controller
             }
 
             $ieltsFile->move($destinationPath, $filename);
-            $validated['ielts_file'] = '/storage/applications/ielts_certificates/' . $filename;
+            $validated['ielts_file'] = '/storage/applications/ielts_certificates/'  . $request->surname . ' ' . $request->name . '/' . $filename  ;
         }
 
 
