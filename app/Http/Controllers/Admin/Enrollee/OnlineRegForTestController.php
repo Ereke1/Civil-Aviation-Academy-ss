@@ -16,8 +16,29 @@ class OnlineRegForTestController extends Controller
      */
     public function index(Request $request)
     {
-        
+        $availableDates = [
+            "2025-07-07",
+            "2025-07-08",
+            "2025-07-10",
+            "2025-07-11",
+            "2025-07-15",
+            "2025-07-16",
+        ];
+        $availableInterviewDates = [
+            "2025-07-14",
+            "2025-07-17",
+        ];
+        $timeSlotsTest = [
+            "09:00-10:00","10:30-11:30","12:00-13:00",
+            "13:30-14:30",
+        ];
+        $timeSlotsInterview = [
+            "09:00-10:00","10:30-11:30","12:00-13:00",
+            "13:30-14:30","15:00-16:00",
+        ];
         $test_date = $request->test_date;
+
+
         // Filter
         $whereArray = [
             'is_confirmed' => 1,
@@ -28,11 +49,11 @@ class OnlineRegForTestController extends Controller
             ->where($whereArray)
             ->orderBy('updated_at', 'desc');
 
-        if ($request->has('test_date') && !empty($test_date)) {
-            $data->whereDate('test_date', '=', $test_date);
-        }
+        // if ($request->has('test_date') && !empty($test_date)) {
+        //     $data->whereDate('test_date', '=', $test_date);
+        // }
 
-        
+
         // Count
         $countData = $data->count();
 
@@ -43,10 +64,17 @@ class OnlineRegForTestController extends Controller
         // Data
         $dataArr = [
             'test_date' => $request->test_date,
+            'have_ielts' => $request->have_ielts,
+            'interview_date' => $request->interview_date,
             'data' => $data,
-            'countData' => $countData
+            'countData' => $countData,
         ];
-        return view('admin.enrollee.onlineRegForTest', $dataArr);
+        return view('admin.enrollee.onlineRegForTest', $dataArr, compact(
+            'availableDates',
+            'timeSlotsTest',
+            'timeSlotsInterview',
+            'availableInterviewDates',
+        ));
     }
 
     /**
@@ -113,6 +141,16 @@ class OnlineRegForTestController extends Controller
         $data->name = $request->name;
         $data->patronymic = $request->patronymic;
         $data->phone = $request->phone;
+
+        $data->test_score = $request->test_score;
+        $data->test_passed = $request->test_passed;
+        $data->interview_passed = $request->interview_passed;
+
+        $data->interview_date = $request->interview_date;
+        $data->interview_time_slot = $request->interview_time_slot;
+        $data->test_date = $request->test_date;
+        $data->test_time_slot = $request->test_time_slot;
+
         $data->save();
         return redirect()->back()->with('alert', 'Данные изменены!');
     }
