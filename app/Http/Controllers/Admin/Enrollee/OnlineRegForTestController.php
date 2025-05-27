@@ -131,11 +131,35 @@ class OnlineRegForTestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function update(Request $request, $id)
+    // {
+    //     $today = Carbon::today();
+
+    //     $data = RegistrationForTesting::find($id);
+
+    //     $data->surname = $request->surname;
+    //     $data->name = $request->name;
+    //     $data->patronymic = $request->patronymic;
+    //     $data->phone = $request->phone;
+
+    //     $data->test_score = $request->test_score;
+    //     $data->test_passed = $request->test_passed;
+    //     $data->interview_passed = $request->interview_passed;
+
+    //     $data->interview_date = $request->interview_date;
+    //     $data->interview_time_slot = $request->interview_time_slot;
+    //     $data->test_date = $request->test_date;
+    //     $data->test_time_slot = $request->test_time_slot;
+
+    //     $data->save();
+    //     return redirect()->back()->with('alert', 'Данные изменены!');
+    // }
+
     public function update(Request $request, $id)
     {
         $today = Carbon::today();
 
-        $data = RegistrationForTesting::find($id);
+        $data = RegistrationForTesting::findOrFail($id);
 
         $data->surname = $request->surname;
         $data->name = $request->name;
@@ -151,9 +175,57 @@ class OnlineRegForTestController extends Controller
         $data->test_date = $request->test_date;
         $data->test_time_slot = $request->test_time_slot;
 
+        $data->test_date = $request->test_date;
+        $data->test_time_slot = $request->test_time_slot;
+
+
+        $data->interview_date = $request->interview_date;
+        $data->interview_time_slot = $request->interview_time_slot;
+
+
+        if (
+            !$data->have_ielts &&
+            $data->test_score >= 45 &&
+            $data->test_passed === 'Да' &&
+            (empty($request->interview_date) || empty($request->interview_time_slot))
+        ) {
+            $availableInterviewDates = [
+                "2025-07-14",
+                "2025-07-17",
+            ];
+
+            $interviewSlots = [
+                "09:00-10:00",
+                "10:30-11:30",
+                "12:00-13:00",
+                "13:30-14:30",
+                "15:00-16:00",
+            ];
+
+            foreach ($availableInterviewDates as $date) {
+                foreach ($interviewSlots as $slot) {
+                    $count = RegistrationForTesting::where('interview_date', $date)
+                        ->where('interview_time_slot', $slot)
+                        ->count();
+
+                    if ($count < 18) {
+                        $data->interview_date = $date;
+                        $data->interview_time_slot = $slot;
+                        break 2;
+                    }
+                }
+            }
+
+            if (!$data->interview_date || !$data->interview_time_slot) {
+                return redirect()->back()->with('error', 'Свободных слотов для интервью не найдено.');
+            }
+        }
+
         $data->save();
+
         return redirect()->back()->with('alert', 'Данные изменены!');
     }
+
 
     /**
      * Remove the specified resource from storage.

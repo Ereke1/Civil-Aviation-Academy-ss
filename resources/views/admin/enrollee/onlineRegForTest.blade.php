@@ -189,6 +189,9 @@
                                                     </option>
                                                   @endforeach
                                                 </select>
+                                                @if (!$item->have_ielts && $item->test_passed === 'Да' && $item->interview_date && $item->interview_time_slot)
+                                                    <small style="color: green;">Назначено системой</small>
+                                                @endif
                                               </div>
                                               <div class="block">
                                                 <h5 class="block__title">Время интервью</h5>
@@ -201,6 +204,9 @@
                                                     </option>
                                                   @endforeach
                                                 </select>
+                                                @if (!$item->have_ielts && $item->test_passed === 'Да' && $item->interview_date && $item->interview_time_slot)
+                                                    <small style="color: green;">Назначено системой</small>
+                                                @endif
                                               </div>
 
                                             <div class="block">
