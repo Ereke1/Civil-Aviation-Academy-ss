@@ -44,15 +44,15 @@
                     <td>{!! $item->email !!}</td>
                     <td>{!! $item->phone !!}</td>
                     <td>{!! $item->have_ielts !!}</td>
-                    @if($item->have_ielts === 0 && $item->test_passed === "Нет")
-                        <td>{!! date('d.m.Y', strtotime($item->test_date)) !!}</td>
-                        <td></td>
-                    @elseif ($item->test_passed === "Да")
+                    @if ($item->test_passed === "Да")
                         <td>{!! date('d.m.Y', strtotime($item->test_date)) !!}</td>
                         <td>{!! date('d.m.Y', strtotime($item->interview_date)) !!}</td>
-                    @else
+                    @elseif($item->have_ielts === 1)
                         <td></td>
                         <td>{!! date('d.m.Y', strtotime($item->interview_date)) !!}</td>
+                    @elseif($item->have_ielts === 0 || $item->test_passed === "Нет" || $item->test_passed === NULL || $item->have_ielts === NULL )
+                        <td>{!! date('d.m.Y', strtotime($item->test_date)) !!}</td>
+                        <td></td>
                     @endif
                     <td style="text-align: right">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal{!! $item->id !!}">
@@ -96,33 +96,27 @@
                                             <div class="block">
                                                 <h5 class="block__title">Дата интервью</h5>
                                                 <select name="interview_date" class="block__info form-control" required>
-                                                    <option value="">-----</option>
-                                                    @foreach($availableInterviewDates as $date)
-                                                        <option
-                                                            value="{{ $date }}"
-                                                            @if(old('interview_date', $item->interview_date) == $date) selected @endif
-                                                        >
-                                                            {{ date('d.m.Y', strtotime($date)) }}
-                                                        </option>
-                                                    @endforeach
+                                                  <option value="">-----</option>
+                                                  @foreach($availableInterviewDates as $date)
+                                                    <option value="{{ $date }}"
+                                                      {{ old('interview_date', $item->interview_date) === $date ? 'selected' : '' }}>
+                                                      {{ \Carbon\Carbon::parse($date)->format('d.m.Y') }}
+                                                    </option>
+                                                  @endforeach
                                                 </select>
-                                            </div>
-
-                                            {{-- Выбор времени интервью --}}
-                                            <div class="block">
+                                              </div>
+                                              <div class="block">
                                                 <h5 class="block__title">Время интервью</h5>
                                                 <select name="interview_time_slot" class="block__info form-control" required>
-                                                    <option value="">-----</option>
-                                                    @foreach(($streamsInterview[ old('interview_date', $item->interview_date) ] ?? []) as $slot)
-                                                        <option
-                                                            value="{{ $slot }}"
-                                                            @if(old('interview_time_slot', $item->interview_time_slot) == $slot) selected @endif
-                                                        >
-                                                            {{ str_replace('-', ' – ', $slot) }}
-                                                        </option>
-                                                    @endforeach
+                                                  <option value="">-----</option>
+                                                  @foreach($timeSlotsInterview as $slot)
+                                                    <option value="{{ $slot }}"
+                                                      {{ old('interview_time_slot', $item->interview_time_slot) === $slot ? 'selected' : '' }}>
+                                                      {{ str_replace('-', ' – ', $slot) }}
+                                                    </option>
+                                                  @endforeach
                                                 </select>
-                                            </div>
+                                              </div>
                                             <div class="block">
                                                 <h5 class="block__title">Статус прохождения интервью</h5>
                                                 <select name="interview_passed" class="block__info">
@@ -186,7 +180,7 @@
                                             </div>
                                             <div class="block">
                                                 <h5 class="block__title">Дата интервью</h5>
-                                                <select name="interview_date" class="block__info form-control" required>
+                                                <select name="interview_date" class="block__info form-control">
                                                   <option value="">-----</option>
                                                   @foreach($availableInterviewDates as $date)
                                                     <option value="{{ $date }}"
@@ -198,7 +192,7 @@
                                               </div>
                                               <div class="block">
                                                 <h5 class="block__title">Время интервью</h5>
-                                                <select name="interview_time_slot" class="block__info form-control" required>
+                                                <select name="interview_time_slot" class="block__info form-control">
                                                   <option value="">-----</option>
                                                   @foreach($timeSlotsInterview as $slot)
                                                     <option value="{{ $slot }}"
