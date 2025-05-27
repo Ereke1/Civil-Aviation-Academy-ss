@@ -116,7 +116,7 @@ class RegForTestController extends Controller
             $ieltsFile = $request->file('ielts_file');
             $extension = $ieltsFile->getClientOriginalExtension();
             $filename = $validated['surname'] . '_' . $validated['name'] . '.' . $extension;
-            $destinationPath = public_path('/storage/applications/ielts_certificates' . $request->surname . ' ' . $request->name);
+            $destinationPath = public_path('/storage/applications/ielts_certificates/' . $request->surname . ' ' . $request->name);
 
 
             if (!file_exists($destinationPath)) {

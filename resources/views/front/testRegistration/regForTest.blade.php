@@ -15,11 +15,34 @@
                 @endif
             </h1>
 
-            <p class="mb-5 mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                anim id est laborum.</p>
+            <div class="alert alert-info" style="margin-bottom: 20px; padding: 40px; border-radius: 5px;">
+                <h4><strong>ВНИМАНИЕ!</strong> Пожалуйста, внимательно ознакомьтесь с информацией перед регистрацией:</h4>
+                <ol>
+                    <li>
+                        <strong>Если у вас есть действующий сертификат</strong> по английскому языку, <strong>тестирование проходить не требуется</strong>. Подходят следующие сертификаты:
+                        <ul>
+                            <li>IELTS — от <strong>5.0</strong> и выше</li>
+                            <li>TOEFL iBT — от <strong>57</strong></li>
+                            <li>TOEFL CBT — от <strong>163</strong></li>
+                            <li>TOEFL PBT — от <strong>487</strong></li>
+                        </ul>
+                        Загрузите скан сертификата при регистрации.
+                    </li>
+                    <li>
+                        <strong>Если сертификата нет</strong>, необходимо пройти <strong>тестирование по английскому языку</strong> в Академии гражданской авиации:
+                        <ul>
+                            <li>Основной период: <strong>с 6 по 12 июля 2025 года</strong></li>
+                            <li>Для платного отделения: <strong>до 20 августа 2025 года</strong></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Интервью обязательно для всех</strong> поступающих и проводится <strong>с 6 июля по 20 августа 2025 года</strong>.
+                    </li>
+                    <li>
+                        Зачисление в Академию возможно только при успешном прохождении тестирования (если требуется) и интервью, а также при наборе проходного балла.
+                    </li>
+                </ol>
+            </div>
 
             <div class="p-5 bg-white rounded shadow mb-5">
                 <!-- Rounded tabs -->
