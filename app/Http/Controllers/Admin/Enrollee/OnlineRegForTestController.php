@@ -190,6 +190,7 @@ class OnlineRegForTestController extends Controller
             (empty($request->interview_date) || empty($request->interview_time_slot))
         ) {
             $availableInterviewDates = [
+                "2025-07-09",
                 "2025-07-14",
                 "2025-07-17",
             ];
@@ -201,23 +202,29 @@ class OnlineRegForTestController extends Controller
                 "13:30-14:30",
                 "15:00-16:00",
             ];
-
+            $slotFound = false;
             foreach ($availableInterviewDates as $date) {
                 foreach ($interviewSlots as $slot) {
                     $count = RegistrationForTesting::where('interview_date', $date)
-                        ->where('interview_time_slot', $slot)
-                        ->count();
+                    ->where('interview_time_slot', $slot)
+                    ->where('is_deleted', 0)
+                    ->where('is_confirmed', 1)
+                    ->count();
 
                     if ($count < 18) {
                         $data->interview_date = $date;
                         $data->interview_time_slot = $slot;
+                        $slotFound = true;
                         break 2;
                     }
                 }
             }
 
-            if (!$data->interview_date || !$data->interview_time_slot) {
-                return redirect()->back()->with('error', 'Свободных слотов для интервью не найдено.');
+            // if (!$data->interview_date || !$data->interview_time_slot) {
+            //     return redirect()->back()->with('error', 'Свободных слотов для интервью не найдено.');
+            // }
+            if (!$slotFound) {
+                return redirect()->back()->with('alert', 'Все слоты на интервью заняты. Пожалуйста, попробуйте позже или освободите место.');
             }
         }
 

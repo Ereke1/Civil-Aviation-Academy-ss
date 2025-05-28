@@ -42,11 +42,15 @@ class RegForTestController extends Controller
         ];
 
         $checkDatesFromDB = RegistrationForTesting::select('test_date', DB::raw('count(*) as total'))
+        ->where('is_deleted', 0)
+        ->where('is_confirmed', 1)
             ->groupBy('test_date')
             ->having('total', '>=', 60)
             ->pluck('test_date')
             ->toArray();
         $interviewCheckDatesFromDB = RegistrationForTesting::select('interview_date', DB::raw('count(*) as total'))
+        ->where('is_deleted', 0)
+        ->where('is_confirmed', 1)
             ->groupBy('interview_date')
             ->having('total', '>=', 60)
             ->pluck('interview_date')
@@ -57,6 +61,8 @@ class RegForTestController extends Controller
             foreach ($timeSlotsInterview as $slot) {
                 $cnt = RegistrationForTesting::where('interview_date',$date)
                     ->where('interview_time_slot',$slot)
+                    ->where('is_deleted', 0)
+                    ->where('is_confirmed', 1)
                     ->count();
                 if ($cnt < 15) {
                     $streamsInterview[$date][] = $slot;
@@ -68,6 +74,8 @@ class RegForTestController extends Controller
             foreach ($timeSlots as $slot) {
                 $cnt = RegistrationForTesting::where('test_date',$date)
                     ->where('test_time_slot',$slot)
+                    ->where('is_deleted', 0)
+                    ->where('is_confirmed', 1)
                     ->count();
                 if ($cnt < 15) {
                     $streams[$date][] = $slot;

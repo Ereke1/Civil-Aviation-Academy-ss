@@ -282,6 +282,7 @@ function citizenFunc() {
         // Показываем поле обр. программ
         document.getElementById('programmsBlock').classList.remove('disabled')
         let optionProgramms = document.getElementById('programms').options
+        console.log(optionProgramms)
         for (let i = 0; i < optionProgramms.length; i++) {
             optionProgramms[i].classList.remove('disabled')
         }
