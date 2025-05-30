@@ -336,23 +336,10 @@
                             document.getElementById('interviewDateWrapper').style.display = hasIELTS ? 'block' : 'none';
                             document.getElementById('interviewTimeWrapper').style.display = hasIELTS ? 'block' : 'none';
                             document.getElementById('ieltsWrapper').style.display = hasIELTS ? 'block' : 'none';
-
-                            document.getElementById('test_datepicker').required      = !hasIELTS;
+                            document.getElementById('test_datepicker').required = !hasIELTS;
                             document.getElementById('interview_datepicker').required = hasIELTS;
-                            // document.getElementById('test_time_slot').required      = !hasIELTS;
-                            // document.getElementById('interview_time_slot').required = hasIELTS;
-
-                            const has = document.getElementById('change_ielts_yes').checked;
-                            document.getElementById('changeTestDateWrapper').style.display      = has ? 'none'  : 'block';
-                            document.getElementById('changeTestTimeWrapper').style.display      = has ? 'none'  : 'block';
-                            document.getElementById('changeInterviewDateWrapper').style.display = has ? 'block' : 'none';
-                            document.getElementById('changeInterviewTimeWrapper').style.display = has ? 'block' : 'none';
-
-                            // корректируем required
-                            document.getElementById('change_test_datepicker').required      = !has;
-                            document.getElementById('change_test_time_slot').required      = !has;
-                            document.getElementById('change_interview_datepicker').required= has;
-                            document.getElementById('change_interview_time_slot').required  = has;
+                            document.getElementById('test_time_slot').required      = !hasIELTS;
+                            document.getElementById('interview_time_slot').required = hasIELTS;
                         }
 
                         function toggleDateFieldsChange() {

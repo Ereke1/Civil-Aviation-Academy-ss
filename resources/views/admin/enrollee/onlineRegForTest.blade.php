@@ -11,18 +11,75 @@
 
     <h2>Фильтр</h2>
     <div class="filter">
-        <form action="{{ route('admin.enrollee.onlineRegForTest.index') }}">
-            @csrf
+    <form action="{{ route('admin.enrollee.onlineRegForTest.index') }}">
+        @csrf
+            {{-- have_ielts --}}
             <div>
-                <label for="test_date">Дата теста</label>
-                <input type="date" name="test_date"
-                 @if ($test_date != '') value="{!! $test_date !!}" @endif>
+                <label>Есть IELTS</label>
+                <select name="have_ielts" class="form-control">
+                    <option value="">Все</option>
+                    <option value="1" {{ $have_ielts==='1' ? 'selected' : '' }}>Да</option>
+                    <option value="0" {{ $have_ielts==='0' ? 'selected' : '' }}>Нет</option>
+                </select>
+            </div>
+
+            {{-- test_passed --}}
+            <div>
+                <label>Тест пройден</label>
+                <select name="test_passed" class="form-control">
+                    <option value="">Все</option>
+                    <option value="Да" {{ $test_passed==='Да' ? 'selected' : '' }}>Да</option>
+                    <option value="Нет" {{ $test_passed==='Нет' ? 'selected' : '' }}>Нет</option>
+                </select>
+            </div>
+
+            {{-- interview_passed --}}
+            <div>
+                <label>Интервью пройдено</label>
+                <select name="interview_passed" class="form-control">
+                    <option value="">Все</option>
+                    <option value="Да" {{ $interview_passed==='Да' ? 'selected' : '' }}>Да</option>
+                    <option value="Нет" {{ $interview_passed==='Нет' ? 'selected' : '' }}>Нет</option>
+                </select>
+            </div>
+
+            {{-- test_date --}}
+            <div >
+                <label>Дата теста</label>
+                <input type="date" name="test_date" value="{{ $test_date }}" class="form-control">
+            </div>
+
+            {{-- interview_date --}}
+            <div >
+                <label>Дата интервью</label>
+                <input type="date" name="interview_date" value="{{ $interview_date }}" class="form-control">
+            </div>
+
+            {{-- surname --}}
+            <div>
+                <label>Фамилия</label>
+                <input type="text" name="surname" value="{{ $surname }}" class="form-control" placeholder="часть фамилии">
             </div>
             <div>
-                <button>Применить</button>
+                <button type="submit">Применить</button>
             </div>
-        </form>
+            <div>
+                <button type="submit"><a style="color: white" href="{{ route('admin.enrollee.onlineRegForTest.index') }}" >Сбросить</a></button>
+            </div>
+    </form>
     </div>
+    <form action="{{ route('admin.enrollee.onlineRegForTest.export') }}" method="GET" class="mb-3">
+        {{-- скрытые поля фильтров --}}
+        <input type="hidden" name="have_ielts" value="{{ $have_ielts }}">
+        <input type="hidden" name="test_passed" value="{{ $test_passed }}">
+        <input type="hidden" name="interview_passed" value="{{ $interview_passed }}">
+        <input type="hidden" name="test_date" value="{{ $test_date }}">
+        <input type="hidden" name="interview_date" value="{{ $interview_date }}">
+        <input type="hidden" name="surname" value="{{ $surname }}">
+        <button type="submit" class="btn btn-outline-success">
+            <i class="fas fa-file-excel"></i> Выгрузить в Excel
+        </button>
+    </form>
 
     <h3>Всего анкет: {!! $countData !!}</h3>
     <table class="table-filter">
@@ -127,19 +184,6 @@
                                                 </select>
                                             </div>
                                         @else
-                                            {{-- <div class="block">
-                                                <h5 class="block__title">Дата теста</h5>
-                                                {{-- <p class="block__info">{!! date('d.m.Y', strtotime($item->test_date)) !!}</p>
-                                                <select name="test_date" class="block__info">
-                                                    <option value="NULL" @if ($item->test_date  === 'NULL') selected @endif>-----</option>
-                                                    <option value="2025-07-07" @if ($item->test_date  === '2025-07-07') selected @endif>2025-07-07</option>
-                                                    <option value="2025-07-08" @if ($item->test_date  === '2025-07-08') selected @endif>2025-07-08</option>
-                                                    <option value="2025-07-10" @if ($item->test_date  === '2025-07-10') selected @endif>2025-07-10</option>
-                                                    <option value="2025-07-11" @if ($item->test_date  === '2025-07-11') selected @endif>2025-07-11</option>
-                                                    <option value="2025-07-15" @if ($item->test_date  === '2025-07-15') selected @endif>2025-07-15</option>
-                                                    <option value="2025-07-16" @if ($item->test_date  === '2025-07-16') selected @endif>2025-07-16</option>
-                                                </select>
-                                            </div> --}}
                                             <div class="block">
                                                 <h5 class="block__title">Дата теста</h5>
                                                 <select name="test_date" class="block__info form-control" required>
@@ -239,18 +283,28 @@
                                             <h5 class="block__title">Телефон</h5>
                                             <input type="text" value="{!! $item->phone !!}" name="phone" class="block__info">
                                         </div>
-                                        <div class="block">
-                                            <button type="submit" class="button">Сохранить изменения</button>
-                                        </div>
                                     </div>
                                 </form>
-
                                 <div class="blocks">
+                                    <div class="block">
+                                        <button type="submit" class="button">Сохранить изменения</button>
+                                    </div>
                                     <div class="block">
                                         <form action="{{ route('admin.enrollee.onlineRegForTest.edit', $item->id) }}" method="GET">
                                             @csrf
                                             <button type="submit" class="button btn-danger"  style="background-color: #C42957;"
                                                 onclick="return confirm('Удалить?')">Удалить</button>
+                                        </form>
+                                    </div>
+                                    <div class="block">
+                                        <form
+                                           action="{{ route('admin.enrollee.onlineRegForTest.sendMessage', $item->id) }}"
+                                           method="POST"
+                                           onsubmit="return confirm('Отправить письмо студенту с датой интервью?');">
+                                            @csrf
+                                            <button type="submit" class="button btn-success" style="background-color: #d8c244;">
+                                                Отправить сообщение
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
@@ -277,8 +331,10 @@
             const $selectInterview = $container.find('select[name="interview_passed"]');
 
             if (isNaN(score)) {
-                $select.val('Не определен')
+                $selectTest.val('Не определен');
+                $selectInterview.val('Не определен');
             }
+
             // else if (0 > score || score > 60){
             //     $select.text('Не правильный балл');
             //     $select.val('Не определен');

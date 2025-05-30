@@ -52,7 +52,7 @@ class RegForTestController extends Controller
         ->where('is_deleted', 0)
         ->where('is_confirmed', 1)
             ->groupBy('interview_date')
-            ->having('total', '>=', 60)
+            ->having('total', '>=', 90)
             ->pluck('interview_date')
             ->toArray();
 
@@ -64,7 +64,7 @@ class RegForTestController extends Controller
                     ->where('is_deleted', 0)
                     ->where('is_confirmed', 1)
                     ->count();
-                if ($cnt < 15) {
+                if ($cnt < 18) {
                     $streamsInterview[$date][] = $slot;
                 }
             }
@@ -105,12 +105,13 @@ class RegForTestController extends Controller
             'name' => 'required|string|max:255',
             'surname' => 'required|string|max:255',
             'email' => 'required|email',
+            'phone' => 'required|string',
             'have_ielts'      => 'required|boolean',
             'test_date'       => 'required_if:have_ielts,0|nullable|date',
             'interview_date'  => 'required_if:have_ielts,1|nullable|date',
             'test_time_slot'       => 'nullable|required_if:have_ielts,0',
             'interview_time_slot'       => 'nullable|required_if:have_ielts,1',
-            'ielts_file.*' => 'required_if:have_ielts,1|mimes:jpeg,png,pdf',
+            'ielts_file' => 'required_if:have_ielts,1|file|mimes:jpeg,png,pdf',
         ]);
 
         // Проверка: есть ли уже запись с таким email
@@ -179,15 +180,15 @@ class RegForTestController extends Controller
         ]);
 
         $token = Str::random(64);
-
         $existing = RegistrationForTesting::where('email', $validated['email'])->first();
+        if (!$existing) {
+            return redirect()->back()->with('error', 'Данная почта не зарегистрирована!');
+        }
         if ($validated['have_ielts_change'] && ! $existing->have_ielts) {
             return redirect()->back()->with('error', 'У вас нет загруженного сертификата IELTS!');
         }
         // dd($existing);
-        if (!$existing) {
-            return redirect()->back()->with('error', 'Данная почта не зарегистрирована!');
-        }
+
 
 
         if ($validated['have_ielts_change']) {

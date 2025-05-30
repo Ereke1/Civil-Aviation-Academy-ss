@@ -6,6 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\RegistrationForTesting;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Mail\InterviewScheduledMail;
+use Illuminate\Support\Facades\Mail;
+use App\Exports\StudentsExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class OnlineRegForTestController extends Controller
 {
@@ -25,6 +30,7 @@ class OnlineRegForTestController extends Controller
             "2025-07-16",
         ];
         $availableInterviewDates = [
+            "2025-07-09",
             "2025-07-14",
             "2025-07-17",
         ];
@@ -36,8 +42,6 @@ class OnlineRegForTestController extends Controller
             "09:00-10:00","10:30-11:30","12:00-13:00",
             "13:30-14:30","15:00-16:00",
         ];
-        $test_date = $request->test_date;
-
 
         // Filter
         $whereArray = [
@@ -45,36 +49,73 @@ class OnlineRegForTestController extends Controller
             'is_deleted' => 0,
         ];
 
-        $data = RegistrationForTesting::select('*')
-            ->where($whereArray)
-            ->orderBy('updated_at', 'desc');
+        $query = RegistrationForTesting::query()
+        ->where($whereArray)
+        ->orderBy('updated_at', 'desc');
 
-        // if ($request->has('test_date') && !empty($test_date)) {
-        //     $data->whereDate('test_date', '=', $test_date);
-        // }
+        // ↓↓↓ Фильтрация ↓↓↓
 
+        // По наличию IELTS (1 или 0)
+        if ($request->filled('have_ielts')) {
+            $query->where('have_ielts', $request->have_ielts);
+        }
 
-        // Count
-        $countData = $data->count();
+        // По статусу прохождения теста ("Да" / "Нет")
+        if ($request->filled('test_passed')) {
+            $query->where('test_passed', $request->test_passed);
+        }
 
-        $data = $data->paginate(100)
-            ->appends($whereArray)
-            ->appends('test_date', $test_date);
+        // По статусу прохождения интервью ("Да" / "Нет")
+        if ($request->filled('interview_passed')) {
+            $query->where('interview_passed', $request->interview_passed);
+        }
 
-        // Data
-        $dataArr = [
-            'test_date' => $request->test_date,
-            'have_ielts' => $request->have_ielts,
-            'interview_date' => $request->interview_date,
-            'data' => $data,
-            'countData' => $countData,
-        ];
-        return view('admin.enrollee.onlineRegForTest', $dataArr, compact(
-            'availableDates',
-            'timeSlotsTest',
-            'timeSlotsInterview',
-            'availableInterviewDates',
-        ));
+        // По дате теста (игнорируем время)
+        if ($request->filled('test_date')) {
+            $query->whereDate('test_date', $request->test_date);
+        }
+
+        // По дате интервью
+        if ($request->filled('interview_date')) {
+            $query->whereDate('interview_date', $request->interview_date);
+        }
+
+        // По фамилии (частичный поиск)
+        if ($request->filled('surname')) {
+            $query->where('surname', 'like', '%'.$request->surname.'%');
+        }
+
+        // ↑↑↑ Конец блока фильтрации ↑↑↑
+
+        // Параметры пагинации и подсчёта
+        $countData = $query->count();
+
+        $data = $query
+            ->paginate(100)
+            ->appends($request->only([
+                'have_ielts',
+                'test_passed',
+                'interview_passed',
+                'test_date',
+                'interview_date',
+                'surname',
+            ]));
+
+        return view('admin.enrollee.onlineRegForTest', [
+            'data'                   => $data,
+            'countData'              => $countData,
+            'have_ielts'             => $request->have_ielts,
+            'test_passed'            => $request->test_passed,
+            'interview_passed'       => $request->interview_passed,
+            'test_date'              => $request->test_date,
+            'interview_date'         => $request->interview_date,
+            'surname'                => $request->surname,
+            // плюс ваши переменные для слотов и дат
+            'availableDates'         => $availableDates,
+            'availableInterviewDates'=> $availableInterviewDates,
+            'timeSlotsTest'          => $timeSlotsTest,
+            'timeSlotsInterview'     => $timeSlotsInterview,
+        ]);
     }
 
     /**
@@ -104,10 +145,10 @@ class OnlineRegForTestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    // public function show($id)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -131,29 +172,6 @@ class OnlineRegForTestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, $id)
-    // {
-    //     $today = Carbon::today();
-
-    //     $data = RegistrationForTesting::find($id);
-
-    //     $data->surname = $request->surname;
-    //     $data->name = $request->name;
-    //     $data->patronymic = $request->patronymic;
-    //     $data->phone = $request->phone;
-
-    //     $data->test_score = $request->test_score;
-    //     $data->test_passed = $request->test_passed;
-    //     $data->interview_passed = $request->interview_passed;
-
-    //     $data->interview_date = $request->interview_date;
-    //     $data->interview_time_slot = $request->interview_time_slot;
-    //     $data->test_date = $request->test_date;
-    //     $data->test_time_slot = $request->test_time_slot;
-
-    //     $data->save();
-    //     return redirect()->back()->with('alert', 'Данные изменены!');
-    // }
 
     public function update(Request $request, $id)
     {
@@ -174,14 +192,6 @@ class OnlineRegForTestController extends Controller
         $data->interview_time_slot = $request->interview_time_slot;
         $data->test_date = $request->test_date;
         $data->test_time_slot = $request->test_time_slot;
-
-        $data->test_date = $request->test_date;
-        $data->test_time_slot = $request->test_time_slot;
-
-
-        $data->interview_date = $request->interview_date;
-        $data->interview_time_slot = $request->interview_time_slot;
-
 
         if (
             !$data->have_ielts &&
@@ -232,6 +242,36 @@ class OnlineRegForTestController extends Controller
 
         return redirect()->back()->with('alert', 'Данные изменены!');
     }
+
+    public function sendMessage($id)
+    {
+        $reg = RegistrationForTesting::findOrFail($id);
+
+        // Проверим, что у студента есть утверждённая дата интервью
+        if (! $reg->interview_date || ! $reg->interview_time_slot) {
+            return redirect()->back()->with('error', 'У этого студента не назначено интервью.');
+        }
+
+        // Шлём письмо
+        Mail::to($reg->email)
+            ->send(new InterviewScheduledMail($reg));
+
+        return redirect()->back()->with('alert', 'Письмо с датой интервью отправлено.');
+    }
+
+    public function export(Request $request)
+    {
+        // Отладка — чтобы увидеть, что мы сюда попали
+        // dd('export called', $request->all());
+
+        $fileName = 'students_' . now()->format('Ymd_His') . '.xlsx';
+        return Excel::download(
+            new StudentsExport($request),
+            $fileName
+        );
+    }
+
+
 
 
     /**

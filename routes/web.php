@@ -57,7 +57,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 
 	// ENROLLEE
 	Route::group(['prefix' => 'enrollee', 'namespace' => 'Enrollee', 'as' => 'enrollee.'], function () {
-		Route::resources([
+		Route::get('onlineRegForTest/export','OnlineRegForTestController@export')
+         ->name('onlineRegForTest.export');
+        Route::resources([
 			'bachelor' => 'BachelorController',
 			'master' => 'MasterController',
 			'doctoral' => 'DoctoralController',
@@ -65,6 +67,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'documents' => 'DocumentsController',
 			'onlineRegForTest' => 'OnlineRegForTestController',
 		]);
+
+        // Send message to student passing interview
+        Route::post('onlineRegForTest/{id}/send-message', 'OnlineRegForTestController@sendMessage')->name('onlineRegForTest.sendMessage');
+        Route::get('onlineRegForTest/export','OnlineRegForTestController@export')
+         ->name('onlineRegForTest.export');
 
 
         //Documents
