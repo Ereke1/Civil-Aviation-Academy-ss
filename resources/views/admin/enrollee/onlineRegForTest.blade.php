@@ -283,12 +283,12 @@
                                             <h5 class="block__title">Телефон</h5>
                                             <input type="text" value="{!! $item->phone !!}" name="phone" class="block__info">
                                         </div>
+                                        <div class="block">
+                                            <button type="submit" class="button">Сохранить изменения</button>
+                                        </div>
                                     </div>
                                 </form>
                                 <div class="blocks">
-                                    <div class="block">
-                                        <button type="submit" class="button">Сохранить изменения</button>
-                                    </div>
                                     <div class="block">
                                         <form action="{{ route('admin.enrollee.onlineRegForTest.edit', $item->id) }}" method="GET">
                                             @csrf
