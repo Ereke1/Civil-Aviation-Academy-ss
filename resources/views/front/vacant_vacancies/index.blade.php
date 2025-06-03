@@ -20,7 +20,7 @@
                     <div class="card-header"
                         style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
                         @if (Config::get('app.locale') === 'ru')
-                            Вакантные должности кафедры «Авиационная техника и технологии»
+                            Вакантные должности кафедры «Организация авиационных перевозок и логистики»
                         @elseif(Config::get('app.locale') === 'kk')
                             «Авиациялық техника және технологиялар» кафедрасының бос лауазымдары
                         @else
@@ -112,7 +112,7 @@
                 <a class="card-link" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
                     <div class="card-header" style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
                         @if (Config::get('app.locale') === 'ru')
-                            Вакантные должности кафедры «Авиационный английский язык»
+                            Вакантные должности кафедры «Общеобразовательные дисциплины»
                         @elseif(Config::get('app.locale') === 'kk')
                             «Авиациялық ағылшын тілі» кафедрасының бос лауазымдары
                         @else
@@ -250,7 +250,7 @@
                 <a class="card-link" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
                     <div class="card-header" style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
                         @if (Config::get('app.locale') === 'ru')
-                            Вакантные должности кафедры «Авиационный английский язык»
+                            Вакантные должности кафедры «Летная эксплуатация воздушных судов»
                         @elseif(Config::get('app.locale') === 'kk')
                             «Әуе кемелерін ұшуда пайдалану» кафедрасының бос лауазымдары
                         @else
