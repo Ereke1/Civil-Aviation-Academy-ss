@@ -829,7 +829,7 @@
                       </a>
                 </div>
                 <div class="card" style="margin-bottom: 3px;">
-                    <a href="{{ asset('/storage/hr_storage/Шаблон_документов_на_конкурс') }}"
+                    <a href="{{ asset('/storage/hr_storage/Шаблон_документов_на_конкурс.pdf') }}"
                          class="btn btn-primary"
                          target="_blank"
                          rel="noopener noreferrer">
