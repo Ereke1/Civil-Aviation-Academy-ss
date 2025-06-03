@@ -36,7 +36,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'training_courses' => 'TrainingСoursesController',
 			'department' => 'DepartmentController',
 			'department-page' => 'DepartmentPageController',
-			'sustainable_development_goals' => 'SustainableDevelopmentGoalsController',
+			'sustainable_development_goals' => 'SustainableDevelopmentGoalsController'
 		]);
 
 		// CK EDITOR
@@ -147,6 +147,8 @@ Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
     Route::post('testRegistrationChangeDate', 'RegForTestController@changeDate')->name('testRegistrationChangeDate.changeDate');
 	Route::get('regForTest','RegForTestController@index')->name('regForTest');
     Route::get('/confirm/{token}', 'RegForTestController@confirm')->name('testRegistration.confirm');
+
+    Route::get('vacant_vacancies', 'VacancyController@index')->name('vacant_vacancies');
 
     // ENROLLEE
 	Route::group(['prefix' => 'enrollee', 'namespace' => 'Enrollee', 'as' => 'enrollee.'], function () {
