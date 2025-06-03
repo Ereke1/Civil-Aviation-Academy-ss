@@ -22,9 +22,9 @@
                 <p>Для группы образовательной программы B167- «Лётная эксплуатация летательных аппаратов и двигателей»,  образовательная программа «Пилот самолета».</p>
                 <ol>
                     <li>
-                        <strong>•	Если у вас есть действующий сертификат</strong> по английскому языку, <strong>тестирование проходить НЕ ТРЕБУЕТСЯ</strong>.
+                        <strong>Если у вас есть действующий сертификат</strong> по английскому языку, <strong>тестирование проходить НЕ ТРЕБУЕТСЯ</strong>.
                         <ul>
-                            <li>IELTS — от <strong>5.0</strong> и выше.</li>
+                            <li>•	IELTS — от <strong>5.0</strong> и выше.</li>
                             <li>•	TOEFL iBT — от <strong>57</strong> и выше.</li>
                             <li>•	TOEFL CBT — от <strong>163</strong> и выше.</li>
                             <li>•	TOEFL PBT — от <strong>487</strong> и выше.</li>
@@ -72,7 +72,7 @@
                         </li>
                     </ol>
                 @else
-                    <h4><strong>ATTENTION!</strong> REGISTRATION FOR TESTING AND INTERVIEW</h4>
+                    <h4><strong>ATTENTION!</strong></h4>
                     <h4><strong>REGISTRATION FOR TESTING AND INTERVIEW</strong></h4>
                     <p>For applicants to the educational program B167 – "Flight operation of aircraft and engines (pilot)"</p>
                     <ol>
@@ -94,7 +94,7 @@
                             </ul>
                         <br>
                         <li>
-                            <strong>Интервью обязательно для всех</strong> поступающих и проводится <strong>с 6 июля по 20 августа 2025 года</strong>.
+                            <strong>All applicants are required to attend an interview </strong> between <strong>July 6 and August 20, 2025.</strong>
                         </li>
                     </ol>
                 @endif
