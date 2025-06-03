@@ -22,22 +22,21 @@ class ConfirmRegistration extends Mailable
 
     public function build()
     {
-        // Берём «ожидаемые» pending-значения, если они есть, иначе — оригинальные
         $testDate        = $this->registration->pending_test_date      ?? $this->registration->test_date;
         $testTime        = $this->registration->pending_test_time_slot ?? $this->registration->test_time_slot;
         $interviewDate   = $this->registration->pending_interview_date      ?? $this->registration->interview_date;
         $interviewTime   = $this->registration->pending_interview_time_slot ?? $this->registration->interview_time_slot;
 
         return $this
-            ->subject('Подтвердите регистрацию')
+            ->subject(
+                'Civil Aviation Academy'
+            )
             ->view('front.testRegistration.confirm')
             ->with([
                 'url'                 => route('front.testRegistration.confirm', ['token' => $this->registration->confirmation_token]),
                 'have_ielts'          => $this->registration->have_ielts,
-                // для теста
                 'test_date'           => $testDate,
                 'test_time_slot'      => $testTime,
-                // для интервью
                 'interview_date'      => $interviewDate,
                 'interview_time_slot' => $interviewTime,
             ]);

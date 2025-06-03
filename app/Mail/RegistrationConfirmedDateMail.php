@@ -27,7 +27,7 @@ class RegistrationConfirmedDateMail extends Mailable
         $interviewTime   = $this->registration->interview_time_slot;
 
         return $this
-            ->subject('Ваша регистрация подтверждена')
+            ->subject('Civil Aviation Academy')
             ->view('front.testRegistration.confirmedDate')
             ->with([
                 'have_ielts'           => $this->registration->have_ielts,

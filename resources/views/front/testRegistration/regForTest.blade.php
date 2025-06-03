@@ -11,37 +11,93 @@
                 @elseif(Config::get('app.locale') === 'kk')
                     Тестілеуге және сұхбатқа жазылу
                 @else
-                    Sign up for testing and interviews
+                    Sign up for testing and interview
                 @endif
             </h1>
 
             <div class="alert alert-info" style="margin-bottom: 20px; padding: 40px; border-radius: 5px;">
-                <h4><strong>ВНИМАНИЕ!</strong> Пожалуйста, внимательно ознакомьтесь с информацией перед регистрацией:</h4>
+                @if (Config::get('app.locale') === 'ru')
+                <h4><strong>ВНИМАНИЕ!</strong></h4>
+                <h4><strong>РЕГИСТРАЦИЯ НА ТЕСТИРОВАНИЕ И ИНТЕРВЬЮ</strong></h4>
+                <p>Для группы образовательной программы B167- «Лётная эксплуатация летательных аппаратов и двигателей»,  образовательная программа «Пилот самолета».</p>
                 <ol>
                     <li>
-                        <strong>Если у вас есть действующий сертификат</strong> по английскому языку, <strong>тестирование проходить не требуется</strong>. Подходят следующие сертификаты:
+                        <strong>•	Если у вас есть действующий сертификат</strong> по английскому языку, <strong>тестирование проходить НЕ ТРЕБУЕТСЯ</strong>.
                         <ul>
-                            <li>IELTS — от <strong>5.0</strong> и выше</li>
-                            <li>TOEFL iBT — от <strong>57</strong></li>
-                            <li>TOEFL CBT — от <strong>163</strong></li>
-                            <li>TOEFL PBT — от <strong>487</strong></li>
+                            <li>IELTS — от <strong>5.0</strong> и выше.</li>
+                            <li>•	TOEFL iBT — от <strong>57</strong> и выше.</li>
+                            <li>•	TOEFL CBT — от <strong>163</strong> и выше.</li>
+                            <li>•	TOEFL PBT — от <strong>487</strong> и выше.</li>
                         </ul>
-                        Загрузите скан сертификата при регистрации.
+                        Загрузите на сайт PDF-формат сертификата при регистрации.
                     </li>
-                    <li>
-                        <strong>Если сертификата нет</strong>, необходимо пройти <strong>тестирование по английскому языку</strong> в Академии гражданской авиации:
+                    <br>
+                        <strong>При отсутствии сертификата</strong>, необходимо пройти <strong>тестирование по английскому языку</strong> в Академии гражданской авиации:
                         <ul>
-                            <li>Основной период: <strong>с 6 по 12 июля 2025 года</strong></li>
-                            <li>Для платного отделения: <strong>до 20 августа 2025 года</strong></li>
+                            <li>•	Основной период: <strong>с 6 по 12 июля 2025 года.</strong></li>
+                            <li>•	Для платного отделения: <strong>до 20 августа 2025 года.</strong></li>
                         </ul>
-                    </li>
+                    <br>
                     <li>
                         <strong>Интервью обязательно для всех</strong> поступающих и проводится <strong>с 6 июля по 20 августа 2025 года</strong>.
                     </li>
-                    <li>
-                        Зачисление в Академию возможно только при успешном прохождении тестирования (если требуется) и интервью, а также при наборе проходного балла.
-                    </li>
                 </ol>
+
+                @elseif(Config::get('app.locale') === 'kk')
+                    <h4><strong>НАЗАР АУДАРЫҢЫЗДАР!</strong></h4>
+                    <h4><strong>ТЕСТІЛЕУ ЖӘНЕ СҰХБАТТАСУҒА ТІРКЕЛУ</strong></h4>
+                    <p>
+                        B167 – «Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану» білім беру бағдарламасы, Азаматтық ұшақтарды ұшуда пайдалану (ұшқыш) білім беру бағдарламасы бойынша топтары үшін:
+                    </p>
+                    <ol>
+                        <li>
+                        Егер сізде <strong>ағылшын тілі бойынша жарамды сертификат </strong>бар болса, онда тестілеуден өту <strong>ҚАЖЕТ ЕМЕС</strong>:
+                            <ul>
+                                <li>•	IELTS — <strong>5.0</strong> және одан жоғары.</li>
+                                <li>•	TOEFL iBT — <strong>57</strong> және одан жоғары.</li>
+                                <li>•	TOEFL CBT — <strong>163</strong> және одан жоғары.</li>
+                                <li>•	TOEFL PBT — <strong>487</strong> және одан жоғары.</li>
+                            </ul>
+                            Тіркелу кезінде сертификатты PDF форматында сайтқа жүктеу қажет.
+                        </li>
+                        <br>
+                            <strong>Сертификат болмаған жағдайда</strong>, Азаматтық Авиация Академиясында <strong>ағылшын тілі бойынша тестілеуден</strong> өту қажет:
+                            <ul>
+                                <li>•	Негізгі кезең: <strong>2025 жылдың 6–12 шілде аралығы</strong>.</li>
+                                <li>•	Ақылы бөлім үшін: <strong>2025 жылдың 20 тамызына дейін</strong>.</li>
+                            </ul>
+                        <br>
+                        <li>
+                            Сұхбаттасудан  барлық үміткерлер <strong>МІНДЕТТІ ТҮРДЕ</strong> өтеді: <strong>2025 жылдың 6 шілдесінен 20 тамызына дейін</strong>.
+                        </li>
+                    </ol>
+                @else
+                    <h4><strong>ATTENTION!</strong> REGISTRATION FOR TESTING AND INTERVIEW</h4>
+                    <h4><strong>REGISTRATION FOR TESTING AND INTERVIEW</strong></h4>
+                    <p>For applicants to the educational program B167 – "Flight operation of aircraft and engines (pilot)"</p>
+                    <ol>
+                        <li>
+                            <strong>If you have a valid English language certificate</strong> (one of the following), <strong>you are NOT required to take the English test</strong>.
+                            <ul>
+                                <li>•	IELTS — score of <strong>5.0</strong> or higher.</li>
+                                <li>•	TOEFL iBT — score of <strong>57</strong> or higher.</li>
+                                <li>•	TOEFL CBT — score of <strong>163</strong> or higher.</li>
+                                <li>•	TOEFL PBT — score of <strong>487</strong> or higher.</li>
+                            </ul>
+                            Please upload a PDF copy of your certificate during registration on the website.
+                        </li>
+                        <br>
+                            <strong>If you do not have a certificate</strong>, you must take <strong>the English language test</strong> at the Civil Aviation Academy:
+                            <ul>
+                                <li>•	Main testing period: <strong>July 6–12, 2025</strong>.</li>
+                                <li>•	For fee-paying applicants: <strong>until August 20, 2025</strong>.</li>
+                            </ul>
+                        <br>
+                        <li>
+                            <strong>Интервью обязательно для всех</strong> поступающих и проводится <strong>с 6 июля по 20 августа 2025 года</strong>.
+                        </li>
+                    </ol>
+                @endif
             </div>
 
             <div class="p-5 bg-white rounded shadow mb-5">
@@ -51,13 +107,26 @@
                     <li class="nav-item flex-sm-fill">
                         <a id="home-tab" data-toggle="tab" href="#reg1" role="tab" aria-controls="home"
                             aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">
-                            Регистрация
+                            @if (Config::get('app.locale') === 'ru')
+                                Регистрация
+                            @elseif(Config::get('app.locale') === 'kk')
+                                Тіркелу
+                            @else
+                                Registration
+                            @endif
                         </a>
                     </li>
                     <li class="nav-item flex-sm-fill">
                         <a id="profile-tab" data-toggle="tab" href="#reg2" role="tab" aria-controls="profile"
-                            aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">Запись на другую
-                            дату</a>
+                            aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">
+                            @if (Config::get('app.locale') === 'ru')
+                                Запись на другую дату
+                            @elseif(Config::get('app.locale') === 'kk')
+                                Басқа күнге жазулу
+                            @else
+                                Re-register for another date
+                            @endif
+                        </a>
                     </li>
                 </ul>
                 <div id="myTabContent" class="tab-content">
@@ -84,46 +153,109 @@
                                         <label for="email">Email*</label>
                                         <input type="email" id="email" name="email" class="form-control" required>
 
-                                        <label for="name">Имя*</label>
+                                        <label for="name">
+                                            @if (Config::get('app.locale') === 'ru')
+                                                Имя*
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                Аты*
+                                            @else
+                                                Name*
+                                            @endif
+                                        </label>
                                         <input type="text" id="name" name="name" class="form-control" required>
 
-                                        <label for="surname">Фамилия*</label>
+                                        <label for="surname">
+                                            @if (Config::get('app.locale') === 'ru')
+                                                Фамилия*
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                Тегі*
+                                            @else
+                                                Surname*
+                                            @endif
+                                        </label>
                                         <input type="text" id="surname" name="surname" class="form-control" required>
 
-                                        <label for="patronymic">Отчество</label>
+                                        <label for="patronymic">
+                                            @if (Config::get('app.locale') === 'ru')
+                                                Отчество
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                Әкесінің аты
+                                            @else
+                                                Patronymic
+                                            @endif
+                                        </label>
                                         <input type="text" id="patronymic" name="patronymic" class="form-control">
 
-                                        <label for="phone">Телефон*</label>
+                                        <label for="phone">
+                                            @if (Config::get('app.locale') === 'ru')
+                                                Номер телефона*
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                Телефон номірі*
+                                            @else
+                                                Phone number*
+                                            @endif
+                                        </label>
                                         <input type="text" id="phone" name="phone" class="phone form-control">
 
-                                        <label class="mt-3">Есть ли IELTS?*</label>
+                                        <label class="mt-3">
+                                            @if (Config::get('app.locale') === 'ru')
+                                                Сертификат IELTS/TOEFL?*
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                IELTS / TOEFL сертификаты?*
+                                            @else
+                                                IELTS/TOEFL certificate?*
+                                            @endif
+                                        </label>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="have_ielts" id="ielts_yes" value="1">
-                                            <label class="form-check-label" for="ielts_yes">Да</label>
+                                            <label class="form-check-label" for="ielts_yes">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Да
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Иә
+                                                @else
+                                                    Yes
+                                                @endif
+                                            </label>
                                         </div>
                                         <div class="form-check mb-3">
                                             <input class="form-check-input" type="radio" name="have_ielts" id="ielts_no" value="0" checked>
-                                            <label class="form-check-label" for="ielts_no">Нет</label>
+                                            <label class="form-check-label" for="ielts_no">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Нет
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Жоқ
+                                                @else
+                                                    No
+                                                @endif
+                                            </label>
                                         </div>
 
                                         <div id="testDateWrapper">
-                                            <label for="test_datepicker" class="form-label">Выберите доступную дату теста*</label>
+                                            <label for="test_datepicker" class="form-label">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Выберите доступную дату теста*
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Қол жетімді тест күнін таңдаңыз*
+                                                @else
+                                                    Select an available test date*
+                                                @endif
+                                            </label>
                                             <input type="text" id="test_datepicker" name="test_date" class="form-control" autocomplete="off">
                                         </div>
                                         <div id="testTimeWrapper" class="mt-3">
-                                            <label for="test_time_slot">Выберите часовой интервала*</label>
+                                            <label for="test_time_slot">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Выберите время теста*
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Тест уақытын таңдаңыз*
+                                                @else
+                                                    Select the test time*
+                                                @endif
+                                            </label>
                                             <select id="test_time_slot" name="test_time_slot" class="form-control">
                                                 {{-- Опции добавим через JS --}}
                                             </select>
-                                            {{-- <select id="test_time_slot" name="test_time_slot" class="form-control">
-                                                <option value=""></option>
-                                                <option value="09:00-10:00">09:00 – 10:00</option>
-                                                <option value="10:00-11:00">10:00 – 11:00</option>
-                                                <option value="11:00-12:00">11:00 – 12:00</option>
-                                                <option value="12:00-13:00">12:00 – 13:00</option>
-                                                <option value="13:00-14:00">13:00 – 14:00</option>
-                                                <option value="14:00-15:00">14:00 – 15:00</option>
-                                            </select> --}}
                                         </div>
 
                                         <div id="ieltsWrapper" style="display: none; margin-bottom: 20px">
@@ -132,27 +264,42 @@
                                         </div>
 
                                         <div id="interviewDateWrapper" style="display: none;">
-                                            <label for="interview_datepicker" class="form-label">Выберите дату интервью*</label>
+                                            <label for="interview_datepicker" class="form-label">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Выберите дату интервью*
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Сұхбат күнін таңдаңыз*
+                                                @else
+                                                    Choose an interview date*
+                                                @endif
+                                            </label>
                                             <input type="text" id="interview_datepicker" name="interview_date" class="form-control" autocomplete="off">
                                         </div>
                                         <div id="interviewTimeWrapper" style="display: none;" class="mt-3">
-                                            <label for="interview_time_slot">Выберите часовой интервал интервью*</label>
+                                            <label for="interview_time_slot">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Выберите время интервью*
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Сұхбат уақытын таңдаңыз*
+                                                @else
+                                                    Choose an interview time*
+                                                @endif
+                                            </label>
                                             <select id="interview_time_slot" name="interview_time_slot" class="form-control">
                                                 {{-- Опции добавим через JS --}}
                                             </select>
-                                            {{-- <select id="interview_time_slot" name="interview_time_slot" class="form-control">
-                                                <option value=""></option>
-                                                <option value="09:00-10:00">09:00 – 10:00</option>
-                                                <option value="10:00-11:00">10:00 – 11:00</option>
-                                                <option value="11:00-12:00">11:00 – 12:00</option>
-                                                <option value="12:00-13:00">12:00 – 13:00</option>
-                                                <option value="13:00-14:00">13:00 – 14:00</option>
-                                                <option value="14:00-15:00">14:00 – 15:00</option>
-                                            </select> --}}
                                         </div>
 
                                         <div class="col-12 mt-3">
-                                            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                                            <button type="submit" class="btn btn-primary">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Зарегистрироваться
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Тіркелу
+                                                @else
+                                                    Register
+                                                @endif
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -175,20 +322,6 @@
                                             {{ session('error') }}
                                         </div>
                                     @endif
-                                    {{-- <form id="regForm" action="{{ route('front.testRegistrationChangeDate.changeDate') }}"
-                                        method="POST">
-                                        @csrf
-                                        <label for="email">Email*</label>
-                                        <input type="email" id="email" name="email" class="form-control" required>
-
-                                        <label for="test_datepicker" class="form-label">Выберите доступную дату*</label>
-                                        <input type="text" id="test_datepicker" name="test_date" class="form-control" required
-                                            autocomplete="off">
-
-                                        <div class="col-12 mt-3">
-                                            <button type="submit" class="btn btn-primary">Подтвердить</button>
-                                        </div>
-                                    </form> --}}
                                     <form id="changeDateForm" action="{{ route('front.testRegistrationChangeDate.changeDate') }}"
                                         method="POST">
                                         @csrf
@@ -196,36 +329,101 @@
                                         <label for="email_change">Email*</label>
                                         <input type="email" id="email_change" name="email" class="form-control" required>
 
-                                        <label class="mt-3">Есть ли IELTS?*</label>
+                                        <label class="mt-3">
+                                            @if (Config::get('app.locale') === 'ru')
+                                                Сертификат IELTS/TOEFL?*
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                IELTS / TOEFL сертификаты?*
+                                            @else
+                                                IELTS/TOEFL certificate?*
+                                            @endif
+                                        </label>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="have_ielts_change" id="ielts_yes_change" value="1">
-                                            <label class="form-check-label" for="ielts_yes_change">Да</label>
+                                            <label class="form-check-label" for="ielts_yes_change">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Да
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Иә
+                                                @else
+                                                    Yes
+                                                @endif
+                                            </label>
                                         </div>
                                         <div class="form-check mb-3">
                                             <input class="form-check-input" type="radio" name="have_ielts_change" id="ielts_no_change" value="0" checked>
-                                            <label class="form-check-label" for="ielts_no_change">Нет</label>
+                                            <label class="form-check-label" for="ielts_no_change">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Нет
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Жоқ
+                                                @else
+                                                    No
+                                                @endif
+                                            </label>
                                         </div>
 
                                         <div id="testDateWrapperChange">
-                                            <label for="test_datepicker_change" class="form-label">Выберите доступную дату теста*</label>
+                                            <label for="test_datepicker_change" class="form-label">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Выберите доступную дату теста*
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Қол жетімді тест күнін таңдаңыз*
+                                                @else
+                                                    Select an available test date*
+                                                @endif
+                                            </label>
                                             <input type="text" id="test_datepicker_change" name="test_date" class="form-control" autocomplete="off">
                                         </div>
                                         <div id="testTimeWrapperChange" class="mt-3">
-                                            <label for="test_time_slot_change">Выберите часовой интервал*</label>
+                                            <label for="test_time_slot_change">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Выберите время теста*
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Тест уақытын таңдаңыз*
+                                                @else
+                                                    Select the test time*
+                                                @endif
+                                            </label>
                                             <select id="test_time_slot_change" name="test_time_slot" class="form-control"></select>
                                         </div>
 
                                         <div id="interviewDateWrapperChange" style="display: none;">
-                                            <label for="interview_datepicker_change" class="form-label">Выберите дату интервью*</label>
+                                            <label for="interview_datepicker_change" class="form-label">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Выберите дату интервью*
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Сұхбат күнін таңдаңыз*
+                                                @else
+                                                    Choose an interview date*
+                                                @endif
+                                            </label>
                                             <input type="text" id="interview_datepicker_change" name="interview_date" class="form-control" autocomplete="off">
                                         </div>
                                         <div id="interviewTimeWrapperChange" style="display: none;" class="mt-3">
-                                            <label for="interview_time_slot_change">Выберите часовой интервал интервью*</label>
+                                            <label for="interview_time_slot_change">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Выберите время интервью*
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Сұхбат уақытын таңдаңыз*
+                                                @else
+                                                    Choose an interview time*
+                                                @endif
+                                            </label>
                                             <select id="interview_time_slot_change" name="interview_time_slot" class="form-control"></select>
                                         </div>
 
+
                                         <div class="col-12 mt-3">
-                                            <button type="submit" class="btn btn-primary">Подтвердить</button>
+                                            <button style="margin:0 auto;" type="submit" class="btn btn-primary">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Подтвердить
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Растау
+                                                @else
+                                                    Confirm
+                                                @endif
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
