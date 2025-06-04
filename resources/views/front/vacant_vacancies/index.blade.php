@@ -20,7 +20,7 @@
                     <div class="card-header"
                         style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
                         @if (Config::get('app.locale') === 'ru')
-                            Вакантные должности кафедры «Организация авиационных перевозок и логистики»
+                            Вакантные должности кафедры «Авиационная техника и технологии»:
                         @elseif(Config::get('app.locale') === 'kk')
                             «Авиациялық техника және технологиялар» кафедрасының бос лауазымдары
                         @else
@@ -112,7 +112,7 @@
                 <a class="card-link" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
                     <div class="card-header" style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
                         @if (Config::get('app.locale') === 'ru')
-                            Вакантные должности кафедры «Общеобразовательные дисциплины»
+                            Вакантные должности кафедры «Авиационный английский язык»
                         @elseif(Config::get('app.locale') === 'kk')
                             «Авиациялық ағылшын тілі» кафедрасының бос лауазымдары
                         @else
@@ -352,7 +352,7 @@
                     <div class="card-header"
                         style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
                         @if (Config::get('app.locale') === 'ru')
-                            Вакантные должности кафедры «Авиационная техника и технологии»
+                            Вакантные должности кафедры «Организация авиационных перевозок и логистики»
                         @elseif(Config::get('app.locale') === 'kk')
                             «Авиациялық тасымалдауды және логистиканы ұйымдастыру» кафедрасының бос лауазымдары
                         @else
@@ -475,7 +475,7 @@
                 <a class="card-link" data-toggle="collapse" href="#collapseFive" role="button" aria-expanded="false" aria-controls="collapseFive">
                     <div class="card-header" style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
                         @if (Config::get('app.locale') === 'ru')
-                            Вакантные должности кафедры «Авиационный английский язык»
+                            Вакантные должности кафедры «Общеобразовательные дисциплины»
                         @elseif(Config::get('app.locale') === 'kk')
                             «Жалпы білім беретін пәндер» кафедрасының бос лауазымдары
                         @else
