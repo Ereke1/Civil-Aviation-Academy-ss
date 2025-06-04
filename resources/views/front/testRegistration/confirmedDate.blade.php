@@ -73,14 +73,13 @@
             @endif
         </p>
     @endif
-    <p>Ждём вас в назначенный день. Если что-то изменится — свяжитесь с нами.</p>
     <p>
         @if (Config::get('app.locale') === 'ru')
-            Ждём вас в назначенный день. Если что-то изменится — свяжитесь с нами.
+            Ждём вас в назначенный день.
         @elseif(Config::get('app.locale') === 'kk')
-            Сізді белгіленген күні күтеміз. Егер бірдеңе өзгерсе, бізге хабарласыңыз.
+            Сізді белгіленген күні күтеміз.
         @else
-            We are waiting for you on the appointed day. If something changes, please contact us.
+            We are waiting for you on the appointed day.
         @endif
     </p>
 </body>
