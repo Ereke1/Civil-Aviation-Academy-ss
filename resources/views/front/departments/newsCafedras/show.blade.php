@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="container pt-3 pb-3">
-            <div class="d-flex flex-wrap">
+            <div>
                 {{-- <div class="col-md-1 col-lg-2 col-0 pl-0 pr-1 pb-1"></div>
                 <div class="col-md-10 col-lg-8 col-12 pl-0 pr-1 pb-1">
                     <div class="main-image">
