@@ -16,6 +16,7 @@ class RegistrationForTesting extends Model
         'email',
         'have_ielts',
         'ielts_file',
+        'ent_file',
         'test_date',
         'test_time_slot',
         'interview_date',

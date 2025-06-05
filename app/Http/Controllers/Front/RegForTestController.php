@@ -112,21 +112,34 @@ class RegForTestController extends Controller
             'test_time_slot'       => 'nullable|required_if:have_ielts,0',
             'interview_time_slot'       => 'nullable|required_if:have_ielts,1',
             'ielts_file' => 'required_if:have_ielts,1|file|mimes:jpeg,png,pdf',
+            'ent_file' => 'required_if:have_ielts,1|file|mimes:jpeg,png,pdf',
         ]);
 
         // Проверка: есть ли уже запись с таким email
         $existing = RegistrationForTesting::where('email', $validated['email'])->where('is_deleted', 0)->first();
-
         if ($existing) {
             return redirect()->back()->with('error', 'Данная почта уже зарегистрирована! Выберите "Запись на другую дату" если хотите изменить дату записи');
         }
 
+        //ЕНТ
+        $entFile = $request->file('ent_file');
+            $extension = $entFile->getClientOriginalExtension();
+            $filename = $validated['surname'] . '_' . $validated['name'] . '.' . $extension;
+            $destinationPath = public_path('/storage/applications/ent_certificates_online_reg/' . $request->surname . ' ' . $request->name);
+
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0777, true);
+            }
+
+            $entFile->move($destinationPath, $filename);
+            $validated['ent_file'] = '/storage/applications/ent_certificates_online_reg/'  . $request->surname . ' ' . $request->name . '/' . $filename  ;
+
+        //IELTS
         if ($validated['have_ielts']) {
             $ieltsFile = $request->file('ielts_file');
             $extension = $ieltsFile->getClientOriginalExtension();
             $filename = $validated['surname'] . '_' . $validated['name'] . '.' . $extension;
             $destinationPath = public_path('/storage/applications/ielts_certificates/' . $request->surname . ' ' . $request->name);
-
 
             if (!file_exists($destinationPath)) {
                 mkdir($destinationPath, 0777, true);
@@ -160,6 +173,7 @@ class RegForTestController extends Controller
             'confirmation_token' => $token,
             'is_confirmed'  => false,
             'ielts_file'  => $validated['ielts_file'] ?? null,
+            'ent_file'  => $validated['ent_file'],
         ]);
 
         // Отправка email пользователю
@@ -188,9 +202,6 @@ class RegForTestController extends Controller
             return redirect()->back()->with('error', 'У вас нет загруженного сертификата IELTS!');
         }
         // dd($existing);
-
-
-
         if ($validated['have_ielts_change']) {
             $existing->update([
                 'pending_interview_date'      => $validated['interview_date'],
@@ -221,7 +232,6 @@ class RegForTestController extends Controller
         $registration = RegistrationForTesting::where('confirmation_token', $token)
             ->firstOrFail();
 
-
         if ($registration->pending_test_date) {
             $registration->update([
                 'test_date'             => $registration->pending_test_date,
@@ -230,7 +240,6 @@ class RegForTestController extends Controller
                 'pending_test_time_slot'=> null,
             ]);
         }
-
 
         if ($registration->pending_interview_date) {
             $registration->update([

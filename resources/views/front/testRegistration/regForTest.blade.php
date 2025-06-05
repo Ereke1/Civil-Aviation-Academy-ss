@@ -184,7 +184,37 @@
                                                 Patronymic
                                             @endif
                                         </label>
-                                        <input type="text" id="patronymic" name="patronymic" class="form-control">
+                                        <input type="text" id="patronymic" name="patronymic" class="form-control mb-2">
+
+
+
+                                                <div class="form-group">
+                                                    <label for="ent_file">
+                                                        @if (Config::get('app.locale') === 'ru')
+                                                            Сертификат ЕНТ (PDF, JPG, PNG):
+                                                        @elseif(Config::get('app.locale') === 'kk')
+                                                            ҰБТ сертификаты (PDF, JPG, PNG):
+                                                        @else
+                                                            UNT Certificate (PDF, JPG, PNG):
+                                                        @endif
+                                                    </label>
+                                                    <input type="file" name="ent_file" class="form-control-file" accept=".pdf,.jpg,.png" required>
+                                                </div>
+                                                <div class="form-group mt-3">
+                                                    <label for="ent_score" >
+                                                        @if (Config::get('app.locale') === 'ru')
+                                                            Результат ЕНТ (85-140):
+                                                        @elseif(Config::get('app.locale') === 'kk')
+                                                            ҰБТ нәтижесі (85–140):
+                                                        @else
+                                                            UNT result (85-140):
+                                                        @endif
+                                                    </label>
+                                                    <input type="number" id="ent_score" name="ent_score" class="form-control border " min="85" max="140" required>
+                                                </div>
+
+
+
 
                                         <label for="phone">
                                             @if (Config::get('app.locale') === 'ru')
@@ -195,7 +225,7 @@
                                                 Phone number*
                                             @endif
                                         </label>
-                                        <input type="text" id="phone" name="phone" class="phone form-control">
+                                        <input type="text" id="phone" name="phone" class="phone form-control" required>
 
                                         <label class="mt-3">
                                             @if (Config::get('app.locale') === 'ru')
@@ -208,7 +238,7 @@
                                         </label>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="have_ielts" id="ielts_yes" value="1">
-                                            <label class="form-check-label" for="ielts_yes">
+                                            <label class="form-check-label" for="ielts_yes" onchange="myFunction()">
                                                 @if (Config::get('app.locale') === 'ru')
                                                     Да
                                                 @elseif(Config::get('app.locale') === 'kk')
@@ -260,7 +290,7 @@
 
                                         <div id="ieltsWrapper" style="display: none; margin-bottom: 20px">
                                             <label for="ielts_file">{{ __('Прикрепите сертификат IELTS/TOEFL') }}</label>
-                                            <input type="file" name="ielts_file" accept=".pdf,.jpg,.png">
+                                            <input type="file" id="ielts_file_input" name="ielts_file" accept=".pdf,.jpg,.png">
                                         </div>
 
                                         <div id="interviewDateWrapper" style="display: none;">
@@ -430,13 +460,7 @@
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
-
-
-
 
                 <!-- Flatpickr JS -->
                 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -538,6 +562,7 @@
                             document.getElementById('interview_datepicker').required = hasIELTS;
                             document.getElementById('test_time_slot').required      = !hasIELTS;
                             document.getElementById('interview_time_slot').required = hasIELTS;
+                            document.getElementById('ielts_file_input').required = hasIELTS;
                         }
 
                         function toggleDateFieldsChange() {
@@ -547,6 +572,7 @@
                             document.getElementById('interviewDateWrapperChange').style.display = hasIELTS ? 'block' : 'none';
                             document.getElementById('interviewTimeWrapperChange').style.display = hasIELTS ? 'block' : 'none';
 
+                            document.getElementById('ielts_file_input').required = hasIELTS;
                             document.getElementById('test_datepicker_change').required = !hasIELTS;
                             document.getElementById('test_time_slot_change').required = !hasIELTS;
                             document.getElementById('interview_datepicker_change').required = hasIELTS;
@@ -565,51 +591,24 @@
                     (() => {
                         'use strict';
                         const form            = document.getElementById('regForm');
-                        const name            = document.getElementById('name');
-                        const surname         = document.getElementById('surname');
-                        const email           = document.getElementById('email');
-                        const phone           = document.getElementById('phone');
                         const testInput       = document.getElementById('test_datepicker');
                         const interviewInput  = document.getElementById('interview_datepicker');
-                        const testTimeSelect   = document.getElementById('test_time_slot');
-                        const interviewTimeSel = document.getElementById('interview_time_slot');
                         const ieltsYes        = document.getElementById('ielts_yes');
                         const ieltsNo         = document.getElementById('ielts_no');
 
-
                         form.addEventListener('submit', function(event) {
-                            [name, surname, email, phone, testInput, interviewInput, testTimeSelect, interviewTimeSel].forEach(el => {
+                            [testInput, interviewInput,].forEach(el => {
                                 el.classList.remove('is-invalid');
                             });
 
                             let isValid = true;
                             const hasIelts = ieltsYes.checked;
 
-                            if (!name.value) {
-                                name.classList.add('is-invalid');
-                                isValid = false;
-                            }
-                            if (!surname.value) {
-                                surname.classList.add('is-invalid');
-                                isValid = false;
-                            }
-                            if (!email.value || !email.checkValidity()) {
-                                email.classList.add('is-invalid');
-                                isValid = false;
-                            }
-                            if (!phone.value || !phone.checkValidity()) {
-                                phone.classList.add('is-invalid');
-                                isValid = false;
-                            }
-
                             if (hasIelts) {
                                 if (!interviewInput.value)   { interviewInput.classList.add('is-invalid');   isValid = false; }
-                                if (!interviewTimeSel.value) { interviewTimeSel.classList.add('is-invalid'); isValid = false; }
                             } else {
                                 if (!testInput.value)        { testInput.classList.add('is-invalid');        isValid = false; }
-                                if (!testTimeSelect.value)   { testTimeSelect.classList.add('is-invalid');   isValid = false; }
                             }
-
                             if (!isValid) {
                                 event.preventDefault();
                             }

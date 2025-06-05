@@ -48,7 +48,7 @@
         </div>
         <div class="container pt-3 pb-3">
             <div class="d-flex flex-wrap">
-                <div class="col-md-1 col-lg-2 col-0 pl-0 pr-1 pb-1"></div>
+                {{-- <div class="col-md-1 col-lg-2 col-0 pl-0 pr-1 pb-1"></div>
                 <div class="col-md-10 col-lg-8 col-12 pl-0 pr-1 pb-1">
                     <div class="main-image">
                         <a class="group main-image__link" data-fancybox="images"
@@ -62,7 +62,7 @@
                 <div class="col-md-1 col-lg-2 col-0 pl-0 pr-1 pb-1"></div>
                 <div class="col-md-1 col-lg-2 col-0 pl-0 pr-1 pb-1"></div>
                 <div class="col-md-1 col-lg-2 col-0 pl-0 pr-1 pb-1"></div>
-                <div class="col-md-10 col-lg-8 col-12 detail-news">
+                <div class="col-md-10 col-lg-8 col-12 detail-news">--}}
                     @if (Config::get('app.locale') === 'ru')
                         {!! $news->description_ru !!}
                     @elseif(Config::get('app.locale') === 'kk')
@@ -70,8 +70,8 @@
                     @else
                         {!! $news->descriptions_en !!}
                     @endif
-                </div>
-                <div class="col-md-1 col-lg-2 col-0 pl-0 pr-1 pb-1"></div>
+                {{-- </div> --}}
+                {{-- <div class="col-md-1 col-lg-2 col-0 pl-0 pr-1 pb-1"></div> --}}
             </div>
         </div>
     </section>
