@@ -113,6 +113,8 @@ class RegForTestController extends Controller
             'interview_time_slot'       => 'nullable|required_if:have_ielts,1',
             'ielts_file' => 'required_if:have_ielts,1|file|mimes:jpeg,png,pdf',
             'ent_file' => 'required_if:have_ielts,1|file|mimes:jpeg,png,pdf',
+            'ent_score'   => 'required|numeric|min:84|max:141',
+            // 'ielts_score' => 'required_if:have_ielts,1|numeric|min:5.5|max:9',
         ]);
 
         // Проверка: есть ли уже запись с таким email
@@ -174,6 +176,7 @@ class RegForTestController extends Controller
             'is_confirmed'  => false,
             'ielts_file'  => $validated['ielts_file'] ?? null,
             'ent_file'  => $validated['ent_file'],
+            'ent_score'  => $validated['ent_score'],
         ]);
 
         // Отправка email пользователю

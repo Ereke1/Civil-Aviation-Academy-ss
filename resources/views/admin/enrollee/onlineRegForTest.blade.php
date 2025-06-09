@@ -127,13 +127,34 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('admin.enrollee.onlineRegForTest.update', $item->id) }}" method="POST">
+                                <form action="{{ route('admin.enrollee.onlineRegForTest.update', $item->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="blocks">
                                         <div class="block">
                                             <h5 class="block__title">Дата подачи</h5>
                                             <p class="block__info">{!! date('d.m.Y H:i', strtotime($item->created_at)) !!}</p>
+                                        </div>
+                                        {{-- <div class="block">
+                                            <h5 class="block__title">ЕНТ</h5>
+                                            <p class="block__info">
+                                                <a href="{!! $item->ent_file !!}" target="_blank">ЕНТ</a>
+                                                <input type="file" name="ent_file" class="form-control-file" accept=".pdf,.jpg,.png">
+                                            </p>
+                                        </div> --}}
+                                        <div class="block">
+                                            <h5 class="block__title">ЕНТ</h5>
+                                            @if($item->ent_file)
+                                                <a href="{{ $item->ent_file }}" target="_blank">Смотреть текущий ЕНТ</a>
+                                            @endif
+                                            <input type="file"
+                                                   name="ent_file"
+                                                   class="form-control-file"
+                                                   accept=".pdf,.jpg,.png">
+                                        </div>
+                                        <div class="block">
+                                            <h5 class="block__title">Балл ЕНТ</h5>
+                                            <input type="text" value="{!! $item->ent_score !!}" name="ent_score" class="block__info ent_score">
                                         </div>
                                         <div class="block">
                                             <h5 class="block__title">Имеется IELTS/TOEFL</h5>
@@ -146,9 +167,11 @@
                                         @if ($item->have_ielts === 1)
                                             <div class="block">
                                                 <h5 class="block__title">IELTS/TOEFL</h5>
-                                                <p class="block__info">
-                                                    <a href="{!! $item->ielts_file !!}" target="_blank">IELTS/TOEFL</a>
-                                                </p>
+                                                <a  href="{{ $item->ielts_file }}" target="_blank">Смотреть текущий IELTS</a>
+                                                <input type="file"
+                                                    name="ielts_file"
+                                                    class="form-control-file"
+                                                    accept=".pdf,.jpg,.png">
                                             </div>
                                             <div class="block">
                                                 <h5 class="block__title">Дата интервью</h5>
@@ -177,10 +200,9 @@
                                             <div class="block">
                                                 <h5 class="block__title">Статус прохождения интервью</h5>
                                                 <select name="interview_passed" class="block__info">
-                                                    <option value="null" @if ($item->interview_passed  === null) selected @endif>
-                                                        -----</option>
-                                                        <option value="Да" @if ($item->interview_passed  === 'Да') selected @endif>Да</option>
-                                                        <option value="Нет" @if ($item->interview_passed  === 'Нет') selected @endif>Нет</option>
+                                                    <option value="Не определен" @if ($item->interview_passed  === 'Не определен') selected @endif>-----</option>
+                                                    <option value="Да" @if ($item->interview_passed  === 'Да') selected @endif>Да</option>
+                                                    <option value="Нет" @if ($item->interview_passed  === 'Нет') selected @endif>Нет</option>
                                                 </select>
                                             </div>
                                         @else

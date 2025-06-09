@@ -10,7 +10,7 @@ use App\Mail\InterviewScheduledMail;
 use Illuminate\Support\Facades\Mail;
 use App\Exports\StudentsExport;
 use Maatwebsite\Excel\Facades\Excel;
-
+use Illuminate\Support\Facades\Storage;
 
 class OnlineRegForTestController extends Controller
 {
@@ -85,9 +85,6 @@ class OnlineRegForTestController extends Controller
             $query->where('surname', 'like', '%'.$request->surname.'%');
         }
 
-        // ↑↑↑ Конец блока фильтрации ↑↑↑
-
-        // Параметры пагинации и подсчёта
         $countData = $query->count();
 
         $data = $query
@@ -183,7 +180,43 @@ class OnlineRegForTestController extends Controller
         $data->name = $request->name;
         $data->patronymic = $request->patronymic;
         $data->phone = $request->phone;
+        $surname = $request->surname;
+        $name    = $request->name;
 
+        if ($request->hasFile('ent_file')) {
+            if ($data->ent_file) {
+                $oldPath = public_path($data->ent_file);
+                if (file_exists($oldPath)) {
+                    unlink($oldPath);
+                }
+            }
+
+            $entFile   = $request->file('ent_file');
+            $ext       = $entFile->getClientOriginalExtension();
+            $filename  = "{$surname}_{$name}.{$ext}";
+            $destinationPath = public_path("storage/applications/ent_certificates_online_reg/{$surname} {$name}");
+
+            if (! file_exists($destinationPath)) {
+                mkdir($destinationPath, 0777, true);
+            }
+
+            $entFile->move($destinationPath, $filename);
+            $data->ent_file = "/storage/applications/ent_certificates_online_reg/{$surname} {$name}/{$filename}";
+        }
+
+        if ($request->hasFile('ielts_file')) {
+            $ieltsFile   = $request->file('ielts_file');
+            $ext       = $ieltsFile->getClientOriginalExtension();
+            $filename  = "{$surname}_{$name}.{$ext}";
+            $destinationPath = public_path("storage/applications/ielts_certificates/{$surname} {$name}");
+
+            if (! file_exists($destinationPath)) {
+                mkdir($destinationPath, 0777, true);
+            }
+
+            $ieltsFile->move($destinationPath, $filename);
+            $data->ielts_file = "/storage/applications/ielts_certificates/{$surname} {$name}/{$filename}";
+        }
         $data->test_score = $request->test_score;
         $data->test_passed = $request->test_passed;
         $data->interview_passed = $request->interview_passed;
@@ -192,6 +225,8 @@ class OnlineRegForTestController extends Controller
         $data->interview_time_slot = $request->interview_time_slot;
         $data->test_date = $request->test_date;
         $data->test_time_slot = $request->test_time_slot;
+
+        $data->ent_score = $request->ent_score;
 
         if (
             !$data->have_ielts &&
