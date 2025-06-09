@@ -79,7 +79,7 @@
         @if (Config::get('app.locale') === 'ru')
             Чтобы подтвердить запись, перейдите по ссылке:
         @elseif(Config::get('app.locale') === 'kk')
-            Жазбаны растау үшін мына сілтемеге өтіңіз:
+            Жазбаны растау үшін төмендегі сілтемемен өтіңіз:
         @else
             To confirm the recording, follow the link:
         @endif

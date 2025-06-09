@@ -46,7 +46,7 @@
         @if (Config::get('app.locale') === 'ru')
             Вы успешно подтвердили запись на тест. Дата тест: <strong>{{ $test_date }}</strong>.
         @elseif(Config::get('app.locale') === 'kk')
-            Сіз тесті сәтті растадыңыз. Тест күні: <strong>{{ $test_date }}</strong>.
+            Сіз тестке жазылдыңыз. Тест күні: <strong>{{ $test_date }}</strong>.
         @else
             You have successfully confirmed your appointment for the test. Test date: <strong>{{$test_date }}</strong>.
         @endif
