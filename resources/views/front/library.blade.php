@@ -97,10 +97,10 @@
                         </div>
                         <div class="oneBook col-md-4 col-12 col-sm-6">
                             <a href="https://profspo.ru/">
-                                <img src="/assets/images/library/prof_image.jpeg">
+                                <img src="/assets/images/library/prof_image.jpg">
                             </a>
                             <h3>
-                                EASA
+                                PROFобразование
                             </h3>
                             @if (Config::get('app.locale') === 'ru')
                             PROFобразование — электронный ресурс, разработанный специально для учреждений ТиПО (колледжей). Он позволяет получить качественное образование с доступом к эксклюзивным специализированным электронным учебникам, а также периодическим изданиям для разных направлений обучения.
