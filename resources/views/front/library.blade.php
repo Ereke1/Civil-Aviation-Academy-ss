@@ -95,7 +95,21 @@
                                 EASA's main goal is to promote the development and maintenance of high aviation safety standards in the EU member States.
                             @endif
                         </div>
-
+                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                            <a href="https://profspo.ru/">
+                                <img src="/assets/images/library/prof_image.jpeg">
+                            </a>
+                            <h3>
+                                EASA
+                            </h3>
+                            @if (Config::get('app.locale') === 'ru')
+                            PROFобразование — электронный ресурс, разработанный специально для учреждений ТиПО (колледжей). Он позволяет получить качественное образование с доступом к эксклюзивным специализированным электронным учебникам, а также периодическим изданиям для разных направлений обучения.
+                            @elseif(Config::get('app.locale') === 'kk')
+                            PROFобразование – техникалық және кәсіптік білім беру мекемелері (колледждер) үшін арнайы әзірленген электрондық ресурс. Ол эксклюзивті мамандандырылған электронды оқулықтарға, сондай-ақ оқудың әртүрлі бағыттарына арналған мерзімді басылымдарға қол жеткізе отырып, сапалы білім алуға мүмкіндік береді.
+                            @else
+                            PROFобразование  is an electronic resource developed specifically for technical and vocational education institutions (colleges). It allows you to receive a quality education with access to exclusive specialized electronic textbooks, as well as periodicals for various areas of study.
+                            @endif
+                        </div>
 
                         <div class="oneBook col-md-4 col-12 col-sm-6">
                             <a href="https://elibrary.icao.int/">
