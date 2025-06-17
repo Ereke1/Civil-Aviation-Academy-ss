@@ -97,11 +97,11 @@
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                                 <option value="10">10</option>
-                                <option value="11">11</option>
+                                {{-- <option value="11">11</option>
                                 <option value="12">12</option>
                                 <option value="13">13</option>
                                 <option value="14">14</option>
-                                <option value="15">15</option>
+                                <option value="15">15</option> --}}
                             </select>
                         </div>
                         <div id="readLitBlock" class="disabled">
@@ -116,7 +116,7 @@
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                                 <option value="10">10</option>
-                                <option value="11">11</option>
+                                {{-- <option value="11">11</option>
                                 <option value="12">12</option>
                                 <option value="13">13</option>
                                 <option value="14">14</option>
@@ -125,7 +125,7 @@
                                 <option value="17">17</option>
                                 <option value="18">18</option>
                                 <option value="19">19</option>
-                                <option value="20">20</option>
+                                <option value="20">20</option> --}}
                             </select>
                         </div>
                         <div id="historyKZBlock" class="disabled">
@@ -148,7 +148,7 @@
                                 <option value="18">18</option>
                                 <option value="19">19</option>
                                 <option value="20">20</option>
-                                <option value="21">21</option>
+                                {{-- <option value="21">21</option>
                                 <option value="22">22</option>
                                 <option value="23">23</option>
                                 <option value="24">24</option>
@@ -177,7 +177,7 @@
                                 <option value="47">47</option>
                                 <option value="48">48</option>
                                 <option value="49">49</option>
-                                <option value="50">50</option>
+                                <option value="50">50</option> --}}
                             </select>
                         </div>
                         <div id="mathBlock" class="disabled">
