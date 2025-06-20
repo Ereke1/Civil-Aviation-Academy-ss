@@ -7,6 +7,7 @@ use App\Models\RegistrationForTesting;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Mail\InterviewScheduledMail;
+use App\Mail\DeleteOnlineRegistrationMail;
 use Illuminate\Support\Facades\Mail;
 use App\Exports\StudentsExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -157,6 +158,7 @@ class OnlineRegForTestController extends Controller
     {
         $data = RegistrationForTesting::find($id);
         $data->is_deleted = 1;
+        $data->is_confirmed = 0;
         $data->updated_at = \Carbon\Carbon::now('Asia/Almaty');
         $data->save();
         return redirect()->back()->with('alert', 'Запись удалена!');
@@ -292,6 +294,17 @@ class OnlineRegForTestController extends Controller
             ->send(new InterviewScheduledMail($reg));
 
         return redirect()->back()->with('alert', 'Письмо с датой интервью отправлено.');
+    }
+
+    public function sendMessageDelete($id)
+    {
+        $reg = RegistrationForTesting::findOrFail($id);
+
+        // Шлём письмо
+        Mail::to($reg->email)
+            ->send(new DeleteOnlineRegistrationMail($reg));
+
+            return back()->with('alert', 'Сообщение об удалении отправлено');
     }
 
     public function export(Request $request)

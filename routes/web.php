@@ -70,6 +70,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 
         // Send message to student passing interview
         Route::post('onlineRegForTest/{id}/send-message', 'OnlineRegForTestController@sendMessage')->name('onlineRegForTest.sendMessage');
+        Route::post('onlineRegForTest/{id}/send-message-delete', 'OnlineRegForTestController@sendMessageDelete')->name('onlineRegForTest.sendMessageDelete');
         Route::get('onlineRegForTest/export','OnlineRegForTestController@export')
          ->name('onlineRegForTest.export');
 
