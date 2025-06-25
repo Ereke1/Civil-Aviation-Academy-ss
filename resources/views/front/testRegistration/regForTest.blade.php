@@ -63,7 +63,7 @@
                         <br>
                             <strong>Сертификат болмаған жағдайда</strong>, Азаматтық Авиация Академиясында <strong>ағылшын тілі бойынша тестілеуден</strong> өту қажет:
                             <ul>
-                                <li>•	Негізгі кезең: <strong>2025 жылдың 6–12 шілде аралығы</strong>.</li>
+                                <li>•	Негізгі кезең: <strong>2025 жылдың 6–19 шілде аралығы</strong>.</li>
                                 <li>•	Ақылы бөлім үшін: <strong>2025 жылдың 20 тамызына дейін</strong>.</li>
                             </ul>
                         <br>
@@ -89,7 +89,7 @@
                         <br>
                             <strong>If you do not have a certificate</strong>, you must take <strong>the English language test</strong> at the Civil Aviation Academy:
                             <ul>
-                                <li>•	Main testing period: <strong>July 6–12, 2025</strong>.</li>
+                                <li>•	Main testing period: <strong>July 6–19, 2025</strong>.</li>
                                 <li>•	For fee-paying applicants: <strong>until August 20, 2025</strong>.</li>
                             </ul>
                         <br>
