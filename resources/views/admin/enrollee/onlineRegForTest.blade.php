@@ -325,7 +325,18 @@
                                            onsubmit="return confirm('Отправить письмо студенту с датой интервью?');">
                                             @csrf
                                             <button type="submit" class="button btn-success" style="background-color: #d8c244;">
-                                                Отправить сообщение
+                                                Отправить сообщение интервью
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <div class="block">
+                                        <form
+                                           action="{{ route('admin.enrollee.onlineRegForTest.sendMessageDelete', $item->id) }}"
+                                           method="POST"
+                                           onsubmit="return confirm('Отправить письмо студенту об удалении?');">
+                                            @csrf
+                                            <button type="submit" class="button btn-success" style="background-color: #d8c244;">
+                                                Отправить сообщение уделение
                                             </button>
                                         </form>
                                     </div>
