@@ -193,6 +193,16 @@ class BachelorController extends Controller
                 $data->phone_2 = $request->phone_2;
                 $data->programms = $request->programms;
                 $data->process = $request->process;
+                $data->mathLit = $request->mathLit;
+                $data->readLit = $request->readLit;
+                $data->historyKZ = $request->historyKZ;
+                $data->math = $request->math;
+                $data->profSub = $request->profSub;
+                $data->aviaSec = $request->aviaSec;
+                $data->natureSec = $request->natureSec;
+                $data->geography = $request->geography;
+                $data->physics = $request->physics;
+                $data->countENT = $request->mathLit + $request->readLit + $request->historyKZ + $request->math + $request->aviaSec + $request->natureSec + $request->geography + $request->physics;
                 $data->save();
                 return redirect()->back()->with('alert', 'Корректировка выполнена!');
             }
