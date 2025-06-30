@@ -505,55 +505,56 @@
                                         @if (isset($item->mathLit))
                                             <div class="block">
                                                 <h5 class="block__title">Математическая грамотность</h5>
-                                                <p class="block__info">{!! $item->mathLit !!}</p>
+                                                <!-- <p class="block__info">{!! $item->mathLit !!}</p> -->
+                                                <input type="text" value="{!! $item->mathLit !!}" name="mathLit" class="block__info">
                                             </div>
                                         @endif
                                         @if (isset($item->readLit))
                                             <div class="block">
                                                 <h5 class="block__title">Грамотность чтения</h5>
-                                                <p class="block__info">{!! $item->readLit !!}</p>
+                                                <input type="text" value="{!! $item->readLit !!}" name="readLit" class="block__info">
                                             </div>
                                         @endif
                                         @if (isset($item->historyKZ))
                                             <div class="block">
                                                 <h5 class="block__title">История Казахстана</h5>
-                                                <p class="block__info">{!! $item->historyKZ !!}</p>
+                                                <input type="text" value="{!! $item->historyKZ !!}" name="historyKZ" class="block__info">
                                             </div>
                                         @endif
                                         @if (isset($item->math))
                                             <div class="block">
                                                 <h5 class="block__title">Математика</h5>
-                                                <p class="block__info">{!! $item->math !!}</p>
+                                                <input type="text" value="{!! $item->math !!}" name="math" class="block__info">
                                             </div>
                                         @endif
                                         @if (isset($item->profSub))
                                             <div class="block">
                                                 <h5 class="block__title">Профильный предмет</h5>
-                                                <p class="block__info">{!! $item->profSub !!}</p>
+                                                <input type="text" value="{!! $item->profSub !!}" name="profSub" class="block__info">
                                             </div>
                                         @endif
                                         @if (isset($item->aviaSec))
                                             <div class="block">
                                                 <h5 class="block__title">Авиационная безопасность</h5>
-                                                <p class="block__info">{!! $item->aviaSec !!}</p>
+                                                <input type="text" value="{!! $item->aviaSec !!}" name="aviaSec" class="block__info">
                                             </div>
                                         @endif
                                         @if (isset($item->natureSec))
                                             <div class="block">
                                                 <h5 class="block__title">Охрана труда</h5>
-                                                <p class="block__info">{!! $item->natureSec !!}</p>
+                                                <input type="text" value="{!! $item->natureSec !!}" name="natureSec" class="block__info">
                                             </div>
                                         @endif
                                         @if (isset($item->geography))
                                             <div class="block">
                                                 <h5 class="block__title">География</h5>
-                                                <p class="block__info">{!! $item->geography !!}</p>
+                                                <input type="text" value="{!! $item->geography !!}" name="geography" class="block__info">
                                             </div>
                                         @endif
                                         @if (isset($item->physics))
                                             <div class="block">
                                                 <h5 class="block__title">Физика</h5>
-                                                <p class="block__info">{!! $item->physics !!}</p>
+                                                <input type="text" value="{!! $item->physics !!}" name="physics" class="block__info">
                                             </div>
                                         @endif
                                         @if (isset($item->haveVLEK))
