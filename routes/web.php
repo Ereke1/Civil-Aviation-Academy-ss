@@ -81,6 +81,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 		Route::get('documents', 'DocumentsController@index')->name('documents.index');
 		Route::get('documents/word-statements/{id}', 'DocumentsController@wordExportStatements')->name('documents.wordExportStatements');
 		Route::get('documents/word-bilateralAgreement/{id}', 'DocumentsController@wordExportBilateralAgreement')->name('documents.wordExportBilateralAgreement');
+        Route::get('documents/word-bilateralAgreementThirdParty/{id}', 'DocumentsController@wordExportBilateralAgreementThirdParty')->name('documents.wordExportBilateralAgreementThirdParty');
 		Route::get('documents/word-stateGrantAgreement/{id}', 'DocumentsController@wordExportStateGrantAgreement')->name('documents.wordExportStateGrantAgreement');
 		Route::get('documents/word-applicationForCredits/{id}', 'DocumentsController@wordExportApplicationForCredits')->name('documents.wordExportApplicationForCredits');
 

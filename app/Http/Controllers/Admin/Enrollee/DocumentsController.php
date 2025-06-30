@@ -624,6 +624,259 @@ class DocumentsController extends Controller
         return response()->download($fileName . ' (двусторонний договор).docx')->deleteFileAfterSend(true);
     }
 
+    public function wordExportBilateralAgreementThirdParty($id)
+    {
+        $data = Applications::find($id);
+        if ($data->citizen === 'Нерезидент РК' && $data->lang_edu === 'Английский'){
+            $templateProcessor = new TemplateProcessor('word-templates/BilateralAgreementEnglish.docx');
+        } else {
+            $templateProcessor = new TemplateProcessor('word-templates/BilateralAgreement2025_ThirdParty.docx');
+        }
+        $templateProcessor->setValue('surname', $data->surname);
+        $templateProcessor->setValue('name', $data->name);
+        $templateProcessor->setValue('patronymic', $data->patronymic);
+        $templateProcessor->setValue('lang_edu', $data->lang_edu);
+        $templateProcessor->setValue('type', $data->type);
+        $templateProcessor->setValue('iin', $data->iin);
+        $templateProcessor->setValue('phone_1', $data->phone_1);
+        $templateProcessor->setValue('phone_2', $data->phone_2);
+        $templateProcessor->setValue('email', $data->email);
+
+        //степень в родительном падеже
+        if ($data->type === 'Бакалавриат') {
+            $templateProcessor->setValue('degree_rp_kz', 'бакалавр');
+            $templateProcessor->setValue('degree_rp_ru', 'бакалавра');
+            $templateProcessor->setValue('degree_rp_en', 'bachelor');
+            $templateProcessor->setValue('type_en', 'Bachelor');
+        } else if ($data->type === 'Магистратура') {
+            $templateProcessor->setValue('degree_rp_kz', 'магистр');
+            $templateProcessor->setValue('degree_rp_ru', 'магистра');
+            $templateProcessor->setValue('degree_rp_en', 'masters');
+            $templateProcessor->setValue('type_en', 'Masters');
+        } else if ($data->type === 'Докторантура') {
+            $templateProcessor->setValue('degree_rp_kz', 'PhD докторы');
+            $templateProcessor->setValue('degree_rp_ru', 'доктора PhD');
+            $templateProcessor->setValue('degree_rp_en', 'PhD doctoral studies');
+            $templateProcessor->setValue('type_en', 'PhD doctoral studies');
+        }
+
+        //образовательная программа(рус)
+        $templateProcessor->setValue('programs_ru', $data->programms);
+
+        //группа образовательных программ
+        if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
+            $templateProcessor->setValue('programs_group_ru', 'В167 – Лётная эксплуатация летательных аппаратов и двигателей');
+            $templateProcessor->setValue('programs_group_en', 'В167 – Flight operation of aircraft and engines');
+            $templateProcessor->setValue('programs_group_kz', 'В167 – Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану');
+        } else if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте' || $data->programms === 'Системная интеграция наземного обслуживания') {
+            $templateProcessor->setValue('programs_group_ru', 'В095 – Транспортные услуги');
+            $templateProcessor->setValue('programs_group_en', 'В095 – Transport services');
+            $templateProcessor->setValue('programs_group_kz', 'В095 – Көлік қызметтері');
+        } else if ($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М105 – Авиационная техника и технологии');
+            $templateProcessor->setValue('programs_group_en', 'М105 – Aviation equipment and technologies');
+            $templateProcessor->setValue('programs_group_kz', 'М105 – Авиациялық техника және технологиялар');
+        } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М151 – Транспортные услуги');
+            $templateProcessor->setValue('programs_group_en', 'М151 – Transport services');
+            $templateProcessor->setValue('programs_group_kz', 'М151 – Көлік қызметі');
+        } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)' || $data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М106 – Летная эксплуатация летательных аппаратов и двигателей');
+            $templateProcessor->setValue('programs_group_en', 'М106 – Flight operation of aircraft and engines');
+            $templateProcessor->setValue('programs_group_kz', 'М106 – Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану');
+        } else if ($data->programms === 'Авиационная техника и технологии') {
+            $templateProcessor->setValue('programs_group_ru', 'D105 - Авиационная техника и технологии');
+            $templateProcessor->setValue('programs_group_en', 'D105 – Aviation equipment and technologies');
+            $templateProcessor->setValue('programs_group_kz', 'D105 - Авиациялық техника және технологиялар');
+        } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей') {
+            $templateProcessor->setValue('programs_group_ru', 'D106 - Летная эксплуатация летательных аппаратов и двигателей');
+            $templateProcessor->setValue('programs_group_en', 'D106 – Flight operation of aircraft and engines');
+            $templateProcessor->setValue('programs_group_kz', 'D106 - Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану');
+        } else {
+            $templateProcessor->setValue('programs_group_ru', 'В067 – Воздушный транспорт и технологии');
+            $templateProcessor->setValue('programs_group_en', 'В067 – Air transport and technology');
+            $templateProcessor->setValue('programs_group_kz', 'В067 – Әуе көлігі және технологиялары');
+        }
+
+        //образовательная программа(каз, анг)
+        if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)') {
+            $templateProcessor->setValue('programs_kz', 'Азаматтық ұшақтарды ұшуда пайдалану (ұшқыш)');
+            $templateProcessor->setValue('programs_en', 'Flight operation of civil aircraft (pilot)');
+        } else if ($data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)') {
+            $templateProcessor->setValue('programs_kz', 'Азаматтық тікұшақтарды ұшуда пайдалану (ұшқыш)');
+            $templateProcessor->setValue('programs_en', 'Flight operation of civil helicopters (pilot)');
+        } else if ($data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
+            $templateProcessor->setValue('programs_kz', 'Әуе қозғалысына қызмет көрсету және ұшуда аэронавигациялық қамтамасыз ету  (авиадиспетчер)');
+            $templateProcessor->setValue('programs_en', 'Air traffic services and air navigation support of flights');
+        } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
+            $templateProcessor->setValue('programs_en', 'Technical operation of aircraft avionics systems');
+        } else if ($data->programms === 'Техническая эксплуатация летательных аппаратов и двигателей') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды техникалық пайдалану');
+            $templateProcessor->setValue('programs_en', 'Technical operation of aircraft and engines');
+        } else if ($data->programms === 'Технология авиационных перевозок') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық тасымалдау технологиясы');
+            $templateProcessor->setValue('programs_en', 'Aviation transportation technology');
+        } else if ($data->programms === 'Обеспечение авиационной безопасности') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық қауіпсіздікті қамтамасыз ету');
+            $templateProcessor->setValue('programs_en', 'Aviation security');
+        } else if ($data->programms === 'Обслуживание наземного радиоэлектронного оборудования аэропортов') {
+            $templateProcessor->setValue('programs_kz', 'Әуежайлардың жердегі радиоэлектрондық жабдықтарына қызмет көрсету');
+            $templateProcessor->setValue('programs_en', 'Maintenance of ground radio-electronic equipment of airports');
+        } else if ($data->programms === 'Техническая эксплуатация авиационного и радиоэлектронного оборудования') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық және радиоэлектрондық жабдықтарды техникалық пайдалану');
+            $templateProcessor->setValue('programs_en', 'Technical operation of aviation and electronic equipment');
+        } else if ($data->programms === 'Организация аэропортовой деятельности') {
+            $templateProcessor->setValue('programs_kz', 'Әуежай қызметін ұйымдастыру');
+            $templateProcessor->setValue('programs_en', 'Organization of airport services');
+        } else if ($data->programms === 'Организация авиационных перевозок') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық тасымалдауды ұйымдастыру');
+            $templateProcessor->setValue('programs_en', 'Organization of air transportation');
+        } else if ($data->programms === 'Логистика на транспорте') {
+            $templateProcessor->setValue('programs_kz', 'Көліктегі логистика');
+            $templateProcessor->setValue('programs_en', 'Transport logistics');
+        } else if ($data->programms === 'Системная интеграция наземного обслуживания') {
+            $templateProcessor->setValue('programs_kz', 'Жер үсті қызметін көрсетуді жүйелік интеграциялау');
+            $templateProcessor->setValue('programs_en', 'System integration of ground maintenance');
+        } else if ($data->programms === 'Авиационная безопасность и интеллектуальные системы') {
+            $templateProcessor->setValue('programs_kz', 'Авиациялық қауіпсіздік және зияткерлік жүйелер');
+            $templateProcessor->setValue('programs_en', 'Aviation Security and Intelligent Systems');
+        } else if ($data->programms === 'Технология транспортных процессов в авиации') {
+            $templateProcessor->setValue('programs_kz', 'Авиациядағы көлік процестерінің технологиясы');
+            $templateProcessor->setValue('programs_en', 'Technology of transport processes in aviation');
+        }
+        else if ($data->programms === 'Авиационная техника и технологии (профильная магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (бейіндік магистратура)');
+           $templateProcessor->setValue('programs_en', 'Aviation equipment and technologies (profile direction)');
+       } else if ($data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (ғылыми-педагогикалық магистратура)');
+           $templateProcessor->setValue('programs_en', 'Aviation equipment and technologies (scientific and pedagogical direction)');
+       } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану (ғылыми-педагогикалық магистратура)');
+           $templateProcessor->setValue('programs_en', 'Flight operation of aircraft and engines (scientific and pedagogical direction)');
+       } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану (бейіндік магистратура)');
+           $templateProcessor->setValue('programs_en', 'Flight operation of aircraft and engines (profile direction)');
+       } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану');
+            $templateProcessor->setValue('programs_en', 'Flight operation of aircraft and engines');
+       } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Тасымалдауды, қозғалысты ұйымдастыру және көлікті пайдалану (бейіндік магистратура)');
+           $templateProcessor->setValue('programs_en', 'Organization of transportation, traffic and operation of transport (profile direction)');
+       } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Тасымалдауды, қозғалысты ұйымдастыру және көлікті пайдалану (ғылыми-педагогикалық магистратура)');
+           $templateProcessor->setValue('programs_en', 'Organization of transportation, traffic and operation of transport (scientific and pedagogical direction)');
+       }else if ($data->programms === 'Авиационная техника и технологии') {
+           $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар');
+           $templateProcessor->setValue('programs_en', 'Aviation equipment and technologies');
+       }else if ($data->programms === 'Беспилотные летательные аппараты и системы') {
+        $templateProcessor->setValue('programs_kz', 'Ұшқышсыз ұшу аппараттары мен жүйелері');
+        $templateProcessor->setValue('programs_en', 'Unmanned aerial vehicles and systems');
+       }
+        //стоимость
+        if ($data->have_grant === 1) {
+            $templateProcessor->setValue('price', 'грант');
+            $templateProcessor->setValue('price_ru', '(                                                                                                )');
+            $templateProcessor->setValue('price_kz', '(                                                                                                )');
+        } else {
+            if($data->type === 'Бакалавриат'){
+                if($data->citizen === 'Резидент РК'){
+                            $templateProcessor->setValue('price', '1 500 000');
+                            $templateProcessor->setValue('price_ru', '(Один миллион пятьсот тысяч)');
+                            $templateProcessor->setValue('price_kz', '(Бір миллион бес жүз мың)');
+                            $templateProcessor->setValue('price_en', '(One million, five hundred thousand)');
+                        }
+                        else {
+                            if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
+                                $templateProcessor->setValue('price', '1 700 000');
+                                $templateProcessor->setValue('price_ru', '(Один миллион семьсот тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Бір миллион жеті жүз мың)');
+                                $templateProcessor->setValue('price_en', '(One million, seven hundred thousand)');
+                            } else {
+                                $templateProcessor->setValue('price', '1 500 000');
+                                $templateProcessor->setValue('price_ru', '(Один миллион пятьсот тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Бір миллион бес жүз мың)');
+                                $templateProcessor->setValue('price_en', '(One million, five hundred thousand)');
+                            }
+                        }
+                // if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
+                //     if($data->citizen === 'Резидент РК'){
+                //         $templateProcessor->setValue('price', '884 290');
+                //         $templateProcessor->setValue('price_ru', '(Восемьсот восемьдесят четыре тысячи двести девяносто)');
+                //         $templateProcessor->setValue('price_kz', '(Сегіз жүз сексен төрт мың екі жүз тоқсан)');
+                //         $templateProcessor->setValue('price_en', '(Eight hundred eighty four thousand two hundred ninety)');
+                //     } else {
+                //         $templateProcessor->setValue('price', '1 000 000');
+                //         $templateProcessor->setValue('price_ru', '(Один миллион)');
+                //         $templateProcessor->setValue('price_kz', '(Бір миллион)');
+                //         $templateProcessor->setValue('price_en', '(One million)');
+                //     }
+                // } else {
+                //     if($data->citizen === 'Резидент РК'){
+                //         $templateProcessor->setValue('price', '1 500 000');
+                //         $templateProcessor->setValue('price_ru', '(Один миллион пятьсот тысяч)');
+                //         $templateProcessor->setValue('price_kz', '(Бір миллион бес жүз мың)');
+                //         $templateProcessor->setValue('price_en', '(One million, five hundred thousand)');
+                //     }
+                //     // else {
+                //     //     if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
+                //     //         $templateProcessor->setValue('price', '1 500 000');
+                //     //         $templateProcessor->setValue('price_ru', '(Один миллион пятьсот тысяч)');
+                //     //         $templateProcessor->setValue('price_kz', '(Бір миллион бес жүз мың)');
+                //     //         $templateProcessor->setValue('price_en', '(One million, five hundred thousand)');
+                //     //     } else {
+                //     //         $templateProcessor->setValue('price', '1 250 000');
+                //     //         $templateProcessor->setValue('price_ru', '(Один миллион двести пятьдесят тысяч)');
+                //     //         $templateProcessor->setValue('price_kz', '(Бір миллион екі жүз елу мың)');
+                //     //         $templateProcessor->setValue('price_en', '(One million, two hundred and fifty thousand)');
+                //     //     }
+                //     // }
+                // }
+            }
+            else if ($data->type === 'Магистратура'){
+                $templateProcessor->setValue('price', '2 000 000');
+                $templateProcessor->setValue('price_ru', '(Два миллиона)');
+                $templateProcessor->setValue('price_kz', '(Екі миллион)');
+                $templateProcessor->setValue('price_en', '(Two million)');
+            }
+            else if ($data->type === 'Докторантура'){
+                $templateProcessor->setValue('price', '2 700 000');
+                $templateProcessor->setValue('price_ru', '(Два миллиона семьсот тысяч)');
+                $templateProcessor->setValue('price_kz', '(Екі миллион жеті жүз мың)');
+                $templateProcessor->setValue('price_en', '(Two million, seven hundred thousand)');
+            }
+        }
+
+
+        //кредит
+        if ($data->type === 'Бакалавриат') {
+            $templateProcessor->setValue('cr', '240');
+        } else if ($data->type === 'Магистратура') {
+            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)'){
+                $templateProcessor->setValue('cr', '60');
+            } else {
+                $templateProcessor->setValue('cr', '120');
+            }
+        } else if ($data->type === 'Докторантура') {
+            $templateProcessor->setValue('cr', '180');
+        }
+
+        //дата рождения
+        if ($data->birthdate !== NULL) {
+            $templateProcessor->setValue('birth_date', date('d.m.Y', strtotime($data->birthdate)));
+        } elseif ($data->iin === NULL) {
+            $templateProcessor->setValue('birth_date', '');
+        } elseif (Str::startsWith($data->iin, ['0', '1'])) {
+            $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2) . '.' . Str::substr($data->iin, 2, 2) . '.20' . Str::substr($data->iin, 0, 2));
+        } else {
+            $templateProcessor->setValue('birth_date', Str::substr($data->iin, 4, 2) . '.' . Str::substr($data->iin, 2, 2) . '.19' . Str::substr($data->iin, 0, 2));
+        }
+
+        $fileName = $data->surname;
+        $templateProcessor->saveAs($fileName . ' (трехсторонний договор).docx');
+        return response()->download($fileName . ' (трехсторонний договор).docx')->deleteFileAfterSend(true);
+    }
+
     public function wordExportStateGrantAgreement($id)
     {
         $data = Applications::find($id);
