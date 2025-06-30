@@ -122,7 +122,7 @@
                             @if (Config::get('app.locale') === 'ru')
                                 Запись на другую дату
                             @elseif(Config::get('app.locale') === 'kk')
-                                Басқа күнге жазулу
+                                Басқа күнге жазылу
                             @else
                                 Re-register for another date
                             @endif
