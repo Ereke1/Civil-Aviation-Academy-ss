@@ -59,7 +59,7 @@ class SustainableDevelopmentGoalsController extends Controller
      */
     public function store(Request $request)
     {
-        $now = date_format(now('Asia/Almaty'), 'Ymd');
+        $now = date_format(now('Asia/Aqtobe'), 'Ymd');
         $folder = public_path('/assets/images/sustainableDevelopmentGoals/');
 
         $image = $request->file('image');
@@ -114,7 +114,7 @@ class SustainableDevelopmentGoalsController extends Controller
     public function update(Request $request, $id)
     {
 
-        $now = date_format(now('Asia/Almaty'), 'Ymd');
+        $now = date_format(now('Asia/Aqtobe'), 'Ymd');
         $goalsInfo = SdGoalsInfo::find($id);
         $image = $request->file('image');
 

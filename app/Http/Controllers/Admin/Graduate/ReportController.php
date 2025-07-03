@@ -2837,7 +2837,7 @@ class ReportController extends Controller
             $all_procent = (($all_work + $all_magister) * 100) / $all;
         }
 
-        $today = now('Asia/Almaty');
+        $today = now('Asia/Aqtobe');
         // Data Array
         $dataArray = [
             'today' => $today,
@@ -3337,7 +3337,7 @@ class ReportController extends Controller
     public function pdf_new()
     {
 
-        $today = now('Asia/Almaty');
+        $today = now('Asia/Aqtobe');
 
         $dataBachInzh = DB::table('graduates')
             ->select(
@@ -3604,7 +3604,7 @@ class ReportController extends Controller
     public function excel()
     {
 
-        $today = now('Asia/Almaty');
+        $today = now('Asia/Aqtobe');
 
         $dataBachInzh = DB::table('graduates')
         ->select(

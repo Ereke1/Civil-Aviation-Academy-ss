@@ -159,7 +159,7 @@ class OnlineRegForTestController extends Controller
         $data = RegistrationForTesting::find($id);
         $data->is_deleted = 1;
         $data->is_confirmed = 0;
-        $data->updated_at = \Carbon\Carbon::now('Asia/Almaty');
+        $data->updated_at = \Carbon\Carbon::now('Asia/Aqtobe');
         $data->save();
         return redirect()->back()->with('alert', 'Запись удалена!');
     }

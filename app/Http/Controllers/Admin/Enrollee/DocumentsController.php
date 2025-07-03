@@ -22,7 +22,7 @@ class DocumentsController extends Controller
      */
     public function index(Request $request)
     {
-        $today = now('Asia/Almaty');
+        $today = now('Asia/Aqtobe');
         $years = $request->years;
         // Filter
         $whereArray = [
@@ -91,7 +91,7 @@ class DocumentsController extends Controller
     public function pdfdocs(Request $request)
     {
 
-        $today = now('Asia/Almaty');
+        $today = now('Asia/Aqtobe');
         $years = $request->years;
         // Filter
         $whereArray = [
@@ -165,7 +165,7 @@ class DocumentsController extends Controller
     public function pdf(Request $request)
     {
 
-        $today = now('Asia/Almaty');
+        $today = now('Asia/Aqtobe');
 		$years = $request->years;
 		// Filter
 		$whereArray = [
@@ -1143,7 +1143,7 @@ class DocumentsController extends Controller
     {
         $data = Applications::find($id);
         $data->status = 1;
-        $data->updated_at = \Carbon\Carbon::now('Asia/Almaty');
+        $data->updated_at = \Carbon\Carbon::now('Asia/Aqtobe');
         $data->save();
         return redirect()->back()->with('alert', 'Анкета перемещена в архив');
     }

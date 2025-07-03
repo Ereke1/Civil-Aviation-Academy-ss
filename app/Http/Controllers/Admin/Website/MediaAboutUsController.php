@@ -71,7 +71,7 @@ class MediaAboutUsController extends Controller
 		$data = new MediaAboutUs();
 
 
-        $now = date_format(now('Asia/Almaty'), 'Ymd');
+        $now = date_format(now('Asia/Aqtobe'), 'Ymd');
 		$folder = public_path('/storage/mediaAboutUs/');
 
         // Background Images
@@ -132,7 +132,7 @@ class MediaAboutUsController extends Controller
 	public function update(Request $request, $id)
 	{
 		// For generate name images ...
-		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$now = date_format(now('Asia/Aqtobe'), 'Ymd');
 		$folder = public_path('/storage/mediaAboutUs/');
 
         // Validate Background Images

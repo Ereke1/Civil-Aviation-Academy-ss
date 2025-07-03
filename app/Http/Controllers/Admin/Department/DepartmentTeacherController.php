@@ -44,7 +44,7 @@ class DepartmentTeacherController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$now = date_format(now('Asia/Aqtobe'), 'Ymd');
 
 		$data = new DepartmentTeacher();
 		$data->surname = $request->surname;

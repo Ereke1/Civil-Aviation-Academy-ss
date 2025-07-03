@@ -315,11 +315,21 @@
                                             </div>
                                         @endif
                                         @if ($item->birthdate !== NULL)
-                                        <div class="block">
+                                        {{-- <div class="block">
                                             <h5 class="block__title">Дата рождения</h5>
                                             <p class="block__info">
                                                 {!! date('d.m.Y', strtotime($item->birthdate)) !!}
                                             </p>
+                                        </div> --}}
+                                        <div class="block">
+                                            <h5 class="block__title">Дата рождения</h5>
+                                            <input
+                                                type="date"
+                                                name="birthdate"
+                                                class="block__info"
+                                                value="{{ old('birthdate', \Carbon\Carbon::parse($item->birthdate)->format('Y-m-d')) }}"
+                                                required
+                                            >
                                         </div>
                                         @endif
                                         @if ($item->gender !== NULL)

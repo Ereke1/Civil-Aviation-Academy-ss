@@ -89,7 +89,7 @@ class DepartmentPageController extends Controller
 		];
 		$content = serialize($content);
 
-		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$now = date_format(now('Asia/Aqtobe'), 'Ymd');
 		$folder = public_path('/assets/images/department/page/');
 
 		$image = $request->file('image_ru');
@@ -168,7 +168,7 @@ class DepartmentPageController extends Controller
 			'en' => $request->content_en
 		];
 		$content = serialize($content);
-		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$now = date_format(now('Asia/Aqtobe'), 'Ymd');
 		$department_page = DepartmentPages::find($id);
 		$image = $request->file('image_ru');
 

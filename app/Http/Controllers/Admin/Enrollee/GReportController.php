@@ -318,7 +318,7 @@ class GReportController extends Controller
         $countDoctoral = $this->sumValuesByProgram($countsCollection, 'Авиационная техника и технологии');
 
         $countAll = $countDoctoral + $totalMaster + $total;
-        $today = now('Asia/Almaty');
+        $today = now('Asia/Aqtobe');
 
 
         $array = [

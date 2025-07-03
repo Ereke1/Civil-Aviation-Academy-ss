@@ -93,7 +93,7 @@ class NewsController extends Controller
 			]);
 		}
 
-		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$now = date_format(now('Asia/Aqtobe'), 'Ymd');
 		$folder = public_path('/storage/news/');
 
 		$user = User::find(Auth::user()->id)->workersInfo;
@@ -222,7 +222,7 @@ class NewsController extends Controller
 	public function update(Request $request, $id)
 	{
 		// For generate name images ...
-		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$now = date_format(now('Asia/Aqtobe'), 'Ymd');
 		$folder = public_path('/storage/news/');
 
 		$bg_images = [

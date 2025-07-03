@@ -98,7 +98,7 @@ class NewsCafedrasController extends Controller
 		$data = new NewsCafedra();
 
 
-        $now = date_format(now('Asia/Almaty'), 'Ymd');
+        $now = date_format(now('Asia/Aqtobe'), 'Ymd');
 		$folder = public_path('/storage/NewsCafedra/');
 
         // Background Images
@@ -160,7 +160,7 @@ class NewsCafedrasController extends Controller
 	public function update(Request $request, $id)
 	{
 		// For generate name images ...
-		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$now = date_format(now('Asia/Aqtobe'), 'Ymd');
 		$folder = public_path('/storage/NewsCafedra/');
 
         // Validate Background Images

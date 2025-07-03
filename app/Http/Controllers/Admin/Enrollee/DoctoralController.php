@@ -124,7 +124,7 @@ class DoctoralController extends Controller
 	{
 		$data = Applications::find($id);
 		$data->status = 1;
-		$data->updated_at = \Carbon\Carbon::now('Asia/Almaty');
+		$data->updated_at = \Carbon\Carbon::now('Asia/Aqtobe');
 		$data->save();
 		return redirect()->back();
 	}
@@ -179,7 +179,7 @@ class DoctoralController extends Controller
 	{
 		$data = Applications::find($request->id);
 		$data->status = 1;
-		$data->updated_at = \Carbon\Carbon::now('Asia/Almaty');
+		$data->updated_at = \Carbon\Carbon::now('Asia/Aqtobe');
 		$data->save();
 		return redirect()->back();
 	}

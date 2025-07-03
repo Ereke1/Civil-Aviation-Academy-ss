@@ -146,7 +146,7 @@ class BachelorController extends Controller
     {
         $data = Applications::find($id);
         $data->status = 1;
-        $data->updated_at = \Carbon\Carbon::now('Asia/Almaty');
+        $data->updated_at = \Carbon\Carbon::now('Asia/Aqtobe');
         $data->save();
         return redirect()->back()->with('alert', 'Анкета перемещена в архив');
     }
@@ -183,6 +183,7 @@ class BachelorController extends Controller
                 $data->save();
                 return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
             } else {
+                $data->birthdate = $request->birthdate;
                 $data->iin = $request->iin;
                 $data->surname = $request->surname;
                 $data->name = $request->name;

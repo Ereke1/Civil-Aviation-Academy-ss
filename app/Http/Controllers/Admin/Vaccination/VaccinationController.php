@@ -28,7 +28,7 @@ class VaccinationController extends Controller
 	public function create()
 	{
 		$data = Vaccination::select('*')->orderBy('id', 'desc')->first();
-		$today = now('Asia/Almaty')->format('d.m.Y');
+		$today = now('Asia/Aqtobe')->format('d.m.Y');
 		return view('admin.vaccination.add', compact('data', 'today'));
 	}
 

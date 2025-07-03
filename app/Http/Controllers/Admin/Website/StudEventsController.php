@@ -93,7 +93,7 @@ class StudEventsController extends Controller
 			]);
 		}
 
-		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$now = date_format(now('Asia/Aqtobe'), 'Ymd');
 		$folder = public_path('/storage/studevents/');
 		$user = User::find(Auth::user()->id)->workersInfo;
 		$studevents_id = Studevents::orderBy('id', 'desc')->first();
@@ -220,7 +220,7 @@ class StudEventsController extends Controller
 	public function update(Request $request, $id)
 	{
 		// For generate name images ...
-		$now = date_format(now('Asia/Almaty'), 'Ymd');
+		$now = date_format(now('Asia/Aqtobe'), 'Ymd');
 		$folder = public_path('/storage/studevents/');
 
 		$bg_images = [

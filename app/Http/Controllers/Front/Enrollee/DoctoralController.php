@@ -68,8 +68,8 @@ class DoctoralController extends Controller
 					'email' => $request->email,
 					'process' => NULL,
 					'status' => 0,
-					'created_at' => \Carbon\Carbon::now('Asia/Almaty'),
-					'updated_at' => \Carbon\Carbon::now('Asia/Almaty'),
+					'created_at' => \Carbon\Carbon::now('Asia/Aqtobe'),
+					'updated_at' => \Carbon\Carbon::now('Asia/Aqtobe'),
 				]
 			);
 		// Mail::to('of.mok.aga@mail.ru')->send(new ApplicationsMail());

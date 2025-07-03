@@ -79,7 +79,7 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $slug)
     {
-        $now = date_format(now('Asia/Almaty'), 'Ymd');
+        $now = date_format(now('Asia/Aqtobe'), 'Ymd');
         $folder = public_path('/assets/images/department/');
 
         $department = Department::where('slug', $slug)->first();

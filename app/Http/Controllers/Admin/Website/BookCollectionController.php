@@ -58,7 +58,7 @@ class BookCollectionController extends Controller
             ]);
         }
 
-        $now = date_format(now('Asia/Almaty'), 'Ymd');
+        $now = date_format(now('Asia/Aqtobe'), 'Ymd');
         $folder = public_path('/storage/books/book_collection/');
         $user = User::find(Auth::user()->id)->workersInfo;
         $book_id = BookCollection::orderBy('id', 'desc')->first();
@@ -184,7 +184,7 @@ class BookCollectionController extends Controller
     public function update(Request $request, $id)
     {
         // For generate name images ...
-        $now = date_format(now('Asia/Almaty'), 'Ymd');
+        $now = date_format(now('Asia/Aqtobe'), 'Ymd');
         $folder = public_path('/storage/books/book_collection/');
 
         $cover_imgs = [

@@ -105,8 +105,8 @@ class BachelorController extends Controller
 						'email' => $request->email,
 						'process' => NULL,
 						'status' => 0,
-						'created_at' => \Carbon\Carbon::now('Asia/Almaty'),
-						'updated_at' => \Carbon\Carbon::now('Asia/Almaty'),
+						'created_at' => \Carbon\Carbon::now('Asia/Aqtobe'),
+						'updated_at' => \Carbon\Carbon::now('Asia/Aqtobe'),
 					]
 				);
 		} elseif ($request->hasFile('vlekImage')) {
@@ -164,8 +164,8 @@ class BachelorController extends Controller
 						'email' => $request->email,
 						'process' => NULL,
 						'status' => 0,
-						'created_at' => \Carbon\Carbon::now('Asia/Almaty'),
-						'updated_at' => \Carbon\Carbon::now('Asia/Almaty'),
+						'created_at' => \Carbon\Carbon::now('Asia/Aqtobe'),
+						'updated_at' => \Carbon\Carbon::now('Asia/Aqtobe'),
 					]
 				);
 		} elseif ($request->hasFile('ieltsImage')) {
@@ -216,8 +216,8 @@ class BachelorController extends Controller
 						'email' => $request->email,
 						'process' => NULL,
 						'status' => 0,
-						'created_at' => \Carbon\Carbon::now('Asia/Almaty'),
-						'updated_at' => \Carbon\Carbon::now('Asia/Almaty'),
+						'created_at' => \Carbon\Carbon::now('Asia/Aqtobe'),
+						'updated_at' => \Carbon\Carbon::now('Asia/Aqtobe'),
 					]
 				);
 		} else {
@@ -261,8 +261,8 @@ class BachelorController extends Controller
 						'email' => $request->email,
 						'process' => NULL,
 						'status' => 0,
-						'created_at' => \Carbon\Carbon::now('Asia/Almaty'),
-						'updated_at' => \Carbon\Carbon::now('Asia/Almaty'),
+						'created_at' => \Carbon\Carbon::now('Asia/Aqtobe'),
+						'updated_at' => \Carbon\Carbon::now('Asia/Aqtobe'),
 					]
 				);
 		}
