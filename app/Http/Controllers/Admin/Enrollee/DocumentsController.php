@@ -492,6 +492,10 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_kz', 'Авиациядағы көлік процестерінің технологиясы');
             $templateProcessor->setValue('programs_en', 'Technology of transport processes in aviation');
         }
+        else if ($data->programms === 'Технология авиационных перевозок') {
+            $templateProcessor->setValue('programs_kz', 'Авиациядағы көлік процестерінің технологиясы');
+            $templateProcessor->setValue('programs_en', 'Technology of transport processes in aviation');
+        }
         else if ($data->programms === 'Авиационная техника и технологии (профильная магистратура)') {
            $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (бейіндік магистратура)');
            $templateProcessor->setValue('programs_en', 'Aviation equipment and technologies (profile direction)');
