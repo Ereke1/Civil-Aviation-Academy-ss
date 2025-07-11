@@ -35,16 +35,18 @@ class GReportController extends Controller
             $counts['Обслуживание наземного радиоэлектронного оборудования аэропортов']['11-го класса'] +
             $counts['Обеспечение авиационной безопасности']['11-го класса'] +
             $counts['Организация аэропортовой деятельности']['11-го класса'] +
-            $counts['Технология транспортных процессов в авиации']['11-го класса']+
+            // $counts['Технология транспортных процессов в авиации']['11-го класса']+
+            $counts['Технология авиационных перевозок']['11-го класса'] +
             $counts['Беспилотные летательные аппараты и системы']['11-го класса']+
-            $counts['Техническая эксплуатация авиационного и радиоэлектронного оборудования']['11-го класса'];
+            $counts['Техническая эксплуатация авиационного и радиоэлектронного оборудования']['11-го класса'] +
+            $counts['Авиационная безопасность и интеллектуальные системы']['11-го класса'];
 
         $summVTT_TiPO = $counts['Техническая эксплуатация летательных аппаратов и двигателей']['Технического и профессионального образования (колледжа)'] +
             $counts['Техническая эксплуатация систем авионики летательных аппаратов и двигателей']['Технического и профессионального образования (колледжа)'] +
             $counts['Обслуживание наземного радиоэлектронного оборудования аэропортов']['Технического и профессионального образования (колледжа)'] +
             $counts['Обеспечение авиационной безопасности']['Технического и профессионального образования (колледжа)'] +
             $counts['Организация аэропортовой деятельности']['Технического и профессионального образования (колледжа)'] +
-            $counts['Технология транспортных процессов в авиации']['Технического и профессионального образования (колледжа)']+
+            // $counts['Технология транспортных процессов в авиации']['Технического и профессионального образования (колледжа)']+
             $counts['Беспилотные летательные аппараты и системы']['Технического и профессионального образования (колледжа)']+
             $counts['Техническая эксплуатация авиационного и радиоэлектронного оборудования']['Технического и профессионального образования (колледжа)'];
 
@@ -53,7 +55,7 @@ class GReportController extends Controller
             $counts['Обслуживание наземного радиоэлектронного оборудования аэропортов']['Высшего образования'] +
             $counts['Обеспечение авиационной безопасности']['Высшего образования'] +
             $counts['Организация аэропортовой деятельности']['Высшего образования'] +
-            $counts['Технология транспортных процессов в авиации']['Высшего образования']+
+            // $counts['Технология транспортных процессов в авиации']['Высшего образования']+
             $counts['Беспилотные летательные аппараты и системы']['Высшего образования']+
             $counts['Техническая эксплуатация авиационного и радиоэлектронного оборудования']['Высшего образования'];
 
@@ -71,7 +73,7 @@ class GReportController extends Controller
         $summLELAD = $summLELAD_11kl + $summLELAD_TiPO + $summLELAD_VV;
 
         $summTU_11kl = $counts['Организация авиационных перевозок']['11-го класса'] +
-            $counts['Логистика на транспорте']['11-го класса'];
+            $counts['Логистика на транспорте']['11-го класса'] + $counts['Системная интеграция наземного обслуживания']['11-го класса'];
         $summTU_TiPO = $counts['Организация авиационных перевозок']['Технического и профессионального образования (колледжа)'] +
             $counts['Логистика на транспорте']['Технического и профессионального образования (колледжа)'];
         $summTU_VV = $counts['Организация авиационных перевозок']['Высшего образования'] +
@@ -83,9 +85,11 @@ class GReportController extends Controller
         $summVTT_3 = $this->sumValuesByProgram($countsCollection, 'Обслуживание наземного радиоэлектронного оборудования аэропортов');
         $summVTT_4 = $this->sumValuesByProgram($countsCollection, 'Обеспечение авиационной безопасности');
         $summVTT_5 = $this->sumValuesByProgram($countsCollection, 'Организация аэропортовой деятельности');
-        $summVTT_6 = $this->sumValuesByProgram($countsCollection, 'Технология транспортных процессов в авиации');
+        // $summVTT_6 = $this->sumValuesByProgram($countsCollection, 'Технология транспортных процессов в авиации');
+        $summVTT_6 = $this->sumValuesByProgram($countsCollection, 'Технология авиационных перевозок');
         $summVTT_7 = $this->sumValuesByProgram($countsCollection, 'Техническая эксплуатация авиационного и радиоэлектронного оборудования');
         $summVTT_8 = $this->sumValuesByProgram($countsCollection, 'Беспилотные летательные аппараты и системы');
+        $summVTT_9 = $this->sumValuesByProgram($countsCollection, 'Авиационная безопасность и интеллектуальные системы');
 
         $summLELAD_1 = $this->sumValuesByProgram($countsCollection, 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов');
         $summLELAD_2 = $this->sumValuesByProgram($countsCollection, 'Лётная эксплуатация гражданских самолетов (пилот)');
@@ -108,9 +112,10 @@ class GReportController extends Controller
         $countMaster6 = $this->sumValuesByProgram($countsCollection, 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)');
         $totalMaster = $countMaster1 + $countMaster2 + $countMaster3 + $countMaster4 + $countMaster5 + $countMaster6;
 
-        $countDoctoral = $this->sumValuesByProgram($countsCollection, 'Авиационная техника и технологии');
+        $countDoctoral1 = $this->sumValuesByProgram($countsCollection, 'Авиационная техника и технологии');
+        $countDoctoral2 = $this->sumValuesByProgram($countsCollection, 'Летная эксплуатация летательных аппаратов и двигателей');
 
-        $countAll = $countDoctoral + $totalMaster + $total;
+        $countAll = $countDoctoral1 + $countDoctoral2 + $totalMaster + $total;
 
         $array = [
             'created_at_from' => $created_at_from,
@@ -135,11 +140,13 @@ class GReportController extends Controller
             'summVTT_6' => $summVTT_6,
             'summVTT_7' => $summVTT_7,
             'summVTT_8' => $summVTT_8,
+            'summVTT_9' => $summVTT_9,
             'summLELAD_1' => $summLELAD_1,
             'summLELAD_2' => $summLELAD_2,
             'summLELAD_3' => $summLELAD_3,
             'summTU_1' => $summTU_1,
             'summTU_2' => $summTU_2,
+            'summTU_3' => $summTU_3,
             'total' => $total,
             'countMaster1' => $countMaster1,
             'countMaster2' => $countMaster2,
@@ -147,7 +154,8 @@ class GReportController extends Controller
             'countMaster4' => $countMaster4,
             'countMaster5' => $countMaster5,
             'countMaster6' => $countMaster6,
-            'countDoctoral' => $countDoctoral,
+            'countDoctoral1' => $countDoctoral1,
+            'countDoctoral2' => $countDoctoral2,
             'countAll' => $countAll,
             'sum1' => $sum1,
             'sum2' => $sum2,
@@ -187,13 +195,16 @@ class GReportController extends Controller
             'Обеспечение авиационной безопасности',
             'Организация аэропортовой деятельности',
             'Технология транспортных процессов в авиации',
+            'Технология авиационных перевозок',
             'Техническая эксплуатация авиационного и радиоэлектронного оборудования',
             'Беспилотные летательные аппараты и системы',
+            'Авиационная безопасность и интеллектуальные системы',
             'Обслуживание воздушного движения и аэронавигационное обеспечение полетов',
             'Лётная эксплуатация гражданских самолетов (пилот)',
             'Лётная эксплуатация гражданских вертолетов (пилот)',
             'Организация авиационных перевозок',
             'Логистика на транспорте',
+            'Системная интеграция наземного обслуживания',
             'Авиационная техника и технологии (профильная магистратура)',
             'Авиационная техника и технологии (научно-педагогическая магистратура)',
             'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)',
@@ -243,16 +254,18 @@ class GReportController extends Controller
             $counts['Обслуживание наземного радиоэлектронного оборудования аэропортов']['11-го класса'] +
             $counts['Обеспечение авиационной безопасности']['11-го класса'] +
             $counts['Организация аэропортовой деятельности']['11-го класса'] +
-            $counts['Технология транспортных процессов в авиации']['11-го класса']+
-            $counts['Техническая эксплуатация авиационного и радиоэлектронного оборудования']['11-го класса']+
-            $counts['Беспилотные летательные аппараты и системы']['11-го класса'];
+            // $counts['Технология транспортных процессов в авиации']['11-го класса']+
+            $counts['Технология авиационных перевозок']['11-го класса']+
+            $counts['Техническая эксплуатация авиационного и радиоэлектронного оборудования']['11-го класса'] +
+            $counts['Беспилотные летательные аппараты и системы']['11-го класса'] +
+            $counts['Авиационная безопасность и интеллектуальные системы']['11-го класса'];
 
         $summVTT_TiPO = $counts['Техническая эксплуатация летательных аппаратов и двигателей']['Технического и профессионального образования (колледжа)'] +
             $counts['Техническая эксплуатация систем авионики летательных аппаратов и двигателей']['Технического и профессионального образования (колледжа)'] +
             $counts['Обслуживание наземного радиоэлектронного оборудования аэропортов']['Технического и профессионального образования (колледжа)'] +
             $counts['Обеспечение авиационной безопасности']['Технического и профессионального образования (колледжа)'] +
             $counts['Организация аэропортовой деятельности']['Технического и профессионального образования (колледжа)'] +
-            $counts['Технология транспортных процессов в авиации']['Технического и профессионального образования (колледжа)']+
+            // $counts['Технология транспортных процессов в авиации']['Технического и профессионального образования (колледжа)']+
             $counts['Техническая эксплуатация авиационного и радиоэлектронного оборудования']['Технического и профессионального образования (колледжа)']+
             $counts['Беспилотные летательные аппараты и системы']['Технического и профессионального образования (колледжа)'];
 
@@ -261,7 +274,7 @@ class GReportController extends Controller
             $counts['Обслуживание наземного радиоэлектронного оборудования аэропортов']['Высшего образования'] +
             $counts['Обеспечение авиационной безопасности']['Высшего образования'] +
             $counts['Организация аэропортовой деятельности']['Высшего образования'] +
-            $counts['Технология транспортных процессов в авиации']['Высшего образования']+
+            // $counts['Технология транспортных процессов в авиации']['Высшего образования']+
             $counts['Техническая эксплуатация авиационного и радиоэлектронного оборудования']['Высшего образования']+
             $counts['Беспилотные летательные аппараты и системы']['Высшего образования'];
 
@@ -279,7 +292,7 @@ class GReportController extends Controller
         $summLELAD = $summLELAD_11kl + $summLELAD_TiPO + $summLELAD_VV;
 
         $summTU_11kl = $counts['Организация авиационных перевозок']['11-го класса'] +
-            $counts['Логистика на транспорте']['11-го класса'];
+            $counts['Логистика на транспорте']['11-го класса'] + $counts['Системная интеграция наземного обслуживания']['11-го класса'];
         $summTU_TiPO = $counts['Организация авиационных перевозок']['Технического и профессионального образования (колледжа)'] +
             $counts['Логистика на транспорте']['Технического и профессионального образования (колледжа)'];
         $summTU_VV = $counts['Организация авиационных перевозок']['Высшего образования'] +
@@ -291,9 +304,11 @@ class GReportController extends Controller
         $summVTT_3 = $this->sumValuesByProgram($countsCollection, 'Обслуживание наземного радиоэлектронного оборудования аэропортов');
         $summVTT_4 = $this->sumValuesByProgram($countsCollection, 'Обеспечение авиационной безопасности');
         $summVTT_5 = $this->sumValuesByProgram($countsCollection, 'Организация аэропортовой деятельности');
-        $summVTT_6 = $this->sumValuesByProgram($countsCollection, 'Технология транспортных процессов в авиации');
+        // $summVTT_6 = $this->sumValuesByProgram($countsCollection, 'Технология транспортных процессов в авиации');
+        $summVTT_6 = $this->sumValuesByProgram($countsCollection, 'Технология авиационных перевозок');
         $summVTT_7 = $this->sumValuesByProgram($countsCollection, 'Техническая эксплуатация авиационного и радиоэлектронного оборудования');
         $summVTT_8 = $this->sumValuesByProgram($countsCollection, 'Беспилотные летательные аппараты и системы');
+        $summVTT_9 = $this->sumValuesByProgram($countsCollection, 'Авиационная безопасность и интеллектуальные системы');
 
 
         $summLELAD_1 = $this->sumValuesByProgram($countsCollection, 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов');
@@ -302,6 +317,7 @@ class GReportController extends Controller
 
         $summTU_1 = $this->sumValuesByProgram($countsCollection, 'Организация авиационных перевозок');
         $summTU_2 = $this->sumValuesByProgram($countsCollection, 'Логистика на транспорте');
+        $summTU_3 = $this->sumValuesByProgram($countsCollection, 'Системная интеграция наземного обслуживания');
 
         $sum1 = $summVTT_11kl + $summLELAD_11kl + $summTU_11kl;
         $sum2 = $summVTT_TiPO + $summLELAD_TiPO + $summTU_TiPO;
@@ -316,9 +332,10 @@ class GReportController extends Controller
         $countMaster6 = $this->sumValuesByProgram($countsCollection, 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)');
         $totalMaster = $countMaster1 + $countMaster2 + $countMaster3 + $countMaster4 + $countMaster5 + $countMaster6;
 
-        $countDoctoral = $this->sumValuesByProgram($countsCollection, 'Авиационная техника и технологии');
+        $countDoctoral1 = $this->sumValuesByProgram($countsCollection, 'Авиационная техника и технологии');
+        $countDoctoral2 = $this->sumValuesByProgram($countsCollection, 'Летная эксплуатация летательных аппаратов и двигателей');
 
-        $countAll = $countDoctoral + $totalMaster + $total;
+        $countAll = $countDoctoral1 + $countDoctoral2 + $totalMaster + $total;
         $today = now('Asia/Aqtobe');
 
 
@@ -345,11 +362,13 @@ class GReportController extends Controller
             'summVTT_6' => $summVTT_6,
             'summVTT_7' => $summVTT_7,
             'summVTT_8' => $summVTT_8,
+            'summVTT_9' => $summVTT_9,
             'summLELAD_1' => $summLELAD_1,
             'summLELAD_2' => $summLELAD_2,
             'summLELAD_3' => $summLELAD_3,
             'summTU_1' => $summTU_1,
             'summTU_2' => $summTU_2,
+            'summTU_3' => $summTU_3,
             'total' => $total,
             'countMaster1' => $countMaster1,
             'countMaster2' => $countMaster2,
@@ -357,7 +376,8 @@ class GReportController extends Controller
             'countMaster4' => $countMaster4,
             'countMaster5' => $countMaster5,
             'countMaster6' => $countMaster6,
-            'countDoctoral' => $countDoctoral,
+            'countDoctoral1' => $countDoctoral1,
+            'countDoctoral2' => $countDoctoral2,
             'countAll' => $countAll,
             'sum1' => $sum1,
             'sum2' => $sum2,
