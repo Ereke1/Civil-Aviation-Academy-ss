@@ -254,16 +254,16 @@
             </tr>
             <tr>
                 <td colspan="2" class="bg-chair-night">Всего</td>
-                <td class="bg-chair-night">672</td>
-                <td class="bg-chair-night">357</td>
-                <td class="bg-chair-night">710</td>
+                <td class="bg-chair-night">502</td>
+                <td class="bg-chair-night">462</td>
+                <td class="bg-chair-night">742</td>
                 <td class="bg-chair-night">{!! $sum1 !!}</td>
-                <td class="bg-chair-night">60</td>
-                <td class="bg-chair-night">85</td>
+                <td class="bg-chair-night">40</td>
+                <td class="bg-chair-night">80</td>
                 <td class="bg-chair-night">{!! $sum2 !!}</td>
                 <td class="bg-chair-night">40</td>
                 <td class="bg-chair-night">{!! $sum3 !!}</td>
-                <td class="bg-chair-night">710</td>
+                <td class="bg-chair-night">852</td>
                 <td class="bg-chair-night">{!! $total !!}</td>
             </tr>
         </table>
