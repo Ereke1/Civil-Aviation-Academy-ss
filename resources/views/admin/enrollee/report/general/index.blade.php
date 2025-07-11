@@ -254,9 +254,9 @@
             </tr>
             <tr>
                 <td colspan="2" class="bg-chair-night">Всего</td>
-                <td class="bg-chair-night">757</td>
-                <td class="bg-chair-night">650</td>
-                <td class="bg-chair-night">585</td>
+                <td class="bg-chair-night">672</td>
+                <td class="bg-chair-night">357</td>
+                <td class="bg-chair-night">710</td>
                 <td class="bg-chair-night">{!! $sum1 !!}</td>
                 <td class="bg-chair-night">60</td>
                 <td class="bg-chair-night">85</td>
