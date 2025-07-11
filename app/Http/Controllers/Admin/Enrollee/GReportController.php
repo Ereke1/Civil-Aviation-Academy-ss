@@ -93,6 +93,7 @@ class GReportController extends Controller
 
         $summTU_1 = $this->sumValuesByProgram($countsCollection, 'Организация авиационных перевозок');
         $summTU_2 = $this->sumValuesByProgram($countsCollection, 'Логистика на транспорте');
+        $summTU_3 = $this->sumValuesByProgram($countsCollection, 'Системная интеграция наземного обслуживания');
 
         $sum1 = $summVTT_11kl + $summLELAD_11kl + $summTU_11kl;
         $sum2 = $summVTT_TiPO + $summLELAD_TiPO + $summTU_TiPO;
