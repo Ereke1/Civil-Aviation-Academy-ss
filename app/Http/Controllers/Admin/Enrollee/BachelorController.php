@@ -8,6 +8,8 @@ use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Exports\StudentsDocumentExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Carbon\Carbon;
 
 class BachelorController extends Controller
@@ -105,6 +107,17 @@ class BachelorController extends Controller
         return view('admin.enrollee.bachelor', $dataArr);
     }
 
+    public function export(Request $request)
+    {
+        // Отладка — чтобы увидеть, что мы сюда попали
+        // dd('export called', $request->all());
+
+        $fileName = 'students_' . now()->format('Ymd_His') . '.xlsx';
+        return Excel::download(
+            new StudentsDocumentExport($request),
+            $fileName
+        );
+    }
     /**
      * Show the form for creating a new resource.
      *

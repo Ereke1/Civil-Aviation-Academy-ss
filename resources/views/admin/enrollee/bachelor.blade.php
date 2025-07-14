@@ -230,6 +230,24 @@
             </div>
         </form>
     </div>
+    <form action="{{ route('admin.enrollee.bachelor.export') }}" method="GET" class="mb-3">
+        {{-- скрытые поля фильтров --}}
+        <input type="hidden" name="base" value="{{ $base }}">
+        <input type="hidden" name="haveAltyn" value="{{ $haveAltyn }}">
+        <input type="hidden" name="haveENT" value="{{ $haveENT }}">
+        <input type="hidden" name="countENT" value="{{ $countENT }}">
+        <input type="hidden" name="quota" value="{{ $quota }}">
+        <input type="hidden" name="citizen" value="{{ $citizen }}">
+        <input type="hidden" name="programms" value="{{ $programms }}">
+        <input type="hidden" name="region" value="{{ $region }}">
+        <input type="hidden" name="haveVLEK" value="{{ $haveVLEK }}">
+        <input type="hidden" name="haveIELTS" value="{{ $haveIELTS }}">
+        <input type="hidden" name="process" value="{{ $process }}">
+        {{-- <input type="hidden" name="surname" value="{{ $surname }}"> --}}
+        <button type="submit" class="btn btn-outline-success">
+            <i class="fas fa-file-excel"></i> Выгрузить в Excel
+        </button>
+    </form>
     <br /><br />
     <h2>Поиск</h2>
     <div class="filter">

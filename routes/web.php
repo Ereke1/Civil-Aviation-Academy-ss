@@ -57,7 +57,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 
 	// ENROLLEE
 	Route::group(['prefix' => 'enrollee', 'namespace' => 'Enrollee', 'as' => 'enrollee.'], function () {
-		Route::get('onlineRegForTest/export','OnlineRegForTestController@export')
+		Route::get('bachelor/export','BachelorController@export')
+         ->name('bachelor.export');
+         Route::get('onlineRegForTest/export','OnlineRegForTestController@export')
          ->name('onlineRegForTest.export');
         Route::resources([
 			'bachelor' => 'BachelorController',
