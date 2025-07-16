@@ -26,8 +26,10 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
         $query = Applications::query()
             ->where('type', 'Бакалавриат');
         if ($r->filled('created_at_from') && $r->filled('created_at_to')) {
-            $query->where('countENT', '>=', $r->countENT)
-                  ->where('countENT', '<=', 140);
+            $query->whereBetween('created_at', [
+                $r->created_at_from,
+                $r->created_at_to
+            ]);
         }
         if ($r->filled('base')) {
             $query->where('base', $r->base);
@@ -39,10 +41,8 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
             $query->where('haveENT', $r->haveENT);
         }
         if ($r->filled('countENT')) {
-            $query->whereBetween('countENT', [
-                $r->countENT,
-                140
-            ]);
+            $query->where('countENT', '>=', $r->countENT)
+                  ->where('countENT', '<=', 140);
         }
         if ($r->filled('quota')) {
             $query->whereDate('quota', $r->quota);
