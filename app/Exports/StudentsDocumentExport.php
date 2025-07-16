@@ -45,25 +45,25 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
                   ->where('countENT', '<=', 140);
         }
         if ($r->filled('quota')) {
-            $query->whereDate('quota', $r->quota);
+            $query->where('quota', $r->quota);
         }
         if ($r->filled('citizen')) {
-            $query->whereDate('citizen', $r->citizen);
+            $query->where('citizen', $r->citizen);
         }
         if ($r->filled('programms')) {
             $query->where('programms', $r->programms);
         }
         if ($r->filled('region')) {
-            $query->whereDate('region', $r->region);
+            $query->where('region', $r->region);
         }
         if ($r->filled('haveVLEK')) {
-            $query->whereDate('haveVLEK', $r->haveVLEK);
+            $query->where('haveVLEK', $r->haveVLEK);
         }
         if ($r->filled('haveIELTS')) {
             $query->where('haveIELTS', $r->haveIELTS);
         }
         if ($r->filled('process')) {
-            $query->whereDate('process', $r->process);
+            $query->where('process', $r->process);
         }
         if ($r->filled('surname')) {
             $query->where('surname', 'like', '%'.$r->surname.'%');
