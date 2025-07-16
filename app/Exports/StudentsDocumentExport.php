@@ -25,6 +25,10 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
 
         $query = Applications::query()
             ->where('type', 'Бакалавриат');
+        if ($r->filled('created_at_from') && $r->filled('created_at_to')) {
+            $query->where('countENT', '>=', $r->countENT)
+                  ->where('countENT', '<=', 140);
+        }
         if ($r->filled('base')) {
             $query->where('base', $r->base);
         }
@@ -35,7 +39,10 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
             $query->where('haveENT', $r->haveENT);
         }
         if ($r->filled('countENT')) {
-            $query->where('countENT', $r->countENT);
+            $query->whereBetween('countENT', [
+                $r->countENT,
+                140
+            ]);
         }
         if ($r->filled('quota')) {
             $query->whereDate('quota', $r->quota);
@@ -70,7 +77,7 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
         return [
             'ID','Фамилия','Имя','Отчество','Email','Телефон',
             'На Основании','Процесс','Гражданство','Регион', 'Образовательная программа', 'Алтын белги','ЕНТ', 'ЕНТ балл','Пройден ВЛЭК',
-            'Имеется IELTS/TOEFL','Квота',
+            'Имеется IELTS/TOEFL','Квота', 'Дата'
         ];
     }
 
@@ -94,7 +101,8 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
             $student->haveVLEK ? 'Да' : 'Нет',
             $student->haveIELTS ? 'Да' : 'Нет',
             $student->quota ?? '',
-            $student->created_at_from ? $student->created_at_from->format('Y-m-d H:i:s') : '',
+            $student->created_at,
+            // ? $student->created_at_from->format('Y-m-d H:i:s') : ''
         ];
     }
 

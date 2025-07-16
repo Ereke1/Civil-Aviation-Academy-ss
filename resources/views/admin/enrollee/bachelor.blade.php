@@ -243,6 +243,8 @@
         <input type="hidden" name="haveVLEK" value="{{ $haveVLEK }}">
         <input type="hidden" name="haveIELTS" value="{{ $haveIELTS }}">
         <input type="hidden" name="process" value="{{ $process }}">
+        <input type="hidden" name="created_at_from" value="{{ $created_at_from }}">
+        <input type="hidden" name="created_at_to" value="{{ $created_at_to }}">
         {{-- <input type="hidden" name="surname" value="{{ $surname }}"> --}}
         <button type="submit" class="btn btn-outline-success">
             <i class="fas fa-file-excel"></i> Выгрузить в Excel
