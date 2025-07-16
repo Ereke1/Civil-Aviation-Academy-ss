@@ -69,7 +69,7 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
             $query->where('surname', 'like', '%'.$r->surname.'%');
         }
 
-        return $query->orderBy('updated_at', 'desc');
+        return $query->orderBy('created_at', 'desc');
     }
 
     public function headings(): array
