@@ -93,13 +93,13 @@
                                         </h5>
                                     </div>
                                     <hr>
-                                    {{-- <div>
+                                    <div>
                                         <h5 class="block__info">Трехсторонний договор
                                             <a href="{{ url('admin/enrollee/documents/word-bilateralAgreementThirdParty/' . $item->applid) }}"
                                                 class="btn btn-info float-right">Скачать(.docx)</a>
                                         </h5>
                                     </div> --}}
-                                    {{-- <hr> --}}
+                                    <hr>
                                     <div class="block">
                                         <h5 class="block__info">Личное дело
                                             <a href="{{ url('admin/enrollee/documents/word-statements/' . $item->applid) }}"
