@@ -20,26 +20,44 @@ class RegForTestController extends Controller
     public function index()
     {
         $tree = Navigation::tree();
-        $availableDates = [
-            // "2025-07-09",
-            "2025-07-08",
-            "2025-07-10",
-            "2025-07-11",
-            "2025-07-15",
-            "2025-07-16",
-            "2025-07-17",
-        ];
-        $availableInterviewDates = [
-            "2025-07-14",
-            "2025-07-17",
-        ];
-        $timeSlots = [
-            "09:00-10:00","10:30-11:30","12:00-13:00",
-            "13:30-14:30",
-        ];
-        $timeSlotsInterview = [
-            "09:00-10:00","10:30-11:30","12:00-13:00",
-            "13:30-14:30","15:00-16:00",
+        // $availableDates = [
+        //     // "2025-07-09",
+        //     // "2025-07-08",
+        //     // "2025-07-10",
+        //     // "2025-07-11",
+        //     // "2025-07-15",
+        //     // "2025-07-16",
+        //     // "2025-07-17",
+        //     "2025-07-17",
+        // ];
+        // $availableInterviewDates = [
+        //     "2025-07-14",
+        //     "2025-07-17",
+        // ];
+        // $timeSlots = [
+        //     "09:00-10:00","10:30-11:30","12:00-13:00",
+        //     "13:30-14:30",
+        // ];
+        // $timeSlotsInterview = [
+        //     "09:00-10:00","10:30-11:30","12:00-13:00",
+        //     "13:30-14:30","15:00-16:00",
+        // ];
+        $availableDates          = ['2025-07-18', '2025-07-19'];
+        $availableInterviewDates = ['2025-07-18', '2025-07-19'];
+
+        // 2) Для каждой даты — свой набор слотов
+        $slotsByDate = [
+            '2025-07-18' => [
+                '12:00-13:00',
+                '13:00-14:00',
+                '14:00-15:00',
+                '15:00-16:00',
+            ],
+            '2025-07-19' => [
+                '09:00-10:00',
+                '10:00-11:00',
+                '11:00-12:00',
+            ],
         ];
 
         $checkDatesFromDB = RegistrationForTesting::select('test_date', DB::raw('count(*) as total'))
@@ -57,32 +75,62 @@ class RegForTestController extends Controller
             ->pluck('interview_date')
             ->toArray();
 
-        $streamsInterview = [];
-        foreach ($availableInterviewDates as $date) {
-            foreach ($timeSlotsInterview as $slot) {
-                $cnt = RegistrationForTesting::where('interview_date',$date)
-                    ->where('interview_time_slot',$slot)
-                    ->where('is_deleted', 0)
-                    ->where('is_confirmed', 1)
-                    ->count();
-                if ($cnt < 18) {
-                    $streamsInterview[$date][] = $slot;
-                }
-            }
-        }
+        // $streamsInterview = [];
+        // foreach ($availableInterviewDates as $date) {
+        //     foreach ($timeSlotsInterview as $slot) {
+        //         $cnt = RegistrationForTesting::where('interview_date',$date)
+        //             ->where('interview_time_slot',$slot)
+        //             ->where('is_deleted', 0)
+        //             ->where('is_confirmed', 1)
+        //             ->count();
+        //         if ($cnt < 18) {
+        //             $streamsInterview[$date][] = $slot;
+        //         }
+        //     }
+        // }
+        // $streams = [];
+        // foreach ($availableDates as $date) {
+        //     foreach ($timeSlots as $slot) {
+        //         $cnt = RegistrationForTesting::where('test_date',$date)
+        //             ->where('test_time_slot',$slot)
+        //             ->where('is_deleted', 0)
+        //             ->where('is_confirmed', 1)
+        //             ->count();
+        //         if ($cnt < 15) {
+        //             $streams[$date][] = $slot;
+        //         }
+        //     }
+        // }
         $streams = [];
         foreach ($availableDates as $date) {
-            foreach ($timeSlots as $slot) {
-                $cnt = RegistrationForTesting::where('test_date',$date)
-                    ->where('test_time_slot',$slot)
+            foreach ($slotsByDate[$date] as $slot) {
+                $cnt = RegistrationForTesting::where('test_date', $date)
+                    ->where('test_time_slot', $slot)
                     ->where('is_deleted', 0)
                     ->where('is_confirmed', 1)
                     ->count();
+                // максимум 15 человек на тест
                 if ($cnt < 15) {
                     $streams[$date][] = $slot;
                 }
             }
         }
+
+        $streamsInterview = [];
+        foreach ($availableInterviewDates as $date) {
+            foreach ($slotsByDate[$date] as $slot) {
+                $cnt = RegistrationForTesting::where('interview_date', $date)
+                    ->where('interview_time_slot', $slot)
+                    ->where('is_deleted', 0)
+                    ->where('is_confirmed', 1)
+                    ->count();
+                // максимум 18 на интервью
+                if ($cnt < 18) {
+                    $streamsInterview[$date][] = $slot;
+                }
+            }
+        }
+
 
         $availableDates = array_diff($availableDates, $checkDatesFromDB);
         $availableDates = array_values($availableDates);

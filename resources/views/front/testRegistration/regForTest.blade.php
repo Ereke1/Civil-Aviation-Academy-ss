@@ -472,6 +472,100 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
                     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
                 </script>
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+
+{{-- <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Жёстко заданные даты и слоты
+    const availableDates            = ['2025-07-18', '2025-07-19'];
+    const availableInterviewDates   = ['2025-07-18', '2025-07-19'];
+    const streams = {
+        '2025-07-18': ['12:00-13:00', '13:00-14:00', '14:00-15:00', '15:00-16:00'],
+        '2025-07-19': ['09:00-10:00', '10:00-11:00', '11:00-12:00']
+    };
+    const streamsInterview = streams; // те же самые слоты для интервью
+
+    // Инициализируем все четыре календаря
+    ['test_datepicker','interview_datepicker','test_datepicker_change','interview_datepicker_change']
+        .forEach(id => {
+            flatpickr(`#${id}`, {
+                enable: id.includes('interview') ? availableInterviewDates : availableDates,
+                dateFormat: "Y-m-d",
+                locale: "{{ config('app.locale') }}",
+                allowInput: false,
+                onReady: (selectedDates, dateStr, instance) => instance.clear()
+            });
+        });
+
+    // Функция отрисовки слотов
+    function renderSlots(date, stream, selectId) {
+        const sel = document.getElementById(selectId);
+        sel.innerHTML = '<option value=""></option>';
+        (stream[date] || []).forEach(slot => {
+            const opt = document.createElement('option');
+            opt.value       = slot;
+            opt.textContent = slot.replace('-', ' – ');
+            sel.appendChild(opt);
+        });
+    }
+
+    // Привязываем рендер к событию onChange каждого Flatpickr-а
+    [
+        {picker: '#test_datepicker',        slots: streams,           select: 'test_time_slot'},
+        {picker: '#interview_datepicker',   slots: streamsInterview,  select: 'interview_time_slot'},
+        {picker: '#test_datepicker_change', slots: streams,           select: 'test_time_slot_change'},
+        {picker: '#interview_datepicker_change', slots: streamsInterview, select: 'interview_time_slot_change'}
+    ].forEach(cfg => {
+        const instance = document.querySelector(cfg.picker)._flatpickr;
+        instance.config.onChange.push((selectedDates, dateStr) => {
+            renderSlots(dateStr, cfg.slots, cfg.select);
+        });
+    });
+
+    // Переключатель полей при выборе "IELTS/TOEFL есть" для формы регистрации
+    function toggleDateFields() {
+        const hasIELTS = document.getElementById('ielts_yes').checked;
+        document.getElementById('testDateWrapper').style.display      = hasIELTS ? 'none' : 'block';
+        document.getElementById('testTimeWrapper').style.display      = hasIELTS ? 'none' : 'block';
+        document.getElementById('interviewDateWrapper').style.display = hasIELTS ? 'block': 'none';
+        document.getElementById('interviewTimeWrapper').style.display = hasIELTS ? 'block': 'none';
+        document.getElementById('ieltsWrapper').style.display         = hasIELTS ? 'block': 'none';
+
+        document.getElementById('test_datepicker').required           = !hasIELTS;
+        document.getElementById('test_time_slot').required            = !hasIELTS;
+        document.getElementById('interview_datepicker').required      = hasIELTS;
+        document.getElementById('interview_time_slot').required       = hasIELTS;
+        document.getElementById('ielts_file_input').required          = hasIELTS;
+    }
+
+    // Переключатель полей для формы смены даты
+    function toggleDateFieldsChange() {
+        const hasIELTS = document.getElementById('ielts_yes_change').checked;
+        document.getElementById('testDateWrapperChange').style.display      = hasIELTS ? 'none' : 'block';
+        document.getElementById('testTimeWrapperChange').style.display      = hasIELTS ? 'none' : 'block';
+        document.getElementById('interviewDateWrapperChange').style.display = hasIELTS ? 'block': 'none';
+        document.getElementById('interviewTimeWrapperChange').style.display = hasIELTS ? 'block': 'none';
+
+        document.getElementById('test_datepicker_change').required           = !hasIELTS;
+        document.getElementById('test_time_slot_change').required            = !hasIELTS;
+        document.getElementById('interview_datepicker_change').required      = hasIELTS;
+        document.getElementById('interview_time_slot_change').required       = hasIELTS;
+    }
+
+    // Вешаем слушатели
+    ['ielts_yes','ielts_no'].forEach(id =>
+        document.getElementById(id).addEventListener('change', toggleDateFields)
+    );
+    ['ielts_yes_change','ielts_no_change'].forEach(id =>
+        document.getElementById(id).addEventListener('change', toggleDateFieldsChange)
+    );
+    // Инициализируем видимость сразу
+    toggleDateFields();
+    toggleDateFieldsChange();
+});
+</script> --}}
 
                 <script>
                     document.addEventListener("DOMContentLoaded", function() {
