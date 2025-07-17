@@ -27,6 +27,7 @@ class RegForTestController extends Controller
             "2025-07-11",
             "2025-07-15",
             "2025-07-16",
+            "2025-07-17",
         ];
         $availableInterviewDates = [
             "2025-07-14",
