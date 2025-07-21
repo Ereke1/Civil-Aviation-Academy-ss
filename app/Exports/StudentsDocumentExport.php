@@ -47,6 +47,9 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
         if ($r->filled('quota')) {
             $query->where('quota', $r->quota);
         }
+        if ($r->filled('lang_edu')) {
+            $query->where('lang_edu', $r->lang_edu);
+        }
         if ($r->filled('citizen')) {
             $query->where('citizen', $r->citizen);
         }
@@ -68,6 +71,9 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
         if ($r->filled('surname')) {
             $query->where('surname', 'like', '%'.$r->surname.'%');
         }
+        if ($r->filled('have_grant')) {
+            $query->where('have_grant', $r->have_grant);
+        }
 
         return $query->orderBy('created_at', 'desc');
     }
@@ -76,8 +82,8 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
     {
         return [
             'ID','Фамилия','Имя','Отчество','Email','Телефон',
-            'На Основании','Процесс','Гражданство','Регион', 'Образовательная программа', 'Алтын белги','ЕНТ', 'ЕНТ балл','Пройден ВЛЭК',
-            'Имеется IELTS/TOEFL','Квота', 'Дата'
+            'На Основании','Процесс','Гражданство','Регион', 'Образовательная программа', 'Язык обучения', 'Алтын белги','ЕНТ', 'ЕНТ балл','Пройден ВЛЭК',
+            'Имеется IELTS/TOEFL','Квота', 'Дата', ''
         ];
     }
 
@@ -95,6 +101,7 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
             $student->citizen ?? '',
             $student->region ?? '',
             $student->programms ?? '',
+            $student->lang_edu ?? '',
             ($student->haveAltyn === 'Да') ? 'Да' : 'Нет',
             ($student->haveENT === 'Да') ? 'Да' : 'Нет',
             $student->countENT ?? '',
@@ -120,12 +127,13 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
             'I' => 14,  // Гражданство
             'J' => 14,  // Регион
             'K' => 25,  // Образовательная программа
-            'L' => 14,  // Алтын белги
-            'M' => 8,  // ЕНТ
-            'N' => 14,  // ЕНТ балл
-            'O' => 14,  // Пройден ВЛЭК
-            'P' => 14,  // Имеется IELTS/TOEFL
-            'Q' => 20,  // Квота
+            'L' => 25,
+            'M' => 14,  // Алтын белги
+            'N' => 8,  // ЕНТ
+            'O' => 14,  // ЕНТ балл
+            'P' => 14,  // Пройден ВЛЭК
+            'Q' => 14,  // Имеется IELTS/TOEFL
+            'R' => 20,  // Квота
             // 'R' => 14,  // Регион
             // 'S' => 25,  // Образовательная программа
             // 'T' => 8,  // Алтын белги

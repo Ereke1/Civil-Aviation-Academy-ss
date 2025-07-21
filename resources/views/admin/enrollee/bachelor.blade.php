@@ -127,6 +127,15 @@
                 </select>
             </div>
             <div>
+                <label for="lang_edu">Язык обучения</label>
+                <select name="lang_edu" >
+                    <option value=""></option>
+                    <option value="Казахский" @if ($lang_edu === 'Казахский') selected @endif>Казахский</option>
+                    <option value="Русский" @if ($lang_edu === 'Русский') selected @endif>Русский</option>
+                    <option value="Английский" @if ($lang_edu === 'Английский') selected @endif>Английский</option>
+                </select>
+            </div>
+            <div>
                 <label for="region">Регион</label>
                 <select name="region">
                     <option value=""></option>
@@ -239,6 +248,7 @@
         <input type="hidden" name="quota" value="{{ $quota }}">
         <input type="hidden" name="citizen" value="{{ $citizen }}">
         <input type="hidden" name="programms" value="{{ $programms }}">
+        <input type="hidden" name="lang_edu" value="{{ $lang_edu }}">
         <input type="hidden" name="region" value="{{ $region }}">
         <input type="hidden" name="haveVLEK" value="{{ $haveVLEK }}">
         <input type="hidden" name="haveIELTS" value="{{ $haveIELTS }}">

@@ -34,10 +34,12 @@ class BachelorController extends Controller
             'quota' => $request->quota,
             'citizen' => $request->citizen,
             'programms' => $request->programms,
+            'lang_edu' => $request->lang_edu,
             'region' => $request->region,
             'process' => $request->process,
             'created_at' => $request->created_at,
-            'surname' => $request->surname
+            'surname' => $request->surname,
+            'have_grant' => $request->have_grant,
         ];
         $whereArray = array_filter($whereArray, 'strlen');
         $countENT = $request->countENT;
@@ -94,6 +96,7 @@ class BachelorController extends Controller
             'quota' => $request->quota,
             'citizen' => $request->citizen,
             'programms' => $request->programms,
+            'lang_edu' => $request->lang_edu,
             'region' => $request->region,
             'years' => $request->years,
             'created_at_from' => $request->created_at_from,
@@ -102,7 +105,8 @@ class BachelorController extends Controller
             'process' => $request->process,
             'countENT' => $request->countENT,
             'sort' => $request->sort,
-            'countData' => $countData
+            'countData' => $countData,
+            'have_grant' => $request->have_grant,
         ];
         return view('admin.enrollee.bachelor', $dataArr);
     }
