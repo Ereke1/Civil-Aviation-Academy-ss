@@ -186,9 +186,42 @@
                                         </label>
                                         <input type="text" id="patronymic" name="patronymic" class="form-control mb-2">
 
+                                        <label class="mt-3">
+                                            @if (Config::get('app.locale') === 'ru')
+                                                Имеет ЕНТ?*
+                                            @elseif(Config::get('app.locale') === 'kk')
+                                                ҰБТ бар ма?*
+                                            @else
+                                                ENT certificate?*
+                                            @endif
+                                        </label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="have_ent" id="ent_yes" value="1" checked>
+                                            <label class="form-check-label" for="ent_yes" onchange="myFunction()">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Да
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Иә
+                                                @else
+                                                    Yes
+                                                @endif
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="have_ent" id="ent_no" value="0">
+                                            <label class="form-check-label" for="ent_no">
+                                                @if (Config::get('app.locale') === 'ru')
+                                                    Нет
+                                                @elseif(Config::get('app.locale') === 'kk')
+                                                    Жоқ
+                                                @else
+                                                    No
+                                                @endif
+                                            </label>
+                                        </div>
 
 
-                                                <div class="form-group">
+                                                <div class="form-group" id="entWrapper">
                                                     <label for="ent_file">
                                                         @if (Config::get('app.locale') === 'ru')
                                                             Сертификат ЕНТ (PDF, JPG, PNG):
@@ -198,9 +231,9 @@
                                                             UNT Certificate (PDF, JPG, PNG):
                                                         @endif
                                                     </label>
-                                                    <input type="file" name="ent_file" class="form-control-file" accept=".pdf,.jpg,.png" required>
+                                                    <input type="file" id="ent_file" name="ent_file" class="form-control-file" accept=".pdf,.jpg,.png">
                                                 </div>
-                                                <div class="form-group mt-3">
+                                                <div class="form-group mt-3" id="entScoreWrapper">
                                                     <label for="ent_score" >
                                                         @if (Config::get('app.locale') === 'ru')
                                                             Результат ЕНТ (85-140):
@@ -210,7 +243,7 @@
                                                             UNT result (85-140):
                                                         @endif
                                                     </label>
-                                                    <input type="number" id="ent_score" name="ent_score" class="form-control border " min="85" max="140" required>
+                                                    <input type="number" id="ent_score" name="ent_score" class="form-control border " min="85" max="140">
                                                 </div>
 
 
@@ -472,108 +505,12 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
                     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
                 </script>
-<!-- Flatpickr JS -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
-
-{{-- <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Жёстко заданные даты и слоты
-    const availableDates            = ['2025-07-18', '2025-07-19'];
-    const availableInterviewDates   = ['2025-07-18', '2025-07-19'];
-    const streams = {
-        '2025-07-18': ['12:00-13:00', '13:00-14:00', '14:00-15:00', '15:00-16:00'],
-        '2025-07-19': ['09:00-10:00', '10:00-11:00', '11:00-12:00']
-    };
-    const streamsInterview = streams; // те же самые слоты для интервью
-
-    // Инициализируем все четыре календаря
-    ['test_datepicker','interview_datepicker','test_datepicker_change','interview_datepicker_change']
-        .forEach(id => {
-            flatpickr(`#${id}`, {
-                enable: id.includes('interview') ? availableInterviewDates : availableDates,
-                dateFormat: "Y-m-d",
-                locale: "{{ config('app.locale') }}",
-                allowInput: false,
-                onReady: (selectedDates, dateStr, instance) => instance.clear()
-            });
-        });
-
-    // Функция отрисовки слотов
-    function renderSlots(date, stream, selectId) {
-        const sel = document.getElementById(selectId);
-        sel.innerHTML = '<option value=""></option>';
-        (stream[date] || []).forEach(slot => {
-            const opt = document.createElement('option');
-            opt.value       = slot;
-            opt.textContent = slot.replace('-', ' – ');
-            sel.appendChild(opt);
-        });
-    }
-
-    // Привязываем рендер к событию onChange каждого Flatpickr-а
-    [
-        {picker: '#test_datepicker',        slots: streams,           select: 'test_time_slot'},
-        {picker: '#interview_datepicker',   slots: streamsInterview,  select: 'interview_time_slot'},
-        {picker: '#test_datepicker_change', slots: streams,           select: 'test_time_slot_change'},
-        {picker: '#interview_datepicker_change', slots: streamsInterview, select: 'interview_time_slot_change'}
-    ].forEach(cfg => {
-        const instance = document.querySelector(cfg.picker)._flatpickr;
-        instance.config.onChange.push((selectedDates, dateStr) => {
-            renderSlots(dateStr, cfg.slots, cfg.select);
-        });
-    });
-
-    // Переключатель полей при выборе "IELTS/TOEFL есть" для формы регистрации
-    function toggleDateFields() {
-        const hasIELTS = document.getElementById('ielts_yes').checked;
-        document.getElementById('testDateWrapper').style.display      = hasIELTS ? 'none' : 'block';
-        document.getElementById('testTimeWrapper').style.display      = hasIELTS ? 'none' : 'block';
-        document.getElementById('interviewDateWrapper').style.display = hasIELTS ? 'block': 'none';
-        document.getElementById('interviewTimeWrapper').style.display = hasIELTS ? 'block': 'none';
-        document.getElementById('ieltsWrapper').style.display         = hasIELTS ? 'block': 'none';
-
-        document.getElementById('test_datepicker').required           = !hasIELTS;
-        document.getElementById('test_time_slot').required            = !hasIELTS;
-        document.getElementById('interview_datepicker').required      = hasIELTS;
-        document.getElementById('interview_time_slot').required       = hasIELTS;
-        document.getElementById('ielts_file_input').required          = hasIELTS;
-    }
-
-    // Переключатель полей для формы смены даты
-    function toggleDateFieldsChange() {
-        const hasIELTS = document.getElementById('ielts_yes_change').checked;
-        document.getElementById('testDateWrapperChange').style.display      = hasIELTS ? 'none' : 'block';
-        document.getElementById('testTimeWrapperChange').style.display      = hasIELTS ? 'none' : 'block';
-        document.getElementById('interviewDateWrapperChange').style.display = hasIELTS ? 'block': 'none';
-        document.getElementById('interviewTimeWrapperChange').style.display = hasIELTS ? 'block': 'none';
-
-        document.getElementById('test_datepicker_change').required           = !hasIELTS;
-        document.getElementById('test_time_slot_change').required            = !hasIELTS;
-        document.getElementById('interview_datepicker_change').required      = hasIELTS;
-        document.getElementById('interview_time_slot_change').required       = hasIELTS;
-    }
-
-    // Вешаем слушатели
-    ['ielts_yes','ielts_no'].forEach(id =>
-        document.getElementById(id).addEventListener('change', toggleDateFields)
-    );
-    ['ielts_yes_change','ielts_no_change'].forEach(id =>
-        document.getElementById(id).addEventListener('change', toggleDateFieldsChange)
-    );
-    // Инициализируем видимость сразу
-    toggleDateFields();
-    toggleDateFieldsChange();
-});
-</script> --}}
-
                 <script>
                     document.addEventListener("DOMContentLoaded", function() {
                         let availableDates = {!! json_encode($availableDates) !!};
                         let availableInterviewDates = {!! json_encode($availableInterviewDates) !!};
                         let streams = {!! json_encode($streams) !!};
                         let streamsInterview = {!! json_encode($streamsInterview) !!};
-
 
                         flatpickr("#test_datepicker", {
                             enable: availableDates,
@@ -659,6 +596,14 @@ document.addEventListener("DOMContentLoaded", function() {
                             document.getElementById('ielts_file_input').required = hasIELTS;
                         }
 
+                        function toggleDateFieldsEnt() {
+                            const hasENT = document.getElementById('ent_yes').checked;
+                            document.getElementById('entWrapper').style.display      = hasENT ? 'block' : 'none';
+                            document.getElementById('entScoreWrapper').style.display      = hasENT ? 'block' : 'none';
+                            document.getElementById('ent_file').required = hasENT;
+                            document.getElementById('ent_score').required = hasENT;
+                        }
+
                         function toggleDateFieldsChange() {
                             const hasIELTS = document.getElementById('ielts_yes_change').checked;
                             document.getElementById('testDateWrapperChange').style.display = hasIELTS ? 'none' : 'block';
@@ -680,6 +625,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         document.getElementById('ielts_yes').addEventListener('change', toggleDateFields);
                         document.getElementById('ielts_no').addEventListener('change',  toggleDateFields);
                         toggleDateFields();
+
+                        document.getElementById('ent_yes').addEventListener('change', toggleDateFieldsEnt);
+                        document.getElementById('ent_no').addEventListener('change',  toggleDateFieldsEnt);
+                        toggleDateFieldsEnt()
                     });
 
                     (() => {

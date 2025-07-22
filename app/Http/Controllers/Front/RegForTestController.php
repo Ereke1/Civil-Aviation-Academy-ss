@@ -42,23 +42,20 @@ class RegForTestController extends Controller
         //     "09:00-10:00","10:30-11:30","12:00-13:00",
         //     "13:30-14:30","15:00-16:00",
         // ];
-        $availableDates          = ['2025-8-18'];
-        $availableInterviewDates = ['2025-07-18'];
+        $availableDates          = ['2025-08-18'];
+        $availableInterviewDates = ['2025-08-18'];
 
         // 2) Для каждой даты — свой набор слотов
         $slotsByDate = [
-            '2025-07-18' => [
-                '12:00-13:00',
-                '13:00-14:00',
-                '14:00-15:00',
-                '15:00-16:00',
-                '16:00-17:00',
+            '2025-08-18' => [
+                '09:00–10:00',
+                '10:30–11:30',
             ],
-            '2025-07-19' => [
-                '09:00-10:00',
-                '10:00-11:00',
-                '11:00-12:00',
-            ],
+            // '2025-07-19' => [
+            //     '09:00-10:00',
+            //     '10:00-11:00',
+            //     '11:00-12:00',
+            // ],
         ];
 
         $checkDatesFromDB = RegistrationForTesting::select('test_date', DB::raw('count(*) as total'))
@@ -157,13 +154,14 @@ class RegForTestController extends Controller
             'email' => 'required|email',
             'phone' => 'required|string',
             'have_ielts'      => 'required|boolean',
+            'have_ent'=> 'required|boolean',
             'test_date'       => 'required_if:have_ielts,0|nullable|date',
             'interview_date'  => 'required_if:have_ielts,1|nullable|date',
             'test_time_slot'       => 'nullable|required_if:have_ielts,0',
             'interview_time_slot'       => 'nullable|required_if:have_ielts,1',
             'ielts_file' => 'required_if:have_ielts,1|file|mimes:jpeg,png,pdf',
-            'ent_file' => 'required_if:have_ielts,1|file|mimes:jpeg,png,pdf',
-            'ent_score'   => 'required|numeric|min:84|max:141',
+            'ent_file' => 'required_if:have_ent,1|file|mimes:jpeg,png,pdf',
+            'ent_score'   => 'required_if:have_ent,1|nullable|numeric|min:84|max:141',
             // 'ielts_score' => 'required_if:have_ielts,1|numeric|min:5.5|max:9',
         ]);
 
@@ -174,6 +172,7 @@ class RegForTestController extends Controller
         }
 
         //ЕНТ
+        if ($validated['have_ent']){
         $entFile = $request->file('ent_file');
             $extension = $entFile->getClientOriginalExtension();
             $filename = $validated['surname'] . '_' . $validated['name'] . '.' . $extension;
@@ -185,7 +184,7 @@ class RegForTestController extends Controller
 
             $entFile->move($destinationPath, $filename);
             $validated['ent_file'] = '/storage/applications/ent_certificates_online_reg/'  . $request->surname . ' ' . $request->name . '/' . $filename  ;
-
+        }
         //IELTS
         if ($validated['have_ielts']) {
             $ieltsFile = $request->file('ielts_file');
@@ -225,8 +224,8 @@ class RegForTestController extends Controller
             'confirmation_token' => $token,
             'is_confirmed'  => false,
             'ielts_file'  => $validated['ielts_file'] ?? null,
-            'ent_file'  => $validated['ent_file'],
-            'ent_score'  => $validated['ent_score'],
+            'ent_file'  => $validated['have_ent'] ? $validated['ent_file'] : null,
+            'ent_score'  => $validated['have_ent'] ? $validated['ent_score'] : null,
         ]);
 
         // Отправка email пользователю
