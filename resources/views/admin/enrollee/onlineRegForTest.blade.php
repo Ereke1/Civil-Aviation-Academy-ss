@@ -135,13 +135,6 @@
                                             <h5 class="block__title">Дата подачи</h5>
                                             <p class="block__info">{!! date('d.m.Y H:i', strtotime($item->created_at)) !!}</p>
                                         </div>
-                                        {{-- <div class="block">
-                                            <h5 class="block__title">ЕНТ</h5>
-                                            <p class="block__info">
-                                                <a href="{!! $item->ent_file !!}" target="_blank">ЕНТ</a>
-                                                <input type="file" name="ent_file" class="form-control-file" accept=".pdf,.jpg,.png">
-                                            </p>
-                                        </div> --}}
                                         <div class="block">
                                             <h5 class="block__title">ЕНТ</h5>
                                             @if($item->ent_file)

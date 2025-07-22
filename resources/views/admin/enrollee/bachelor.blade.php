@@ -227,6 +227,14 @@
                  @if ($case_number_date_from != '') value="{!! $case_number_date_from !!}" @endif>
             </div>
             <div>
+                <label for="have_grant">Имеется Грант</label>
+                <select name="have_grant">
+                    <option value=""></option>
+                    <option value="1" @if ($have_grant === 1) selected @endif>Да</option>
+                    <option value="0" @if ($have_grant === 0) selected @endif>Нет</option>
+                </select>
+            </div>
+            <div>
                 <label for="sort">Сортировать</label>
                 <select name="sort">
                     <option value=""></option>
@@ -253,6 +261,7 @@
         <input type="hidden" name="haveVLEK" value="{{ $haveVLEK }}">
         <input type="hidden" name="haveIELTS" value="{{ $haveIELTS }}">
         <input type="hidden" name="process" value="{{ $process }}">
+        <input type="hidden" name="have_grant" value="{{ $have_grant }}">
         <input type="hidden" name="created_at_from" value="{{ $created_at_from }}">
         <input type="hidden" name="created_at_to" value="{{ $created_at_to }}">
         {{-- <input type="hidden" name="surname" value="{{ $surname }}"> --}}

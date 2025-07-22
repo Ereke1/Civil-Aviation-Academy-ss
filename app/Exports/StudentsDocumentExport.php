@@ -83,7 +83,7 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
         return [
             'ID','Фамилия','Имя','Отчество','Email','Телефон',
             'На Основании','Процесс','Гражданство','Регион', 'Образовательная программа', 'Язык обучения', 'Алтын белги','ЕНТ', 'ЕНТ балл','Пройден ВЛЭК',
-            'Имеется IELTS/TOEFL','Квота', 'Дата', ''
+            'Имеется IELTS/TOEFL','Квота', 'Дата', 'Грант'
         ];
     }
 
@@ -109,6 +109,7 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
             ($student->haveIELTS=== 'Да') ? 'Да' : 'Нет',
             $student->quota ?? '',
             $student->created_at,
+            ($student->have_grant === 1) ? 'Да' : 'Нет',
             // ? $student->created_at_from->format('Y-m-d H:i:s') : ''
         ];
     }

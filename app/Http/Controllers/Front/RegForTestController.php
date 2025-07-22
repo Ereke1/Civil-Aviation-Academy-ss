@@ -42,8 +42,8 @@ class RegForTestController extends Controller
         //     "09:00-10:00","10:30-11:30","12:00-13:00",
         //     "13:30-14:30","15:00-16:00",
         // ];
-        $availableDates          = ['2025-07-18', '2025-07-19'];
-        $availableInterviewDates = ['2025-07-18', '2025-07-19'];
+        $availableDates          = ['2025-8-18'];
+        $availableInterviewDates = ['2025-07-18'];
 
         // 2) Для каждой даты — свой набор слотов
         $slotsByDate = [

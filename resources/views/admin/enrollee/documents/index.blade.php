@@ -98,7 +98,7 @@
                                             <a href="{{ url('admin/enrollee/documents/word-bilateralAgreementThirdParty/' . $item->applid) }}"
                                                 class="btn btn-info float-right">Скачать(.docx)</a>
                                         </h5>
-                                    </div> --}}
+                                    </div>
                                     <hr>
                                     <div class="block">
                                         <h5 class="block__info">Личное дело
