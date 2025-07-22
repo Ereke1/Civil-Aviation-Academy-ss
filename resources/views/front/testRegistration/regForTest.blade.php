@@ -259,14 +259,14 @@
                                                 <div class="form-group mt-3" id="entScoreWrapper">
                                                     <label for="ent_score" >
                                                         @if (Config::get('app.locale') === 'ru')
-                                                            Результат ЕНТ (85-140):
+                                                            Результат ЕНТ (65-140):
                                                         @elseif(Config::get('app.locale') === 'kk')
-                                                            ҰБТ нәтижесі (85–140):
+                                                            ҰБТ нәтижесі (65–140):
                                                         @else
-                                                            UNT result (85-140):
+                                                            UNT result (65-140):
                                                         @endif
                                                     </label>
-                                                    <input type="number" id="ent_score" name="ent_score" class="form-control border " min="85" max="140">
+                                                    <input type="number" id="ent_score" name="ent_score" class="form-control border " min="65" max="140">
                                                 </div>
 
 
