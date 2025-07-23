@@ -772,10 +772,10 @@
                 <hr>
                 <div class="mb-4">
                     <p>
-                        Прием документов проводится до <strong>20 июня 2025 года</strong> по адресу:
+                        Прием документов проводится до <strong>15 августа 2025 года</strong> по адресу:
                         <br>
                         <span class="d-block">Ахметова 44, кабинет ADM 16 (Департамент HR)</span>
-                        <span class="d-block">и/или по электронному адресу: <a href="mailto:hr@agakaz.kz">hr@agakaz.kz</a> не позднее 23:59 часов 20 июня 2025 г.</span>
+                        <span class="d-block">и/или по электронному адресу: <a href="mailto:hr@agakaz.kz">hr@agakaz.kz</a> не позднее 23.59 часов 15 августа 2025 года.</span>
                         <p>
                             Место проведения конкурса на замещение вакантных должностей профессорско-преподавательского состава АО «Академия гражданской авиации»:
                             <br>
@@ -851,10 +851,10 @@
                 <hr>
                 <div class="mb-4">
                     <p>
-                        Құжаттарды қабылдау Құжаттарды қабылдау <strong>2025 жылғы 20 маусымына дейін</strong> мекенжайы:
+                        Құжаттарды қабылдау Құжаттарды қабылдау <strong>2025 жылғы 15 тамызға дейін</strong> мекенжайы:
                         <br>
                         <span class="d-block">Ахметова 44, ADM 16 кабинет (HR департаменті)</span>
-                        <span class="d-block">және/немесе электрондық мекенжайы бойынша жүргізіледі: hr@agakaz.kz 2025 жылғы 20 маусымында сағат 23.59-дан кешіктірмей.</span>
+                        <span class="d-block">және/немесе электрондық мекенжайы бойынша жүргізіледі: hr@agakaz.kz 2025 жылғы 15 тамызда сағат 23.59-дан кешіктірмей.</span>
                         <p>
                             «Азаматтық авиация академиясы» АҚ профессор-оқытушылар құрамының бос лауазымдарына орналасуға конкурс өткізу орны:
                             <br>
@@ -925,9 +925,9 @@
                 <hr>
                 <div class="mb-4">
                     <p>
-                        Documents are accepted until <strong>until June 20, 2025</strong> at the address:
+                        Documents are accepted until <strong>until August 15, 2025</strong> at the address:
                         <span class="d-block">Akhmetov 44, office ADM 16 (HR Department)</span>
-                        <span class="d-block">and/or by e-mail: <a href="mailto:hr@agakaz.kz">hr@agakaz.kz</a> no later than 23.59 hours on June 20, 2025.</span>
+                        <span class="d-block">and/or by e-mail: <a href="mailto:hr@agakaz.kz">hr@agakaz.kz</a> no later than 23.59 hours on August 15, 2025.</span>
                         <p>
                             The venue of the competition for the vacant positions of the teaching staff of JSC "Academy of Civil Aviation":
                             <br>
