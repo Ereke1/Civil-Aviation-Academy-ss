@@ -30,6 +30,8 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
                 $r->created_at_from,
                 $r->created_at_to
             ]);
+        }if ($r->filled('case_number_date_from')) {
+            $query->whereDate('case_number_date', '>=', $r->case_number_date_from);
         }
         if ($r->filled('base')) {
             $query->where('base', $r->base);
@@ -74,6 +76,9 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
         if ($r->filled('have_grant')) {
             $query->where('have_grant', $r->have_grant);
         }
+        if ($r->filled('case_number')) {
+            $query->where('case_number', $r->case_number);
+        }
 
         return $query->orderBy('created_at', 'desc');
     }
@@ -83,7 +88,7 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
         return [
             'ID','Фамилия','Имя','Отчество','Email','Телефон',
             'На Основании','Процесс','Гражданство','Регион', 'Образовательная программа', 'Язык обучения', 'Алтын белги','ЕНТ', 'ЕНТ балл','Пройден ВЛЭК',
-            'Имеется IELTS/TOEFL','Квота', 'Дата', 'Грант'
+            'Имеется IELTS/TOEFL','Квота', 'Дата', 'Грант', 'Номер дела'
         ];
     }
 
@@ -110,6 +115,7 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
             $student->quota ?? '',
             $student->created_at,
             ($student->have_grant === 1) ? 'Да' : 'Нет',
+            $student->case_number?? '',
             // ? $student->created_at_from->format('Y-m-d H:i:s') : ''
         ];
     }
@@ -136,7 +142,8 @@ class StudentsDocumentExport implements FromQuery, WithHeadings, WithMapping, Wi
             'Q' => 14,  // Имеется IELTS/TOEFL
             'R' => 20,  // Квота
             // 'R' => 14,  // Регион
-            // 'S' => 25,  // Образовательная программа
+            'S' => 25,
+             // Образовательная программа
             // 'T' => 8,  // Алтын белги
             // 'U' => 8,  // ЕНТ
             // 'V' => 8,  // ЕНТ балл

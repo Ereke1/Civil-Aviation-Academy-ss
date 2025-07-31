@@ -40,6 +40,7 @@ class BachelorController extends Controller
             'created_at' => $request->created_at,
             'surname' => $request->surname,
             'have_grant' => $request->have_grant,
+            'case_number' => $request->case_number,
         ];
         $whereArray = array_filter($whereArray, 'strlen');
         $countENT = $request->countENT;
@@ -107,6 +108,7 @@ class BachelorController extends Controller
             'sort' => $request->sort,
             'countData' => $countData,
             'have_grant' => $request->have_grant,
+            'case_number' => $request->case_number,
         ];
         return view('admin.enrollee.bachelor', $dataArr);
     }

@@ -263,6 +263,7 @@
         <input type="hidden" name="process" value="{{ $process }}">
         <input type="hidden" name="have_grant" value="{{ $have_grant }}">
         <input type="hidden" name="created_at_from" value="{{ $created_at_from }}">
+        <input type="hidden" name="case_number_date_from" value="{{ $case_number_date_from }}">
         <input type="hidden" name="created_at_to" value="{{ $created_at_to }}">
         {{-- <input type="hidden" name="surname" value="{{ $surname }}"> --}}
         <button type="submit" class="btn btn-outline-success">

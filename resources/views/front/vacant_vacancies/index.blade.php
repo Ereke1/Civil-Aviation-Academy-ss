@@ -725,6 +725,7 @@
                                   <td>Senior Lecturer</td>
                                   <td>1</td>
                                   <td>The history of Kazakhstan</td>
+
                                 </tr>
                                 <tr>
                                   <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
