@@ -36,7 +36,7 @@ function initializeSite() {
 		$(window).resize(centerInit);
 	})();
 
-	// Init effect 
+	// Init effect
 	$('#scene').parallax();
 
 };
@@ -56,7 +56,7 @@ $(window).load(function(){
 
 
 $('#countdown').countdown({
-	date: "August 25, 2024 13:01:01",
+	date: "August 25, 2026 13:01:01",
 	render: function(data) {
 	  var el = $(this.el);
 	  el.empty()
