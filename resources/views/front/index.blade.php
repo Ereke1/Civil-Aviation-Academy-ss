@@ -217,7 +217,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
                     <div class="icon-box">
                         <div class="icon"><i class="fa fa-phone-alt"></i></div>
-                        <h4><a href="https://do.agakaz.kz" class="stretched-link">{{ __('Телефоны горячей линии Ситуационного центра') }}</a></h4>
+                        <h4><a href="https://caa.edu.kz/telefony-goryachey-linii-situacionnogo-centra-489" class="stretched-link">{{ __('Телефоны горячей линии Ситуационного центра') }}</a></h4>
                         <p>{{ __('Центр создан, чтобы помочь абитуриентам с вопросами о результатах грантов и поступлении. Звоните по указанным номерам.') }}
                         </p>
                     </div>
