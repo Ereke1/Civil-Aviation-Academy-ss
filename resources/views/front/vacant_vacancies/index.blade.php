@@ -155,6 +155,11 @@
                                   <td>Английский язык</td>
                                 </tr>
                                 <tr>
+                                    <td>Ассистент преподаватель</td>
+                                    <td>1</td>
+                                    <td>Английский язык</td>
+                                </tr>
+                                <tr>
                                   <td>Сениор-лектор</td>
                                   <td>2</td>
                                   <td>Английский язык</td>
@@ -193,6 +198,11 @@
                                   <td>1</td>
                                   <td>Ағылшын тілі</td>
                                 </tr>
+                                <tr>
+                                    <td>Ассистент оқытушы</td>
+                                    <td>1</td>
+                                    <td>Ағылшын тілі</td>
+                                  </tr>
                                 <tr>
                                   <td>Сениор-лектор</td>
                                   <td>2</td>
@@ -233,6 +243,11 @@
                                   <td>1</td>
                                   <td>English language</td>
                                 </tr>
+                                <tr>
+                                    <td>Teaching assistant</td>
+                                    <td>1</td>
+                                    <td>English language</td>
+                                  </tr>
                                 <tr>
                                   <td>Senior Lecturer</td>
                                   <td>2</td>

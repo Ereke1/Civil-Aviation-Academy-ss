@@ -179,7 +179,7 @@
         </div><!--/.owl-carousel-->
     </section><!--/#main-slider-->
 
-    <section id="services" class="services">
+    {{-- <section id="services" class="services">
         <div class="container">
 
             <div class="title text-center wow animated zoomInDown">
@@ -203,7 +203,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section id="services" class="services">
         <div class="container">
@@ -214,6 +214,15 @@
             </div>
 
             <div class="row">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
+                    <div class="icon-box">
+                        <div class="icon"><i class="fa fa-phone-alt"></i></div>
+                        <h4><a href="https://do.agakaz.kz" class="stretched-link">{{ __('Телефоны горячей линии Ситуационного центра') }}</a></h4>
+                        <p>{{ __('Центр создан, чтобы помочь абитуриентам с вопросами о результатах грантов и поступлении. Звоните по указанным номерам.') }}
+                        </p>
+                    </div>
+                </div>
+
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
                     <div class="icon-box">
                         <div class="icon"><i class="fa fa-university"></i></div>
