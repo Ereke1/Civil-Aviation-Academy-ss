@@ -151,12 +151,12 @@
                                 </tr>
                                 <tr>
                                   <td>Профессор/Профессор АГА/ Ассоциированный профессор/Ассоциированный профессор АГА/Ассистент-профессор</td>
-                                  <td>2</td>
+                                  <td>1</td>
                                   <td>Английский язык</td>
                                 </tr>
                                 <tr>
                                   <td>Сениор-лектор</td>
-                                  <td>1</td>
+                                  <td>2</td>
                                   <td>Английский язык</td>
                                 </tr>
                               </tbody>
@@ -190,12 +190,12 @@
                                 </tr>
                                 <tr>
                                   <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
-                                  <td>2</td>
+                                  <td>1</td>
                                   <td>Ағылшын тілі</td>
                                 </tr>
                                 <tr>
                                   <td>Сениор-лектор</td>
-                                  <td>1</td>
+                                  <td>2</td>
                                   <td>Ағылшын тілі</td>
                                 </tr>
                               </tbody>
@@ -230,12 +230,12 @@
                                 </tr>
                                 <tr>
                                   <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
-                                  <td>2</td>
+                                  <td>1</td>
                                   <td>English language</td>
                                 </tr>
                                 <tr>
                                   <td>Senior Lecturer</td>
-                                  <td>1</td>
+                                  <td>2</td>
                                   <td>English language</td>
                                 </tr>
                               </tbody>
@@ -523,11 +523,11 @@
                                   <td>1</td>
                                   <td>Математика</td>
                                 </tr> --}}
-                                <tr>
+                                {{-- <tr>
                                   <td>Сениор-лектор</td>
                                   <td>1</td>
                                   <td>Математика</td>
-                                </tr>
+                                </tr> --}}
                                 {{-- <tr>
                                   <td>Профессор / Профессор АГА / Ассоциированный профессор / Ассистент-профессор</td>
                                   <td>1</td>
@@ -612,11 +612,11 @@
                                   <td>1</td>
                                   <td>Математика</td>
                                 </tr> --}}
-                                <tr>
+                                {{-- <tr>
                                   <td>Сениор-лектор</td>
                                   <td>1</td>
                                   <td>Математика</td>
-                                </tr>
+                                </tr> --}}
                                 {{-- <tr>
                                   <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
                                   <td>1</td>
@@ -701,11 +701,11 @@
                                   <td>1</td>
                                   <td>Mathematics</td>
                                 </tr> --}}
-                                <tr>
+                                {{-- <tr>
                                   <td>Senior Lecturer</td>
                                   <td>1</td>
                                   <td>Mathematics</td>
-                                </tr>
+                                </tr> --}}
                                 {{-- <tr>
                                   <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
                                   <td>1</td>
