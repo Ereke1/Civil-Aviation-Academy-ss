@@ -1228,13 +1228,7 @@ class DocumentsController extends Controller
         $programsKz = $translations['kz'];
         $programsEn = $translations['en'];
 
-        $type = trim((string)$data->type);
-        $word_in_middle = match ($type) {
-            'Бакалавриат'   => 'первого',
-            'Магистратура',
-            'Докторантура'  => 'в',
-            default         => '',
-        };
+
         //свидетельство гранта / собеседование / сертификат ент Бакалавр
         if ($data->type ==="Бакалавриат"){
             if ($data->grant_certificate == 1) {
@@ -1328,7 +1322,6 @@ class DocumentsController extends Controller
             '{{programs_ru}}'  => $programsRu,
             '{{programs_kz}}'  => $programsKz,
             '{{programs_en}}'  => $programsEn,
-            '{{word_in_middle}}' => $word_in_middle,
             '{{statment_ru}}'  => $statmentRU,
             '{{statment_kz}}'  => $statmentKz,
             '{{statment_ru_2}}'  => $statment2RU,
