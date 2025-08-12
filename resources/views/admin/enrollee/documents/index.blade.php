@@ -550,7 +550,7 @@
                                               type="date"
                                               name="order_date"
                                               class="block__info"
-                                              required
+
                                               value="{{ old('order_date', $item->order_date ?? '') }}"
                                             >
                                         </div>
