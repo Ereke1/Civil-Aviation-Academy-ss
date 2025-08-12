@@ -103,7 +103,7 @@
                                     <div>
                                         <h5 class="block__info">Выписка
                                             <a href="{{ url('admin/enrollee/documents/exl-export/' . $item->applid) }}"
-                                                class="btn btn-info float-right">Скачать(.docx)</a>
+                                                class="btn btn-info float-right">Скачать(.xlsl)</a>
                                         </h5>
                                     </div>
                                     <hr>
