@@ -12,6 +12,9 @@ use Illuminate\Support\Str;
 use PhpOffice\PhpWord\TemplateProcessor;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class DocumentsController extends Controller
 {
@@ -1106,6 +1109,262 @@ class DocumentsController extends Controller
         return response()->download($fileName . ' (заявление для поступающих по кредитам).docx')->deleteFileAfterSend(true);
     }
 
+    public function ExlExport($id)
+    {
+        $data = Applications::find($id);
+
+        // 1. Ассоциативный массив переводов
+        $programTranslations = [
+            'Техническая эксплуатация летательных аппаратов и двигателей' => [
+                'kz' => '6B07101 Ұшу аппараттары мен қозғалтқыштарды техникалық пайдалану',
+                'en' => '6B07101 Technical operation of aircraft and engines',
+                'ru' => '6B07101 Техническая эксплуатация летательных аппаратов и двигателей',
+            ],
+            'Техническая эксплуатация авиационного и радиоэлектронного оборудования' => [
+                'kz' => '6B07119 Авиациялық және радиоэлектрондық жабдықты техникалық пайдалану',
+                'en' => '6B07119 Technical operation of aviation and radio-electronic equipment',
+                'ru' => '6B07119 Техническая эксплуатация авиационного и радиоэлектронного оборудования',
+            ],
+            'Организация аэропортовой деятельности' => [
+                'kz' => '6B07117 Әуежай қызметін ұйымдастыру',
+                'en' => '6B07117 Organization of airport activities',
+                'ru' => '6B07117 Организация аэропортовой деятельности',
+            ],
+            'Беспилотные летательные аппараты и системы' => [
+                'kz' => '6B07120 Ұшқышсыз ұшу аппараттары және жүйелері',
+                'en' => '6B07120 Unmanned aerial vehicles and systems',
+                'ru' => '6B07120 Беспилотные летательные аппараты и системы',
+            ],
+            'Лётная эксплуатация гражданских самолетов (пилот)' => [
+                'kz' => '6B07115 Азаматтық ұшақтарды ұшуда пайдалану (ұшқыш)',
+                'en' => '6B07115 Flight operation of civil aircraft (pilot)',
+                'ru' => '6B07115 Лётная эксплуатация гражданских самолетов (пилот)',
+            ],
+            'Лётная эксплуатация гражданских вертолетов (пилот)' => [
+                'kz' => '6B07116 Азаматтық тікұшақтарды ұшуда пайдалану (ұшқыш)',
+                'en' => '6B07116 Flight operation of civil helicopters (pilot)',
+                'ru' => '6B07116 Лётная эксплуатация гражданских вертолетов (пилот)',
+            ],
+            'Обслуживание воздушного движения и аэронавигационное обеспечение полетов' => [
+                'kz' => '6B07118 Әуе қозғалысына қызмет көрсету және ұшуды аэронавигациялық қамтамасыз ету',
+                'en' => '6B07118 Air traffic services and air navigation support of flights',
+                'ru' => '6B07118 Обслуживание воздушного движения и аэронавигационное обеспечение полетов',
+            ],
+            'Технология авиационных перевозок' => [
+                'kz' => '6B07122 Авиациялық тасымалдау технологиясы',
+                'en' => '6B07122 Aviation transportation technology',
+                'ru' => '6B07122 Технология авиационных перевозок',
+            ],
+            'Логистика на транспорте' => [
+                'kz' => '6B11306 Көліктегі логистика',
+                'en' => '6B11306 Logistics in transport',
+                'ru' => '6B11306 Логистика на транспорте',
+            ],
+            'Системная интеграция наземного обслуживания' => [
+                'kz' => '6B11307 Жер үсті қызметін көрсетуді жүйелік интеграциялау',
+                'en' => '6B11307 Ground handling system integration',
+                'ru' => '6B11307 Системная интеграция наземного обслуживания',
+            ],
+            'Авиационная безопасность и интеллектуальные системы' => [
+                'kz' => '6B07121 Авиациялық қауіпсіздік және зияткерлік жүйелер',
+                'en' => '6B07121 Aviation security and intelligent systems',
+                'ru' => '6B07121 Авиационная безопасность и интеллектуальные системы',
+            ],
+            'Авиационная техника и технологии (научно-педагогическая магистратура)' => [
+                'kz' => '7M07101 Авиациялық техника және технологиялар (ғылыми-педагогикалық магистратура)',
+                'en' => '7M07101 Aviation equipment and technologies (scientific and pedagogical Master\'s degree)',
+                'ru' => '7M07101 Авиационная техника и технологии (научно-педагогическая магистратура)',
+            ],
+            'Авиационная техника и технологии (профильная магистратура)' => [
+                'kz' => '7M07102 Авиациялық техника және технологиялар (бейіндік магистратура)',
+                'en' => '7M07102 Aviation equipment and technologies (specialized Master\'s degree)',
+                'ru' => '7M07102 Авиационная техника и технологии (профильная магистратура)',
+            ],
+            'Летная эксплуатация летательных аппаратов и двигателей' => [
+                'kz' => '7M07111 Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану',
+                'en' => '7M07111 Flight operation of aircraft and engines',
+                'ru' => '7M07111 Летная эксплуатация летательных аппаратов и двигателей',
+            ],
+            'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)' => [
+                'kz' => '7M07112 Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану',
+                'en' => '7M07112 Operation of aircraft and engines in flight',
+                'ru' => '7M07112 Летная эксплуатация летательных аппаратов и двигателей',
+            ],
+            // 'Логистика на транспорте (научно-педагогическая магистратура)' => [
+            //     'kz' => '7M11304 Көліктегі логистика (ғылыми-педагогикалық магистратура)',
+            //     'en' => '7M11304 Logistics in Transport (scientific and pedagogical Master\'s degree)',
+            //     'ru' => '7M11304 Логистика на транспорте (научно-педагогическая магистратура)',
+            // ],
+            // 'Логистика на транспорте (профильная магистратура)' => [
+            //     'kz' => '7M11303 Көліктегі логистика (бейіндік магистратура)',
+            //     'en' => '7M11303 Logistics in Transport (specialized Master\'s degree)',
+            //     'ru' => '7M11303 Логистика на транспорте (профильная магистратура)',
+            // ],
+            'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)' => [
+                'kz' => '7M11302 Тасымалдауды, қозғалысты ұйымдастыру және көлікті пайдалану (ғылыми-педагогикалық магистратура)',
+                'en' => '7M11302 Organization of transportation, movement and operation of transport (scientific and pedagogical Master\'s degree)',
+                'ru' => '7M11302 Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)',
+            ],
+            'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' => [
+                'kz' => '7M11301 Тасымалдауды, қозғалысты ұйымдастыру және көлікті пайдалану (бейіндік магистратура)',
+                'en' => '7M11301 Organization of transportation, movement and operation of transport (specialized Master\'s degree)',
+                'ru' => '7M11301 Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)',
+            ],
+            'Авиационная техника и технологии' => [
+                'kz' => '8D07101 Авиациялық техника және технологиялар',
+                'en' => '8D07101 Aviation equipment and technologies',
+                'ru' => '8D07101 Авиационная техника и технологии',
+            ],
+            'Летная эксплуатация летательных аппаратов и двигателей' => [
+                'kz' => '8D07102 Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану',
+                'en' => '8D07102 Flight operation of aircraft and engines',
+                'ru' => '8D07102 Летная эксплуатация летательных аппаратов и двигателей',
+            ],
+        ];
+
+        // 2. Берём перевод из массива или пустую строку, если нет ключа
+        $translations = $programTranslations[$data->programms] ?? ['kz' => '', 'en' => '', 'ru' => ''];
+        $programsRu = $translations['ru'];
+        $programsKz = $translations['kz'];
+        $programsEn = $translations['en'];
+
+        $type = trim((string)$data->type);
+        $word_in_middle = match ($type) {
+            'Бакалавриат'   => 'первого',
+            'Магистратура',
+            'Докторантура'  => 'в',
+            default         => '',
+        };
+        //свидетельство гранта / собеседование / сертификат ент Бакалавр
+        if ($data->type ==="Бакалавриат"){
+            if ($data->grant_certificate == 1) {
+                $statment = [
+                                'kz' => "Өтініш, білім беру грантын беру туралы куәлік, білім беру қызметтерін көрсетуге арналған шарт",
+                                'ru' => "Заявление, свидетельство о присуждении образовательного гранта, договор на оказания образовательных услуг",
+                            ];
+            } else if ($data->ent_certificate == 1) {
+                $statment = [
+                    'kz' => "Өтініш, ҰБТ сертификаты, ақылы білім беру қызметтерін көрсетуге арналған шарт",
+                    'ru' => "Заявление, сертификат ЕНТ, договор на оказания платных образовательных услуг",
+                ];
+            } else {
+                $statment = [
+                    'kz' => "Өтініш, сұхбаттасу хаттамасы, ақылы білім беру қызметтерін көрсетуге арналған шарт.",
+                    'ru' => "Заявление, протокол собеседования, договор на оказания платных образовательных услуг",
+                ];
+            }
+        }
+        //свидетельство гранта / собеседование / сертификат кт Магистр и Доктор
+        if ($data->type ==="Магистратура" && $data->type ==="Докторантура"){
+            if ($data->grant_certificate == 1) {
+                $statment = [
+                    'kz' => "Өтініш, білім беру грантын беру туралы куәлік, білім беру қызметтерін көрсетуге арналған шарт",
+                    'ru' => "Заявление, свидетельство о присуждении образовательного гранта, договор на оказания образовательных услуг",
+                ];
+            } else if ($data->ent_certificate == 1) {
+                $statment = [
+                    'kz' => "Өтініш, КТ сертификаты, ақылы білім беру қызметтерін көрсетуге арналған шарт",
+                    'ru' => "Заявление, сертификат КТ, договор на оказания платных образовательных услуг",
+                ];
+            } else {
+                $statment = [
+                    'kz' => "Өтініш, сұхбаттасу хаттамасы, ақылы білім беру қызметтерін көрсетуге арналған шарт.",
+                    'ru' => "Заявление, протокол собеседования, договор на оказания платных образовательных услуг",
+                ];
+            }
+        }
+
+        if ($data->type ==="Бакалавриат"){
+            $type = [
+                'kz' => "бакалавриат",
+                'ru' => "бакалавриата",
+            ];
+        } else if ($data->type ==="Магистратура"){
+            $type = [
+                'kz' => "магистратура",
+                'ru' => "магистратуры",
+            ];
+        } else if ($data->type ==="Докторантура"){
+            $type = [
+                'kz' => "докторантура",
+                'ru' => "докторантуры",
+            ];
+        }
+
+        $typeKz = $type['kz'];
+        $typeRU = $type['ru'];
+
+        if ($data->grant_certificate == 1) {
+            $statment2 = [
+                'kz' => "мемлекеттік грант негізінде",
+                'ru' => "по государственному образовательному гранту",
+            ];
+        } else {
+            $statment2 = [
+                'kz' => "ақылы оқыту негізінде",
+                'ru' => "на платной основе",
+            ];
+        }
+
+        $statmentKz = $statment['kz'];
+        $statmentRU = $statment['ru'];
+
+        $statment2Kz = $statment2['kz'];
+        $statment2RU = $statment2['ru'];
+
+        $spreadsheet = IOFactory::load(public_path('word-templates/123_updated_placeholders.xlsx'));
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $map = [
+            '{{surname}}' => $data->surname,
+            '{{name}}' => $data->name,
+            '{{patronymic}}' => $data->patronymic,
+            '{{lang_edu}}' => $data->lang_edu,
+            '{{type}}' => $data->type,
+            '{{iin}}' => $data->iin,
+            '{{order_date}}' => $data->order_date,
+            '{{order_number}}' => $data->order_number,
+            '{{private_code}}' => $data->private_code,
+            '{{programs_ru}}'  => $programsRu,
+            '{{programs_kz}}'  => $programsKz,
+            '{{programs_en}}'  => $programsEn,
+            '{{word_in_middle}}' => $word_in_middle,
+            '{{statment_ru}}'  => $statmentRU,
+            '{{statment_kz}}'  => $statmentKz,
+            '{{statment_ru_2}}'  => $statment2RU,
+            '{{statment_kz_2}}'  => $statment2Kz,
+            '{{type_kz}}'  => $typeKz,
+            '{{type_ru}}'  => $typeRU,
+        ];
+
+        foreach ($sheet->getRowIterator() as $row) {
+            foreach ($row->getCellIterator() as $cell) {
+                $value = $cell->getValue();
+                if (!is_string($value)) {
+                    continue;
+                }
+                // Накопительная замена
+                foreach ($map as $key => $replacement) {
+                    // если в строке встретился плейсхолдер — заменяем в текущем $value
+                    if (strpos($value, $key) !== false) {
+                        $value = str_replace($key, $replacement, $value);
+                    }
+                }
+
+                // единожды пишем итоговую строку в ячейку
+                $cell->setValue($value);
+            }
+        }
+
+        $writer = new Xlsx($spreadsheet);
+
+        return response()->streamDownload(function () use ($writer) {
+            $writer->save('php://output');
+        }, $data->surname . ' (выписка).xlsx');
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -1213,6 +1472,10 @@ class DocumentsController extends Controller
                 $data->udostov_copy = $request->udostov;
 
                 $data->have_grant = $request->grant;
+                $data->order_number = $request->order_number;
+                $data->private_code = $request->private_code;
+                $data->order_date = $request->order_date;
+
 
                 if ($request->hasFile('vlekImage')) {
                     $request->validate([
@@ -1257,4 +1520,7 @@ class DocumentsController extends Controller
     public function destroy(Request $request)
     {
     }
+
 }
+
+

@@ -366,13 +366,15 @@
                                         <div class="block">
                                             <h5 class="block__title">Дата рождения</h5>
                                             <input
-                                                type="date"
-                                                name="birthdate"
-                                                class="block__info"
-                                                value="{{ old('birthdate', \Carbon\Carbon::parse($item->birthdate)->format('Y-m-d')) }}"
-                                                required
+                                              type="date"
+                                              name="birthdate"
+                                              class="block__info"
+                                              required
+                                              value="{{ old('birthdate', $item->birthdate ?? '') }}"
                                             >
                                         </div>
+
+
                                         @endif
                                         @if ($item->gender !== NULL)
                                         <div class="block">

@@ -100,6 +100,13 @@
                                         </h5>
                                     </div>
                                     <hr>
+                                    <div>
+                                        <h5 class="block__info">Выписка
+                                            <a href="{{ url('admin/enrollee/documents/exl-export/' . $item->applid) }}"
+                                                class="btn btn-info float-right">Скачать(.docx)</a>
+                                        </h5>
+                                    </div>
+                                    <hr>
                                     <div class="block">
                                         <h5 class="block__info">Личное дело
                                             <a href="{{ url('admin/enrollee/documents/word-statements/' . $item->applid) }}"
@@ -536,6 +543,26 @@
                                                 <option value="Отказ" @if ($item->process === 'Отказ') selected @endif>
                                                     Отказ</option>
                                             </select>
+                                        </div>
+                                        <div class="block">
+                                            <h5 class="block__title">Дата приказа</h5>
+                                            <input
+                                              type="date"
+                                              name="order_date"
+                                              class="block__info"
+                                              required
+                                              value="{{ old('order_date', $item->order_date ?? '') }}"
+                                            >
+                                        </div>
+                                        <div class="block">
+                                            <h5 class="block__title">Номер приказа</h5>
+                                            <input type="text" value="{!! $item->order_number !!}" name="order_number"
+                                                class="block__info">
+                                        </div>
+                                        <div class="block">
+                                            <h5 class="block__title">Личный код</h5>
+                                            <input type="text" value="{!! $item->private_code !!}" name="private_code"
+                                                class="block__info">
                                         </div>
                                         <div class="block">
                                             <h5 class="block__title">Параметры расписки</h5>
