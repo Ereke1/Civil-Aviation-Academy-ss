@@ -179,32 +179,6 @@
         </div><!--/.owl-carousel-->
     </section><!--/#main-slider-->
 
-    {{-- <section id="services" class="services">
-        <div class="container">
-
-            <div class="title text-center wow animated zoomInDown">
-                <h2>{{ __('Телефоны горячей линии Ситуационного центра') }} </span></h2>
-                <div class="border"></div>
-            </div>
-
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-                    <div class="icon-box virtual_adm">
-                        <h4 class="text-center"><img align="center" alt="Whatsapp Logo Vector SVG Icon - SVG Repo" src="https://www.svgrepo.com/show/303236/whatsapp-logo.svg" style="width: 350px; height: 160px;" /></h4>
-                        <h4 class="text-center"><a class="stretched-link" href="https://wa.me/77273469208">{{ __('Горячая линия') }}</a></h4>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
-                    <div class="icon-box virtual_adm">
-                        <h4 class="text-center"><img align="center" alt="Whatsapp Logo Vector SVG Icon - SVG Repo" src="https://www.svgrepo.com/show/303236/whatsapp-logo.svg" style="width: 350px; height: 160px;" /></h4>
-                        <h4 class="text-center"><a class="stretched-link text-center" href="https://wa.me/77020244512">{{ __('Горячая линия') }}</a></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
     <section id="services" class="services">
         <div class="container">
 
@@ -269,6 +243,10 @@
                                 class="stretched-link">{{ __('Онлайн оплата') }}</a></h4>
                         <p>{{ __('Безкомиссионная онлайн оплата за обучение. Инструкция для оплаты за обучение.') }}</p>
                     </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
+
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 wow fadeInUp">
