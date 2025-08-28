@@ -442,7 +442,11 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_group_ru', 'D106 - Летная эксплуатация летательных аппаратов и двигателей');
             $templateProcessor->setValue('programs_group_en', 'D106 – Flight operation of aircraft and engines');
             $templateProcessor->setValue('programs_group_kz', 'D106 - Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану');
-        } else {
+        }else if ($data->programms === 'Логистика на транспорте (профильная магистратура)' || $data->programms === 'Логистика на транспорте (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М152 – Логистика на транспорте');
+            $templateProcessor->setValue('programs_group_en', 'М152 – Logistics in Transport');
+            $templateProcessor->setValue('programs_group_kz', 'М152 – Көліктегі логистика'); 
+        }else {
             $templateProcessor->setValue('programs_group_ru', 'В067 – Воздушный транспорт и технологии');
             $templateProcessor->setValue('programs_group_en', 'В067 – Air transport and technology');
             $templateProcessor->setValue('programs_group_kz', 'В067 – Әуе көлігі және технологиялары');
@@ -505,7 +509,14 @@ class DocumentsController extends Controller
        } else if ($data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
            $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (ғылыми-педагогикалық магистратура)');
            $templateProcessor->setValue('programs_en', 'Aviation equipment and technologies (scientific and pedagogical direction)');
-       } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
+       }  else if ($data->programms === 'Логистика на транспорте (профильная магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Көліктегі логистика (бейіндік магистратура)');
+           $templateProcessor->setValue('programs_en', 'Logistics in Transport (profile direction)');
+       } else if ($data->programms === 'Логистика на транспорте (научно-педагогическая магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Көліктегі логистика (ғылыми-педагогикалық магистратура)');
+           $templateProcessor->setValue('programs_en', 'Logistics in Transport (scientific and pedagogical direction)');
+       } 
+       else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану (ғылыми-педагогикалық магистратура)');
            $templateProcessor->setValue('programs_en', 'Flight operation of aircraft and engines (scientific and pedagogical direction)');
        } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)') {
@@ -606,7 +617,7 @@ class DocumentsController extends Controller
         if ($data->type === 'Бакалавриат') {
             $templateProcessor->setValue('cr', '240');
         } else if ($data->type === 'Магистратура') {
-            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)'){
+            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Логистика на транспорте (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)'){
                 $templateProcessor->setValue('cr', '60');
             } else {
                 $templateProcessor->setValue('cr', '120');
@@ -680,10 +691,15 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_group_en', 'В095 – Transport services');
             $templateProcessor->setValue('programs_group_kz', 'В095 – Көлік қызметтері');
         } else if ($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
-            $templateProcessor->setValue('programs_group_ru', 'М105 – Авиационная техника и технологии');
-            $templateProcessor->setValue('programs_group_en', 'М105 – Aviation equipment and technologies');
-            $templateProcessor->setValue('programs_group_kz', 'М105 – Авиациялық техника және технологиялар');
-        } else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М152 – Авиационная техника и технологии');
+            $templateProcessor->setValue('programs_group_en', 'М152 – Aviation equipment and technologies');
+            $templateProcessor->setValue('programs_group_kz', 'М152 – Авиациялық техника және технологиялар');
+        } else if ($data->programms === 'Логистика на транспорте (профильная магистратура)' || $data->programms === 'Логистика на транспорте (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_group_ru', 'М152 – Логистика на транспорте');
+            $templateProcessor->setValue('programs_group_en', 'М152 – Logistics in Transport');
+            $templateProcessor->setValue('programs_group_kz', 'М152 – Көліктегі логистика');
+        } 
+        else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') {
             $templateProcessor->setValue('programs_group_ru', 'М151 – Транспортные услуги');
             $templateProcessor->setValue('programs_group_en', 'М151 – Transport services');
             $templateProcessor->setValue('programs_group_kz', 'М151 – Көлік қызметі');
@@ -758,6 +774,12 @@ class DocumentsController extends Controller
        } else if ($data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
            $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (ғылыми-педагогикалық магистратура)');
            $templateProcessor->setValue('programs_en', 'Aviation equipment and technologies (scientific and pedagogical direction)');
+       }else if ($data->programms === 'Логистика на транспорте (профильная магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Көліктегі логистика (бейіндік магистратура)');
+           $templateProcessor->setValue('programs_en', 'Logistics in Transport (profile direction)');
+       } else if ($data->programms === 'Логистика на транспорте (научно-педагогическая магистратура)') {
+           $templateProcessor->setValue('programs_kz', 'Көліктегі логистика (ғылыми-педагогикалық магистратура)');
+           $templateProcessor->setValue('programs_en', 'Logistics in Transport (scientific and pedagogical direction)');
        } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану (ғылыми-педагогикалық магистратура)');
            $templateProcessor->setValue('programs_en', 'Flight operation of aircraft and engines (scientific and pedagogical direction)');
@@ -859,7 +881,7 @@ class DocumentsController extends Controller
         if ($data->type === 'Бакалавриат') {
             $templateProcessor->setValue('cr', '240');
         } else if ($data->type === 'Магистратура') {
-            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)'){
+            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || 'Логистика на транспорте (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)'){
                 $templateProcessor->setValue('cr', '60');
             } else {
                 $templateProcessor->setValue('cr', '120');
@@ -953,7 +975,11 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (бейіндік магистратура)');
         } else if ($data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
             $templateProcessor->setValue('programs_kz', 'Авиациялық техника және технологиялар (ғылыми-педагогикалық магистратура)');
-        } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
+        } else if ($data->programms === 'Логистика на транспорте (профильная магистратура)') {
+            $templateProcessor->setValue('programs_kz', 'Көліктегі логистика (бейіндік магистратура)');
+        } else if ($data->programms === 'Логистика на транспорте (научно-педагогическая магистратура)') {
+            $templateProcessor->setValue('programs_kz', 'Көліктегі логистика (ғылыми-педагогикалық магистратура)');
+        }else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану (ғылыми-педагогикалық магистратура)');
         } else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану (бейіндік магистратура)');
@@ -1056,7 +1082,7 @@ class DocumentsController extends Controller
         if ($data->type === 'Бакалавриат') {
             $templateProcessor->setValue('cr', '240');
         } else if ($data->type === 'Магистратура') {
-            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)'){
+            if($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || 'Логистика на транспорте (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)'){
                 $templateProcessor->setValue('cr', '60');
             } else {
                 $templateProcessor->setValue('cr', '120');
@@ -1179,6 +1205,16 @@ class DocumentsController extends Controller
                 'kz' => '7M07102 Авиациялық техника және технологиялар (бейіндік магистратура)',
                 'en' => '7M07102 Aviation equipment and technologies (specialized Master\'s degree)',
                 'ru' => '7M07102 Авиационная техника и технологии (профильная магистратура)',
+            ],
+             'Логистика на транспорте (научно-педагогическая магистратура)' => [
+                'kz' => '7M11304 Көліктегі логистика (ғылыми-педагогикалық магистратура)',
+                'en' => '7M11304 Logistics in Transport (scientific and pedagogical Master\'s degree)',
+                'ru' => '7M11304 Логистика на транспорте (научно-педагогическая магистратура)',
+            ],
+            'Логистика на транспорте (профильная магистратура)' => [
+                'kz' => '7M11303 Көліктегі логистика (бейіндік магистратура)',
+                'en' => '7M11303 Logistics in Transport (specialized Master\'s degree)',
+                'ru' => '7M11303 Логистика на транспорте (профильная магистратура)',
             ],
             'Летная эксплуатация летательных аппаратов и двигателей (профильная магистратура)' => [
                 'kz' => '7M07111 Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану',
