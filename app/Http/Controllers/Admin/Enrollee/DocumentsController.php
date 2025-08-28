@@ -691,9 +691,9 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_group_en', 'В095 – Transport services');
             $templateProcessor->setValue('programs_group_kz', 'В095 – Көлік қызметтері');
         } else if ($data->programms === 'Авиационная техника и технологии (профильная магистратура)' || $data->programms === 'Авиационная техника и технологии (научно-педагогическая магистратура)') {
-            $templateProcessor->setValue('programs_group_ru', 'М152 – Авиационная техника и технологии');
-            $templateProcessor->setValue('programs_group_en', 'М152 – Aviation equipment and technologies');
-            $templateProcessor->setValue('programs_group_kz', 'М152 – Авиациялық техника және технологиялар');
+            $templateProcessor->setValue('programs_group_ru', 'М105 – Авиационная техника и технологии');
+            $templateProcessor->setValue('programs_group_en', 'М105 – Aviation equipment and technologies');
+            $templateProcessor->setValue('programs_group_kz', 'М105 – Авиациялық техника және технологиялар');
         } else if ($data->programms === 'Логистика на транспорте (профильная магистратура)' || $data->programms === 'Логистика на транспорте (научно-педагогическая магистратура)') {
             $templateProcessor->setValue('programs_group_ru', 'М152 – Логистика на транспорте');
             $templateProcessor->setValue('programs_group_en', 'М152 – Logistics in Transport');
