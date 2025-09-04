@@ -461,6 +461,9 @@ class DocumentsController extends Controller
         } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
             $templateProcessor->setValue('programs_en', 'Technical operation of aircraft avionics systems');
+        } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
+            $templateProcessor->setValue('programs_en', 'Technical operation of aircraft avionics systems');
         } else if ($data->programms === 'Техническая эксплуатация летательных аппаратов и двигателей') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды техникалық пайдалану');
             $templateProcessor->setValue('programs_en', 'Technical operation of aircraft and engines');
@@ -718,7 +721,10 @@ class DocumentsController extends Controller
         } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
             $templateProcessor->setValue('programs_en', 'Technical operation of aircraft avionics systems');
-        } else if ($data->programms === 'Техническая эксплуатация летательных аппаратов и двигателей') {
+        } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
+            $templateProcessor->setValue('programs_en', 'Technical operation of aircraft avionics systems');
+        }else if ($data->programms === 'Техническая эксплуатация летательных аппаратов и двигателей') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды техникалық пайдалану');
             $templateProcessor->setValue('programs_en', 'Technical operation of aircraft and engines');
         } else if ($data->programms === 'Технология авиационных перевозок') {
@@ -924,6 +930,8 @@ class DocumentsController extends Controller
         } else if ($data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
             $templateProcessor->setValue('programs_kz', 'Әуе қозғалысына қызмет көрсету және ұшуда аэронавигациялық қамтамасыз ету  (авиадиспетчер)');
         } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей') {
+            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
+        } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
         } else if ($data->programms === 'Техническая эксплуатация летательных аппаратов и двигателей') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды техникалық пайдалану');
@@ -1219,6 +1227,21 @@ class DocumentsController extends Controller
                 'kz' => '8D07102 Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану',
                 'en' => '8D07102 Flight operation of aircraft and engines',
                 'ru' => '8D07102 Летная эксплуатация летательных аппаратов и двигателей',
+            ],
+            'Организация авиационных перевозок' => [
+                'kz' => '6B11305 Авиациялық тасымалдауды ұйымдастыру',
+                'en' => '6B11305 Организация авиационных перевозок',
+                'ru' => '6B11305 Организация авиационных перевозок',
+            ],
+            'Обеспечение авиационной безопасности' => [
+                'kz' => '6B07110 Авиациялық қауіпсіздікті қамтамасыз ету',
+                'en' => '6B07110 Авиациялық қауіпсіздікті қамтамасыз ету',
+                'ru' => '6B07110 Обеспечение авиационной безопасности',
+            ],
+            'Техническая эксплуатация систем авионики летательных аппаратов' => [
+                'kz' => '6B07102 Ұшу аппараттарының авионика жүйелерін техникалық пайдалану',
+                'en' => '6B07102 Ұшу аппараттарының авионика жүйелерін техникалық пайдалану',
+                'ru' => '6B07102 Техническая эксплуатация систем авионики летательных аппаратов',
             ],
         ];
 
