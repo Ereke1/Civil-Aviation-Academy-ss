@@ -445,7 +445,7 @@ class DocumentsController extends Controller
         }else if ($data->programms === 'Логистика на транспорте (профильная магистратура)' || $data->programms === 'Логистика на транспорте (научно-педагогическая магистратура)') {
             $templateProcessor->setValue('programs_group_ru', 'М152 – Логистика на транспорте');
             $templateProcessor->setValue('programs_group_en', 'М152 – Logistics in Transport');
-            $templateProcessor->setValue('programs_group_kz', 'М152 – Көліктегі логистика'); 
+            $templateProcessor->setValue('programs_group_kz', 'М152 – Көліктегі логистика');
         }else {
             $templateProcessor->setValue('programs_group_ru', 'В067 – Воздушный транспорт и технологии');
             $templateProcessor->setValue('programs_group_en', 'В067 – Air transport and technology');
@@ -518,7 +518,7 @@ class DocumentsController extends Controller
        } else if ($data->programms === 'Логистика на транспорте (научно-педагогическая магистратура)') {
            $templateProcessor->setValue('programs_kz', 'Көліктегі логистика (ғылыми-педагогикалық магистратура)');
            $templateProcessor->setValue('programs_en', 'Logistics in Transport (scientific and pedagogical direction)');
-       } 
+       }
        else if ($data->programms === 'Летная эксплуатация летательных аппаратов и двигателей (научно-педагогическая магистратура)') {
            $templateProcessor->setValue('programs_kz', 'Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану (ғылыми-педагогикалық магистратура)');
            $templateProcessor->setValue('programs_en', 'Flight operation of aircraft and engines (scientific and pedagogical direction)');
@@ -701,7 +701,7 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_group_ru', 'М152 – Логистика на транспорте');
             $templateProcessor->setValue('programs_group_en', 'М152 – Logistics in Transport');
             $templateProcessor->setValue('programs_group_kz', 'М152 – Көліктегі логистика');
-        } 
+        }
         else if ($data->programms === 'Организация перевозок, движения и эксплуатация транспорта (профильная магистратура)' || $data->programms === 'Организация перевозок, движения и эксплуатация транспорта (научно-педагогическая магистратура)') {
             $templateProcessor->setValue('programs_group_ru', 'М151 – Транспортные услуги');
             $templateProcessor->setValue('programs_group_en', 'М151 – Transport services');
@@ -1275,6 +1275,11 @@ class DocumentsController extends Controller
                 'ru' => '6B07110 Обеспечение авиационной безопасности',
             ],
             'Техническая эксплуатация систем авионики летательных аппаратов' => [
+                'kz' => '6B07102 Ұшу аппараттарының авионика жүйелерін техникалық пайдалану',
+                'en' => '6B07102 Ұшу аппараттарының авионика жүйелерін техникалық пайдалану',
+                'ru' => '6B07102 Техническая эксплуатация систем авионики летательных аппаратов',
+            ],
+            'Техническая эксплуатация систем авионики летательных аппаратов и двигателей' => [
                 'kz' => '6B07102 Ұшу аппараттарының авионика жүйелерін техникалық пайдалану',
                 'en' => '6B07102 Ұшу аппараттарының авионика жүйелерін техникалық пайдалану',
                 'ru' => '6B07102 Техническая эксплуатация систем авионики летательных аппаратов',
