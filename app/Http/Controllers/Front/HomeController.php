@@ -17,16 +17,16 @@ class HomeController extends Controller
 		$libtree = LibraryNavigation::tree();
 		$news = News::where('compliance', 0)->orderBy('publish_at', 'desc')->take(4)->get();
 		$events = Event::orderBy('publish_at', 'desc')->take(5)->get();
-		//return view('front.index', compact('tree', 'news', 'events'));
+		return view('front.index', compact('tree', 'news', 'events'));
 		$myvar = "<script> localStorage.getItem('welcomInfo')</script>";
 
         // return view('front.index', compact('tree', 'news', 'events'));
-		 if(isset($_COOKIE['welcomeAGA'])){
+		 /*if(isset($_COOKIE['welcomeAGA'])){
 			  return view('front.index', compact('tree', 'news', 'events'));
 		  }else{
 		  	setcookie('welcomeAGA', 'yes', time() + (86400 * 15), "/");
 		  	return view('welcome', compact('tree', 'news', 'events'));
              return view('front.index', compact('tree', 'news', 'events'));
-		  }
+		  }*/
 	}
 }
