@@ -43,12 +43,12 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td>Профессор/Профессор АГА/Ассоциированный профессор/Ассоциированный профессор АГА/Ассистент-профессор</td>
+                                <td>Сениор-лектор</td>
                                 <td>1</td>
                                 <td>Профилирующие дисциплины по направлению: авиационная техника и технологии, радиотехника</td>
                               </tr>
                               <tr>
-                                <td>Сениор-лектор</td>
+                                <td>Ассистент-преподаватель</td>
                                 <td>1</td>
                                 <td>Профилирующие дисциплины по направлению авиационная техника и технологии</td>
                               </tr>
@@ -67,12 +67,12 @@
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
-                                  <td>1</td>
-                                  <td>Авиациялық техника және технологиялар, радиотехника, электроника және коммуникациялар бағыты бойынша бейіндік пәндер</td>
-                                </tr>
+                                    <td>Сениор-лектор</td>
+                                    <td>1</td>
+                                    <td>Авиациялық техника және технологиялар, радиотехника, электроника және коммуникациялар бағыты бойынша бейіндік пәндер</td>
+                                  </tr>
                                 <tr>
-                                  <td>Сениор-лектор</td>
+                                  <td>Ассистент-оқытушы</td>
                                   <td>1</td>
                                   <td>Авиациялық техника және технологиялар бағыты бойынша бейіндеуші пәндер</td>
                                 </tr>
@@ -91,12 +91,12 @@
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
-                                  <td>1</td>
-                                  <td>Major disciplines in the field of aviation engineering and technology, radio engineering, electronics and communications</td>
-                                </tr>
+                                    <td>Senior Lecturer</td>
+                                    <td>1</td>
+                                    <td>Major disciplines in the field of aviation engineering and technology, radio engineering, electronics and communications</td>
+                                  </tr>
                                 <tr>
-                                  <td>Senior Lecturer</td>
+                                  <td>Teaching Assistant</td>
                                   <td>1</td>
                                   <td>Major disciplines in the field of aviation engineering and technology</td>
                                 </tr>
@@ -134,15 +134,15 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
+                                {{-- <tr>
                                   <td>Заведующий кафедрой</td>
                                   <td>1</td>
                                   <td></td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                   <td>Профессор/Профессор АГА/ Ассоциированный профессор/Ассоциированный профессор АГА/Ассистент-профессор</td>
                                   <td>1</td>
-                                  <td>Русский язык</td>
+                                  <td>Казахский язык</td>
                                 </tr>
                                 <tr>
                                   <td>Сениор-лектор</td>
@@ -154,11 +154,11 @@
                                   <td>1</td>
                                   <td>Английский язык</td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td>Ассистент преподаватель</td>
                                     <td>1</td>
                                     <td>Английский язык</td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                   <td>Сениор-лектор</td>
                                   <td>2</td>
@@ -178,15 +178,15 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
+                                {{-- <tr>
                                   <td>Кафедра меңгерушісі</td>
                                   <td>1</td>
                                   <td></td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                   <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
                                   <td>1</td>
-                                  <td>Орыс тілі</td>
+                                  <td>Қазақ тілі</td>
                                 </tr>
                                 <tr>
                                   <td>Сениор-лектор</td>
@@ -198,11 +198,11 @@
                                   <td>1</td>
                                   <td>Ағылшын тілі</td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td>Ассистент оқытушы</td>
                                     <td>1</td>
                                     <td>Ағылшын тілі</td>
-                                  </tr>
+                                  </tr> --}}
                                 <tr>
                                   <td>Сениор-лектор</td>
                                   <td>2</td>
@@ -224,14 +224,9 @@
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>Head of Department</td>
-                                  <td>1</td>
-                                  <td></td>
-                                </tr>
-                                <tr>
                                   <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
                                   <td>1</td>
-                                  <td>Russian language</td>
+                                  <td>Kazakh language</td>
                                 </tr>
                                 <tr>
                                   <td>Senior Lecturer</td>
@@ -243,11 +238,6 @@
                                   <td>1</td>
                                   <td>English language</td>
                                 </tr>
-                                <tr>
-                                    <td>Teaching assistant</td>
-                                    <td>1</td>
-                                    <td>English language</td>
-                                  </tr>
                                 <tr>
                                   <td>Senior Lecturer</td>
                                   <td>2</td>
@@ -288,8 +278,8 @@
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>Профессор / Профессор АГА / Ассоциированный профессор / Ассистент-профессор</td>
-                                  <td>1</td>
+                                  <td>Профессор/Профессор АГА/ Ассоциированный профессор/Ассоциированный профессор АГА/Ассистент-профессор</td>
+                                  <td>0.5</td>
                                   <td>
                                     1. Руководство магистерскими диссертациями<br>
                                     2. Профилирующие дисциплины по ОП “Летная эксплуатация летательных аппаратов и двигателей”
@@ -297,9 +287,14 @@
                                 </tr>
                                 <tr>
                                   <td>Инструктор-преподаватель</td>
-                                  <td>5</td>
+                                  <td>4</td>
                                   <td>Пилот самолета с возможностью преподавания ATPL дисциплин</td>
                                 </tr>
+                                <tr>
+                                    <td>Сениор-лектор</td>
+                                    <td>1.5</td>
+                                    <td>Профилирующие дисциплины по ОП “Летная эксплуатация летательных аппаратов и двигателей”</td>
+                                  </tr>
                               </tbody>
                             </table>
                           </div>
@@ -316,7 +311,7 @@
                               <tbody>
                                 <tr>
                                   <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
-                                  <td>1</td>
+                                  <td>0.5</td>
                                   <td>
                                     1. Магистрлік диссертацияларға жетекшілік ету<br>
                                     2. "Ұшу аппараттары мен қозғалтқыштарды ұшуды пайдалану" білім беру бағдарламасы бойынша бейіндік пәндер
@@ -324,9 +319,14 @@
                                 </tr>
                                 <tr>
                                   <td>Нұсқаушы-оқытушы</td>
-                                  <td>5</td>
+                                  <td>4</td>
                                   <td>ATPL пәндерін оқыту мүмкіндігі бар ұшақ ұшқышы</td>
                                 </tr>
+                                <tr>
+                                    <td>Сениор-лектор</td>
+                                    <td>1.5</td>
+                                    <td>"Ұшу аппараттары мен қозғалтқыштарды ұшуды пайдалану" білім беру бағдарламасы бойынша бейіндік пәндер</td>
+                                  </tr>
                               </tbody>
                             </table>
                           </div>
@@ -345,14 +345,19 @@
                                   <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
                                   <td>1</td>
                                   <td>
-                                    1. Management of Master’s theses<br>
+                                    1. Management of Master's theses
                                     2. Major subjects in the educational program “Flight operation of aircraft and engines”
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>Instructor-teacher</td>
-                                  <td>5</td>
-                                  <td>An airplane pilot with the ability to teach ATPL disciplines</td>
+                                   <td>Instructor-teacher</td>
+                                   <td>4</td>
+                                   <td>An airplane pilot with the ability to teach ATPL disciplines</td>
+                                </tr>
+                                <tr>
+                                    <td>Senior Lecturer</td>
+                                    <td>1,5</td>
+                                    <td>Major subjects in the educational program “Flight operation of aircraft and engines”</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -362,7 +367,7 @@
                 </div>
             </div>
 
-            <div class="card mb-2">
+            {{-- <div class="card mb-2">
                 <a class="card-link" data-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseFour">
                     <div class="card-header"
                         style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
@@ -404,12 +409,13 @@
                                   <td>0,5</td>
                                   <td>Профилирующие дисциплины по ОП “Организация авиационных перевозок”</td>
                                 </tr>
+
                                 {{-- <tr>
                                   <td>Сениор-лектор</td>
                                   <td>0,5</td>
                                   <td>Профилирующие дисциплины по ОП “Организация авиационных перевозок”</td>
                                 </tr> --}}
-                              </tbody>
+                              {{-- </tbody>
                             </table>
                           </div>
                         @elseif(Config::get('app.locale') === 'kk')
@@ -438,17 +444,17 @@
                                   <td>Сениор-лектор</td>
                                   <td>0,5</td>
                                   <td>"Авиациялық тасымалдарды ұйымдастыру" ББ бойынша бейіндік пәндер</td>
-                                </tr>
+                                </tr> --}}
                                 {{-- <tr>
                                   <td>Сениор-лектор</td>
                                   <td>0,5</td>
                                   <td>"Авиациялық тасымалдарды ұйымдастыру" ББ бойынша бейіндік пәндер</td>
                                 </tr> --}}
-                              </tbody>
+                              {{-- </tbody>
                             </table>
-                        </div>
+                        </div> --}}
 
-                        @else
+                        {{-- @else
                         <div class="table-responsive">
                             <table class="table table-bordered" style="margin: 0%">
                               <thead class="thead-light">
@@ -474,7 +480,7 @@
                                   <td>1</td>
                                   <td>The core disciplines of the OP “Aviation security”</td>
                                 </tr> --}}
-                                <tr>
+                                {{-- <tr>
                                   <td>Senior Lecturer</td>
                                   <td>0.5</td>
                                   <td>Profile disciplines in the OP “Organization of air transportation”</td>
@@ -483,9 +489,9 @@
                             </table>
                           </div>
                         @endif
-                    </div>
-                </div>
-            </div>
+                    </div> --}}
+                {{-- </div>
+            </div> --}}
 
             <div class="card mb-2">
                 <a class="card-link" data-toggle="collapse" href="#collapseFive" role="button" aria-expanded="false" aria-controls="collapseFive">
@@ -579,14 +585,19 @@
                                   <td>Философия</td>
                                 </tr> --}}
                                 <tr>
-                                  <td>Сениор-лектор</td>
-                                  <td>1</td>
-                                  <td>Социология</td>
+                                  <td>Профессор/Профессор АГА/ Ассоциированный профессор/Ассоциированный профессор АГА/Ассистент-профессор</td>
+                                  <td>0.5</td>
+                                  <td>Психология</td>
                                 </tr>
                                 <tr>
-                                  <td>Сениор-лектор</td>
-                                  <td>1</td>
-                                  <td>Физическая культура</td>
+                                    <td>Заведующий спортивным клубом</td>
+                                    <td>1</td>
+                                    <td></td>
+                                  </tr>
+                                <tr>
+                                  <td>Профессор/Профессор АГА/ Ассоциированный профессор/Ассоциированный профессор АГА/Ассистент-профессор</td>
+                                  <td>0.5</td>
+                                  <td>Математика</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -668,14 +679,19 @@
                                   <td>Философия</td>
                                 </tr> --}}
                                 <tr>
-                                  <td>Сениор-лектор</td>
-                                  <td>1</td>
-                                  <td>Әлеуметтану</td>
+                                  <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
+                                  <td>0.5</td>
+                                  <td>Психология</td>
                                 </tr>
                                 <tr>
-                                  <td>Сениор-лектор</td>
-                                  <td>1</td>
-                                  <td>Дене шынықтыру</td>
+                                    <td>Спорт клубының меңгерушісі</td>
+                                    <td>1</td>
+                                    <td></td>
+                                  </tr>
+                                <tr>
+                                  <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
+                                  <td>0.5</td>
+                                  <td>Математика  </td>
                                 </tr>
                               </tbody>
                             </table>
@@ -758,14 +774,19 @@
                                   <td>Philosophy</td>
                                 </tr> --}}
                                 <tr>
-                                  <td>Senior Lecturer</td>
-                                  <td>1</td>
-                                  <td>Sociology</td>
+                                  <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
+                                  <td>0.5</td>
+                                  <td>Psychology</td>
                                 </tr>
                                 <tr>
-                                  <td>Senior Lecturer</td>
-                                  <td>1</td>
-                                  <td>Physical Culture</td>
+                                    <td>Head of the sports club</td>
+                                    <td>1</td>
+                                    <td></td>
+                                  </tr>
+                                <tr>
+                                  <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
+                                  <td>0.5</td>
+                                  <td>Mathematics</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -789,10 +810,10 @@
                 <hr>
                 <div class="mb-4">
                     <p>
-                        Прием документов проводится до <strong>15 августа 2025 года</strong> по адресу:
+                        Прием документов проводится до <strong>25 сентября 2025 года </strong> по адресу:
                         <br>
                         <span class="d-block">Ахметова 44, кабинет ADM 16 (Департамент HR)</span>
-                        <span class="d-block">и/или по электронному адресу: <a href="mailto:hr@agakaz.kz">hr@agakaz.kz</a> не позднее 23.59 часов 15 августа 2025 года.</span>
+                        <span class="d-block">и/или по электронному адресу: <a href="mailto:hr@agakaz.kz">hr@agakaz.kz</a> не позднее 23.59 часов 25 сентября 2025 года. </span>
                         <p>
                             Место проведения конкурса на замещение вакантных должностей профессорско-преподавательского состава АО «Академия гражданской авиации»:
                             <br>
@@ -868,10 +889,10 @@
                 <hr>
                 <div class="mb-4">
                     <p>
-                        Құжаттарды қабылдау Құжаттарды қабылдау <strong>2025 жылғы 15 тамызға дейін</strong> мекенжайы:
+                        Құжаттарды қабылдау Құжаттарды қабылдау <strong>2025 жылғы 25 қыркүйекке дейін</strong> мекенжайы:
                         <br>
                         <span class="d-block">Ахметова 44, ADM 16 кабинет (HR департаменті)</span>
-                        <span class="d-block">және/немесе электрондық мекенжайы бойынша жүргізіледі: hr@agakaz.kz 2025 жылғы 15 тамызда сағат 23.59-дан кешіктірмей.</span>
+                        <span class="d-block">және/немесе электрондық мекенжайы бойынша жүргізіледі: hr@agakaz.kz 2025 жылғы 25 қыркүйекке сағат 23.59-дан кешіктірмей.</span>
                         <p>
                             «Азаматтық авиация академиясы» АҚ профессор-оқытушылар құрамының бос лауазымдарына орналасуға конкурс өткізу орны:
                             <br>
@@ -942,9 +963,9 @@
                 <hr>
                 <div class="mb-4">
                     <p>
-                        Documents are accepted until <strong>until August 15, 2025</strong> at the address:
+                        Documents are accepted until <strong>September 25, 2025</strong> at the address:
                         <span class="d-block">Akhmetov 44, office ADM 16 (HR Department)</span>
-                        <span class="d-block">and/or by e-mail: <a href="mailto:hr@agakaz.kz">hr@agakaz.kz</a> no later than 23.59 hours on August 15, 2025.</span>
+                        <span class="d-block">and/or by e-mail: <a href="mailto:hr@agakaz.kz">hr@agakaz.kz</a> no later than 23.59 hours on September 25, 2025.</span>
                         <p>
                             The venue of the competition for the vacant positions of the teaching staff of JSC "Academy of Civil Aviation":
                             <br>
