@@ -45,7 +45,12 @@
                               <tr>
                                 <td>Сениор-лектор</td>
                                 <td>1</td>
-                                <td>Профилирующие дисциплины по направлению: авиационная техника и технологии, радиотехника</td>
+                                <td>Профилирующие дисциплины по направлению авиационная техника и технологии</td>
+                              </tr>
+                              <tr>
+                                <td>Профессор/Профессор АГА/ Ассоциированный профессор/Ассоциированный профессор АГА/Ассистент-профессор</td>
+                                <td>1</td>
+                                <td>Профилирующие дисциплины по направлению авиационная техника и технологии</td>
                               </tr>
                               <tr>
                                 <td>Ассистент-преподаватель</td>
@@ -69,7 +74,12 @@
                                 <tr>
                                     <td>Сениор-лектор</td>
                                     <td>1</td>
-                                    <td>Авиациялық техника және технологиялар, радиотехника, электроника және коммуникациялар бағыты бойынша бейіндік пәндер</td>
+                                    <td>Авиациялық техника және технологиялар бағыты бойынша бейіндеуші пәндер</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
+                                    <td>1</td>
+                                    <td>Авиациялық техника және технологиялар бағыты бойынша бейіндеуші пәндер</td>
                                   </tr>
                                 <tr>
                                   <td>Ассистент-оқытушы</td>
@@ -93,7 +103,12 @@
                                 <tr>
                                     <td>Senior Lecturer</td>
                                     <td>1</td>
-                                    <td>Major disciplines in the field of aviation engineering and technology, radio engineering, electronics and communications</td>
+                                    <td>Major disciplines in the field of aviation engineering and technology</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
+                                    <td>1</td>
+                                    <td>Major disciplines in the field of aviation engineering and technology</td>
                                   </tr>
                                 <tr>
                                   <td>Teaching Assistant</td>
