@@ -559,18 +559,33 @@
                                   <td>1</td>
                                   <td>Математика</td>
                                 </tr> --}}
-                                {{-- <tr>
+                                <tr>
+                                    <td>Сениор-лектор</td>
+                                    <td>1</td>
+                                    <td>Психология</td>
+                                </tr>
+                                <tr>
+                                    <td>Сениор-лектор</td>
+                                    <td>0.6</td>
+                                    <td>Физическая культура</td>
+                                  </tr>
+                                <tr>
                                   <td>Сениор-лектор</td>
                                   <td>1</td>
                                   <td>Математика</td>
-                                </tr> --}}
-                                {{-- <tr>
-                                  <td>Профессор / Профессор АГА / Ассоциированный профессор / Ассистент-профессор</td>
-                                  <td>1</td>
-                                  <td>Физика</td>
                                 </tr>
                                 <tr>
-                                  <td>Сениор-лектор</td>
+                                    <td>Сениор-лектор</td>
+                                    <td>1</td>
+                                    <td>Физика</td>
+                                </tr>
+                                <tr>
+                                    <td>Сениор-лектор</td>
+                                    <td>1</td>
+                                    <td>Инженерно-компьютерная графика</td>
+                                </tr>
+                                {{-- <tr>
+                                  <td>Профессор / Профессор АГА / Ассоциированный профессор / Ассистент-профессор</td>
                                   <td>1</td>
                                   <td>Физика</td>
                                 </tr>
@@ -599,7 +614,7 @@
                                   <td>1</td>
                                   <td>Философия</td>
                                 </tr> --}}
-                                <tr>
+                                {{-- <tr>
                                   <td>Профессор/Профессор АГА/ Ассоциированный профессор/Ассоциированный профессор АГА/Ассистент-профессор</td>
                                   <td>0.5</td>
                                   <td>Психология</td>
@@ -613,7 +628,7 @@
                                   <td>Профессор/Профессор АГА/ Ассоциированный профессор/Ассоциированный профессор АГА/Ассистент-профессор</td>
                                   <td>0.5</td>
                                   <td>Математика</td>
-                                </tr>
+                                </tr> --}}
                               </tbody>
                             </table>
                           </div>
@@ -694,6 +709,31 @@
                                   <td>Философия</td>
                                 </tr> --}}
                                 <tr>
+                                    <td>Сениор-лектор</td>
+                                    <td>1</td>
+                                    <td>Психология</td>
+                                </tr>
+                                <tr>
+                                    <td>Сениор-лектор</td>
+                                    <td>0.6</td>
+                                    <td>Дене шынықтыру</td>
+                                  </tr>
+                                <tr>
+                                  <td>Сениор-лектор</td>
+                                  <td>1</td>
+                                  <td>Математика</td>
+                                </tr>
+                                <tr>
+                                    <td>Сениор-лектор</td>
+                                    <td>1</td>
+                                    <td>Физика</td>
+                                </tr>
+                                <tr>
+                                    <td>Сениор-лектор</td>
+                                    <td>1</td>
+                                    <td>Инженерлік-компьютерлік графика</td>
+                                </tr>
+                                {{-- <tr>
                                   <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
                                   <td>0.5</td>
                                   <td>Психология</td>
@@ -707,7 +747,7 @@
                                   <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
                                   <td>0.5</td>
                                   <td>Математика  </td>
-                                </tr>
+                                </tr> --}}
                               </tbody>
                             </table>
                           </div>
@@ -788,7 +828,7 @@
                                   <td>1</td>
                                   <td>Philosophy</td>
                                 </tr> --}}
-                                <tr>
+                                {{-- <tr>
                                   <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
                                   <td>0.5</td>
                                   <td>Psychology</td>
@@ -802,6 +842,30 @@
                                   <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
                                   <td>0.5</td>
                                   <td>Mathematics</td>
+                                </tr> --}}
+                                <tr>
+                                    <td>Senior Lecturer</td>
+                                    <td>1</td>
+                                    <td>Psychology</td>
+                                </tr>
+                                <tr>
+                                    <td>Senior Lecturer</td>
+                                    <td>0.6</td>
+                                    <td>Physical education</td></tr>
+                                <tr>
+                                  <td>Senior Lecturer</td>
+                                  <td>1</td>
+                                  <td>Mathematics</td>
+                                </tr>
+                                <tr>
+                                    <td>Senior Lecturer</td>
+                                    <td>1</td>
+                                    <td>Physics</td>
+                                </tr>
+                                <tr>
+                                    <td>Senior Lecturer</td>
+                                    <td>1</td>
+                                    <td>Engineering and computer graphics</td>
                                 </tr>
                               </tbody>
                             </table>
