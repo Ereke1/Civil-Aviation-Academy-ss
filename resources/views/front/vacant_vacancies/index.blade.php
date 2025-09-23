@@ -443,12 +443,12 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
+                                {{-- <tr>
                                   <td>Білім беру бағдарламаларының жетекшісі
                                 </td>
                                   <td>1</td>
                                   <td></td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                   <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
                                   <td>1</td>
@@ -479,11 +479,11 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
+                                {{-- <tr>
                                   <td>Head of Department</td>
                                   <td>1</td>
                                   <td></td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                   <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
                                   <td>1</td>
