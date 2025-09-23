@@ -565,7 +565,7 @@
                                 </tr>
                                 <tr>
                                     <td>Заведующий спортивным клубом</td>
-                                    <td>0.6</td>
+                                    <td>1</td>
                                     <td>Физическая культура</td>
                                   </tr>
                                 <tr>
@@ -714,7 +714,7 @@
                                 </tr>
                                 <tr>
                                     <td>Спорт клубының меңгерушісі</td>
-                                    <td>0.6</td>
+                                    <td>1</td>
                                     <td>Дене шынықтыру</td>
                                   </tr>
                                 <tr>
@@ -849,7 +849,7 @@
                                 </tr>
                                 <tr>
                                     <td>Head of the sports club</td>
-                                    <td>0.6</td>
+                                    <td>1</td>
                                     <td>Physical education</td></tr>
                                 <tr>
                                   <td>Senior Lecturer</td>
