@@ -382,7 +382,7 @@
                 </div>
             </div>
 
-            {{-- <div class="card mb-2">
+            <div class="card mb-2">
                 <a class="card-link" data-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseFour">
                     <div class="card-header"
                         style="background-color:#00249c; color:white; text-align:center; font-size:1.25rem; font-weight:500;">
@@ -409,28 +409,27 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
+                                {{-- <tr>
                                   <td>Руководитель образовательных программ</td>
                                   <td>1</td>
                                   <td></td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                   <td>Профессор/Профессор АГА/ Ассоциированный профессор/Ассоциированный профессор АГА/Ассистент-профессор</td>
                                   <td>1</td>
-                                  <td>Профилирующие дисциплины по ОП “Организация авиационных перевозок”</td>
+                                  <td>Профилирующие дисциплины по ОП “Авиационный менеджмент”/td>
                                 </tr>
-                                <tr>
-                                  <td>Сениор-лектор</td>
-                                  <td>0,5</td>
-                                  <td>Профилирующие дисциплины по ОП “Организация авиационных перевозок”</td>
-                                </tr>
-
                                 {{-- <tr>
                                   <td>Сениор-лектор</td>
                                   <td>0,5</td>
                                   <td>Профилирующие дисциплины по ОП “Организация авиационных перевозок”</td>
                                 </tr> --}}
-                              {{-- </tbody>
+                                <tr>
+                                  <td>Ассистент преподаватель</td>
+                                  <td>1</td>
+                                  <td>Профилирующие дисциплины по направлению “Юриспруденция”</td>
+                                </tr>
+                             </tbody>
                             </table>
                           </div>
                         @elseif(Config::get('app.locale') === 'kk')
@@ -453,23 +452,23 @@
                                 <tr>
                                   <td>Профессор / ААА профессор / ассоциалды профессор / ААА ассоциалды професор / Ассистент-профессор</td>
                                   <td>1</td>
-                                  <td>"Авиациялық тасымалдарды ұйымдастыру" ББ бойынша бейіндік пәндер</td>
+                                  <td>"Авиациялық менеджмент" ББ бойынша бейіндік пәндер</td>
                                 </tr>
                                 <tr>
-                                  <td>Сениор-лектор</td>
-                                  <td>0,5</td>
-                                  <td>"Авиациялық тасымалдарды ұйымдастыру" ББ бойынша бейіндік пәндер</td>
-                                </tr> --}}
+                                  <td>Ассистент оқытушы</td>
+                                  <td>1</td>
+                                  <td>"Құқықтану" бағыты бойынша бейіндеуші пәндер</td>
+                                </tr>
                                 {{-- <tr>
                                   <td>Сениор-лектор</td>
                                   <td>0,5</td>
                                   <td>"Авиациялық тасымалдарды ұйымдастыру" ББ бойынша бейіндік пәндер</td>
                                 </tr> --}}
-                              {{-- </tbody>
+                               </tbody>
                             </table>
-                        </div> --}}
+                        </div>
 
-                        {{-- @else
+                         @else
                         <div class="table-responsive">
                             <table class="table table-bordered" style="margin: 0%">
                               <thead class="thead-light">
@@ -488,25 +487,25 @@
                                 <tr>
                                   <td>Professor/CAA Professor / Associate Professor/CAA Associate Professor /Assistant Professor</td>
                                   <td>1</td>
-                                  <td>Profile disciplines in the OP “Organization of air transportation”</td>
+                                  <td>Core disciplines in the Aviation Management Program</td>
                                 </tr>
                                 {{-- <tr>
                                   <td>Senior Lecturer</td>
                                   <td>1</td>
                                   <td>The core disciplines of the OP “Aviation security”</td>
                                 </tr> --}}
-                                {{-- <tr>
-                                  <td>Senior Lecturer</td>
-                                  <td>0.5</td>
-                                  <td>Profile disciplines in the OP “Organization of air transportation”</td>
+                                <tr>
+                                  <td>Teaching Assistant</td>
+                                  <td>1</td>
+                                  <td>Major disciplines in the field of “Jurisprudence”</td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
                         @endif
-                    </div> --}}
-                {{-- </div>
-            </div> --}}
+                    </div>
+                </div>
+            </div>
 
             <div class="card mb-2">
                 <a class="card-link" data-toggle="collapse" href="#collapseFive" role="button" aria-expanded="false" aria-controls="collapseFive">
@@ -565,7 +564,7 @@
                                     <td>Психология</td>
                                 </tr>
                                 <tr>
-                                    <td>Сениор-лектор</td>
+                                    <td>Заведующий спортивным клубом</td>
                                     <td>0.6</td>
                                     <td>Физическая культура</td>
                                   </tr>
@@ -714,7 +713,7 @@
                                     <td>Психология</td>
                                 </tr>
                                 <tr>
-                                    <td>Сениор-лектор</td>
+                                    <td>Спорт клубының меңгерушісі</td>
                                     <td>0.6</td>
                                     <td>Дене шынықтыру</td>
                                   </tr>
@@ -849,7 +848,7 @@
                                     <td>Psychology</td>
                                 </tr>
                                 <tr>
-                                    <td>Senior Lecturer</td>
+                                    <td>Head of the sports club</td>
                                     <td>0.6</td>
                                     <td>Physical education</td></tr>
                                 <tr>
