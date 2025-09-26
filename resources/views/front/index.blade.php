@@ -5,7 +5,28 @@
 @section('content')
     <section id="main-slider">
         <div class="owl-carousel">
+            <div class="item"
+                style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/ai-slider-smaller.png); width:100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2>AI-Sana <br>
+                                        Программа развития искусственного интеллекта в Академии гражданской авиации
+                                    </h2>
 
+
+                                    <a class="btn btn-primary btn-lg"
+                                        href="https://caa.edu.kz/ai-sana-491">{{ __('Побробнее') }}</a><br>
+                                    <a class="btn btn-primary btn-lg"
+                                        href="https://caa.edu.kz/razrabotka-iskusstvennogo-intellekta-v-akademii-grazhdanskoy-aviacii-490">{{ __('Новости AI') }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="item"
                 style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/priemn.jpg); width:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
@@ -22,7 +43,7 @@
                     </div>
                 </div>
             </div><!--/.item-->
-            <div class="item"
+            {{-- <div class="item"
                 style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/virtual_admission_com.jpg);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
@@ -37,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!--/.item-->
+            </div><!--/.item--> --}}
             {{-- <div class="item"
                 style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/Screenshot_7.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
@@ -93,6 +114,22 @@
                 </div>
             </div><!--/.item-->
             <div class="item"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/virtual_admission_com.jpg);width: 100%; background-size: cover; background-position: center;">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2>{{ __('Виртуальная приемная комиссия') }}</h2>
+                                    <a class="btn btn-primary btn-lg"
+                                        href="{!! env('APP_URL') !!}virtualnaya-priemnaya-komissiya-244">{{ __('Перейти на страницу') }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item"
                 style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/open_academy.png);width: 100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
                     <div class="container">
@@ -111,28 +148,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item"
-                style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/ai-slider-smaller.png); width:100%; background-size: cover; background-position: center;">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 text-center">
-                                <div class="carousel-content">
-                                    <h2>AI-Sana <br>
-                                        Программа развития искусственного интеллекта в Академии гражданской авиации
-                                    </h2>
-
-
-                                    <a class="btn btn-primary btn-lg"
-                                        href="https://caa.edu.kz/ai-sana-491">{{ __('Побробнее') }}</a><br>
-                                    <a class="btn btn-primary btn-lg"
-                                        href="https://caa.edu.kz/razrabotka-iskusstvennogo-intellekta-v-akademii-grazhdanskoy-aviacii-490">{{ __('Новости AI') }}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item-->
+            <!--/.item-->
             <div class="item"
                 style=" background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/slider/rate.jpg); width:100%; background-size: cover; background-position: center;">
                 <div class="slider-inner">
