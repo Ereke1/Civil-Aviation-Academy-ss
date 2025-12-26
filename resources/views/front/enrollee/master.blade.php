@@ -45,6 +45,7 @@
                                 <option value="" disabled selected>-----</option>
                                 <option value="Русский">{{ __('Русский') }}</option>
                                 <option value="Казахский">{{ __('Казахский') }}</option>
+                                <option value="Английский">{{ __('Английский') }}</option>
                             </select>
                         </div>
                         <div class="disabled" id="haveTestBlock">
