@@ -39,7 +39,7 @@
     <section id="book_collection">
         <div class="container">
             <div class="row" id="book_collections">
-                <div class="col-12 col-md-8" style="background: white">
+                <div class="col-12 col-md-8 mx-auto" style="background: white">
 
                     <div class="row" id="book_collections">
                         <div class="title text-center col-12">
@@ -223,7 +223,7 @@
                     </div>
 
                 </div>
-                <div class="col-12 col-md-4 lib-news mt-5 mt-md-0">
+                {{-- <div class="col-12 col-md-4 lib-news mt-5 mt-md-0">
                     <div class="row">
                         <div class="title text-center">
                             <a href="{{ route('front.library_news') }}" style="padding: 0px;">
@@ -250,12 +250,97 @@
                             </div>
                         @endforeach
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
 
+    <div class="trending-area fix">
+        <div class="container">
+            <div class="trending-main">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>{{ __('Новости') }}</h2>
+                        @foreach ($library_news as $item)
+                            @php
+                                if (Config::get('app.locale') === 'ru') {
+                                    $bg_imagess = unserialize($item->bg_images)->ru;
+                                } elseif (Config::get('app.locale') === 'kk') {
+                                    if (empty(unserialize($item->bg_images)->kk)) {
+                                        $bg_imagess = unserialize($item->bg_images)->ru;
+                                    } else {
+                                        $bg_imagess = unserialize($item->bg_images)->kk;
+                                    }
+                                } elseif (Config::get('app.locale') === 'en') {
+                                    if (empty(unserialize($item->bg_images)->en)) {
+                                        $bg_imagess = unserialize($item->bg_images)->ru;
+                                    } else {
+                                        $bg_imagess = unserialize($item->bg_images)->en;
+                                    }
+                                }
+                            @endphp
 
+                            @if ($loop->first)
+                                <div class="trending-top mb-30">
+                                    <div class="trend-top-img"
+                                        style="background-image: url('/storage/library_news/{!! $bg_imagess !!}')">
+                                        {{-- <img src="/storage/news/{!! $bg_imagess !!}" alt=""> --}}
+                                        <div class="trend-top-cap">
+                                            <h2><a href="{{ route('front.library_news.show', $item->slug) }}">
+                                                    @if (Config::get('app.locale') === 'ru')
+                                                        {!! unserialize($item->titles)->ru !!}
+                                                    @elseif(Config::get('app.locale') === 'kk')
+                                                        {!! unserialize($item->titles)->kk !!}
+                                                    @else
+                                                        {!! unserialize($item->titles)->en !!}
+                                                    @endif
+                                                </a></h2>
+                                            <small>
+                                                <p><i class="far fa-calendar-alt"></i> {!! date('d.m.Y', strtotime($item->publish_at)) !!}</p>
+                                            </small>
+                                            {{-- <a href="{{ route('front.news.show', $item->slug) }}"
+                                                class="btn btn-read">{{ __('Подробнее') }}</a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="trending-bottom">
+                                    <div class="row">
+                                    @else
+                                        <div class="col-lg-4">
+                                            <div class="single-bottom mb-35">
+                                                <div class="trend-bottom-img mb-30"
+                                                    style="background-image: url('/storage/library_news/{!! $bg_imagess !!}')">
+                                                    {{-- <img src="/storage/news/{!! $bg_imagess !!}" alt=""> --}}
+                                                </div>
+                                                <div class="trend-bottom-cap">
+                                                    <h4><a href="{{ route('front.library_news.show', $item->slug) }}">
+                                                            @if (Config::get('app.locale') === 'ru')
+                                                                {!! unserialize($item->titles)->ru !!}
+                                                            @elseif(Config::get('app.locale') === 'kk')
+                                                                {!! unserialize($item->titles)->kk !!}
+                                                            @else
+                                                                {!! unserialize($item->titles)->en !!}
+                                                            @endif
+                                                        </a></h4>
+                                                    <small>
+                                                        <p><i class="far fa-calendar-alt"></i> {!! date('d.m.Y', strtotime($item->publish_at)) !!}</p>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="portfolio_btn text-center fix m-top-100">
+                    <a href="/library/library_news/" class="btn btn-read">{{ __('Посмотреть все') }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
 
     @if (count($newbooks) > 0)
         <section id="newBooks">

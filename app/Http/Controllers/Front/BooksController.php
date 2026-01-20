@@ -19,7 +19,7 @@ class BooksController extends Controller
         $libtree = LibraryNavigation::tree();
         $newbooks = NewBooks::orderBy('id', 'desc')->take(10)->get();
         $bookcollection = BookCollection::where('active', 1)->get();
-        $library_news = LibraryNews::orderBy('publish_at', 'desc')->take(6)->get();
+        $library_news = LibraryNews::orderBy('publish_at', 'desc')->take(4)->get();
 
         $locale = Config::get('app.locale');
         $whatsappLink = '';
