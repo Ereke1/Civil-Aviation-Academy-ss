@@ -259,7 +259,7 @@
         <div class="container">
             <div class="trending-main">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-8 mx-auto">
                         <h2>{{ __('Новости') }}</h2>
                         @foreach ($library_news as $item)
                             @php
