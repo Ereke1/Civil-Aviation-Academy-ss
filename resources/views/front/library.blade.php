@@ -39,14 +39,14 @@
     <section id="book_collection">
         <div class="container">
             <div class="row" id="book_collections">
-                <div class="col-12 col-md-8 mx-auto" style="background: white">
+                <div class="col-12 col-md-12 mx-auto" style="background: white">
 
                     <div class="row" id="book_collections">
                         <div class="title text-center col-12">
                             <h3>{{ __('ПОДПИСНЫЕ БАЗЫ ДАННЫХ') }}</h3>
                             <div class="border"></div>
                         </div>
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="http://rmebrk.kz/">
                                 <img src="\assets\images\library\riel.png">
                             </a>
@@ -56,7 +56,7 @@
                             {{ __('Республиканская межвузовская электронная библиотека - информационная и справочно-поисковая библиотечная система.') }}
                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://www.iprbookshop.ru/">
                                 <img src="\assets\images\library\iprSmart.png">
                             </a>
@@ -66,7 +66,7 @@
                             {{ __('Содержится литература по различным группам специальностей, что дает возможность учебным заведениям разных профилей найти интересующие их издания.') }}
                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://search.ebscohost.com/">
                                 <img src="\assets\images\library\EBSCO.png">
                             </a>
@@ -76,7 +76,7 @@
                             {{ __('EBSCO Publishing - крупнейший поставщик научных ресурсов ведущих издательств мира.') }}
                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://www.easa.europa.eu/en">
                                 <img src="/assets/images/library/EASA.jpg">
                             </a>
@@ -95,7 +95,7 @@
                                 EASA's main goal is to promote the development and maintenance of high aviation safety standards in the EU member States.
                             @endif
                         </div>
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://profspo.ru/">
                                 <img src="/assets/images/library/prof_image.jpg">
                             </a>
@@ -111,7 +111,7 @@
                             @endif
                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://elibrary.icao.int/">
                                 <img src="\assets\images\library\libraryICAO.png">
                             </a>
@@ -122,7 +122,7 @@
                         </div>
 
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://www.scopus.com/home.uri/">
                                 <img src="/assets/images/library/Scopus.png">
                             </a>
@@ -132,7 +132,7 @@
                             {{ __('Scopus - это крупнейшая информационная база рецензируемых библиографических ссылок и рефератов: научных журналов, книг и материалов конференций.') }}
                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://www.webofscience.com/wos//">
                                 <img src="\assets\images\library\WebOfScience.png">
                             </a>
@@ -142,7 +142,7 @@
                             {{ __('Web of science- поисковая платформа, объединяющая несколько библиографических и реферативных баз данных рецензируемой научной литературы.') }}
                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://onlinelibrary.wiley.com//">
                                 <img src="\assets\images\library\WileyLogo.png">
                             </a>
@@ -153,7 +153,7 @@
                         </div>
 
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://eivis.ru/">
                                 <img src="\assets\images\library\IVIS300x86.png">
                             </a>
@@ -175,7 +175,7 @@
                             @endif
                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://www.wdl.org/fr">
                                 <img src="\assets\images\library\libraryOfCongress.png">
                             </a>
@@ -185,7 +185,7 @@
                             {{ __('Библиотека Конгресса является крупнейшей библиотекой в мире, в ее фондах хранятся миллионы книг, фильмов и видео, аудиозаписей, фотографий, газет, карт и рукописей. Библиотека является главным исследовательским подразделением Конгресса США и штаб-квартирой Управления авторского права США.') }}
                         </div>
 
-                        <div class="oneBook col-md-4 col-12 col-sm-6">
+                        <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
                             <a href="https://caa.gov.kz/ru">
                                 <img src="\assets\images\library\ADofK.png">
                             </a>
@@ -195,7 +195,7 @@
                             {{ __('Вы можете ознакомиться с базой данных Авиационной администрации Казахстана, которая осуществляет контроль и надзор за авиационной отраслью Казахстана в целях обеспечения безопасности полетов и авиационной безопасности.') }}
                         </div>
 
-                        {{-- <div class="oneBook col-md-4 col-12 col-sm-6">
+                        {{-- <div class="oneBook col-md-3 col-12 col-sm-6">
                             <a href="https://eivis.ru/">
                                 <img src="\assets\images\library\sae.png">
                             </a>
@@ -223,7 +223,7 @@
                     </div>
 
                 </div>
-                {{-- <div class="col-12 col-md-4 lib-news mt-5 mt-md-0">
+                {{-- <div class="col-12 col-md-3 lib-news mt-5 mt-md-0">
                     <div class="row">
                         <div class="title text-center">
                             <a href="{{ route('front.library_news') }}" style="padding: 0px;">
