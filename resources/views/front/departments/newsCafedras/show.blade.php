@@ -68,7 +68,7 @@
                     @elseif(Config::get('app.locale') === 'kk')
                         {!! $news->description_kk !!}
                     @else
-                        {!! $news->descriptions_en !!}
+                        {!! $news->description_en !!}
                     @endif
                 {{-- </div> --}}
                 {{-- <div class="col-md-1 col-lg-2 col-0 pl-0 pr-1 pb-1"></div> --}}
