@@ -6,7 +6,7 @@
                         <h4>{{ __('Контакты') }}</h4>
                         <p> {{ __('Приемная комиссия Академии:') }}<br />
                             <a href="tel:87273469208"><i class="fa fa-phone-alt"></i> +7 (727) 346-92-08 (вн. 246)</a>
-                            <a href="tel:87073169281"><i class="fa fa-phone-alt"></i> +7 (707) 316-92-81</a>
+                            <a href="tel:87073169281"><i class="fa fa-phone-alt"></i> +7 (707) 316-92-81 (WhatsApp)</a>
                             <a href="mailto:admissions@agakaz.kz"><i class="fa fa-envelope"></i> admissions@agakaz.kz</a><br />
                             {{-- {{ __('Канцелярия:') }}<br />
                             <a href="tel:87273469206">+7 (727) 346-92-06 (вн. 215)</a><br /> --}}
