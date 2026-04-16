@@ -595,7 +595,7 @@
                     data-wow-delay="200ms">
                     <div class="counters-item">
                         <div>
-                            <span data-speed="2000" data-to="7366">7366</span>
+                            <span data-speed="2000" data-to="8169">8169</span>
                         </div>
                         <i class="fa fa-graduation-cap fa-3x"></i>
                         <h3>
