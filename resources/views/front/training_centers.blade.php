@@ -173,7 +173,7 @@
                             </a>
                             @endif
                         </p><br>
-                        <p>
+                        {{-- <p>
                             @if (Config::get('app.locale') === 'ru')
                             <a href="https://caa.edu.kz/assets/images/upload/ по ТО ВС на русском (1)_1746172244.pdf">
                                 Тарифы по ТО ВС
@@ -187,7 +187,7 @@
                                 Тарифы по ТО ВС
                             </a>
                             @endif
-                        </p><br>
+                        </p><br> --}}
                         <p>
                             @if (Config::get('app.locale') === 'ru')
                             <a href="https://elpac.eurocontrol.int/prepare_test.html">
