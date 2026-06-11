@@ -17,7 +17,7 @@
 
             <div class="alert alert-info" style="margin-bottom: 20px; padding: 40px; border-radius: 5px;">
                 @if (Config::get('app.locale') === 'ru')
-                {{-- <h4><strong>ВНИМАНИЕ!</strong></h4>
+                <h4><strong>ВНИМАНИЕ!</strong></h4>
                 <h4><strong>РЕГИСТРАЦИЯ НА ТЕСТИРОВАНИЕ И ИНТЕРВЬЮ</strong></h4>
                 <p>Для группы образовательной программы B167- «Лётная эксплуатация летательных аппаратов и двигателей»,  образовательная программа «Пилот самолета».</p>
                 <ol>
@@ -34,31 +34,31 @@
                     <br>
                         <strong>При отсутствии сертификата</strong>, необходимо пройти <strong>тестирование по английскому языку</strong> в Академии гражданской авиации:
                         <ul>
-                            <li>•	Основной период: <strong>с 6 по 19 июля 2025 года.</strong></li>
-                            <li>•	Для платного отделения: <strong>до 20 августа 2025 года.</strong></li>
+                            <li>•	Основной период: <strong>с 6 по 20 июля 2026 года.</strong></li>
+                            <li>•	Для платного отделения: <strong>до 20 августа 2026 года.</strong></li>
                         </ul>
                     <br>
                     <li>
-                        <strong>Интервью обязательно для всех</strong> поступающих и проводится <strong>с 6 июля по 20 августа 2025 года</strong>.
+                        <strong>Интервью обязательно для всех</strong> поступающих и проводится <strong>с 6 июля по 20 августа 2026 года</strong>.
                     </li>
-                </ol> --}}
-                <h3>График дополнительного экзамена (платное отделение)<br>
+                </ol>
+                {{-- <h3>График дополнительного экзамена (платное отделение)<br>
                     на определение уровня владения английским языком для абитуриентов образовательной программы 6B07115 Летная эксплуатация гражданских самолётов (пилот)</h3>
 
                     <p><strong>Формат проведения экзамена</strong> – офлайн, кабинет B 212.</p>
 
                     <p><strong>Дата: 18.08.2025 (вторник)</strong><br>
                     Группа №1. Время 09.00-10.00<br>
-                    Группа №2. Время 10.30-11.30</p>
+                    Группа №2. Время 10.30-11.30</p> --}}
                 @elseif(Config::get('app.locale') === 'kk')
-                <h3>6B07115 – Азаматтық ұшақтарды ұшуда пайдалану (ұшқыш) білім беру бағдарламасына түсушілерге арналған ағылшын тілі деңгейін анықтау бойынша қосымша емтихан мен сұхбаттасу кестесі (ақылы бөлімге)</h3>
+                {{-- <h3>6B07115 – Азаматтық ұшақтарды ұшуда пайдалану (ұшқыш) білім беру бағдарламасына түсушілерге арналған ағылшын тілі деңгейін анықтау бойынша қосымша емтихан мен сұхбаттасу кестесі (ақылы бөлімге)</h3>
 
                 <p><strong>Емтихан форматы</strong> – оффлайн, кабинет: B 212.</p>
 
                 <p><strong>18.08.2025 (сейсенбі)</strong><br>
                 1-топ – 09:00–10:00<br>
-                2-топ – 10:30–11:30</p>
-                    {{-- <h4><strong>НАЗАР АУДАРЫҢЫЗДАР!</strong></h4>
+                2-топ – 10:30–11:30</p> --}}
+                    <h4><strong>НАЗАР АУДАРЫҢЫЗДАР!</strong></h4>
                     <h4><strong>ТЕСТІЛЕУ ЖӘНЕ СҰХБАТТАСУҒА ТІРКЕЛУ</strong></h4>
                     <p>
                         B167 – «Ұшу аппараттары мен қозғалтқыштарды ұшуда пайдалану» білім беру бағдарламасы, Азаматтық ұшақтарды ұшуда пайдалану (ұшқыш) білім беру бағдарламасы бойынша топтары үшін:
@@ -77,16 +77,16 @@
                         <br>
                             <strong>Сертификат болмаған жағдайда</strong>, Азаматтық Авиация Академиясында <strong>ағылшын тілі бойынша тестілеуден</strong> өту қажет:
                             <ul>
-                                <li>•	Негізгі кезең: <strong>2025 жылдың 6–19 шілде аралығы</strong>.</li>
-                                <li>•	Ақылы бөлім үшін: <strong>2025 жылдың 20 тамызына дейін</strong>.</li>
+                                <li>•	Негізгі кезең: <strong>2026 жылдың 6–20 шілде аралығы</strong>.</li>
+                                <li>•	Ақылы бөлім үшін: <strong>2026 жылдың 20 тамызына дейін</strong>.</li>
                             </ul>
                         <br>
                         <li>
-                            Сұхбаттасудан  барлық үміткерлер <strong>МІНДЕТТІ ТҮРДЕ</strong> өтеді: <strong>2025 жылдың 6 шілдесінен 20 тамызына дейін</strong>.
+                            Сұхбаттасудан  барлық үміткерлер <strong>МІНДЕТТІ ТҮРДЕ</strong> өтеді: <strong>2026 жылдың 6 шілдесінен 20 тамызына дейін</strong>.
                         </li>
-                    </ol> --}}
+                    </ol>
                 @else
-                    {{-- <h4><strong>ATTENTION!</strong></h4>
+                    <h4><strong>ATTENTION!</strong></h4>
                     <h4><strong>REGISTRATION FOR TESTING AND INTERVIEW</strong></h4>
                     <p>For applicants to the educational program B167 – "Flight operation of aircraft and engines (pilot)"</p>
                     <ol>
@@ -103,22 +103,22 @@
                         <br>
                             <strong>If you do not have a certificate</strong>, you must take <strong>the English language test</strong> at the Civil Aviation Academy:
                             <ul>
-                                <li>•	Main testing period: <strong>July 6–19, 2025</strong>.</li>
-                                <li>•	For fee-paying applicants: <strong>until August 20, 2025</strong>.</li>
+                                <li>•	Main testing period: <strong>July 6–19, 2026</strong>.</li>
+                                <li>•	For fee-paying applicants: <strong>until August 20, 2026</strong>.</li>
                             </ul>
                         <br>
                         <li>
-                            <strong>All applicants are required to attend an interview </strong> between <strong>July 6 and August 20, 2025.</strong>
+                            <strong>All applicants are required to attend an interview </strong> between <strong>July 6 and August 20, 2026.</strong>
                         </li>
-                    </ol> --}}
-                    <h3>Schedule of the additional exam (paid department)<br>
+                    </ol>
+                    {{-- <h3>Schedule of the additional exam (paid department)<br>
                         to determine the level of English proficiency for applicants to the 6B07115 Educational Program "Commercial Aircraft Flight Operation (Pilot)"</h3>
 
                         <p><strong>Exam format</strong> – offline, room B 212.</p>
 
                         <p><strong>Date: 18.08.2025 (Tuesday)</strong><br>
                         Group №1. Time 09:00–10:00<br>
-                        Group №2. Time 10:30–11:30</p>
+                        Group №2. Time 10:30–11:30</p> --}}
 
                 @endif
             </div>
@@ -255,15 +255,16 @@
                                                         @endif
                                                     </label>
                                                     <input type="file" id="ent_file" name="ent_file" class="form-control-file" accept=".pdf,.jpg,.png">
+
                                                 </div>
                                                 <div class="form-group mt-3" id="entScoreWrapper">
                                                     <label for="ent_score" >
                                                         @if (Config::get('app.locale') === 'ru')
-                                                            Результат ЕНТ (65-140):
+                                                            Результат ЕНТ (85-140):
                                                         @elseif(Config::get('app.locale') === 'kk')
-                                                            ҰБТ нәтижесі (65–140):
+                                                            ҰБТ нәтижесі (85–140):
                                                         @else
-                                                            UNT result (65-140):
+                                                            UNT result (85-140):
                                                         @endif
                                                     </label>
                                                     <input type="number" id="ent_score" name="ent_score" class="form-control border " min="65" max="140">
