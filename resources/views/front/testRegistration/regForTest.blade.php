@@ -267,7 +267,7 @@
                                                             UNT result (85-140):
                                                         @endif
                                                     </label>
-                                                    <input type="number" id="ent_score" name="ent_score" class="form-control border " min="65" max="140">
+                                                    <input type="number" id="ent_score" name="ent_score" class="form-control border " min="85" max="140">
                                                 </div>
 
 
