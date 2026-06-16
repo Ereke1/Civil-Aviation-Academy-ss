@@ -194,10 +194,11 @@ class BachelorController extends Controller
                 $data->process = $request->process;
                 $findLastCaseNumber = DB::table('applications')
                     ->where(function ($query) {
-                        $query->where('case_number_date', '>=', "2025-06-20 00:00:00");
+                        $query->where('case_number_date', '>=', "2026-06-20 00:00:00");
                     })
                     ->orderBy('case_number', 'desc')->pluck('case_number')->first();
                 $data->case_number = $findLastCaseNumber + 1;
+
                 $data->case_number_date = $today;
                 $data->save();
                 return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);

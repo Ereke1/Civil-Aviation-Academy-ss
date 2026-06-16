@@ -549,22 +549,30 @@ class DocumentsController extends Controller
         } else {
             if($data->type === 'Бакалавриат'){
                 if($data->citizen === 'Резидент РК'){
-                            $templateProcessor->setValue('price', '1 500 000');
-                            $templateProcessor->setValue('price_ru', '(Один миллион пятьсот тысяч)');
-                            $templateProcessor->setValue('price_kz', '(Бір миллион бес жүз мың)');
-                            $templateProcessor->setValue('price_en', '(One million, five hundred thousand)');
+                    if ($data->base === 'Высшего образования' && ($data->programms !=='Логистика на транспорте' || $data->programms !=='Организация авиационных перевозок' || $data->programms !=='Системная интеграция наземного обслуживания') ){
+                            $templateProcessor->setValue('price', '2 400 000');
+                            $templateProcessor->setValue('price_ru', '(Два миллиона четыреста тысяч)');
+                            $templateProcessor->setValue('price_kz', '(Екі миллион төрт жүз мың)');
+                            $templateProcessor->setValue('price_en', '(Two million four hundred thousand)');
+                            }
+                            else {
+                                $templateProcessor->setValue('price', '1 800 000');
+                                $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
+                                $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
+                            }
                         }
                         else {
-                            if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
-                                $templateProcessor->setValue('price', '1 700 000');
-                                $templateProcessor->setValue('price_ru', '(Один миллион семьсот тысяч)');
-                                $templateProcessor->setValue('price_kz', '(Бір миллион жеті жүз мың)');
-                                $templateProcessor->setValue('price_en', '(One million, seven hundred thousand)');
+                            if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов' || $data->programms !=='Логистика на транспорте' || $data->programms !=='Организация авиационных перевозок' || $data->programms !=='Системная интеграция наземного обслуживания') {
+                                $templateProcessor->setValue('price', '1 800 000');
+                                $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
+                                $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
                             } else {
-                                $templateProcessor->setValue('price', '1 500 000');
-                                $templateProcessor->setValue('price_ru', '(Один миллион пятьсот тысяч)');
-                                $templateProcessor->setValue('price_kz', '(Бір миллион бес жүз мың)');
-                                $templateProcessor->setValue('price_en', '(One million, five hundred thousand)');
+                                $templateProcessor->setValue('price', '2 040 000');
+                                $templateProcessor->setValue('price_ru', '(Два миллиона сорок тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Екі миллион қырық мың)');
+                                $templateProcessor->setValue('price_en', '(Two million forty thousand)');
                             }
                         }
                 // if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
@@ -602,16 +610,16 @@ class DocumentsController extends Controller
                 // }
             }
             else if ($data->type === 'Магистратура'){
-                $templateProcessor->setValue('price', '2 000 000');
-                $templateProcessor->setValue('price_ru', '(Два миллиона)');
-                $templateProcessor->setValue('price_kz', '(Екі миллион)');
-                $templateProcessor->setValue('price_en', '(Two million)');
+                $templateProcessor->setValue('price', '2 400 000');
+                $templateProcessor->setValue('price_ru', '(Два миллиона четыреста тысяч)');
+                $templateProcessor->setValue('price_kz', '(Екі миллион төрт жүз мың)');
+                $templateProcessor->setValue('price_en', '(Two million four hundred thousand)');
             }
             else if ($data->type === 'Докторантура'){
-                $templateProcessor->setValue('price', '2 700 000');
-                $templateProcessor->setValue('price_ru', '(Два миллиона семьсот тысяч)');
-                $templateProcessor->setValue('price_kz', '(Екі миллион жеті жүз мың)');
-                $templateProcessor->setValue('price_en', '(Two million, seven hundred thousand)');
+                $templateProcessor->setValue('price', '3 240 000');
+                $templateProcessor->setValue('price_ru', '(Три миллиона двести сорок тысяч)');
+                $templateProcessor->setValue('price_kz', '(Үш миллион екі жүз қырық мың)');
+                $templateProcessor->setValue('price_en', '(Three million two hundred forty thousand)');
             }
         }
 
@@ -816,22 +824,30 @@ class DocumentsController extends Controller
         } else {
             if($data->type === 'Бакалавриат'){
                 if($data->citizen === 'Резидент РК'){
-                            $templateProcessor->setValue('price', '1 500 000');
-                            $templateProcessor->setValue('price_ru', '(Один миллион пятьсот тысяч)');
-                            $templateProcessor->setValue('price_kz', '(Бір миллион бес жүз мың)');
-                            $templateProcessor->setValue('price_en', '(One million, five hundred thousand)');
+                    if ($data->base === 'Высшего образования' && ($data->programms !=='Логистика на транспорте' || $data->programms !=='Организация авиационных перевозок' || $data->programms !=='Системная интеграция наземного обслуживания') ){
+                            $templateProcessor->setValue('price', '2 400 000');
+                            $templateProcessor->setValue('price_ru', '(Два миллиона четыреста тысяч)');
+                            $templateProcessor->setValue('price_kz', '(Екі миллион төрт жүз мың)');
+                            $templateProcessor->setValue('price_en', '(Two million four hundred thousand)');
+                            }
+                            else {
+                                $templateProcessor->setValue('price', '1 800 000');
+                                $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
+                                $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
+                            }
                         }
                         else {
-                            if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
-                                $templateProcessor->setValue('price', '1 700 000');
-                                $templateProcessor->setValue('price_ru', '(Один миллион семьсот тысяч)');
-                                $templateProcessor->setValue('price_kz', '(Бір миллион жеті жүз мың)');
-                                $templateProcessor->setValue('price_en', '(One million, seven hundred thousand)');
+                            if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов' || $data->programms !=='Логистика на транспорте' || $data->programms !=='Организация авиационных перевозок' || $data->programms !=='Системная интеграция наземного обслуживания') {
+                                $templateProcessor->setValue('price', '1 800 000');
+                                $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
+                                $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
                             } else {
-                                $templateProcessor->setValue('price', '1 500 000');
-                                $templateProcessor->setValue('price_ru', '(Один миллион пятьсот тысяч)');
-                                $templateProcessor->setValue('price_kz', '(Бір миллион бес жүз мың)');
-                                $templateProcessor->setValue('price_en', '(One million, five hundred thousand)');
+                                $templateProcessor->setValue('price', '2 040 000');
+                                $templateProcessor->setValue('price_ru', '(Два миллиона сорок тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Екі миллион қырық мың)');
+                                $templateProcessor->setValue('price_en', '(Two million forty thousand)');
                             }
                         }
                 // if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
@@ -869,16 +885,16 @@ class DocumentsController extends Controller
                 // }
             }
             else if ($data->type === 'Магистратура'){
-                $templateProcessor->setValue('price', '2 000 000');
-                $templateProcessor->setValue('price_ru', '(Два миллиона)');
-                $templateProcessor->setValue('price_kz', '(Екі миллион)');
-                $templateProcessor->setValue('price_en', '(Two million)');
+                $templateProcessor->setValue('price', '2 400 000');
+                $templateProcessor->setValue('price_ru', '(Два миллиона четыреста тысяч)');
+                $templateProcessor->setValue('price_kz', '(Екі миллион төрт жүз мың)');
+                $templateProcessor->setValue('price_en', '(Two million four hundred thousand)');
             }
             else if ($data->type === 'Докторантура'){
-                $templateProcessor->setValue('price', '2 700 000');
-                $templateProcessor->setValue('price_ru', '(Два миллиона семьсот тысяч)');
-                $templateProcessor->setValue('price_kz', '(Екі миллион жеті жүз мың)');
-                $templateProcessor->setValue('price_en', '(Two million, seven hundred thousand)');
+                $templateProcessor->setValue('price', '3 240 000');
+                $templateProcessor->setValue('price_ru', '(Три миллиона двести сорок тысяч)');
+                $templateProcessor->setValue('price_kz', '(Үш миллион екі жүз қырық мың)');
+                $templateProcessor->setValue('price_en', '(Three million two hundred forty thousand)');
             }
         }
 
@@ -1497,6 +1513,7 @@ class DocumentsController extends Controller
                     ->orderBy('case_number', 'desc')->pluck('case_number')->first();
                 $data->case_number = $findLastCaseNumber + 1;
 				$data->case_number_date = $today;
+                $data->save();
                 return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
             } else {
                 $data->iin = $request->iin;
