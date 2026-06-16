@@ -23,7 +23,6 @@ class OnlineRegForTestController extends Controller
     public function index(Request $request)
     {
         $availableDates = [
-            "2026-07-06",
             "2026-07-07",
             "2026-07-08",
             "2026-07-09",
@@ -36,7 +35,6 @@ class OnlineRegForTestController extends Controller
             "2026-07-20",
         ];
         $availableInterviewDates = [
-            "2026-07-06",
             "2026-07-07",
             "2026-07-08",
             "2026-07-09",

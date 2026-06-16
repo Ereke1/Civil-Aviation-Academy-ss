@@ -21,7 +21,6 @@ class RegForTestController extends Controller
     {
         $tree = Navigation::tree();
         $availableDates = [
-            "2026-07-06",
             "2026-07-07",
             "2026-07-08",
             "2026-07-09",
@@ -34,7 +33,6 @@ class RegForTestController extends Controller
             "2026-07-20",
         ];
         $availableInterviewDates = [
-            "2026-07-06",
             "2026-07-07",
             "2026-07-08",
             "2026-07-09",
