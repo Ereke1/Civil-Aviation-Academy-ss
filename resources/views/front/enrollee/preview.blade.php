@@ -8,6 +8,7 @@
                 <a href="{{ route('front.enrollee.bachelor.index') }}" class="preview__item">{{ __('Бакалавриат') }}</a>
                 <a href="{{ route('front.enrollee.master.index') }}" class="preview__item">{{ __('Магистратура') }}</a>
                 <a href="{{ route('front.enrollee.doctoral.index') }}" class="preview__item">{{ __('Докторантура') }}</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScbf3P88514uyzeeRWM6JYuDQ0HVEz86C326oDiUCA6udiLTw/viewform?usp=publish-editor" class="preview__item">{{ __('EMBA/MBA') }}</a>
             </div>
         </div>
     </section>
