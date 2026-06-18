@@ -460,7 +460,7 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_kz', 'Азаматтық тікұшақтарды ұшуда пайдалану (ұшқыш)');
             $templateProcessor->setValue('programs_en', 'Flight operation of civil helicopters (pilot)');
         } else if ($data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
-            $templateProcessor->setValue('programs_kz', 'Әуе қозғалысына қызмет көрсету және ұшуда аэронавигациялық қамтамасыз ету  (авиадиспетчер)');
+            $templateProcessor->setValue('programs_kz', 'Әуе қозғалысына қызмет көрсету және ұшуда аэронавигациялық қамтамасыз ету');
             $templateProcessor->setValue('programs_en', 'Air traffic services and air navigation support of flights');
         } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
@@ -549,11 +549,20 @@ class DocumentsController extends Controller
         } else {
             if($data->type === 'Бакалавриат'){
                 if($data->citizen === 'Резидент РК'){
-                    if ($data->base === 'Высшего образования' && ($data->programms !=='Логистика на транспорте' || $data->programms !=='Организация авиационных перевозок' || $data->programms !=='Системная интеграция наземного обслуживания') ){
-                            $templateProcessor->setValue('price', '2 400 000');
-                            $templateProcessor->setValue('price_ru', '(Два миллиона четыреста тысяч)');
-                            $templateProcessor->setValue('price_kz', '(Екі миллион төрт жүз мың)');
-                            $templateProcessor->setValue('price_en', '(Two million four hundred thousand)');
+                    if ($data->base === 'Высшего образования') {
+                        if ($data->programms === 'Логистика на транспорте' ||
+                            $data->programms === 'Организация авиационных перевозок' ||
+                            $data->programms === 'Системная интеграция наземного обслуживания'){
+                                $templateProcessor->setValue('price', '1 800 000');
+                                $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
+                                $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
+                            } else{
+                                $templateProcessor->setValue('price', '2 400 000');
+                                $templateProcessor->setValue('price_ru', '(Два миллиона четыреста тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Екі миллион төрт жүз мың)');
+                                $templateProcessor->setValue('price_en', '(Two million four hundred thousand)');
+                            }
                             }
                             else {
                                 $templateProcessor->setValue('price', '1 800 000');
@@ -563,16 +572,17 @@ class DocumentsController extends Controller
                             }
                         }
                         else {
-                            if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов' || $data->programms !=='Логистика на транспорте' || $data->programms !=='Организация авиационных перевозок' || $data->programms !=='Системная интеграция наземного обслуживания') {
-                                $templateProcessor->setValue('price', '1 800 000');
-                                $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
-                                $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
-                                $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
-                            } else {
+                            if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
                                 $templateProcessor->setValue('price', '2 040 000');
                                 $templateProcessor->setValue('price_ru', '(Два миллиона сорок тысяч)');
                                 $templateProcessor->setValue('price_kz', '(Екі миллион қырық мың)');
                                 $templateProcessor->setValue('price_en', '(Two million forty thousand)');
+                            }
+                            else {
+                                $templateProcessor->setValue('price', '1 800 000');
+                                $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
+                                $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
                             }
                         }
                 // if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
@@ -740,7 +750,7 @@ class DocumentsController extends Controller
             $templateProcessor->setValue('programs_kz', 'Азаматтық тікұшақтарды ұшуда пайдалану (ұшқыш)');
             $templateProcessor->setValue('programs_en', 'Flight operation of civil helicopters (pilot)');
         } else if ($data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
-            $templateProcessor->setValue('programs_kz', 'Әуе қозғалысына қызмет көрсету және ұшуда аэронавигациялық қамтамасыз ету  (авиадиспетчер)');
+            $templateProcessor->setValue('programs_kz', 'Әуе қозғалысына қызмет көрсету және ұшуда аэронавигациялық қамтамасыз ету');
             $templateProcessor->setValue('programs_en', 'Air traffic services and air navigation support of flights');
         } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
@@ -824,30 +834,34 @@ class DocumentsController extends Controller
         } else {
             if($data->type === 'Бакалавриат'){
                 if($data->citizen === 'Резидент РК'){
-                    if ($data->base === 'Высшего образования' && ($data->programms !=='Логистика на транспорте' || $data->programms !=='Организация авиационных перевозок' || $data->programms !=='Системная интеграция наземного обслуживания') ){
-                            $templateProcessor->setValue('price', '2 400 000');
-                            $templateProcessor->setValue('price_ru', '(Два миллиона четыреста тысяч)');
-                            $templateProcessor->setValue('price_kz', '(Екі миллион төрт жүз мың)');
-                            $templateProcessor->setValue('price_en', '(Two million four hundred thousand)');
+                if ($data->base === 'Высшего образования') {
+                        if ($data->programms === 'Логистика на транспорте' ||
+                            $data->programms === 'Организация авиационных перевозок' ||
+                            $data->programms === 'Системная интеграция наземного обслуживания'){
+                                $templateProcessor->setValue('price', '1 800 000');
+                                $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
+                                $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
+                            } else{
+                                $templateProcessor->setValue('price', '2 400 000');
+                                $templateProcessor->setValue('price_ru', '(Два миллиона четыреста тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Екі миллион төрт жүз мың)');
+                                $templateProcessor->setValue('price_en', '(Two million four hundred thousand)');
+                            }
+                            }
+                }
+                        else {
+                            if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
+                                $templateProcessor->setValue('price', '2 040 000');
+                                $templateProcessor->setValue('price_ru', '(Два миллиона сорок тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Екі миллион қырық мың)');
+                                $templateProcessor->setValue('price_en', '(Two million forty thousand)');
                             }
                             else {
                                 $templateProcessor->setValue('price', '1 800 000');
                                 $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
                                 $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
                                 $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
-                            }
-                        }
-                        else {
-                            if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов' || $data->programms !=='Логистика на транспорте' || $data->programms !=='Организация авиационных перевозок' || $data->programms !=='Системная интеграция наземного обслуживания') {
-                                $templateProcessor->setValue('price', '1 800 000');
-                                $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
-                                $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
-                                $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
-                            } else {
-                                $templateProcessor->setValue('price', '2 040 000');
-                                $templateProcessor->setValue('price_ru', '(Два миллиона сорок тысяч)');
-                                $templateProcessor->setValue('price_kz', '(Екі миллион қырық мың)');
-                                $templateProcessor->setValue('price_en', '(Two million forty thousand)');
                             }
                         }
                 // if ($data->programms === 'Организация авиационных перевозок' || $data->programms === 'Логистика на транспорте') {
@@ -966,7 +980,7 @@ class DocumentsController extends Controller
         } else if ($data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)') {
             $templateProcessor->setValue('programs_kz', 'Азаматтық тікұшақтарды ұшуда пайдалану (ұшқыш)');
         } else if ($data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
-            $templateProcessor->setValue('programs_kz', 'Әуе қозғалысына қызмет көрсету және ұшуда аэронавигациялық қамтамасыз ету  (авиадиспетчер)');
+            $templateProcessor->setValue('programs_kz', 'Әуе қозғалысына қызмет көрсету және ұшуда аэронавигациялық қамтамасыз ету');
         } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей') {
             $templateProcessor->setValue('programs_kz', 'Ұшу аппараттарының авионика жүйелерін техникалық пайдалану');
         } else if ($data->programms === 'Техническая эксплуатация систем авионики летательных аппаратов') {
@@ -1397,7 +1411,7 @@ class DocumentsController extends Controller
             '{{lang_edu}}' => $data->lang_edu,
             '{{type}}' => $data->type,
             '{{iin}}' => $data->iin,
-            '{{order_date}}' => $data->order_date,
+            '{{order_date}}' => $data->order_date ? \Carbon\Carbon::parse($data->order_date)->format('d.m.Y') : '',
             '{{order_number}}' => $data->order_number,
             '{{private_code}}' => $data->private_code,
             '{{programs_ru}}'  => $programsRu,
