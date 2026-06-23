@@ -120,6 +120,13 @@
                                                 class="btn btn-info float-right">Скачать(.docx)</a>
                                         </h5>
                                     </div>
+                                    <hr>
+                                    <div>
+                                        <h5 class="block__info">Соглашение
+                                            <a href="{{ url('admin/enrollee/documents/word-сommitmentAgreement/' . $item->applid) }}"
+                                                class="btn btn-info float-right">Скачать(.docx)</a>
+                                        </h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>

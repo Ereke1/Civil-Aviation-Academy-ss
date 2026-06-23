@@ -36,7 +36,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 			'training_courses' => 'TrainingСoursesController',
 			'department' => 'DepartmentController',
 			'department-page' => 'DepartmentPageController',
-			'sustainable_development_goals' => 'SustainableDevelopmentGoalsController'
+			'sustainable_development_goals' => 'SustainableDevelopmentGoalsController',
+            'ai_news' => 'NewsAIController',
 		]);
 
 		// CK EDITOR
@@ -86,6 +87,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
         Route::get('documents/word-bilateralAgreementThirdParty/{id}', 'DocumentsController@wordExportBilateralAgreementThirdParty')->name('documents.wordExportBilateralAgreementThirdParty');
 		Route::get('documents/word-stateGrantAgreement/{id}', 'DocumentsController@wordExportStateGrantAgreement')->name('documents.wordExportStateGrantAgreement');
 		Route::get('documents/word-applicationForCredits/{id}', 'DocumentsController@wordExportApplicationForCredits')->name('documents.wordExportApplicationForCredits');
+        Route::get('documents/word-сommitmentAgreement/{id}', 'DocumentsController@wordExportCommitmentAgreement')->name('documents.wordExportCommitmentAgreement');
         Route::get('documents/exl-export/{id}', 'DocumentsController@ExlExport')->name('documents.ExlExport');
 
 		// General Report

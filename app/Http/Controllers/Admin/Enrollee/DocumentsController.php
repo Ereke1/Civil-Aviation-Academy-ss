@@ -1451,6 +1451,99 @@ class DocumentsController extends Controller
         }, $data->surname . ' (выписка).xlsx');
     }
 
+    // public function wordExportCommitmentAgreement($id)
+    // {   $data = DB::table('applications')
+    //             ->select(
+    //                 'applications.name',
+    //                 'applications.surname',
+    //                 'applications.patronymic',
+    //                 'applications.lang_edu',
+    //                 'applications.phone_1',
+    //                 'applications.iin',
+    //                 'applications.citizen',
+    //                 'applications.grant_certificate',
+    //             )
+    //             ->first();
+
+    //     if ($data->citizen === 'Резидент РК' && $data->grant_certificate == 1) {
+    //         if ($data->lang_edu === 'Русский'){
+    //             $templateProcessor = new TemplateProcessor('CommitmentAgreementRus.docx');
+    //         } else {
+    //             $templateProcessor = new TemplateProcessor('CommitmentAgreementKaz.docx');
+    //         }
+
+    //         $templateProcessor->setValue('surname', $data->surname);
+    //         $templateProcessor->setValue('name', $data->name);
+    //         $templateProcessor->setValue('patronymic', $data->patronymic);
+    //         $templateProcessor->setValue('phone_1', $data->phone_1);
+
+
+    //         $fileName = $data->surname;
+    //         if ($data->lang_edu === 'Русский'){
+    //             $templateProcessor->saveAs($fileName . ' (согласие).docx');
+    //             return response()->download($fileName . ' (согласие).docx')->deleteFileAfterSend(true);
+    //         } else {
+    //             $templateProcessor->saveAs($fileName . ' (келісім).docx');
+    //             return response()->download($fileName . ' (келісім).docx')->deleteFileAfterSend(true);
+    //         }
+    //     }
+    // }
+    public function wordExportCommitmentAgreement($id)
+{
+    // 1. Добавляем find($id) вместо first() и добираем поля base и programms
+    $data = DB::table('applications')
+        ->select(
+            'applications.name',
+            'applications.surname',
+            'applications.patronymic',
+            'applications.lang_edu',
+            'applications.phone_1',
+            'applications.iin',
+            'applications.citizen',
+            'applications.grant_certificate',
+            'applications.base',        // добавили
+        )
+        ->where('applications.id', $id) // Теперь ищем конкретного студента
+        ->first();
+
+    // Если студент с таким ID не найден, возвращаем ошибку 404
+    if (!$data) {
+        abort(404, 'Заявка не найдена');
+    }
+
+    // Ваше основное условие по резиденству и гранту
+    if ($data->citizen === 'Резидент РК' && $data->grant_certificate == 1) {
+
+        // Выбираем шаблон на нужном языке
+        if ($data->lang_edu === 'Русский'){
+            $templateProcessor = new TemplateProcessor('word-templates/CommitmentAgreementRus.docx');
+        } else {
+            $templateProcessor = new TemplateProcessor('word-templates/CommitmentAgreementKaz.docx');
+        }
+
+        // Заполняем переменные в Word
+        $templateProcessor->setValue('surname', $data->surname);
+        $templateProcessor->setValue('name', $data->name);
+        $templateProcessor->setValue('iin', $data->iin);
+        $templateProcessor->setValue('patronymic', $data->patronymic);
+        $templateProcessor->setValue('phone_1', $data->phone_1);
+
+        $fileName = $data->surname;
+
+        // Сохраняем и отдаем файл
+        if ($data->lang_edu === 'Русский'){
+            $templateProcessor->saveAs($fileName . ' (согласие).docx');
+            return response()->download($fileName . ' (согласие).docx')->deleteFileAfterSend(true);
+        } else {
+            $templateProcessor->saveAs($fileName . ' (келісім).docx');
+            return response()->download($fileName . ' (келісім).docx')->deleteFileAfterSend(true);
+        }
+    }
+
+    // Если резидент не РК или нет гранта
+
+    return redirect()->back()->with('alert', 'Студент не соответствует критериям для получения соглашения.');
+}
 
 
     /**
