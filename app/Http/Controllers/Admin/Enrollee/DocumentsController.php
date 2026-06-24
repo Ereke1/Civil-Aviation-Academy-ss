@@ -1515,10 +1515,10 @@ class DocumentsController extends Controller
     if ($data->citizen === 'Резидент РК' && $data->grant_certificate == 1) {
 
         // Выбираем шаблон на нужном языке
-        if ($data->lang_edu === 'Русский'){
-            $templateProcessor = new TemplateProcessor('word-templates/CommitmentAgreementRus.docx');
-        } else {
+        if ($data->lang_edu === 'Казахский'){
             $templateProcessor = new TemplateProcessor('word-templates/CommitmentAgreementKaz.docx');
+        } else {
+            $templateProcessor = new TemplateProcessor('word-templates/CommitmentAgreementRus.docx');
         }
 
         // Заполняем переменные в Word
@@ -1531,12 +1531,12 @@ class DocumentsController extends Controller
         $fileName = $data->surname;
 
         // Сохраняем и отдаем файл
-        if ($data->lang_edu === 'Русский'){
-            $templateProcessor->saveAs($fileName . ' (согласие).docx');
-            return response()->download($fileName . ' (согласие).docx')->deleteFileAfterSend(true);
-        } else {
+        if ($data->lang_edu === 'Казахский'){
             $templateProcessor->saveAs($fileName . ' (келісім).docx');
             return response()->download($fileName . ' (келісім).docx')->deleteFileAfterSend(true);
+        } else {
+            $templateProcessor->saveAs($fileName . ' (согласие).docx');
+            return response()->download($fileName . ' (согласие).docx')->deleteFileAfterSend(true);
         }
     }
 
