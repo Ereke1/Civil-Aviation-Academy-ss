@@ -34,12 +34,12 @@
                     <br>
                         <strong>При отсутствии сертификата</strong>, необходимо пройти <strong>тестирование по английскому языку</strong> в Академии гражданской авиации:
                         <ul>
-                            <li>•	Основной период: <strong>с 6 по 20 июля 2026 года.</strong></li>
-                            <li>•	Для платного отделения: <strong>до 20 августа 2026 года.</strong></li>
+                            <li>•	Основной период: <strong>с 7 по 20 июля 2026 года.</strong></li>
+                            <li>•	Для платного отделения: <strong>18 августа 2026 года.</strong></li>
                         </ul>
                     <br>
                     <li>
-                        <strong>Интервью обязательно для всех</strong> поступающих и проводится <strong>с 6 июля по 20 августа 2026 года</strong>.
+                        <strong>Интервью обязательно для всех</strong> поступающих и проводится <strong>с 7 июля по 20 августа 2026 года</strong>.
                     </li>
                 </ol>
                 {{-- <h3>График дополнительного экзамена (платное отделение)<br>
@@ -77,12 +77,12 @@
                         <br>
                             <strong>Сертификат болмаған жағдайда</strong>, Азаматтық Авиация Академиясында <strong>ағылшын тілі бойынша тестілеуден</strong> өту қажет:
                             <ul>
-                                <li>•	Негізгі кезең: <strong>2026 жылдың 6–20 шілде аралығы</strong>.</li>
-                                <li>•	Ақылы бөлім үшін: <strong>2026 жылдың 20 тамызына дейін</strong>.</li>
+                                <li>•	Негізгі кезең: <strong>2026 жылдың 7–20 шілде аралығы</strong>.</li>
+                                <li>•	Ақылы бөлім үшін: <strong>2026 жылдың 18 тамызда</strong>.</li>
                             </ul>
                         <br>
                         <li>
-                            Сұхбаттасудан  барлық үміткерлер <strong>МІНДЕТТІ ТҮРДЕ</strong> өтеді: <strong>2026 жылдың 6 шілдесінен 20 тамызына дейін</strong>.
+                            Сұхбаттасудан  барлық үміткерлер <strong>МІНДЕТТІ ТҮРДЕ</strong> өтеді: <strong>2026 жылдың 7 шілдесінен 20 тамызына дейін</strong>.
                         </li>
                     </ol>
                 @else
@@ -103,12 +103,12 @@
                         <br>
                             <strong>If you do not have a certificate</strong>, you must take <strong>the English language test</strong> at the Civil Aviation Academy:
                             <ul>
-                                <li>•	Main testing period: <strong>July 6–19, 2026</strong>.</li>
-                                <li>•	For fee-paying applicants: <strong>until August 20, 2026</strong>.</li>
+                                <li>•	Main testing period: <strong>July 7–20, 2026</strong>.</li>
+                                <li>•	For fee-paying applicants: <strong> August 18, 2026</strong>.</li>
                             </ul>
                         <br>
                         <li>
-                            <strong>All applicants are required to attend an interview </strong> between <strong>July 6 and August 20, 2026.</strong>
+                            <strong>All applicants are required to attend an interview </strong> between <strong>July 7 and August 20, 2026.</strong>
                         </li>
                     </ol>
                     {{-- <h3>Schedule of the additional exam (paid department)<br>
