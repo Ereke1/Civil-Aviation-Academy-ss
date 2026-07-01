@@ -391,6 +391,7 @@ class DocumentsController extends Controller
         $templateProcessor->setValue('phone_1', $data->phone_1);
         $templateProcessor->setValue('phone_2', $data->phone_2);
         $templateProcessor->setValue('email', $data->email);
+        $templateProcessor->setValue('case_number', $data->case_number);
 
         //степень в родительном падеже
         if ($data->type === 'Бакалавриат') {
@@ -680,6 +681,7 @@ class DocumentsController extends Controller
         $templateProcessor->setValue('phone_1', $data->phone_1);
         $templateProcessor->setValue('phone_2', $data->phone_2);
         $templateProcessor->setValue('email', $data->email);
+        $templateProcessor->setValue('case_number', $data->case_number);
 
         //степень в родительном падеже
         if ($data->type === 'Бакалавриат') {
