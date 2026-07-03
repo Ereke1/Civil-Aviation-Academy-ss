@@ -378,7 +378,7 @@ class DocumentsController extends Controller
     {
         $data = Applications::find($id);
         if ($data->citizen === 'Нерезидент РК' && $data->lang_edu === 'Английский'){
-            $templateProcessor = new TemplateProcessor('word-templates/BilateralAgreement2026.docx');
+            $templateProcessor = new TemplateProcessor('word-templates/BilateralAgreementEnglish_2026');
         } else {
             $templateProcessor = new TemplateProcessor('word-templates/BilateralAgreement2026.docx');
         }
@@ -668,7 +668,7 @@ class DocumentsController extends Controller
     {
         $data = Applications::find($id);
         if ($data->citizen === 'Нерезидент РК' && $data->lang_edu === 'Английский'){
-            $templateProcessor = new TemplateProcessor('word-templates/BilateralAgreementEnglish.docx');
+            $templateProcessor = new TemplateProcessor('word-templates/BilateralAgreementEnglish_2026.docx');
         } else {
             $templateProcessor = new TemplateProcessor('word-templates/BilateralAgreement2026_ThirdParty.docx');
         }
