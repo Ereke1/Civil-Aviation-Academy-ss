@@ -1645,7 +1645,7 @@ class DocumentsController extends Controller
                 $data->physics = $request->physics;
                 $data->countENT = $request->countENT;
                 $data->nationality_id = $request->nationality_id;
-
+                $data->quota = $request->quota;
                 $data->statement = $request->statement;
                 $data->attestat_or_diplom = $request->attestat;
                 $data->photo3x4 = $request->photo;

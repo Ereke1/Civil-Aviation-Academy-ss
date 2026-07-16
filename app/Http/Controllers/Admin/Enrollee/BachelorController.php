@@ -203,6 +203,7 @@ class BachelorController extends Controller
                 $data->save();
                 return redirect()->back()->with('alert', 'Номер дела - ' . $data->case_number);
             } else {
+                $data->quota = $request->quota;
                 $data->birthdate = $request->birthdate;
                 $data->iin = $request->iin;
                 $data->surname = $request->surname;
