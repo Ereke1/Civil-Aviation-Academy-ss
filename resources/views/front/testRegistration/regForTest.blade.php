@@ -34,12 +34,11 @@
                     <br>
                         <strong>При отсутствии сертификата</strong>, необходимо пройти <strong>тестирование по английскому языку</strong> в Академии гражданской авиации:
                         <ul>
-                            <li>•	Основной период: <strong>с 7 по 20 июля 2026 года.</strong></li>
                             <li>•	Для платного отделения: <strong>18 августа 2026 года.</strong></li>
                         </ul>
                     <br>
                     <li>
-                        <strong>Интервью обязательно для всех</strong> поступающих и проводится <strong>с 7 июля по 20 августа 2026 года</strong>.
+                        <strong>Интервью обязательно для всех</strong> поступающих и проводится <strong>18 августа 2026 года</strong>.
                     </li>
                 </ol>
                 {{-- <h3>График дополнительного экзамена (платное отделение)<br>
@@ -77,12 +76,11 @@
                         <br>
                             <strong>Сертификат болмаған жағдайда</strong>, Азаматтық Авиация Академиясында <strong>ағылшын тілі бойынша тестілеуден</strong> өту қажет:
                             <ul>
-                                <li>•	Негізгі кезең: <strong>2026 жылдың 7–20 шілде аралығы</strong>.</li>
                                 <li>•	Ақылы бөлім үшін: <strong>2026 жылдың 18 тамызда</strong>.</li>
                             </ul>
                         <br>
                         <li>
-                            Сұхбаттасудан  барлық үміткерлер <strong>МІНДЕТТІ ТҮРДЕ</strong> өтеді: <strong>2026 жылдың 7 шілдесінен 20 тамызына дейін</strong>.
+                            Сұхбаттасудан  барлық үміткерлер <strong>МІНДЕТТІ ТҮРДЕ</strong> өтеді: <strong>2026 жылдың 18 тамызда</strong>.
                         </li>
                     </ol>
                 @else
@@ -103,12 +101,11 @@
                         <br>
                             <strong>If you do not have a certificate</strong>, you must take <strong>the English language test</strong> at the Civil Aviation Academy:
                             <ul>
-                                <li>•	Main testing period: <strong>July 7–20, 2026</strong>.</li>
                                 <li>•	For fee-paying applicants: <strong> August 18, 2026</strong>.</li>
                             </ul>
                         <br>
                         <li>
-                            <strong>All applicants are required to attend an interview </strong> between <strong>July 7 and August 20, 2026.</strong>
+                            <strong>All applicants are required to attend an interview </strong> between <strong>August 18, 2026.</strong>
                         </li>
                     </ol>
                     {{-- <h3>Schedule of the additional exam (paid department)<br>
@@ -139,7 +136,7 @@
                             @endif
                         </a>
                     </li>
-                    <li class="nav-item flex-sm-fill">
+                    {{-- <li class="nav-item flex-sm-fill">
                         <a id="profile-tab" data-toggle="tab" href="#reg2" role="tab" aria-controls="profile"
                             aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">
                             @if (Config::get('app.locale') === 'ru')
@@ -150,7 +147,7 @@
                                 Re-register for another date
                             @endif
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <div id="myTabContent" class="tab-content">
                     <div id="reg1" role="tabpanel" aria-labelledby="home-tab"
@@ -260,14 +257,14 @@
                                                 <div class="form-group mt-3" id="entScoreWrapper">
                                                     <label for="ent_score" >
                                                         @if (Config::get('app.locale') === 'ru')
-                                                            Результат ЕНТ (85-140):
+                                                            Результат ЕНТ (65-140):
                                                         @elseif(Config::get('app.locale') === 'kk')
-                                                            ҰБТ нәтижесі (85–140):
+                                                            ҰБТ нәтижесі (65–140):
                                                         @else
-                                                            UNT result (85-140):
+                                                            UNT result (65-140):
                                                         @endif
                                                     </label>
-                                                    <input type="number" id="ent_score" name="ent_score" class="form-control border " min="85" max="140">
+                                                    <input type="number" id="ent_score" name="ent_score" class="form-control border " min="65" max="140">
                                                 </div>
 
 
