@@ -851,6 +851,12 @@ class DocumentsController extends Controller
                                 $templateProcessor->setValue('price_en', '(Two million four hundred thousand)');
                             }
                             }
+                            else {
+                                $templateProcessor->setValue('price', '1 800 000');
+                                $templateProcessor->setValue('price_ru', '(Один миллион восемьсот тысяч)');
+                                $templateProcessor->setValue('price_kz', '(Бір миллион сегіз жүз мың)');
+                                $templateProcessor->setValue('price_en', '(One million eight hundred thousand)');
+                            }
                 }
                         else {
                             if ($data->programms === 'Лётная эксплуатация гражданских самолетов (пилот)' || $data->programms === 'Лётная эксплуатация гражданских вертолетов (пилот)' || $data->programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') {
