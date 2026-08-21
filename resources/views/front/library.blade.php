@@ -123,7 +123,7 @@
 
 
                         <div class="oneBook col-12 col-sm-6 col-md-4 col-lg-3">
-                            <a href="https://www.scopus.com/home.uri/">
+                            <a href="https://www.scopus.com/sources">
                                 <img src="/assets/images/library/Scopus.png">
                             </a>
                             <h3>
