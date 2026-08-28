@@ -10,6 +10,257 @@
     <h1>Документы для поступления абитуриентов</h1>
     <h2>Поиск абитуриентов</h2>
     <div class="filter">
+        <form action="{{ route('admin.enrollee.documents.index') }}">
+            @csrf
+            <div>
+                <label for="base">На базе</label>
+                <select name="base">
+                    <option value=""></option>
+                    <option value="11-го класса" @if ($base === '11-го класса') selected @endif>11 класса</option>
+                    <option value="Высшего образования" @if ($base === 'Высшего образования') selected @endif>Высшего
+                        образования</option>
+                    <option value="Технического и профессионального образования (колледжа)"
+                        @if ($base === 'Технического и профессионального образования (колледжа)') selected @endif>ТиПО</option>
+                </select>
+            </div>
+            <div>
+                <label for="haveAltyn">Имеется Алтын Белги</label>
+                <select name="haveAltyn">
+                    <option value=""></option>
+                    <option value="Да" @if ($haveAltyn === 'Да') selected @endif>Да</option>
+                    <option value="Нет" @if ($haveAltyn === 'Нет') selected @endif>Нет</option>
+                </select>
+            </div>
+            <div>
+                <label for="quota">КВОТЫ</label>
+                <select name="quota">
+                    <option value=""></option>
+                    <option value="Граждане с инвалидностью первой или второй группы"
+                    @if ($quota === 'Граждане с инвалидностью первой или второй группы')selected @endif>Граждане с инвалидностью первой или второй группы</option>
+                    <option value="Ветераны боевых действий на территории других государств, приравненных по льготам к ветеранам ВОВ"
+                    @if ($quota === 'Ветераны боевых действий на территории других государств, приравненных по льготам к ветеранам ВОВ')
+                    selected @endif>Ветераны боевых действий на территории других государств, приравненных по льготам к ветеранам ВОВ</option>
+                    <option value="Сельская молодежь, поступающая на обучение по программам, определяющим социально-экономическое развитие села"
+                    @if ($quota === 'Сельская молодежь, поступающая на обучение по программам, определяющим социально-экономическое развитие села')
+                    selected @endif>Сельская молодежь, поступающая на обучение по программам, определяющим социально-экономическое развитие села</option>
+                    <option value="Этнические казахи, не являющиеся гражданами Казахстана"
+                    @if ($quota === 'Этнические казахи, не являющиеся гражданами Казахстана')
+                    selected @endif>Этнические казахи, не являющиеся гражданами Казахстана</option>
+                    <option value="Дети-сироты и дети, оставшиеся без попечения родителей"
+                    @if ($quota === 'Дети-сироты и дети, оставшиеся без попечения родителей')
+                    selected @endif>Дети-сироты и дети, оставшиеся без попечения родителей</option>
+                    <option value="Сельская молодежь, переселяющаяся в регионы, определенные правительством"
+                    @if ($quota === 'Сельская молодежь, переселяющаяся в регионы, определенные правительством')
+                    selected @endif>Сельская молодежь, переселяющаяся в регионы, определенные правительством</option>
+                    <option value="Дети из семей, в которых воспитываются четверо и более несовершеннолетних детей"
+                    @if ($quota === 'Дети из семей, в которых воспитываются четверо и более несовершеннолетних детей')
+                    selected @endif>Дети из семей, в которых воспитываются четверо и более несовершеннолетних детей</option>
+                    <option value="Дети из неполных семей, имеющих этот статус не менее трех лет"
+                    @if ($quota === 'Дети из неполных семей, имеющих этот статус не менее трех лет')
+                    selected @endif>Дети из неполных семей, имеющих этот статус не менее трех лет</option>
+                    <option value="Дети из семей, воспитывающих детей с инвалидностью"
+                    @if ($quota === 'Дети из семей, воспитывающих детей с инвалидностью')
+                    selected @endif>Дети из семей, воспитывающих детей с инвалидностью</option>
+                </select>
+            </div>
+            <div>
+                <label for="haveENT">Имеется ЕНТ</label>
+                <select name="haveENT">
+                    <option value=""></option>
+                    <option value="Да" @if ($haveENT === 'Да') selected @endif>Да</option>
+                    <option value="Нет" @if ($haveENT === 'Нет') selected @endif>Нет</option>
+                </select>
+            </div>
+            <div>
+                <label for="citizen">Гражданство</label>
+                <select name="citizen">
+                    <option value=""></option>
+                    <option value="Резидент РК" @if ($citizen === 'Резидент РК') selected @endif>Резидент РК</option>
+                    <option value="Нерезидент РК" @if ($citizen === 'Нерезидент РК') selected @endif>Нерезидент РК</option>
+                </select>
+            </div>
+            <div>
+                <label for="programms">Образовательная программа</label>
+                <select name="programms">
+                    <option value=""></option>
+                    <option value="Лётная эксплуатация гражданских самолетов (пилот)" @if ($programms === 'Лётная эксплуатация гражданских самолетов (пилот)') selected @endif>
+                        Лётная эксплуатация
+                        самолётов (пилот)</option>
+                    <option value="Лётная эксплуатация гражданских вертолетов (пилот)"
+                        @if ($programms === 'Лётная эксплуатация гражданских вертолетов (пилот)') selected @endif>Лётная эксплуатация
+                        вертолётов (пилот)</option>
+                    <option value="Обслуживание воздушного движения и аэронавигационное обеспечение полетов" @if ($programms === 'Обслуживание воздушного движения и аэронавигационное обеспечение полетов') selected @endif>
+                        Обслуживание воздушного
+                        движения</option>
+                    <option value="Техническая эксплуатация систем авионики летательных аппаратов и двигателей"
+                        @if ($programms === 'Техническая эксплуатация систем авионики летательных аппаратов и двигателей') selected @endif>Техническая
+                        эксплуатация систем авионики летательных аппаратов и двигателей</option>
+                    <option value="Техническая эксплуатация систем авионики летательных аппаратов"
+                        @if ($programms === 'Техническая эксплуатация систем авионики летательных аппаратов') selected @endif>Техническая
+                        эксплуатация систем авионики летательных аппаратов</option>
+                    <option value="Техническая эксплуатация летательных аппаратов и двигателей"
+                        @if ($programms === 'Техническая эксплуатация летательных аппаратов и двигателей') selected @endif>Техническая эксплуатация
+                        летательных аппаратов и двигателей</option>
+                    <option value="Обеспечение авиационной безопасности"
+                        @if ($programms === 'Обеспечение авиационной безопасности') selected @endif>Обеспечение
+                        авиационной безопасности</option>
+                    <option value="Обслуживание наземного радиоэлектронного оборудования аэропортов"
+                        @if ($programms === 'Обслуживание наземного радиоэлектронного оборудования аэропортов') selected @endif>Обслуживание наземного
+                        радиоэлектронного оборудования аэропортов</option>
+                    <option value="Техническая эксплуатация авиационного и радиоэлектронного оборудования"
+                        @if ($programms === 'Техническая эксплуатация авиационного и радиоэлектронного оборудования') selected @endif>Техническая эксплуатация авиационного и радиоэлектронного оборудования</option>
+                    <option value="Беспилотные летательные аппараты и системы"
+                        @if ($programms === 'Беспилотные летательные аппараты и системы') selected @endif>Беспилотные летательные аппараты и системы</option>
+                    <option value="Организация аэропортовой деятельности"
+                        @if ($programms === 'Организация аэропортовой деятельности') selected @endif>Организация
+                        аэропортовой деятельности</option>
+                    <option value="Организация авиационных перевозок" @if ($programms === 'Организация авиационных перевозок') selected @endif>
+                        Организация авиационных
+                        перевозок</option>
+                    <option value="Логистика на транспорте" @if ($programms === 'Логистика на транспорте') selected @endif>
+                        Логистика на транспорте</option>
+                    <option value="Системная интеграция наземного обслуживания" @if ($programms === 'Системная интеграция наземного обслуживания') selected @endif>
+                        Системная интеграция наземного обслуживания</option>
+                    <option value="Авиационная безопасность и интеллектуальные системы" @if ($programms === 'Авиационная безопасность и интеллектуальные системы') selected @endif>
+                        Авиационная безопасность и интеллектуальные системы</option>
+                    <option value="Технология транспортных процессов в авиации" @if ($programms === 'Технология транспортных процессов в авиации') selected @endif>
+                        Технология транспортных процессов в авиации</option>
+                    <option value="Технология авиационных перевозок" @if ($programms === 'Технология авиационных перевозок') selected @endif>
+                        Технология авиационных перевозок</option>
+                </select>
+            </div>
+            <div>
+                <label for="lang_edu">Язык обучения</label>
+                <select name="lang_edu" >
+                    <option value=""></option>
+                    <option value="Казахский" @if ($lang_edu === 'Казахский') selected @endif>Казахский</option>
+                    <option value="Русский" @if ($lang_edu === 'Русский') selected @endif>Русский</option>
+                    <option value="Английский" @if ($lang_edu === 'Английский') selected @endif>Английский</option>
+                </select>
+            </div>
+            <div>
+                <label for="region">Регион</label>
+                <select name="region">
+                    <option value=""></option>
+                    <option value="г. Алматы" @if ($region === 'г. Алматы') selected @endif>г. Алматы</option>
+                    <option value="г. Астана" @if ($region === 'г. Астана') selected @endif>г. Астана</option>
+                    <option value="г. Шымкент" @if ($region === 'г. Шымкент') selected @endif>г. Шымкент</option>
+                    <option value="Абайская обл." @if ($region === 'Абайская обл.') selected @endif>Абайская обл.
+                    </option>
+                    <option value="Акмолинская обл." @if ($region === 'Акмолинская обл.') selected @endif>Акмолинская обл.
+                    </option>
+                    <option value="Актюбинская обл." @if ($region === 'Актюбинская обл.') selected @endif>Актюбинская обл.
+                    </option>
+                    <option value="Алматинская обл." @if ($region === 'Алматинская обл.') selected @endif>Алматинская обл.
+                    </option>
+                    <option value="Атырауская обл." @if ($region === 'Атырауская обл.') selected @endif>Атырауская обл.
+                    </option>
+                    <option value="Восточно-Казахстанская обл." @if ($region === 'Восточно-Казахстанская обл.') selected @endif>
+                        Восточно-Казахстанская обл.</option>
+                    <option value="Жамбыльская обл." @if ($region === 'Жамбыльская обл.') selected @endif>Жамбыльская обл.
+                    </option>
+                    <option value="Жетысуская обл." @if ($region === 'Жетысуская обл.') selected @endif>Жетысуская обл.
+                    </option>
+                    <option value="Западно-Казахстанская обл." @if ($region === 'Западно-Казахстанская обл.') selected @endif>
+                        Западно-Казахстанская обл.</option>
+                    <option value="Карагандинская обл." @if ($region === 'Карагандинская обл.') selected @endif>Карагандинская
+                        обл.</option>
+                    <option value="Костанайская обл." @if ($region === 'Костанайская обл.') selected @endif>Костанайская обл.
+                    </option>
+                    <option value="Кызылординская обл." @if ($region === 'Кызылординская обл.') selected @endif>Кызылординская
+                        обл.</option>
+                    <option value="Мангистауская обл." @if ($region === 'Мангистауская обл.') selected @endif>Мангистауская
+                        обл.</option>
+                    <option value="Павлодарская обл." @if ($region === 'Павлодарская обл.') selected @endif>Павлодарская обл.
+                    </option>
+                    <option value="Северо-Казахстанская обл." @if ($region === 'Северо-Казахстанская обл.') selected @endif>
+                        Северо-Казахстанская обл.</option>
+                    <option value="Туркестанская обл." @if ($region === 'Туркестанская обл.') selected @endif>Туркестанская
+                        обл.</option>
+                    <option value="Улытауская обл." @if ($region === 'Улытауская обл.') selected @endif>Улытауская обл.</option>
+                </select>
+            </div>
+            <div>
+                <label for="countENT">Пороговый балл ЕНТ</label>
+                <input type="number" name="countENT"
+                    @if ($countENT != '') value="{!! $countENT !!}" @endif>
+            </div>
+            <div>
+                <label for="haveVLEK">Пройден ВЛЭК</label>
+                <select name="haveVLEK">
+                    <option value=""></option>
+                    <option value="Да" @if ($haveVLEK === 'Да') selected @endif>Да</option>
+                    <option value="Нет" @if ($haveVLEK === 'Нет') selected @endif>Нет</option>
+                </select>
+            </div>
+            <div>
+                <label for="haveIELTS">Имеется IELTS/TOEFL</label>
+                <select name="haveIELTS">
+                    <option value=""></option>
+                    <option value="Да" @if ($haveIELTS === 'Да') selected @endif>Да</option>
+                    <option value="Нет" @if ($haveIELTS === 'Нет') selected @endif>Нет</option>
+                </select>
+            </div>
+            <div>
+                <label for="process">Процесс</label>
+                <select name="process">
+                    <option value=""></option>
+                    <option value="Не дозвонились" @if ($process === 'Не дозвонились') selected @endif>Не дозвонились
+                    </option>
+                    <option value="В обработке" @if ($process === 'В обработке') selected @endif>В обработке</option>
+                    <option value="Обработанный" @if ($process === 'Обработанный') selected @endif>Обработанные</option>
+                    <option value="Сдал документы" @if ($process === 'Сдал документы') selected @endif>Сдал документы
+                    </option>
+                    <option value="Отказ" @if ($process === 'Отказ') selected @endif>Отказ</option>
+                </select>
+            </div>
+            <div>
+                <label for="created_at_from">Дата подачи с</label>
+                <input type="date" name="created_at_from"
+                 @if ($created_at_from != '') value="{!! $created_at_from !!}" @endif>
+            </div>
+            <div>
+                <label for="created_at_to">Дата подачи до</label>
+                <input type="date" name="created_at_to"
+                 @if ($created_at_to != '') value="{!! $created_at_to !!}" @endif>
+            </div>
+            <div>
+                <label for="case_number_date_from">Дата № дела с</label>
+                <input type="date" name="case_number_date_from"
+                 @if ($case_number_date_from != '') value="{!! $case_number_date_from !!}" @endif>
+            </div>
+            <div>
+                <label for="have_grant">Имеется Грант</label>
+                <select name="have_grant">
+                    <option value=""></option>
+                    <option value="1" @if ($have_grant === 1) selected @endif>Да</option>
+                    <option value="0" @if ($have_grant === 0) selected @endif>Нет</option>
+                </select>
+            </div>
+            <div>
+                <label for="sort">Сортировать</label>
+                <select name="sort">
+                    <option value=""></option>
+                    <option value="surname" @if ($sort === 'surname') selected @endif>По фамилии</option>
+                    <option value="countENT" @if ($sort === 'countENT') selected @endif>По баллам ЕНТ </option>
+                </select>
+            </div>
+            <div>
+                <label for="gender">Пол</label>
+                <select name="gender">
+                    <option value=""></option>
+                    <option value="мужской" @if ($gender === 'мужской') selected @endif>мужской</option>
+                    <option value="женский" @if ($gender === 'женский') selected @endif>женский</option>
+                </select>
+            </div>
+            <div>
+                <button>Применить</button>
+            </div>
+        </form>
+    </div>
+
+    <br /><br />
+    <div class="filter">
         <form action="{{ route('admin.enrollee.documents.index') }}" method="GET">
             @csrf
             <div>

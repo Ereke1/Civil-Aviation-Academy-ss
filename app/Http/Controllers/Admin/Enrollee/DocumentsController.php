@@ -32,6 +32,7 @@ class DocumentsController extends Controller
             'status' => '0',
             'base' => $request->base,
             'haveENT' => $request->haveENT,
+            'haveAltyn' => $request->haveAltyn,
             'haveVLEK' => $request->haveVLEK,
             'haveIELTS' => $request->haveIELTS,
             'citizen' => $request->citizen,
@@ -40,17 +41,48 @@ class DocumentsController extends Controller
             'process' => $request->process,
             'created_at' => $request->created_at,
             'surname' => $request->surname,
-            'iin' => $request->iin
+            'iin' => $request->iin,
+            'quota' => $request->quota,
+            'lang_edu' => $request->lang_edu,
+            'gender' => $request->gender
         ];
         $whereArray = array_filter($whereArray, 'strlen');
         $countENT = $request->countENT;
         $created_at_from = $request->created_at_from;
         $created_at_to = $request->created_at_to;
+        $case_number_date_from = $request->case_number_date_from;
         $sort = $request->sort;
 
 
         $nationality_list = DB::table('nationalities')
             ->get();
+
+        $query = DB::table('applications')
+            ->select('applications.id as applid', 'applications.*', 'nationalities.id', 'nationalities.*')
+            ->join('nationalities', 'applications.nationality_id', '=', 'nationalities.id')
+            ->where($whereArray);
+
+        if ($request->has('case_number_date_from') && !empty($case_number_date_from)) {
+            $query->whereDate('case_number_date', '>=', $case_number_date_from);
+        }
+        if ($request->has('created_at_from') && !empty($created_at_from)) {
+            $query->whereDate('created_at', '>=', "$created_at_from 00:00:00");
+        }
+        if ($request->has('created_at_to') && !empty($created_at_to)) {
+            $query->whereDate('created_at', '<=', "$created_at_to 00:00:00");
+        }
+        if ($request->has('countENT') && !empty($countENT)) {
+            $query->where('countENT', '>=', $countENT);
+        }
+        if ($request->has('sort') && !empty($sort)) {
+            if($sort === 'surname'){
+                $query->orderBy($sort, 'asc');
+            } elseif ($sort === 'countENT'){
+                $query->orderBy($sort, 'desc');
+            }
+        } else {
+            $query->orderBy('created_at', 'desc');
+        }
 
         $data = DB::table('applications')
             ->select(DB::raw('ROW_NUMBER() OVER(ORDER BY created_at desc) AS num_row'),'applications.id as applid', 'applications.*', 'nationalities.id as nat_id', 'nationalities.*')
@@ -74,6 +106,7 @@ class DocumentsController extends Controller
             'data' => $data,
             'base' => $request->base,
             'haveENT' => $request->haveENT,
+            'haveAltyn' => $request->haveAltyn,
             'haveVLEK' => $request->haveVLEK,
             'haveIELTS' => $request->haveIELTS,
             'citizen' => $request->citizen,
@@ -86,7 +119,12 @@ class DocumentsController extends Controller
 			'today' => $today,
             'countENT' => $request->countENT,
             'sort' => $request->sort,
-            'countData' => $countData
+            'countData' => $countData,
+            'quota' => $request->quota,
+            'lang_edu' => $request->lang_edu,
+            'gender' => $request->gender,
+            'case_number_date_from' => $request->case_number_date_from,
+            'have_grant' => $request->have_grant,
         ];
         return view('admin.enrollee.documents.index', $dataArr)->with(compact('nationality_list', 'nationality_list'));
     }
