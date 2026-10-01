@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'title' => 'Air Барс',
+    'open' => 'Open chat',
+    'hint' => 'If you cannot find the information, ask Air Барс',
+    'close' => 'Close chat',
+    'placeholder' => 'Type your question...',
+    'send' => 'Send',
+    'clear' => 'Clear conversation',
+    'contact' => 'Leave a message',
+    'consultation' => 'Request a consultation',
+    'consultation_message' => 'Hello! I would like to request a consultation with an Academy staff member.',
+    'loading' => 'Searching for an answer...',
+    'thinking' => 'The assistant is preparing an answer',
+    'welcome' => 'Hello! I can help with admission, programs, documents, tuition, dormitory and contact information for the Academy.',
+    'not_found' => 'There is no exact answer to this question in our knowledge base. Please leave a message and an Academy staff member will contact you.',
+    'human_request' => 'You can leave a message to contact an Academy staff member. We will get back to you using the contact details provided.',
+    'quick_questions' => [
+        'How do I enroll in the Academy?',
+        'What documents are required?',
+    ],
+    'name' => 'Name (optional)',
+    'message' => 'Message',
+    'contact_method' => 'Preferred contact method',
+    'contact_value' => 'Email or phone number',
+    'consent' => 'I consent to the processing of personal data',
+    'submit_request' => 'Send request',
+    'request_success' => 'Your message has been accepted. An Academy staff member will contact you using the contact details provided.',
+    'error' => 'The message could not be sent. Please try again later.',
+];

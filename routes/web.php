@@ -123,11 +123,17 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 	Route::group(['prefix' => 'vaccination', 'namespace' => 'Vaccination', 'as' => 'vaccination.'], function () {
 		Route::resource('', 'VaccinationController');
 	});
+
+	Route::resource('chat-messages', 'ChatMessageController');
 });
 
 // FRONTEND
 Route::group(['namespace' => 'Front', 'as' => 'front.'], function () {
 	// HOMEPAGE
+	Route::post('chat/ask', 'ChatController@ask')->name('chat.ask');
+	Route::post('chat/contact', 'ChatController@contact')
+        ->middleware('throttle:10,1')
+        ->name('chat.contact');
 	Route::get('', 'HomeController@index')->name('home');
 	Route::get('centerava','CenterController@index')->name('centerava');
 	Route::get('training_centers','TrainingCenterController@index')->name('training_centers');

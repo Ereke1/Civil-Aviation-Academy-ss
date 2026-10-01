@@ -877,5 +877,3 @@
         </div>
     </section>
 @endsection
-
-<script src="//code.tidio.co/ujar8yfyktzqfjvscucw8whpbhmbyno7.js" async></script>

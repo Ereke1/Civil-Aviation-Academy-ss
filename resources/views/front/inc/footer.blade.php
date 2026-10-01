@@ -120,8 +120,25 @@
     <script type="text/javascript" src="/js/jquery.appear.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
     <script id="aioa-adawidget"
-        src="https://www.skynettechnologies.com/accessibility/js/all-in-one-accessibility-js-widget-minify.js?colorcode=#b8860b&token=&position=bottom_right">
+        src="https://www.skynettechnologies.com/accessibility/js/all-in-one-accessibility-js-widget-minify.js?colorcode=%23b8860b&token=&position=bottom_right">
     </script>
+    <style>
+        #accessibility_settings_toggle {
+            position: fixed !important;
+            top: 116px !important;
+            right: 24px !important;
+            left: auto !important;
+            bottom: auto !important;
+            z-index: 9000 !important;
+        }
+
+        @media (max-width: 767px) {
+            #accessibility_settings_toggle {
+                top: 88px !important;
+                right: 16px !important;
+            }
+        }
+    </style>
     @if (Request::url() == URL::to('/') . '/enrollee/bachelor')
         <script>
             var translation1profSubj = "{{ __('1-й профильный предмет') }}";

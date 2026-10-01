@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":264:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:2:{s:87:"Tests\Feature\ChatConsultationTest::test_consultation_is_saved_and_notification_is_sent";d:0.229;s:100:"Tests\Feature\ChatConsultationTest::test_invalid_contact_value_is_rejected_without_saving_or_sending";d:0.044;}}}
